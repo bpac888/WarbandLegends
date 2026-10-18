@@ -1,0 +1,9 @@
+{
+  "source_repository": "bpac888/warband-legends",
+  "source_commit": "acf554c4666208758a0c198f9fc2c1aef6e54aa4",
+  "champions": 135,
+  "missing_artwork": [],
+  "original_ids_preserved": true,
+  "artwork_imported": 135,
+  "source_id_sha256": "5ceb67b54c3745ee5e92d7b39321f016d5990afaf719c49e2e3e5e27a741869a"
+}

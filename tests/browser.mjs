@@ -1,0 +1,42 @@
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const ROOT=new URL('../',import.meta.url).pathname;
+const PREVIEW=ROOT+'artifacts';
+const fs=require('node:fs/promises'),path=require('node:path'),assert=require('node:assert/strict');
+(async()=>{
+ const {createBattle,validMoves}=await import(new URL('../src/engine.js',import.meta.url));
+ const {STARTER_TEAM,defaultProfile}=await import(new URL('../src/storage.js',import.meta.url));
+ const roster=JSON.parse(await fs.readFile(ROOT+'data/champions.json','utf8'));
+ await fs.mkdir(PREVIEW,{recursive:true});
+ const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
+ const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+ const errors=[],missing=[],external=[];
+ await context.route('**/*',async route=>{const url=new URL(route.request().url());if(url.hostname!=='legends.local'){external.push(url.origin);return route.abort();}try{const p=path.join(ROOT+'dist',decodeURIComponent(url.pathname)==='/'?'index.html':decodeURIComponent(url.pathname));const body=await fs.readFile(p);const ext=path.extname(p);await route.fulfill({body,contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[ext]});}catch{missing.push(url.pathname);await route.fulfill({status:404,body:'missing'});}});
+ const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://legends.local/');await page.getByRole('heading',{name:'Your warband'}).waitFor();
+ await page.screenshot({path:PREVIEW+'/desktop-home.png',fullPage:true});
+ await page.getByRole('button',{name:/Change champions/}).click();assert.equal(await page.locator('.roster-card').count(),135);
+ await page.getByRole('searchbox').fill('Sivren');assert.equal(await page.locator('.roster-card').count(),1);
+ await page.getByRole('button',{name:'Close dialog'}).click();
+ await page.getByRole('button',{name:/Enter the Ashen Gate/}).click();await page.getByRole('button',{name:/Into the fray/}).click();
+ assert.equal(await page.locator('.tile').count(),35);assert.equal(await page.locator('.hero-unit').count(),5);assert.equal(await page.locator('.enemy-unit').count(),3);
+ await page.screenshot({path:PREVIEW+'/desktop-battle.png',fullPage:true});
+ const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v1')));const move=validMoves(state.board)[0];
+ await page.locator(`[data-index="${move[0]}"]`).focus();await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>document.activeElement.dataset.index),String(move[0]));
+ await page.locator(`[data-index="${move[1]}"]`).focus();await page.keyboard.press('Enter');await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'1');assert.equal(await page.evaluate(()=>document.activeElement.dataset.index),String(move[1]));
+ await page.reload();await page.getByRole('button',{name:'Resume battle'}).click();assert.equal(await page.locator('.move-counter b').textContent(),'1');
+ await page.getByRole('button',{name:/Animation speed/}).click();assert.equal(await page.getByRole('button',{name:/Animation speed/}).textContent(),'2×');
+ // Charge a genuine engine state to exercise skill targeting and persisted results.
+ const charged=createBattle(roster,STARTER_TEAM,'ashen-gate',123);charged.heroes[0].mana=100;
+ await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v1',JSON.stringify(s)),charged);await page.reload();await page.getByRole('button',{name:'Resume battle'}).click();
+ await page.locator('[data-action="hero"][data-uid="hero-0"]').click();await page.locator('[data-action="enemy"][data-uid="enemy-0"]').click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'0');
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v1')).heroes[0].mana),0);
+ const dragState=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v1'))),dragMove=validMoves(dragState.board)[0];
+ const from=await page.locator(`[data-index="${dragMove[0]}"]`).boundingBox(),to=await page.locator(`[data-index="${dragMove[1]}"]`).boundingBox();
+ await page.mouse.move(from.x+from.width/2,from.y+from.height/2);await page.mouse.down();await page.mouse.move(to.x+to.width/2,to.y+to.height/2,{steps:5});await page.mouse.up();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'1');
+ for(const width of [390,320]){await page.setViewportSize({width,height:844});await page.screenshot({path:`${PREVIEW}/mobile-${width}-battle.png`,fullPage:true});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`overflow at ${width}`);const tile=await page.locator('.tile').first().boundingBox();assert.ok(tile.width>=30);}
+ const won=createBattle(roster,STARTER_TEAM,'ashen-gate',777);won.enemies.forEach(e=>e.hp=0);won.phase='victory';await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v1',JSON.stringify(s)),won);await page.reload();assert.ok(await page.locator('.encounter-card[data-stage="frozen-pass"]').isEnabled());
+ assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);assert.deepEqual(external,[]);
+ console.log(JSON.stringify({passed:true,checks:['135 champion roster/search','start and help','7x5 board, 5 heroes, 3 enemies','keyboard match and restored focus','drag swap','save/reload','animation speed','mana skill targeting','390px and 320px overflow and tile sizing','victory unlock','no browser errors/missing assets/external API requests'],screenshots:4},null,2));await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});

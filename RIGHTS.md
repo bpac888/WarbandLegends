@@ -1,0 +1,9 @@
+# Rights and provenance
+
+This separate game was requested by the owner of `bpac888/warband-legends`. It reuses that owner's champion definitions, lore, kits, passive definitions and artwork under their direction. No general public reuse license is granted by this repository. The owner should review rights before changing repository visibility or granting a license.
+
+Source snapshot: `bpac888/warband-legends` at `acf554c4666208758a0c198f9fc2c1aef6e54aa4`. Source champion definitions: `backend/server.py`, `backend/veldtborn_data.py`, `backend/roster_expansion_data.py`; ability/passive definitions: `backend/effects_data.py`. Each imported champion records its original template ID and source image path in `data/champions.json`. IDs with original spaces or capitalization remain unchanged.
+
+All 135 portraits are bundled locally as optimized WebP copies of the owner's existing art. Scene backgrounds derive from the owner's fight-colosseum and summoning-portal artwork. No runtime request to the original game is made. The importer does not connect to its database.
+
+The rune symbols, interface, match-3 engine, tests and standalone tooling were implemented for this repository. The supplied Empires & Puzzles screenshot and gameplay notes informed the requested genre mechanics; no screenshot art, characters, brand, proprietary assets or game code from that game are included.
