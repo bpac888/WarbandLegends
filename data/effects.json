@@ -1,149 +1,281 @@
 {
   "inc_atk": {
-    "name": "Increase ATK",
+    "name": "Attack Up",
     "cat": "buff",
-    "group": "stat",
+    "group": "attack",
     "value": 0.25,
-    "desc": "Raises the champion's ATK by 25%."
-  },
-  "inc_def": {
-    "name": "Increase DEF",
-    "cat": "buff",
-    "group": "stat",
-    "value": 0.25,
-    "desc": "Raises the champion's DEF by 25%."
-  },
-  "shield": {
-    "name": "Shield",
-    "cat": "buff",
-    "group": "survival",
-    "value": 0.2,
-    "desc": "Absorbs damage equal to 20% of max HP before HP is touched."
-  },
-  "strengthen": {
-    "name": "Strengthen",
-    "cat": "buff",
-    "group": "survival",
-    "value": 0.15,
-    "desc": "Reduces incoming damage by 15%."
-  },
-  "heal": {
-    "name": "Heal",
-    "cat": "buff",
-    "group": "survival",
-    "value": 0.1,
-    "desc": "Restores 10% of max HP at the start of the champion's turn."
-  },
-  "block_debuffs": {
-    "name": "Block Debuffs",
-    "cat": "buff",
-    "group": "utility",
-    "value": 0,
-    "desc": "Complete immunity to incoming debuffs."
-  },
-  "counterattack": {
-    "name": "Counterattack",
-    "cat": "buff",
-    "group": "utility",
-    "value": 0,
-    "desc": "Strikes back with the default skill when hit."
-  },
-  "revive_on_death": {
-    "name": "Revive On Death",
-    "cat": "buff",
-    "group": "utility",
-    "value": 0.3,
-    "desc": "Revives the champion once if they die while it is active."
+    "desc": "+25% ATK for rune attacks, basic attacks and Specials. Stacks with Tile Boost.",
+    "icon": "sword-up",
+    "timed": true
   },
   "dec_atk": {
-    "name": "Decrease ATK",
+    "name": "Attack Down",
     "cat": "debuff",
-    "group": "stat",
+    "group": "attack",
     "value": 0.25,
-    "desc": "Lowers the target's ATK by 25%."
+    "desc": "−25% ATK for rune attacks, basic attacks and Specials. Replaces Attack Up.",
+    "icon": "sword-down",
+    "timed": true
+  },
+  "tile_boost": {
+    "name": "Tile Boost",
+    "cat": "buff",
+    "group": "tile",
+    "value": 0.35,
+    "desc": "+35% rune damage only. Multiplies with Attack Up; does not increase Specials, basic attacks or DoT.",
+    "icon": "fist",
+    "timed": true
+  },
+  "inc_def": {
+    "name": "Defense Up",
+    "cat": "buff",
+    "group": "defense",
+    "value": 0.25,
+    "desc": "+25% DEF against runes, basic attacks and Specials. Does not reduce DoT.",
+    "icon": "shield-up",
+    "timed": true
   },
   "dec_def": {
-    "name": "Decrease DEF",
+    "name": "Defense Down",
     "cat": "debuff",
-    "group": "stat",
+    "group": "defense",
     "value": 0.25,
-    "desc": "Lowers the target's DEF by 25%."
+    "desc": "−25% DEF against direct damage. Stacks multiplicatively with elemental defense reductions and Pierce.",
+    "icon": "shield-down",
+    "timed": true
+  },
+  "shield": {
+    "name": "Barrier",
+    "cat": "buff",
+    "group": "barrier",
+    "value": 0.2,
+    "desc": "Absorbs direct damage up to 20% max HP. Recasting refreshes the pool instead of adding to it. DoT bypasses barriers.",
+    "icon": "barrier",
+    "timed": true
+  },
+  "strengthen": {
+    "name": "Damage Ward",
+    "cat": "buff",
+    "group": "protection",
+    "value": 0.15,
+    "desc": "Take 15% less direct damage after defense. Replaces Vulnerability. Does not reduce DoT.",
+    "icon": "ward",
+    "timed": true
   },
   "weaken": {
-    "name": "Weaken",
+    "name": "Vulnerability",
     "cat": "debuff",
-    "group": "utility",
+    "group": "protection",
     "value": 0.15,
-    "desc": "The target takes 15% more damage."
+    "desc": "Take 15% more direct damage after defense. Replaces Damage Ward. Does not amplify DoT.",
+    "icon": "broken",
+    "timed": true
+  },
+  "heal": {
+    "name": "Regeneration",
+    "cat": "buff",
+    "group": "regeneration",
+    "value": 0.1,
+    "desc": "Restore 10% max HP at the start of each board move. Instant healing is separate and can be used alongside it.",
+    "icon": "heart",
+    "timed": true
+  },
+  "mana_surge": {
+    "name": "Mana Flow",
+    "cat": "buff",
+    "group": "mana",
+    "value": 0.2,
+    "desc": "Gain 20% more generated tile charge. Replaces Mana Slow. Flat mana gifts are not amplified.",
+    "icon": "mana-up",
+    "timed": true
+  },
+  "mana_slow": {
+    "name": "Mana Slow",
+    "cat": "debuff",
+    "group": "mana",
+    "value": 0.15,
+    "desc": "Gain 15% less generated tile charge. Replaces Mana Flow. Does not change attack countdowns.",
+    "icon": "mana-down",
+    "timed": true
+  },
+  "mana_block": {
+    "name": "Mana Block",
+    "cat": "debuff",
+    "group": "mana-block",
+    "value": 1,
+    "desc": "Cannot gain generated or gifted charge. Stored charge is kept, and an already-ready Special can still be cast.",
+    "icon": "mana-lock",
+    "timed": true
   },
   "block_buffs": {
-    "name": "Block Buffs",
+    "name": "Buff Seal",
     "cat": "debuff",
-    "group": "utility",
+    "group": "seal",
     "value": 0,
-    "desc": "The target cannot receive positive buffs."
+    "desc": "Prevents new timed buffs, including refreshes. Does not remove existing buffs or block instant healing or mana gifts.",
+    "icon": "seal",
+    "timed": true
   },
-  "taunt": {
-    "name": "Taunt",
-    "cat": "debuff",
-    "group": "utility",
+  "block_debuffs": {
+    "name": "Ailment Ward",
+    "cat": "buff",
+    "group": "ailment-ward",
     "value": 0,
-    "desc": "Forces the target to attack only the caster, using their default skill."
+    "desc": "Prevents new ailments. Does not remove ailments already present; use Cleanse for that.",
+    "icon": "ward-star",
+    "timed": true
+  },
+  "guard": {
+    "name": "Taunt",
+    "cat": "buff",
+    "group": "taunt",
+    "value": 0,
+    "desc": "Protect allies by redirecting enemy basic attacks and single-target Specials to this champion. Runes still follow columns; area attacks, healing and team effects are unchanged.",
+    "icon": "taunt",
+    "timed": true
+  },
+  "counterattack": {
+    "name": "Riposte",
+    "cat": "buff",
+    "group": "counter",
+    "value": 0.5,
+    "desc": "Survive a direct basic attack or Special to strike its attacker for 50% ATK. Rune strikes and DoT do not trigger it; counters cannot chain.",
+    "icon": "counter",
+    "timed": true
+  },
+  "revive_on_death": {
+    "name": "Death Ward",
+    "cat": "buff",
+    "group": "revive",
+    "value": 0.3,
+    "desc": "Revive once per battle at 30% max HP if defeated while active. Can be dispelled; permanent revival passives cannot.",
+    "icon": "revive",
+    "timed": true
   },
   "poison": {
     "name": "Poison",
     "cat": "debuff",
-    "group": "dot",
-    "value": 0.05,
-    "desc": "Deals 5% of the target's max HP at the start of their turn."
+    "group": "dot-poison",
+    "value": 0.04,
+    "desc": "Lose 4% max HP at the start of each board move. Ignores defense and barriers. Different DoT types coexist; repeated Poison refreshes.",
+    "icon": "poison",
+    "timed": true
   },
   "burn": {
     "name": "Burn",
     "cat": "debuff",
-    "group": "dot",
-    "value": 0.05,
-    "desc": "Deals 5% of the target's max HP at the start of their turn."
-  },
-  "aoe": {
-    "name": "AoE",
-    "cat": "effect",
-    "group": "shape",
-    "value": 0,
-    "desc": "The attack hits all enemies instead of one."
-  },
-  "ignore_def": {
-    "name": "Ignore DEF",
-    "cat": "effect",
-    "group": "shape",
-    "value": 0.25,
-    "desc": "Ignores 25% of the target's DEF."
-  },
-  "remove_debuffs": {
-    "name": "Remove All Debuffs",
-    "cat": "effect",
-    "group": "shape",
-    "value": 0,
-    "desc": "Clears every debuff from the whole friendly team."
-  },
-  "mana_surge": {
-    "name": "Mana flow",
-    "cat": "buff",
-    "group": "mana",
-    "value": 0.2,
-    "desc": "Gain 20% more tile charge. Does not change attack intervals."
-  },
-  "mana_slow": {
-    "name": "Mana slow",
-    "cat": "debuff",
-    "group": "mana",
-    "value": 0.15,
-    "desc": "Gain 15% less tile charge. Does not change attack intervals."
+    "group": "dot-burn",
+    "value": 0.04,
+    "desc": "Lose 4% max HP at the start of each board move. Ignores defense and barriers. Different DoT types coexist; repeated Burn refreshes.",
+    "icon": "flame",
+    "timed": true
   },
   "frostbite": {
     "name": "Frostbite",
     "cat": "debuff",
-    "group": "dot",
-    "value": 0.05,
-    "desc": "Deals 5% max HP at the start of each affected-unit turn, bypassing shields."
+    "group": "dot-frost",
+    "value": 0.04,
+    "desc": "Lose 4% max HP at the start of each board move. Ignores defense and barriers; it does not change mana speed.",
+    "icon": "snow",
+    "timed": true
+  },
+  "bleed": {
+    "name": "Bleed",
+    "cat": "debuff",
+    "group": "dot-bleed",
+    "value": 0.04,
+    "desc": "Lose 4% max HP at the start of each board move. Ignores defense and barriers. Different DoT types coexist; repeated Bleed refreshes.",
+    "icon": "drop",
+    "timed": true
+  },
+  "remove_debuffs": {
+    "name": "Cleanse",
+    "cat": "buff",
+    "group": "action",
+    "value": 0,
+    "desc": "Instantly remove all timed ailments from the listed allies, including Mana Block and DoT. Does not remove buffs.",
+    "icon": "cleanse",
+    "timed": false
+  },
+  "dispel": {
+    "name": "Dispel",
+    "cat": "debuff",
+    "group": "action",
+    "value": 0,
+    "desc": "Instantly remove all timed buffs from the listed enemies, including Barrier and Taunt. Does not remove passives or ailments; Ailment Ward cannot prevent it.",
+    "icon": "dispel",
+    "timed": false
+  },
+  "mana_raise": {
+    "name": "Mana Gift",
+    "cat": "buff",
+    "group": "action",
+    "value": 0,
+    "desc": "Instantly grant 1.5 tile-equivalent charge to other living allies, capped at their maximum. Not amplified by Mana Flow; prevented by Mana Block.",
+    "icon": "mana-gift",
+    "timed": false
+  },
+  "aoe": {
+    "name": "Area Attack",
+    "cat": "effect",
+    "group": "action",
+    "value": 0,
+    "desc": "This Special hits all living enemies. Area damage is not redirected by Taunt.",
+    "icon": "area",
+    "timed": false
+  },
+  "ignore_def": {
+    "name": "Pierce",
+    "cat": "effect",
+    "group": "action",
+    "value": 0,
+    "desc": "Ignore 25% of effective DEF for this Special. This is a damage property, not a timed ailment.",
+    "icon": "pierce",
+    "timed": false
+  },
+  "vulnerable_red": {
+    "name": "Ember Defense Down",
+    "cat": "debuff",
+    "group": "element-red",
+    "value": 0.25,
+    "desc": "−25% effective DEF against red direct damage. Stacks with Defense Down and Pierce. Other colors and DoT are unaffected.",
+    "icon": "element-down",
+    "timed": true
+  },
+  "vulnerable_blue": {
+    "name": "Frost Defense Down",
+    "cat": "debuff",
+    "group": "element-blue",
+    "value": 0.25,
+    "desc": "−25% effective DEF against blue direct damage. Stacks with Defense Down and Pierce. Other colors and DoT are unaffected.",
+    "icon": "element-down",
+    "timed": true
+  },
+  "vulnerable_green": {
+    "name": "Verdant Defense Down",
+    "cat": "debuff",
+    "group": "element-green",
+    "value": 0.25,
+    "desc": "−25% effective DEF against green direct damage. Stacks with Defense Down and Pierce. Other colors and DoT are unaffected.",
+    "icon": "element-down",
+    "timed": true
+  },
+  "vulnerable_yellow": {
+    "name": "Radiant Defense Down",
+    "cat": "debuff",
+    "group": "element-yellow",
+    "value": 0.25,
+    "desc": "−25% effective DEF against yellow direct damage. Stacks with Defense Down and Pierce. Other colors and DoT are unaffected.",
+    "icon": "element-down",
+    "timed": true
+  },
+  "vulnerable_purple": {
+    "name": "Umbral Defense Down",
+    "cat": "debuff",
+    "group": "element-purple",
+    "value": 0.25,
+    "desc": "−25% effective DEF against purple direct damage. Stacks with Defense Down and Pierce. Other colors and DoT are unaffected.",
+    "icon": "element-down",
+    "timed": true
   }
 }

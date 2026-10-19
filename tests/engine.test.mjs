@@ -2,7 +2,7 @@ import test from 'node:test';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 import {readFile,stat} from 'node:fs/promises';
-import {COLORS,STAGES,advantage,neighbors,findMatches,validMoves,createBattle,swap,activate,cast,validateSave,skillDescription,MANA_SPEEDS,manaLevels,readyLevel} from '../src/engine.js';
+import {COLORS,STAGES,advantage,neighbors,findMatches,validMoves,createBattle,swap,activate,cast,validateSave,skillDescription,MANA_SPEEDS,manaLevels,readyLevel,VERSION} from '../src/engine.js';
 import {STARTER_TEAM,PROFILE_KEY,BATTLE_KEY,LEGACY_BATTLE_KEY,defaultProfile,loadProfile,loadBattle,save,recordVictory} from '../src/storage.js';
 const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url)));
 const make=(seed=42,team=STARTER_TEAM)=>createBattle(roster,team,STAGES[0].id,seed);
@@ -71,12 +71,13 @@ test('tile clears grant one charge each, preserve fractional gains, and cap at e
 test('new roster has one Special, no SPD stat, balanced colors, and all original passives',async()=>{
  const source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url)));
  for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,27);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
- for(const c of roster){assert.equal('spd' in c,false);assert.equal('kit' in c,false);assert.equal('a2' in c,false);assert.equal('a3' in c,false);assert.ok(c.special.name);assert.deepEqual(c.passive,source.find(o=>o.id===c.id).passive);assert.equal(c.rarity,source.find(o=>o.id===c.id).rarity);}
+ for(const c of roster){assert.equal('spd' in c,false);assert.equal('kit' in c,false);assert.equal('a2' in c,false);assert.equal('a3' in c,false);assert.ok(c.special.name);assert.equal(c.passive?.id,source.find(o=>o.id===c.id).passive?.id);assert.equal(c.passive?.name,source.find(o=>o.id===c.id).passive?.name);assert.equal(c.rarity,source.find(o=>o.id===c.id).rarity);}
 });
-test('full Specials merge all original A2/A3 effects without duplicate stacking',async()=>{
+test('full Specials retain merged source effects except deliberate match-3 revisions',async()=>{
+ const changed=JSON.parse(await readFile(new URL('../data/status-design.json',import.meta.url))).champions;
  const source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url)));
- for(const c of roster){const original=source.find(o=>o.id===c.id),expected=new Map();for(const [raw,turns]of [...original.kit.a2,...original.kit.a3]){const id=raw==='inc_spd'?'mana_surge':raw==='dec_spd'?'mana_slow':raw==='burn'&&c.color==='blue'?'frostbite':raw;expected.set(id,Math.max(turns,expected.get(id)||0));}
-  const full=c.special.levels.at(-1);assert.equal(full.aoe,expected.has('aoe'),c.id);assert.equal(full.pierce,expected.has('ignore_def'),c.id);expected.delete('aoe');expected.delete('ignore_def');assert.deepEqual(new Map(full.effects.map(e=>[e.id,e.turns])),expected,c.id);assert.equal(new Set(full.effects.map(e=>e.id)).size,full.effects.length);
+ for(const c of roster){const original=source.find(o=>o.id===c.id),expected=new Map();for(const [raw,turns]of [...original.kit.a2,...original.kit.a3]){const id=raw==='taunt'?'guard':raw==='inc_spd'?'mana_surge':raw==='dec_spd'?'mana_slow':raw==='burn'&&c.color==='blue'?'frostbite':raw;expected.set(id,Math.max(turns,expected.get(id)||0));}
+  if(changed[c.id])continue;const full=c.special.levels.at(-1);assert.equal(full.aoe,expected.has('aoe'),c.id);assert.equal(full.pierce,expected.has('ignore_def'),c.id);expected.delete('aoe');expected.delete('ignore_def');assert.deepEqual(new Map(full.effects.map(e=>[e.id,e.turns])),expected,c.id);assert.equal(new Set(full.effects.map(e=>e.id)).size,full.effects.length);
  }
 });
 test('Legendary and Rare stat means match the supplied max-level reference',()=>{
@@ -91,7 +92,7 @@ test('mana buffs affect enemy Special charge, not attack countdowns',()=>{
 test('legacy saves keep the team/progression and restart active encounters with new rules',()=>{
  const store=memory(),profile=defaultProfile();profile.wins=3;profile.unlocked=2;profile.cleared=['ashen-gate','frozen-pass'];save(store,PROFILE_KEY,profile);
  const legacy=make();legacy.version=1;legacy.moves=9;legacy.heroes.forEach(h=>{h.mana=100;h.manaMax=100;h.hp=50;});save(store,LEGACY_BATTLE_KEY,legacy);const backup=store.getItem(LEGACY_BATTLE_KEY);
- const migrated=loadBattle(store,roster);assert.equal(migrated.version,2);assert.equal(migrated.moves,0);assert.ok(migrated.restartedForRules);assert.deepEqual(migrated.heroes.map(h=>h.id),legacy.heroes.map(h=>h.id));assert.ok(migrated.heroes.every(h=>h.mana===0&&h.hp===h.maxHp));assert.deepEqual(loadProfile(store,roster),profile);assert.equal(store.getItem(LEGACY_BATTLE_KEY),backup);assert.ok(validateSave(migrated,roster));
+ const migrated=loadBattle(store,roster);assert.equal(migrated.version,VERSION);assert.equal(migrated.moves,0);assert.ok(migrated.restartedForRules);assert.deepEqual(migrated.heroes.map(h=>h.id),legacy.heroes.map(h=>h.id));assert.ok(migrated.heroes.every(h=>h.mana===0&&h.hp===h.maxHp));assert.deepEqual(loadProfile(store,roster),profile);assert.equal(store.getItem(LEGACY_BATTLE_KEY),backup);assert.ok(validateSave(migrated,roster));
  save(store,BATTLE_KEY,migrated);assert.deepEqual(loadBattle(store,roster),migrated);
 });
 test('completed legacy victories do not pay or unlock twice during migration',()=>{

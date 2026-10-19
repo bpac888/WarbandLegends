@@ -7,3 +7,5 @@
 5. **Community:** asynchronous raids and defenses, alliances, cooperative bosses and wars after the online foundation is proven.
 
 Later phases are design scope, not implemented features. No existing Warband Legends account, inventory, currency, deployment, repository, or database is migrated or modified by this project. The v0.2 roster now has individually assigned colors, one merged Special per champion, tile-based mana categories and multi-level charging. Further balance remains independent of the original game.
+
+The v0.3 update adds a shared effect catalog and board-move status clock, revised Taunt, selected new utility effects, an in-game effect guide, original vector rune artwork and refined battle presentation.

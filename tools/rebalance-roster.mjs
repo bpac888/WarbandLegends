@@ -1,11 +1,13 @@
 // Reproducible Legends-only roster design. Never reads or writes the original game.
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {EFFECTS,BUFFS} from '../src/effects.js';
 const source=JSON.parse(await readFile('data/source-champions.json','utf8'));
 const design=JSON.parse(await readFile('data/roster-design.json','utf8')).champions;
 export const SPEEDS={very_fast:6.5,fast:8,average:10,slow:12,very_slow:13.5};
 const labels={very_fast:'Very Fast',fast:'Fast',average:'Average',slow:'Slow',very_slow:'Very Slow'};
-const buffIds=new Set(['inc_atk','inc_def','mana_surge','shield','strengthen','heal','block_debuffs','counterattack','revive_on_death']);
+const buffIds=BUFFS;
+const statusDesign=JSON.parse(await readFile('data/status-design.json','utf8')).champions;
 const dotIds=new Set(['poison','burn','frostbite']);
 const targets={
  common:{atk:[460,350,580],def:[450,340,560],hp:[800,620,980]},
@@ -19,6 +21,7 @@ const clone=structuredClone;
 function merge(c){
  const merged=new Map();
  for(const slot of ['a2','a3'])for(let [id,turns]of c.kit[slot]||[]){
+  if(id==='taunt')id='guard';
   if(id==='inc_spd')id='mana_surge';if(id==='dec_spd')id='mana_slow';
   if(id==='burn'&&design[c.id].color==='blue')id='frostbite';
   const previous=merged.get(id);if(previous){previous.turns=Math.max(previous.turns,turns);previous.from.push(slot);}else merged.set(id,{id,turns,from:[slot]});
@@ -39,17 +42,25 @@ function tier(c,entries,level,total,speed,tiles){
  const healing=c.role==='support'?Math.round((c.rarity==='common'?.32:c.rarity==='rare'?.25:.29)*Math.min(1.2,ratio)*pace*100)/100:0;
  const teamShield=c.role==='defense'&&['legendary','mythical'].includes(c.rarity);
  const effects=selected.filter(e=>!['aoe','ignore_def'].includes(e.id)).map(e=>{
-  const scope=e.id==='remove_debuffs'?'allies':buffIds.has(e.id)?(c.role==='support'&&c.rarity!=='common'||teamShield&&e.id==='shield'?'allies':c.role==='support'?'ally':'self'):e.id==='taunt'?'enemies':aoe?'enemies':'enemy';
+  const scope=e.id==='guard'?'self':e.id==='remove_debuffs'?'allies':buffIds.has(e.id)?(c.role==='support'&&c.rarity!=='common'||teamShield&&e.id==='shield'?'allies':c.role==='support'?'ally':'self'):e.id==='taunt'?'enemies':aoe?'enemies':'enemy';
   return {id:e.id,turns:e.turns?Math.max(1,Math.min(3,Math.round(e.turns*(total>1&&level<total?.65:1)))):0,scope};
  });
- return {level,speed,tiles,target,damage,healing,healScope:c.rarity==='common'?'ally':'allies',aoe,pierce:selected.some(e=>e.id==='ignore_def'),effects};
+ const spec={level,speed,tiles,target,damage,healing,healScope:c.rarity==='common'?'ally':'allies',aoe,pierce:selected.some(e=>e.id==='ignore_def'),effects};
+ const changes=statusDesign[c.id];if(changes&&(!changes.fullOnly||level===total)){
+  for(const effect of spec.effects){effect.id=changes.replace?.[effect.id]||effect.id;if(!EFFECTS[effect.id].timed)effect.turns=0;if(effect.id==='mana_block')effect.turns=Math.min(2,effect.turns);}
+  for(const extra of changes.add||[])spec.effects.push({...extra,turns:extra.turns&&level<total?Math.min(1,extra.turns):extra.turns});
+  if(changes.damageScale)spec.damage=Math.round(spec.damage*changes.damageScale*100)/100;
+  if(changes.healingScale)spec.healing=Math.round(spec.healing*changes.healingScale*100)/100;
+ }
+ return spec;
 }
 const roster=source.map(c=>{
  const d=design[c.id];if(!d)throw Error('Missing design '+c.id);
  const entries=merge(c),total=d.chargeLevels||1;
  const levels=Array.from({length:total},(_,i)=>tier(c,entries,i+1,total,total===1?d.manaSpeed:total===2?['fast','average'][i]:['charge_1','charge_2','charge_3'][i],total===1?SPEEDS[d.manaSpeed]:total===2?[8,10][i]:[5,10,15][i]));
  const {spd,kit,ability_desc,...identity}=c;
- return {...identity,color:d.color,manaSpeed:d.manaSpeed,special:{name:c.ability_name,charging:total>1,levels},ability_desc:'',passive:clone(c.passive)};
+ const passive=clone(c.passive);if(passive?.immune){passive.immune=passive.immune.map(id=>id==='dec_spd'?'mana_slow':id==='taunt'?'mana_block':id);if(c.passive.immune.includes('dec_spd'))passive.desc='Immune to Mana Slow.';if(c.passive.immune.includes('taunt'))passive.desc='Immune to Mana Block.';}
+ return {...identity,color:d.color,manaSpeed:d.manaSpeed,special:{name:c.ability_name,charging:total>1,levels},ability_desc:'',passive};
 });
 for(const rarity of Object.keys(targets)){
  const group=roster.filter(c=>c.rarity===rarity);
@@ -63,18 +74,14 @@ for(const rarity of Object.keys(targets)){
  }
 }
 const {skillDescription}=await import('../src/engine.js');
-const effects=JSON.parse(await readFile('data/source-effects.json','utf8'));
-delete effects.inc_spd;delete effects.dec_spd;
-effects.mana_surge={name:'Mana flow',cat:'buff',group:'mana',value:.2,desc:'Gain 20% more tile charge. Does not change attack intervals.'};
-effects.mana_slow={name:'Mana slow',cat:'debuff',group:'mana',value:.15,desc:'Gain 15% less tile charge. Does not change attack intervals.'};
-effects.frostbite={name:'Frostbite',cat:'debuff',group:'dot',value:.05,desc:'Deals 5% max HP at the start of each affected-unit turn, bypassing shields.'};
+const effects=EFFECTS;
 await writeFile('data/effects.json',JSON.stringify(effects,null,2)+'\n');
 for(const c of roster)c.ability_desc=skillDescription(c,effects,c.special.levels.length).text;
 await writeFile('data/champions.json',JSON.stringify(roster,null,2)+'\n');
 const counts=(key,values)=>Object.fromEntries(values.map(v=>[v,roster.filter(c=>c[key]===v).length]));
-const report={version:2,champions:roster.length,colorCounts:counts('color',['red','blue','green','yellow','purple']),manaCounts:counts('manaSpeed',[...Object.keys(SPEEDS),'charging']),chargingChampions:roster.filter(c=>c.special.charging).map(c=>({id:c.id,tiles:c.special.levels.map(l=>l.tiles)})),rarities:Object.fromEntries(Object.keys(targets).map(r=>{const g=roster.filter(c=>c.rarity===r);return [r,{count:g.length,stats:Object.fromEntries(['atk','def','hp'].map(s=>[s,{min:Math.min(...g.map(c=>c[s])),average:g.reduce((n,c)=>n+c[s],0)/g.length,max:Math.max(...g.map(c=>c[s]))}]))}];}))};
+const report={version:3,champions:roster.length,colorCounts:counts('color',['red','blue','green','yellow','purple']),manaCounts:counts('manaSpeed',[...Object.keys(SPEEDS),'charging']),chargingChampions:roster.filter(c=>c.special.charging).map(c=>({id:c.id,tiles:c.special.levels.map(l=>l.tiles)})),rarities:Object.fromEntries(Object.keys(targets).map(r=>{const g=roster.filter(c=>c.rarity===r);return [r,{count:g.length,stats:Object.fromEntries(['atk','def','hp'].map(s=>[s,{min:Math.min(...g.map(c=>c[s])),average:g.reduce((n,c)=>n+c[s],0)/g.length,max:Math.max(...g.map(c=>c[s]))}]))}];}))};
 await writeFile('data/balance-report.json',JSON.stringify(report,null,2)+'\n');
-let table='# Legends champion balance\n\nAll 135 identities and rarities are preserved. Stats are the new max-level baseline; leveling is not implemented yet. Every champion has one Special, with optional charge levels, plus their existing passive where present.\n\n';
+let table='# Legends champion balance\n\nAll 135 identities and rarities are preserved. Stats are the new max-level baseline; leveling is not implemented yet. Every champion has one Special, with optional charge levels, plus their adapted passive where present.\n\n';
 table+='| Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |\n| --- | --- | --- | --- | ---: | ---: | ---: | --- |\n';
 for(const c of roster)table+=`| ${c.name} | ${c.rarity} | ${c.color} | ${c.role} | ${c.atk} | ${c.def} | ${c.hp} | ${c.special.charging?'Charging '+c.special.levels.map(l=>l.tiles).join(' / '):labels[c.manaSpeed]+' '+c.special.levels[0].tiles} |\n`;
 table+='\n## Specials\n\n';

@@ -4,7 +4,7 @@ Validated with Node.js 24 and Chromium on 2026-10-18 (first foundation and v0.2 
 
 ## Automated checks
 
-`npm run check` runs 38 combat/data/save tests and builds the production site. These cover seeded boards, legal moves, elemental rules, invalid swaps, intersecting matches, gravity/cascades, Blast/Prism creation and chains, missing colors, same-color stacks, empty lanes, enemy countdowns, dead enemies, signature targeting and mana, healing/cleanse/buffs, immunities, status expiry, revival, win/loss, kit descriptions, deterministic save recovery and malformed saves. Thirty seeded encounters simulate through completion. Initial boards are checked across 100 seeds.
+`npm run check` runs 58 combat/data/save tests and builds the production site. These cover seeded boards, legal moves, elemental rules, invalid swaps, intersecting matches, gravity/cascades, Blast/Prism creation and chains, missing colors, same-color stacks, empty lanes, enemy countdowns, dead enemies, signature targeting and mana, healing/cleanse/buffs, immunities, status expiry, revival, win/loss, kit descriptions, deterministic save recovery and malformed saves. Thirty seeded encounters simulate through completion. Initial boards are checked across 100 seeds.
 
 All 135 original IDs were compared with the source definitions; a fixed source-ID digest guards against accidental renaming. Every champion's local portrait exists and the production build verifies its size and path. The source checkout and original remote branch remain unchanged.
 
@@ -21,7 +21,7 @@ npm run test:browser
 
 Optional `PLAYWRIGHT_MODULE` and `CHROMIUM_PATH` environment variables select an existing installation. They are only for local QA and are not hosting configuration.
 
-The browser test loads the built files through an intercepted test origin and verifies home rendering, 135-champion roster/search, encounter start/help, 35 runes, five heroes, three enemies, keyboard swaps and restored focus, drag swaps, save/reload, animation speed, charged-skill targeting, victory unlocks, and 390px/320px layout without horizontal overflow. It checks for browser errors, missing files, and external requests. Six screenshots are written to ignored `artifacts/` for visual review.
+The browser test loads the built files through an intercepted test origin and verifies home rendering, 135-champion roster/search, encounter start/help, 35 runes, five heroes, three enemies, keyboard swaps and restored focus, drag swaps, save/reload, animation speed, charged-skill targeting, victory unlocks, and 390px/320px layout without horizontal overflow. It checks for browser errors, missing files, and external requests. Eight screenshots are written to ignored `artifacts/` for visual review.
 
 Desktop home/battle and mobile battle screens were visually reviewed. Effects and projectile animation have reduced-motion support. These checks establish the first playable foundation; long-term balance and broader device/user playtesting remain part of the next phase.
 
@@ -32,3 +32,11 @@ Additional checks cover exact 6.5/8/10/12/13.5 standard thresholds, 8/10 and 5/1
 Browser coverage includes the Charging roster filter, all-level Special previews, returning to a filtered roster, both charging formats, holding charge, disabled locked levels, zero-move casts, 320px charging dialogs and v1 migration feedback. Visual review includes the mobile charge dialog and filtered roster.
 
 A simple policy using the first legal move and spending ready Specials was simulated for 50 seeds per encounter. Results were 50/50 Ashen Gate wins (8.0 moves average), 50/50 Frozen Pass wins (10.6), and 25/50 Veil Sanctum wins (12.4). This is a regression smoke check, not a claim of final balance or optimal play. It used the original saved starter team after color reassignment; new profiles now start with a rainbow team. Wider player testing remains necessary.
+
+## Status and visual update · v0.3
+
+Twenty additional interaction checks verify Attack Up/Tile Boost separation and multiplication, opposing-effect replacement, same-ID refreshes, blocked-application order, barrier refresh, generic/elemental/Pierce defense layers, mana block and flat gifts, cleanse vs dispel, ward timing, a shared board-move clock, four distinct DoT types, single-target vs area Taunt behavior, basic-attack protection, non-chaining Riposte, actual passive immunities, authored effect validity and v2 save preservation. Combined with the 38 existing combat/roster tests, all 58 pass.
+
+Expanded browser checks verify the effect-guide tabs, effect definitions, tappable mobile active-status details, all 35 loaded vector rune images, and v2 migration preserving HP/charge/board/turn count. Desktop and 320px/390px layouts were visually reviewed. Eight screenshots are produced by the browser test. No missing assets, external runtime calls or browser errors were observed.
+
+The same first-legal-move/ready-Special policy over 50 seeds per encounter in v0.3 yielded 50/50 Ashen Gate wins (7.86 moves average), 50/50 Frozen Pass wins (10.6), and 26/50 Veil Sanctum wins (13.32). These are regression smoke results rather than final player-balance claims.

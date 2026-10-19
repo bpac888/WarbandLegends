@@ -21,9 +21,9 @@
       "name": "Unclosing Wound",
       "kind": "immune_control",
       "immune": [
-        "taunt"
+        "mana_block"
       ],
-      "desc": "Cannot be Taunted."
+      "desc": "Immune to Mana Block."
     },
     "manaSpeed": "very_slow",
     "special": {
@@ -102,9 +102,9 @@
               "scope": "enemy"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 1,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -325,9 +325,9 @@
               "scope": "allies"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 1,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -479,7 +479,7 @@
               "scope": "enemy"
             },
             {
-              "id": "dec_atk",
+              "id": "vulnerable_yellow",
               "turns": 3,
               "scope": "enemy"
             }
@@ -534,7 +534,7 @@
               "scope": "allies"
             },
             {
-              "id": "inc_atk",
+              "id": "tile_boost",
               "turns": 3,
               "scope": "allies"
             }
@@ -941,8 +941,8 @@
               "scope": "enemies"
             },
             {
-              "id": "block_buffs",
-              "turns": 2,
+              "id": "dispel",
+              "turns": 0,
               "scope": "enemies"
             }
           ]
@@ -1091,8 +1091,8 @@
               "scope": "enemy"
             },
             {
-              "id": "block_buffs",
-              "turns": 1,
+              "id": "dispel",
+              "turns": 0,
               "scope": "enemy"
             }
           ]
@@ -1152,9 +1152,9 @@
               "scope": "self"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 3,
-              "scope": "enemies"
+              "scope": "self"
             },
             {
               "id": "shield",
@@ -1212,9 +1212,9 @@
               "scope": "enemy"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 3,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -1377,9 +1377,9 @@
       "name": "Glacier's Patience",
       "kind": "immune_effect",
       "immune": [
-        "dec_spd"
+        "mana_slow"
       ],
-      "desc": "Immune to Decrease SPD."
+      "desc": "Immune to Mana Slow."
     },
     "manaSpeed": "very_slow",
     "special": {
@@ -1474,9 +1474,9 @@
               "scope": "self"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 3,
-              "scope": "enemies"
+              "scope": "self"
             },
             {
               "id": "shield",
@@ -1524,7 +1524,7 @@
           "pierce": true,
           "effects": [
             {
-              "id": "dec_def",
+              "id": "bleed",
               "turns": 2,
               "scope": "enemies"
             }
@@ -1624,8 +1624,8 @@
           "pierce": true,
           "effects": [
             {
-              "id": "mana_slow",
-              "turns": 3,
+              "id": "mana_block",
+              "turns": 2,
               "scope": "enemy"
             },
             {
@@ -1784,7 +1784,7 @@
               "scope": "enemy"
             },
             {
-              "id": "dec_def",
+              "id": "vulnerable_red",
               "turns": 3,
               "scope": "enemy"
             }
@@ -1839,7 +1839,7 @@
               "scope": "enemy"
             },
             {
-              "id": "mana_slow",
+              "id": "vulnerable_purple",
               "turns": 1,
               "scope": "enemy"
             }
@@ -1889,7 +1889,7 @@
               "scope": "self"
             },
             {
-              "id": "burn",
+              "id": "bleed",
               "turns": 1,
               "scope": "enemy"
             }
@@ -2559,9 +2559,9 @@
               "scope": "allies"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 2,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -2848,9 +2848,9 @@
           "pierce": false,
           "effects": [
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 1,
-              "scope": "enemies"
+              "scope": "self"
             },
             {
               "id": "inc_def",
@@ -3096,6 +3096,11 @@
               "id": "frostbite",
               "turns": 2,
               "scope": "enemy"
+            },
+            {
+              "id": "tile_boost",
+              "turns": 2,
+              "scope": "self"
             }
           ]
         }
@@ -3188,9 +3193,9 @@
           "pierce": false,
           "effects": [
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 1,
-              "scope": "enemies"
+              "scope": "self"
             },
             {
               "id": "strengthen",
@@ -3615,7 +3620,7 @@
           "speed": "fast",
           "tiles": 8,
           "target": "enemy",
-          "damage": 2.37,
+          "damage": 2.13,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -3625,12 +3630,17 @@
               "id": "mana_slow",
               "turns": 3,
               "scope": "enemy"
+            },
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 237% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 213% ATK damage to one enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "camel_rider_rashid",
@@ -4108,9 +4118,9 @@
               "scope": "self"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 2,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -4383,8 +4393,8 @@
           "pierce": false,
           "effects": [
             {
-              "id": "mana_slow",
-              "turns": 3,
+              "id": "mana_block",
+              "turns": 2,
               "scope": "enemy"
             },
             {
@@ -4758,8 +4768,8 @@
               "scope": "enemy"
             },
             {
-              "id": "block_buffs",
-              "turns": 1,
+              "id": "dispel",
+              "turns": 0,
               "scope": "enemy"
             },
             {
@@ -4821,6 +4831,11 @@
               "id": "revive_on_death",
               "turns": 2,
               "scope": "allies"
+            },
+            {
+              "id": "mana_raise",
+              "turns": 0,
+              "scope": "other_allies"
             }
           ]
         }
@@ -4975,7 +4990,7 @@
           "pierce": false,
           "effects": [
             {
-              "id": "mana_slow",
+              "id": "mana_block",
               "turns": 1,
               "scope": "enemies"
             },
@@ -5120,9 +5135,9 @@
           "pierce": false,
           "effects": [
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 1,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -5186,9 +5201,9 @@
               "scope": "allies"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 2,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -5391,9 +5406,9 @@
               "scope": "self"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 1,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -5504,7 +5519,7 @@
           "pierce": false,
           "effects": [
             {
-              "id": "inc_atk",
+              "id": "tile_boost",
               "turns": 1,
               "scope": "allies"
             },
@@ -5604,7 +5619,7 @@
           "pierce": false,
           "effects": [
             {
-              "id": "dec_def",
+              "id": "bleed",
               "turns": 1,
               "scope": "enemy"
             }
@@ -5654,7 +5669,7 @@
               "scope": "enemy"
             },
             {
-              "id": "weaken",
+              "id": "vulnerable_green",
               "turns": 1,
               "scope": "enemy"
             }
@@ -5972,9 +5987,9 @@
               "scope": "self"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 2,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -6122,9 +6137,9 @@
               "scope": "self"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 2,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -6289,7 +6304,7 @@
           "speed": "average",
           "tiles": 10,
           "target": "enemy",
-          "damage": 2.63,
+          "damage": 2.37,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -6304,12 +6319,17 @@
               "id": "weaken",
               "turns": 2,
               "scope": "enemy"
+            },
+            {
+              "id": "tile_boost",
+              "turns": 2,
+              "scope": "self"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to one enemy."
   },
   {
     "template_id": "ilyra_snowglass",
@@ -6346,7 +6366,7 @@
           "pierce": true,
           "effects": [
             {
-              "id": "mana_slow",
+              "id": "vulnerable_blue",
               "turns": 1,
               "scope": "enemy"
             }
@@ -6396,9 +6416,9 @@
               "scope": "self"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 2,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }
@@ -6730,7 +6750,7 @@
           "speed": "fast",
           "tiles": 8,
           "target": "enemy",
-          "damage": 2.37,
+          "damage": 2.13,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -6740,12 +6760,17 @@
               "id": "block_buffs",
               "turns": 2,
               "scope": "enemy"
+            },
+            {
+              "id": "bleed",
+              "turns": 2,
+              "scope": "enemy"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 237% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 213% ATK damage to one enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "tovin_glassheart",
@@ -6821,7 +6846,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.29,
+          "healing": 0.26,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -6840,12 +6865,17 @@
               "id": "block_debuffs",
               "turns": 2,
               "scope": "allies"
+            },
+            {
+              "id": "mana_raise",
+              "turns": 0,
+              "scope": "other_allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 29% max HP to all living allies."
+    "ability_desc": "Restore 26% max HP to all living allies."
   },
   {
     "template_id": "tariq_glass_dervish",
@@ -6937,9 +6967,9 @@
               "scope": "allies"
             },
             {
-              "id": "taunt",
+              "id": "guard",
               "turns": 1,
-              "scope": "enemies"
+              "scope": "self"
             }
           ]
         }

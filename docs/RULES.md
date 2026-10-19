@@ -1,4 +1,4 @@
-# Legends combat rules · v0.2
+# Legends combat rules · v0.3
 
 ## The roster
 
@@ -17,11 +17,11 @@ Rare uses the owner's supplied Epic reference without introducing a fifth rarity
 
 ## One Special per champion
 
-Each champion now has **one Special**. Original A2 and A3 effects are merged into its full form; duplicate effects use their longest duration and never apply twice. An original AoE component makes the attack hit all enemies; Pierce ignores 25% of DEF. Original passives remain independent.
+Each champion now has **one Special**. Original A2 and A3 effects are merged into its full form; duplicate effects use their longest duration and never apply twice. An original AoE component makes the attack hit all enemies; Pierce ignores 25% of DEF. Passives remain independent; obsolete SPD/Taunt-ailment immunities are adapted to the current mana rules.
 
-A Special's damage coefficient, healing percentage, targets, effects and durations are explicit data. ATK Specials emphasize damage; DEF Specials strike while protecting or controlling; SUP Specials heal and empower their allies, with a light strike if their merged kit has offensive debuffs. Common support targets one living ally, while higher-tier supports affect the living team. Legendary/Mythical defender shields protect the team. Taunt affects all enemies. Cleanse removes team debuffs before new buffs and healing. Buffs apply before the Special's damage; debuffs apply before its hits.
+A Special's damage coefficient, healing percentage, targets, effects and durations are explicit data. ATK Specials emphasize damage; DEF Specials strike while protecting or controlling; SUP Specials heal and empower their allies, with a light strike if their merged kit has offensive debuffs. Common support targets one living ally, while higher-tier supports affect the living team. Legendary/Mythical defender shields protect the team. Taunt is a buff on the defender that redirects single-target enemy attacks. It leaves area attacks, tile columns and ally effects unchanged. Cleanse removes team debuffs before new buffs and healing. Buffs apply before the Special's damage; debuffs apply before its hits.
 
-Original SPD is removed as a character stat. Original speed buffs/debuffs become **Mana flow (+20% charge)** and **Mana slow (−15% charge)**. They do not affect attack countdowns. Frost-themed champions' former Burn becomes Frostbite, with the same damage-over-time rules.
+The complete status audit, revised stacking rules and targeted champion changes are described in [the status review](STATUS-REVIEW.md). Original SPD is removed as a character stat. Original speed buffs/debuffs become **Mana flow (+20% charge)** and **Mana slow (−15% charge)**. They do not affect attack countdowns. Frost-themed champions' former Burn becomes Frostbite, with the same damage-over-time rules.
 
 ## Tile-based mana
 
@@ -58,14 +58,16 @@ Rune power is `0.24 × sum(effective matching ATK × role modifier) × cascade m
 
 ## Effects and turns
 
-ATK/DEF up/down modify their stat by +25%/−25%; Strengthen reduces damage by 15%, Weaken increases it by 15%. Shield is 20% max HP, modified by shield passives. Poison, Burn and Frostbite each deal 5% max HP per affected-unit turn, bypassing shields. Regeneration restores 10% max HP. Counterattack strikes for 50% ATK without recursively countering; rune strikes do not trigger it. Death ward revives once at 30% HP, while passive revival uses its original fraction and a separate once-per-battle flag. Passive regeneration, immunities, shield boosts and unblockable buffs are retained.
+Effects share a catalog in `src/effects.js`, used by combat and UI descriptions. Attack Up increases tile/basic/Special damage by 25%; Tile Boost separately increases only tile damage by 35%. Generic and matching elemental Defense Down each multiply effective DEF by 0.75, as does Pierce for its hit. Damage Ward and Vulnerability modify direct damage after armor by −15%/+15%. Barriers absorb up to 20% max HP and refresh their pool on recast. Timed effects are not permanent passives.
 
-Durations count the affected unit's turns. Heroes take one with each valid board move; enemies take one at countdown zero. Newly applied effects do not decrement at the end of the same move. Taunt forces an enemy's basic attack at its living source and blocks a taunted champion's Special; rune attacks still follow columns.
+Same-ID effects replace their duration/source without stacking. Opposing Attack, Defense, Mana and Protection effects replace one another when successfully applied. Different categories combine. Poison, Burn, Frostbite and Bleed each deal 4% max HP per board move; the four types coexist, while repeats of a type refresh. Regeneration heals 10% max HP. Defense, barriers and direct-damage modifiers do not affect DoT. Cleanse removes ailments; Dispel removes timed buffs, including barriers and Taunt, but neither removes passives.
 
-Each completed board move advances every living enemy countdown once. At zero an enemy gains **4 tile-equivalent charge**, modified by mana effects. When fully charged it casts its full Special, otherwise it makes a basic attack. Charging enemies wait for their final level. Basic attacks have an 8% critical chance for 1.5× damage. Countdown timing is separate from mana category; no numeric SPD stat is used. Enemy HP/ATK/DEF scale from the selected team's mean stats in the three introductory encounters.
+Mana Block prevents generated and gifted mana without deleting stored charge or disabling a ready Special. Mana Gift grants 1.5 flat tile-equivalent charge to other living allies, capped at their maximum and unmodified by generation effects. Taunt protects allies by redirecting single-target enemy basics and Specials; it never prevents casting. Riposte returns a 50%-ATK strike after surviving direct basic/Special damage, but not after runes or DoT, and cannot chain. Death Ward and passive revival use separate once-per-battle flags.
+
+Every valid board move ticks both sides' regeneration and DoT at its start, then decrements existing timed effects after the enemy phase. Newly applied effects survive the end of their application move. Champion casts, invalid swaps and menus do not advance the clock. Enemy countdowns still advance once per full move/cascade. At zero an enemy gains 4 tile-equivalent charge, modified or blocked by mana effects, and uses its full Special if ready; otherwise it makes a basic attack. Basic attacks have an 8% critical chance for 1.5× damage. Enemy stats scale from the selected team in the introductory encounters.
 
 ## Saved games
 
-Team selections, victories, cleared encounters and animation speed keep their existing independent profile key. Battles use `legends.runes.battle.v2`; the old v1 record is retained as a backup. An old active encounter **restarts with full health and zero charge under the new rules**; the interface explains this once. Completed old victories retain their ID so they cannot be recorded twice. Subsequent v2 battles resume exactly, including fractional charge and available levels.
+Team selections, victories, cleared encounters and animation speed keep their independent profile key. Battles use `legends.runes.battle.v3`. v0.2 battles migrate while preserving health, charge, board, RNG and turn counts; old Taunt ailments become buffs on their living source. Older v0.1 active battles restart with full health and zero charge, as in the previous migration. Old records remain backups, and completed victories retain their ID to prevent duplicate credit.
 
 Actions save before visual playback. Local saves are single-player browser data, not a competitive authority. This project does not access the original Warband Legends account, repository, API, deployment or database.

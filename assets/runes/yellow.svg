@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Radiant rune">
+ <defs>
+ <linearGradient id="metal" x2=".8" y2="1"><stop stop-color="#fbefd4"/><stop offset=".22" stop-color="#ffe4aa"/><stop offset=".48" stop-color="#526274"/><stop offset=".7" stop-color="#263345"/><stop offset=".9" stop-color="#ffe4aa"/><stop offset="1" stop-color="#8e7c66"/></linearGradient>
+ <radialGradient id="crystal" cx=".35" cy=".16" r=".94"><stop stop-color="#fff5bc"/><stop offset=".37" stop-color="#d8a337"/><stop offset="1" stop-color="#745027"/></radialGradient>
+ <linearGradient id="gleam" x2=".5" y2="1"><stop stop-color="#fffce9" stop-opacity=".75"/><stop offset=".4" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <linearGradient id="crest" x2=".5" y2="1"><stop stop-color="#fffdf2"/><stop offset=".5" stop-color="#f7e8c6"/><stop offset="1" stop-color="#bba17c"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#020a12" flood-opacity=".75"/></filter>
+ <clipPath id="cut"><polygon points="128,10 233,49 225,168 194,215 128,243 62,215 31,168 23,49" transform="translate(128 128) scale(.835) translate(-128 -128)"/></clipPath>
+ </defs>
+ <polygon points="128,10 233,49 225,168 194,215 128,243 62,215 31,168 23,49" fill="#071321" stroke="#040a12" stroke-width="9" stroke-linejoin="round" transform="translate(0 4)"/>
+ <polygon points="128,10 233,49 225,168 194,215 128,243 62,215 31,168 23,49" fill="url(#metal)" stroke="#d3c8ae" stroke-opacity=".55" stroke-width="1.6" stroke-linejoin="round"/>
+ <polygon points="128,10 233,49 225,168 194,215 128,243 62,215 31,168 23,49" fill="#152534" stroke="#102130" stroke-width="3" transform="translate(128 128) scale(.9) translate(-128 -128)"/>
+ <polygon points="128,10 233,49 225,168 194,215 128,243 62,215 31,168 23,49" fill="url(#crystal)" stroke="#fff5bc" stroke-opacity=".7" stroke-width="2" transform="translate(128 128) scale(.835) translate(-128 -128)"/>
+ <g clip-path="url(#cut)">
+ <path d="m18 15 110 54 110-54-12 100-57-22-41-24-43 26-66 22Z" fill="url(#gleam)"/>
+ <path d="m18 15 67 80-19 74-48 69Zm220 0-69 78 21 76 48 69Z" fill="#fff" opacity=".09"/>
+ <path d="m18 238 48-69 62 31 62-31 48 69-110 32Z" fill="#040e25" opacity=".28"/>
+ <path d="m18 15 67 80m153-80-69 78M18 238l48-69m172 69-48-69" stroke="#fff5bc" stroke-opacity=".35" stroke-width="1.4"/>
+ <ellipse cx="113" cy="42" rx="90" ry="29" fill="#fff" opacity=".12"/>
+ <path d="m61 76 16-16m5-5 9-9m94 130-12 12" stroke="#fff" opacity=".2" stroke-width="2"/>
+ </g>
+ <polygon points="128,10 233,49 225,168 194,215 128,243 62,215 31,168 23,49" fill="none" stroke="#fff5bc" stroke-opacity=".26" stroke-width="1.4" transform="translate(128 128) scale(.76) translate(-128 -128)"/>
+ <g fill="none" stroke="#ffe4aa" stroke-opacity=".7" stroke-width="1.4"><path d="m90 31 13 6-7 4 11 4m59-14-13 6 7 4-11 4M66 205l12-3 2 8 10-1m100-4-12-3-2 8-10-1"/></g>
+ <g fill="#fff7d7" opacity=".7"><circle cx="128" cy="24" r="2.4"/><circle cx="128" cy="228" r="2.4"/></g>
+ <g transform="translate(64 61) scale(2)" fill="url(#crest)" color="#f7f4e6" filter="url(#shadow)"><path d="m32 4 6 16 16-6-6 16 13 5-16 6 6 15-16-6-5 13-6-16-15 6 6-16-13-5 16-6-6-15 16 6Z" transform="translate(1 -2) scale(.95)"/><circle cx="32" cy="32" r="9" fill="#9b702e"/><circle cx="32" cy="32" r="5" fill="#fff1b0"/></g>
+ <path d="m66 44 12-3-10 7Z" fill="#fff9e6" opacity=".7"/>
+ </svg>

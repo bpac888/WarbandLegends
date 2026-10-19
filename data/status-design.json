@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "champions": {
+    "steel_oracle": {"replace":{"inc_atk":"tile_boost"}},
+    "jade_mender_lian": {"replace":{"inc_atk":"tile_boost"}},
+    "beastmaster_gharn": {"add":[{"id":"tile_boost","turns":2,"scope":"self"}]},
+    "sahri_sunspoke": {"add":[{"id":"tile_boost","turns":2,"scope":"self"}],"damageScale":0.9},
+    "brimstone_witch": {"replace":{"dec_def":"vulnerable_red"}},
+    "ilyra_snowglass": {"replace":{"mana_slow":"vulnerable_blue"}},
+    "vitriol_stalker_syth": {"replace":{"weaken":"vulnerable_green"}},
+    "transmuter_prime": {"replace":{"dec_atk":"vulnerable_yellow"}},
+    "veil_dancer": {"replace":{"mana_slow":"vulnerable_purple"}},
+    "shade_prince": {"replace":{"mana_slow":"mana_block"}},
+    "neon_hologram_assassin": {"replace":{"mana_slow":"mana_block"}},
+    "neon_singularity_reaper": {"replace":{"mana_slow":"mana_block"},"fullOnly":true},
+    "neon_hacker_empress": {"add":[{"id":"mana_raise","turns":0,"scope":"other_allies"}]},
+    "suyin_monsoon_bell": {"add":[{"id":"mana_raise","turns":0,"scope":"other_allies"}],"healingScale":0.9},
+    "wraith_archer": {"replace":{"block_buffs":"dispel"}},
+    "desert_assassin": {"add":[{"id":"dispel","turns":0,"scope":"enemy"}],"damageScale":0.9},
+    "neon_laser_blade": {"replace":{"block_buffs":"dispel"}},
+    "dragonmage": {"replace":{"block_buffs":"dispel"},"fullOnly":true},
+    "lady_death": {"replace":{"dec_def":"bleed"}},
+    "crimson_castellan": {"replace":{"burn":"bleed"}},
+    "redknife_tavin": {"replace":{"dec_def":"bleed"}},
+    "nera_red_ledger": {"add":[{"id":"bleed","turns":2,"scope":"enemy"}],"damageScale":0.9}
+  }
+}

@@ -1,6 +1,6 @@
 # Legends champion balance
 
-All 135 identities and rarities are preserved. Stats are the new max-level baseline; leveling is not implemented yet. Every champion has one Special, with optional charge levels, plus their existing passive where present.
+All 135 identities and rarities are preserved. Stats are the new max-level baseline; leveling is not implemented yet. Every champion has one Special, with optional charge levels, plus their adapted passive where present.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -144,83 +144,83 @@ All 135 identities and rarities are preserved. Stats are the new max-level basel
 
 ### Yshmir, the Worldwound — Unmake
 
-- 13.5 tiles: Deal 201% ATK damage to all living enemies, ignoring 25% of DEF. Buff seal (All living enemies, 2 turns); DEF down (All living enemies, 1 turns).
+- 13.5 tiles: Deal 201% ATK damage to all living enemies, ignoring 25% of DEF. Buff Seal (All living enemies, 2 turns); Defense Down (All living enemies, 1 turns).
 
-Passive: **Unclosing Wound** — Cannot be Taunted.
+Passive: **Unclosing Wound** — Immune to Mana Block.
 
 ### Ossir, Necropolis Titan — Verdict of the Silent Court
 
-- 12 tiles: Deal 176% ATK damage to one enemy. Strengthen (Self, 1 turns); ATK down (Selected enemy, 3 turns); Taunt (All living enemies, 1 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Damage Ward (Self, 1 turns); Attack Down (Selected enemy, 3 turns); Taunt (Self, 1 turns).
 
 ### Malzhur, the Abyss Lord — Cinder Cataclysm
 
-- 13.5 tiles: Deal 201% ATK damage to all living enemies. ATK down (All living enemies, 3 turns); ATK up (Self, 2 turns); Poison (All living enemies, 2 turns).
+- 13.5 tiles: Deal 201% ATK damage to all living enemies. Attack Down (All living enemies, 3 turns); Attack Up (Self, 2 turns); Poison (All living enemies, 2 turns).
 
 Passive: **Cold of the Pit** — Immune to Burn.
 
 ### Ashrim, Quicksilver Saboteur — Solvent Injection
 
-- 8 tiles: Deal 252% ATK damage to one enemy. DEF down (Selected enemy, 3 turns); Poison (Selected enemy, 2 turns).
+- 8 tiles: Deal 252% ATK damage to one enemy. Defense Down (Selected enemy, 3 turns); Poison (Selected enemy, 2 turns).
 
 ### Yorkine, Voltaic Priest — Arc Communion
 
-- 12 tiles: Restore 32% max HP to all living allies. Debuff ward (All living allies, 3 turns); Regeneration (All living allies, 3 turns); Cleanse (All living allies).
+- 12 tiles: Restore 32% max HP to all living allies. Ailment Ward (All living allies, 3 turns); Regeneration (All living allies, 3 turns); Cleanse (All living allies).
 
 ### The Bronze Juggernaut — Steam Purge
 
-- 12 tiles: Deal 176% ATK damage to one enemy. Strengthen (Self, 1 turns); Shield (All living allies, 1 turns); Taunt (All living enemies, 1 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Damage Ward (Self, 1 turns); Barrier (All living allies, 1 turns); Taunt (Self, 1 turns).
 
 ### Fen, the Spore Adept — Colony Bloom
 
-- Charge 1 · 8 tiles: Restore 17% max HP to all living allies. Debuff ward (All living allies, 1 turns).
-- Charge 2 · 10 tiles: Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy. Debuff ward (All living allies, 2 turns); Poison (Selected enemy, 2 turns).
+- Charge 1 · 8 tiles: Restore 17% max HP to all living allies. Ailment Ward (All living allies, 1 turns).
+- Charge 2 · 10 tiles: Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy. Ailment Ward (All living allies, 2 turns); Poison (Selected enemy, 2 turns).
 
 ### Auroline, Transmuter Prime — Prismatic Transmutation
 
 - Charge 1 · 5 tiles: Deal 106% ATK damage to one enemy. Poison (Selected enemy, 2 turns).
 - Charge 2 · 10 tiles: Deal 196% ATK damage to one enemy, ignoring 25% of DEF. Poison (Selected enemy, 2 turns).
-- Charge 3 · 15 tiles: Deal 314% ATK damage to one enemy, ignoring 25% of DEF. Poison (Selected enemy, 3 turns); ATK down (Selected enemy, 3 turns).
+- Charge 3 · 15 tiles: Deal 314% ATK damage to one enemy, ignoring 25% of DEF. Poison (Selected enemy, 3 turns); Radiant Defense Down (Selected enemy, 3 turns).
 
 ### The Oracle — Golden Prophecy
 
-- 10 tiles: Restore 29% max HP to all living allies. Mana flow (All living allies, 1 turns); Shield (All living allies, 1 turns); ATK up (All living allies, 3 turns).
+- 10 tiles: Restore 29% max HP to all living allies. Mana Flow (All living allies, 1 turns); Barrier (All living allies, 1 turns); Tile Boost (All living allies, 3 turns).
 
 ### Vex, the Elixir Apotheon — Apotheotic Draught
 
-- Charge 1 · 5 tiles: Deal 110% ATK damage to one enemy, ignoring 25% of DEF. Mana slow (Selected enemy, 1 turns).
-- Charge 2 · 10 tiles: Deal 202% ATK damage to one enemy, ignoring 25% of DEF. Mana slow (Selected enemy, 1 turns); Regeneration (Self, 1 turns).
-- Charge 3 · 15 tiles: Deal 190% ATK damage to all living enemies, ignoring 25% of DEF. Mana slow (All living enemies, 2 turns); Regeneration (Self, 2 turns).
+- Charge 1 · 5 tiles: Deal 110% ATK damage to one enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 1 turns).
+- Charge 2 · 10 tiles: Deal 202% ATK damage to one enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 1 turns); Regeneration (Self, 1 turns).
+- Charge 3 · 15 tiles: Deal 190% ATK damage to all living enemies, ignoring 25% of DEF. Mana Slow (All living enemies, 2 turns); Regeneration (Self, 2 turns).
 
 Passive: **Perfected Blood** — Immune to Poison.
 
 ### Drekka the Scavenger — Carrion Strike
 
-- 8 tiles: Deal 217% ATK damage to one enemy. ATK down (Selected enemy, 2 turns).
+- 8 tiles: Deal 217% ATK damage to one enemy. Attack Down (Selected enemy, 2 turns).
 
 ### The Hooded Thrall — Veil Step
 
-- 10 tiles: Restore 25% max HP to all living allies. DEF up (All living allies, 1 turns); Regeneration (All living allies, 3 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Defense Up (All living allies, 1 turns); Regeneration (All living allies, 3 turns).
 
 ### Brakkar the Pit Grunt — Cleaver Charge
 
-- 10 tiles: Deal 150% ATK damage to one enemy. Counterattack (Self, 3 turns); ATK down (Selected enemy, 1 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Riposte (Self, 3 turns); Attack Down (Selected enemy, 1 turns).
 
 ### Acolyte Iyr — Hexlight
 
-- 10 tiles: Restore 32% max HP to one living ally. ATK up (Selected ally, 2 turns).
+- 10 tiles: Restore 32% max HP to one living ally. Attack Up (Selected ally, 2 turns).
 
 ### Vethra Witchblade — Hellforge Slash
 
-- 10 tiles: Deal 165% ATK damage to all living enemies. Weaken (All living enemies, 3 turns); Burn (All living enemies, 3 turns).
+- 10 tiles: Deal 165% ATK damage to all living enemies. Vulnerability (All living enemies, 3 turns); Burn (All living enemies, 3 turns).
 
 ### Dragon Mage — Dragonfire
 
 - Charge 1 · 8 tiles: Deal 112% ATK damage to all living enemies. Burn (All living enemies, 1 turns).
-- Charge 2 · 10 tiles: Deal 165% ATK damage to all living enemies. Burn (All living enemies, 1 turns); Buff seal (All living enemies, 2 turns).
+- Charge 2 · 10 tiles: Deal 165% ATK damage to all living enemies. Burn (All living enemies, 1 turns); Dispel (All living enemies).
 
 ### Quill, the Plague Sovereign — Censer of Rot
 
-- 13.5 tiles: Restore 34% max HP to all living allies. Debuff ward (All living allies, 2 turns); Cleanse (All living allies); Death ward (All living allies, 2 turns).
+- 13.5 tiles: Restore 34% max HP to all living allies. Ailment Ward (All living allies, 2 turns); Cleanse (All living allies); Death Ward (All living allies, 2 turns).
 
 ### Dragon Slayer — Dragon Slash
 
@@ -228,73 +228,73 @@ Passive: **Perfected Blood** — Immune to Poison.
 
 ### Selka the Wraith — Bone Quiver
 
-- 6.5 tiles: Deal 224% ATK damage to one enemy, ignoring 25% of DEF. Weaken (Selected enemy, 1 turns); Buff seal (Selected enemy, 1 turns).
+- 6.5 tiles: Deal 224% ATK damage to one enemy, ignoring 25% of DEF. Vulnerability (Selected enemy, 1 turns); Dispel (Selected enemy).
 
 ### Ashwind Warden — Sweeping Edge
 
-- 12 tiles: Deal 181% ATK damage to one enemy. Strengthen (Self, 2 turns); DEF up (Self, 2 turns); Taunt (All living enemies, 3 turns); Shield (All living allies, 2 turns).
+- 12 tiles: Deal 181% ATK damage to one enemy. Damage Ward (Self, 2 turns); Defense Up (Self, 2 turns); Taunt (Self, 3 turns); Barrier (All living allies, 2 turns).
 
 Passive: **Ashwind Aegis** — Shield pools are 50% larger.
 
 ### Karthos, The Revenant — Vow Unbroken
 
-- 12 tiles: Deal 176% ATK damage to one enemy. Shield (All living allies, 2 turns); ATK down (Selected enemy, 2 turns); Taunt (All living enemies, 3 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Barrier (All living allies, 2 turns); Attack Down (Selected enemy, 2 turns); Taunt (Self, 3 turns).
 
 ### Sable, Pale Matriarch — Cradle-Song of Wormsong
 
-- 13.5 tiles: Restore 34% max HP to all living allies. Mana flow (All living allies, 1 turns); Regeneration (All living allies, 3 turns); ATK up (All living allies, 3 turns); Cleanse (All living allies).
+- 13.5 tiles: Restore 34% max HP to all living allies. Mana Flow (All living allies, 1 turns); Regeneration (All living allies, 3 turns); Attack Up (All living allies, 3 turns); Cleanse (All living allies).
 
 Passive: **Crimson Mandate** — Cannot have buffs blocked.
 
 ### Frost King — Direwolf Flank
 
-- 13.5 tiles: Restore 34% max HP to all living allies. Debuff ward (All living allies, 3 turns); Mana flow (All living allies, 2 turns); Strengthen (All living allies, 1 turns); Death ward (All living allies, 2 turns).
+- 13.5 tiles: Restore 34% max HP to all living allies. Ailment Ward (All living allies, 3 turns); Mana Flow (All living allies, 2 turns); Damage Ward (All living allies, 1 turns); Death Ward (All living allies, 2 turns).
 
 Passive: **Rime Crown** — Immune to Decrease ATK.
 
 ### Frost Sage — Ice Blast
 
-- 13.5 tiles: Restore 34% max HP to all living allies. DEF up (All living allies, 2 turns); Regeneration (All living allies, 3 turns); Strengthen (All living allies, 2 turns); Cleanse (All living allies).
+- 13.5 tiles: Restore 34% max HP to all living allies. Defense Up (All living allies, 2 turns); Regeneration (All living allies, 3 turns); Damage Ward (All living allies, 2 turns); Cleanse (All living allies).
 
-Passive: **Glacier's Patience** — Immune to Decrease SPD.
+Passive: **Glacier's Patience** — Immune to Mana Slow.
 
 ### Sir Aurel, the Crimson Paladin — Weeping Sanctuary
 
-- 12 tiles: Deal 181% ATK damage to one enemy. ATK down (Selected enemy, 3 turns); Debuff ward (Self, 1 turns); Taunt (All living enemies, 3 turns); Shield (All living allies, 1 turns).
+- 12 tiles: Deal 181% ATK damage to one enemy. Attack Down (Selected enemy, 3 turns); Ailment Ward (Self, 1 turns); Taunt (Self, 3 turns); Barrier (All living allies, 1 turns).
 
 Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Lady Death — Graceful Slash
 
-- 10 tiles: Deal 165% ATK damage to all living enemies, ignoring 25% of DEF. DEF down (All living enemies, 2 turns).
+- 10 tiles: Deal 165% ATK damage to all living enemies, ignoring 25% of DEF. Bleed (All living enemies, 2 turns).
 
 ### The Sin Archon — Seventh Confession
 
-- 12 tiles: Restore 32% max HP to all living allies. Deal 121% ATK damage to the weakest enemy. Mana flow (All living allies, 2 turns); Weaken (Selected enemy, 2 turns); Death ward (All living allies, 2 turns).
+- 12 tiles: Restore 32% max HP to all living allies. Deal 121% ATK damage to the weakest enemy. Mana Flow (All living allies, 2 turns); Vulnerability (Selected enemy, 2 turns); Death Ward (All living allies, 2 turns).
 
 ### The Shade Prince — Coronation of Ash
 
-- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Mana slow (Selected enemy, 3 turns); Buff seal (Selected enemy, 2 turns).
+- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Mana Block (Selected enemy, 2 turns); Buff Seal (Selected enemy, 2 turns).
 
 ### Vharos, Crimson Praetor — Praetorian Verdict
 
-- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Weaken (Selected enemy, 2 turns).
+- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Vulnerability (Selected enemy, 2 turns).
 
 ### Ithreya, Umbral Hierarch — Verses Unspoken
 
-- 12 tiles: Restore 32% max HP to all living allies. DEF up (All living allies, 2 turns); Cleanse (All living allies); Death ward (All living allies, 2 turns).
+- 12 tiles: Restore 32% max HP to all living allies. Defense Up (All living allies, 2 turns); Cleanse (All living allies); Death Ward (All living allies, 2 turns).
 
 ### Vhessa, Brimstone Witch — Ember Sigil
 
-- 10 tiles: Deal 280% ATK damage to one enemy. ATK down (Selected enemy, 2 turns); Burn (Selected enemy, 2 turns); DEF down (Selected enemy, 3 turns).
+- 10 tiles: Deal 280% ATK damage to one enemy. Attack Down (Selected enemy, 2 turns); Burn (Selected enemy, 2 turns); Ember Defense Down (Selected enemy, 3 turns).
 
 ### Neve the Veil Dancer — Silk & Crescent
 
-- 8 tiles: Deal 252% ATK damage to one enemy. Weaken (Selected enemy, 1 turns); Buff seal (Selected enemy, 3 turns); Mana slow (Selected enemy, 1 turns).
+- 8 tiles: Deal 252% ATK damage to one enemy. Vulnerability (Selected enemy, 1 turns); Buff Seal (Selected enemy, 3 turns); Umbral Defense Down (Selected enemy, 1 turns).
 
 ### Crimson Castellan — Blood Magic
 
-- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. ATK up (Self, 3 turns); Burn (Selected enemy, 1 turns).
+- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Attack Up (Self, 3 turns); Bleed (Selected enemy, 1 turns).
 
 ### Rhagz, Pit Scout — Rusted Bolt
 
@@ -302,16 +302,16 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Archangel Lucifer — Apocalyptic Wrath
 
-- Charge 1 · 8 tiles: Deal 109% ATK damage to one enemy. DEF up (Self, 2 turns); Shield (All living allies, 2 turns).
-- Charge 2 · 10 tiles: Deal 160% ATK damage to one enemy. DEF up (Self, 3 turns); Shield (All living allies, 3 turns); Counterattack (Self, 1 turns).
+- Charge 1 · 8 tiles: Deal 109% ATK damage to one enemy. Defense Up (Self, 2 turns); Barrier (All living allies, 2 turns).
+- Charge 2 · 10 tiles: Deal 160% ATK damage to one enemy. Defense Up (Self, 3 turns); Barrier (All living allies, 3 turns); Riposte (Self, 1 turns).
 
 ### Paladin of Dusk — Last Rites
 
-- 10 tiles: Deal 150% ATK damage to one enemy. Strengthen (Self, 1 turns); Shield (Self, 1 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Damage Ward (Self, 1 turns); Barrier (Self, 1 turns).
 
 ### Sister Seraphel — Resurrection Hymn
 
-- 10 tiles: Restore 25% max HP to all living allies. Regeneration (All living allies, 2 turns); Strengthen (All living allies, 2 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Regeneration (All living allies, 2 turns); Damage Ward (All living allies, 2 turns).
 
 ### Justiciar Vael — Divine Verdict
 
@@ -319,19 +319,19 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Solar Scribe — Chronicle of Doom
 
-- 10 tiles: Deal 241% ATK damage to one enemy. Mana slow (Selected enemy, 1 turns).
+- 10 tiles: Deal 241% ATK damage to one enemy. Mana Slow (Selected enemy, 1 turns).
 
 ### Executor Model Z — Total Meltdown
 
-- 12 tiles: Deal 182% ATK damage to all living enemies. Burn (All living enemies, 2 turns); DEF down (All living enemies, 3 turns).
+- 12 tiles: Deal 182% ATK damage to all living enemies. Burn (All living enemies, 2 turns); Defense Down (All living enemies, 3 turns).
 
 ### Aegis Construct MK4 — Fortress Mode
 
-- 10 tiles: Deal 138% ATK damage to one enemy. Shield (Self, 2 turns).
+- 10 tiles: Deal 138% ATK damage to one enemy. Barrier (Self, 2 turns).
 
 ### The Saboteur — Kill Switch
 
-- 8 tiles: Deal 217% ATK damage to one enemy. Counterattack (Self, 3 turns).
+- 8 tiles: Deal 217% ATK damage to one enemy. Riposte (Self, 3 turns).
 
 ### Grease Monkey — Full Overhaul
 
@@ -339,28 +339,28 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Ironwall Sniper — Railgun Overture
 
-- Charge 1 · 8 tiles: Deal 179% ATK damage to one enemy. Mana slow (Selected enemy, 1 turns).
-- Charge 2 · 10 tiles: Deal 263% ATK damage to one enemy. Mana slow (Selected enemy, 2 turns); DEF down (Selected enemy, 2 turns).
+- Charge 1 · 8 tiles: Deal 179% ATK damage to one enemy. Mana Slow (Selected enemy, 1 turns).
+- Charge 2 · 10 tiles: Deal 263% ATK damage to one enemy. Mana Slow (Selected enemy, 2 turns); Defense Down (Selected enemy, 2 turns).
 
 ### Professor Vile — Adrenaline Injection
 
-- 10 tiles: Restore 29% max HP to all living allies. Cleanse (All living allies); Debuff ward (All living allies, 3 turns); ATK up (All living allies, 2 turns).
+- 10 tiles: Restore 29% max HP to all living allies. Cleanse (All living allies); Ailment Ward (All living allies, 3 turns); Attack Up (All living allies, 2 turns).
 
 ### Chem-Tank Brax — Chemical Fortress
 
-- 12 tiles: Deal 176% ATK damage to one enemy. DEF up (Self, 1 turns); Shield (All living allies, 1 turns); Taunt (All living enemies, 2 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Defense Up (Self, 1 turns); Barrier (All living allies, 1 turns); Taunt (Self, 2 turns).
 
 ### Potion-Tosser Quinn — Experimental Cocktail
 
-- 10 tiles: Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy. ATK up (All living allies, 2 turns); Poison (Selected enemy, 2 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy. Attack Up (All living allies, 2 turns); Poison (Selected enemy, 2 turns).
 
 ### Elder Rootmother — World Root
 
-- 13.5 tiles: Restore 34% max HP to all living allies. Cleanse (All living allies); Regeneration (All living allies, 2 turns); Death ward (All living allies, 1 turns).
+- 13.5 tiles: Restore 34% max HP to all living allies. Cleanse (All living allies); Regeneration (All living allies, 2 turns); Death Ward (All living allies, 1 turns).
 
 ### Grove Druid — Call of the Wild
 
-- 10 tiles: Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy. DEF up (All living allies, 1 turns); Poison (Selected enemy, 2 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy. Defense Up (All living allies, 1 turns); Poison (Selected enemy, 2 turns).
 
 ### Satyr Archer Kell — Arrow Storm
 
@@ -368,19 +368,19 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Thornveil Dryad — Thornfire Hex
 
-- 12 tiles: Deal 182% ATK damage to all living enemies. Buff seal (All living enemies, 2 turns); Poison (All living enemies, 3 turns).
+- 12 tiles: Deal 182% ATK damage to all living enemies. Buff Seal (All living enemies, 2 turns); Poison (All living enemies, 3 turns).
 
 ### The Verdant King — Wrath of the Ancients
 
-- 10 tiles: Deal 150% ATK damage to one enemy. Taunt (All living enemies, 1 turns); DEF up (Self, 3 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Taunt (Self, 1 turns); Defense Up (Self, 3 turns).
 
 ### Thornweaver Seraph — Briar Cataclysm
 
-- 12 tiles: Deal 182% ATK damage to all living enemies. Counterattack (Self, 3 turns); ATK down (All living enemies, 1 turns).
+- 12 tiles: Deal 182% ATK damage to all living enemies. Riposte (Self, 3 turns); Attack Down (All living enemies, 1 turns).
 
 ### Barkskin Bruiser — Timberfall
 
-- 10 tiles: Deal 263% ATK damage to one enemy. Mana slow (Selected enemy, 2 turns); DEF down (Selected enemy, 2 turns).
+- 10 tiles: Deal 263% ATK damage to one enemy. Mana Slow (Selected enemy, 2 turns); Defense Down (Selected enemy, 2 turns).
 
 ### Vinestrider — Stranglehold
 
@@ -392,39 +392,39 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Beastmaster Gharn — Primal Rage
 
-- 10 tiles: Deal 263% ATK damage to one enemy. Mana slow (Selected enemy, 2 turns); Frostbite (Selected enemy, 2 turns).
+- 10 tiles: Deal 263% ATK damage to one enemy. Mana Slow (Selected enemy, 2 turns); Frostbite (Selected enemy, 2 turns); Tile Boost (Self, 2 turns).
 
 ### Jarl Bjorn Ironhide — Ragnarok
 
-- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Mana slow (Selected enemy, 3 turns); Frostbite (Selected enemy, 2 turns).
+- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 3 turns); Frostbite (Selected enemy, 2 turns).
 
 ### Shieldmaiden Runa — Glacier Stance
 
-- 10 tiles: Deal 150% ATK damage to one enemy. Taunt (All living enemies, 1 turns); Strengthen (Self, 1 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Taunt (Self, 1 turns); Damage Ward (Self, 1 turns).
 
 ### Ice-Shaman Sigrid — Absolute Zero
 
-- 10 tiles: Deal 263% ATK damage to one enemy. Mana slow (Selected enemy, 2 turns); Frostbite (Selected enemy, 3 turns).
+- 10 tiles: Deal 263% ATK damage to one enemy. Mana Slow (Selected enemy, 2 turns); Frostbite (Selected enemy, 3 turns).
 
 ### Berserker Loki — Berserk
 
-- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Mana slow (Selected enemy, 2 turns); ATK down (Selected enemy, 3 turns).
+- 10 tiles: Deal 280% ATK damage to one enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 2 turns); Attack Down (Selected enemy, 3 turns).
 
 ### Wolf-Handler Torv — Winter Hunt
 
-- 10 tiles: Restore 32% max HP to one living ally. Strengthen (Selected ally, 3 turns).
+- 10 tiles: Restore 32% max HP to one living ally. Damage Ward (Selected ally, 3 turns).
 
 ### Vlad the Soul-Eater — Soul Harvest
 
-- 8 tiles: Deal 237% ATK damage to one enemy. Weaken (Selected enemy, 3 turns); ATK up (Self, 1 turns).
+- 8 tiles: Deal 237% ATK damage to one enemy. Vulnerability (Selected enemy, 3 turns); Attack Up (Self, 1 turns).
 
 ### Cult Zealot — Mass Consecration
 
-- 10 tiles: Deal 263% ATK damage to one enemy. Weaken (Selected enemy, 2 turns); Buff seal (Selected enemy, 2 turns).
+- 10 tiles: Deal 263% ATK damage to one enemy. Vulnerability (Selected enemy, 2 turns); Buff Seal (Selected enemy, 2 turns).
 
 ### Succubus Lilth — Dark Embrace
 
-- 10 tiles: Deal 241% ATK damage to one enemy. Buff seal (Selected enemy, 3 turns).
+- 10 tiles: Deal 241% ATK damage to one enemy. Buff Seal (Selected enemy, 3 turns).
 
 ### Dune Stalker — Night Hunt
 
@@ -432,15 +432,15 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Dune-Queen Zaya — Sandstorm Sovereign
 
-- 12 tiles: Restore 32% max HP to all living allies. Debuff ward (All living allies, 2 turns); Mana flow (All living allies, 2 turns); Death ward (All living allies, 2 turns).
+- 12 tiles: Restore 32% max HP to all living allies. Ailment Ward (All living allies, 2 turns); Mana Flow (All living allies, 2 turns); Death Ward (All living allies, 2 turns).
 
 ### Desert Assassin — Death Mirage
 
-- 8 tiles: Deal 237% ATK damage to one enemy, ignoring 25% of DEF. Mana slow (Selected enemy, 3 turns).
+- 8 tiles: Deal 213% ATK damage to one enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 3 turns); Dispel (Selected enemy).
 
 ### Camel-Rider Rashid — Sandstorm Volley
 
-- 10 tiles: Deal 263% ATK damage to one enemy, ignoring 25% of DEF. Mana slow (Selected enemy, 1 turns).
+- 10 tiles: Deal 263% ATK damage to one enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 1 turns).
 
 ### Dune Mage Sorra — Desert Vortex
 
@@ -453,192 +453,192 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Plague Doctor Mors — Black Death
 
-- 10 tiles: Deal 263% ATK damage to one enemy. ATK down (Selected enemy, 1 turns); Poison (Selected enemy, 3 turns).
+- 10 tiles: Deal 263% ATK damage to one enemy. Attack Down (Selected enemy, 1 turns); Poison (Selected enemy, 3 turns).
 
 ### The Abyss Mutant — Adaptive Evolution
 
-- 10 tiles: Deal 241% ATK damage to one enemy. DEF down (Selected enemy, 1 turns).
+- 10 tiles: Deal 241% ATK damage to one enemy. Defense Down (Selected enemy, 1 turns).
 
 ### Void-Herald Mara — Oblivion
 
-- 10 tiles: Deal 241% ATK damage to one enemy. ATK up (Self, 2 turns).
+- 10 tiles: Deal 241% ATK damage to one enemy. Attack Up (Self, 2 turns).
 
 ### Azure Sovereign — Meteor of Heaven
 
-- Charge 1 · 5 tiles: Deal 106% ATK damage to one enemy. ATK up (Self, 2 turns).
-- Charge 2 · 10 tiles: Deal 115% ATK damage to all living enemies. ATK up (Self, 2 turns).
-- Charge 3 · 15 tiles: Deal 185% ATK damage to all living enemies, ignoring 25% of DEF. ATK up (Self, 3 turns).
+- Charge 1 · 5 tiles: Deal 106% ATK damage to one enemy. Attack Up (Self, 2 turns).
+- Charge 2 · 10 tiles: Deal 115% ATK damage to all living enemies. Attack Up (Self, 2 turns).
+- Charge 3 · 15 tiles: Deal 185% ATK damage to all living enemies, ignoring 25% of DEF. Attack Up (Self, 3 turns).
 
 ### Dragon Samurai Kenshin — Thousand Cuts
 
-- 10 tiles: Deal 165% ATK damage to all living enemies. Burn (All living enemies, 1 turns); Counterattack (Self, 2 turns).
+- 10 tiles: Deal 165% ATK damage to all living enemies. Burn (All living enemies, 1 turns); Riposte (Self, 2 turns).
 
 ### Jade Monk Xuan — Celestial Roar
 
 - Charge 1 · 8 tiles: Deal 102% ATK damage to one enemy. Regeneration (Self, 1 turns).
-- Charge 2 · 10 tiles: Deal 150% ATK damage to one enemy. Regeneration (Self, 2 turns); Taunt (All living enemies, 2 turns).
+- Charge 2 · 10 tiles: Deal 150% ATK damage to one enemy. Regeneration (Self, 2 turns); Taunt (Self, 2 turns).
 
 ### Spirit-Fox Mei — Nine Tails
 
-- 8 tiles: Deal 237% ATK damage to one enemy. Burn (Selected enemy, 3 turns); ATK up (Self, 2 turns).
+- 8 tiles: Deal 237% ATK damage to one enemy. Burn (Selected enemy, 3 turns); Attack Up (Self, 2 turns).
 
 ### Jade Archer Linh — Heaven's Wrath
 
-- 8 tiles: Deal 217% ATK damage to one enemy. ATK up (Self, 1 turns).
+- 8 tiles: Deal 217% ATK damage to one enemy. Attack Up (Self, 1 turns).
 
 ### Kaelen, the Grid Runner — Overclock Circuit
 
-- 6.5 tiles: Deal 193% ATK damage to one enemy. Buff seal (Selected enemy, 3 turns).
+- 6.5 tiles: Deal 193% ATK damage to one enemy. Buff Seal (Selected enemy, 3 turns).
 
 ### Boran, Chrome Fist — Kinetic Block
 
-- 10 tiles: Deal 138% ATK damage to one enemy. Shield (Self, 2 turns).
+- 10 tiles: Deal 138% ATK damage to one enemy. Barrier (Self, 2 turns).
 
 ### Nadia, the Patchwork Witch — Signal Jam
 
-- 10 tiles: Restore 32% max HP to one living ally. Mana flow (Selected ally, 3 turns).
+- 10 tiles: Restore 32% max HP to one living ally. Mana Flow (Selected ally, 3 turns).
 
 ### Vesper, Neon Phantom — Digital Mirage
 
-- 6.5 tiles: Deal 211% ATK damage to one enemy. Mana slow (Selected enemy, 3 turns); Buff seal (Selected enemy, 1 turns).
+- 6.5 tiles: Deal 211% ATK damage to one enemy. Mana Block (Selected enemy, 2 turns); Buff Seal (Selected enemy, 1 turns).
 
 ### Dr. Aris, Cyber-Stitcher — Starlight Injection
 
-- 10 tiles: Restore 25% max HP to all living allies. Debuff ward (All living allies, 2 turns); Mana flow (All living allies, 2 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Ailment Ward (All living allies, 2 turns); Mana Flow (All living allies, 2 turns).
 
 ### Dragon Empress — Mandate of the Dragon-Mother
 
-- Charge 1 · 5 tiles: Restore 11% max HP to all living allies. DEF up (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
-- Charge 2 · 10 tiles: Restore 20% max HP to all living allies. DEF up (All living allies, 1 turns); Regeneration (All living allies, 2 turns); ATK up (All living allies, 2 turns).
-- Charge 3 · 15 tiles: Restore 32% max HP to all living allies. DEF up (All living allies, 2 turns); Regeneration (All living allies, 3 turns); ATK up (All living allies, 3 turns); Cleanse (All living allies).
+- Charge 1 · 5 tiles: Restore 11% max HP to all living allies. Defense Up (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
+- Charge 2 · 10 tiles: Restore 20% max HP to all living allies. Defense Up (All living allies, 1 turns); Regeneration (All living allies, 2 turns); Attack Up (All living allies, 2 turns).
+- Charge 3 · 15 tiles: Restore 32% max HP to all living allies. Defense Up (All living allies, 2 turns); Regeneration (All living allies, 3 turns); Attack Up (All living allies, 3 turns); Cleanse (All living allies).
 
 Passive: **Dragonskin** — Immune to Burn and Poison.
 
 ### Ravel, the Guard — Scarlet Bulwark
 
-- 10 tiles: Deal 150% ATK damage to one enemy. DEF up (Self, 1 turns); Shield (Self, 1 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Defense Up (Self, 1 turns); Barrier (Self, 1 turns).
 
 ### Sister Carmine — Sanguine Rite
 
-- 10 tiles: Restore 25% max HP to all living allies. ATK up (All living allies, 1 turns); Regeneration (All living allies, 3 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Attack Up (All living allies, 1 turns); Regeneration (All living allies, 3 turns).
 
 ### Commander Jarek — Empowered Aegis
 
-- 10 tiles: Deal 150% ATK damage to one enemy. Counterattack (Self, 3 turns); Shield (Self, 3 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Riposte (Self, 3 turns); Barrier (Self, 3 turns).
 
 ### Sora, The Plasma Ronin — Neon Execution
 
-- 8 tiles: Deal 252% ATK damage to one enemy. Mana slow (Selected enemy, 1 turns); Buff seal (Selected enemy, 1 turns); Weaken (Selected enemy, 2 turns).
+- 8 tiles: Deal 252% ATK damage to one enemy. Mana Slow (Selected enemy, 1 turns); Dispel (Selected enemy); Vulnerability (Selected enemy, 2 turns).
 
 ### Matrix Matriarch Lyra — System Override
 
-- 12 tiles: Restore 32% max HP to all living allies. Cleanse (All living allies); Mana flow (All living allies, 2 turns); Death ward (All living allies, 2 turns).
+- 12 tiles: Restore 32% max HP to all living allies. Cleanse (All living allies); Mana Flow (All living allies, 2 turns); Death Ward (All living allies, 2 turns); Mana Gift (Other living allies).
 
 ### Baron Viktor, The Cybergod — Glitch Apocalypse
 
-- 12 tiles: Deal 176% ATK damage to one enemy. Shield (All living allies, 3 turns); ATK down (Selected enemy, 2 turns); Strengthen (Self, 1 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Barrier (All living allies, 3 turns); Attack Down (Selected enemy, 2 turns); Damage Ward (Self, 1 turns).
 
 ### Zero, The Singularity — Cybernetic Void
 
-- Charge 1 · 5 tiles: Deal 110% ATK damage to one enemy. Mana slow (Selected enemy, 1 turns); Poison (Selected enemy, 1 turns).
-- Charge 2 · 10 tiles: Deal 202% ATK damage to one enemy. Mana slow (Selected enemy, 1 turns); Poison (Selected enemy, 1 turns); DEF down (Selected enemy, 2 turns).
-- Charge 3 · 15 tiles: Deal 190% ATK damage to all living enemies. Mana slow (All living enemies, 1 turns); Poison (All living enemies, 2 turns); DEF down (All living enemies, 3 turns).
+- Charge 1 · 5 tiles: Deal 110% ATK damage to one enemy. Mana Slow (Selected enemy, 1 turns); Poison (Selected enemy, 1 turns).
+- Charge 2 · 10 tiles: Deal 202% ATK damage to one enemy. Mana Slow (Selected enemy, 1 turns); Poison (Selected enemy, 1 turns); Defense Down (Selected enemy, 2 turns).
+- Charge 3 · 15 tiles: Deal 190% ATK damage to all living enemies. Mana Block (All living enemies, 1 turns); Poison (All living enemies, 2 turns); Defense Down (All living enemies, 3 turns).
 
 Passive: **Entropy Bloom** — Heals 5% of max HP every turn.
 
 ### The Alley Shade — Slip Through
 
-- 10 tiles: Restore 32% max HP to one living ally. Debuff ward (Selected ally, 3 turns).
+- 10 tiles: Restore 32% max HP to one living ally. Ailment Ward (Selected ally, 3 turns).
 
 ### Fjordwatch Hald — Rimebound Guard
 
-- 10 tiles: Deal 138% ATK damage to one enemy. Shield (Self, 2 turns).
+- 10 tiles: Deal 138% ATK damage to one enemy. Barrier (Self, 2 turns).
 
 ### Shellback Brukk — Shellback Challenge
 
-- 10 tiles: Deal 138% ATK damage to one enemy. Taunt (All living enemies, 1 turns).
+- 10 tiles: Deal 138% ATK damage to one enemy. Taunt (Self, 1 turns).
 
 ### Oakenhart, the First Warden — Sanctuary of the First Oak
 
-- 13.5 tiles: Deal 194% ATK damage to one enemy. DEF up (Self, 2 turns); Counterattack (Self, 1 turns); Shield (All living allies, 2 turns); Taunt (All living enemies, 2 turns).
+- 13.5 tiles: Deal 194% ATK damage to one enemy. Defense Up (Self, 2 turns); Riposte (Self, 1 turns); Barrier (All living allies, 2 turns); Taunt (Self, 2 turns).
 
 Passive: **Heartwood Renewal** — Heals 5% of his own max HP at the start of each of his turns, up to full health.
 
 ### Oasis-Keeper Nahlia — Waters of the Hidden Spring
 
-- 10 tiles: Restore 25% max HP to all living allies. DEF up (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Defense Up (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
 
 ### Kassem, the Sunwall — Bastion of the Burning Sun
 
-- 12 tiles: Deal 176% ATK damage to one enemy. Strengthen (Self, 2 turns); Shield (All living allies, 2 turns); ATK down (Selected enemy, 2 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Damage Ward (Self, 2 turns); Barrier (All living allies, 2 turns); Attack Down (Selected enemy, 2 turns).
 
 ### Cinder-Mender Vessa — Ashes Unbound
 
-- 10 tiles: Restore 25% max HP to all living allies. Strengthen (All living allies, 1 turns); Debuff ward (All living allies, 2 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Damage Ward (All living allies, 1 turns); Ailment Ward (All living allies, 2 turns).
 
 ### Veyr, the Hollow Gate — None Shall Follow
 
-- 10 tiles: Deal 150% ATK damage to one enemy. DEF up (Self, 1 turns); Taunt (All living enemies, 1 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Defense Up (Self, 1 turns); Taunt (Self, 1 turns).
 
 ### Aurelia, the Last Foundry — Reforge the Fallen Line
 
-- 13.5 tiles: Restore 34% max HP to all living allies. DEF up (All living allies, 2 turns); Strengthen (All living allies, 2 turns); Cleanse (All living allies); Shield (All living allies, 2 turns).
+- 13.5 tiles: Restore 34% max HP to all living allies. Defense Up (All living allies, 2 turns); Damage Ward (All living allies, 2 turns); Cleanse (All living allies); Barrier (All living allies, 2 turns).
 
 Passive: **Tempered Resolve** — Immune to Decrease DEF. This permanent protection affects only Aurelia.
 
 ### Jade-Mender Lian — Breath of the Jade Spring
 
-- 10 tiles: Restore 25% max HP to all living allies. ATK up (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Tile Boost (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
 
 ### Carapace Warden Korr — Living Carapace
 
-- 10 tiles: Deal 150% ATK damage to one enemy. Strengthen (Self, 1 turns); Shield (Self, 2 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Damage Ward (Self, 1 turns); Barrier (Self, 2 turns).
 
 ### Redknife Tavin — Find the Seam
 
-- 8 tiles: Deal 217% ATK damage to one enemy. DEF down (Selected enemy, 1 turns).
+- 8 tiles: Deal 217% ATK damage to one enemy. Bleed (Selected enemy, 1 turns).
 
 ### Vitriol Stalker Syth — Expose the Wound
 
-- 8 tiles: Deal 237% ATK damage to one enemy. Poison (Selected enemy, 2 turns); Weaken (Selected enemy, 1 turns).
+- 8 tiles: Deal 237% ATK damage to one enemy. Poison (Selected enemy, 2 turns); Verdant Defense Down (Selected enemy, 1 turns).
 
 ### Rivet-Mender Orsa — Back on Your Feet
 
-- 10 tiles: Restore 25% max HP to all living allies. Shield (All living allies, 1 turns); Mana flow (All living allies, 2 turns).
+- 10 tiles: Restore 25% max HP to all living allies. Barrier (All living allies, 1 turns); Mana Flow (All living allies, 2 turns).
 
 ### Eira, the Hearthwarden — Hearth Against the Long Night
 
-- 10 tiles: Restore 29% max HP to all living allies. Regeneration (All living allies, 2 turns); Cleanse (All living allies); Debuff ward (All living allies, 2 turns).
+- 10 tiles: Restore 29% max HP to all living allies. Regeneration (All living allies, 2 turns); Cleanse (All living allies); Ailment Ward (All living allies, 2 turns).
 
 ### Shen, the Bronze Horizon — The Mountain Does Not Yield
 
-- 12 tiles: Deal 176% ATK damage to one enemy. DEF up (Self, 2 turns); Shield (All living allies, 2 turns); Mana slow (Selected enemy, 2 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Defense Up (Self, 2 turns); Barrier (All living allies, 2 turns); Mana Slow (Selected enemy, 2 turns).
 
 ### Vorrek, the Walking Siege — Break the Unbroken
 
-- 13.5 tiles: Deal 201% ATK damage to all living enemies. ATK up (Self, 2 turns); Buff seal (All living enemies, 1 turns); DEF down (All living enemies, 2 turns).
+- 13.5 tiles: Deal 201% ATK damage to all living enemies. Attack Up (Self, 2 turns); Buff Seal (All living enemies, 1 turns); Defense Down (All living enemies, 2 turns).
 
 Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent protection affects only him.
 
 ### Rimebow Tessa — Winterward Shot
 
-- 6.5 tiles: Deal 193% ATK damage to one enemy. Mana slow (Selected enemy, 2 turns).
+- 6.5 tiles: Deal 193% ATK damage to one enemy. Mana Slow (Selected enemy, 2 turns).
 
 ### Caravan Warden Samira — Come Through Me
 
-- 10 tiles: Deal 150% ATK damage to one enemy. Strengthen (Self, 1 turns); Taunt (All living enemies, 2 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Damage Ward (Self, 1 turns); Taunt (Self, 2 turns).
 
 ### Arcmaw Rhex — Short the Lifeline
 
-- 10 tiles: Deal 263% ATK damage to one enemy. ATK up (Self, 1 turns); Buff seal (Selected enemy, 2 turns).
+- 10 tiles: Deal 263% ATK damage to one enemy. Attack Up (Self, 1 turns); Buff Seal (Selected enemy, 2 turns).
 
 ### Gallows Marksman Oren — Mark for the Reckoning
 
-- 8 tiles: Deal 217% ATK damage to one enemy. Weaken (Selected enemy, 1 turns).
+- 8 tiles: Deal 217% ATK damage to one enemy. Vulnerability (Selected enemy, 1 turns).
 
 ### Nerez, the Veil Bastion — Oath of the Closing Veil
 
-- 12 tiles: Deal 176% ATK damage to one enemy. Counterattack (Self, 1 turns); Strengthen (Self, 2 turns); Taunt (All living enemies, 2 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Riposte (Self, 1 turns); Damage Ward (Self, 2 turns); Taunt (Self, 2 turns).
 
 ### Kesh Duststep — Between the Plates
 
@@ -646,7 +646,7 @@ Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent pro
 
 ### Mavra Dusktrail — Break the Pursuit
 
-- 10 tiles: Deal 241% ATK damage to one enemy. ATK down (Selected enemy, 1 turns).
+- 10 tiles: Deal 241% ATK damage to one enemy. Attack Down (Selected enemy, 1 turns).
 
 ### Nima Dewthread — Rain on the Wounded Road
 
@@ -654,76 +654,76 @@ Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent pro
 
 ### Sahri Sunspoke — Open the Horizon
 
-- 10 tiles: Deal 263% ATK damage to one enemy. Mana flow (Self, 1 turns); Weaken (Selected enemy, 2 turns).
+- 10 tiles: Deal 237% ATK damage to one enemy. Mana Flow (Self, 1 turns); Vulnerability (Selected enemy, 2 turns); Tile Boost (Self, 2 turns).
 
 ### Ilyra Snowglass — The Glacier's Edge
 
-- 8 tiles: Deal 237% ATK damage to one enemy, ignoring 25% of DEF. Mana slow (Selected enemy, 1 turns).
+- 8 tiles: Deal 237% ATK damage to one enemy, ignoring 25% of DEF. Frost Defense Down (Selected enemy, 1 turns).
 
 ### Toruun Basalt-Mane — Answer to the Gate
 
-- 10 tiles: Deal 150% ATK damage to one enemy. DEF up (Self, 1 turns); Taunt (All living enemies, 2 turns).
+- 10 tiles: Deal 150% ATK damage to one enemy. Defense Up (Self, 1 turns); Taunt (Self, 2 turns).
 
 ### Rhazek Cinderstripe — March of the Burning Stripes
 
-- 10 tiles: Deal 165% ATK damage to all living enemies. ATK up (Self, 1 turns); Burn (All living enemies, 2 turns).
+- 10 tiles: Deal 165% ATK damage to all living enemies. Attack Up (Self, 1 turns); Burn (All living enemies, 2 turns).
 
 ### Vaelka, the Obsidian Watch — The Night Holds Fast
 
-- 12 tiles: Deal 176% ATK damage to one enemy. Counterattack (Self, 1 turns); Shield (All living allies, 2 turns); ATK down (Selected enemy, 2 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Riposte (Self, 1 turns); Barrier (All living allies, 2 turns); Attack Down (Selected enemy, 2 turns).
 
 ### Oruun, the Prism-Seer — Gather the Scattered Light
 
-- Charge 1 · 8 tiles: Restore 20% max HP to all living allies. Debuff ward (All living allies, 1 turns); Cleanse (All living allies).
-- Charge 2 · 10 tiles: Restore 29% max HP to all living allies. Debuff ward (All living allies, 1 turns); Cleanse (All living allies); Regeneration (All living allies, 2 turns).
+- Charge 1 · 8 tiles: Restore 20% max HP to all living allies. Ailment Ward (All living allies, 1 turns); Cleanse (All living allies).
+- Charge 2 · 10 tiles: Restore 29% max HP to all living allies. Ailment Ward (All living allies, 1 turns); Cleanse (All living allies); Regeneration (All living allies, 2 turns).
 
 ### Azhar, the Rosetted Sun — No Throne Above the Dawn
 
-- 13.5 tiles: Deal 201% ATK damage to all living enemies. ATK up (Self, 2 turns); Buff seal (All living enemies, 1 turns); DEF down (All living enemies, 2 turns).
+- 13.5 tiles: Deal 201% ATK damage to all living enemies. Attack Up (Self, 2 turns); Buff Seal (All living enemies, 1 turns); Defense Down (All living enemies, 2 turns).
 
 Passive: **Sunscar Oath** — Azhar is permanently immune to Weaken. This protection affects only him.
 
 ### Sivren, the Stillgrass Knife — Silence Before Sunrise
 
-- 8 tiles: Deal 252% ATK damage to one enemy, ignoring 25% of DEF. Mana flow (Self, 2 turns); Buff seal (Selected enemy, 2 turns).
+- 8 tiles: Deal 252% ATK damage to one enemy, ignoring 25% of DEF. Mana Flow (Self, 2 turns); Buff Seal (Selected enemy, 2 turns).
 
 ### Nera, the Red Ledger — Close the Account
 
-- 8 tiles: Deal 237% ATK damage to one enemy, ignoring 25% of DEF. Buff seal (Selected enemy, 2 turns).
+- 8 tiles: Deal 213% ATK damage to one enemy, ignoring 25% of DEF. Buff Seal (Selected enemy, 2 turns); Bleed (Selected enemy, 2 turns).
 
 ### Tovin Glassheart — Hold Together
 
-- 10 tiles: Restore 32% max HP to one living ally. DEF up (Selected ally, 1 turns).
+- 10 tiles: Restore 32% max HP to one living ally. Defense Up (Selected ally, 1 turns).
 
 ### Suyin, Bell of the Monsoon — Monsoon Mandate
 
-- 10 tiles: Restore 29% max HP to all living allies. Mana flow (All living allies, 1 turns); ATK up (All living allies, 2 turns); Debuff ward (All living allies, 2 turns).
+- 10 tiles: Restore 26% max HP to all living allies. Mana Flow (All living allies, 1 turns); Attack Up (All living allies, 2 turns); Ailment Ward (All living allies, 2 turns); Mana Gift (Other living allies).
 
 ### Tariq, the Glass Dervish — A Thousand Cutting Dawns
 
-- 10 tiles: Deal 165% ATK damage to all living enemies, ignoring 25% of DEF. Weaken (All living enemies, 1 turns).
+- 10 tiles: Deal 165% ATK damage to all living enemies, ignoring 25% of DEF. Vulnerability (All living enemies, 1 turns).
 
 ### Hrolda, the Avalanche Door — The Hold Still Stands
 
-- 12 tiles: Deal 176% ATK damage to one enemy. Strengthen (Self, 2 turns); Shield (All living allies, 2 turns); Taunt (All living enemies, 1 turns).
+- 12 tiles: Deal 176% ATK damage to one enemy. Damage Ward (Self, 2 turns); Barrier (All living allies, 2 turns); Taunt (Self, 1 turns).
 
 ### Dagan Rivetstorm — Pull the Weak Rivet
 
-- 10 tiles: Deal 263% ATK damage to one enemy. ATK up (Self, 1 turns); DEF down (Selected enemy, 2 turns).
+- 10 tiles: Deal 263% ATK damage to one enemy. Attack Up (Self, 1 turns); Defense Down (Selected enemy, 2 turns).
 
 ### Tali, Scrapshot — Cut the Supply
 
-- 8 tiles: Deal 217% ATK damage to one enemy. Buff seal (Selected enemy, 1 turns).
+- 8 tiles: Deal 217% ATK damage to one enemy. Buff Seal (Selected enemy, 1 turns).
 
 ### Edrik Mournwall — Borrowed Rest
 
-- 10 tiles: Deal 138% ATK damage to one enemy. Shield (Self, 2 turns).
+- 10 tiles: Deal 138% ATK damage to one enemy. Barrier (Self, 2 turns).
 
 ### Venn Sablethread — Catch the Hem
 
-- 8 tiles: Deal 217% ATK damage to one enemy. Mana slow (Selected enemy, 1 turns).
+- 8 tiles: Deal 217% ATK damage to one enemy. Mana Slow (Selected enemy, 1 turns).
 
 ### Renn Briarhook — Leave the Wound Open
 
-- 8 tiles: Deal 237% ATK damage to one enemy. Poison (Selected enemy, 1 turns); Weaken (Selected enemy, 2 turns).
+- 8 tiles: Deal 237% ATK damage to one enemy. Poison (Selected enemy, 1 turns); Vulnerability (Selected enemy, 2 turns).
 

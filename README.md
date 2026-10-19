@@ -26,10 +26,11 @@ node tools/serve.mjs --dist  # preview the production build
 - Five elements, column-based attacks, color stacking, empty-lane mana, tile-based mana and multi-level charging Specials, status effects, and enemy attack countdowns.
 - Four-match Blast Runes and five-or-more-match Prismatic Runes.
 - Three progressively unlocked PvE encounters, battle log, ability details, hint, 1×/2× animation speed, and reduced-motion support.
+- Refined vector crystal runes, clearer champion cards and status badges, damage/healing numbers, and a tappable effect field guide.
 - Responsive mouse, touch-drag, and keyboard controls. Use Tab to reach a rune, arrow keys to navigate, and Enter to select each neighbor.
 - Separate team, encounter and progress saves on this browser. Reloading resumes the resolved action without replaying it. Clearing browser data removes these saves.
 
-This first build deliberately unlocks the whole roster for experimentation. It has no accounts, summons, monetization, hero feeding, PvP, alliances, or shared online progress. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](docs/RULES.md) and [the full roster](docs/ROSTER.md).
+This first build deliberately unlocks the whole roster for experimentation. It has no accounts, summons, monetization, hero feeding, PvP, alliances, or shared online progress. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](docs/RULES.md) [the full roster](docs/ROSTER.md), and [the effect review](docs/STATUS-REVIEW.md).
 
 ## Publish separately on Vercel
 
@@ -48,12 +49,12 @@ The included `vercel.json` supplies the build/output settings. This game is stat
 
 ## Project layout
 
-`npm run roster:build` regenerates the active roster, effects, balance report and roster guide from the archived import and `data/roster-design.json`. Original import data stays outside the runtime build.
+`npm run roster:build` regenerates the active roster, effects, balance report and roster guide from the archived import and `data/roster-design.json`. The shared `src/effects.js` catalog and `data/status-design.json` define the current effect language and selected champion overrides. `npm run art:build` regenerates the five original vector rune artworks. Original import/design data stays outside the runtime build.
 
-`src/engine.js` is pure deterministic combat, `src/storage.js` handles independent saves and v1 battle migration, and `src/app.js` renders the interface. Imported data lives in `data/`; all runtime artwork is in `assets/`. `tools/import_roster.py` is a one-time developer import, not a runtime requirement. It requires Python and ImageMagick if used against an owner's source checkout; existing optimized portraits are retained when source originals are absent.
+`src/engine.js` is pure deterministic combat, `src/storage.js` handles independent saves and v1/v2 battle migration, and `src/app.js` renders the interface. Imported data lives in `data/`; all runtime artwork is in `assets/`. `tools/import_roster.py` is a one-time developer import, not a runtime requirement. It requires Python and ImageMagick if used against an owner's source checkout; existing optimized portraits are retained when source originals are absent.
 
 See [rules](docs/RULES.md), [roadmap](docs/ROADMAP.md), [validation](docs/QA.md), and [asset rights and provenance](RIGHTS.md).
 
 ## Updating your local copy
 
-Stop the local server with Control + C, then run `git pull origin main` and `npm start` in this repository. Your team and cleared encounters are retained. An active pre-v0.2 encounter restarts under the new combat rules.
+Stop the local server with Control + C, then run `git pull origin main` and `npm start` in this repository. Your team and cleared encounters are retained. A v0.2 encounter upgrades in place with health, tile charge and the board preserved. A much older pre-v0.2 encounter restarts under the new combat rules.
