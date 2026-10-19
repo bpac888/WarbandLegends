@@ -1,4 +1,4 @@
-# Legends game foundation · v0.4
+# Legends game foundation · v0.6
 
 This is a separate local single-player game. It reuses the owner's champion identities and optimized artwork without changing Warband Legends or connecting to its services.
 
@@ -33,6 +33,12 @@ Summons are persisted before the reveal animation: navigation cannot erase the r
 
 These saves are editable local files, suitable for this offline prototype. Online progression or competitive rewards require a new authoritative backend, separate from Warband Legends.
 
+## Artwork-led experience
+
+Battle is one centered scene, without instructional sidebars or the side chronicle. The log and guide remain in compact controls. Seven lane previews show each column's current destination, including empty lanes. Tile projectiles travel vertically from the cleared tile; Specials add elemental impacts, healing pulses and protective wards based on combat's resolved state changes. Reduced motion suppresses travelling effects.
+
+Adventure and Campaign share original world-map artwork with real stage markers and locks. Portraits distinguish future destinations, which remain labeled not playable. Quests, inventory and Citadel use illustrations rather than explanatory panels. Character cards show speed names, rarity/role symbols and icon-based stats. Exact tile requirements stay in detailed skill explanations.
+
 ## Presentation and structure
 
 The graphic system uses deep teal backgrounds, warm gold framing, bright elemental accents, a five-element crest, reusable SVG interface icons and existing local WebP scenes/portraits. The fifteen curated tile graphics distinguish regular shields, four-match dragon blasts, and five-match prismatic gems. Collection and Codex art is shown in full above a separate caption panel; uncollected art is never dimmed. Filters combine element, rarity, mana, role and faction, with name/stat sorting and reset. Splash montages, circular portal inscriptions, reveal timing, roster framing and mobile layout are composed specifically for this game. No runtime request goes to the original game.
@@ -40,6 +46,9 @@ The graphic system uses deep teal backgrounds, warm gold framing, bright element
 - `src/shell.js`: stateless page views and navigation.
 - `src/shell.css` / `src/identity.css`: responsive title, portal, bright artwork and teal/gold presentation.
 - `src/collection.js`: common collection/codex/team filter and sort rules.
+- `src/card-ui.js`: shared accessible symbols and speed captions.
+- `src/battle-fx.js`: disposable combat effects and pure presentation plans.
+- `src/experience.css`: illustrated menus, compact battle and elemental FX.
 - `src/app.js`: routing, interactions and battle playback.
 - `src/progression.js`: pure collection, summon, quest and reward transitions.
 - `src/save-files.js`: validated portable save format.

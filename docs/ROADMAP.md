@@ -13,3 +13,5 @@ The v0.3 update adds a shared effect catalog and board-move status clock, revise
 The v0.4 foundation adds the title screen, connected Citadel/Adventure/roster/portal/quest/inventory/settings pages, earned local summons, duplicate tracking and portable save backups. Training, ascension, equipment, deeper campaign content, the five planned destinations and online services remain future work. See [the blueprint](GAME-BLUEPRINT.md).
 
 The v0.5 visual pass introduces fifteen shield/dragon/gem tile images, a five-element crest, teal/gold identity, full-art Collection/Codex cards, shared filtering/sorting, and an accelerating portal ritual inspired by the original game. Combat rules and saved hero identities remain unchanged.
+
+The v0.6 experience redesign removes battle sidebars, exposes seven tile attack lanes, adds basic elemental Special animations, introduces an illustrated world/campaign map and image-led destinations, and reduces card text to names, speed, symbols and numbers. Future modes remain unavailable; combat rules and save contracts are retained.

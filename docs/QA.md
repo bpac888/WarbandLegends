@@ -56,3 +56,11 @@ Six new tests cover Collection vs Codex ownership, combined filters, both chargi
 `npm run test:visuals` loads all 135 codex portraits and verifies natural image size, opacity 1, no filter, full-image containment and labels outside the artwork. It exercises element/type/rarity/faction/mana intersections, faction search, sorting and reset, and checks bright team selection images. A valid battle fixture renders all fifteen color/special combinations, then verifies special asset routing, 390px/320px layouts, portal windup before champion mounting, bright arrival and the reduced-animation preference. No missing assets, external requests or browser errors were observed. The existing battle and game-shell browser suites also pass.
 
 The tile sheet, desktop/mobile roster and codex, special-filled battle board, portal activation/arrival, new logo, title screen and game pages were visually reviewed. Existing tile rules remain unchanged: artwork communicates the existing Blast and Prism mechanics. New images are high-density raster assets in SVG wrappers, not vector artwork.
+
+## Artwork-led experience · v0.6
+
+All 86 named automated checks across five test files pass with the production build. Six new checks cover speed-only card captions, full-art/symbolic roster markup, actual damage targets, healing vs ward plans, enemy basics vs Specials, and campaign locks. Effect planning is checked for state immutability.
+
+`npm run test:experience` covers sidebar removal, seven lane destinations, keyboard previews, straight-column bolts, a three-target area Special, reduced motion, thirteen pages at desktop/390px/320px, symbolic stats, and real map locks. Existing browser scripts remain in the workflow. Screenshots are retained as the `legends-browser-captures` CI artifact.
+
+Local Chromium launch was blocked by an automatic approval-review capacity failure. The user authorized GitHub Actions as an alternative, but automatic approval review also rejected the GitHub tree-write request for the same capacity error, before execution. Nothing from this update was pushed. Browser verification and final rendered review remain pending until the service is available. Update this entry with actual results before claiming a completed visual review.
