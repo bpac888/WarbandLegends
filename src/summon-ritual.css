@@ -1,0 +1,130 @@
+.summon-ritual {
+  flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; overflow: auto; padding: 16px; position: relative;
+  background: radial-gradient(ellipse at 50% 45%, #342057 0%, #100c24 48%, #06050d 82%);
+}
+.summon-ritual-aura {
+  position: absolute; inset: 8% 12% 7%; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 26% 42%, #22D3EE66, transparent 46%),
+    radial-gradient(ellipse at 75% 38%, #D946EF77, transparent 45%),
+    radial-gradient(ellipse at 50% 22%, #8B5CF688, transparent 48%),
+    radial-gradient(ellipse at 50% 82%, #FBBF2455, transparent 40%);
+  filter: blur(18px); mix-blend-mode: screen; animation: ritual-aura 3s ease-in-out infinite alternate;
+}
+.is-arriving .summon-ritual-aura { animation: ritual-aura-arrival 2.8s ease-out both; }
+.summon-ritual-rim {
+  position: absolute; left: 32%; top: 25%; width: 36%; height: 56%;
+  overflow: visible; pointer-events: none; mix-blend-mode: screen;
+}
+.summon-ritual-rim path {
+  fill: none; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 120 42 15 70;
+  animation: ritual-rim-flow 4s linear infinite;
+}
+.ritual-rim-violet { stroke: #D8B4FE; filter: drop-shadow(0 0 6px #A855F7) drop-shadow(0 0 14px #D946EF); }
+.ritual-rim-cyan { stroke: #A5F3FC; filter: drop-shadow(0 0 7px #06B6D4); animation-direction: reverse !important; }
+.ritual-rim-gold { stroke: #FDE68A; filter: drop-shadow(0 0 7px #F59E0B); animation-duration: 6s !important; opacity: .65; }
+.summon-ritual-scene {
+  position: relative; width: min(88vw, 650px, 72vh); aspect-ratio: 1;
+  flex-shrink: 0; isolation: isolate; perspective: 850px;
+}
+.summon-ritual-architecture {
+  width: 100%; height: 100%; object-fit: contain;
+  mask-image: radial-gradient(ellipse, #000 42%, transparent 73%);
+  -webkit-mask-image: radial-gradient(ellipse, #000 42%, transparent 73%);
+}
+.summon-ritual-aperture {
+  position: absolute; left: 36%; top: 30%; width: 28%; height: 48%; overflow: hidden;
+  border-radius: 48% 48% 15% 15%;
+  mask-image: radial-gradient(ellipse, #000 48%, transparent 74%);
+  -webkit-mask-image: radial-gradient(ellipse, #000 48%, transparent 74%);
+}
+.summon-ritual-current {
+  position: absolute; inset: -35%; background-size: 400% 300%; background-position: 50% 57%;
+  mix-blend-mode: screen; opacity: .85; animation: ritual-current 4.5s linear infinite;
+}
+.summon-ritual-vortex {
+  position: absolute; width: 135%; height: 100%; left: -17.5%; top: 0;
+  filter: drop-shadow(0 0 9px #A78BFA); opacity: .9; animation: ritual-current 3s linear infinite;
+}
+.summon-ritual-vortex-inner { opacity: .65; filter: drop-shadow(0 0 7px #22D3EE); animation-duration: 4.6s; animation-direction: reverse; }
+.summon-ritual-core {
+  position: absolute; inset: 10%; border-radius: 50%;
+  background: radial-gradient(ellipse, #F0E7FFcc, #8B5CF688 25%, #22D3EE33 50%, transparent 72%);
+  animation: ritual-breathe 2.1s ease-in-out infinite;
+}
+.is-arriving .summon-ritual-core { animation: ritual-opening 2.8s ease-out both; }
+.summon-ritual-floor {
+  position: absolute; left: 28%; top: 77%; width: 44%; height: 11%; border-radius: 50%;
+  background: radial-gradient(ellipse, #FDE68Acc, var(--ritual-accent) 28%, #22D3EE55 48%, transparent 72%);
+  opacity: .65; filter: blur(10px); animation: ritual-breathe 2.1s ease-in-out infinite;
+}
+.summon-ritual-burst {
+  position: absolute; inset: 17% 15% 12%; border-radius: 50%; opacity: 0;
+  pointer-events: none; mix-blend-mode: screen;
+  background: radial-gradient(ellipse, #F5F3FF88, #C4B5FD55 23%, #22D3EE22 43%, transparent 68%);
+}
+.is-arriving .summon-ritual-burst { animation: ritual-arrival-burst 2.8s ease-out both; }
+.summon-ritual-traveler {
+  position: absolute; left: 31%; top: 23%; width: 38%; height: 59%;
+  transform-origin: 50% 85%; animation: ritual-emerge 2.6s cubic-bezier(.18,.6,.25,1) both;
+}
+.summon-ritual-traveler img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  mask-image: linear-gradient(to bottom, transparent, #000 9%, #000 78%, transparent 100%), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 9%, #000 78%, transparent 100%), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-composite: source-in;
+}
+.summon-ritual-mist {
+  position: absolute; left: 24%; top: 66%; width: 52%; height: 21%; pointer-events: none;
+  background: radial-gradient(ellipse at 25% 50%, #22D3EE44, transparent 60%), radial-gradient(ellipse at 70% 50%, #D946EF55, transparent 65%);
+  filter: blur(12px); animation: ritual-mist 4s ease-in-out infinite alternate;
+}
+.summon-ritual-sparks { position: absolute; left: 50%; top: 53%; pointer-events: none; }
+.summon-ritual-sparks span {
+  position: absolute; width: 3px; height: 3px; background: var(--spark-color); border-radius: 50%;
+  box-shadow: 0 0 7px var(--spark-color), 0 0 16px var(--spark-color); opacity: 0;
+  animation: ritual-spark var(--spark-time) linear var(--spark-delay) infinite;
+}
+.summon-ritual-caption { position: relative; text-align: center; min-height: 90px; margin-top: -20px; }
+.summon-ritual-caption p { color: #C4B5FD; font-size: 11px; text-transform: uppercase; letter-spacing: .2em; }
+.summon-ritual-caption h2 { font-family: 'Cinzel', serif; color: #EAE6D7; font-size: clamp(22px, 4vw, 34px); margin: 8px 0; }
+.summon-ritual-caption span { color: var(--ritual-accent); text-transform: uppercase; font-size: 11px; letter-spacing: .15em; }
+.summon-ritual-skip { min-height: 44px; margin-top: 12px; flex-shrink: 0; }
+@keyframes ritual-current { to { transform: rotate(360deg); } }
+@keyframes ritual-rim-flow { to { stroke-dashoffset: -494; } }
+@keyframes ritual-aura { from { opacity: .55; transform: scale(.94); } to { opacity: .9; transform: scale(1.08); } }
+@keyframes ritual-aura-arrival { 0% { opacity: .6; transform: scale(.94); } 35% { opacity: 1; transform: scale(1.18); } 100% { opacity: .8; transform: scale(1.04); } }
+@keyframes ritual-arrival-burst { 0% { opacity: 0; transform: scale(.25); } 28% { opacity: .8; } 65% { opacity: .15; transform: scale(1.25); } 100% { opacity: 0; transform: scale(1.4); } }
+@keyframes ritual-breathe { 50% { opacity: .8; transform: scale(1.12); } }
+@keyframes ritual-opening { 0% { opacity: .4; } 25% { opacity: 1; transform: scale(1.5); } 100% { opacity: .25; transform: scale(1); } }
+@keyframes ritual-emerge {
+  0% { opacity: 0; transform: translateY(12%) translateZ(-450px) scale(.35); filter: brightness(.2) blur(6px); }
+  20% { opacity: .35; filter: brightness(.5) blur(3px); }
+  60% { opacity: 1; filter: brightness(1.2) blur(0); }
+  100% { opacity: 1; transform: translateY(-3%) translateZ(40px) scale(1.2); filter: brightness(1); }
+}
+@keyframes ritual-mist { to { transform: translateX(8%) scale(1.1); opacity: .5; } }
+@keyframes ritual-spark {
+  0% { opacity: 0; transform: rotate(var(--spark-angle)) translateX(12px) scale(.5); }
+  25% { opacity: .8; }
+  100% { opacity: 0; transform: rotate(calc(var(--spark-angle) + 100deg)) translateX(min(30vw, 230px)) scale(.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .summon-ritual *, .summon-ritual *::before, .summon-ritual *::after { animation: none !important; }
+  .summon-ritual-traveler { opacity: 1; transform: none; filter: none; }
+  .summon-ritual-sparks { display: none; }
+  .summon-ritual-aura { opacity: .65; }
+  .summon-ritual-burst { display: none; }
+}
+
+/* One continuous, accelerating buildup before the champion is mounted. */
+.is-activating .summon-ritual-current { animation: ritual-activation-current 1.5s cubic-bezier(.55,.02,.95,.55) both; }
+.is-activating .summon-ritual-vortex { animation: ritual-activation-swirl 1.5s cubic-bezier(.55,.02,.95,.55) both; }
+.is-activating .summon-ritual-vortex-inner { animation-name: ritual-activation-counter; }
+.is-activating .summon-ritual-core { animation: ritual-activation-core 1.5s ease-in both; }
+@keyframes ritual-activation-current { from { transform: rotate(0deg) scale(.85); opacity: .25; } to { transform: rotate(1080deg) scale(1.2); opacity: 1; } }
+@keyframes ritual-activation-swirl { from { transform: rotate(0deg) scale(.5); opacity: .2; } to { transform: rotate(1440deg) scale(1.18); opacity: 1; } }
+@keyframes ritual-activation-counter { from { transform: rotate(0deg) scale(.4); opacity: .15; } to { transform: rotate(-1080deg) scale(1.1); opacity: 1; } }
+@keyframes ritual-activation-core { from { opacity: .15; transform: scale(.4); } to { opacity: 1; transform: scale(1.45); } }

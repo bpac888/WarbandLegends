@@ -1,6 +1,6 @@
 # Legends · Runes of War
 
-A new, independent match-3 RPG using the owner's Warband Legends champions and artwork. This repository does **not** modify, launch, or connect to Warband Legends. The current foundation includes a playable campaign, summoning, collection, and a connected game shell.
+A new, independent match-3 RPG using the owner's Warband Legends champions and artwork. This repository does **not** modify, launch, or connect to Warband Legends. The current foundation includes playable campaign, dungeons, Arena, monthly Special Events, summoning, collection, and a connected game shell.
 
 ## Play locally
 
@@ -37,13 +37,17 @@ node tools/serve.mjs --dist  # preview the production build
 - Five elements, column-based attacks, color stacking, empty-lane mana, tile-based mana and multi-level charging Specials, status effects, and enemy attack countdowns.
 - Four-match Blast Runes and five-or-more-match Prismatic Runes.
 - 75 campaign encounters: 25 stages each in Normal, Hard and Nightmare, independent progress, guardian crossings and progressively ruined skins of the same illustrated world.
+- Nine local Arena rivals with four champions per team, rating, Arena Tokens and a token exchange.
+- Three monthly Special Events with original artwork, scheduled windows, 20 attempts per window and event-token rewards. No event practice option.
+- The original Warband Legends summoning page and portal ritual adapted to Legends, including single and ten-champion summons.
+- Four original Tavern illustrations reused as Citadel destinations.
 - Seven playable dungeons with original Warband Legends art, themed guardians, three difficulty tiers, saved clears, gold/XP and first-clear seals.
 - Battle log, ability details, hint, 1×/2× animation speed, and reduced-motion support.
 - Fifteen high-density jewel tile images: elemental shields, four-match dragon crests and five-match prismatic gems; bright full-art champion cards and status badges, damage/healing numbers, and a tappable effect field guide.
 - Responsive mouse, touch-drag, and keyboard controls. Use Tab to reach a rune, arrow keys to navigate, and Enter to select each neighbor.
 - Separate team, encounter and progress saves on this browser. Reloading resumes the resolved action without replaying it. Clearing browser data removes these saves.
 
-Collected-only teams and level-1 heroes are the default. Enable open-roster playtesting in Settings to try all champions at maximum level; those battles award no XP, resources, victories or unlocks. Collection cards show actual development; the Codex always previews maximum-level stats. Arena, Events, Alliance, and the Supply Exchange have clearly marked foundation pages; their gameplay is planned. Campaign and Dungeons are playable. There are no online accounts, purchases, hero feeding, competitive play, or shared online progress. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](docs/RULES.md) [the full roster](docs/ROSTER.md), and [the effect review](docs/STATUS-REVIEW.md).
+Collected-only teams and level-1 heroes are the default. Enable open-roster playtesting in Settings to try all champions at maximum level; those battles award no XP, resources, victories or unlocks. Collection cards show actual development; the Codex always previews maximum-level stats. Campaign, Dungeons, local Arena, monthly Special Events and the Supply Exchange are playable. Alliance remains a foundation page. Arena opponents are preset teams, not online players. There are no online accounts, purchases, hero feeding, competitive play, or shared online progress. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](docs/RULES.md) [the full roster](docs/ROSTER.md), and [the effect review](docs/STATUS-REVIEW.md).
 
 ## Publish separately on Vercel
 

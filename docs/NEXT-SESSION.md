@@ -1,14 +1,16 @@
+The owner explicitly removed the new Special Events practice option. Do not add event practice controls or out-of-window entry. Events use scheduled windows and attempts.
+
 ## Campaign/dungeons follow-up
 
 The owner requested the original game's 25-stage / Normal / Hard / Nightmare structure, reused dungeon art, and playable dungeons. v0.8 implements those as 75 campaign and 21 dungeon encounters, with increasingly destroyed skins of Legends' world map and preserved v0.7 progress. See [adventure rules](ADVENTURES.md).
 
-Next, the owner explicitly requested playable Arena and Special Events adapted from Warband Legends, and replacing Legends’ summoning page/animation with the original game's design. Continue these tasks after the campaign/dungeons release is verified. Also reuse the four Tavern area illustrations where they best support Legends navigation, per the owner’s additional request. Leave Warband Legends unchanged.
+v0.9 completes playable Arena and monthly Special Events, the original summoning page/ritual adaptation, a token exchange and four reused Tavern destination illustrations. See ARENA-EVENTS.md. Leave Warband Legends unchanged.
 
 # Improvement plan · current progress
 
 The owner returned and authorized implementation on October 19, 2026. They explicitly approved discarding the existing test save ("you can erase the progress, it isnt important"). The first release implements hero leveling, a campaign-to-development reward loop, and a functional illustrated hero dossier. See [progression rules](PROGRESSION.md) for the selected initial curves and costs, and [QA](QA.md) for verification.
 
-Remaining work: expand the chapter beyond the existing three encounters with varied objectives and a more authored boss; review a representative set of hero kits and their resolution-order explanations; then introduce advanced mechanics gradually. Tournaments are still a future feature, including rarity/color restrictions and special rules. Rare heroes retain their distinct usefulness and lower development cost.
+Remaining design work: author more varied campaign objectives and boss mechanics; review a representative set of hero kits and their resolution-order explanations; then introduce advanced mechanics gradually. Tournaments are still a future feature, including rarity/color restrictions and special rules. Rare heroes retain their distinct usefulness and lower development cost.
 
 The original planning note follows for context. Its instruction to defer implementation applied only until the owner returned and asked to start.
 

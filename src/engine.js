@@ -1,7 +1,7 @@
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
 import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js';
 import {statsAtLevel,levelCap} from './development.js';
-import {CAMPAIGN_STAGES,getEncounter,encounterAppearance} from './encounters.js';
+import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js';
 export {effectName} from './effects.js';
 export const VERSION = 3;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
@@ -80,10 +80,10 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
   const meanHp=state.heroes.reduce((n,u)=>n+u.hp,0)/5,meanAtk=state.heroes.reduce((n,u)=>n+u.atk,0)/5;
   state.enemies=stage.enemyIds.map((id,i)=>{
     if(!byId.has(id))throw new Error(`Missing enemy ${id}`);
-    const enemy=makeUnit(byId.get(id),'enemy',i);enemy.hp=enemy.maxHp=Math.round(meanHp*stage.hp*(i===1?1.15:1));enemy.atk=Math.round(meanAtk*stage.atk);enemy.def=Math.round(state.heroes.reduce((n,u)=>n+u.def,0)/5*.75);enemy.lanes=i===0?[0,1]:i===1?[2,3,4]:[5,6];enemy.countdown=stage.countdown+(i%2);enemy.baseCountdown=stage.countdown+(i%2);return enemy;
+    const enemy=makeUnit(byId.get(id),'enemy',i);enemy.hp=enemy.maxHp=Math.round(meanHp*stage.hp*(i===1?1.15:1));enemy.atk=Math.round(meanAtk*stage.atk);enemy.def=Math.round(state.heroes.reduce((n,u)=>n+u.def,0)/5*.75);enemy.lanes=enemyLanes(i,stage.enemyIds.length);enemy.countdown=stage.countdown+(i%2);enemy.baseCountdown=stage.countdown+(i%2);return enemy;
   });
   // Authored campaign strength does not grow when the player's heroes level up.
-  if(options.progression||!['ashen-gate','frozen-pass','veil-sanctum'].includes(stage.id)){const stats=stage.stats;for(const [i,enemy]of state.enemies.entries()){enemy.hp=enemy.maxHp=Math.round(stats[0]*(i===1?(stage.bossHp||1.15):stage.mode==='dungeon'?.65:1));enemy.atk=Math.round(stats[1]*(stage.mode==='dungeon'&&i!==1?.75:1));enemy.def=stats[2];}}
+  if(options.progression||!['ashen-gate','frozen-pass','veil-sanctum'].includes(stage.id)){const stats=stage.stats;for(const [i,enemy]of state.enemies.entries()){enemy.hp=enemy.maxHp=Math.round(stats[0]*(i===1?(stage.bossHp||1.15):['dungeon','event'].includes(stage.mode)?.65:1));enemy.atk=Math.round(stats[1]*(['dungeon','event'].includes(stage.mode)&&i!==1?.75:1));enemy.def=stats[2];}}
   encounterAppearance(state);
   state.board=freshBoard(state);message(state,`${stage.name} · Match runes to awaken your warband.`);return state;
 }
@@ -279,15 +279,16 @@ export function validateSave(value,roster) {
   if(!value||value.version!==VERSION||!getEncounter(value.stageId)||!integer(value.rng,1)||value.rng>0xffffffff||!integer(value.nextTile,1)||!integer(value.moves)||!integer(value.cascades)||!integer(value.eventId)||typeof value.id!=='string'||value.id.length>120)return false;
   if(!Array.isArray(value.log)||value.log.length>80||value.log.some(l=>!l||typeof l.text!=='string'||typeof l.tone!=='string'||!integer(l.move)))return false;
   if(!['playing','victory','defeat'].includes(value.phase)||!Array.isArray(value.board)||value.board.length!==SIZE||value.board.some(t=>!t||!COLORS.includes(t.color)||!integer(t.id,1)||t.id>=value.nextTile||!([null,'blast','prism'].includes(t.special))))return false;
+  if(value.eventWindow!==undefined&&(getEncounter(value.stageId)?.mode!=='event'||typeof value.eventWindow!=='string'||!value.eventWindow.startsWith(getEncounter(value.stageId).eventId+':')||!/^\w+:\d{4}-(0[1-9]|1[0-2])$/.test(value.eventWindow)))return false;
   const ids=new Set(roster.map(c=>c.id));
-  if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==3)return false;
+  if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==getEncounter(value.stageId).enemyIds.length)return false;
   if(value.progression!==undefined&&(value.progression!==true||typeof value.sandbox!=='boolean'||value.heroes.some(u=>!u||!ids.has(u.id)||!integer(u.level,1)||u.level>levelCap(roster.find(c=>c.id===u.id)))))return false;
   if(new Set(value.board.map(t=>t.id)).size!==SIZE||new Set(value.heroes.map(u=>u.id)).size!==5)return false;
   const units=[...value.heroes,...value.enemies];
   if(units.some(u=>!u||!ids.has(u.id)||!COLORS.includes(u.color)||!u.effects||Array.isArray(u.effects)||typeof u.effects!=='object'||!['attack','defense','support'].includes(u.role)||!Number.isFinite(u.hp)||!Number.isFinite(u.maxHp)||u.maxHp<=0||u.hp<0||u.hp>u.maxHp||!Number.isFinite(u.atk)||u.atk<0||!Number.isFinite(u.def)||u.def<0||!Number.isFinite(u.mana)||u.mana<0||u.mana>u.manaMax||u.manaMax!==manaLevels(roster.find(c=>c.id===u.id)).at(-1)?.tiles||!Number.isFinite(u.shield)||u.shield<0||!integer(u.actions)))return false;
   if(units.some(u=>JSON.stringify(u.special)!==JSON.stringify(roster.find(c=>c.id===u.id).special)))return false;
   if(units.some(u=>Object.entries(u.effects).some(([id,e])=>!BUFFS.has(id)&&!DEBUFFS.has(id)||!e||!integer(e.turns,1)||e.turns>3||!integer(e.appliedMove)||e.appliedMove>value.moves||!units.some(t=>t.uid===e.source))))return false;
-  if(value.heroes.some((u,i)=>u.uid!==`hero-${i}`||u.side!=='hero')||value.enemies.some((u,i)=>u.uid!==`enemy-${i}`||u.side!=='enemy'||!integer(u.countdown)||!integer(u.baseCountdown,1)||!Array.isArray(u.lanes)||JSON.stringify(u.lanes)!==JSON.stringify(i===0?[0,1]:i===1?[2,3,4]:[5,6])))return false;
+  if(value.heroes.some((u,i)=>u.uid!==`hero-${i}`||u.side!=='hero')||value.enemies.some((u,i)=>u.uid!==`enemy-${i}`||u.side!=='enemy'||!integer(u.countdown)||!integer(u.baseCountdown,1)||!Array.isArray(u.lanes)||JSON.stringify(u.lanes)!==JSON.stringify(enemyLanes(i,value.enemies.length))))return false;
   const heroesAlive=living(value.heroes).length>0,enemiesAlive=living(value.enemies).length>0;
   return value.phase==='victory'?!enemiesAlive:value.phase==='defeat'?!heroesAlive&&enemiesAlive:heroesAlive&&enemiesAlive;
 }

@@ -1,3 +1,4 @@
+import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js';
 // Independent Legends encounters. Structure/names/art adapted from the owner's source game.
 export const DIFFICULTIES=[
  {id:'normal',label:'Normal',realm:'The First Crossing',description:'A living realm. The first shadows gather.',art:'assets/scenes/world-map.svg',mult:1,color:'#92c99c'},
@@ -34,12 +35,17 @@ export const DUNGEONS=[
  {id:'magmaheart_crucible',name:'Magmaheart Crucible',boss:'Magmaheart Wyrm',bossId:'abyss_lord',guards:['demon_witchblade','pit_grunt'],bossPortrait:'assets/dungeons/magma-wyrm.svg',lore:'The mountain’s heart is a forge. The Wyrm is the kiln.',color:'red',rank:3},
 ].map(d=>({...d,art:`assets/dungeons/${d.id.replaceAll('_','-')}.svg`}));
 export const DUNGEON_STAGES=DUNGEONS.flatMap(d=>DIFFICULTIES.map((diff,i)=>({id:`dungeon-${d.id}-${diff.id}`,mode:'dungeon',dungeonId:d.id,difficulty:diff.id,number:i+1,name:d.name,region:`${diff.label} · Dungeon`,description:d.lore,enemyIds:[d.guards[0],d.bossId,d.guards[1]],bossName:d.boss,bossPortrait:d.bossPortrait,hp:1,atk:1,countdown:i===2?2:3,stats:[Math.round((850+d.rank*110)*diff.mult),Math.round((300+d.rank*27)*diff.mult),Math.round((250+d.rank*35)*diff.mult)],bossHp:1.65,boss:true,art:d.art,portrait:d.art,recommendedLevel:Math.min(80,5+d.rank*7+i*20),rewards:{gold:Math.round((100+d.rank*30)*diff.mult),xp:Math.round((130+d.rank*35)*diff.mult)}})));
-export const ENCOUNTERS=[...CAMPAIGN_STAGES,...DUNGEON_STAGES];
+export const ENCOUNTERS=[...CAMPAIGN_STAGES,...DUNGEON_STAGES,...ARENA_STAGES,...EVENT_STAGES];
 const byId=new Map(ENCOUNTERS.map(e=>[e.id,e]));
 export const getEncounter=id=>byId.get(id);
 export const campaignStages=(difficulty='normal')=>CAMPAIGN_STAGES.filter(e=>e.difficulty===difficulty);
-export function entryError(profile,id){const e=getEncounter(id);if(!e)return 'Unknown encounter.';if(profile.openRoster)return null;
+export function entryError(profile,id,now=new Date()){const e=getEncounter(id);if(!e)return 'Unknown encounter.';
+ if(e.mode==='arena')return null;
+ if(e.mode==='event'){if(!eventWindow(e.eventId,now)?.active)return 'This event is outside its monthly window.';return eventAttemptsLeft(profile,e.eventId,now)>0?null:'No attempts remain in this event window.';}
+ if(profile.openRoster)return null;
  if(e.mode==='campaign')return e.number<=(profile.campaignProgress?.[e.difficulty]||0)+1?null:`Clear stage ${e.number-1} on ${e.difficulty} first.`;
  const index=DIFFICULTIES.findIndex(d=>d.id===e.difficulty);return index===0||profile.dungeonClears?.[`dungeon-${e.dungeonId}-${DIFFICULTIES[index-1].id}`]?null:`Clear ${DIFFICULTIES[index-1].label} in this dungeon first.`;
 }
-export function encounterAppearance(state){const e=getEncounter(state.stageId);if(e?.mode==='dungeon'&&state.enemies?.[1]){state.enemies[1].name=e.bossName;if(e.bossPortrait)state.enemies[1].portrait=e.bossPortrait;}return state;}
+export function encounterAppearance(state){const e=getEncounter(state.stageId);if(['dungeon','event'].includes(e?.mode)&&state.enemies?.[1]){state.enemies[1].name=e.bossName;if(e.bossPortrait)state.enemies[1].portrait=e.bossPortrait;}return state;}
+
+export function enemyLanes(index,count){return count===4?[[0,1],[2,3],[4],[5,6]][index]:[[0,1],[2,3,4],[5,6]][index];}
