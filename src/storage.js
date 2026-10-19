@@ -1,13 +1,14 @@
 import {defaultProfile,normalizeProfile,awardVictory} from './progression.js';
 export {defaultProfile,STARTER_TEAM} from './progression.js';
 import {validateSave,STAGES,createBattle} from './engine.js';
-export const PROFILE_KEY='legends.runes.profile.v1', BATTLE_KEY='legends.runes.battle.v3';
+export const PROFILE_KEY='legends.runes.profile.v2', BATTLE_KEY='legends.runes.battle.v4';
 export const PREVIOUS_BATTLE_KEY='legends.runes.battle.v2';
 export const LEGACY_BATTLE_KEY='legends.runes.battle.v1';
 export function loadProfile(storage,roster){try{return normalizeProfile(JSON.parse(storage.getItem(PROFILE_KEY)),roster);}catch{return defaultProfile();}}
-export function loadBattle(storage,roster){try{
+export function loadBattle(storage,roster,{currentOnly=false}={}){try{
   const raw=storage.getItem(BATTLE_KEY);
   if(raw){const state=JSON.parse(raw);if(!validateSave(state,roster))return null;const byId=new Map(roster.map(c=>[c.id,c]));for(const u of [...state.heroes,...state.enemies]){const source=byId.get(u.id);for(const key of ['name','portrait','special','passive','ability_name','color','role','rarity','manaSpeed'])u[key]=structuredClone(source[key]);}return state;}
+  if(currentOnly)return null;
   const previous=JSON.parse(storage.getItem(PREVIOUS_BATTLE_KEY));
   if(previous?.version===2){
     const updated=structuredClone(previous);updated.version=3;const byId=new Map(roster.map(c=>[c.id,c]));
@@ -24,4 +25,4 @@ export function loadBattle(storage,roster){try{
   return state;
 }catch{return null;}}
 export function save(storage,key,value){try{storage.setItem(key,JSON.stringify(value));return true;}catch{return false;}}
-export function recordVictory(profile,battle){return awardVictory(profile,battle);}
+export function recordVictory(profile,battle,roster){return awardVictory(profile,battle,roster);}

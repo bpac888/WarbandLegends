@@ -1,3 +1,13 @@
+# Improvement plan · current progress
+
+The owner returned and authorized implementation on October 19, 2026. They explicitly approved discarding the existing test save ("you can erase the progress, it isnt important"). The first release implements hero leveling, a campaign-to-development reward loop, and a functional illustrated hero dossier. See [progression rules](PROGRESSION.md) for the selected initial curves and costs, and [QA](QA.md) for verification.
+
+Remaining work: expand the chapter beyond the existing three encounters with varied objectives and a more authored boss; review a representative set of hero kits and their resolution-order explanations; then introduce advanced mechanics gradually. Tournaments are still a future feature, including rarity/color restrictions and special rules. Rare heroes retain their distinct usefulness and lower development cost.
+
+The original planning note follows for context. Its instruction to defer implementation applied only until the owner returned and asked to start.
+
+---
+
 # Next session · planned improvements
 
 The owner approved this direction after reviewing the conceptual notes and two visual hero-card references. Save the ideas now; do not begin gameplay implementation until the owner returns and asks to start. No overnight development or scheduled implementation is requested.

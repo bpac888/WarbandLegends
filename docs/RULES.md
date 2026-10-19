@@ -71,3 +71,7 @@ Every valid board move ticks both sides' regeneration and DoT at its start, then
 Team selections, victories, cleared encounters and animation speed keep their independent profile key. Battles use `legends.runes.battle.v3`. v0.2 battles migrate while preserving health, charge, board, RNG and turn counts; old Taunt ailments become buffs on their living source. Older v0.1 active battles restart with full health and zero charge, as in the previous migration. Old records remain backups, and completed victories retain their ID to prevent duplicate credit.
 
 Actions save before visual playback. Local saves are single-player browser data, not a competitive authority. This project does not access the original Warband Legends account, repository, API, deployment or database.
+
+## Hero levels (v0.7)
+
+The table above describes maximum-level baselines. Collected champions now start at level 1 and gain XP/stat growth through campaign wins or confirmed gold training. Caps are Common 30, Rare 50, Legendary 70 and Mythical 80. Mana thresholds and kits do not change with levels. Campaign enemy stats are fixed; playtesting uses maximum levels without rewards. See [progression rules](PROGRESSION.md) for formulas, reward values, duplicate behavior and the owner-approved fresh-start policy.

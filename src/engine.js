@@ -1,5 +1,6 @@
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
 import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js';
+import {statsAtLevel,levelCap} from './development.js';
 export {effectName} from './effects.js';
 export const VERSION = 3;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
@@ -70,16 +71,22 @@ function frame(state,frames,kind,extra={}) {frames.push({kind,state:clone(state)
 function makeUnit(source,side,index) {
   return {...clone(source),uid:`${side}-${index}`,side,hp:source.hp,maxHp:source.hp,mana:0,manaMax:manaLevels(source).at(-1).tiles,shield:0,effects:{},reviveUsed:false,passiveReviveUsed:false,actions:0};
 }
-export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()) {
+export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now(),options={}) {
   if(teamIds.length!==5||new Set(teamIds).size!==5)throw new Error('Choose five different champions.');
   const byId=new Map(roster.map(c=>[c.id,c]));if(teamIds.some(id=>!byId.has(id)))throw new Error('Unknown champion.');
   const stage=STAGES.find(s=>s.id===stageId);if(!stage)throw new Error('Unknown encounter.');
   const state={version:VERSION,id:`runes-${seed>>>0}-${stage.id}`,stageId,rng:seed>>>0||1,nextTile:1,eventId:0,moves:0,cascades:0,phase:'playing',log:[],heroes:teamIds.map((id,i)=>makeUnit(byId.get(id),'hero',i)),enemies:[]};
+  if(options.progression){
+    state.progression=true;state.sandbox=options.sandbox===true;
+    for(const hero of state.heroes){const source=byId.get(hero.id);hero.level=state.sandbox?levelCap(source):Math.max(1,Math.min(levelCap(source),Math.trunc(options.levels?.[hero.id])||1));Object.assign(hero,statsAtLevel(source,hero.level));hero.maxHp=hero.hp;}
+  }
   const meanHp=state.heroes.reduce((n,u)=>n+u.hp,0)/5,meanAtk=state.heroes.reduce((n,u)=>n+u.atk,0)/5;
   state.enemies=stage.enemyIds.map((id,i)=>{
     if(!byId.has(id))throw new Error(`Missing enemy ${id}`);
     const enemy=makeUnit(byId.get(id),'enemy',i);enemy.hp=enemy.maxHp=Math.round(meanHp*stage.hp*(i===1?1.15:1));enemy.atk=Math.round(meanAtk*stage.atk);enemy.def=Math.round(state.heroes.reduce((n,u)=>n+u.def,0)/5*.75);enemy.lanes=i===0?[0,1]:i===1?[2,3,4]:[5,6];enemy.countdown=stage.countdown+(i%2);enemy.baseCountdown=stage.countdown+(i%2);return enemy;
   });
+  // Authored campaign strength does not grow when the player's heroes level up.
+  if(options.progression){const stats={'ashen-gate':[600,240,210],'frozen-pass':[800,315,280],'veil-sanctum':[1050,400,350]}[stage.id];for(const [i,enemy]of state.enemies.entries()){enemy.hp=enemy.maxHp=Math.round(stats[0]*(i===1?1.15:1));enemy.atk=stats[1];enemy.def=stats[2];}}
   state.board=freshBoard(state);message(state,`${stage.name} · Match runes to awaken your warband.`);return state;
 }
 function effective(unit,stat) {
@@ -276,6 +283,7 @@ export function validateSave(value,roster) {
   if(!['playing','victory','defeat'].includes(value.phase)||!Array.isArray(value.board)||value.board.length!==SIZE||value.board.some(t=>!t||!COLORS.includes(t.color)||!integer(t.id,1)||t.id>=value.nextTile||!([null,'blast','prism'].includes(t.special))))return false;
   const ids=new Set(roster.map(c=>c.id));
   if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==3)return false;
+  if(value.progression!==undefined&&(value.progression!==true||typeof value.sandbox!=='boolean'||value.heroes.some(u=>!u||!ids.has(u.id)||!integer(u.level,1)||u.level>levelCap(roster.find(c=>c.id===u.id)))))return false;
   if(new Set(value.board.map(t=>t.id)).size!==SIZE||new Set(value.heroes.map(u=>u.id)).size!==5)return false;
   const units=[...value.heroes,...value.enemies];
   if(units.some(u=>!u||!ids.has(u.id)||!COLORS.includes(u.color)||!u.effects||Array.isArray(u.effects)||typeof u.effects!=='object'||!['attack','defense','support'].includes(u.role)||!Number.isFinite(u.hp)||!Number.isFinite(u.maxHp)||u.maxHp<=0||u.hp<0||u.hp>u.maxHp||!Number.isFinite(u.atk)||u.atk<0||!Number.isFinite(u.def)||u.def<0||!Number.isFinite(u.mana)||u.mana<0||u.mana>u.manaMax||u.manaMax!==manaLevels(roster.find(c=>c.id===u.id)).at(-1)?.tiles||!Number.isFinite(u.shield)||u.shield<0||!integer(u.actions)))return false;

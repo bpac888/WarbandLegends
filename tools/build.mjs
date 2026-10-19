@@ -7,6 +7,6 @@ for(const color of ['red','blue','green','yellow','purple'])for(const suffix of 
 for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/world-map.svg'])if((await stat(path)).size<500)throw Error('Missing brand artwork');
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
 for(const path of ['index.html','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
-const manifest={version:'0.6.0',champions:roster.length,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
+const manifest={version:'0.7.0',champions:roster.length,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
 await writeFile('dist/build.json',JSON.stringify(manifest,null,2)+'\n');
 console.log(`Built independent static game: ${roster.length} champions and local portraits → dist/`);

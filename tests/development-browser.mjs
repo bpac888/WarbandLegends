@@ -1,0 +1,40 @@
+import {createRequire} from 'node:module';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {validMoves,readyLevel,manaLevels,living} from '../src/engine.js';
+import {development,statsAtLevel} from '../src/development.js';
+import {PROFILE_KEY,BATTLE_KEY} from '../src/storage.js';
+const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json','utf8'));
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
+try{
+ const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),errors=[];
+ await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='legends.local'){errors.push('External request');return route.abort();}try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:await fs.readFile(p),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}catch{errors.push('Missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}});
+ const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+ const read=key=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),key),profile=()=>read(PROFILE_KEY),battle=()=>read(BATTLE_KEY);
+ const go=async route=>{await page.goto('http://legends.local/#/'+route);await page.locator('.topbar').waitFor();};
+ await go('home');assert.equal((await profile()).openRoster,false);
+ await go('champion/shieldmaiden_runa');await page.getByRole('heading',{name:'A legend in the making'}).waitFor();assert.equal(await page.locator('.level-dial>b').textContent(),'1');assert.equal(await page.locator('.level-dial>small').textContent(),'/ 50');
+ for(const width of [1440,760,390,320]){await page.setViewportSize({width,height:1000});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`development overflow ${width}`);await page.screenshot({path:`${root}artifacts/development-${width}-dossier.png`,fullPage:true});}
+ await page.setViewportSize({width:390,height:844});
+ const before=await profile();await page.locator('[data-action="train-preview"]').click();await page.getByRole('button',{name:'Cancel',exact:true}).click();assert.deepEqual(await profile(),before);
+ await page.locator('[data-action="train-preview"]').click();assert.ok(await page.locator('.training-confirm').isVisible());assert.ok(await page.evaluate(()=>document.querySelector('#modal').scrollWidth<=document.querySelector('#modal').clientWidth));await page.screenshot({path:root+'artifacts/development-mobile-training.png',fullPage:true});
+ await page.locator('[data-action="train-confirm"]').click();assert.equal(await page.locator('.level-dial>b').textContent(),'2');assert.ok((await profile()).gold<before.gold);assert.equal(development(roster.find(c=>c.id==='shieldmaiden_runa'),(await profile()).heroXp.shieldmaiden_runa).level,2);await page.reload();await page.locator('.level-dial').waitFor();assert.equal(await page.locator('.level-dial>b').textContent(),'2');assert.equal(await page.locator('[data-action="train-confirm"]').count(),0);
+ const trained=await profile();assert.deepEqual(trained.collection,before.collection);
+ const unowned=roster.find(c=>!trained.collection[c.id]);await go('champion/'+unowned.id);assert.ok(await page.getByRole('heading',{name:'A legend yet to begin'}).isVisible());assert.equal(await page.locator('[data-action="train-preview"]').count(),0);
+ // Play a real campaign encounter through UI actions, with no fabricated victory.
+ await go('campaign');await page.locator('.campaign-stop [data-stage="ashen-gate"]').click();await page.getByRole('button',{name:/Into the fray/}).click();const start=await battle(),initialProfile=await profile();assert.equal(start.progression,true);assert.equal(start.sandbox,false);assert.equal(start.heroes.find(h=>h.id==='shieldmaiden_runa').level,2);assert.equal(start.heroes.find(h=>h.id==='shieldmaiden_runa').atk,statsAtLevel(roster.find(c=>c.id==='shieldmaiden_runa'),2).atk);
+ for(let turn=0;turn<100;turn++){
+  let b=await battle();if(b.phase!=='playing')break;
+  for(const original of b.heroes){b=await battle();if(b.phase!=='playing')break;const hero=b.heroes.find(h=>h.uid===original.uid),charge=readyLevel(hero);if(!charge)continue;const spec=manaLevels(hero).find(l=>l.level===charge);await page.locator(`[data-action="hero"][data-uid="${hero.uid}"]`).click();if(hero.special.charging)await page.getByRole('button',{name:'Cast Charge '+charge,exact:true}).click();if(spec.target!=='self'){const target=spec.target==='enemy'?living(b.enemies)[0]:living(b.heroes).sort((a,z)=>a.hp/a.maxHp-z.hp/z.maxHp)[0];await page.locator(`[data-action="${spec.target==='enemy'?'enemy':'hero'}"][data-uid="${target.uid}"]`).click();}await page.waitForFunction(()=>!document.querySelector('.board.resolving'));}
+  b=await battle();if(b.phase!=='playing')break;const move=validMoves(b.board)[0];await page.locator(`[data-index="${move[0]}"]`).click();await page.locator(`[data-index="${move[1]}"]`).click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));
+ }
+ const won=await battle();assert.equal(won.phase,'victory');await page.getByRole('heading',{name:'The crossing is yours.'}).waitFor();assert.equal(await page.locator('.victory-hero').count(),5);assert.ok(await page.locator('.leveled-up').count()>0);assert.equal((await profile()).gold,initialProfile.gold+500);assert.equal((await profile()).heroXp.dragonmage,120);await page.screenshot({path:root+'artifacts/development-mobile-levelup.png',fullPage:true});const rewarded=await profile();await page.reload();await page.getByRole('heading',{name:'The crossing is yours.'}).waitFor();assert.deepEqual(await profile(),rewarded);await page.getByRole('button',{name:'Close dialog'}).click();
+ await go('roster');assert.ok((await page.locator('.library-card').first().textContent()).includes('Lv.'));assert.ok(!(await page.locator('.library-label').first().textContent()).includes('tiles'));
+ await go('champion/dragonmage');await page.locator('[data-action="dossier-section"][data-section="hero-special"]').click();assert.ok(await page.locator('#hero-special').evaluate(n=>{const r=n.getBoundingClientRect();return r.top>=0&&r.top<innerHeight;}));await page.screenshot({path:root+'artifacts/development-mobile-special.png',fullPage:true});
+ await go('campaign');assert.equal(await page.locator('.map-node:disabled').count(),1);assert.ok((await page.locator('.campaign-progress-note').textContent()).includes('1 / 5'));await page.screenshot({path:root+'artifacts/development-mobile-campaign.png',fullPage:true});
+ // An active battle captures the mode at entry, even if the setting is later changed.
+ await go('settings');await page.locator('#open-roster').check();await go('campaign');await page.locator('.campaign-stop [data-stage="veil-sanctum"]').click();await page.locator('.board').waitFor();const sandbox=await battle();assert.equal(sandbox.sandbox,true);assert.equal(sandbox.heroes[0].atk,roster.find(c=>c.id===sandbox.heroes[0].id).atk);await go('settings');await page.locator('#open-roster').uncheck();assert.equal((await battle()).sandbox,true);assert.equal((await profile()).wins,1);
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,checks:['fresh collected-only game','Rare level cap','1440/760/390/320 dossier without overflow','training cancel and confirm, persistent stat growth, no consumed copies','unowned maximum preview','real UI campaign victory grants XP and five level-up rows','victory reload cannot duplicate rewards','roster level badges and speed-only labels','Special section navigation','replay seal goal','sandbox max stats and captured mode','no missing assets or browser errors']},null,2));
+}finally{await browser.close();}
