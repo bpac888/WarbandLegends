@@ -4,7 +4,7 @@ Validated with Node.js 24 and Chromium on 2026-10-18 (first foundation and v0.2 
 
 ## Automated checks
 
-`npm run check` runs 58 combat/data/save tests and builds the production site. These cover seeded boards, legal moves, elemental rules, invalid swaps, intersecting matches, gravity/cascades, Blast/Prism creation and chains, missing colors, same-color stacks, empty lanes, enemy countdowns, dead enemies, signature targeting and mana, healing/cleanse/buffs, immunities, status expiry, revival, win/loss, kit descriptions, deterministic save recovery and malformed saves. Thirty seeded encounters simulate through completion. Initial boards are checked across 100 seeds.
+`npm run check` runs the combat/data/save suites and builds the production site. These cover seeded boards, legal moves, elemental rules, invalid swaps, intersecting matches, gravity/cascades, Blast/Prism creation and chains, missing colors, same-color stacks, empty lanes, enemy countdowns, dead enemies, signature targeting and mana, healing/cleanse/buffs, immunities, status expiry, revival, win/loss, kit descriptions, deterministic save recovery and malformed saves. Thirty seeded encounters simulate through completion. Initial boards are checked across 100 seeds.
 
 All 135 original IDs were compared with the source definitions; a fixed source-ID digest guards against accidental renaming. Every champion's local portrait exists and the production build verifies its size and path. The source checkout and original remote branch remain unchanged.
 
@@ -40,3 +40,11 @@ Twenty additional interaction checks verify Attack Up/Tile Boost separation and 
 Expanded browser checks verify the effect-guide tabs, effect definitions, tappable mobile active-status details, all 35 loaded vector rune images, and v2 migration preserving HP/charge/board/turn count. Desktop and 320px/390px layouts were visually reviewed. Eight screenshots are produced by the browser test. No missing assets, external runtime calls or browser errors were observed.
 
 The same first-legal-move/ready-Special policy over 50 seeds per encounter in v0.3 yielded 50/50 Ashen Gate wins (7.86 moves average), 50/50 Frozen Pass wins (10.6), and 26/50 Veil Sanctum wins (13.32). These are regression smoke results rather than final player-balance claims.
+
+## Game shell and visual polish · v0.4
+
+All 74 named combat, effect and progression checks pass across three test files, followed by a successful production build. Sixteen new checks cover profile migration, starter ownership, weighted summon boundaries, resource spending, duplicates, failure cases, bounded history, one-time quests, first clears vs replays, collected-only team repair, resource caps and strict backup validation.
+
+`npm run test:shell` uses the same optional Playwright setup as `test:browser`. It verifies keyboard splash entry, collection/codex/detail navigation, delayed portal reveal, prevention of double summoning, persistence after leaving the animation, one-time quest/victory rewards, owned-only teams, settings, backup export/import and invalid-file rejection. It checks fourteen pages at 1440px, 390px and 320px without horizontal overflow, missing assets, external requests or browser errors. The original battle browser suite also passes.
+
+Rendered splash, portal, summon reveal, roster, hub and battle screens were visually reviewed. The polish pass adjusts image crops, circular portal inscriptions, consistent borders, quieter glow, text hierarchy and mobile spacing. Reused WebP artwork retains its original resolution; this pass improves composition and presentation rather than claiming newly generated high-resolution portraits.
