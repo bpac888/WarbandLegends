@@ -1,5 +1,5 @@
 import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js';
-import {OVERPRESSURE,validScenario} from './chapter.js';
+import {SCENARIOS,validScenario} from './chapter.js';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
 import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js';
 import {statsAtLevel,levelCap} from './development.js';
@@ -187,14 +187,16 @@ export function skillDescription(unit,effects={},level=manaLevels(unit).length) 
 }
 // A one-time, end-of-action phase. It never interrupts a cascade or steals a Special turn.
 function encounterPhase(state,frames){
-  if(state.phase!=='playing'||state.scenario?.id!==OVERPRESSURE.id||state.scenario.triggered)return;
-  const boss=state.enemies[1];if(boss.hp<=0||boss.hp>boss.maxHp*OVERPRESSURE.threshold)return;
+  const rule=SCENARIOS[state.scenario?.id];
+  if(state.phase!=='playing'||!rule||state.scenario.triggered)return;
+  const boss=state.enemies[1];if(boss.hp<=0)return;
+  const ready=rule.trigger==='half_health'?boss.hp<=boss.maxHp*rule.threshold:state.enemies.every((e,i)=>i===1||e.hp<=0);
+  if(!ready)return;
   state.scenario.triggered=true;
-  message(state,`${boss.name}: ${OVERPRESSURE.name} · Barrier and Attack Up for 2 moves; next attack in 1 move. Dispel or protect your warband.`,'skill',boss.uid);
-  applyEffect(state,boss,boss,'shield',OVERPRESSURE.turns);
-  applyEffect(state,boss,boss,'inc_atk',OVERPRESSURE.turns);
-  boss.countdown=1;
-  frame(state,frames,'mechanic',{actor:boss.uid,target:boss.uid,name:OVERPRESSURE.name});
+  message(state,`${boss.name}: ${rule.name} · ${rule.notice}`,'skill',boss.uid);
+  for(const id of rule.effects)applyEffect(state,boss,boss,id,rule.turns);
+  boss.countdown=rule.countdownMinimum?Math.max(boss.countdown,rule.countdown):rule.countdown;
+  frame(state,frames,'mechanic',{actor:boss.uid,target:boss.uid,name:rule.name});
 }
 
 function enemyPhase(state,frames) {

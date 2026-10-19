@@ -1,4 +1,4 @@
-// First five crossings: authored tactics, using existing champions and effects.
+// Authored campaign chapters: authored tactics, using existing champions and effects.
 export const OPENING_CHAPTER={name:'The Broken Road',objective:'Defeat the enemy warband.',stages:[
  {number:1,label:'Open the lanes',story:'Scouts hold the gate. Break a flank and use the empty columns to charge your warband.',tactic:'Runes attack straight up their columns. A cleared tile in an empty lane gives double charge.'},
  {number:2,label:'Break the shieldwall',story:'Runa braces the pass behind a winter ward. The flanks remain exposed.',tactic:'The center starts with Defense Up for 2 board moves. Dispel it, wait it out, or open a flank first.',opening:{effects:[{index:1,id:'inc_def',turns:2}]}},
@@ -6,15 +6,28 @@ export const OPENING_CHAPTER={name:'The Broken Road',objective:'Defeat the enemy
  {number:4,label:'Turn the ambush',story:'Thornwild raiders spring from the ford while a druid shelters behind them.',tactic:'The flanks have less HP and attack every 2 moves. The central druid attacks every 5. Clear a flank to charge quickly.',enemyIds:['barkskin_bruiser','grove_druid','thornweaver_seraph'],opening:{countdowns:[2,5,2],hpMultipliers:[.72,1.15,.72]}},
  {number:5,label:'Silence the boiler',story:'The Bronze Juggernaut bars the crossroads. Its cracked boiler flares as the armor gives way.',tactic:'Once, after an action leaves the living boss at half HP or below, Overpressure grants a 2-move Barrier and Attack Up. Its next attack is in 1 move. Dispel the buffs or protect your team.',scenario:'iron-overpressure',bossHp:1.35},
 ]};
+export const SECOND_CHAPTER={name:'The Hollow Covenant',objective:'Defeat the enemy warband.',description:'Follow stolen light through the marsh to a gate defended by a fallen angel.',stages:[
+ {number:6,label:'Cut off the recovery',story:'The Pale Matriarch shelters a wounded court above the road. Her recovery begins before the first strike.',tactic:'The center starts with Regeneration for 2 board moves. Dispel it or focus damage before she can recover. Regeneration is a buff; Cleanse will not remove it.',enemyIds:['shadow_stalker','pale_matriarch','cursed_acolyte'],opening:{effects:[{index:1,id:'heal',turns:2}]}},
+ {number:7,label:'Deny the relay',story:'A stolen signal passes through the broken banner. Lyra is nearly ready to awaken the warband.',tactic:'The right-side support starts with 8 of 12 tile charge. Her next attack opportunity can heal and grant charge to her allies. Mana Block delays the cast; Dispel removes its buffs afterward but cannot undo healing.',enemyIds:['neon_laser_blade','executor_model_z','neon_hacker_empress'],opening:{mana:{index:2,amount:8}}},
+ {number:8,label:'Strip the spore ward',story:'Fen shelters the marsh hunters beneath a veil of living spores. Their opening ward rejects new ailments.',tactic:'All enemies start with Ailment Ward for 2 board moves. Dispel the ward or wait it out before relying on Poison, Burn or mana ailments. Direct rune damage still works.',enemyIds:['ghoul_scavenger','spore_engineer','thornveil_dryad'],opening:{effects:[0,1,2].map(index=>({index,id:'block_debuffs',turns:2}))}},
+ {number:9,label:'Break the death pact',story:'The gallows sentries carry a borrowed promise of life. The Titan waits beneath them.',tactic:'Both flanks start with Death Ward for 2 board moves. Dispel it, wait for it to expire, or prepare to defeat a sentry twice. Each ward can revive its bearer once at 30% HP; it is not a passive.',enemyIds:['ghoul_scavenger','necropolis_titan','cinder_mender_vessa'],opening:{effects:[0,2].map(index=>({index,id:'revive_on_death',turns:2})),hpMultipliers:[.72,1.15,.72]}},
+ {number:10,label:'Outlast the last light',story:'Archangel Lucifer guards the obsidian gate. His final oath awakens when both sentries fall.',tactic:'Once both escorts are defeated, the living boss gains Defense Up and Riposte for 2 board moves. His next attack is at least 2 moves away. Dispel the buffs, use runes that cannot trigger Riposte, or defeat the boss before both escorts fall.',enemyIds:['cult_zealot','archangel_lucifer','demon_witchblade'],scenario:'obsidian-last-light',bossHp:1.65,opening:{hpMultipliers:[.65,1.65,.65]}},
+]};
+OPENING_CHAPTER.description='Break the shieldwall, interrupt the ritual and silence the boiler at the crossroads.';
+export const CHAPTERS=[OPENING_CHAPTER,SECOND_CHAPTER];
+export function chapterForStage(number){return CHAPTERS.find(ch=>ch.stages.some(s=>s.number===number));}
+export function authoredStage(number){const chapter=chapterForStage(number);return chapter?{...chapter.stages.find(s=>s.number===number),chapter:chapter.name}:null;}
 export function openingStage(number){return OPENING_CHAPTER.stages.find(s=>s.number===number);}
-export const OVERPRESSURE={id:'iron-overpressure',name:'Overpressure',threshold:.5,turns:2};
+export const OVERPRESSURE={id:'iron-overpressure',name:'Overpressure',trigger:'half_health',threshold:.5,turns:2,effects:['shield','inc_atk'],countdown:1,notice:'Barrier and Attack Up for 2 moves; next attack in 1 move. Dispel or protect your warband.',waiting:'Overpressure waits at half HP. Keep a dispel or protection Special ready.'};
+export const LAST_LIGHT={id:'obsidian-last-light',name:'Last Light',trigger:'escorts_defeated',turns:2,effects:['inc_def','counterattack'],countdown:2,countdownMinimum:true,notice:'Defense Up and Riposte for 2 moves; next attack no sooner than 2 moves. Dispel or use runes to avoid Riposte.',waiting:'Last Light waits until both escorts fall. Rune damage cannot trigger Riposte; a dispel can remove it.'};
+export const SCENARIOS=Object.fromEntries([OVERPRESSURE,LAST_LIGHT].map(s=>[s.id,s]));
 export function scenarioStatus(state){
- if(state.scenario?.id!==OVERPRESSURE.id)return null;
+ const rule=SCENARIOS[state.scenario?.id];if(!rule)return null;
  const boss=state.enemies[1];
- if(boss.hp<=0)return {name:OVERPRESSURE.name,phase:'ended',text:'The boiler has fallen silent.'};
- return state.scenario.triggered?{name:OVERPRESSURE.name,phase:'triggered',text:'Overpressure triggered. It cannot trigger again. Inspect the boss’s badges for remaining buffs.'}:{name:OVERPRESSURE.name,phase:'waiting',text:'Overpressure waits at half HP. Keep a dispel or protection Special ready.'};
+ if(boss.hp<=0)return {name:rule.name,phase:'ended',text:'The guardian has fallen.'};
+ return state.scenario.triggered?{name:rule.name,phase:'triggered',text:rule.name+' triggered. It cannot trigger again. Inspect the boss’s badges for remaining buffs.'}:{name:rule.name,phase:'waiting',text:rule.waiting};
 }
 export function validScenario(state,stage){
  if(state.scenario===undefined)return true; // Existing saved fights keep their original rules.
- return !!stage.scenario&&state.scenario!==null&&typeof state.scenario==='object'&&!Array.isArray(state.scenario)&&state.scenario.id===stage.scenario&&typeof state.scenario.triggered==='boolean'&&Object.keys(state.scenario).every(k=>['id','triggered'].includes(k));
+ return !!SCENARIOS[stage.scenario]&&state.scenario!==null&&typeof state.scenario==='object'&&!Array.isArray(state.scenario)&&state.scenario.id===stage.scenario&&typeof state.scenario.triggered==='boolean'&&Object.keys(state.scenario).every(k=>['id','triggered'].includes(k));
 }

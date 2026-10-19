@@ -30,3 +30,20 @@ export function specialTargeting(spec){
  const single=(!spec.aoe&&spec.damage)||spec.effects.some(e=>e.scope==='enemy');
  return targets+(spec.aoe?' Area damage hits every living enemy.':'')+(automatic?' The lowest current-HP living enemy is chosen automatically for enemy-targeted actions.':'')+(single?' Taunt can redirect the single enemy target; rune lanes stay unchanged.':'');
 }
+
+// A higher charge can trade focused damage for area coverage. Describe, don't rank it.
+export function chargeComparison(previous,current){
+ if(!previous||!current)return [];
+ const changes=[{name:'Charge requirement',before:previous.tiles+' tiles',after:current.tiles+' tiles'}];
+ const damage=s=>s.damage?Math.round(s.damage*100)+'% ATK · '+(s.aoe?'all enemies':enemyTargetLabel(s).toLowerCase()):'No direct damage';
+ const healing=s=>s.healing?Math.round(s.healing*100)+'% max HP · '+scopeLabel(s.healScope,s).toLowerCase():'No instant healing';
+ if(damage(previous)!==damage(current))changes.push({name:'Direct damage',before:damage(previous),after:damage(current)});
+ if(healing(previous)!==healing(current))changes.push({name:'Healing',before:healing(previous),after:healing(current)});
+ if(previous.pierce!==current.pierce)changes.push({name:'Pierce',before:previous.pierce?'Ignore 25% of effective DEF':'No Pierce',after:current.pierce?'Ignore 25% of effective DEF':'No Pierce'});
+ const status=(e,s)=>!e?'Not applied':scopeLabel(e.scope,s)+' · '+(e.turns?e.turns+' board move'+(e.turns===1?'':'s'):'Instant');
+ for(const id of new Set([...previous.effects,...current.effects].map(e=>e.id))){
+  const old=previous.effects.find(e=>e.id===id),next=current.effects.find(e=>e.id===id),before=status(old,previous),after=status(next,current);
+  if(before!==after)changes.push({name:effectName(id),before,after});
+ }
+ return changes;
+}

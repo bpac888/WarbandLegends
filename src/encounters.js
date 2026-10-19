@@ -1,4 +1,4 @@
-import {openingStage,OPENING_CHAPTER} from './chapter.js';
+import {authoredStage} from './chapter.js';
 import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js';
 // Independent Legends encounters. Structure/names/art adapted from the owner's source game.
 export const DIFFICULTIES=[
@@ -22,9 +22,9 @@ export const CAMPAIGN_STAGES=DIFFICULTIES.flatMap((diff,d)=>STAGE_NAMES.map((nam
  const n=i+1,t=Math.max(0,(n-3)/22),early=[[600,240,210],[800,315,280],[1050,400,350]][i];
  const base=early||[1075+525*t,402+118*t,354+176*t],boss=n%5===0;
  const stats=base.map((v,k)=>Math.round(v*diff.mult*(boss?(k===0?1.08:1.03):1)));
- const authored=openingStage(n),formation=authored?.enemyIds||(i<3?formations[i]:formations[(i+(d*3))%formations.length]);
+ const authored=authoredStage(n),formation=authored?.enemyIds||(i<3?formations[i]:formations[(i+(d*3))%formations.length]);
  const legacyReward=[{gold:50,xp:80},{gold:75,xp:120},{gold:100,xp:180}][i];
- return {id:d===0&&i<3?legacyIds[i]:`campaign-${diff.id}-${String(n).padStart(2,'0')}`,mode:'campaign',difficulty:diff.id,number:n,name,region:['Emberfall','Frostwake','Umbra'][i]||['The Golden March','Thornwild Reach','The Broken Crown','The Eclipse Road','Worldwound'][Math.floor(i/5)],description:authored?.story||(boss?'Defeat the guardian who holds this crossing.':'Break the warband guarding the road.'),...(authored?{chapter:OPENING_CHAPTER.name,tactic:authored.tactic,tacticLabel:authored.label,objective:OPENING_CHAPTER.objective,opening:authored.opening,scenario:authored.scenario,...(authored.bossHp?{bossHp:authored.bossHp}:{})}:{}),enemyIds:formation,hp:i===0?.7:i===1?1:1.2,atk:i===0?.65:.9,countdown:d===2?2:3,stats,boss,map:route[i],art:diff.art,portrait:`assets/champions/${formation[1]}.webp`,recommendedLevel:Math.min(80,Math.round(1+i*1.7+d*17)),rewards:d===0&&legacyReward?legacyReward:{gold:Math.round((80+n*9)*diff.mult),xp:Math.round((120+n*15)*diff.mult)}};
+ return {id:d===0&&i<3?legacyIds[i]:`campaign-${diff.id}-${String(n).padStart(2,'0')}`,mode:'campaign',difficulty:diff.id,number:n,name,region:['Emberfall','Frostwake','Umbra'][i]||['The Golden March','Thornwild Reach','The Broken Crown','The Eclipse Road','Worldwound'][Math.floor(i/5)],description:authored?.story||(boss?'Defeat the guardian who holds this crossing.':'Break the warband guarding the road.'),...(authored?{chapter:authored.chapter,tactic:authored.tactic,tacticLabel:authored.label,objective:'Defeat the enemy warband.',opening:authored.opening,scenario:authored.scenario,...(authored.bossHp?{bossHp:authored.bossHp}:{})}:{}),enemyIds:formation,hp:i===0?.7:i===1?1:1.2,atk:i===0?.65:.9,countdown:d===2?2:3,stats,boss,map:route[i],art:diff.art,portrait:`assets/champions/${formation[1]}.webp`,recommendedLevel:Math.min(80,Math.round(1+i*1.7+d*17)),rewards:d===0&&legacyReward?legacyReward:{gold:Math.round((80+n*9)*diff.mult),xp:Math.round((120+n*15)*diff.mult)}};
 }));
 export const DUNGEONS=[
  {id:'ashen_crypt',name:'Ashen Crypt',boss:'The Cinder Warden',bossId:'pit_grunt',guards:['redknife_tavin','demon_witchblade'],lore:'A sealed crypt where ash still breathes.',color:'red',rank:0},
