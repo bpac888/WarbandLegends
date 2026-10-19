@@ -35,10 +35,11 @@ These saves are editable local files, suitable for this offline prototype. Onlin
 
 ## Presentation and structure
 
-The graphic system uses navy backgrounds, warm gold framing, restrained elemental accents, reusable SVG interface icons and existing local WebP scenes/portraits. Splash montages, circular portal inscriptions, reveal timing, roster framing and mobile layout are composed specifically for this game. No runtime request goes to the original game.
+The graphic system uses deep teal backgrounds, warm gold framing, bright elemental accents, a five-element crest, reusable SVG interface icons and existing local WebP scenes/portraits. The fifteen curated tile graphics distinguish regular shields, four-match dragon blasts, and five-match prismatic gems. Collection and Codex art is shown in full above a separate caption panel; uncollected art is never dimmed. Filters combine element, rarity, mana, role and faction, with name/stat sorting and reset. Splash montages, circular portal inscriptions, reveal timing, roster framing and mobile layout are composed specifically for this game. No runtime request goes to the original game.
 
 - `src/shell.js`: stateless page views and navigation.
-- `src/shell.css`: responsive title, portal and page presentation.
+- `src/shell.css` / `src/identity.css`: responsive title, portal, bright artwork and teal/gold presentation.
+- `src/collection.js`: common collection/codex/team filter and sort rules.
 - `src/app.js`: routing, interactions and battle playback.
 - `src/progression.js`: pure collection, summon, quest and reward transitions.
 - `src/save-files.js`: validated portable save format.

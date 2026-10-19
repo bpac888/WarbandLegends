@@ -11,3 +11,5 @@ Later phases are design scope, not implemented features. No existing Warband Leg
 The v0.3 update adds a shared effect catalog and board-move status clock, revised Taunt, selected new utility effects, an in-game effect guide, original vector rune artwork and refined battle presentation.
 
 The v0.4 foundation adds the title screen, connected Citadel/Adventure/roster/portal/quest/inventory/settings pages, earned local summons, duplicate tracking and portable save backups. Training, ascension, equipment, deeper campaign content, the five planned destinations and online services remain future work. See [the blueprint](GAME-BLUEPRINT.md).
+
+The v0.5 visual pass introduces fifteen shield/dragon/gem tile images, a five-element crest, teal/gold identity, full-art Collection/Codex cards, shared filtering/sorting, and an accelerating portal ritual inspired by the original game. Combat rules and saved hero identities remain unchanged.

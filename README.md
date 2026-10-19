@@ -24,12 +24,14 @@ node tools/serve.mjs --dist  # preview the production build
 - A cinematic splash screen, Citadel hub, Adventure map, dedicated roster/codex, animated summoning portal, quests, inventory, and settings.
 - Five starting champions, five Summon Seals, saved champion copies, disclosed rarity odds, first-clear rewards, and claimable starter quests.
 - Save export/import, collection-only or open-roster playtesting, and persistent animation preferences.
+- Full-art Collection/Codex cards without unowned dimming, combined element/rarity/mana/type/faction filters, name/stat sorting and clear-filter controls.
+- A five-element crest and teal/gold visual identity; a portal with accelerating swirls, light trails and bright champion emergence.
 - A 7-column × 5-row rune board, valid swaps, gravity, cascades, automatic dead-board recovery, and chained special runes.
 - Five-champion teams, all **135 original champion IDs** preserved, with locally bundled optimized portraits, lore, stats, one merged Special each, and existing passives.
 - Five elements, column-based attacks, color stacking, empty-lane mana, tile-based mana and multi-level charging Specials, status effects, and enemy attack countdowns.
 - Four-match Blast Runes and five-or-more-match Prismatic Runes.
 - Three progressively unlocked PvE encounters, battle log, ability details, hint, 1×/2× animation speed, and reduced-motion support.
-- Refined vector crystal runes, clearer champion cards and status badges, damage/healing numbers, and a tappable effect field guide.
+- Fifteen high-density jewel tile images: elemental shields, four-match dragon crests and five-match prismatic gems; bright full-art champion cards and status badges, damage/healing numbers, and a tappable effect field guide.
 - Responsive mouse, touch-drag, and keyboard controls. Use Tab to reach a rune, arrow keys to navigate, and Enter to select each neighbor.
 - Separate team, encounter and progress saves on this browser. Reloading resumes the resolved action without replaying it. Clearing browser data removes these saves.
 
@@ -52,9 +54,9 @@ The included `vercel.json` supplies the build/output settings. This game is stat
 
 ## Project layout
 
-`npm run roster:build` regenerates the active roster, effects, balance report and roster guide from the archived import and `data/roster-design.json`. The shared `src/effects.js` catalog and `data/status-design.json` define the current effect language and selected champion overrides. `npm run art:build` regenerates the five original vector rune artworks. Original import/design data stays outside the runtime build.
+`npm run roster:build` regenerates the active roster, effects, balance report and roster guide from the archived import and `data/roster-design.json`. The shared `src/effects.js` catalog and `data/status-design.json` define the current effect language and selected champion overrides. `npm run art:build` verifies the fifteen curated tile assets. These are image-generated WebP sprites embedded in self-contained SVG wrappers; this command preserves the new artwork instead of regenerating the old vector placeholders. Original import/design data stays outside the runtime build.
 
-`src/shell.js` and `src/shell.css` provide the game shell, `src/progression.js` handles local collection/rewards, and `src/save-files.js` validates portable backups. `src/engine.js` is pure deterministic combat, `src/storage.js` handles independent saves and v1/v2 battle migration, and `src/app.js` renders the interface. Imported data lives in `data/`; all runtime artwork is in `assets/`. `tools/import_roster.py` is a one-time developer import, not a runtime requirement. It requires Python and ImageMagick if used against an owner's source checkout; existing optimized portraits are retained when source originals are absent.
+`src/shell.js` and `src/shell.css` provide the game shell; `src/identity.css` defines the teal/gold identity and full-art cards, and `src/collection.js` shares roster filtering/sorting with team selection. `src/progression.js` handles local collection/rewards, and `src/save-files.js` validates portable backups. `src/engine.js` is pure deterministic combat, `src/storage.js` handles independent saves and v1/v2 battle migration, and `src/app.js` renders the interface. Imported data lives in `data/`; all runtime artwork is in `assets/`. `tools/import_roster.py` is a one-time developer import, not a runtime requirement. It requires Python and ImageMagick if used against an owner's source checkout; existing optimized portraits are retained when source originals are absent.
 
 See the [game blueprint](docs/GAME-BLUEPRINT.md), [rules](docs/RULES.md), [roadmap](docs/ROADMAP.md), [validation](docs/QA.md), and [asset rights and provenance](RIGHTS.md).
 
