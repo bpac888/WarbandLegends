@@ -1,0 +1,51 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {createBattle,cast,swap,activate,validMoves,validateSave,skillDescription} from '../src/engine.js';
+import {STARTER_TEAM,defaultProfile} from '../src/progression.js';
+import {getEncounter,campaignStages} from '../src/encounters.js';
+import {specialPlan} from '../src/special-plan.js';
+import {planSpecialEffects} from '../src/battle-fx.js';
+import {HERO_INSIGHTS} from '../src/hero-insights.js';
+import {scenarioStatus} from '../src/chapter.js';
+import {encounterPreview} from '../src/adventure-ui.js';
+import {heroInsight,encounterTactics} from '../src/tactics-ui.js';
+import {loadBattle,BATTLE_KEY} from '../src/storage.js';
+import {makeBackup,parseBackup} from '../src/save-files.js';
+const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url)));
+const fresh=(id='campaign-normal-05')=>createBattle(roster,STARTER_TEAM,id,71,{progression:true});
+const charged=(s,index)=>{s.heroes[index].mana=s.heroes[index].manaMax;return s.heroes[index];};
+const trigger=()=>{const s=fresh();s.enemies[1].hp=Math.floor(s.enemies[1].maxHp/2);const actor=charged(s,2);return cast(s,actor.uid,actor.uid);};
+test('all Specials describe exactly their shared execution plan in resolution order without mutation',()=>{
+ const snapshot=structuredClone(roster),rank={cleanse:0,dispel:1,buff:2,heal:3,mana:4,debuff:5,damage:6};
+ for(const c of roster)for(const spec of c.special.levels){const d=skillDescription(c,{},spec.level),plan=specialPlan(spec);assert.deepEqual(d.steps.map(s=>s.kind),plan.map(s=>s.kind));assert.deepEqual(d.steps.map(s=>s.order),plan.map((_,i)=>i+1));assert.ok(d.steps.every(s=>s.name&&s.scope&&s.description));for(let i=1;i<plan.length;i++)assert.ok(rank[plan[i].kind]>=rank[plan[i-1].kind]);}
+ assert.deepEqual(roster,snapshot);
+});
+test('support targeting describes selected enemies and automatic lowest current HP accurately',()=>{
+ const druid=roster.find(c=>c.id==='grove_druid'),d=skillDescription(druid);assert.match(d.targeting,/lowest current-HP/);assert.match(d.text,/lowest-HP living enemy/i);assert.match(d.targeting,/Taunt/);
+ const modified=structuredClone(druid);modified.special.levels[0].target='enemy';const selected=skillDescription(modified);assert.match(selected.text,/selected enemy/);assert.doesNotMatch(selected.targeting,/chosen automatically/);
+ const s=createBattle(roster,['grove_druid',...STARTER_TEAM.slice(0,4)],'ashen-gate',24);s.enemies[0].hp=200;s.enemies[1].hp=100;s.enemies[2].hp=300;const actor=charged(s,0),r=cast(s,actor.uid,actor.uid);assert.ok(r.state.enemies[1].effects.poison);assert.ok(!r.state.enemies[0].effects.poison);assert.ok(r.state.enemies[1].hp<100);
+});
+test('actual wardbreaker logs Dispel, Vulnerability and hit in the displayed order',()=>{
+ const s=fresh('ashen-gate'),target=s.enemies[0];target.hp=target.maxHp=5000;target.effects.inc_def={turns:2,source:target.uid,appliedMove:0};const actor=charged(s,4),r=cast(s,actor.uid,target.uid);const logs=r.state.log.slice(s.log.length).map(l=>l.text);const dispel=logs.findIndex(t=>t.includes('dispelled')),ailment=logs.findIndex(t=>t.includes('Vulnerability')),hit=logs.findIndex(t=>t.includes('· '+actor.special.name));assert.ok(dispel>=0&&dispel<ailment&&ailment<hit);assert.deepEqual(skillDescription(actor).steps.map(s=>s.kind),['dispel','debuff','damage']);
+});
+test('actual Frost Sage cleanses before protection and instant healing, with regeneration delayed',()=>{
+ const s=createBattle(roster,['frost_sage',...STARTER_TEAM.slice(0,4)],'ashen-gate',35),actor=charged(s,0);s.heroes.forEach(h=>{h.hp=Math.floor(h.maxHp/2);h.effects.poison={turns:2,source:'enemy-0',appliedMove:0};});const r=cast(s,actor.uid,actor.uid),logs=r.state.log.slice(s.log.length);assert.ok(r.state.heroes.every(h=>!h.effects.poison&&h.effects.heal));assert.ok(logs.findIndex(l=>l.text.includes('cleansed'))<logs.findIndex(l=>l.text.includes('Defense Up')));assert.ok(logs.findIndex(l=>l.text.includes('Damage Ward'))<logs.findIndex(l=>l.text.includes('HP · '+actor.special.name)));assert.ok(!logs.some(l=>l.text.includes('HP · Regeneration')));assert.equal(r.state.moves,0);
+});
+test('reviewed tactical identities cover five colors, four rarities and all three roles',()=>{const heroes=Object.keys(HERO_INSIGHTS).map(id=>roster.find(c=>c.id===id));assert.equal(heroes.length,10);assert.equal(new Set(heroes.map(h=>h.color)).size,5);assert.equal(new Set(heroes.map(h=>h.rarity)).size,4);assert.equal(new Set(heroes.map(h=>h.role)).size,3);for(const h of heroes)assert.match(heroInsight(h),/Know the limits/);});
+test('first five authored encounters retain IDs, offer visible tactics, and work in each difficulty',()=>{for(const difficulty of ['normal','hard','nightmare']){const rows=campaignStages(difficulty).slice(0,5);assert.equal(new Set(rows.map(e=>e.tacticLabel)).size,5);for(const e of rows){assert.equal(e.chapter,'The Broken Road');assert.match(encounterPreview({...defaultProfile(),openRoster:true},e.id),/Encounter tactics/);const s=createBattle(roster,STARTER_TEAM,e.id,12,{progression:true});assert.ok(validateSave(s,roster),e.id);}}});
+test('opening ward, ritual charge and fast flanks are actual battle state, not flavor text',()=>{const ward=fresh('frozen-pass');assert.equal(ward.enemies[1].effects.inc_def.turns,2);const ritual=fresh('veil-sanctum');assert.equal(ritual.enemies[1].mana,4);const ford=fresh('campaign-normal-04');assert.deepEqual(ford.enemies.map(e=>e.baseCountdown),[2,5,2]);assert.equal(ford.enemies[1].id,'grove_druid');assert.ok(ford.enemies[0].hp<ford.enemies[1].hp);});
+test('guardian phase activates once after an action, does not steal a move or enemy attack',()=>{const r=trigger(),s=r.state,boss=s.enemies[1];assert.ok(s.scenario.triggered);assert.equal(s.moves,0);assert.equal(boss.actions,0);assert.equal(boss.countdown,1);assert.equal(boss.effects.inc_atk.turns,2);assert.equal(boss.effects.shield.turns,2);assert.equal(boss.shield,Math.round(boss.maxHp*.2));assert.deepEqual(r.frames.map(f=>f.kind),['skill','mechanic']);const visual=planSpecialEffects(r.frames[0].state,s,r.frames[1]);assert.equal(visual.name,'Overpressure');assert.ok(visual.special);assert.ok(visual.targets.some(t=>t.uid==='enemy-1'&&t.kind==='ward'));assert.equal(scenarioStatus(s).phase,'triggered');assert.ok(validateSave(s,roster));const actor=charged(s,3),next=cast(s,actor.uid,actor.uid);assert.ok(!next.frames.some(f=>f.kind==='mechanic'));});
+test('invalid actions, enemy death and already-finished battles never trigger a phase',()=>{const s=fresh();s.enemies[1].hp=1;assert.ok(cast(s,'hero-0','enemy-0').error);assert.ok(!s.scenario.triggered);const above=fresh();above.enemies[1].hp=Math.floor(above.enemies[1].maxHp/2)+1;const healer=charged(above,2);assert.ok(!cast(above,healer.uid,healer.uid).state.scenario.triggered);const actor=charged(s,4),r=cast(s,actor.uid,'enemy-1');assert.equal(r.state.enemies[1].hp,0);assert.ok(!r.state.scenario.triggered);assert.ok(!r.frames.some(f=>f.kind==='mechanic'));const done=fresh();done.enemies.forEach(e=>e.hp=0);done.phase='victory';assert.ok(swap(done,0,1).error);});
+test('guardian phase follows full board resolution and enemy phase, and a special rune triggers it too',()=>{
+ for(const special of [false,true]){const s=fresh();s.enemies[1].hp=Math.floor(s.enemies[1].maxHp/2);s.enemies.forEach(e=>{e.countdown=50;e.def=100000;});let r;if(special){s.board[0].special='blast';r=activate(s,0);}else r=swap(s,...validMoves(s.board)[0]);assert.ok(r.state.scenario.triggered);assert.equal(r.state.enemies[1].actions,0);assert.equal(r.state.enemies[1].countdown,1);assert.equal(r.frames.at(-2).kind,'mechanic');assert.equal(r.frames.at(-1).kind,'settled');}
+});
+test('boss buffs obey existing Dispel, Buff Seal and timers; cannot recur after removal',()=>{
+ let s=trigger().state;s.enemies[1].hp=s.enemies[1].maxHp=10000;s.enemies[1].hp=4900;const actor=charged(s,0),r=cast(s,actor.uid,'enemy-1',2);assert.ok(!r.state.enemies[1].effects.inc_atk);assert.ok(!r.state.enemies[1].effects.shield);assert.equal(r.state.enemies[1].shield,0);assert.equal(r.frames.filter(f=>f.kind==='mechanic').length,0);
+ s=fresh();s.enemies[1].hp=Math.floor(s.enemies[1].maxHp/2);s.enemies[1].effects.block_buffs={turns:2,source:'hero-0',appliedMove:0};const support=charged(s,2),blocked=cast(s,support.uid,support.uid).state;assert.ok(blocked.scenario.triggered);assert.ok(!blocked.enemies[1].effects.shield&&!blocked.enemies[1].effects.inc_atk);assert.equal(blocked.enemies[1].countdown,1);
+ s=trigger().state;s.heroes.forEach(h=>{h.hp=h.maxHp=100000;h.def=100000;});s.enemies.forEach(e=>{e.def=100000;e.hp=e.maxHp=100000;});
+ let tick=swap(s,...validMoves(s.board)[0]).state;assert.equal(tick.enemies[1].effects.inc_atk.turns,1);tick=swap(tick,...validMoves(tick.board)[0]).state;assert.ok(!tick.enemies[1].effects.inc_atk);assert.ok(!tick.enemies[1].effects.shield);assert.equal(tick.enemies[1].shield,0);
+ 
+});
+test('phase state survives reload and backup without rearming; legacy saved fights retain their rules',()=>{const s=trigger().state,p=defaultProfile();assert.deepEqual(parseBackup(JSON.stringify(makeBackup(p,s)),roster).battle,s);const loaded=loadBattle({getItem:key=>key===BATTLE_KEY?JSON.stringify(s):null},roster);assert.deepEqual(loaded.scenario,s.scenario);assert.ok(validateSave(loaded,roster));const legacy=fresh();delete legacy.scenario;legacy.enemies[1].hp=1;const actor=charged(legacy,2),r=cast(legacy,actor.uid,actor.uid);assert.equal(r.state.scenario,undefined);assert.ok(validateSave(r.state,roster));assert.match(encounterTactics(getEncounter(legacy.stageId),legacy),/keeps its original rules/);});
+test('malformed or unrelated guardian state is rejected without invalidating old saves',()=>{for(const patch of [null,[],{id:'bogus',triggered:false},{id:'iron-overpressure',triggered:'yes'},{id:'iron-overpressure',triggered:false,extra:1}]){const s=fresh();s.scenario=patch;assert.equal(validateSave(s,roster),false);}const unrelated=fresh('ashen-gate');unrelated.scenario={id:'iron-overpressure',triggered:false};assert.equal(validateSave(unrelated,roster),false);});

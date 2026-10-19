@@ -3,7 +3,7 @@ import {manaLevels} from './engine.js';
 export function planSpecialEffects(previous,current,frame){
  const units=[...current.heroes,...current.enemies],oldUnits=[...previous.heroes,...previous.enemies],actor=units.find(u=>u.uid===frame.actor),beforeActor=oldUnits.find(u=>u.uid===frame.actor);
  if(!actor)return null;
- const special=frame.kind==='skill'||(frame.kind==='enemy'&&beforeActor?.mana>=beforeActor?.manaMax&&actor.mana<beforeActor.mana);
+ const special=['skill','mechanic'].includes(frame.kind)||(frame.kind==='enemy'&&beforeActor?.mana>=beforeActor?.manaMax&&actor.mana<beforeActor.mana);
  const targets=[];
  for(const unit of units){const before=oldUnits.find(u=>u.uid===unit.uid);if(!before)continue;
   const newEffects=Object.keys(unit.effects).filter(id=>JSON.stringify(unit.effects[id])!==JSON.stringify(before.effects[id]));
@@ -14,7 +14,7 @@ export function planSpecialEffects(previous,current,frame){
  }
  if(!targets.length&&frame.target)targets.push({uid:frame.target,kind:'ward'});
  const spec=manaLevels(actor).find(l=>l.level===(frame.level||manaLevels(actor).at(-1).level));
- return {actor:actor.uid,color:actor.color,name:actor.special.name,special,level:spec?.level||1,targets};
+ return {actor:actor.uid,color:actor.color,name:frame.name||actor.special.name,special,level:spec?.level||1,targets};
 }
 let generation=0;const timers=new Set();
 function later(fn,ms){const key=generation;const id=setTimeout(()=>{timers.delete(id);if(generation===key)fn();},ms);timers.add(id);}

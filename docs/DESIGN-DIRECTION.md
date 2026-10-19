@@ -1,3 +1,5 @@
+> Current implementation status: the owner returned and authorized development. See [the improvement plan](NEXT-SESSION.md) for completed work and remaining priorities. Historical deferral language below records the original planning context.
+
 # Legends design direction · reference notes
 
 This records the owner's conceptual reference supplied after the v0.6 visual redesign was prepared. It is inspiration and analysis, not a finalized specification or authorization to implement every listed system. It does not change gameplay. The separately scheduled task remains the visual redesign's browser verification and publication; these notes do not expand that task into new combat/economy systems.

@@ -1,53 +1,37 @@
-The owner explicitly removed the new Special Events practice option. Do not add event practice controls or out-of-window entry. Events use scheduled windows and attempts.
+# Legends improvement plan
 
-## Campaign/dungeons follow-up
+Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-legends` unchanged. The owner authorizes implementing, testing and publishing Legends changes. The old instruction to defer development until the owner returned was satisfied when they asked to begin.
 
-The owner requested the original game's 25-stage / Normal / Hard / Nightmare structure, reused dungeon art, and playable dungeons. v0.8 implements those as 75 campaign and 21 dungeon encounters, with increasingly destroyed skins of Legends' world map and preserved v0.7 progress. See [adventure rules](ADVENTURES.md).
+## Completed
 
-v0.9 completes playable Arena and monthly Special Events, the original summoning page/ritual adaptation, a token exchange and four reused Tavern destination illustrations. See ARENA-EVENTS.md. Leave Warband Legends unchanged.
+- **v0.6:** artwork-led menus, full-art symbolic cards, seven attack lanes and elemental battle effects.
+- **v0.7:** visible hero levels/XP, current Collection stats versus maximum Codex stats, gold training, participant XP and repeatable campaign seals. The owner approved discarding the pre-leveling test save; subsequent releases preserve progression. See [progression rules](PROGRESSION.md).
+- **v0.8:** 25 stages × Normal/Hard/Nightmare, three progressively ruined map skins, seven dungeons with source-game art and three tiers each. See [adventures](ADVENTURES.md).
+- **v0.9:** nine four-champion local Arena rivals, three scheduled monthly events, a token exchange, source-style summoning page/ritual and four reused Tavern illustrations. The owner explicitly removed event practice. **Never restore an event practice button or out-of-window entry.** See [Arena and events](ARENA-EVENTS.md).
+- **v0.10:** The Broken Road, an authored opening group of five encounters; a one-time, telegraphed Overpressure guardian phase; Special details generated from the actual ordered combat plan; tactical notes for ten representative heroes across all colors, rarities and roles. Existing saved fights keep their original rules. See [tactics and initial balance probe](TACTICS.md) and [QA](QA.md).
 
-# Improvement plan · current progress
+## Next priorities
 
-The owner returned and authorized implementation on October 19, 2026. They explicitly approved discarding the existing test save ("you can erase the progress, it isnt important"). The first release implements hero leveling, a campaign-to-development reward loop, and a functional illustrated hero dossier. See [progression rules](PROGRESSION.md) for the selected initial curves and costs, and [QA](QA.md) for verification.
+1. **Playtest the opening chapter.** Review lane readability, the fast-flank ambush, guardian warnings and difficulty pacing with real play. Expand authored patterns into the next five crossings after the first group is understood. Later encounters still use the existing formations and guardian markers. Do not claim every chapter has unique objectives or phases.
+2. **Continue the hero-kit review in small groups.** Ten tactical identities are reviewed; all heroes now have accurate ordered details. Review another representative group, focusing on distinguishable jobs, fast/slow tradeoffs and useful lower-rarity counters. Change numbers or remove merged-kit clutter only with concrete combat evidence. Preserve one Special plus passives and the existing standard/multi-charge concepts.
+3. **Prototype overheal as the first advanced combat family.** Before implementation, define cap, health display, healing restrictions, barrier interaction, HP-scaled damage and revival. Introduce it to a limited set of healers, then test actual interactions. No overheal rules or values are finalized yet.
+4. **Consider simple minions only after the health layer is stable.** Define timing, attack/protection, limits and removal first. Mega Minions, Fiends, troops, talents, alternate kits, Growth/Wither and extra facilities remain later possibilities.
+5. **Review long-term collection pacing.** Earned gold, training, seals and token exchanges work. Duplicates are retained and share development; no feeding or consumption exists. Any consumption feature must protect the last copy and clearly preview costs. Bad-luck protection is a design topic, not an approved numerical system yet.
 
-Remaining design work: author more varied campaign objectives and boss mechanics; review a representative set of hero kits and their resolution-order explanations; then introduce advanced mechanics gradually. Tournaments are still a future feature, including rarity/color restrictions and special rules. Rare heroes retain their distinct usefulness and lower development cost.
+## Rare heroes and future tournaments
 
-The original planning note follows for context. Its instruction to defer implementation applied only until the owner returned and asked to start.
+Legendary and Mythical remain generally strongest. Rare heroes are important because future tournaments may restrict eligible rarities or colors, or apply special battle conditions. Stronger high-rarity heroes will sometimes be ineligible. Preserve affordable Rare progression and distinct utility rather than making every Rare generally as strong as a Legendary.
 
----
+Tournaments are not implemented. Future rules should be visible before team selection, validate consistently and explain ineligible heroes. Rare-only or color-restricted formats are examples, not settled presets. Avoid requiring a large fully developed bench just to enter.
 
-# Next session · planned improvements
+## Design anchors
 
-The owner approved this direction after reviewing the conceptual notes and two visual hero-card references. Save the ideas now; do not begin gameplay implementation until the owner returns and asks to start. No overnight development or scheduled implementation is requested.
+- Common, Rare, Legendary, Mythical; Legendary is the main powerful playable tier. Epic is only the Rare stat reference.
+- ATK most common, SUP less common than ATK, DEF least common.
+- Five colors; column-based rune attacks, color stacking, empty-lane charge and readable enemy countdowns.
+- Standard mana: Very Fast 6.5 / Fast 8 / Average 10 / Slow 12 / Very Slow 13.5 tiles. Charging: 8/10 or 5/10/15. Compact cards show speed names; exact costs live in details.
+- Keep portraits prominent, rarity distinct from element, details on demand and the battlefield clear. Learn from reference hierarchy without copying its screens or asset designs.
+- Preserve all 135 champion IDs, ownership, copies, levels, campaign/dungeon progress and independent browser saves. No additional reset is authorized or needed.
+- Arena currently uses preset local defense teams. Events use the browser's LA calendar; online competition needs a separate authoritative foundation.
 
-The completed visual redesign is already published. Continue the independent Legends project only; leave Warband Legends unchanged.
-
-## Confirmed priorities
-
-1. **Visible hero leveling and development.** Players should see champions getting stronger through experience, levels and stat gains. Show current stats and the next upgrade clearly, with understandable costs and a satisfying upgrade presentation. The existing roster stats are maximum-level balance baselines; establish level curves beneath those values rather than simply stacking new levels on top. Preserve hero IDs, ownership, copies, campaign progress and independent saves. Agree an explicit migration policy when implementing levels.
-2. **A complete first campaign/progression loop.** Build a small chapter with varied encounters, a recognizable boss, meaningful rewards and replay value. Connect battle rewards to actual hero development. Provide reliable earned progression and resource sinks before expanding the economy.
-3. **An illustrated hero dossier.** Keep portraits prominent, with compact element/rarity/role indicators, icon-based stats and speed names. Collection cards stay concise; exact mana thresholds and complete mechanics belong in details. Separate Special, Passive and Development information clearly. Symbols should have accessible labels and tap explanations on phones. Element color and rarity need distinct indicators.
-4. **Distinct, readable hero kits.** Review Specials around identifiable jobs and tradeoffs. Present targeting, immediate actions, continuing effects and duration in the actual resolution order. Keep the one-Special-plus-passives model and existing standard/multi-charge mana concepts.
-5. **Advanced systems introduced gradually.** Explore overheal first, then simple minions once their timing, protection and removal are clear. Troops, talents, alternate kits, battle-long stat changes and additional base facilities remain later possibilities; the reference game's exact systems, values and UI are not requirements.
-
-## Why Rare heroes remain important
-
-The owner clarified that Legendary and Mythical heroes are generally the strongest. Rare heroes still deserve investment because future tournaments may restrict eligible rarities, eligible colors, or apply special battle conditions and rules. The strongest high-rarity heroes will not always be eligible.
-
-This is a structural reason to build and develop a varied bench, in addition to individual Rare heroes' utility and affordable progression. Do not try to make every Rare generally as strong as a Legendary or Mythical to establish its usefulness. Keep tournament-appropriate roles, counters and development value across rarities.
-
-Future tournament rules should be explicit and visible before team selection, validate eligibility consistently and explain why a hero is ineligible. Example formats such as Rare-only or restricted-color events are design illustrations, not finalized tournament presets. Account for this future eligibility system in progression and roster organization without implementing tournaments now.
-
-## Existing design anchors
-
-- Four rarities: Common, Rare, Legendary, Mythical. Legendary is the main powerful playable tier; Epic is only the stat reference used for Rare.
-- ATK should be the most common type; SUP less common than ATK; DEF least common.
-- Five colors, column-based tile attacks, ghosting, standard charge thresholds and two-/three-stage charging remain the foundation.
-- Preserve the game's own art direction and identity. Learn from reference hierarchy, symbols, ability clarity and progression feedback; do not reproduce the supplied game's screens or copy every badge/system.
-- Keep progression fair and understandable, with worthwhile duplicate uses and clear safeguards before any consumption system is introduced.
-
-## Open choices for the implementation session
-
-Level caps and curves by rarity; XP sources; gold/XP/duplicate costs; starting and legacy-profile levels; skill-development rules; chapter length and reward pacing; and the first limited set of kit/status refinements. None of these numerical choices are settled by the reference material.
-
-Start the next session by reviewing this note with docs/DESIGN-DIRECTION.md and the current game, then agree a concrete first development slice. Do not begin tonight.
+Read [design direction](DESIGN-DIRECTION.md) for the conceptual reference and [QA](QA.md) for real verification results. Reference mechanics are inspiration, not an instruction to implement all of them.

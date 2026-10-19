@@ -36,6 +36,8 @@ node tools/serve.mjs --dist  # preview the production build
 - Five-champion teams, all **135 original champion IDs** preserved, with locally bundled optimized portraits, lore, stats, one merged Special each, and existing passives.
 - Five elements, column-based attacks, color stacking, empty-lane mana, tile-based mana and multi-level charging Specials, status effects, and enemy attack countdowns.
 - Four-match Blast Runes and five-or-more-match Prismatic Runes.
+- An authored five-encounter opening chapter with wards, precharged enemies, fast flanks and a one-time guardian Overpressure phase.
+- Numbered Special explanations in actual execution order, accurate targeting, and tactical notes for ten representative heroes.
 - 75 campaign encounters: 25 stages each in Normal, Hard and Nightmare, independent progress, guardian crossings and progressively ruined skins of the same illustrated world.
 - Nine local Arena rivals with four champions per team, rating, Arena Tokens and a token exchange.
 - Three monthly Special Events with original artwork, scheduled windows, 20 attempts per window and event-token rewards. No event practice option.

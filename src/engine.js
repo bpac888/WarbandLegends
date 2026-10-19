@@ -1,3 +1,5 @@
+import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js';
+import {OVERPRESSURE,validScenario} from './chapter.js';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
 import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js';
 import {statsAtLevel,levelCap} from './development.js';
@@ -85,7 +87,17 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
   // Authored campaign strength does not grow when the player's heroes level up.
   if(options.progression||!['ashen-gate','frozen-pass','veil-sanctum'].includes(stage.id)){const stats=stage.stats;for(const [i,enemy]of state.enemies.entries()){enemy.hp=enemy.maxHp=Math.round(stats[0]*(i===1?(stage.bossHp||1.15):['dungeon','event'].includes(stage.mode)?.65:1));enemy.atk=Math.round(stats[1]*(['dungeon','event'].includes(stage.mode)&&i!==1?.75:1));enemy.def=stats[2];}}
   encounterAppearance(state);
-  state.board=freshBoard(state);message(state,`${stage.name} · Match runes to awaken your warband.`);return state;
+  state.board=freshBoard(state);message(state,`${stage.name} · Match runes to awaken your warband.`);
+  if(stage.opening){
+    for(const [i,enemy] of state.enemies.entries()){
+      if(stage.opening.hpMultipliers){enemy.hp=enemy.maxHp=Math.round(stage.stats[0]*stage.opening.hpMultipliers[i]);}
+      if(stage.opening.countdowns){enemy.countdown=enemy.baseCountdown=stage.opening.countdowns[i];}
+    }
+    for(const e of stage.opening.effects||[])applyEffect(state,state.enemies[e.index],state.enemies[e.index],e.id,e.turns);
+    if(stage.opening.mana){const {index,amount}=stage.opening.mana;gainMana(state.enemies[index],amount,{flat:true});message(state,`${state.enemies[index].name} begins with ${amount} tile charge.`,'mana',state.enemies[index].uid);}
+  }
+  if(stage.scenario)state.scenario={id:stage.scenario,triggered:false};
+  return state;
 }
 function effective(unit,stat) {
   let value=unit[stat];if(has(unit,`inc_${stat}`))value*=1.25;if(has(unit,`dec_${stat}`))value*=.75;return value;
@@ -147,33 +159,42 @@ function resolveSkill(state,actor,selectedTarget,level) {
   if(enemy&&intended&&enemy.uid!==intended.uid)message(state,`${enemy.name}: Taunt redirects ${actor.name}'s Special from ${intended.name}.`,'buff',enemy.uid);
   message(state,`${actor.name} invokes ${actor.special.name}${actor.special.charging?' · Charge '+level:''}.`,'skill',actor.uid);
   const recipients=scope=>scope==='self'?[actor]:scope==='ally'?[ally]:scope==='allies'?living(own):scope==='other_allies'?living(own).filter(u=>u.uid!==actor.uid):scope==='enemies'?living(foes):enemy?[enemy]:[];
-  for(const effect of spec.effects.filter(e=>e.id==='remove_debuffs'))for(const target of recipients(effect.scope)){
-    const removed=Object.keys(target.effects).filter(e=>DEBUFFS.has(e));for(const id of removed)removeEffect(target,id);
-    if(removed.length)message(state,`${target.name}: cleansed ${removed.map(effectName).join(', ')}.`,'heal',target.uid);
-  }
-  for(const effect of spec.effects.filter(e=>e.id==='dispel'))for(const target of recipients(effect.scope)){
-    const removed=Object.keys(target.effects).filter(e=>BUFFS.has(e));for(const id of removed)removeEffect(target,id);
-    if(removed.length)message(state,`${target.name}: dispelled ${removed.map(effectName).join(', ')}.`,'dispel',target.uid);
-  }
-  for(const effect of spec.effects.filter(e=>BUFFS.has(e.id)))for(const target of recipients(effect.scope))applyEffect(state,actor,target,effect.id,effect.turns);
-  if(spec.healing)for(const target of recipients(spec.healScope))heal(state,target,target.maxHp*spec.healing,actor.special.name);
-  for(const effect of spec.effects.filter(e=>e.id==='mana_raise'))for(const target of recipients(effect.scope)){
-    const gained=gainMana(target,1.5,{flat:true});message(state,`${target.name}: ${gained?'+'+chargeText(gained)+' tile charge':'Mana Gift blocked or already full'}.`,'mana',target.uid);
-  }
-  for(const effect of spec.effects.filter(e=>DEBUFFS.has(e.id)))for(const target of recipients(effect.scope))applyEffect(state,actor,target,effect.id,effect.turns);
-  if(spec.damage)for(const target of spec.aoe?living(foes):enemy?[enemy]:[]){
-    if(actor.hp<=0)break;
-    hit(state,actor,target,effective(actor,'atk')*spec.damage,{pierce:spec.pierce,label:actor.special.name});
+  for(const step of specialPlan(spec)){
+    const effect=step.effect;
+    if(step.kind==='cleanse'||step.kind==='dispel')for(const target of recipients(effect.scope)){
+      const eligible=step.kind==='cleanse'?DEBUFFS:BUFFS,removed=Object.keys(target.effects).filter(id=>eligible.has(id));
+      for(const id of removed)removeEffect(target,id);
+      if(removed.length)message(state,`${target.name}: ${step.kind==='cleanse'?'cleansed':'dispelled'} ${removed.map(effectName).join(', ')}.`,step.kind==='cleanse'?'heal':'dispel',target.uid);
+    }
+    else if(step.kind==='buff'||step.kind==='debuff')for(const target of recipients(effect.scope))applyEffect(state,actor,target,effect.id,effect.turns);
+    else if(step.kind==='heal')for(const target of recipients(step.scope))heal(state,target,target.maxHp*step.amount,actor.special.name);
+    else if(step.kind==='mana')for(const target of recipients(effect.scope)){
+      const gained=gainMana(target,1.5,{flat:true});message(state,`${target.name}: ${gained?'+'+chargeText(gained)+' tile charge':'Mana Gift blocked or already full'}.`,'mana',target.uid);
+    }
+    else if(step.kind==='damage')for(const target of step.aoe?living(foes):enemy?[enemy]:[]){
+      if(actor.hp<=0)break;
+      hit(state,actor,target,effective(actor,'atk')*step.amount,{pierce:step.pierce,label:actor.special.name});
+    }
   }
 }
-const SCOPES={self:'Self',ally:'Selected ally',allies:'All living allies',enemy:'Selected enemy',enemies:'All living enemies',other_allies:'Other living allies'};
 export function skillDescription(unit,effects={},level=manaLevels(unit).length) {
-  const spec=manaLevels(unit).find(l=>l.level===level);if(!spec)return {name:unit.ability_name||'Special',target:'enemy',aoe:false,text:'No Special configured.',effects:[]};
-  const parts=[];
-  if(spec.healing)parts.push(`Restore ${Math.round(spec.healing*100)}% max HP to ${spec.healScope==='allies'?'all living allies':'one living ally'}.`);
-  if(spec.damage)parts.push(`Deal ${Math.round(spec.damage*100)}% ATK damage to ${spec.aoe?'all living enemies':unit.role==='support'?'the weakest enemy':'one enemy'}${spec.pierce?', ignoring 25% of DEF':''}.`);
+  const spec=manaLevels(unit).find(l=>l.level===level);if(!spec)return {name:unit.ability_name||'Special',target:'enemy',aoe:false,text:'No Special configured.',effects:[],steps:[],targeting:''};
+  const steps=describeSpecial(spec,effects),parts=[];
+  if(spec.healing)parts.push(`Restore ${Math.round(spec.healing*100)}% max HP to ${spec.healScope==='allies'?'all living allies':spec.healScope==='self'?'the caster':'one living ally'}.`);
+  if(spec.damage)parts.push(`Deal ${Math.round(spec.damage*100)}% ATK damage to ${spec.aoe?'all living enemies':enemyTargetLabel(spec).toLowerCase()}${spec.pierce?', ignoring 25% of DEF':''}.`);
   if(!parts.length)parts.push('Empower your warband with the effects below.');
-  return {name:unit.special.name,target:spec.target,aoe:spec.aoe,level:spec.level,tiles:spec.tiles,text:parts.join(' '),effects:spec.effects.map(e=>({id:e.id,name:effectName(e.id),duration:e.turns,scope:SCOPES[e.scope],description:EFFECTS[e.id]?.desc||effects[e.id]?.desc||''}))};
+  return {name:unit.special.name,target:spec.target,aoe:spec.aoe,level:spec.level,tiles:spec.tiles,text:parts.join(' '),targeting:specialTargeting(spec),steps,effects:steps.filter(s=>s.id)};
+}
+// A one-time, end-of-action phase. It never interrupts a cascade or steals a Special turn.
+function encounterPhase(state,frames){
+  if(state.phase!=='playing'||state.scenario?.id!==OVERPRESSURE.id||state.scenario.triggered)return;
+  const boss=state.enemies[1];if(boss.hp<=0||boss.hp>boss.maxHp*OVERPRESSURE.threshold)return;
+  state.scenario.triggered=true;
+  message(state,`${boss.name}: ${OVERPRESSURE.name} · Barrier and Attack Up for 2 moves; next attack in 1 move. Dispel or protect your warband.`,'skill',boss.uid);
+  applyEffect(state,boss,boss,'shield',OVERPRESSURE.turns);
+  applyEffect(state,boss,boss,'inc_atk',OVERPRESSURE.turns);
+  boss.countdown=1;
+  frame(state,frames,'mechanic',{actor:boss.uid,target:boss.uid,name:OVERPRESSURE.name});
 }
 
 function enemyPhase(state,frames) {
@@ -252,14 +273,14 @@ export function swap(state,a,b) {
   const activation=specialIndex===null?null:{indices:[specialIndex],color:next.board[specialIndex===a?b:a].color};
   resolveBoard(next,frames,groups,b,activation);
   if(next.phase==='playing')enemyPhase(next,frames);
-  frame(next,frames,'settled');return {state:next,frames};
+  encounterPhase(next,frames);frame(next,frames,'settled');return {state:next,frames};
 }
 export function activate(state,index) {
   if(!Number.isInteger(index)||index<0||index>=SIZE||!state.board[index]?.special)return {state,frames:[],error:'Select a special rune.'};
   if(state.phase!=='playing')return {state,frames:[],error:'This encounter is finished.'};
   const next=clone(state),frames=[];next.moves++;const upkeepEvent=next.eventId;for(const unit of [...next.heroes,...next.enemies])startTurn(next,unit);if(next.eventId!==upkeepEvent)frame(next,frames,'upkeep');
   if(!finish(next)){resolveBoard(next,frames,[],index,{indices:[index],color:next.board[index].color});if(next.phase==='playing')enemyPhase(next,frames);}
-  frame(next,frames,'settled');return {state:next,frames};
+  encounterPhase(next,frames);frame(next,frames,'settled');return {state:next,frames};
 }
 export function cast(state,heroUid,targetUid,level=null) {
   if(state.phase!=='playing')return {state,frames:[],error:'This encounter is finished.'};
@@ -272,7 +293,7 @@ export function cast(state,heroUid,targetUid,level=null) {
   if(!target)return {state,frames:[],error:`Choose a living ${spec.target==='enemy'?'enemy':'ally'}.`};
   const next=clone(state),frames=[],nextActor=next.heroes.find(u=>u.uid===heroUid);nextActor.mana=0;
   resolveSkill(next,nextActor,[...next.heroes,...next.enemies].find(u=>u.uid===target.uid),requested);finish(next);
-  frame(next,frames,'skill',{actor:heroUid,target:spec.target==='enemy'&&!spec.aoe?protectedTarget(state.enemies,target).uid:target.uid,level:requested});return {state:next,frames};
+  frame(next,frames,'skill',{actor:heroUid,target:spec.target==='enemy'&&!spec.aoe?protectedTarget(state.enemies,target).uid:target.uid,level:requested});encounterPhase(next,frames);return {state:next,frames};
 }
 export function validateSave(value,roster) {
   const integer=(n,min=0)=>Number.isSafeInteger(n)&&n>=min;
@@ -280,6 +301,7 @@ export function validateSave(value,roster) {
   if(!Array.isArray(value.log)||value.log.length>80||value.log.some(l=>!l||typeof l.text!=='string'||typeof l.tone!=='string'||!integer(l.move)))return false;
   if(!['playing','victory','defeat'].includes(value.phase)||!Array.isArray(value.board)||value.board.length!==SIZE||value.board.some(t=>!t||!COLORS.includes(t.color)||!integer(t.id,1)||t.id>=value.nextTile||!([null,'blast','prism'].includes(t.special))))return false;
   if(value.eventWindow!==undefined&&(getEncounter(value.stageId)?.mode!=='event'||typeof value.eventWindow!=='string'||!value.eventWindow.startsWith(getEncounter(value.stageId).eventId+':')||!/^\w+:\d{4}-(0[1-9]|1[0-2])$/.test(value.eventWindow)))return false;
+  if(!validScenario(value,getEncounter(value.stageId)))return false;
   const ids=new Set(roster.map(c=>c.id));
   if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==getEncounter(value.stageId).enemyIds.length)return false;
   if(value.progression!==undefined&&(value.progression!==true||typeof value.sandbox!=='boolean'||value.heroes.some(u=>!u||!ids.has(u.id)||!integer(u.level,1)||u.level>levelCap(roster.find(c=>c.id===u.id)))))return false;
