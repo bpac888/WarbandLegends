@@ -20,6 +20,7 @@ jobs:
       - run: npm run test:visuals
       - run: npm run test:experience
       - run: npm run test:development
+      - run: npm run test:adventure
       - name: Preserve visual review captures
         if: always()
         uses: actions/upload-artifact@v4

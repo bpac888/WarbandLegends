@@ -36,12 +36,14 @@ node tools/serve.mjs --dist  # preview the production build
 - Five-champion teams, all **135 original champion IDs** preserved, with locally bundled optimized portraits, lore, stats, one merged Special each, and existing passives.
 - Five elements, column-based attacks, color stacking, empty-lane mana, tile-based mana and multi-level charging Specials, status effects, and enemy attack countdowns.
 - Four-match Blast Runes and five-or-more-match Prismatic Runes.
-- Three progressively unlocked PvE encounters, battle log, ability details, hint, 1×/2× animation speed, and reduced-motion support.
+- 75 campaign encounters: 25 stages each in Normal, Hard and Nightmare, independent progress, guardian crossings and progressively ruined skins of the same illustrated world.
+- Seven playable dungeons with original Warband Legends art, themed guardians, three difficulty tiers, saved clears, gold/XP and first-clear seals.
+- Battle log, ability details, hint, 1×/2× animation speed, and reduced-motion support.
 - Fifteen high-density jewel tile images: elemental shields, four-match dragon crests and five-match prismatic gems; bright full-art champion cards and status badges, damage/healing numbers, and a tappable effect field guide.
 - Responsive mouse, touch-drag, and keyboard controls. Use Tab to reach a rune, arrow keys to navigate, and Enter to select each neighbor.
 - Separate team, encounter and progress saves on this browser. Reloading resumes the resolved action without replaying it. Clearing browser data removes these saves.
 
-Collected-only teams and level-1 heroes are the default. Enable open-roster playtesting in Settings to try all champions at maximum level; those battles award no XP, resources, victories or unlocks. Collection cards show actual development; the Codex always previews maximum-level stats. Dungeons, Arena, Events, Alliance, and the Supply Exchange have clearly marked foundation pages; their gameplay is planned. There are no online accounts, purchases, hero feeding, competitive play, or shared online progress. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](docs/RULES.md) [the full roster](docs/ROSTER.md), and [the effect review](docs/STATUS-REVIEW.md).
+Collected-only teams and level-1 heroes are the default. Enable open-roster playtesting in Settings to try all champions at maximum level; those battles award no XP, resources, victories or unlocks. Collection cards show actual development; the Codex always previews maximum-level stats. Arena, Events, Alliance, and the Supply Exchange have clearly marked foundation pages; their gameplay is planned. Campaign and Dungeons are playable. There are no online accounts, purchases, hero feeding, competitive play, or shared online progress. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](docs/RULES.md) [the full roster](docs/ROSTER.md), and [the effect review](docs/STATUS-REVIEW.md).
 
 ## Publish separately on Vercel
 
@@ -68,4 +70,4 @@ See the [game blueprint](docs/GAME-BLUEPRINT.md), [rules](docs/RULES.md), [roadm
 
 ## Updating your local copy
 
-Stop the local server with Control + C, then run `git pull origin main` and `npm start` in this repository. The v0.7 progression release starts a fresh journey, as approved by the owner: five collected level-1 heroes, 500 gold and five seals. Previous playtest progress is ignored; current progression saves persist normally on future reloads. Maximum stats and all 135 hero IDs remain unchanged. See [progression rules](docs/PROGRESSION.md).
+Stop the local server with Control + C, then run `git pull origin main` and `npm start` in this repository. The older v0.7 progression release started a fresh journey, as approved by the owner: five collected level-1 heroes, 500 gold and five seals. Previous playtest progress is ignored; current progression saves persist normally on future reloads. Maximum stats and all 135 hero IDs remain unchanged. v0.8 preserves that journey and upgrades its three old encounter clears into the expanded campaign. See [progression rules](docs/PROGRESSION.md) and [campaign/dungeons](docs/ADVENTURES.md).

@@ -1,6 +1,7 @@
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
 import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js';
 import {statsAtLevel,levelCap} from './development.js';
+import {CAMPAIGN_STAGES,getEncounter,encounterAppearance} from './encounters.js';
 export {effectName} from './effects.js';
 export const VERSION = 3;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
@@ -20,11 +21,7 @@ export function manaLabel(unit){return unit.special?.charging?'Charging':MANA_SP
 export function chargeText(amount){return Number(Number(amount).toFixed(2)).toString();}
 function gainMana(unit,amount,{flat=false}={}){if(has(unit,'mana_block'))return 0;const rate=flat?1:(has(unit,'mana_surge')?1.2:1)*(has(unit,'mana_slow')?.85:1);const before=unit.mana;unit.mana=Math.min(unit.manaMax,Math.round((unit.mana+amount*rate)*100)/100);return Math.round((unit.mana-before)*100)/100;}
 
-export const STAGES = [
-  {id:'ashen-gate',name:'The Ashen Gate',region:'Emberfall',description:'A restless warband guards the broken crossing.',enemyIds:['redknife_tavin','shellback_brukk','rimebow_tessa'],hp:.7,atk:.65,countdown:3},
-  {id:'frozen-pass',name:'The Frozen Pass',region:'Frostwake',description:'Break the icebound guard before their shields close.',enemyIds:['berserker_ulf','shieldmaiden_runa','ice_shaman_sigrid'],hp:1,atk:.9,countdown:3},
-  {id:'veil-sanctum',name:'The Veil Sanctum',region:'Umbra',description:'The shadow court has been expecting you.',enemyIds:['demon_witchblade','shade_prince','umbral_hierarch'],hp:1.2,atk:.9,countdown:2},
-];
+export const STAGES=CAMPAIGN_STAGES;
 export const living = units => units.filter(u=>u.hp>0);
 const clone = value => structuredClone(value);
 const has = (u,id) => !!u.effects[id];
@@ -74,7 +71,7 @@ function makeUnit(source,side,index) {
 export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now(),options={}) {
   if(teamIds.length!==5||new Set(teamIds).size!==5)throw new Error('Choose five different champions.');
   const byId=new Map(roster.map(c=>[c.id,c]));if(teamIds.some(id=>!byId.has(id)))throw new Error('Unknown champion.');
-  const stage=STAGES.find(s=>s.id===stageId);if(!stage)throw new Error('Unknown encounter.');
+  const stage=getEncounter(stageId);if(!stage)throw new Error('Unknown encounter.');
   const state={version:VERSION,id:`runes-${seed>>>0}-${stage.id}`,stageId,rng:seed>>>0||1,nextTile:1,eventId:0,moves:0,cascades:0,phase:'playing',log:[],heroes:teamIds.map((id,i)=>makeUnit(byId.get(id),'hero',i)),enemies:[]};
   if(options.progression){
     state.progression=true;state.sandbox=options.sandbox===true;
@@ -86,7 +83,8 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
     const enemy=makeUnit(byId.get(id),'enemy',i);enemy.hp=enemy.maxHp=Math.round(meanHp*stage.hp*(i===1?1.15:1));enemy.atk=Math.round(meanAtk*stage.atk);enemy.def=Math.round(state.heroes.reduce((n,u)=>n+u.def,0)/5*.75);enemy.lanes=i===0?[0,1]:i===1?[2,3,4]:[5,6];enemy.countdown=stage.countdown+(i%2);enemy.baseCountdown=stage.countdown+(i%2);return enemy;
   });
   // Authored campaign strength does not grow when the player's heroes level up.
-  if(options.progression){const stats={'ashen-gate':[600,240,210],'frozen-pass':[800,315,280],'veil-sanctum':[1050,400,350]}[stage.id];for(const [i,enemy]of state.enemies.entries()){enemy.hp=enemy.maxHp=Math.round(stats[0]*(i===1?1.15:1));enemy.atk=stats[1];enemy.def=stats[2];}}
+  if(options.progression||!['ashen-gate','frozen-pass','veil-sanctum'].includes(stage.id)){const stats=stage.stats;for(const [i,enemy]of state.enemies.entries()){enemy.hp=enemy.maxHp=Math.round(stats[0]*(i===1?(stage.bossHp||1.15):stage.mode==='dungeon'?.65:1));enemy.atk=Math.round(stats[1]*(stage.mode==='dungeon'&&i!==1?.75:1));enemy.def=stats[2];}}
+  encounterAppearance(state);
   state.board=freshBoard(state);message(state,`${stage.name} · Match runes to awaken your warband.`);return state;
 }
 function effective(unit,stat) {
@@ -278,7 +276,7 @@ export function cast(state,heroUid,targetUid,level=null) {
 }
 export function validateSave(value,roster) {
   const integer=(n,min=0)=>Number.isSafeInteger(n)&&n>=min;
-  if(!value||value.version!==VERSION||!STAGES.some(s=>s.id===value.stageId)||!integer(value.rng,1)||value.rng>0xffffffff||!integer(value.nextTile,1)||!integer(value.moves)||!integer(value.cascades)||!integer(value.eventId)||typeof value.id!=='string'||value.id.length>120)return false;
+  if(!value||value.version!==VERSION||!getEncounter(value.stageId)||!integer(value.rng,1)||value.rng>0xffffffff||!integer(value.nextTile,1)||!integer(value.moves)||!integer(value.cascades)||!integer(value.eventId)||typeof value.id!=='string'||value.id.length>120)return false;
   if(!Array.isArray(value.log)||value.log.length>80||value.log.some(l=>!l||typeof l.text!=='string'||typeof l.tone!=='string'||!integer(l.move)))return false;
   if(!['playing','victory','defeat'].includes(value.phase)||!Array.isArray(value.board)||value.board.length!==SIZE||value.board.some(t=>!t||!COLORS.includes(t.color)||!integer(t.id,1)||t.id>=value.nextTile||!([null,'blast','prism'].includes(t.special))))return false;
   const ids=new Set(roster.map(c=>c.id));

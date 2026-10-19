@@ -1,3 +1,4 @@
+import {ENCOUNTERS,DIFFICULTIES,DUNGEONS} from '../src/encounters.js';
 import {readFile,writeFile,cp,mkdir,rm,stat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const roster=JSON.parse(await readFile('data/champions.json','utf8'));
@@ -5,8 +6,10 @@ if(roster.length!==135||new Set(roster.map(c=>c.id)).size!==135)throw Error('Ros
 for(const c of roster){if(!/^assets\/champions\/[a-zA-Z0-9_ -]+\.webp$/.test(c.portrait)||(await stat(c.portrait)).size<1000)throw Error(`Missing portrait: ${c.id}`);}
 for(const color of ['red','blue','green','yellow','purple'])for(const suffix of ['','-blast','-prism'])if((await stat(`assets/runes/${color}${suffix}.svg`)).size<10000)throw Error('Missing rune artwork: '+color+suffix);
 for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/world-map.svg'])if((await stat(path)).size<500)throw Error('Missing brand artwork');
+for(const e of ENCOUNTERS)if(e.enemyIds.some(id=>!roster.some(c=>c.id===id)))throw Error('Unknown encounter champion: '+e.id);
+for(const path of [...DIFFICULTIES.map(d=>d.art),...DUNGEONS.map(d=>d.art),'assets/dungeons/magma-wyrm.svg'])if((await stat(path)).size<1000)throw Error('Missing adventure artwork: '+path);
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
 for(const path of ['index.html','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
-const manifest={version:'0.7.0',champions:roster.length,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
+const manifest={version:'0.8.0',champions:roster.length,campaignStages:75,dungeons:7,dungeonEncounters:21,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
 await writeFile('dist/build.json',JSON.stringify(manifest,null,2)+'\n');
 console.log(`Built independent static game: ${roster.length} champions and local portraits → dist/`);

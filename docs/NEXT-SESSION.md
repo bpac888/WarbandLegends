@@ -1,3 +1,9 @@
+## Campaign/dungeons follow-up
+
+The owner requested the original game's 25-stage / Normal / Hard / Nightmare structure, reused dungeon art, and playable dungeons. v0.8 implements those as 75 campaign and 21 dungeon encounters, with increasingly destroyed skins of Legends' world map and preserved v0.7 progress. See [adventure rules](ADVENTURES.md).
+
+Next, the owner explicitly requested playable Arena and Special Events adapted from Warband Legends, and replacing Legends’ summoning page/animation with the original game's design. Continue these tasks after the campaign/dungeons release is verified. Also reuse the four Tavern area illustrations where they best support Legends navigation, per the owner’s additional request. Leave Warband Legends unchanged.
+
 # Improvement plan · current progress
 
 The owner returned and authorized implementation on October 19, 2026. They explicitly approved discarding the existing test save ("you can erase the progress, it isnt important"). The first release implements hero leveling, a campaign-to-development reward loop, and a functional illustrated hero dossier. See [progression rules](PROGRESSION.md) for the selected initial curves and costs, and [QA](QA.md) for verification.
