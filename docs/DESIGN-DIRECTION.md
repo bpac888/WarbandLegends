@@ -67,3 +67,9 @@ Depth should reward a varied bench through different encounters, restrictions an
 5. Explore advanced mechanic families and varied challenge formats; add online/social systems after the core loop is proven.
 
 The desired result is a polished tactical collection game with long-term team building. This reference clarifies that aim while leaving room for an original Legends economy, terminology, art direction and combat identity.
+
+## Owner clarification after the visual card references
+
+The owner agrees with the proposed progression/campaign/dossier/kit-refinement direction and specifically wants a leveling system that visibly makes champions stronger. See [the next-session notes](NEXT-SESSION.md) for the saved priorities and open choices. Implementation is deferred until the owner returns and asks to begin.
+
+Rare heroes have an additional essential purpose: future tournaments may restrict rarities, colors or apply special rules. Legendary and Mythical remain generally strongest, but may be ineligible for particular events. Build the long-term collection and progression design around developing an appropriately varied bench, not around equalizing all rarities' general power. Tournament presets and numerical progression rules remain undecided.
