@@ -1,5 +1,5 @@
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
-export const VERSION = 1;
+export const VERSION = 2;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
 export const COLORS = ['red', 'green', 'blue', 'yellow', 'purple'];
 export const ELEMENTS = {
@@ -7,14 +7,23 @@ export const ELEMENTS = {
   blue:{name:'Frost',symbol:'❄',beats:'red'}, yellow:{name:'Radiant',symbol:'☀',beats:'purple'},
   purple:{name:'Umbral',symbol:'☾',beats:'yellow'},
 };
+export const MANA_SPEEDS = {
+  very_fast:{label:'Very Fast',tiles:6.5},fast:{label:'Fast',tiles:8},
+  average:{label:'Average',tiles:10},slow:{label:'Slow',tiles:12},very_slow:{label:'Very Slow',tiles:13.5},
+};
+export function manaLevels(unit){return unit.special?.levels||[];}
+export function readyLevel(unit){if(unit.hp<=0)return 0;return manaLevels(unit).filter(l=>unit.mana>=l.tiles).at(-1)?.level||0;}
+export function manaLabel(unit){return unit.special?.charging?'Charging':MANA_SPEEDS[unit.manaSpeed]?.label||'Average';}
+export function chargeText(amount){return Number(Number(amount).toFixed(2)).toString();}
+function gainMana(unit,amount){const rate=(has(unit,'mana_surge')?1.2:1)*(has(unit,'mana_slow')?.85:1);unit.mana=Math.min(unit.manaMax,Math.round((unit.mana+amount*rate)*100)/100);}
 export const STAGES = [
   {id:'ashen-gate',name:'The Ashen Gate',region:'Emberfall',description:'A restless warband guards the broken crossing.',enemyIds:['redknife_tavin','shellback_brukk','rimebow_tessa'],hp:.7,atk:.65,countdown:3},
   {id:'frozen-pass',name:'The Frozen Pass',region:'Frostwake',description:'Break the icebound guard before their shields close.',enemyIds:['berserker_ulf','shieldmaiden_runa','ice_shaman_sigrid'],hp:1,atk:.9,countdown:3},
   {id:'veil-sanctum',name:'The Veil Sanctum',region:'Umbra',description:'The shadow court has been expecting you.',enemyIds:['demon_witchblade','shade_prince','umbral_hierarch'],hp:1.2,atk:.9,countdown:2},
 ];
-const BUFFS = new Set(['inc_atk','inc_def','inc_spd','shield','strengthen','heal','block_debuffs','counterattack','revive_on_death']);
-const DEBUFFS = new Set(['dec_atk','dec_def','dec_spd','weaken','block_buffs','taunt','poison','burn']);
-const NAMES = {inc_atk:'ATK up',inc_def:'DEF up',inc_spd:'Quickened',shield:'Shield',strengthen:'Strengthen',heal:'Regeneration',block_debuffs:'Debuff ward',counterattack:'Counterattack',revive_on_death:'Death ward',dec_atk:'ATK down',dec_def:'DEF down',dec_spd:'Slowed',weaken:'Weaken',block_buffs:'Buff seal',taunt:'Taunt',poison:'Poison',burn:'Burn',remove_debuffs:'Cleanse',aoe:'All enemies',ignore_def:'Pierce'};
+const BUFFS = new Set(['inc_atk','inc_def','mana_surge','shield','strengthen','heal','block_debuffs','counterattack','revive_on_death']);
+const DEBUFFS = new Set(['dec_atk','dec_def','mana_slow','weaken','block_buffs','taunt','poison','burn','frostbite']);
+const NAMES = {inc_atk:'ATK up',inc_def:'DEF up',mana_surge:'Mana flow',shield:'Shield',strengthen:'Strengthen',heal:'Regeneration',block_debuffs:'Debuff ward',counterattack:'Counterattack',revive_on_death:'Death ward',dec_atk:'ATK down',dec_def:'DEF down',mana_slow:'Mana slow',weaken:'Weaken',block_buffs:'Buff seal',taunt:'Taunt',poison:'Poison',burn:'Burn',frostbite:'Frostbite',remove_debuffs:'Cleanse',aoe:'All enemies',ignore_def:'Pierce'};
 export const effectName = id => NAMES[id] || id;
 export const living = units => units.filter(u=>u.hp>0);
 const clone = value => structuredClone(value);
@@ -60,7 +69,7 @@ function freshBoard(state) {
 function message(state,text,tone='neutral',unitId=null) {state.log.push({id:++state.eventId,move:state.moves,text,tone,unitId});state.log=state.log.slice(-80);}
 function frame(state,frames,kind,extra={}) {frames.push({kind,state:clone(state),...clone(extra)});}
 function makeUnit(source,side,index) {
-  return {...clone(source),uid:`${side}-${index}`,side,hp:source.hp,maxHp:source.hp,mana:0,manaMax:100,shield:0,effects:{},reviveUsed:false,passiveReviveUsed:false,actions:0};
+  return {...clone(source),uid:`${side}-${index}`,side,hp:source.hp,maxHp:source.hp,mana:0,manaMax:manaLevels(source).at(-1).tiles,shield:0,effects:{},reviveUsed:false,passiveReviveUsed:false,actions:0};
 }
 export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()) {
   if(teamIds.length!==5||new Set(teamIds).size!==5)throw new Error('Choose five different champions.');
@@ -75,7 +84,7 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
   state.board=freshBoard(state);message(state,`${stage.name} · Match runes to awaken your warband.`);return state;
 }
 function effective(unit,stat) {
-  let value=unit[stat];if(has(unit,`inc_${stat}`))value*=stat==='spd'?1.2:1.25;if(has(unit,`dec_${stat}`))value*=stat==='spd'?.85:.75;return value;
+  let value=unit[stat];if(has(unit,`inc_${stat}`))value*=1.25;if(has(unit,`dec_${stat}`))value*=.75;return value;
 }
 function revive(state,target) {
   if(target.hp>0)return;
@@ -90,7 +99,7 @@ function heal(state,target,amount,label='Healing') {
 }
 function hit(state,attacker,target,power,{color=attacker?.color,pierce=false,counter=true,label='Rune strike',crit=false}={}) {
   if(target.hp<=0)return;
-  let amount=power*advantage(color,target.color)*130/(130+effective(target,'def')*(pierce?.375:.5));
+  let amount=power*advantage(color,target.color)*500/(500+effective(target,'def')*(pierce?.75:1));
   if(has(target,'strengthen'))amount*=.85;if(has(target,'weaken'))amount*=1.15;
   amount=Math.max(1,Math.round(amount*(crit?1.5:1)));
   const absorbed=Math.min(target.shield,amount);target.shield-=absorbed;amount-=absorbed;
@@ -112,7 +121,7 @@ function startTurn(state,unit) {
   if(unit.hp<=0)return;
   if(has(unit,'heal'))heal(state,unit,unit.maxHp*.1,'Regeneration');
   if(unit.passive?.kind==='regen')heal(state,unit,unit.maxHp*(unit.passive.value||.05),unit.passive.name);
-  for(const id of ['poison','burn'])if(unit.hp>0&&has(unit,id)){const amount=Math.max(1,Math.round(unit.maxHp*.05));unit.hp=Math.max(0,unit.hp-amount);message(state,`${unit.name}: −${amount} · ${effectName(id)}`,'damage',unit.uid);revive(state,unit);}
+  for(const id of ['poison','burn','frostbite'])if(unit.hp>0&&has(unit,id)){const amount=Math.max(1,Math.round(unit.maxHp*.05));unit.hp=Math.max(0,unit.hp-amount);message(state,`${unit.name}: −${amount} · ${effectName(id)}`,'damage',unit.uid);revive(state,unit);}
 }
 function endTurn(state,unit) {
   for(const [id,effect]of Object.entries(unit.effects)){if(effect.appliedMove>=state.moves)continue;if(--effect.turns<=0){delete unit.effects[id];if(id==='shield')unit.shield=0;message(state,`${unit.name}: ${effectName(id)} expired.`,'neutral',unit.uid);}}
@@ -124,33 +133,34 @@ function finish(state) {
   return state.phase!=='playing';
 }
 function forcedTarget(state,actor,foes) {const id=actor.effects.taunt?.source;return living(foes).find(u=>u.uid===id)||null;}
-function resolveSkill(state,actor,selectedTarget) {
+function resolveSkill(state,actor,selectedTarget,level) {
   const own=actor.side==='hero'?state.heroes:state.enemies,foes=actor.side==='hero'?state.enemies:state.heroes;
-  const entries=actor.kit?.a3||[];const ids=entries.map(e=>e[0]);
-  const support=actor.role==='support';
-  const target=selectedTarget||living(support?own:foes).sort((a,b)=>a.hp/a.maxHp-b.hp/b.maxHp)[0];
-  message(state,`${actor.name} invokes ${actor.ability_name}.`,'skill',actor.uid);
-  if(support&&target)heal(state,target,effective(actor,'atk')*.65+target.maxHp*.12,actor.ability_name);
-  if(ids.includes('remove_debuffs'))for(const ally of living(own)){
-    const removed=Object.keys(ally.effects).filter(e=>DEBUFFS.has(e));for(const id of removed)delete ally.effects[id];
-    if(removed.length)message(state,`${ally.name}: cleansed ${removed.map(effectName).join(', ')}.`,'heal',ally.uid);
+  const spec=manaLevels(actor).find(l=>l.level===level);if(!spec)return;
+  const ally=selectedTarget?.side===actor.side?selectedTarget:actor;
+  const enemy=selectedTarget&&selectedTarget.side!==actor.side?selectedTarget:living(foes).sort((a,b)=>a.hp-b.hp)[0];
+  message(state,`${actor.name} invokes ${actor.special.name}${actor.special.charging?' · Charge '+level:''}.`,'skill',actor.uid);
+  const recipients=scope=>scope==='self'?[actor]:scope==='ally'?[ally]:scope==='allies'?living(own):scope==='enemies'?living(foes):enemy?[enemy]:[];
+  for(const effect of spec.effects.filter(e=>e.id==='remove_debuffs'))for(const target of recipients(effect.scope)){
+    const removed=Object.keys(target.effects).filter(e=>DEBUFFS.has(e));for(const id of removed)delete target.effects[id];
+    if(removed.length)message(state,`${target.name}: cleansed ${removed.map(effectName).join(', ')}.`,'heal',target.uid);
   }
-  for(const [id,duration]of entries)if(BUFFS.has(id)){
-    const teamBuff=support||(actor.role==='defense'&&id==='shield'&&['legendary','mythical'].includes(actor.rarity));
-    for(const ally of teamBuff?living(own):[actor])applyEffect(state,actor,ally,id,duration);
-  }
-  const attackTarget=support?living(foes).sort((a,b)=>a.hp-b.hp)[0]:target;
-  const targets=ids.includes('aoe')?living(foes):attackTarget?[attackTarget]:[];
-  for(const enemy of targets){
+  for(const effect of spec.effects.filter(e=>BUFFS.has(e.id)))for(const target of recipients(effect.scope))applyEffect(state,actor,target,effect.id,effect.turns);
+  if(spec.healing)for(const target of recipients(spec.healScope))heal(state,target,target.maxHp*spec.healing,actor.special.name);
+  for(const effect of spec.effects.filter(e=>DEBUFFS.has(e.id)))for(const target of recipients(effect.scope))applyEffect(state,actor,target,effect.id,effect.turns);
+  if(spec.damage)for(const target of spec.aoe?living(foes):enemy?[enemy]:[]){
     if(actor.hp<=0)break;
-    for(const [id,duration]of entries)if(DEBUFFS.has(id))applyEffect(state,actor,enemy,id,duration);
-    hit(state,actor,enemy,effective(actor,'atk')*(support?.45:2.4),{pierce:ids.includes('ignore_def'),label:actor.ability_name});
+    hit(state,actor,target,effective(actor,'atk')*spec.damage,{pierce:spec.pierce,label:actor.special.name});
   }
 }
-export function skillDescription(unit,effects={}) {
-  const support=unit.role==='support',entries=unit.kit?.a3||[],aoe=entries.some(e=>e[0]==='aoe');
-  const base=support?`Heal one living ally for 65% ATK + 12% of their max HP, then strike ${aoe?'all living enemies':'the weakest enemy'} at 45% ATK.`:`Strike ${aoe?'all living enemies':'one enemy'} at 240% ATK before defense and elemental modifiers.`;
-  return {name:unit.ability_name,target:support?'ally':'enemy',aoe,text:base,effects:entries.map(([id,duration])=>({id,name:effectName(id),duration,description:id==='counterattack'?'Counter a direct attack with 50% ATK. Rune strikes do not trigger counters.':id==='taunt'?'Enemies use basic attacks against the living caster. Champions cannot cast signatures while taunted; rune attacks still follow columns.':id==='revive_on_death'?'Revive once at 30% max HP if defeated while this ward is active.':id==='inc_spd'?'Mana gained from runes increases 20%; enemy attack countdowns recover faster.':id==='dec_spd'?'Mana gained from runes decreases 15%; enemy attack countdowns recover more slowly.':effects[id]?.desc||'',scope:id==='remove_debuffs'?'All living allies':BUFFS.has(id)?(support||(unit.role==='defense'&&id==='shield'&&['legendary','mythical'].includes(unit.rarity))?'All living allies':'Self'):aoe?'All enemies':'One enemy'}))};
+const SCOPES={self:'Self',ally:'Selected ally',allies:'All living allies',enemy:'Selected enemy',enemies:'All living enemies'};
+export function skillDescription(unit,effects={},level=manaLevels(unit).length) {
+  const spec=manaLevels(unit).find(l=>l.level===level);if(!spec)return {name:unit.ability_name||'Special',target:'enemy',aoe:false,text:'No Special configured.',effects:[]};
+  const parts=[];
+  if(spec.healing)parts.push(`Restore ${Math.round(spec.healing*100)}% max HP to ${spec.healScope==='allies'?'all living allies':'one living ally'}.`);
+  if(spec.damage)parts.push(`Deal ${Math.round(spec.damage*100)}% ATK damage to ${spec.aoe?'all living enemies':unit.role==='support'?'the weakest enemy':'one enemy'}${spec.pierce?', ignoring 25% of DEF':''}.`);
+  if(!parts.length)parts.push('Empower your warband with the effects below.');
+  const descriptions={counterattack:'Counter direct attacks with 50% ATK. Rune strikes do not trigger counters.',taunt:'Enemies use basic attacks against the living caster. Champions cannot cast Specials while taunted; rune attacks still follow columns.',revive_on_death:'Revive once at 30% max HP if defeated while this ward is active.',mana_surge:'Gain 20% more tile charge. This changes mana generation, not attack intervals.',mana_slow:'Gain 15% less tile charge. This changes mana generation, not attack intervals.',frostbite:'Lose 5% max HP at the start of each affected-unit turn, bypassing shields.'};
+  return {name:unit.special.name,target:spec.target,aoe:spec.aoe,level:spec.level,tiles:spec.tiles,text:parts.join(' '),effects:spec.effects.map(e=>({id:e.id,name:effectName(e.id),duration:e.turns,scope:SCOPES[e.scope],description:descriptions[e.id]||effects[e.id]?.desc||''}))};
 }
 function enemyPhase(state,frames) {
   for(const enemy of state.enemies){
@@ -159,12 +169,12 @@ function enemyPhase(state,frames) {
     enemy.countdown--;
     if(enemy.countdown>0)continue;
     startTurn(state,enemy);if(enemy.hp<=0){frame(state,frames,'upkeep');continue;}
-    enemy.actions++;
+    enemy.actions++;gainMana(enemy,4);
     const forced=forcedTarget(state,enemy,state.heroes),targets=living(state.heroes);
     const target=forced||targets[Math.floor(roll(state)*targets.length)];if(!target)break;
-    if(enemy.actions%3===0&&!forced)resolveSkill(state,enemy);
+    if(enemy.mana>=enemy.manaMax&&!forced){enemy.mana=0;resolveSkill(state,enemy,null,manaLevels(enemy).length);}
     else hit(state,enemy,target,effective(enemy,'atk'),{label:'Enemy attack',crit:roll(state)<.08});
-    enemy.countdown=Math.max(1,enemy.baseCountdown+(has(enemy,'dec_spd')?1:0)-(has(enemy,'inc_spd')?1:0));
+    enemy.countdown=Math.max(1,enemy.baseCountdown);
     endTurn(state,enemy);finish(state);frame(state,frames,'enemy',{actor:enemy.uid,target:target.uid});
   }
   for(const hero of state.heroes)if(hero.hp>0)endTurn(state,hero);
@@ -195,7 +205,7 @@ function resolveBoard(state,frames,initialGroups,preferred,activation=null) {
       const attackers=living(state.heroes).filter(u=>u.color===t.color);
       const target=living(state.enemies).find(e=>e.lanes.includes(index%COLS));
       if(attackers.length){
-        for(const hero of attackers){const rate=(has(hero,'inc_spd')?1.2:1)*(has(hero,'dec_spd')?.85:1);hero.mana=Math.min(hero.manaMax,hero.mana+Math.round(10*(target?1:2)*rate));}
+        for(const hero of attackers)gainMana(hero,target?1:2);
         if(target){const power=attackers.reduce((n,u)=>n+effective(u,'atk')*(u.role==='attack'?1.1:1),0)*.24*(1+(combo-1)*.2);hit(state,null,target,power,{color:t.color,counter:false,label:`${ELEMENTS[t.color].name} rune${combo>1?` · ${combo}× combo`:''}`});}
         else message(state,`${ELEMENTS[t.color].name}: empty lane · double mana.`,'mana');
       }
@@ -238,16 +248,19 @@ export function activate(state,index) {
   if(!finish(next)){resolveBoard(next,frames,[],index,{indices:[index],color:next.board[index].color});if(next.phase==='playing')enemyPhase(next,frames);}
   frame(next,frames,'settled');return {state:next,frames};
 }
-export function cast(state,heroUid,targetUid) {
+export function cast(state,heroUid,targetUid,level=null) {
   if(state.phase!=='playing')return {state,frames:[],error:'This encounter is finished.'};
   const actor=state.heroes.find(u=>u.uid===heroUid);
-  if(!actor||actor.hp<=0||actor.mana<actor.manaMax)return {state,frames:[],error:'This champion needs a full mana bar.'};
+  if(!actor||actor.hp<=0)return {state,frames:[],error:'Choose a living champion.'};
+  const requested=level??readyLevel(actor),spec=manaLevels(actor).find(l=>l.level===requested);
+  if(!spec||actor.mana<spec.tiles)return {state,frames:[],error:'This Special needs more matching tiles.'};
   if(forcedTarget(state,actor,state.enemies))return {state,frames:[],error:'Taunt prevents this champion from casting until it expires.'};
-  const side=actor.role==='support'?state.heroes:state.enemies;
-  const target=side.find(u=>u.uid===targetUid&&u.hp>0);if(!target)return {state,frames:[],error:`Choose a living ${actor.role==='support'?'ally':'enemy'}.`};
-  const next=clone(state),frames=[];const nextActor=next.heroes.find(u=>u.uid===heroUid);nextActor.mana=0;
-  resolveSkill(next,nextActor,[...next.heroes,...next.enemies].find(u=>u.uid===targetUid));finish(next);
-  frame(next,frames,'skill',{actor:heroUid,target:targetUid});return {state:next,frames};
+  const side=spec.target==='enemy'?state.enemies:state.heroes;
+  const target=spec.target==='self'?actor:side.find(u=>u.uid===targetUid&&u.hp>0);
+  if(!target)return {state,frames:[],error:`Choose a living ${spec.target==='enemy'?'enemy':'ally'}.`};
+  const next=clone(state),frames=[],nextActor=next.heroes.find(u=>u.uid===heroUid);nextActor.mana=0;
+  resolveSkill(next,nextActor,[...next.heroes,...next.enemies].find(u=>u.uid===target.uid),requested);finish(next);
+  frame(next,frames,'skill',{actor:heroUid,target:target.uid,level:requested});return {state:next,frames};
 }
 export function validateSave(value,roster) {
   const integer=(n,min=0)=>Number.isSafeInteger(n)&&n>=min;
@@ -258,7 +271,8 @@ export function validateSave(value,roster) {
   if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==3)return false;
   if(new Set(value.board.map(t=>t.id)).size!==SIZE||new Set(value.heroes.map(u=>u.id)).size!==5)return false;
   const units=[...value.heroes,...value.enemies];
-  if(units.some(u=>!u||!ids.has(u.id)||!COLORS.includes(u.color)||!u.effects||Array.isArray(u.effects)||typeof u.effects!=='object'||!['attack','defense','support'].includes(u.role)||!Number.isFinite(u.hp)||!Number.isFinite(u.maxHp)||u.maxHp<=0||u.hp<0||u.hp>u.maxHp||!Number.isFinite(u.atk)||u.atk<0||!Number.isFinite(u.def)||u.def<0||!Number.isFinite(u.mana)||u.mana<0||u.mana>100||u.manaMax!==100||!Number.isFinite(u.shield)||u.shield<0||!integer(u.actions)))return false;
+  if(units.some(u=>!u||!ids.has(u.id)||!COLORS.includes(u.color)||!u.effects||Array.isArray(u.effects)||typeof u.effects!=='object'||!['attack','defense','support'].includes(u.role)||!Number.isFinite(u.hp)||!Number.isFinite(u.maxHp)||u.maxHp<=0||u.hp<0||u.hp>u.maxHp||!Number.isFinite(u.atk)||u.atk<0||!Number.isFinite(u.def)||u.def<0||!Number.isFinite(u.mana)||u.mana<0||u.mana>u.manaMax||u.manaMax!==manaLevels(roster.find(c=>c.id===u.id)).at(-1)?.tiles||!Number.isFinite(u.shield)||u.shield<0||!integer(u.actions)))return false;
+  if(units.some(u=>JSON.stringify(u.special)!==JSON.stringify(roster.find(c=>c.id===u.id).special)))return false;
   if(units.some(u=>Object.entries(u.effects).some(([id,e])=>!BUFFS.has(id)&&!DEBUFFS.has(id)||!e||!integer(e.turns,1)||e.turns>3||!integer(e.appliedMove)||e.appliedMove>value.moves||!units.some(t=>t.uid===e.source))))return false;
   if(value.heroes.some((u,i)=>u.uid!==`hero-${i}`||u.side!=='hero')||value.enemies.some((u,i)=>u.uid!==`enemy-${i}`||u.side!=='enemy'||!integer(u.countdown)||!integer(u.baseCountdown,1)||!Array.isArray(u.lanes)||JSON.stringify(u.lanes)!==JSON.stringify(i===0?[0,1]:i===1?[2,3,4]:[5,6])))return false;
   const heroesAlive=living(value.heroes).length>0,enemiesAlive=living(value.enemies).length>0;

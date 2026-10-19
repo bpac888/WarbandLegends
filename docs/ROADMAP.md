@@ -6,4 +6,4 @@
 4. **Online foundation:** new backend/database, authentication, authoritative combat/rewards, save migration, hosting and abuse controls. This step is required before trusted shared economies or competitive rankings.
 5. **Community:** asynchronous raids and defenses, alliances, cooperative bosses and wars after the online foundation is proven.
 
-Later phases are design scope, not implemented features. No existing Warband Legends account, inventory, currency, deployment, repository, or database is migrated or modified by this project. Element choices are currently faction-based for a clear first build and can be balanced independently later.
+Later phases are design scope, not implemented features. No existing Warband Legends account, inventory, currency, deployment, repository, or database is migrated or modified by this project. The v0.2 roster now has individually assigned colors, one merged Special per champion, tile-based mana categories and multi-level charging. Further balance remains independent of the original game.

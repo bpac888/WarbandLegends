@@ -1,0 +1,4959 @@
+[
+  {
+    "template_id": "yshmir_worldwound",
+    "name": "Yshmir, the Worldwound",
+    "title": "First Eye of the Sundering",
+    "rarity": "mythical",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 2920,
+    "atk": 510,
+    "def": 235,
+    "spd": 142,
+    "ability_name": "Unmake",
+    "ability_desc": "Erases the whole enemy line from the chronicle \u2014 ruin across every foe that ignores a quarter of their armour.",
+    "lore": "Before names, before bone, before the gods carved their seats from the sky \u2014 Yshmir was. The wound she left in the world is still trying to close. It cannot.",
+    "image_url": "/api/static/champions/yshmir_worldwound.png",
+    "id": "yshmir_worldwound",
+    "color": "purple",
+    "source_image": "/api/static/champions/yshmir_worldwound.png",
+    "portrait": "assets/champions/yshmir_worldwound.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_buffs",
+          2
+        ],
+        [
+          "dec_def",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "aoe",
+          0
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": {
+      "id": "unclosing_wound",
+      "name": "Unclosing Wound",
+      "kind": "immune_control",
+      "immune": [
+        "taunt"
+      ],
+      "desc": "Cannot be Taunted."
+    }
+  },
+  {
+    "template_id": "necropolis_titan",
+    "name": "Ossir, Necropolis Titan",
+    "title": "God-King of the Bone Throne",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "defense",
+    "hp": 2535,
+    "atk": 235,
+    "def": 269,
+    "spd": 102,
+    "ability_name": "Verdict of the Silent Court",
+    "ability_desc": "The bone-court passes sentence on one foe \u2014 their strength withers for three rounds and the verdict drags their eyes onto Ossir alone.",
+    "lore": "Ossir ruled a kingdom of dust for so long the dust began to worship him. He did not stop it.",
+    "image_url": "/api/static/champions/necropolis_titan.png",
+    "id": "necropolis_titan",
+    "color": "purple",
+    "source_image": "/api/static/champions/necropolis_titan.png",
+    "portrait": "assets/champions/necropolis_titan.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "dec_atk",
+          3
+        ],
+        [
+          "taunt",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "abyss_lord",
+    "name": "Malzhur, the Abyss Lord",
+    "title": "Thousand-Eyed Emperor of Cinder",
+    "rarity": "mythical",
+    "faction": "nether",
+    "role": "attack",
+    "hp": 3080,
+    "atk": 465,
+    "def": 240,
+    "spd": 130,
+    "ability_name": "Cinder Cataclysm",
+    "ability_desc": "Rains obsidian cinder-rot across every foe \u2014 the whole line left corroding for two rounds.",
+    "lore": "Malzhur's every eye has watched a world end. He remembers all of them by name.",
+    "image_url": "/api/static/champions/abyss_lord.png",
+    "id": "abyss_lord",
+    "color": "purple",
+    "source_image": "/api/static/champions/abyss_lord.png",
+    "portrait": "assets/champions/abyss_lord.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_atk",
+          3
+        ],
+        [
+          "inc_atk",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "poison",
+          2
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    },
+    "passive": {
+      "id": "cold_of_the_pit",
+      "name": "Cold of the Pit",
+      "kind": "immune_effect",
+      "immune": [
+        "burn"
+      ],
+      "desc": "Immune to Burn."
+    }
+  },
+  {
+    "template_id": "mercuric_saboteur",
+    "name": "Ashrim, Quicksilver Saboteur",
+    "title": "Quicksilver in Every Vein",
+    "rarity": "legendary",
+    "faction": "chymera",
+    "role": "attack",
+    "hp": 2158,
+    "atk": 328,
+    "def": 171,
+    "spd": 128,
+    "ability_name": "Solvent Injection",
+    "ability_desc": "A needle-fine strike that melts a foe's armour for three rounds and leaves the wound hissing with poison.",
+    "lore": "Ashrim keeps a vial of himself in his coat. He is not, strictly, the original \u2014 and neither is the second.",
+    "image_url": "/api/static/champions/mercuric_saboteur.png",
+    "id": "mercuric_saboteur",
+    "color": "green",
+    "source_image": "/api/static/champions/mercuric_saboteur.png",
+    "portrait": "assets/champions/mercuric_saboteur.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_def",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "poison",
+          2
+        ],
+        [
+          "dec_def",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "voltaic_priest",
+    "name": "Yorkine, Voltaic Priest",
+    "title": "Cracked Halo, Copper Crown",
+    "rarity": "legendary",
+    "faction": "chymera",
+    "role": "support",
+    "hp": 2598,
+    "atk": 259,
+    "def": 201,
+    "spd": 126,
+    "ability_name": "Arc Communion",
+    "ability_desc": "Arc Communion earths through the chosen ally \u2014 a lasting mend carried to the whole warband and every curse burned away.",
+    "lore": "The porcelain mask is not a disguise \u2014 it is what remains of the face. The rest was donated, willingly.",
+    "image_url": "/api/static/champions/voltaic_priest.png",
+    "id": "voltaic_priest",
+    "color": "green",
+    "source_image": "/api/static/champions/voltaic_priest.png",
+    "portrait": "assets/champions/voltaic_priest.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_debuffs",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "heal",
+          3
+        ],
+        [
+          "remove_debuffs",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "bronze_juggernaut",
+    "name": "The Bronze Juggernaut",
+    "title": "Boilerplate Heresy",
+    "rarity": "legendary",
+    "faction": "ironclad",
+    "role": "defense",
+    "hp": 2547,
+    "atk": 245,
+    "def": 259,
+    "spd": 110,
+    "ability_name": "Steam Purge",
+    "ability_desc": "Vents scalding pressure \u2014 bronze shields settle over the warband and the struck foe can look at nothing else.",
+    "lore": "The heart crystal in his chest still remembers being a person. The pistons remember only work.",
+    "image_url": "/api/static/champions/bronze_juggernaut.png",
+    "id": "bronze_juggernaut",
+    "color": "blue",
+    "source_image": "/api/static/champions/bronze_juggernaut.png",
+    "portrait": "assets/champions/bronze_juggernaut.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          1
+        ],
+        [
+          "taunt",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "spore_engineer",
+    "name": "Fen, the Spore Adept",
+    "title": "Bloom-Weaver of the Green Vats",
+    "rarity": "rare",
+    "faction": "chymera",
+    "role": "support",
+    "hp": 1130,
+    "atk": 135,
+    "def": 115,
+    "spd": 110,
+    "ability_name": "Colony Bloom",
+    "ability_desc": "A spore tide blooms \u2014 mends the chosen ally and seeds the struck foe with blight for two rounds.",
+    "lore": "Fen no longer eats. The colony behind the glass is very grateful \u2014 and very hungry for someone else.",
+    "image_url": "/api/static/champions/spore_engineer.png",
+    "id": "spore_engineer",
+    "color": "green",
+    "source_image": "/api/static/champions/spore_engineer.png",
+    "portrait": "assets/champions/spore_engineer.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_debuffs",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "poison",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "transmuter_prime",
+    "name": "Auroline, Transmuter Prime",
+    "title": "Six Hands, One Formula",
+    "rarity": "legendary",
+    "faction": "chymera",
+    "role": "attack",
+    "hp": 2089,
+    "atk": 318,
+    "def": 190,
+    "spd": 126,
+    "ability_name": "Prismatic Transmutation",
+    "ability_desc": "Rewrites a foe into a lesser element \u2014 ignores a quarter of their armour and curses their strength for three rounds.",
+    "lore": "Auroline believes lead is only a rumor about gold. Her hands have made that rumor true, three times.",
+    "image_url": "/api/static/champions/transmuter_prime.png",
+    "id": "transmuter_prime",
+    "color": "green",
+    "source_image": "/api/static/champions/transmuter_prime.png",
+    "portrait": "assets/champions/transmuter_prime.webp",
+    "kit": {
+      "a2": [
+        [
+          "poison",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ],
+        [
+          "dec_atk",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "steel_oracle",
+    "name": "The Oracle",
+    "title": "Whose Tears Are Formulae",
+    "rarity": "legendary",
+    "faction": "chymera",
+    "role": "support",
+    "hp": 2150,
+    "atk": 275,
+    "def": 220,
+    "spd": 122,
+    "ability_name": "Golden Prophecy",
+    "ability_desc": "Foresees the next round \u2014 shields the whole warband and raises their attack by a quarter for three rounds.",
+    "lore": "The Oracle weeps in gold. Every tear, read aloud, has ended an empire.",
+    "image_url": "/api/static/champions/steel_oracle.png",
+    "id": "steel_oracle",
+    "color": "green",
+    "source_image": "/api/static/champions/steel_oracle.png",
+    "portrait": "assets/champions/steel_oracle.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_spd",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          1
+        ],
+        [
+          "inc_atk",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "elixir_apotheon",
+    "name": "Vex, the Elixir Apotheon",
+    "title": "Body of a Hundred Vials",
+    "rarity": "mythical",
+    "faction": "chymera",
+    "role": "attack",
+    "hp": 3220,
+    "atk": 440,
+    "def": 240,
+    "spd": 136,
+    "ability_name": "Apotheotic Draught",
+    "ability_desc": "Drinks the battlefield dry \u2014 prismatic ruin floods every foe while Vex drains the carnage back as regeneration.",
+    "lore": "Vex is not a person, exactly. Vex is what happened when a person swallowed the last true formula, and did not stop.",
+    "image_url": "/api/static/champions/elixir_apotheon.png",
+    "id": "elixir_apotheon",
+    "color": "green",
+    "source_image": "/api/static/champions/elixir_apotheon.png",
+    "portrait": "assets/champions/elixir_apotheon.webp",
+    "kit": {
+      "a2": [
+        [
+          "ignore_def",
+          0
+        ],
+        [
+          "dec_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "heal",
+          2
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    },
+    "passive": {
+      "id": "perfected_blood",
+      "name": "Perfected Blood",
+      "kind": "immune_effect",
+      "immune": [
+        "poison"
+      ],
+      "desc": "Immune to Poison."
+    }
+  },
+  {
+    "template_id": "ghoul_scavenger",
+    "name": "Drekka the Scavenger",
+    "title": "Picker of the Quiet Bones",
+    "rarity": "common",
+    "faction": "nether",
+    "role": "attack",
+    "hp": 780,
+    "atk": 102,
+    "def": 58,
+    "spd": 98,
+    "ability_name": "Carrion Strike",
+    "ability_desc": "A vicious lunge at the already-dying that leaves the foe too mauled to swing hard for two rounds.",
+    "lore": "She remembers nothing of her old name \u2014 only the taste of teeth, and the polite hunger of empty things.",
+    "image_url": "/api/static/champions/ghoul_scavenger.png",
+    "id": "ghoul_scavenger",
+    "color": "purple",
+    "source_image": "/api/static/champions/ghoul_scavenger.png",
+    "portrait": "assets/champions/ghoul_scavenger.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_atk",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "shadow_thrall",
+    "name": "The Hooded Thrall",
+    "title": "Promised Nothing, Paid Everything",
+    "rarity": "rare",
+    "faction": "umbra",
+    "role": "support",
+    "hp": 1179,
+    "atk": 145,
+    "def": 105,
+    "spd": 107,
+    "ability_name": "Veil Step",
+    "ability_desc": "Slips through the veil to lay hands on the chosen ally \u2014 a lingering mend that threads through the whole warband.",
+    "lore": "The bargain he made was simple: an end to the pain. The price has yet to be tallied in full.",
+    "image_url": "/api/static/champions/shadow_thrall.png",
+    "id": "shadow_thrall",
+    "color": "purple",
+    "source_image": "/api/static/champions/shadow_thrall.png",
+    "portrait": "assets/champions/shadow_thrall.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "heal",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "pit_grunt",
+    "name": "Brakkar the Pit Grunt",
+    "title": "Of the Seventh Pit",
+    "rarity": "rare",
+    "faction": "nether",
+    "role": "defense",
+    "hp": 1406,
+    "atk": 130,
+    "def": 171,
+    "spd": 78,
+    "ability_name": "Cleaver Charge",
+    "ability_desc": "Barrels into the front rank and leaves the foe's swing broken for a round.",
+    "lore": "Brakkar lost an eye, two horns, and the lower half of his pride to a recruiter. He has not stopped fighting since.",
+    "image_url": "/api/static/champions/pit_grunt.png",
+    "id": "pit_grunt",
+    "color": "purple",
+    "source_image": "/api/static/champions/pit_grunt.png",
+    "portrait": "assets/champions/pit_grunt.webp",
+    "kit": {
+      "a2": [
+        [
+          "counterattack",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "dec_atk",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "cursed_acolyte",
+    "name": "Acolyte Iyr",
+    "title": "Of the Pale-Green Verse",
+    "rarity": "common",
+    "faction": "bloodcourt",
+    "role": "support",
+    "hp": 776,
+    "atk": 86,
+    "def": 74,
+    "spd": 104,
+    "ability_name": "Hexlight",
+    "ability_desc": "A guttering candle-curse read backwards \u2014 the warband's blows land a quarter harder for two rounds.",
+    "lore": "Iyr was kind, once, in a small village no one remembers. The verses she now whispers belong to no kind god.",
+    "image_url": "/api/static/champions/cursed_acolyte.png",
+    "id": "cursed_acolyte",
+    "color": "red",
+    "source_image": "/api/static/champions/cursed_acolyte.png",
+    "portrait": "assets/champions/cursed_acolyte.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "inc_atk",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "demon_witchblade",
+    "name": "Vethra Witchblade",
+    "title": "Forge-Wife of the Hellgate",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 2164,
+    "atk": 367,
+    "def": 196,
+    "spd": 123,
+    "ability_name": "Hellforge Slash",
+    "ability_desc": "A wide hellforge arc across the whole line \u2014 every foe left burning for three rounds.",
+    "lore": "Vethra forged her own blade in the throat of a sleeping volcano. The blade has not forgiven her for it.",
+    "image_url": "/api/static/champions/demon_witchblade.png",
+    "id": "demon_witchblade",
+    "color": "red",
+    "source_image": "/api/static/champions/demon_witchblade.png",
+    "portrait": "assets/champions/demon_witchblade.webp",
+    "kit": {
+      "a2": [
+        [
+          "weaken",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "burn",
+          3
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "dragonmage",
+    "name": "Dragon Mage",
+    "title": "Wielder of Dragonfire",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 2264,
+    "atk": 330,
+    "def": 206,
+    "spd": 123,
+    "ability_name": "Dragonfire",
+    "ability_desc": "A blast of dragonfire that sets one foe alight and seals them off from any blessing for two rounds.",
+    "lore": "The fire of dragons forged his staff in heart of a dragon's den.",
+    "image_url": "/api/static/champions/dragonmage.png",
+    "id": "dragonmage",
+    "color": "red",
+    "source_image": "/api/static/champions/dragonmage.png",
+    "portrait": "assets/champions/dragonmage.webp",
+    "kit": {
+      "a2": [
+        [
+          "aoe",
+          0
+        ]
+      ],
+      "a3": [
+        [
+          "burn",
+          1
+        ],
+        [
+          "block_buffs",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "plague_doctor",
+    "name": "Quill, the Plague Sovereign",
+    "title": "Black Coat, Brass Beak",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "support",
+    "hp": 2042,
+    "atk": 290,
+    "def": 212,
+    "spd": 119,
+    "ability_name": "Censer of Rot",
+    "ability_desc": "Swings the censer of rot \u2014 every curse is lifted from the warband and each ally is promised one return from death.",
+    "lore": "He used to cure people. He used to. The mask kept whispering ideas he could not unhear.",
+    "image_url": "/api/static/champions/plague_doctor.png",
+    "id": "plague_doctor",
+    "color": "purple",
+    "source_image": "/api/static/champions/plague_doctor.png",
+    "portrait": "assets/champions/plague_doctor.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_debuffs",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ],
+        [
+          "revive_on_death",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "dragonslayer",
+    "name": "Dragon Slayer",
+    "title": "Slayer of Hellfire",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 2106,
+    "atk": 333,
+    "def": 185,
+    "spd": 126,
+    "ability_name": "Dragon Slash",
+    "ability_desc": "A quick power slash that ignores a quarter of the armour it meets and leaves the wound burning for two rounds.",
+    "lore": "She was buried with her blade. Then she came back with a vengeance.",
+    "image_url": "/api/static/champions/dragonslayer.png",
+    "id": "dragonslayer",
+    "color": "red",
+    "source_image": "/api/static/champions/dragonslayer.png",
+    "portrait": "assets/champions/dragonslayer.webp",
+    "kit": {
+      "a2": [
+        [
+          "aoe",
+          0
+        ]
+      ],
+      "a3": [
+        [
+          "burn",
+          2
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "wraith_archer",
+    "name": "Selka the Wraith",
+    "title": "Whose Arrows Whisper",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 2136,
+    "atk": 313,
+    "def": 185,
+    "spd": 124,
+    "ability_name": "Bone Quiver",
+    "ability_desc": "A ghostly shaft that ignores mortal armour and shuts the foe off from any blessing.",
+    "lore": "She was buried with her bow and seven arrows. Only six were ever found.",
+    "image_url": "/api/static/champions/wraith_archer.png",
+    "id": "wraith_archer",
+    "color": "purple",
+    "source_image": "/api/static/champions/wraith_archer.png",
+    "portrait": "assets/champions/wraith_archer.webp",
+    "kit": {
+      "a2": [
+        [
+          "weaken",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "block_buffs",
+          1
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "Ashwind Warden",
+    "name": "Ashwind Warden",
+    "title": "Desert Warden",
+    "rarity": "mythical",
+    "faction": "duneriders",
+    "role": "defense",
+    "hp": 3266,
+    "atk": 325,
+    "def": 317,
+    "spd": 119,
+    "ability_name": "Sweeping Edge",
+    "ability_desc": "Raises a deadly edge \u2014 foes can strike nothing but the Warden for three rounds while ash-shields settle over the whole warband.",
+    "lore": "Guarding the promised desert paradise. Loneliness lingers, but she still keeps the vow anyway.",
+    "image_url": "/api/static/champions/dune_riders_ashwind_warden.png",
+    "id": "Ashwind Warden",
+    "color": "yellow",
+    "source_image": "/api/static/champions/dune_riders_ashwind_warden.png",
+    "portrait": "assets/champions/Ashwind Warden.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          2
+        ],
+        [
+          "inc_def",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "taunt",
+          3
+        ],
+        [
+          "shield",
+          2
+        ]
+      ]
+    },
+    "passive": {
+      "id": "ashwind_aegis",
+      "name": "Ashwind Aegis",
+      "kind": "shield_boost",
+      "value": 0.5,
+      "desc": "Shield pools are 50% larger."
+    }
+  },
+  {
+    "template_id": "iron_revenant",
+    "name": "Karthos, The Revenant",
+    "title": "The Knight Who Did Not Stop",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "defense",
+    "hp": 2540,
+    "atk": 244,
+    "def": 247,
+    "spd": 108,
+    "ability_name": "Vow Unbroken",
+    "ability_desc": "Interposes an unbroken vow \u2014 foes can strike nothing but Karthos for three rounds, and their strength fails them for two.",
+    "lore": "Karthos took a vow. Karthos kept the vow. Karthos has been keeping the vow for nine hundred years.",
+    "image_url": "/api/static/champions/iron_revenant.png",
+    "id": "iron_revenant",
+    "color": "purple",
+    "source_image": "/api/static/champions/iron_revenant.png",
+    "portrait": "assets/champions/iron_revenant.webp",
+    "kit": {
+      "a2": [
+        [
+          "shield",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "dec_atk",
+          2
+        ],
+        [
+          "taunt",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "pale_matriarch",
+    "name": "Sable, Pale Matriarch",
+    "title": "She Who Sings Down the Coffin Lid",
+    "rarity": "mythical",
+    "faction": "bloodcourt",
+    "role": "support",
+    "hp": 3395,
+    "atk": 346,
+    "def": 306,
+    "spd": 122,
+    "ability_name": "Cradle-Song of Wormsong",
+    "ability_desc": "A cradle-song for the warband \u2014 every curse falls away and all allies strike a quarter harder for three rounds.",
+    "lore": "Sable's grief is a lullaby. Every kingdom she has visited has fallen asleep. Only she remembered to wake up.",
+    "image_url": "/api/static/champions/pale_matriarch.png",
+    "id": "pale_matriarch",
+    "color": "red",
+    "source_image": "/api/static/champions/pale_matriarch.png",
+    "portrait": "assets/champions/pale_matriarch.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_spd",
+          1
+        ],
+        [
+          "heal",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "inc_atk",
+          3
+        ],
+        [
+          "remove_debuffs",
+          0
+        ]
+      ]
+    },
+    "passive": {
+      "id": "crimson_mandate",
+      "name": "Crimson Mandate",
+      "kind": "unblockable_buffs",
+      "desc": "Cannot have buffs blocked."
+    }
+  },
+  {
+    "template_id": "frost_king",
+    "name": "Frost King",
+    "title": "King of the North",
+    "rarity": "mythical",
+    "faction": "frost",
+    "role": "support",
+    "hp": 3795,
+    "atk": 306,
+    "def": 296,
+    "spd": 125,
+    "ability_name": "Direwolf Flank",
+    "ability_desc": "The pack answers the King \u2014 all allies take 15% less damage and each is promised one return from death.",
+    "lore": "Every kingdom has a king. Only he has the power of ice under his banner.",
+    "image_url": "/api/static/champions/frostking.png",
+    "id": "frost_king",
+    "color": "blue",
+    "source_image": "/api/static/champions/frostking.png",
+    "portrait": "assets/champions/frost_king.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_debuffs",
+          3
+        ],
+        [
+          "inc_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "strengthen",
+          1
+        ],
+        [
+          "revive_on_death",
+          2
+        ]
+      ]
+    },
+    "passive": {
+      "id": "rime_crown",
+      "name": "Rime Crown",
+      "kind": "immune_effect",
+      "immune": [
+        "dec_atk"
+      ],
+      "desc": "Immune to Decrease ATK."
+    }
+  },
+  {
+    "template_id": "frost_sage",
+    "name": "Frost Sage",
+    "title": "Mystical Mage",
+    "rarity": "mythical",
+    "faction": "frost",
+    "role": "support",
+    "hp": 3795,
+    "atk": 336,
+    "def": 286,
+    "spd": 122,
+    "ability_name": "Ice Blast",
+    "ability_desc": "A rime-blessing settles on the warband \u2014 two rounds of blunted damage and every curse shattered.",
+    "lore": "Long ago, in the northernmost region, an old sage was lost and freezing, but was saved by a powerful ice magic. Now this mage is inbued with ice and weilds it with a mastery not seen in ages.",
+    "image_url": "/api/static/champions/frost.png",
+    "id": "frost_sage",
+    "color": "blue",
+    "source_image": "/api/static/champions/frost.png",
+    "portrait": "assets/champions/frost_sage.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          2
+        ],
+        [
+          "heal",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "strengthen",
+          2
+        ],
+        [
+          "remove_debuffs",
+          0
+        ]
+      ]
+    },
+    "passive": {
+      "id": "glacier_patience",
+      "name": "Glacier's Patience",
+      "kind": "immune_effect",
+      "immune": [
+        "dec_spd"
+      ],
+      "desc": "Immune to Decrease SPD."
+    }
+  },
+  {
+    "template_id": "blood_paladin",
+    "name": "Sir Aurel, the Crimson Paladin",
+    "title": "Whose Halo Was Cracked",
+    "rarity": "mythical",
+    "faction": "bloodcourt",
+    "role": "defense",
+    "hp": 3366,
+    "atk": 310,
+    "def": 357,
+    "spd": 116,
+    "ability_name": "Weeping Sanctuary",
+    "ability_desc": "Raises a bleeding halo \u2014 foes can strike nothing but Aurel for three rounds, and a crimson shield settles over the whole warband.",
+    "lore": "Sir Aurel was promised paradise. Sir Aurel was lied to. Sir Aurel still keeps the vow anyway.",
+    "image_url": "/api/static/champions/blood_paladin.png",
+    "id": "blood_paladin",
+    "color": "red",
+    "source_image": "/api/static/champions/blood_paladin.png",
+    "portrait": "assets/champions/blood_paladin.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_atk",
+          3
+        ],
+        [
+          "block_debuffs",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "taunt",
+          3
+        ],
+        [
+          "shield",
+          1
+        ]
+      ]
+    },
+    "passive": {
+      "id": "oath_unbroken",
+      "name": "Oath Unbroken",
+      "kind": "revive_once",
+      "value": 0.35,
+      "desc": "Revives once per battle."
+    }
+  },
+  {
+    "template_id": "lady_death",
+    "name": "Lady Death",
+    "title": "Slayer of Men",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 2080,
+    "atk": 371,
+    "def": 172,
+    "spd": 122,
+    "ability_name": "Graceful Slash",
+    "ability_desc": "Spinning steel that finds the weakpoints \u2014 ignores a quarter of the foe's armour and shears what is left for two rounds.",
+    "lore": "She was the youngest blademaster in the academy. The men grew jealous, tried to attack, and all ended up dead.",
+    "image_url": "/api/static/champions/dragonwarrior.png",
+    "id": "lady_death",
+    "color": "red",
+    "source_image": "/api/static/champions/dragonwarrior.png",
+    "portrait": "assets/champions/lady_death.webp",
+    "kit": {
+      "a2": [
+        [
+          "aoe",
+          0
+        ]
+      ],
+      "a3": [
+        [
+          "dec_def",
+          2
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "sin_archon",
+    "name": "The Sin Archon",
+    "title": "Seven-Eyed High Priest of the Seventh Pit",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "support",
+    "hp": 2049,
+    "atk": 369,
+    "def": 198,
+    "spd": 116,
+    "ability_name": "Seventh Confession",
+    "ability_desc": "Names an enemy's sin aloud \u2014 the marked foe takes 15% more damage for two rounds while every ally is promised one return from death.",
+    "lore": "The Sin Archon does not judge. He merely reads aloud. That, it turns out, is enough.",
+    "image_url": "/api/static/champions/sin_archon.png",
+    "id": "sin_archon",
+    "color": "red",
+    "source_image": "/api/static/champions/sin_archon.png",
+    "portrait": "assets/champions/sin_archon.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "weaken",
+          2
+        ],
+        [
+          "revive_on_death",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "shade_prince",
+    "name": "The Shade Prince",
+    "title": "Crowned in Five Cold Flames",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 2080,
+    "atk": 342,
+    "def": 172,
+    "spd": 132,
+    "ability_name": "Coronation of Ash",
+    "ability_desc": "Shadow-cuts of five dead kings \u2014 they ignore a quarter of the foe's armour and seal them off from any blessing for two rounds.",
+    "lore": "He was the youngest of five brothers. The eldest four are the flames that follow him now.",
+    "image_url": "/api/static/champions/shade_prince.png",
+    "id": "shade_prince",
+    "color": "purple",
+    "source_image": "/api/static/champions/shade_prince.png",
+    "portrait": "assets/champions/shade_prince.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "block_buffs",
+          2
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "crimson_praetor",
+    "name": "Vharos, Crimson Praetor",
+    "title": "Sword of the Seventh Pit",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 2160,
+    "atk": 365,
+    "def": 198,
+    "spd": 126,
+    "ability_name": "Praetorian Verdict",
+    "ability_desc": "A ruinous sentence that ignores a quarter of the foe's armour and marks them to take 15% more damage for two rounds.",
+    "lore": "Vharos does not duel. Vharos passes sentence. The blade is merely the punctuation.",
+    "image_url": "/api/static/champions/crimson_praetor.png",
+    "id": "crimson_praetor",
+    "color": "red",
+    "source_image": "/api/static/champions/crimson_praetor.png",
+    "portrait": "assets/champions/crimson_praetor.webp",
+    "kit": {
+      "a2": [
+        [
+          "weaken",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "weaken",
+          2
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "umbral_hierarch",
+    "name": "Ithreya, Umbral Hierarch",
+    "title": "Speaker of the Silent Verses",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "support",
+    "hp": 2402,
+    "atk": 279,
+    "def": 215,
+    "spd": 127,
+    "ability_name": "Verses Unspoken",
+    "ability_desc": "Whispers a black-tome verse \u2014 every curse lifts from the warband and each ally is promised one return from death.",
+    "lore": "Ithreya reads only in a whisper. Kingdoms have fallen when she cleared her throat.",
+    "image_url": "/api/static/champions/umbral_hierarch.png",
+    "id": "umbral_hierarch",
+    "color": "purple",
+    "source_image": "/api/static/champions/umbral_hierarch.png",
+    "portrait": "assets/champions/umbral_hierarch.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ],
+        [
+          "revive_on_death",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "brimstone_witch",
+    "name": "Vhessa, Brimstone Witch",
+    "title": "Ash-Marked Adept",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "attack",
+    "hp": 2230,
+    "atk": 324,
+    "def": 183,
+    "spd": 126,
+    "ability_name": "Ember Sigil",
+    "ability_desc": "Brands a foe with a living ember-sigil that burns for two rounds and eats through their armour for three.",
+    "lore": "Vhessa's tattoos were carved not by hand but by conversation. She has had many long conversations.",
+    "image_url": "/api/static/champions/brimstone_witch.png",
+    "id": "brimstone_witch",
+    "color": "purple",
+    "source_image": "/api/static/champions/brimstone_witch.png",
+    "portrait": "assets/champions/brimstone_witch.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_atk",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "burn",
+          2
+        ],
+        [
+          "dec_def",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "veil_dancer",
+    "name": "Neve the Veil Dancer",
+    "title": "She Who Sings the Cut",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 2079,
+    "atk": 319,
+    "def": 199,
+    "spd": 121,
+    "ability_name": "Silk & Crescent",
+    "ability_desc": "Two curved strikes \u2014 the foe is sealed off from any blessing for three rounds and left a step slower.",
+    "lore": "Neve does not fight. Neve performs. The silk is only for the audience \u2014 the crescents are for you.",
+    "image_url": "/api/static/champions/veil_dancer.png",
+    "id": "veil_dancer",
+    "color": "purple",
+    "source_image": "/api/static/champions/veil_dancer.png",
+    "portrait": "assets/champions/veil_dancer.webp",
+    "kit": {
+      "a2": [
+        [
+          "weaken",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "block_buffs",
+          3
+        ],
+        [
+          "dec_spd",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "crimson_castellan",
+    "name": "Crimson Castellan",
+    "title": "Lord of Blood",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 2073,
+    "atk": 407,
+    "def": 191,
+    "spd": 120,
+    "ability_name": "Blood Magic",
+    "ability_desc": "Blood magic rides the blade \u2014 ignores a quarter of the foe's armour and leaves the wound burning.",
+    "lore": "A demon-vampire born into aristocracy. He does not fight. He perfectly excecutes.",
+    "image_url": "/api/static/champions/crimson_castellan.png",
+    "id": "crimson_castellan",
+    "color": "red",
+    "source_image": "/api/static/champions/crimson_castellan.png",
+    "portrait": "assets/champions/crimson_castellan.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "burn",
+          1
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "pit_scout",
+    "name": "Rhagz, Pit Scout",
+    "title": "Runner of the Third Rung",
+    "rarity": "common",
+    "faction": "nether",
+    "role": "attack",
+    "hp": 700,
+    "atk": 104,
+    "def": 54,
+    "spd": 118,
+    "ability_name": "Rusted Bolt",
+    "ability_desc": "A hurried crossbow bolt that finds the gap in the armour and leaves the wound septic for two rounds.",
+    "lore": "Rhagz has never won a duel \u2014 he has never stayed long enough for one to begin.",
+    "image_url": "/api/static/champions/pit_scout.png",
+    "id": "pit_scout",
+    "color": "purple",
+    "source_image": "/api/static/champions/pit_scout.png",
+    "portrait": "assets/champions/pit_scout.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "poison",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "archangel_lucifer",
+    "name": "Archangel Lucifer",
+    "title": "Fallen Blade of the First Choir",
+    "rarity": "legendary",
+    "faction": "ironclad",
+    "role": "defense",
+    "hp": 2375,
+    "atk": 300,
+    "def": 230,
+    "spd": 112,
+    "ability_name": "Apocalyptic Wrath",
+    "ability_desc": "Scours the field with fallen light \u2014 heavy shields settle over the whole warband, and Lucifer answers the next blow he takes.",
+    "lore": "Cast from the vault, Lucifer chose neither heaven nor hell \u2014 only the battlefield between, and the vow he would not break.",
+    "image_url": "/api/static/champions/hero-1.png",
+    "id": "archangel_lucifer",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-1.png",
+    "portrait": "assets/champions/archangel_lucifer.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          3
+        ],
+        [
+          "counterattack",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "paladin_of_dusk",
+    "name": "Paladin of Dusk",
+    "title": "Keeper of the Horizon Vow",
+    "rarity": "rare",
+    "faction": "ironclad",
+    "role": "defense",
+    "hp": 1380,
+    "atk": 145,
+    "def": 165,
+    "spd": 78,
+    "ability_name": "Last Rites",
+    "ability_desc": "Spends a fragment of his own life to crush one foe, and stands behind a dusk-shield for a round.",
+    "lore": "Born as the sun kissed the horizon, he walks forever in that knife-thin hour \u2014 cursed to guard it, blessed to endure it.",
+    "image_url": "/api/static/champions/hero-2.png",
+    "id": "paladin_of_dusk",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-2.png",
+    "portrait": "assets/champions/paladin_of_dusk.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "sister_seraphel",
+    "name": "Sister Seraphel",
+    "title": "Hymnist of the Liminal Choir",
+    "rarity": "rare",
+    "faction": "frost",
+    "role": "support",
+    "hp": 1140,
+    "atk": 140,
+    "def": 110,
+    "spd": 118,
+    "ability_name": "Resurrection Hymn",
+    "ability_desc": "A hymn raised over the warband \u2014 a mend for the chosen ally and 15% less damage taken by every ally for two rounds.",
+    "lore": "She sings in two keys at once \u2014 radiant and shadow \u2014 and the dying remember both names before they rise.",
+    "image_url": "/api/static/champions/hero-3.png",
+    "id": "sister_seraphel",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-3.png",
+    "portrait": "assets/champions/sister_seraphel.webp",
+    "kit": {
+      "a2": [
+        [
+          "heal",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "strengthen",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "justiciar_vael",
+    "name": "Justiciar Vael",
+    "title": "Steel Mercy, Golden Sentence",
+    "rarity": "common",
+    "faction": "ironclad",
+    "role": "attack",
+    "hp": 820,
+    "atk": 102,
+    "def": 78,
+    "spd": 98,
+    "ability_name": "Divine Verdict",
+    "ability_desc": "Brands one foe Condemned \u2014 a verdict that ignores a quarter of their armour.",
+    "lore": "Vael judges with one hand and pardons with the other. Both hands hold a blade.",
+    "image_url": "/api/static/champions/hero-4.png",
+    "id": "justiciar_vael",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-4.png",
+    "portrait": "assets/champions/justiciar_vael.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "solar_scribe",
+    "name": "Solar Scribe",
+    "title": "Whose Quill Writes in Daylight",
+    "rarity": "common",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 720,
+    "atk": 135,
+    "def": 55,
+    "spd": 108,
+    "ability_name": "Chronicle of Doom",
+    "ability_desc": "Inscribes a foe into the chronicle of doom \u2014 the ink drags at them, a step slower for a round.",
+    "lore": "He does not predict the battle. He edits it \u2014 golden strokes that the world is too polite to refuse.",
+    "image_url": "/api/static/champions/hero-5.png",
+    "id": "solar_scribe",
+    "color": "yellow",
+    "source_image": "/api/static/champions/hero-5.png",
+    "portrait": "assets/champions/solar_scribe.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_spd",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "executor_model_z",
+    "name": "Executor Model Z",
+    "title": "Last Prototype of Valdur",
+    "rarity": "legendary",
+    "faction": "ironclad",
+    "role": "attack",
+    "hp": 2156,
+    "atk": 320,
+    "def": 188,
+    "spd": 130,
+    "ability_name": "Total Meltdown",
+    "ability_desc": "Unloads a catastrophic blast across the whole line, shearing every foe's armour for three rounds.",
+    "lore": "Valdur burned before Model Z ever fired. It walks anyway \u2014 a funeral engine looking for a war worth ending.",
+    "image_url": "/api/static/champions/hero-6.png",
+    "id": "executor_model_z",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-6.png",
+    "portrait": "assets/champions/executor_model_z.webp",
+    "kit": {
+      "a2": [
+        [
+          "burn",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "dec_def",
+          3
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "shield_bot_mk4",
+    "name": "Aegis Construct MK4",
+    "title": "Iron Vow Without a Heart",
+    "rarity": "common",
+    "faction": "ironclad",
+    "role": "defense",
+    "hp": 930,
+    "atk": 75,
+    "def": 100,
+    "spd": 72,
+    "ability_name": "Fortress Mode",
+    "ability_desc": "Locks into Fortress Mode \u2014 heavy plating holds as a shield for two rounds.",
+    "lore": "It was built to hold the line while better machines reloaded. The better machines are ash. It is still holding.",
+    "image_url": "/api/static/champions/hero-10.png",
+    "id": "shield_bot_mk4",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-10.png",
+    "portrait": "assets/champions/shield_bot_mk4.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "shield",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "the_saboteur",
+    "name": "The Saboteur",
+    "title": "Clockwork Knife in the Dark",
+    "rarity": "common",
+    "faction": "ironclad",
+    "role": "attack",
+    "hp": 795,
+    "atk": 99,
+    "def": 65,
+    "spd": 104,
+    "ability_name": "Kill Switch",
+    "ability_desc": "A precise strike at the seams \u2014 the Saboteur answers the next three blows that land on him.",
+    "lore": "No one hired him. The war simply developed a preference for things that stop working when he walks by.",
+    "image_url": "/api/static/champions/hero-7.png",
+    "id": "the_saboteur",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-7.png",
+    "portrait": "assets/champions/the_saboteur.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "counterattack",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "grease_monkey",
+    "name": "Grease Monkey",
+    "title": "Wrench-Saint of the Iron Choir",
+    "rarity": "common",
+    "faction": "ironclad",
+    "role": "support",
+    "hp": 750,
+    "atk": 108,
+    "def": 75,
+    "spd": 100,
+    "ability_name": "Full Overhaul",
+    "ability_desc": "Patches the warband \u2014 a running repair that mends every ally for two rounds.",
+    "lore": "Talks to engines the way priests talk to gods. The engines answer more often.",
+    "image_url": "/api/static/champions/hero-8.png",
+    "id": "grease_monkey",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-8.png",
+    "portrait": "assets/champions/grease_monkey.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "heal",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "ironwall_sniper",
+    "name": "Ironwall Sniper",
+    "title": "Steam-Rifled Judgment",
+    "rarity": "rare",
+    "faction": "ironclad",
+    "role": "attack",
+    "hp": 1072,
+    "atk": 178,
+    "def": 95,
+    "spd": 118,
+    "ability_name": "Railgun Overture",
+    "ability_desc": "A single armor-breaking shot that leaves the target soft for two rounds.",
+    "lore": "Distance is a kindness he refuses to offer. The rifle speaks first; apologies never follow.",
+    "image_url": "/api/static/champions/hero-9.png",
+    "id": "ironwall_sniper",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-9.png",
+    "portrait": "assets/champions/ironwall_sniper.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "dec_def",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "professor_vile",
+    "name": "Professor Vile",
+    "title": "Expelled from Eighteen Academies",
+    "rarity": "legendary",
+    "faction": "chymera",
+    "role": "support",
+    "hp": 2110,
+    "atk": 290,
+    "def": 210,
+    "spd": 125,
+    "ability_name": "Adrenaline Injection",
+    "ability_desc": "An adrenaline injection for the warband \u2014 all allies strike a quarter harder and no curse can touch them for three rounds.",
+    "lore": "Seventeen academies expelled him. The eighteenth he dissolved \u2014 for the data, he insists.",
+    "image_url": "/api/static/champions/hero-31.png",
+    "id": "professor_vile",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-31.png",
+    "portrait": "assets/champions/professor_vile.webp",
+    "kit": {
+      "a2": [
+        [
+          "remove_debuffs",
+          0
+        ]
+      ],
+      "a3": [
+        [
+          "block_debuffs",
+          3
+        ],
+        [
+          "inc_atk",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "chem_tank_brax",
+    "name": "Chem-Tank Brax",
+    "title": "Hazmat Heart, Iron Lung",
+    "rarity": "legendary",
+    "faction": "ironclad",
+    "role": "defense",
+    "hp": 2471,
+    "atk": 235,
+    "def": 246,
+    "spd": 101,
+    "ability_name": "Chemical Fortress",
+    "ability_desc": "Seals the chemical fortress \u2014 shields settle over the whole warband while the struck foe can attack nothing but Brax for two rounds.",
+    "lore": "Brax is less a soldier than a walking spill. The plating is the only thing that keeps the spill polite.",
+    "image_url": "/api/static/champions/hero-33.png",
+    "id": "chem_tank_brax",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-33.png",
+    "portrait": "assets/champions/chem_tank_brax.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          1
+        ],
+        [
+          "taunt",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "potion_tosser_quinn",
+    "name": "Potion-Tosser Quinn",
+    "title": "Volatile Benevolence",
+    "rarity": "rare",
+    "faction": "chymera",
+    "role": "support",
+    "hp": 1155,
+    "atk": 143,
+    "def": 107,
+    "spd": 110,
+    "ability_name": "Experimental Cocktail",
+    "ability_desc": "Lobs an experimental vial \u2014 it mends the chosen ally and leaves the foe it bursts on poisoned for two rounds.",
+    "lore": "Quinn's recipes have three ingredients: genius, spite, and a refusal to write anything down.",
+    "image_url": "/api/static/champions/hero-35.png",
+    "id": "potion_tosser_quinn",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-35.png",
+    "portrait": "assets/champions/potion_tosser_quinn.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "poison",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "elder_rootmother",
+    "name": "Elder Rootmother",
+    "title": "Who Remembers the First Seed",
+    "rarity": "legendary",
+    "faction": "wildgrove",
+    "role": "support",
+    "hp": 2165,
+    "atk": 275,
+    "def": 210,
+    "spd": 122,
+    "ability_name": "World Root",
+    "ability_desc": "World-growth rises through the warband \u2014 a lasting mend for every ally and one return from death.",
+    "lore": "She was old when the first kingdoms rose. She will still be drinking their dust when the last one falls.",
+    "image_url": "/api/static/champions/elder_rootmother.png",
+    "id": "elder_rootmother",
+    "color": "green",
+    "source_image": "/api/static/champions/elder_rootmother.png",
+    "portrait": "assets/champions/elder_rootmother.webp",
+    "kit": {
+      "a2": [
+        [
+          "remove_debuffs",
+          0
+        ]
+      ],
+      "a3": [
+        [
+          "heal",
+          2
+        ],
+        [
+          "revive_on_death",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "grove_druid",
+    "name": "Grove Druid",
+    "title": "Speaker for the Green Choir",
+    "rarity": "rare",
+    "faction": "wildgrove",
+    "role": "support",
+    "hp": 1140,
+    "atk": 145,
+    "def": 125,
+    "spd": 112,
+    "ability_name": "Call of the Wild",
+    "ability_desc": "Calls the spirit storm \u2014 it mends the chosen ally while the struck foe rots with poison for two rounds.",
+    "lore": "He does not command the forest. He asks, and the forest answers with teeth.",
+    "image_url": "/api/static/champions/hero-12.png",
+    "id": "grove_druid",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-12.png",
+    "portrait": "assets/champions/grove_druid.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "poison",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "satyr_archer_kell",
+    "name": "Satyr Archer Kell",
+    "title": "Horned Eye of the Canopy",
+    "rarity": "common",
+    "faction": "wildgrove",
+    "role": "attack",
+    "hp": 710,
+    "atk": 105,
+    "def": 58,
+    "spd": 114,
+    "ability_name": "Arrow Storm",
+    "ability_desc": "A hunter's shaft through the gap in the plate \u2014 ignores a quarter of the foe's armour.",
+    "lore": "Kell laughs when he misses. He has not laughed in a very long time.",
+    "image_url": "/api/static/champions/hero-14.png",
+    "id": "satyr_archer_kell",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-14.png",
+    "portrait": "assets/champions/satyr_archer_kell.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "thornveil_dryad",
+    "name": "Thornveil Dryad",
+    "title": "Bark-Hearted Witch of the Veil",
+    "rarity": "legendary",
+    "faction": "wildgrove",
+    "role": "attack",
+    "hp": 2102,
+    "atk": 340,
+    "def": 194,
+    "spd": 103,
+    "ability_name": "Thornfire Hex",
+    "ability_desc": "Scourges every foe with living thorns \u2014 the whole line left bleeding poison for three rounds.",
+    "lore": "She wears a human face the way a tree wears moss \u2014 temporarily, and only to be polite.",
+    "image_url": "/api/static/champions/hero-15.png",
+    "id": "thornveil_dryad",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-15.png",
+    "portrait": "assets/champions/thornveil_dryad.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_buffs",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "poison",
+          3
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "the_verdant_king",
+    "name": "The Verdant King",
+    "title": "Crown of Roots, Throne of Soil",
+    "rarity": "rare",
+    "faction": "wildgrove",
+    "role": "defense",
+    "hp": 1410,
+    "atk": 112,
+    "def": 178,
+    "spd": 76,
+    "ability_name": "Wrath of the Ancients",
+    "ability_desc": "Slams the earth and draws its strength up through his bark \u2014 the King's guard hardens by a quarter for three rounds.",
+    "lore": "He slept beneath the World Root for three thousand years. When the Elderwood burned, he woke \u2014 and the forest woke hungry.",
+    "image_url": "/api/static/champions/hero-41.png",
+    "id": "the_verdant_king",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-41.png",
+    "portrait": "assets/champions/the_verdant_king.webp",
+    "kit": {
+      "a2": [
+        [
+          "taunt",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "inc_def",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "thornweaver_seraph",
+    "name": "Thornweaver Seraph",
+    "title": "Lightning-Born of Elderwood",
+    "rarity": "legendary",
+    "faction": "wildgrove",
+    "role": "attack",
+    "hp": 2172,
+    "atk": 322,
+    "def": 175,
+    "spd": 121,
+    "ability_name": "Briar Cataclysm",
+    "ability_desc": "A briar tempest across the whole line \u2014 every foe left too tangled to swing hard for a round.",
+    "lore": "Lightning split the Elderwood and found a child weeping sap. The Verdant King named her, and she has never left his shadow.",
+    "image_url": "/api/static/champions/hero-42.png",
+    "id": "thornweaver_seraph",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-42.png",
+    "portrait": "assets/champions/thornweaver_seraph.webp",
+    "kit": {
+      "a2": [
+        [
+          "counterattack",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "dec_atk",
+          1
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "barkskin_bruiser",
+    "name": "Barkskin Bruiser",
+    "title": "The Lumberjack Who Paid",
+    "rarity": "rare",
+    "faction": "wildgrove",
+    "role": "attack",
+    "hp": 1250,
+    "atk": 168,
+    "def": 130,
+    "spd": 92,
+    "ability_name": "Timberfall",
+    "ability_desc": "Timberfall \u2014 a crushing blow that caves in the foe's guard for two rounds.",
+    "lore": "Elias felled the Heart-Tree on a dare. The King did not kill him \u2014 bark ate his flesh, and the debt became a body.",
+    "image_url": "/api/static/champions/hero-43.png",
+    "id": "barkskin_bruiser",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-43.png",
+    "portrait": "assets/champions/barkskin_bruiser.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "dec_def",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "vinestrider",
+    "name": "Vinestrider",
+    "title": "Many Eyes, No Face",
+    "rarity": "common",
+    "faction": "wildgrove",
+    "role": "attack",
+    "hp": 750,
+    "atk": 108,
+    "def": 60,
+    "spd": 116,
+    "ability_name": "Stranglehold",
+    "ability_desc": "A strangling vine-lash that works poison into the wound for three rounds.",
+    "lore": "Wardens swear she was a child once. The vines disagree \u2014 they remember only hunger and green light.",
+    "image_url": "/api/static/champions/hero-44.png",
+    "id": "vinestrider",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-44.png",
+    "portrait": "assets/champions/vinestrider.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "poison",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "mosswitch_lira",
+    "name": "Mosswitch Lira",
+    "title": "Barefoot Through the Thorns",
+    "rarity": "common",
+    "faction": "wildgrove",
+    "role": "support",
+    "hp": 790,
+    "atk": 85,
+    "def": 72,
+    "spd": 108,
+    "ability_name": "Verdant Blessing",
+    "ability_desc": "A verdant blessing \u2014 the whole warband mends under her moss-song.",
+    "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth.",
+    "image_url": "/api/static/champions/hero-45.png",
+    "id": "mosswitch_lira",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-45.png",
+    "portrait": "assets/champions/mosswitch_lira.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "heal",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "beastmaster_gharn",
+    "name": "Beastmaster Gharn",
+    "title": "Pack-Lord of the Frozen Marrow",
+    "rarity": "rare",
+    "faction": "frost",
+    "role": "attack",
+    "hp": 1200,
+    "atk": 175,
+    "def": 110,
+    "spd": 112,
+    "ability_name": "Primal Rage",
+    "ability_desc": "A savage strike that sets the foe alight for two rounds.",
+    "lore": "Gharn does not tame beasts. He bargains in blood and winter, and the pack always collects.",
+    "image_url": "/api/static/champions/hero-13.png",
+    "id": "beastmaster_gharn",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-13.png",
+    "portrait": "assets/champions/beastmaster_gharn.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "burn",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "jarl_bjorn_ironhide",
+    "name": "Jarl Bjorn Ironhide",
+    "title": "Mountain That Walks to War",
+    "rarity": "legendary",
+    "faction": "frost",
+    "role": "attack",
+    "hp": 2164,
+    "atk": 337,
+    "def": 196,
+    "spd": 121,
+    "ability_name": "Ragnarok",
+    "ability_desc": "A world-ending blow \u2014 ignores a quarter of the armour it meets and leaves the wound burning for two rounds.",
+    "lore": "Mountains do not move for armies. Bjorn moves for nothing less \u2014 and the mountains have learned to listen.",
+    "image_url": "/api/static/champions/hero-26.png",
+    "id": "jarl_bjorn_ironhide",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-26.png",
+    "portrait": "assets/champions/jarl_bjorn_ironhide.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "burn",
+          2
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "shieldmaiden_runa",
+    "name": "Shieldmaiden Runa",
+    "title": "Oathkeeper of the Raven Shield",
+    "rarity": "rare",
+    "faction": "frost",
+    "role": "defense",
+    "hp": 1420,
+    "atk": 140,
+    "def": 174,
+    "spd": 76,
+    "ability_name": "Glacier Stance",
+    "ability_desc": "Glacier Stance \u2014 Runa braces behind her ice-wall and takes 15% less damage for a round.",
+    "lore": "Runa carries the raven-marked shield of her clan, its rim scarred by battles fought long before her birth. Before each campaign, she repaints the blue oath-marks on her face and names those she has sworn to bring home. In the northern shieldwalls, her place is wherever the line begins to bend.",
+    "image_url": "/api/static/champions/hero-27.png",
+    "id": "shieldmaiden_runa",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-27.png",
+    "portrait": "assets/champions/shieldmaiden_runa.webp",
+    "kit": {
+      "a2": [
+        [
+          "taunt",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "strengthen",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "ice_shaman_sigrid",
+    "name": "Ice-Shaman Sigrid",
+    "title": "Caller of the White Silence",
+    "rarity": "rare",
+    "faction": "frost",
+    "role": "attack",
+    "hp": 1085,
+    "atk": 172,
+    "def": 100,
+    "spd": 114,
+    "ability_name": "Absolute Zero",
+    "ability_desc": "Absolute Zero \u2014 a blizzard-strike that leaves the foe searing with cold for three rounds.",
+    "lore": "Sigrid speaks to wind the way others speak to kings. The wind is crueler, and more honest.",
+    "image_url": "/api/static/champions/hero-28.png",
+    "id": "ice_shaman_sigrid",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-28.png",
+    "portrait": "assets/champions/ice_shaman_sigrid.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "burn",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "berserker_ulf",
+    "name": "Berserker Loki",
+    "title": "Blood-Drunk and Unbroken",
+    "rarity": "legendary",
+    "faction": "frost",
+    "role": "attack",
+    "hp": 2160,
+    "atk": 368,
+    "def": 195,
+    "spd": 118,
+    "ability_name": "Berserk",
+    "ability_desc": "A furious flurry that ignores a quarter of the foe's armour and leaves their swing broken for three rounds.",
+    "lore": "Loki fights harder the more he bleeds. His enemies have learned not to wound him \u2014 only to finish him.",
+    "image_url": "/api/static/champions/hero-29.png",
+    "id": "berserker_ulf",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-29.png",
+    "portrait": "assets/champions/berserker_ulf.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "dec_atk",
+          3
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "wolf_handler_torv",
+    "name": "Wolf-Handler Torv",
+    "title": "Whistle of the White Pack",
+    "rarity": "common",
+    "faction": "frost",
+    "role": "support",
+    "hp": 850,
+    "atk": 90,
+    "def": 80,
+    "spd": 106,
+    "ability_name": "Winter Hunt",
+    "ability_desc": "Looses the pack \u2014 the whole warband takes 15% less damage for three rounds.",
+    "lore": "Torv's wolves do not love him. They respect the same hunger, and that is enough.",
+    "image_url": "/api/static/champions/hero-30.png",
+    "id": "wolf_handler_torv",
+    "color": "blue",
+    "source_image": "/api/static/champions/hero-30.png",
+    "portrait": "assets/champions/wolf_handler_torv.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "strengthen",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "vlad_the_soul_eater",
+    "name": "Vlad the Soul-Eater",
+    "title": "Oldest Hunger Under the Moon",
+    "rarity": "rare",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 1112,
+    "atk": 197,
+    "def": 100,
+    "spd": 115,
+    "ability_name": "Soul Harvest",
+    "ability_desc": "Drains one foe dry and feeds on it \u2014 Vlad's own attack rises a quarter for a round.",
+    "lore": "Some say the great war exists merely to feed him. Vlad has never bothered to disagree.",
+    "image_url": "/api/static/champions/hero-16.png",
+    "id": "vlad_the_soul_eater",
+    "color": "red",
+    "source_image": "/api/static/champions/hero-16.png",
+    "portrait": "assets/champions/vlad_the_soul_eater.webp",
+    "kit": {
+      "a2": [
+        [
+          "weaken",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "inc_atk",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "cult_zealot",
+    "name": "Cult Zealot",
+    "title": "Willing Knife of the Blood God",
+    "rarity": "rare",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 1180,
+    "atk": 169,
+    "def": 105,
+    "spd": 110,
+    "ability_name": "Mass Consecration",
+    "ability_desc": "A fanatic's consecration \u2014 the foe is sealed off from any blessing for two rounds.",
+    "lore": "He offered himself first. The god accepted, then asked for everyone else.",
+    "image_url": "/api/static/champions/hero-17.png",
+    "id": "cult_zealot",
+    "color": "purple",
+    "source_image": "/api/static/champions/hero-17.png",
+    "portrait": "assets/champions/cult_zealot.webp",
+    "kit": {
+      "a2": [
+        [
+          "weaken",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "block_buffs",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "succubus_lilth",
+    "name": "Succubus Lilth",
+    "title": "Smile That Empties the Vein",
+    "rarity": "common",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 730,
+    "atk": 116,
+    "def": 58,
+    "spd": 114,
+    "ability_name": "Dark Embrace",
+    "ability_desc": "A seductive strike that leaves the foe unable to accept any blessing for three rounds.",
+    "lore": "Lilth never hunts the strong. She waits until they beg to be weak.",
+    "image_url": "/api/static/champions/hero-19.png",
+    "id": "succubus_lilth",
+    "color": "purple",
+    "source_image": "/api/static/champions/hero-19.png",
+    "portrait": "assets/champions/succubus_lilth.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "block_buffs",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "shadow_stalker",
+    "name": "Dune Stalker",
+    "title": "Hunger Beneath the Dunes",
+    "rarity": "common",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 750,
+    "atk": 110,
+    "def": 62,
+    "spd": 116,
+    "ability_name": "Night Hunt",
+    "ability_desc": "Pounces the weakest foe, ignoring a quarter of their armour.",
+    "lore": "It does not cast a shadow. It is the shadow \u2014 and the dunes keep its secrets buried shallow.",
+    "image_url": "/api/static/champions/hero-20.png",
+    "id": "shadow_stalker",
+    "color": "yellow",
+    "source_image": "/api/static/champions/hero-20.png",
+    "portrait": "assets/champions/shadow_stalker.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "dune_queen_zaya",
+    "name": "Dune-Queen Zaya",
+    "title": "Sovereign of the Unforgiving Sand",
+    "rarity": "legendary",
+    "faction": "duneriders",
+    "role": "support",
+    "hp": 2092,
+    "atk": 304,
+    "def": 210,
+    "spd": 118,
+    "ability_name": "Sandstorm Sovereign",
+    "ability_desc": "Sandstorm sovereignty \u2014 the warband is hastened and each ally promised one return from death.",
+    "lore": "The desert does not forgive. Neither does she \u2014 and she has a longer memory than stone.",
+    "image_url": "/api/static/champions/hero-21.png",
+    "id": "dune_queen_zaya",
+    "color": "yellow",
+    "source_image": "/api/static/champions/hero-21.png",
+    "portrait": "assets/champions/dune_queen_zaya.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_debuffs",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "inc_spd",
+          2
+        ],
+        [
+          "revive_on_death",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "desert_assassin",
+    "name": "Desert Assassin",
+    "title": "Mirage with a Knife",
+    "rarity": "rare",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 1100,
+    "atk": 182,
+    "def": 88,
+    "spd": 130,
+    "ability_name": "Death Mirage",
+    "ability_desc": "A lethal strike slipped under the plate, ignoring a quarter of the foe's armour.",
+    "lore": "You see heat shimmer. You feel a cut. By the time you understand both were her, she is already gone.",
+    "image_url": "/api/static/champions/hero-22.png",
+    "id": "desert_assassin",
+    "color": "yellow",
+    "source_image": "/api/static/champions/hero-22.png",
+    "portrait": "assets/champions/desert_assassin.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "camel_rider_rashid",
+    "name": "Camel-Rider Rashid",
+    "title": "Thunder Across the Salt Flats",
+    "rarity": "rare",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 1180,
+    "atk": 165,
+    "def": 115,
+    "spd": 120,
+    "ability_name": "Sandstorm Volley",
+    "ability_desc": "A mounted shot that finds the seam, ignoring a quarter of the foe's armour.",
+    "lore": "Rashid measures distance in heartbeats and graves. His camel has never lost a race with death.",
+    "image_url": "/api/static/champions/hero-23.png",
+    "id": "camel_rider_rashid",
+    "color": "yellow",
+    "source_image": "/api/static/champions/hero-23.png",
+    "portrait": "assets/champions/camel_rider_rashid.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "dune_mage_sorra",
+    "name": "Dune Mage Sorra",
+    "title": "Weaver of Heat and Lie",
+    "rarity": "legendary",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 2160,
+    "atk": 330,
+    "def": 190,
+    "spd": 129,
+    "ability_name": "Desert Vortex",
+    "ability_desc": "A desert vortex over the whole line \u2014 scouring sand that ignores a quarter of every foe's armour.",
+    "lore": "Sorra's illusions do not hide the oasis. They hide the knives beside it.",
+    "image_url": "/api/static/champions/hero-24.png",
+    "id": "dune_mage_sorra",
+    "color": "yellow",
+    "source_image": "/api/static/champions/hero-24.png",
+    "portrait": "assets/champions/dune_mage_sorra.webp",
+    "kit": {
+      "a2": [
+        [
+          "burn",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "scavenger_jax",
+    "name": "Scavenger Jax",
+    "title": "Picker of the Still-Warm Dead",
+    "rarity": "common",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 800,
+    "atk": 98,
+    "def": 72,
+    "spd": 106,
+    "ability_name": "Whirlwind",
+    "ability_desc": "A dirty spin of rusted steel that ignores a quarter of the foe's armour.",
+    "lore": "Jax never starts wars. He finishes the paperwork \u2014 pockets first, mercy never.",
+    "image_url": "/api/static/champions/hero-25.png",
+    "id": "scavenger_jax",
+    "color": "yellow",
+    "source_image": "/api/static/champions/hero-25.png",
+    "portrait": "assets/champions/scavenger_jax.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "plague_doctor_mors",
+    "name": "Plague Doctor Mors",
+    "title": "Clinical Apostle of Contagion",
+    "rarity": "rare",
+    "faction": "nether",
+    "role": "attack",
+    "hp": 1111,
+    "atk": 160,
+    "def": 110,
+    "spd": 108,
+    "ability_name": "Black Death",
+    "ability_desc": "Black Death \u2014 the foe is infected to the bone, rotting for three rounds.",
+    "lore": "Mors no longer asks what ails you. He already knows \u2014 and he brought enough for everyone.",
+    "image_url": "/api/static/champions/hero-32.png",
+    "id": "plague_doctor_mors",
+    "color": "purple",
+    "source_image": "/api/static/champions/hero-32.png",
+    "portrait": "assets/champions/plague_doctor_mors.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_atk",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "poison",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "the_mutant",
+    "name": "The Abyss Mutant",
+    "title": "Laboratory's Favorite Mistake",
+    "rarity": "common",
+    "faction": "chymera",
+    "role": "attack",
+    "hp": 840,
+    "atk": 100,
+    "def": 75,
+    "spd": 100,
+    "ability_name": "Adaptive Evolution",
+    "ability_desc": "An adaptive, mutating strike that caves in the foe's guard for a round.",
+    "lore": "They numbered the failures. This one ate the chalkboard and walked out wearing a new name.",
+    "image_url": "/api/static/champions/hero-34.png",
+    "id": "the_mutant",
+    "color": "green",
+    "source_image": "/api/static/champions/hero-34.png",
+    "portrait": "assets/champions/the_mutant.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_def",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "void_herald_mara",
+    "name": "Void-Herald Mara",
+    "title": "Envoy of the Starless Between",
+    "rarity": "common",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 797,
+    "atk": 104,
+    "def": 58,
+    "spd": 117,
+    "ability_name": "Oblivion",
+    "ability_desc": "Voids the field around herself \u2014 Mara's own attack surges a quarter higher for two rounds.",
+    "lore": "Mara drinks from the dark between stars. Empires taste the same going down.",
+    "image_url": "/api/static/champions/hero-18.png",
+    "id": "void_herald_mara",
+    "color": "red",
+    "source_image": "/api/static/champions/hero-18.png",
+    "portrait": "assets/champions/void_herald_mara.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "inc_atk",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "azure_sovereign",
+    "name": "Azure Sovereign",
+    "title": "Half Mortal, Half Storm",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 2190,
+    "atk": 330,
+    "def": 199,
+    "spd": 120,
+    "ability_name": "Meteor of Heaven",
+    "ability_desc": "Calls a meteor onto the whole line \u2014 ruin that ignores a quarter of every foe's armour.",
+    "lore": "His lineage is written in craters. Cartographers simply stopped redrawing the maps.",
+    "image_url": "/api/static/champions/hero-36.png",
+    "id": "azure_sovereign",
+    "color": "red",
+    "source_image": "/api/static/champions/hero-36.png",
+    "portrait": "assets/champions/azure_sovereign.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "aoe",
+          0
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "dragon_samurai_kenshin",
+    "name": "Dragon Samurai Kenshin",
+    "title": "Blood of the Scale, Edge of the Wind",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 2169,
+    "atk": 319,
+    "def": 188,
+    "spd": 130,
+    "ability_name": "Thousand Cuts",
+    "ability_desc": "Blazing cuts across the entire line, and Kenshin answers the next two blows he takes.",
+    "lore": "Kenshin's blade is faster than apology. His dragon blood has never learned patience.",
+    "image_url": "/api/static/champions/hero-37.png",
+    "id": "dragon_samurai_kenshin",
+    "color": "red",
+    "source_image": "/api/static/champions/hero-37.png",
+    "portrait": "assets/champions/dragon_samurai_kenshin.webp",
+    "kit": {
+      "a2": [
+        [
+          "burn",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "aoe",
+          0
+        ],
+        [
+          "counterattack",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "jade_monk_xuan",
+    "name": "Jade Monk Xuan",
+    "title": "Fist That Weathered Dynasties",
+    "rarity": "rare",
+    "faction": "dragondynasty",
+    "role": "defense",
+    "hp": 1370,
+    "atk": 140,
+    "def": 168,
+    "spd": 88,
+    "ability_name": "Celestial Roar",
+    "ability_desc": "A chi-shockwave that leaves the struck foe able to attack nothing but Xuan for two rounds.",
+    "lore": "Xuan does not block the blow. He becomes the mountain the blow regrets meeting.",
+    "image_url": "/api/static/champions/hero-38.png",
+    "id": "jade_monk_xuan",
+    "color": "red",
+    "source_image": "/api/static/champions/hero-38.png",
+    "portrait": "assets/champions/jade_monk_xuan.webp",
+    "kit": {
+      "a2": [
+        [
+          "heal",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "taunt",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "spirit_fox_mei",
+    "name": "Spirit-Fox Mei",
+    "title": "Ninefold Flame in Silk",
+    "rarity": "rare",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 1181,
+    "atk": 172,
+    "def": 100,
+    "spd": 111,
+    "ability_name": "Nine Tails",
+    "ability_desc": "A flame-dance that lifts Mei's own attack a quarter higher for two rounds.",
+    "lore": "Mei smiles with too many mouths. Only one of them is kind, and it is rarely showing.",
+    "image_url": "/api/static/champions/hero-39.png",
+    "id": "spirit_fox_mei",
+    "color": "red",
+    "source_image": "/api/static/champions/hero-39.png",
+    "portrait": "assets/champions/spirit_fox_mei.webp",
+    "kit": {
+      "a2": [
+        [
+          "burn",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "inc_atk",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "jade_archer_linh",
+    "name": "Jade Archer Linh",
+    "title": "Arrow Blessed by Dragonfire",
+    "rarity": "common",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 720,
+    "atk": 110,
+    "def": 65,
+    "spd": 112,
+    "ability_name": "Heaven's Wrath",
+    "ability_desc": "A breath held, a shot sighted \u2014 Linh's attack rises a quarter for a round.",
+    "lore": "Linh's arrows do not seek hearts. Hearts simply happen to stand where destiny already aimed.",
+    "image_url": "/api/static/champions/hero-40.png",
+    "id": "jade_archer_linh",
+    "color": "red",
+    "source_image": "/api/static/champions/hero-40.png",
+    "portrait": "assets/champions/jade_archer_linh.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "inc_atk",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_wire runner",
+    "name": "Kaelen, the Grid Runner",
+    "title": "Data Thief of the Low Slums",
+    "rarity": "common",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 845,
+    "atk": 112,
+    "def": 70,
+    "spd": 113,
+    "ability_name": "Overclock Circuit",
+    "ability_desc": "Overclocks the circuit \u2014 a current that shorts the foe out of any blessing for three rounds.",
+    "lore": "Kaelen sells stolen memory shards just to afford clean water. In the dark dacha woods, wire is cheaper than iron.",
+    "image_url": "/api/static/champions/neon_wirerunner.png",
+    "id": "neon_wire runner",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_wirerunner.png",
+    "portrait": "assets/champions/neon_wire runner.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "block_buffs",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_scrap_enforcer",
+    "name": "Boran, Chrome Fist",
+    "title": "The Debt Collector",
+    "rarity": "common",
+    "faction": "neon_syndicate",
+    "role": "defense",
+    "hp": 820,
+    "atk": 88,
+    "def": 105,
+    "spd": 92,
+    "ability_name": "Kinetic Block",
+    "ability_desc": "Hardens his rusted cybernetic arm \u2014 a kinetic shield holds for two rounds.",
+    "lore": "He traded his flesh for scrap metal to survive the winter. Now he works for the bosses who bought his soul.",
+    "image_url": "/api/static/champions/neon_scrapenforcer.png",
+    "id": "neon_scrap_enforcer",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_scrapenforcer.png",
+    "portrait": "assets/champions/neon_scrap_enforcer.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "shield",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_glitch_weaver",
+    "name": "Nadia, the Patchwork Witch",
+    "title": "Splicer of Broken Codes",
+    "rarity": "common",
+    "faction": "neon_syndicate",
+    "role": "support",
+    "hp": 790,
+    "atk": 100,
+    "def": 75,
+    "spd": 104,
+    "ability_name": "Signal Jam",
+    "ability_desc": "A patchwork pulse \u2014 the whole warband runs faster for three rounds.",
+    "lore": "Nadia hotwires the ancient runes left in the dirt, mixing dark fantasy witchcraft with broken neon tech.",
+    "image_url": "/api/static/champions/neon_glitchweaver.png",
+    "id": "neon_glitch_weaver",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_glitchweaver.png",
+    "portrait": "assets/champions/neon_glitch_weaver.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "inc_spd",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_hologram_assassin",
+    "name": "Vesper, Neon Phantom",
+    "title": "The Ghost in the Circuit",
+    "rarity": "rare",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 1080,
+    "atk": 235,
+    "def": 95,
+    "spd": 124,
+    "ability_name": "Digital Mirage",
+    "ability_desc": "A flashing neon clone \u2014 the foe is jammed out of any blessing.",
+    "lore": "Vesper leaves behind nothing but glowing pink static and cold bodies. She is hunted by law and lawbreaker alike.",
+    "image_url": "/api/static/champions/neon_hologramassassin.png",
+    "id": "neon_hologram_assassin",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_hologramassassin.png",
+    "portrait": "assets/champions/neon_hologram_assassin.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "block_buffs",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_biochem_doc",
+    "name": "Dr. Aris, Cyber-Stitcher",
+    "title": "Vendor of Synthetic Blood",
+    "rarity": "rare",
+    "faction": "neon_syndicate",
+    "role": "support",
+    "hp": 1390,
+    "atk": 125,
+    "def": 115,
+    "spd": 110,
+    "ability_name": "Starlight Injection",
+    "ability_desc": "A starlight injection \u2014 the chosen ally mends while the warband's reflexes run quicker for two rounds.",
+    "lore": "The Syndicate keeps him alive because he is the only one who can graft neon wire into dying, frozen skin.",
+    "image_url": "/api/static/champions/neon_biochemdoc.png",
+    "id": "neon_biochem_doc",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_biochemdoc.png",
+    "portrait": "assets/champions/neon_biochem_doc.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_debuffs",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "inc_spd",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "dragon_empress",
+    "name": "Dragon Empress",
+    "title": "Mother of Dragons",
+    "rarity": "mythical",
+    "faction": "dragondynasty",
+    "role": "support",
+    "hp": 3550,
+    "atk": 325,
+    "def": 335,
+    "spd": 128,
+    "ability_name": "Mandate of the Dragon-Mother",
+    "ability_desc": "Wraps the warband in dragon-scale blessing \u2014 every ally strikes a quarter harder for three rounds and every curse is stripped away.",
+    "lore": "Dynasties rise by her leave and fall by her sigh. She has outlived a hundred emperors and still insists on pouring the tea herself.",
+    "image_url": "/api/static/champions/dragonempress.png",
+    "id": "dragon_empress",
+    "color": "red",
+    "source_image": "/api/static/champions/dragonempress.png",
+    "portrait": "assets/champions/dragon_empress.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          2
+        ],
+        [
+          "heal",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "inc_atk",
+          3
+        ],
+        [
+          "remove_debuffs",
+          0
+        ]
+      ]
+    },
+    "passive": {
+      "id": "dragonskin",
+      "name": "Dragonskin",
+      "kind": "immune_effect",
+      "immune": [
+        "burn",
+        "poison"
+      ],
+      "desc": "Immune to Burn and Poison."
+    }
+  },
+  {
+    "template_id": "ravel",
+    "name": "Ravel, the Guard",
+    "title": "Gatekeeper of the Crimson Stair",
+    "rarity": "rare",
+    "faction": "bloodcourt",
+    "role": "defense",
+    "hp": 1350,
+    "atk": 132,
+    "def": 172,
+    "spd": 82,
+    "ability_name": "Scarlet Bulwark",
+    "ability_desc": "Plants his shield and bleeds for the court \u2014 a scarlet bulwark that holds for a round.",
+    "lore": "Ravel swore to guard the stair for one night. The court has since forgotten to tell him the night ended.",
+    "image_url": "/api/static/champions/ravel.png",
+    "id": "ravel",
+    "color": "red",
+    "source_image": "/api/static/champions/ravel.png",
+    "portrait": "assets/champions/ravel.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "carmine_veinreader",
+    "name": "Sister Carmine",
+    "title": "Reader of the Open Vein",
+    "rarity": "rare",
+    "faction": "bloodcourt",
+    "role": "support",
+    "hp": 1150,
+    "atk": 142,
+    "def": 108,
+    "spd": 112,
+    "ability_name": "Sanguine Rite",
+    "ability_desc": "Opens a vein for the court \u2014 a deep, lasting mend carried to every ally.",
+    "lore": "Carmine reads futures in spilled blood. She is always very careful whose.",
+    "image_url": "/api/static/champions/carmine_veinreader.png",
+    "id": "carmine_veinreader",
+    "color": "red",
+    "source_image": "/api/static/champions/carmine_veinreader.png",
+    "portrait": "assets/champions/carmine_veinreader.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "heal",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_volt_guardian",
+    "name": "Commander Jarek",
+    "title": "The Iron Wall of the Slums",
+    "rarity": "rare",
+    "faction": "neon_syndicate",
+    "role": "defense",
+    "hp": 1280,
+    "atk": 110,
+    "def": 148,
+    "spd": 99,
+    "ability_name": "Empowered Aegis",
+    "ability_desc": "Deploys a heavy plasma shield.",
+    "lore": "A defector from the traditional armies, Jarek found honor among criminals who actually pay for their defense.",
+    "image_url": "/api/static/champions/neon_voltguardian.png",
+    "id": "neon_volt_guardian",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_voltguardian.png",
+    "portrait": "assets/champions/neon_volt_guardian.webp",
+    "kit": {
+      "a2": [
+        [
+          "counterattack",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_laser_blade",
+    "name": "Sora, The Plasma Ronin",
+    "title": "Whose Blade Cuts Code",
+    "rarity": "legendary",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 2410,
+    "atk": 405,
+    "def": 165,
+    "spd": 120,
+    "ability_name": "Neon Execution",
+    "ability_desc": "A blinding laser slash \u2014 the foe is shut out of any blessing and left taking 15% more damage for two rounds.",
+    "lore": "Her katana hums with 10,000 volts of corporate tech. She uses it to dismantle the very oligarchs who built her.",
+    "image_url": "/api/static/champions/neon_laserblade.png",
+    "id": "neon_laser_blade",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_laserblade.png",
+    "portrait": "assets/champions/neon_laser_blade.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "block_buffs",
+          1
+        ],
+        [
+          "weaken",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_hacker_empress",
+    "name": "Matrix Matriarch Lyra",
+    "title": "She Who Watches Through the Wires",
+    "rarity": "legendary",
+    "faction": "neon_syndicate",
+    "role": "support",
+    "hp": 2150,
+    "atk": 340,
+    "def": 180,
+    "spd": 119,
+    "ability_name": "System Override",
+    "ability_desc": "System override \u2014 the warband is overclocked and each ally is backed up against death for two rounds.",
+    "lore": "Lyra controls the black-market networks from her high dacha fortress. No one speaks in the Syndicate without her permission.",
+    "image_url": "/api/static/champions/neon_hackerempress.png",
+    "id": "neon_hacker_empress",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_hackerempress.png",
+    "portrait": "assets/champions/neon_hacker_empress.webp",
+    "kit": {
+      "a2": [
+        [
+          "remove_debuffs",
+          0
+        ]
+      ],
+      "a3": [
+        [
+          "inc_spd",
+          2
+        ],
+        [
+          "revive_on_death",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_god_overlord",
+    "name": "Baron Viktor, The Cybergod",
+    "title": "Architect of the Eternal Neon",
+    "rarity": "legendary",
+    "faction": "neon_syndicate",
+    "role": "defense",
+    "hp": 2340,
+    "atk": 235,
+    "def": 260,
+    "spd": 109,
+    "ability_name": "Glitch Apocalypse",
+    "ability_desc": "Fractures the battlefield into a digital hellscape \u2014 the struck foe's attack collapses for two rounds while Viktor's own frame takes 15% less damage.",
+    "lore": "Viktor is more machine than man. He discovered a dark, glowing substance under the frozen roots of the dacha and fused it with heavy circuitry to achieve grim immortality.",
+    "image_url": "/api/static/champions/neon_godoverlord.png",
+    "id": "neon_god_overlord",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_godoverlord.png",
+    "portrait": "assets/champions/neon_god_overlord.webp",
+    "kit": {
+      "a2": [
+        [
+          "shield",
+          3
+        ]
+      ],
+      "a3": [
+        [
+          "dec_atk",
+          2
+        ],
+        [
+          "strengthen",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "neon_singularity_reaper",
+    "name": "Zero, The Singularity",
+    "title": "The Final Error",
+    "rarity": "mythical",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 4080,
+    "atk": 410,
+    "def": 210,
+    "spd": 130,
+    "ability_name": "Cybernetic Void",
+    "ability_desc": "A black-hole blast across every enemy \u2014 their armour collapses for three rounds.",
+    "lore": "Born from a failed experiment to merge dark soul magic with a quantum supercomputer. Zero doesn't fight for money or turf; he fights to erase reality's code.",
+    "image_url": "/api/static/champions/neon_singularityreaper.png",
+    "id": "neon_singularity_reaper",
+    "color": "yellow",
+    "source_image": "/api/static/champions/neon_singularityreaper.png",
+    "portrait": "assets/champions/neon_singularity_reaper.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          1
+        ],
+        [
+          "poison",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "dec_def",
+          3
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    },
+    "passive": {
+      "id": "entropy_bloom",
+      "name": "Entropy Bloom",
+      "kind": "regen",
+      "value": 0.05,
+      "desc": "Heals 5% of max HP every turn."
+    }
+  },
+  {
+    "template_id": "alley_shade",
+    "name": "The Alley Shade",
+    "title": "Nameless of the Narrow Ways",
+    "rarity": "common",
+    "faction": "umbra",
+    "role": "support",
+    "hp": 796,
+    "atk": 91,
+    "def": 71,
+    "spd": 108,
+    "ability_name": "Slip Through",
+    "ability_desc": "Slips into the alley-dark \u2014 the whole warband walks out immune to curses for three rounds.",
+    "lore": "No one remembers the Alley Shade. Not even, some nights, the Alley Shade.",
+    "image_url": "/api/static/champions/alley_shade.png",
+    "id": "alley_shade",
+    "color": "purple",
+    "source_image": "/api/static/champions/alley_shade.png",
+    "portrait": "assets/champions/alley_shade.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "block_debuffs",
+          3
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "fjordwatch_hald",
+    "name": "Fjordwatch Hald",
+    "title": "Keeper of the Last Bridge",
+    "rarity": "common",
+    "faction": "frost",
+    "role": "defense",
+    "hp": 980,
+    "atk": 78,
+    "def": 105,
+    "spd": 78,
+    "ability_name": "Rimebound Guard",
+    "ability_desc": "Strikes a foe and shields himself for 20% of his maximum HP, lasting two of his actions or until broken.",
+    "lore": "Hald has kept the same fjord bridge through thirty winters. His shield is patched, his axe is dull, and no traveler under his watch has ever been left to the snow.",
+    "image_url": "/api/static/champions/fjordwatch_hald.png",
+    "id": "fjordwatch_hald",
+    "color": "blue",
+    "source_image": "/api/static/champions/fjordwatch_hald.png",
+    "portrait": "assets/champions/fjordwatch_hald.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "shield",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "shellback_brukk",
+    "name": "Shellback Brukk",
+    "title": "The Door That Would Not Break",
+    "rarity": "common",
+    "faction": "chymera",
+    "role": "defense",
+    "hp": 1040,
+    "atk": 82,
+    "def": 98,
+    "spd": 72,
+    "ability_name": "Shellback Challenge",
+    "ability_desc": "Strikes and taunts one foe, forcing its next action to be a basic attack against Brukk.",
+    "lore": "Bred to survive the menagerie's cruelest trials, Brukk broke his collar and stood in the doorway while the smaller experiments escaped. He has never learned to stop guarding it.",
+    "image_url": "/api/static/champions/shellback_brukk.png",
+    "id": "shellback_brukk",
+    "color": "green",
+    "source_image": "/api/static/champions/shellback_brukk.png",
+    "portrait": "assets/champions/shellback_brukk.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "taunt",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "oakenhart_first_warden",
+    "name": "Oakenhart, the First Warden",
+    "title": "The Forest That Stands",
+    "rarity": "mythical",
+    "faction": "wildgrove",
+    "role": "defense",
+    "hp": 3800,
+    "atk": 285,
+    "def": 355,
+    "spd": 100,
+    "ability_name": "Sanctuary of the First Oak",
+    "ability_desc": "Strikes and taunts one foe for two of its actions, while shielding every living ally for 20% of their own maximum HP for two of their actions or until broken.",
+    "lore": "Before the first crown was forged, Oakenhart stood at the grove's edge. Kingdoms have burned around him, but beneath his shield the smallest seed still finds a place to grow.",
+    "image_url": "/api/static/champions/oakenhart_first_warden.png",
+    "id": "oakenhart_first_warden",
+    "color": "green",
+    "source_image": "/api/static/champions/oakenhart_first_warden.png",
+    "portrait": "assets/champions/oakenhart_first_warden.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          2
+        ],
+        [
+          "counterattack",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          2
+        ],
+        [
+          "taunt",
+          2
+        ]
+      ]
+    },
+    "passive": {
+      "id": "heartwood_renewal",
+      "name": "Heartwood Renewal",
+      "kind": "regen",
+      "value": 0.05,
+      "desc": "Heals 5% of his own max HP at the start of each of his turns, up to full health."
+    }
+  },
+  {
+    "template_id": "oasis_keeper_nahlia",
+    "name": "Oasis-Keeper Nahlia",
+    "title": "The Last Drop Shared",
+    "rarity": "rare",
+    "faction": "duneriders",
+    "role": "support",
+    "hp": 1190,
+    "atk": 150,
+    "def": 112,
+    "spd": 116,
+    "ability_name": "Waters of the Hidden Spring",
+    "ability_desc": "Mends one ally and grants every living ally recovery of 10% of their own maximum HP at the start of their next two turns.",
+    "lore": "Nahlia knows the buried springs that never appear on caravan maps. She has crossed the salt wastes with a single waterskin, and never once kept its last drop for herself.",
+    "image_url": "/api/static/champions/oasis_keeper_nahlia.png",
+    "id": "oasis_keeper_nahlia",
+    "color": "yellow",
+    "source_image": "/api/static/champions/oasis_keeper_nahlia.png",
+    "portrait": "assets/champions/oasis_keeper_nahlia.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "heal",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "kassem_sunwall",
+    "name": "Kassem, the Sunwall",
+    "title": "Bastion of the Caravan Gates",
+    "rarity": "legendary",
+    "faction": "duneriders",
+    "role": "defense",
+    "hp": 2580,
+    "atk": 240,
+    "def": 275,
+    "spd": 96,
+    "ability_name": "Bastion of the Burning Sun",
+    "ability_desc": "Strikes one foe and lowers its ATK by 25% for two of its actions, while shielding every living ally for 20% of their own maximum HP for two of their actions or until broken.",
+    "lore": "When the caravan gates fell, Kassem planted his shield in their place. The city behind him still calls that day a siege. The riders who escaped call it a sunrise.",
+    "image_url": "/api/static/champions/kassem_sunwall.png",
+    "id": "kassem_sunwall",
+    "color": "yellow",
+    "source_image": "/api/static/champions/kassem_sunwall.png",
+    "portrait": "assets/champions/kassem_sunwall.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          2
+        ],
+        [
+          "dec_atk",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "cinder_mender_vessa",
+    "name": "Cinder-Mender Vessa",
+    "title": "The Ember Kept for Others",
+    "rarity": "rare",
+    "faction": "nether",
+    "role": "support",
+    "hp": 1220,
+    "atk": 142,
+    "def": 118,
+    "spd": 110,
+    "ability_name": "Ashes Unbound",
+    "ability_desc": "Mends one living ally and blocks new debuffs on every living ally for two of their actions, with a light strike against one foe.",
+    "lore": "Vessa once tended the furnaces beneath the Seventh Pit, where mercy was counted as wasted fuel. When a broken legion crawled home, she stole a coal from the punishment fires and taught it to close wounds instead. Now her lantern burns for anyone still breathing, and the pitmasters follow its light with chains.",
+    "image_url": "/api/static/champions/cinder_mender_vessa.png",
+    "id": "cinder_mender_vessa",
+    "color": "purple",
+    "source_image": "/api/static/champions/cinder_mender_vessa.png",
+    "portrait": "assets/champions/cinder_mender_vessa.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "block_debuffs",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "veyr_hollow_gate",
+    "name": "Veyr, the Hollow Gate",
+    "title": "Last Watch of the Nameless Quarter",
+    "rarity": "rare",
+    "faction": "umbra",
+    "role": "defense",
+    "hp": 1460,
+    "atk": 124,
+    "def": 174,
+    "spd": 82,
+    "ability_name": "None Shall Follow",
+    "ability_desc": "Strikes and taunts one foe, forcing its next action to be a basic attack against Veyr.",
+    "lore": "When the Nameless Quarter slipped into shadow, its watchman held the evacuation gate until the last lantern crossed. Dawn found only his armor, still standing. Veyr no longer remembers the people he saved, but whenever footsteps flee through the dark, he turns his shield toward whatever follows.",
+    "image_url": "/api/static/champions/veyr_hollow_gate.png",
+    "id": "veyr_hollow_gate",
+    "color": "purple",
+    "source_image": "/api/static/champions/veyr_hollow_gate.png",
+    "portrait": "assets/champions/veyr_hollow_gate.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "taunt",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "aurelia_last_foundry",
+    "name": "Aurelia, the Last Foundry",
+    "title": "Keeper of the Unquenched Heart",
+    "rarity": "mythical",
+    "faction": "ironclad",
+    "role": "support",
+    "hp": 3380,
+    "atk": 290,
+    "def": 300,
+    "spd": 112,
+    "ability_name": "Reforge the Fallen Line",
+    "ability_desc": "Mends one living ally, removes all debuffs from every living ally, and shields each for 20% of their own maximum HP for two of their actions or until broken. Adds a light strike against one foe; does not revive the dead.",
+    "lore": "When Valdur's furnaces went cold, Aurelia carried their last living coal inside her own iron heart. She has crossed a century of battlefields rebuilding soldiers that kings had already written off. Her forge asks neither banner nor birthplace, only whether there is still someone inside the armor worth bringing home.",
+    "image_url": "/api/static/champions/aurelia_last_foundry.png",
+    "id": "aurelia_last_foundry",
+    "color": "blue",
+    "source_image": "/api/static/champions/aurelia_last_foundry.png",
+    "portrait": "assets/champions/aurelia_last_foundry.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          2
+        ],
+        [
+          "strengthen",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ],
+        [
+          "shield",
+          2
+        ]
+      ]
+    },
+    "passive": {
+      "id": "tempered_resolve",
+      "name": "Tempered Resolve",
+      "kind": "immune_effect",
+      "immune": [
+        "dec_def"
+      ],
+      "desc": "Immune to Decrease DEF. This permanent protection affects only Aurelia."
+    }
+  },
+  {
+    "template_id": "jade_mender_lian",
+    "name": "Jade-Mender Lian",
+    "title": "Physician of the Rainward Steps",
+    "rarity": "rare",
+    "faction": "dragondynasty",
+    "role": "support",
+    "hp": 1180,
+    "atk": 150,
+    "def": 110,
+    "spd": 114,
+    "ability_name": "Breath of the Jade Spring",
+    "ability_desc": "Mends one living ally and grants every living ally recovery of 10% of their own maximum HP at the start of their next two turns, with a light strike against one foe.",
+    "lore": "Lian left the imperial physicians after learning that medicine was reserved for officers. With a cracked jade bowl and a satchel of mountain herbs, he now walks the rainward steps between villages. The little dragon in his bowl was once offered a throne; it chose to help him carry water instead.",
+    "image_url": "/api/static/champions/jade_mender_lian.png",
+    "id": "jade_mender_lian",
+    "color": "red",
+    "source_image": "/api/static/champions/jade_mender_lian.png",
+    "portrait": "assets/champions/jade_mender_lian.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "heal",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "carapace_warden_korr",
+    "name": "Carapace Warden Korr",
+    "title": "The Specimen Who Kept the Names",
+    "rarity": "rare",
+    "faction": "chymera",
+    "role": "defense",
+    "hp": 1500,
+    "atk": 128,
+    "def": 166,
+    "spd": 80,
+    "ability_name": "Living Carapace",
+    "ability_desc": "Strikes one foe and shields himself for 20% of his maximum HP for two of his actions or until broken.",
+    "lore": "The alchemists recorded Korr as a number and called his growing shell a useful accident. He memorized every name scratched beneath the other cages before breaking the locks. Now he carries those names etched inside his armor, so that even the changed and forgotten can find someone who remembers them.",
+    "image_url": "/api/static/champions/carapace_warden_korr.png",
+    "id": "carapace_warden_korr",
+    "color": "green",
+    "source_image": "/api/static/champions/carapace_warden_korr.png",
+    "portrait": "assets/champions/carapace_warden_korr.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "redknife_tavin",
+    "name": "Redknife Tavin",
+    "title": "A Blade Below the Banquet",
+    "rarity": "common",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 820,
+    "atk": 116,
+    "def": 66,
+    "spd": 102,
+    "ability_name": "Find the Seam",
+    "ability_desc": "Strikes one foe and lowers its DEF by 25% for one of its actions.",
+    "lore": "Tavin spent ten years opening carriage doors for nobles who never learned his name. He learned theirs, and where their expensive armor leaves a seam. Now the servants of the lower court pay him in copper and safe beds, and no carriage passes their streets without permission.",
+    "image_url": "/api/static/champions/redknife_tavin.png",
+    "id": "redknife_tavin",
+    "color": "red",
+    "source_image": "/api/static/champions/redknife_tavin.png",
+    "portrait": "assets/champions/redknife_tavin.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_def",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "vitriol_stalker_syth",
+    "name": "Vitriol Stalker Syth",
+    "title": "The Greenhouse's Last Experiment",
+    "rarity": "rare",
+    "faction": "chymera",
+    "role": "attack",
+    "hp": 1160,
+    "atk": 190,
+    "def": 102,
+    "spd": 118,
+    "ability_name": "Expose the Wound",
+    "ability_desc": "Strikes one foe and applies Weaken, increasing the damage it takes by 15% for one of its actions.",
+    "lore": "Syth was bred to hunt escaped specimens through the glass gardens. Then a frightened child offered the hunter a name instead of a number. The handlers found their cages empty the next morning. Somewhere beyond the broken greenhouse, Syth is still learning which things deserve to be hunted.",
+    "image_url": "/api/static/champions/vitriol_stalker_syth.png",
+    "id": "vitriol_stalker_syth",
+    "color": "green",
+    "source_image": "/api/static/champions/vitriol_stalker_syth.png",
+    "portrait": "assets/champions/vitriol_stalker_syth.webp",
+    "kit": {
+      "a2": [
+        [
+          "poison",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "weaken",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "rivet_mender_orsa",
+    "name": "Rivet-Mender Orsa",
+    "title": "One More Mile in the Machine",
+    "rarity": "rare",
+    "faction": "ironclad",
+    "role": "support",
+    "hp": 1250,
+    "atk": 140,
+    "def": 124,
+    "spd": 104,
+    "ability_name": "Back on Your Feet",
+    "ability_desc": "Mends one living ally and raises every living ally's SPD by 20% for two of their actions, with a light strike against one foe.",
+    "lore": "Orsa fixes what the quartermasters mark beyond repair: cracked boilers, bent knees, and soldiers too tired to stand. She carries no commission and accepts no medals. When a warband reaches the next town alive, someone always finds a fresh copper rivet tucked into their coat.",
+    "image_url": "/api/static/champions/rivet_mender_orsa.png",
+    "id": "rivet_mender_orsa",
+    "color": "blue",
+    "source_image": "/api/static/champions/rivet_mender_orsa.png",
+    "portrait": "assets/champions/rivet_mender_orsa.webp",
+    "kit": {
+      "a2": [
+        [
+          "shield",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "inc_spd",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "eira_hearthwarden",
+    "name": "Eira, the Hearthwarden",
+    "title": "The Last Warm Light",
+    "rarity": "legendary",
+    "faction": "frost",
+    "role": "support",
+    "hp": 2320,
+    "atk": 252,
+    "def": 228,
+    "spd": 118,
+    "ability_name": "Hearth Against the Long Night",
+    "ability_desc": "Mends one living ally, removes all debuffs from every living ally, and blocks new debuffs on them for two of their actions, with a light strike against one foe.",
+    "lore": "When the northern watchfires failed, Eira carried a coal from the last village hearth across the frozen fjord. Every door she reached opened to warmth, and every traveler behind her found the strength to keep walking. She still tends that coal, because the long night has not yet learned to end.",
+    "image_url": "/api/static/champions/eira_hearthwarden.png",
+    "id": "eira_hearthwarden",
+    "color": "blue",
+    "source_image": "/api/static/champions/eira_hearthwarden.png",
+    "portrait": "assets/champions/eira_hearthwarden.webp",
+    "kit": {
+      "a2": [
+        [
+          "heal",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ],
+        [
+          "block_debuffs",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "shen_bronze_horizon",
+    "name": "Shen, the Bronze Horizon",
+    "title": "Warden of the Thousand-Step Pass",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "defense",
+    "hp": 2680,
+    "atk": 238,
+    "def": 282,
+    "spd": 94,
+    "ability_name": "The Mountain Does Not Yield",
+    "ability_desc": "Strikes one foe and lowers its SPD by 15% for two of its actions, while shielding every living ally for 20% of their own maximum HP for two of their actions or until broken.",
+    "lore": "Shen was ordered to close the mountain pass before the refugees arrived. Instead he planted his shield across the road and made the pursuing army wait. The court stripped him of his rank; the villages beyond the pass gave him a thousand doorways that would always open when he returned.",
+    "image_url": "/api/static/champions/shen_bronze_horizon.png",
+    "id": "shen_bronze_horizon",
+    "color": "red",
+    "source_image": "/api/static/champions/shen_bronze_horizon.png",
+    "portrait": "assets/champions/shen_bronze_horizon.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          2
+        ],
+        [
+          "dec_spd",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "vorrek_walking_siege",
+    "name": "Vorrek, the Walking Siege",
+    "title": "The Breach That Walks",
+    "rarity": "mythical",
+    "faction": "ironclad",
+    "role": "attack",
+    "hp": 3500,
+    "atk": 430,
+    "spd": 108,
+    "ability_name": "Break the Unbroken",
+    "ability_desc": "Strikes every living enemy and lowers each target DEF by 25% for two of its actions.",
+    "lore": "Vorrek held the eastern siege line until the generals spent his last soldier. Rather than accept a replacement army, he ordered the surviving engineers to build the breach around him. His furnace still burns with the names of those who never came home, and no fortress has yet persuaded him to turn aside.",
+    "image_url": "/api/static/champions/vorrek_walking_siege.png",
+    "def": 270,
+    "id": "vorrek_walking_siege",
+    "color": "blue",
+    "source_image": "/api/static/champions/vorrek_walking_siege.png",
+    "portrait": "assets/champions/vorrek_walking_siege.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          2
+        ],
+        [
+          "block_buffs",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "aoe",
+          0
+        ],
+        [
+          "dec_def",
+          2
+        ]
+      ]
+    },
+    "passive": {
+      "id": "unbroken_advance",
+      "name": "Unbroken Advance",
+      "kind": "immune_effect",
+      "immune": [
+        "weaken"
+      ],
+      "desc": "Vorrek is immune to Weaken. This permanent protection affects only him."
+    }
+  },
+  {
+    "template_id": "rimebow_tessa",
+    "name": "Rimebow Tessa",
+    "title": "Hunter of the Ice Road",
+    "rarity": "common",
+    "faction": "frost",
+    "role": "attack",
+    "hp": 790,
+    "atk": 112,
+    "spd": 112,
+    "ability_name": "Winterward Shot",
+    "ability_desc": "Strikes one foe and lowers its SPD by 15% for two of its actions.",
+    "lore": "Tessa knows every safe crossing on the winter road and every sound the lake makes before it breaks. She used to hunt only to feed the waystations. Since the raiders came north, she has found that patience and a frost-tipped arrow can keep a caravan fed in other ways.",
+    "image_url": "/api/static/champions/rimebow_tessa.png",
+    "def": 62,
+    "id": "rimebow_tessa",
+    "color": "blue",
+    "source_image": "/api/static/champions/rimebow_tessa.png",
+    "portrait": "assets/champions/rimebow_tessa.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_spd",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "caravan_warden_samira",
+    "name": "Caravan Warden Samira",
+    "title": "The Last Wagon Never Travels Alone",
+    "rarity": "rare",
+    "faction": "duneriders",
+    "role": "defense",
+    "hp": 1420,
+    "atk": 126,
+    "spd": 92,
+    "ability_name": "Come Through Me",
+    "ability_desc": "Strikes and taunts one foe for two of its actions, forcing basic attacks against Samira while she remains alive.",
+    "lore": "Samira has never led a caravan. She rides beside its last wagon, where broken axles, exhausted camels and frightened children are easiest to leave behind. Her shield bears the route marks of seven deserts, and not one of them ends at an abandoned camp.",
+    "image_url": "/api/static/champions/caravan_warden_samira.png",
+    "def": 170,
+    "id": "caravan_warden_samira",
+    "color": "yellow",
+    "source_image": "/api/static/champions/caravan_warden_samira.png",
+    "portrait": "assets/champions/caravan_warden_samira.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "taunt",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "arcmaw_rhex",
+    "name": "Arcmaw Rhex",
+    "title": "The Coil That Bit Back",
+    "rarity": "rare",
+    "faction": "chymera",
+    "role": "attack",
+    "hp": 1240,
+    "atk": 184,
+    "spd": 110,
+    "ability_name": "Short the Lifeline",
+    "ability_desc": "Strikes one foe and prevents it from receiving new positive buffs for two of its actions.",
+    "lore": "The academy fitted Rhex with copper teeth to measure how much lightning living bone could bear. Rhex answered by biting through the power cable. Now the escaped brawler follows the hum of laboratory generators, leaving dark windows and empty restraint chairs behind.",
+    "image_url": "/api/static/champions/arcmaw_rhex.png",
+    "def": 108,
+    "id": "arcmaw_rhex",
+    "color": "green",
+    "source_image": "/api/static/champions/arcmaw_rhex.png",
+    "portrait": "assets/champions/arcmaw_rhex.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "block_buffs",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "gallows_marksman_oren",
+    "name": "Gallows Marksman Oren",
+    "title": "One Bolt Before the Bell",
+    "rarity": "common",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 760,
+    "atk": 120,
+    "spd": 106,
+    "ability_name": "Mark for the Reckoning",
+    "ability_desc": "Strikes one foe and applies Weaken, increasing the damage it takes by 15% for one of its actions.",
+    "lore": "Oren once rang the execution bell above the lower court. The night an innocent family climbed the scaffold, he took down the crossbow reserved for escapees and turned it toward the guards. He still counts the bells before each shot, though he no longer waits for permission.",
+    "image_url": "/api/static/champions/gallows_marksman_oren.png",
+    "def": 58,
+    "id": "gallows_marksman_oren",
+    "color": "red",
+    "source_image": "/api/static/champions/gallows_marksman_oren.png",
+    "portrait": "assets/champions/gallows_marksman_oren.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "weaken",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "nerez_veil_bastion",
+    "name": "Nerez, the Veil Bastion",
+    "title": "The Watch Beneath the Eclipse",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "defense",
+    "hp": 2520,
+    "atk": 242,
+    "spd": 98,
+    "ability_name": "Oath of the Closing Veil",
+    "ability_desc": "Strikes and taunts one foe for two of its actions, while reducing Nerez incoming damage by 15% for two of his actions. A successful taunt forces basic attacks against him while he remains alive.",
+    "lore": "The old city paid its night watch in promises that the dawn would come. When an eclipse swallowed the final sunrise, Nerez kept his post anyway. Travelers now follow the scrape of his shield through streets that maps refuse to remember, knowing the thing behind them will have to answer his challenge first.",
+    "image_url": "/api/static/champions/nerez_veil_bastion.png",
+    "def": 278,
+    "id": "nerez_veil_bastion",
+    "color": "purple",
+    "source_image": "/api/static/champions/nerez_veil_bastion.png",
+    "portrait": "assets/champions/nerez_veil_bastion.webp",
+    "kit": {
+      "a2": [
+        [
+          "counterattack",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "strengthen",
+          2
+        ],
+        [
+          "taunt",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "kesh_duststep",
+    "name": "Kesh Duststep",
+    "title": "Courier of the Broken Sunroad",
+    "rarity": "common",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 810,
+    "atk": 115,
+    "def": 65,
+    "spd": 116,
+    "ability_name": "Between the Plates",
+    "ability_desc": "Strikes one foe while ignoring 25% of its DEF.",
+    "lore": "Kesh's black ear-tufts rise above every market crowd, usually just before the shouting starts. The caracal courier knows the buried paths between the scattered prides and carries their messages inside hollow knife handles. When the sunroad fell, he delivered every warning before asking who would pay him.",
+    "image_url": "/api/static/champions/kesh_duststep.png",
+    "id": "kesh_duststep",
+    "color": "green",
+    "source_image": "/api/static/champions/kesh_duststep.png",
+    "portrait": "assets/champions/kesh_duststep.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "mavra_dusktrail",
+    "name": "Mavra Dusktrail",
+    "title": "The Path the Hunters Fear",
+    "rarity": "common",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 835,
+    "atk": 118,
+    "def": 70,
+    "spd": 105,
+    "ability_name": "Break the Pursuit",
+    "ability_desc": "Strikes one foe and lowers its ATK by 25% for one of its actions.",
+    "lore": "The smoky markings across Mavra's puma shoulders look like the canyon shadows in which she grew up. She once guided trophy hunters to the high passes, until she discovered what they carried in their covered wagons. Now her arrows guide the prisoners home, and the hunters learn how far a scream travels in the dusk.",
+    "image_url": "/api/static/champions/mavra_dusktrail.png",
+    "id": "mavra_dusktrail",
+    "color": "green",
+    "source_image": "/api/static/champions/mavra_dusktrail.png",
+    "portrait": "assets/champions/mavra_dusktrail.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_atk",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "nima_dewthread",
+    "name": "Nima Dewthread",
+    "title": "Tender of the Rain-Sewn Camps",
+    "rarity": "common",
+    "faction": "veldtborn",
+    "role": "support",
+    "hp": 820,
+    "atk": 98,
+    "def": 78,
+    "spd": 104,
+    "ability_name": "Rain on the Wounded Road",
+    "ability_desc": "Mends one living ally and grants every living ally recovery of 10% of its maximum HP at the start of its next turn, with a light strike against one foe.",
+    "lore": "Nima sews names into the hems of the tents she repairs, so no lost traveler is ever only a stranger. Her clouded-leopard fur carries pale green whorls that brighten before rain. She learned her craft patching refugees rather than soldiers, and still insists that a healer's first duty is to leave someone a road home.",
+    "image_url": "/api/static/champions/nima_dewthread.png",
+    "id": "nima_dewthread",
+    "color": "green",
+    "source_image": "/api/static/champions/nima_dewthread.png",
+    "portrait": "assets/champions/nima_dewthread.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "heal",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "sahri_sunspoke",
+    "name": "Sahri Sunspoke",
+    "title": "The Racing Edge of Dawn",
+    "rarity": "rare",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 1100,
+    "atk": 195,
+    "def": 92,
+    "spd": 128,
+    "ability_name": "Open the Horizon",
+    "ability_desc": "Strikes one foe and applies Weaken, increasing damage it takes by 15% for two of its actions.",
+    "lore": "Sahri's cheetah tear-marks fork into white sunbursts at her temples, a sign the old racers called a blessing. She won the dawn circuit with two broken sabers and gave the prize to the camps outside the walls. The arena masters still want their champion back; they have yet to catch her.",
+    "image_url": "/api/static/champions/sahri_sunspoke.png",
+    "id": "sahri_sunspoke",
+    "color": "green",
+    "source_image": "/api/static/champions/sahri_sunspoke.png",
+    "portrait": "assets/champions/sahri_sunspoke.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_spd",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "weaken",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "ilyra_snowglass",
+    "name": "Ilyra Snowglass",
+    "title": "Knife of the High White Pass",
+    "rarity": "rare",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 1170,
+    "atk": 182,
+    "def": 110,
+    "spd": 118,
+    "ability_name": "The Glacier's Edge",
+    "ability_desc": "Strikes one foe while ignoring 25% of its DEF.",
+    "lore": "Blue threads run between the charcoal rosettes of Ilyra's snow-leopard coat, as though the mountain sky were caught beneath her fur. She guards the abandoned monastery road with daggers cut from its last unbroken window. The valley calls her an assassin; the children crossing the pass call her the lantern in the snow.",
+    "image_url": "/api/static/champions/ilyra_snowglass.png",
+    "id": "ilyra_snowglass",
+    "color": "green",
+    "source_image": "/api/static/champions/ilyra_snowglass.png",
+    "portrait": "assets/champions/ilyra_snowglass.webp",
+    "kit": {
+      "a2": [
+        [
+          "dec_spd",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "toruun_basalt_mane",
+    "name": "Toruun Basalt-Mane",
+    "title": "The Gate with a Living Heart",
+    "rarity": "rare",
+    "faction": "veldtborn",
+    "role": "defense",
+    "hp": 1460,
+    "atk": 130,
+    "def": 172,
+    "spd": 80,
+    "ability_name": "Answer to the Gate",
+    "ability_desc": "Strikes and taunts one foe for two of its actions, forcing basic attacks against Toruun while he remains alive.",
+    "lore": "Toruun braided the bronze gate-rings of his ruined city into his black lion's mane. When the survivors asked where they should build their next wall, he set down his shield and told them to begin behind him. The road is crowded now, and he has not moved.",
+    "image_url": "/api/static/champions/toruun_basalt_mane.png",
+    "id": "toruun_basalt_mane",
+    "color": "green",
+    "source_image": "/api/static/champions/toruun_basalt_mane.png",
+    "portrait": "assets/champions/toruun_basalt_mane.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_def",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "taunt",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "rhazek_cinderstripe",
+    "name": "Rhazek Cinderstripe",
+    "title": "Captain of the Ashen March",
+    "rarity": "legendary",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 2280,
+    "atk": 355,
+    "def": 185,
+    "spd": 116,
+    "ability_name": "March of the Burning Stripes",
+    "ability_desc": "Strikes every living enemy and burns each for 5% of its maximum HP at the start of its next two turns.",
+    "lore": "Rhazek's tiger stripes glow red where the cinder temple fell across his arms. He carried its trapped defenders through the fire, then forged their broken blades into one great falchion. He marches beneath no conqueror's banner: the smoke behind him means a prison has opened.",
+    "image_url": "/api/static/champions/rhazek_cinderstripe.png",
+    "id": "rhazek_cinderstripe",
+    "color": "green",
+    "source_image": "/api/static/champions/rhazek_cinderstripe.png",
+    "portrait": "assets/champions/rhazek_cinderstripe.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "aoe",
+          0
+        ],
+        [
+          "burn",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "vaelka_obsidian_watch",
+    "name": "Vaelka, the Obsidian Watch",
+    "title": "Guardian of the Moonless Stair",
+    "rarity": "legendary",
+    "faction": "veldtborn",
+    "role": "defense",
+    "hp": 2550,
+    "atk": 245,
+    "def": 270,
+    "spd": 100,
+    "ability_name": "The Night Holds Fast",
+    "ability_desc": "Strikes one foe and lowers its ATK by 25% for two of its actions, while shielding every living ally for 20% of its own maximum HP for two of its actions or until broken.",
+    "lore": "Under moonlight, Vaelka's black panther fur reveals silver rosettes shaped like broken constellations. She keeps the stair beneath the ancestral observatory, where the oldest pride oaths are carved into glass. She has let thieves leave with treasures, but never let a pursuer follow a frightened guest.",
+    "image_url": "/api/static/champions/vaelka_obsidian_watch.png",
+    "id": "vaelka_obsidian_watch",
+    "color": "green",
+    "source_image": "/api/static/champions/vaelka_obsidian_watch.png",
+    "portrait": "assets/champions/vaelka_obsidian_watch.webp",
+    "kit": {
+      "a2": [
+        [
+          "counterattack",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          2
+        ],
+        [
+          "dec_atk",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "oruun_prism_seer",
+    "name": "Oruun, the Prism-Seer",
+    "title": "Reader of the Shattered Day",
+    "rarity": "legendary",
+    "faction": "veldtborn",
+    "role": "support",
+    "hp": 2330,
+    "atk": 275,
+    "def": 210,
+    "spd": 122,
+    "ability_name": "Gather the Scattered Light",
+    "ability_desc": "Mends one living ally, removes all debuffs from every living ally, and grants each recovery of 10% of its maximum HP at the start of its next two turns, with a light strike against one foe.",
+    "lore": "Oruun's long lynx ear-tufts are threaded with tiny prisms, and his violet-gray fur bears pale geometric bands no scholar can explain. When the sun-prides shattered, he collected a fragment from every broken oath-stone. He studies their light for a future in which none of the prides must stand alone.",
+    "image_url": "/api/static/champions/oruun_prism_seer.png",
+    "id": "oruun_prism_seer",
+    "color": "green",
+    "source_image": "/api/static/champions/oruun_prism_seer.png",
+    "portrait": "assets/champions/oruun_prism_seer.webp",
+    "kit": {
+      "a2": [
+        [
+          "block_debuffs",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ],
+        [
+          "heal",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "azhar_rosetted_sun",
+    "name": "Azhar, the Rosetted Sun",
+    "title": "Sovereign of the Unbroken Horizon",
+    "rarity": "mythical",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 3100,
+    "atk": 465,
+    "def": 235,
+    "spd": 136,
+    "ability_name": "No Throne Above the Dawn",
+    "ability_desc": "Strikes every living enemy and lowers each target's DEF by 25% for two of its actions.",
+    "lore": "Azhar's golden coat carries jaguar rosettes flowing into Bengal stripes, a pattern once dismissed as an impossible omen. Born outside every royal bloodline, he refused the sun-throne until its chains were melted into tools for the camps. The scattered prides follow him because he walks beside them, and because even an eclipse has never made him kneel.",
+    "image_url": "/api/static/champions/azhar_rosetted_sun.png",
+    "id": "azhar_rosetted_sun",
+    "color": "green",
+    "source_image": "/api/static/champions/azhar_rosetted_sun.png",
+    "portrait": "assets/champions/azhar_rosetted_sun.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          2
+        ],
+        [
+          "block_buffs",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "aoe",
+          0
+        ],
+        [
+          "dec_def",
+          2
+        ]
+      ]
+    },
+    "passive": {
+      "id": "sunscar_oath",
+      "name": "Sunscar Oath",
+      "kind": "immune_effect",
+      "immune": [
+        "weaken"
+      ],
+      "desc": "Azhar is permanently immune to Weaken. This protection affects only him."
+    }
+  },
+  {
+    "template_id": "sivren_stillgrass",
+    "name": "Sivren, the Stillgrass Knife",
+    "title": "Where the Grass Holds Its Breath",
+    "rarity": "legendary",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 2050,
+    "atk": 365,
+    "def": 170,
+    "spd": 130,
+    "ability_name": "Silence Before Sunrise",
+    "ability_desc": "Strikes one foe while ignoring 25% of its DEF and prevents it from receiving new positive buffs for two of its actions. Existing buffs remain in place.",
+    "lore": "Sivren learned to hear a bootstep through the roots before she learned the names of the scattered prides. The serval scout knots dry grass into her cloak and blackens the bronze sun at her throat, leaving nothing for a watchfire to catch. When slavers began marking the old sunroad, she followed their wagons without disturbing a seed head. By dawn, the cages stood open and every warning bell still slept. The freed travelers remember only amber eyes in the grass, and a quiet voice telling them which way led home.",
+    "image_url": "/api/static/champions/sivren_stillgrass.png",
+    "id": "sivren_stillgrass",
+    "color": "green",
+    "source_image": "/api/static/champions/sivren_stillgrass.png",
+    "portrait": "assets/champions/sivren_stillgrass.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_spd",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ],
+        [
+          "block_buffs",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "nera_red_ledger",
+    "name": "Nera, the Red Ledger",
+    "title": "The Debt the Court Cannot Bury",
+    "rarity": "rare",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 1150,
+    "atk": 190,
+    "def": 102,
+    "spd": 122,
+    "ability_name": "Close the Account",
+    "ability_desc": "Strikes one foe and prevents it from receiving new positive buffs for two of its actions.",
+    "lore": "Nera kept the Bloodcourt's accounts until she found an entire village listed as an acceptable expense. She copied every name into a red ledger and took her fencing blade to the next banquet. The nobles call her a thief; their servants call her when another account needs settling.",
+    "image_url": "/api/static/champions/nera_red_ledger.png",
+    "id": "nera_red_ledger",
+    "color": "red",
+    "source_image": "/api/static/champions/nera_red_ledger.png",
+    "portrait": "assets/champions/nera_red_ledger.webp",
+    "kit": {
+      "a2": [
+        [
+          "ignore_def",
+          0
+        ]
+      ],
+      "a3": [
+        [
+          "block_buffs",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "tovin_glassheart",
+    "name": "Tovin Glassheart",
+    "title": "Physician of the Unfinished",
+    "rarity": "common",
+    "faction": "chymera",
+    "role": "support",
+    "hp": 830,
+    "atk": 100,
+    "def": 76,
+    "spd": 106,
+    "ability_name": "Hold Together",
+    "ability_desc": "Mends one living ally and raises every living ally's DEF by 25% for one of its actions, with a light strike against one foe.",
+    "lore": "Tovin survived the procedure because another patient held the glass over his artificial heart until the seal set. He has spent every day since returning that favor. His conservatory clinic admits any creature that can find the door, and his charts begin with a name instead of a specimen number.",
+    "image_url": "/api/static/champions/tovin_glassheart.png",
+    "id": "tovin_glassheart",
+    "color": "green",
+    "source_image": "/api/static/champions/tovin_glassheart.png",
+    "portrait": "assets/champions/tovin_glassheart.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "inc_def",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "suyin_monsoon_bell",
+    "name": "Suyin, Bell of the Monsoon",
+    "title": "The Storm That Shelters",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "support",
+    "hp": 2400,
+    "atk": 270,
+    "def": 215,
+    "spd": 120,
+    "ability_name": "Monsoon Mandate",
+    "ability_desc": "Mends one living ally, raises every living ally's ATK by 25%, and blocks new debuffs on them for two of their actions, with a light strike against one foe.",
+    "lore": "Suyin rang the monsoon bell before the court gave permission, breaking a siege and a hundred years of drought in the same afternoon. The dragon scales at her temples have glowed jade ever since. She travels now with a smaller bell, offering villages the weather their rulers promised and never sent.",
+    "image_url": "/api/static/champions/suyin_monsoon_bell.png",
+    "id": "suyin_monsoon_bell",
+    "color": "red",
+    "source_image": "/api/static/champions/suyin_monsoon_bell.png",
+    "portrait": "assets/champions/suyin_monsoon_bell.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_spd",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "inc_atk",
+          2
+        ],
+        [
+          "block_debuffs",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "tariq_glass_dervish",
+    "name": "Tariq, the Glass Dervish",
+    "title": "Dance of the Broken Oasis",
+    "rarity": "legendary",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 2220,
+    "atk": 340,
+    "def": 190,
+    "spd": 126,
+    "ability_name": "A Thousand Cutting Dawns",
+    "ability_desc": "Strikes every living enemy while ignoring 25% of each target's DEF.",
+    "lore": "The conquerors turned Tariq's oasis to glass and thought the desert would forget it. He dug two blades from the cooling dunes and learned to make the ruined amphitheater sing beneath his feet. Now every caravan knows the flash of amber steel that appears when the tax riders draw too near.",
+    "image_url": "/api/static/champions/tariq_glass_dervish.png",
+    "id": "tariq_glass_dervish",
+    "color": "yellow",
+    "source_image": "/api/static/champions/tariq_glass_dervish.png",
+    "portrait": "assets/champions/tariq_glass_dervish.webp",
+    "kit": {
+      "a2": [
+        [
+          "weaken",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "aoe",
+          0
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "hrolda_avalanche_door",
+    "name": "Hrolda, the Avalanche Door",
+    "title": "Last Hinge of the Northern Holds",
+    "rarity": "legendary",
+    "faction": "frost",
+    "role": "defense",
+    "hp": 2580,
+    "atk": 240,
+    "def": 275,
+    "spd": 96,
+    "ability_name": "The Hold Still Stands",
+    "ability_desc": "Strikes and taunts one foe for one of its actions, while shielding every living ally for 20% of its own maximum HP for two of its actions or until broken.",
+    "lore": "When the avalanche took the walls, Hrolda tore the surviving fortress door from its hinges and carried it into the pass. Three villages crossed behind her before the snow settled. She wears its broken keys on her belt, so the holds will have something to open when their people finally return.",
+    "image_url": "/api/static/champions/hrolda_avalanche_door.png",
+    "id": "hrolda_avalanche_door",
+    "color": "blue",
+    "source_image": "/api/static/champions/hrolda_avalanche_door.png",
+    "portrait": "assets/champions/hrolda_avalanche_door.webp",
+    "kit": {
+      "a2": [
+        [
+          "strengthen",
+          2
+        ]
+      ],
+      "a3": [
+        [
+          "shield",
+          2
+        ],
+        [
+          "taunt",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "dagan_rivetstorm",
+    "name": "Dagan Rivetstorm",
+    "title": "The Factory's Final Warning",
+    "rarity": "rare",
+    "faction": "ironclad",
+    "role": "attack",
+    "hp": 1220,
+    "atk": 188,
+    "def": 120,
+    "spd": 104,
+    "ability_name": "Pull the Weak Rivet",
+    "ability_desc": "Strikes one foe and lowers its DEF by 25% for two of its actions.",
+    "lore": "Dagan designed the bolt-launcher to fix bridge plates without hanging workers over the furnace pits. The overseers ordered him to make it a weapon instead. He obliged, then tested the first production model on the locks of the workers' barracks. He still calls the recoil a manufacturing defect.",
+    "image_url": "/api/static/champions/dagan_rivetstorm.png",
+    "id": "dagan_rivetstorm",
+    "color": "blue",
+    "source_image": "/api/static/champions/dagan_rivetstorm.png",
+    "portrait": "assets/champions/dagan_rivetstorm.webp",
+    "kit": {
+      "a2": [
+        [
+          "inc_atk",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "dec_def",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "tali_scrapshot",
+    "name": "Tali, Scrapshot",
+    "title": "One Good Circuit Left",
+    "rarity": "common",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 800,
+    "atk": 120,
+    "def": 64,
+    "spd": 112,
+    "ability_name": "Cut the Supply",
+    "ability_desc": "Strikes one foe and prevents it from receiving new positive buffs for one of its actions.",
+    "lore": "Tali built her first crossbow from a hospital sign, three broken drones and the only working circuit in the scrap market. She sells protection to rooftop couriers for a meal and a battery charge. The syndicate keeps offering a contract; she keeps sending the contract back pinned to a dead security drone.",
+    "image_url": "/api/static/champions/tali_scrapshot.png",
+    "id": "tali_scrapshot",
+    "color": "yellow",
+    "source_image": "/api/static/champions/tali_scrapshot.png",
+    "portrait": "assets/champions/tali_scrapshot.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "block_buffs",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "edrik_mournwall",
+    "name": "Edrik Mournwall",
+    "title": "Keeper of the Candle Gate",
+    "rarity": "common",
+    "faction": "nether",
+    "role": "defense",
+    "hp": 1020,
+    "atk": 78,
+    "def": 103,
+    "spd": 74,
+    "ability_name": "Borrowed Rest",
+    "ability_desc": "Strikes one foe and shields himself for 20% of his maximum HP for two of his actions or until broken.",
+    "lore": "Edrik remembers burying a soldier whose final request was that someone guard the candles. Death erased the soldier's name, but not the request. He carries a coffin lid where his old gate once stood, turning wandering horrors away from the small lights the living still leave behind.",
+    "image_url": "/api/static/champions/edrik_mournwall.png",
+    "id": "edrik_mournwall",
+    "color": "purple",
+    "source_image": "/api/static/champions/edrik_mournwall.png",
+    "portrait": "assets/champions/edrik_mournwall.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "shield",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "venn_sablethread",
+    "name": "Venn Sablethread",
+    "title": "Tailor of the Last Escape",
+    "rarity": "common",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 780,
+    "atk": 116,
+    "def": 60,
+    "spd": 116,
+    "ability_name": "Catch the Hem",
+    "ability_desc": "Strikes one foe and lowers its SPD by 15% for one of its actions.",
+    "lore": "Venn stitched mourning clothes for families who could no longer afford to mourn. He began hiding escape maps in the lining, then silver needles in his sleeves. The city watch has learned to fear a tailor who measures the distance to every rooftop before he measures a coat.",
+    "image_url": "/api/static/champions/venn_sablethread.png",
+    "id": "venn_sablethread",
+    "color": "purple",
+    "source_image": "/api/static/champions/venn_sablethread.png",
+    "portrait": "assets/champions/venn_sablethread.webp",
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_spd",
+          1
+        ]
+      ]
+    },
+    "passive": null
+  },
+  {
+    "template_id": "renn_briarhook",
+    "name": "Renn Briarhook",
+    "title": "The Thorn at the Timber Road",
+    "rarity": "rare",
+    "faction": "wildgrove",
+    "role": "attack",
+    "hp": 1210,
+    "atk": 186,
+    "def": 112,
+    "spd": 112,
+    "ability_name": "Leave the Wound Open",
+    "ability_desc": "Strikes one foe and applies Weaken, increasing damage it takes by 15% for two of its actions.",
+    "lore": "Renn once marked trees for the royal timber road until he heard voices beneath the bark. His hook now tears the axle pins from the logging wagons, and the abandoned road grows narrower every spring. He keeps the last survey stake on his belt to remember how easily a straight line becomes a wound.",
+    "image_url": "/api/static/champions/renn_briarhook.png",
+    "id": "renn_briarhook",
+    "color": "green",
+    "source_image": "/api/static/champions/renn_briarhook.png",
+    "portrait": "assets/champions/renn_briarhook.webp",
+    "kit": {
+      "a2": [
+        [
+          "poison",
+          1
+        ]
+      ],
+      "a3": [
+        [
+          "weaken",
+          2
+        ]
+      ]
+    },
+    "passive": null
+  }
+]

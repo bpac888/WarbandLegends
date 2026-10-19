@@ -28,9 +28,10 @@ def main(source):
         if original.exists():
             subprocess.run(['magick',str(original),'-resize','480x640>','-strip','-quality','79',str(ROOT/row['portrait'])],check=True)
         elif not (ROOT/row['portrait']).exists(): missing.append({'id':cid,'source':champion['image_url']})
-    (ROOT/'data/champions.json').write_text(json.dumps(rows,indent=2)+'\n')
-    (ROOT/'data/effects.json').write_text(json.dumps(fx.EFFECTS,indent=2)+'\n')
+    (ROOT/'data/source-champions.json').write_text(json.dumps(rows,indent=2)+'\n')
+    (ROOT/'data/source-effects.json').write_text(json.dumps(fx.EFFECTS,indent=2)+'\n')
     (ROOT/'data/import-manifest.json').write_text(json.dumps({'source_repository':'bpac888/warband-legends','source_commit':'acf554c4666208758a0c198f9fc2c1aef6e54aa4','champions':len(rows),'artwork_imported':len(rows)-len(missing),'missing_artwork':missing,'original_ids_preserved':True,'source_id_sha256':hashlib.sha256('\n'.join(sorted(c['id'] for c in rows)).encode()).hexdigest()},indent=2)+'\n')
+    subprocess.run(['node','tools/rebalance-roster.mjs'],cwd=ROOT,check=True)
     print(json.dumps({'champions':len(rows),'missing':missing}))
 
 if __name__=='__main__':

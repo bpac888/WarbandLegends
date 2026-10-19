@@ -1,0 +1,192 @@
+{
+  "version": 2,
+  "champions": 135,
+  "colorCounts": {
+    "red": 27,
+    "blue": 27,
+    "green": 27,
+    "yellow": 27,
+    "purple": 27
+  },
+  "manaCounts": {
+    "very_fast": 8,
+    "fast": 20,
+    "average": 64,
+    "slow": 20,
+    "very_slow": 11,
+    "charging": 12
+  },
+  "chargingChampions": [
+    {
+      "id": "spore_engineer",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "transmuter_prime",
+      "tiles": [
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "id": "elixir_apotheon",
+      "tiles": [
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "id": "dragonmage",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "archangel_lucifer",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "ironwall_sniper",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "dune_mage_sorra",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "azure_sovereign",
+      "tiles": [
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "id": "jade_monk_xuan",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "dragon_empress",
+      "tiles": [
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "id": "neon_singularity_reaper",
+      "tiles": [
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "id": "oruun_prism_seer",
+      "tiles": [
+        8,
+        10
+      ]
+    }
+  ],
+  "rarities": {
+    "common": {
+      "count": 34,
+      "stats": {
+        "atk": {
+          "min": 351,
+          "average": 460,
+          "max": 526
+        },
+        "def": {
+          "min": 398,
+          "average": 450,
+          "max": 560
+        },
+        "hp": {
+          "min": 692,
+          "average": 800,
+          "max": 980
+        }
+      }
+    },
+    "rare": {
+      "count": 40,
+      "stats": {
+        "atk": {
+          "min": 527,
+          "average": 626,
+          "max": 718
+        },
+        "def": {
+          "min": 532,
+          "average": 600,
+          "max": 700
+        },
+        "hp": {
+          "min": 951,
+          "average": 1083,
+          "max": 1260
+        }
+      }
+    },
+    "legendary": {
+      "count": 47,
+      "stats": {
+        "atk": {
+          "min": 650,
+          "average": 760,
+          "max": 846
+        },
+        "def": {
+          "min": 661,
+          "average": 726,
+          "max": 837
+        },
+        "hp": {
+          "min": 1281,
+          "average": 1393,
+          "max": 1586
+        }
+      }
+    },
+    "mythical": {
+      "count": 14,
+      "stats": {
+        "atk": {
+          "min": 748,
+          "average": 835,
+          "max": 918
+        },
+        "def": {
+          "min": 727,
+          "average": 800,
+          "max": 877
+        },
+        "hp": {
+          "min": 1416,
+          "average": 1540,
+          "max": 1653
+        }
+      }
+    }
+  }
+}

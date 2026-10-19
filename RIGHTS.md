@@ -7,3 +7,5 @@ Source snapshot: `bpac888/warband-legends` at `acf554c4666208758a0c198f9fc2c1aef
 All 135 portraits are bundled locally as optimized WebP copies of the owner's existing art. Scene backgrounds derive from the owner's fight-colosseum and summoning-portal artwork. No runtime request to the original game is made. The importer does not connect to its database.
 
 The rune symbols, interface, match-3 engine, tests and standalone tooling were implemented for this repository. The supplied Empires & Puzzles screenshot and gameplay notes informed the requested genre mechanics; no screenshot art, characters, brand, proprietary assets or game code from that game are included.
+
+The v0.2 Legends roster independently reassigns affinities, rescales stats, and combines original A2/A3 effects into one Special. The original imported records are archived in `data/source-champions.json` and `data/source-effects.json` for provenance and regeneration; those archives are excluded from the runtime build. These changes apply only to Legends.

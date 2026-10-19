@@ -1,6 +1,7 @@
-import {validateSave,STAGES} from './engine.js';
-export const PROFILE_KEY='legends.runes.profile.v1', BATTLE_KEY='legends.runes.battle.v1';
-export const STARTER_TEAM=['dragonmage','shieldmaiden_runa','steel_oracle','dune_queen_zaya','shade_prince'];
+import {validateSave,STAGES,createBattle} from './engine.js';
+export const PROFILE_KEY='legends.runes.profile.v1', BATTLE_KEY='legends.runes.battle.v2';
+export const LEGACY_BATTLE_KEY='legends.runes.battle.v1';
+export const STARTER_TEAM=['dragonmage','shieldmaiden_runa','steel_oracle','dune_queen_zaya','wraith_archer'];
 export function defaultProfile(){return {team:[...STARTER_TEAM],unlocked:0,wins:0,cleared:[],recorded:[],speed:1,helpSeen:false};}
 export function loadProfile(storage,roster){
   const defaults=defaultProfile(),ids=new Set(roster.map(c=>c.id));
@@ -8,7 +9,16 @@ export function loadProfile(storage,roster){
     return {...defaults,team:Array.isArray(p.team)&&p.team.length===5&&new Set(p.team).size===5&&p.team.every(id=>ids.has(id))?p.team:defaults.team,unlocked:Math.max(0,Math.min(STAGES.length-1,Number.isInteger(p.unlocked)?p.unlocked:0)),wins:Number.isInteger(p.wins)&&p.wins>=0?p.wins:0,cleared:Array.isArray(p.cleared)?p.cleared.filter(id=>STAGES.some(s=>s.id===id)):[],recorded:Array.isArray(p.recorded)?p.recorded.filter(id=>typeof id==='string').slice(-200):[],speed:p.speed===2?2:1,helpSeen:p.helpSeen===true};
   }catch{return defaults;}
 }
-export function loadBattle(storage,roster){try{const state=JSON.parse(storage.getItem(BATTLE_KEY));if(!validateSave(state,roster))return null;const byId=new Map(roster.map(c=>[c.id,c]));for(const u of [...state.heroes,...state.enemies]){const source=byId.get(u.id);u.name=source.name;u.portrait=source.portrait;u.kit=source.kit;u.passive=source.passive;u.ability_name=source.ability_name;}return state;}catch{return null;}}
+export function loadBattle(storage,roster){try{
+  const raw=storage.getItem(BATTLE_KEY);
+  if(raw){const state=JSON.parse(raw);if(!validateSave(state,roster))return null;const byId=new Map(roster.map(c=>[c.id,c]));for(const u of [...state.heroes,...state.enemies]){const source=byId.get(u.id);for(const key of ['name','portrait','special','passive','ability_name','color','role','rarity','manaSpeed'])u[key]=structuredClone(source[key]);}return state;}
+  const old=JSON.parse(storage.getItem(LEGACY_BATTLE_KEY));
+  if(!old||old.version!==1||!STAGES.some(s=>s.id===old.stageId)||!Array.isArray(old.heroes)||old.heroes.length!==5||!['playing','victory','defeat'].includes(old.phase)||typeof old.id!=='string')return null;
+  const state=createBattle(roster,old.heroes.map(h=>h.id),old.stageId,Number.isInteger(old.rng)?old.rng:1);
+  if(old.phase==='playing'){state.id+='-rules2';state.restartedForRules=true;}
+  else{state.id=old.id;state.phase=old.phase;for(const u of old.phase==='victory'?state.enemies:state.heroes){u.hp=0;u.mana=0;}}
+  return state;
+}catch{return null;}}
 export function save(storage,key,value){try{storage.setItem(key,JSON.stringify(value));return true;}catch{return false;}}
 export function recordVictory(profile,battle){
   if(battle.phase!=='victory'||profile.recorded.includes(battle.id))return profile;

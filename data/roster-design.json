@@ -1,0 +1,557 @@
+{
+  "version": 2,
+  "champions": {
+    "yshmir_worldwound": {
+      "color": "purple",
+      "manaSpeed": "very_slow"
+    },
+    "necropolis_titan": {
+      "color": "purple",
+      "manaSpeed": "slow"
+    },
+    "abyss_lord": {
+      "color": "red",
+      "manaSpeed": "very_slow"
+    },
+    "mercuric_saboteur": {
+      "color": "blue",
+      "manaSpeed": "fast"
+    },
+    "voltaic_priest": {
+      "color": "yellow",
+      "manaSpeed": "slow"
+    },
+    "bronze_juggernaut": {
+      "color": "red",
+      "manaSpeed": "slow"
+    },
+    "spore_engineer": {
+      "color": "green",
+      "manaSpeed": "charging",
+      "chargeLevels": 2
+    },
+    "transmuter_prime": {
+      "color": "yellow",
+      "manaSpeed": "charging",
+      "chargeLevels": 3
+    },
+    "steel_oracle": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "elixir_apotheon": {
+      "color": "green",
+      "manaSpeed": "charging",
+      "chargeLevels": 3
+    },
+    "ghoul_scavenger": {
+      "color": "green",
+      "manaSpeed": "fast"
+    },
+    "shadow_thrall": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "pit_grunt": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "cursed_acolyte": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "demon_witchblade": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "dragonmage": {
+      "color": "red",
+      "manaSpeed": "charging",
+      "chargeLevels": 2
+    },
+    "plague_doctor": {
+      "color": "green",
+      "manaSpeed": "very_slow"
+    },
+    "dragonslayer": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "wraith_archer": {
+      "color": "purple",
+      "manaSpeed": "very_fast"
+    },
+    "Ashwind Warden": {
+      "color": "yellow",
+      "manaSpeed": "slow"
+    },
+    "iron_revenant": {
+      "color": "blue",
+      "manaSpeed": "slow"
+    },
+    "pale_matriarch": {
+      "color": "purple",
+      "manaSpeed": "very_slow"
+    },
+    "frost_king": {
+      "color": "blue",
+      "manaSpeed": "very_slow"
+    },
+    "frost_sage": {
+      "color": "blue",
+      "manaSpeed": "very_slow"
+    },
+    "blood_paladin": {
+      "color": "red",
+      "manaSpeed": "slow"
+    },
+    "lady_death": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "sin_archon": {
+      "color": "purple",
+      "manaSpeed": "slow"
+    },
+    "shade_prince": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "crimson_praetor": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "umbral_hierarch": {
+      "color": "purple",
+      "manaSpeed": "slow"
+    },
+    "brimstone_witch": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "veil_dancer": {
+      "color": "purple",
+      "manaSpeed": "fast"
+    },
+    "crimson_castellan": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "pit_scout": {
+      "color": "green",
+      "manaSpeed": "very_fast"
+    },
+    "archangel_lucifer": {
+      "color": "yellow",
+      "manaSpeed": "charging",
+      "chargeLevels": 2
+    },
+    "paladin_of_dusk": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "sister_seraphel": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "justiciar_vael": {
+      "color": "yellow",
+      "manaSpeed": "fast"
+    },
+    "solar_scribe": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "executor_model_z": {
+      "color": "red",
+      "manaSpeed": "slow"
+    },
+    "shield_bot_mk4": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "the_saboteur": {
+      "color": "red",
+      "manaSpeed": "fast"
+    },
+    "grease_monkey": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "ironwall_sniper": {
+      "color": "blue",
+      "manaSpeed": "charging",
+      "chargeLevels": 2
+    },
+    "professor_vile": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "chem_tank_brax": {
+      "color": "green",
+      "manaSpeed": "slow"
+    },
+    "potion_tosser_quinn": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "elder_rootmother": {
+      "color": "green",
+      "manaSpeed": "very_slow"
+    },
+    "grove_druid": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "satyr_archer_kell": {
+      "color": "green",
+      "manaSpeed": "very_fast"
+    },
+    "thornveil_dryad": {
+      "color": "green",
+      "manaSpeed": "slow"
+    },
+    "the_verdant_king": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "thornweaver_seraph": {
+      "color": "yellow",
+      "manaSpeed": "slow"
+    },
+    "barkskin_bruiser": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "vinestrider": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "mosswitch_lira": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "beastmaster_gharn": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "jarl_bjorn_ironhide": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "shieldmaiden_runa": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "ice_shaman_sigrid": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "berserker_ulf": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "wolf_handler_torv": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "vlad_the_soul_eater": {
+      "color": "purple",
+      "manaSpeed": "fast"
+    },
+    "cult_zealot": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "succubus_lilth": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "shadow_stalker": {
+      "color": "yellow",
+      "manaSpeed": "very_fast"
+    },
+    "dune_queen_zaya": {
+      "color": "yellow",
+      "manaSpeed": "slow"
+    },
+    "desert_assassin": {
+      "color": "purple",
+      "manaSpeed": "fast"
+    },
+    "camel_rider_rashid": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "dune_mage_sorra": {
+      "color": "yellow",
+      "manaSpeed": "charging",
+      "chargeLevels": 2
+    },
+    "scavenger_jax": {
+      "color": "red",
+      "manaSpeed": "fast"
+    },
+    "plague_doctor_mors": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "the_mutant": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "void_herald_mara": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "azure_sovereign": {
+      "color": "blue",
+      "manaSpeed": "charging",
+      "chargeLevels": 3
+    },
+    "dragon_samurai_kenshin": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "jade_monk_xuan": {
+      "color": "green",
+      "manaSpeed": "charging",
+      "chargeLevels": 2
+    },
+    "spirit_fox_mei": {
+      "color": "red",
+      "manaSpeed": "fast"
+    },
+    "jade_archer_linh": {
+      "color": "green",
+      "manaSpeed": "fast"
+    },
+    "neon_wire runner": {
+      "color": "yellow",
+      "manaSpeed": "very_fast"
+    },
+    "neon_scrap_enforcer": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "neon_glitch_weaver": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "neon_hologram_assassin": {
+      "color": "purple",
+      "manaSpeed": "very_fast"
+    },
+    "neon_biochem_doc": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "dragon_empress": {
+      "color": "red",
+      "manaSpeed": "charging",
+      "chargeLevels": 3
+    },
+    "ravel": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "carmine_veinreader": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "neon_volt_guardian": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "neon_laser_blade": {
+      "color": "blue",
+      "manaSpeed": "fast"
+    },
+    "neon_hacker_empress": {
+      "color": "blue",
+      "manaSpeed": "slow"
+    },
+    "neon_god_overlord": {
+      "color": "blue",
+      "manaSpeed": "slow"
+    },
+    "neon_singularity_reaper": {
+      "color": "purple",
+      "manaSpeed": "charging",
+      "chargeLevels": 3
+    },
+    "alley_shade": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "fjordwatch_hald": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "shellback_brukk": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "oakenhart_first_warden": {
+      "color": "green",
+      "manaSpeed": "very_slow"
+    },
+    "oasis_keeper_nahlia": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "kassem_sunwall": {
+      "color": "yellow",
+      "manaSpeed": "slow"
+    },
+    "cinder_mender_vessa": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "veyr_hollow_gate": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "aurelia_last_foundry": {
+      "color": "yellow",
+      "manaSpeed": "very_slow"
+    },
+    "jade_mender_lian": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "carapace_warden_korr": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "redknife_tavin": {
+      "color": "red",
+      "manaSpeed": "fast"
+    },
+    "vitriol_stalker_syth": {
+      "color": "green",
+      "manaSpeed": "fast"
+    },
+    "rivet_mender_orsa": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "eira_hearthwarden": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "shen_bronze_horizon": {
+      "color": "yellow",
+      "manaSpeed": "slow"
+    },
+    "vorrek_walking_siege": {
+      "color": "red",
+      "manaSpeed": "very_slow"
+    },
+    "rimebow_tessa": {
+      "color": "blue",
+      "manaSpeed": "very_fast"
+    },
+    "caravan_warden_samira": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "arcmaw_rhex": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "gallows_marksman_oren": {
+      "color": "yellow",
+      "manaSpeed": "fast"
+    },
+    "nerez_veil_bastion": {
+      "color": "purple",
+      "manaSpeed": "slow"
+    },
+    "kesh_duststep": {
+      "color": "yellow",
+      "manaSpeed": "very_fast"
+    },
+    "mavra_dusktrail": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "nima_dewthread": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "sahri_sunspoke": {
+      "color": "yellow",
+      "manaSpeed": "average"
+    },
+    "ilyra_snowglass": {
+      "color": "blue",
+      "manaSpeed": "fast"
+    },
+    "toruun_basalt_mane": {
+      "color": "green",
+      "manaSpeed": "average"
+    },
+    "rhazek_cinderstripe": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "vaelka_obsidian_watch": {
+      "color": "purple",
+      "manaSpeed": "slow"
+    },
+    "oruun_prism_seer": {
+      "color": "yellow",
+      "manaSpeed": "charging",
+      "chargeLevels": 2
+    },
+    "azhar_rosetted_sun": {
+      "color": "yellow",
+      "manaSpeed": "very_slow"
+    },
+    "sivren_stillgrass": {
+      "color": "green",
+      "manaSpeed": "fast"
+    },
+    "nera_red_ledger": {
+      "color": "red",
+      "manaSpeed": "fast"
+    },
+    "tovin_glassheart": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "suyin_monsoon_bell": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "tariq_glass_dervish": {
+      "color": "purple",
+      "manaSpeed": "average"
+    },
+    "hrolda_avalanche_door": {
+      "color": "blue",
+      "manaSpeed": "slow"
+    },
+    "dagan_rivetstorm": {
+      "color": "red",
+      "manaSpeed": "average"
+    },
+    "tali_scrapshot": {
+      "color": "yellow",
+      "manaSpeed": "fast"
+    },
+    "edrik_mournwall": {
+      "color": "blue",
+      "manaSpeed": "average"
+    },
+    "venn_sablethread": {
+      "color": "purple",
+      "manaSpeed": "fast"
+    },
+    "renn_briarhook": {
+      "color": "green",
+      "manaSpeed": "fast"
+    }
+  }
+}

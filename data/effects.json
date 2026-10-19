@@ -13,13 +13,6 @@
     "value": 0.25,
     "desc": "Raises the champion's DEF by 25%."
   },
-  "inc_spd": {
-    "name": "Increase SPD",
-    "cat": "buff",
-    "group": "stat",
-    "value": 0.2,
-    "desc": "Raises the champion's SPD by 20%."
-  },
   "shield": {
     "name": "Shield",
     "cat": "buff",
@@ -76,13 +69,6 @@
     "value": 0.25,
     "desc": "Lowers the target's DEF by 25%."
   },
-  "dec_spd": {
-    "name": "Decrease SPD",
-    "cat": "debuff",
-    "group": "stat",
-    "value": 0.15,
-    "desc": "Lowers the target's SPD by 15%."
-  },
   "weaken": {
     "name": "Weaken",
     "cat": "debuff",
@@ -138,5 +124,26 @@
     "group": "shape",
     "value": 0,
     "desc": "Clears every debuff from the whole friendly team."
+  },
+  "mana_surge": {
+    "name": "Mana flow",
+    "cat": "buff",
+    "group": "mana",
+    "value": 0.2,
+    "desc": "Gain 20% more tile charge. Does not change attack intervals."
+  },
+  "mana_slow": {
+    "name": "Mana slow",
+    "cat": "debuff",
+    "group": "mana",
+    "value": 0.15,
+    "desc": "Gain 15% less tile charge. Does not change attack intervals."
+  },
+  "frostbite": {
+    "name": "Frostbite",
+    "cat": "debuff",
+    "group": "dot",
+    "value": 0.05,
+    "desc": "Deals 5% max HP at the start of each affected-unit turn, bypassing shields."
   }
 }

@@ -1,0 +1,142 @@
+{
+  "inc_atk": {
+    "name": "Increase ATK",
+    "cat": "buff",
+    "group": "stat",
+    "value": 0.25,
+    "desc": "Raises the champion's ATK by 25%."
+  },
+  "inc_def": {
+    "name": "Increase DEF",
+    "cat": "buff",
+    "group": "stat",
+    "value": 0.25,
+    "desc": "Raises the champion's DEF by 25%."
+  },
+  "shield": {
+    "name": "Shield",
+    "cat": "buff",
+    "group": "survival",
+    "value": 0.2,
+    "desc": "Absorbs damage equal to 20% of max HP before HP is touched."
+  },
+  "strengthen": {
+    "name": "Strengthen",
+    "cat": "buff",
+    "group": "survival",
+    "value": 0.15,
+    "desc": "Reduces incoming damage by 15%."
+  },
+  "heal": {
+    "name": "Heal",
+    "cat": "buff",
+    "group": "survival",
+    "value": 0.1,
+    "desc": "Restores 10% of max HP at the start of the champion's turn."
+  },
+  "block_debuffs": {
+    "name": "Block Debuffs",
+    "cat": "buff",
+    "group": "utility",
+    "value": 0,
+    "desc": "Complete immunity to incoming debuffs."
+  },
+  "counterattack": {
+    "name": "Counterattack",
+    "cat": "buff",
+    "group": "utility",
+    "value": 0,
+    "desc": "Strikes back with the default skill when hit."
+  },
+  "revive_on_death": {
+    "name": "Revive On Death",
+    "cat": "buff",
+    "group": "utility",
+    "value": 0.3,
+    "desc": "Revives the champion once if they die while it is active."
+  },
+  "dec_atk": {
+    "name": "Decrease ATK",
+    "cat": "debuff",
+    "group": "stat",
+    "value": 0.25,
+    "desc": "Lowers the target's ATK by 25%."
+  },
+  "dec_def": {
+    "name": "Decrease DEF",
+    "cat": "debuff",
+    "group": "stat",
+    "value": 0.25,
+    "desc": "Lowers the target's DEF by 25%."
+  },
+  "weaken": {
+    "name": "Weaken",
+    "cat": "debuff",
+    "group": "utility",
+    "value": 0.15,
+    "desc": "The target takes 15% more damage."
+  },
+  "block_buffs": {
+    "name": "Block Buffs",
+    "cat": "debuff",
+    "group": "utility",
+    "value": 0,
+    "desc": "The target cannot receive positive buffs."
+  },
+  "taunt": {
+    "name": "Taunt",
+    "cat": "debuff",
+    "group": "utility",
+    "value": 0,
+    "desc": "Forces the target to attack only the caster, using their default skill."
+  },
+  "poison": {
+    "name": "Poison",
+    "cat": "debuff",
+    "group": "dot",
+    "value": 0.05,
+    "desc": "Deals 5% of the target's max HP at the start of their turn."
+  },
+  "burn": {
+    "name": "Burn",
+    "cat": "debuff",
+    "group": "dot",
+    "value": 0.05,
+    "desc": "Deals 5% of the target's max HP at the start of their turn."
+  },
+  "aoe": {
+    "name": "AoE",
+    "cat": "effect",
+    "group": "shape",
+    "value": 0,
+    "desc": "The attack hits all enemies instead of one."
+  },
+  "ignore_def": {
+    "name": "Ignore DEF",
+    "cat": "effect",
+    "group": "shape",
+    "value": 0.25,
+    "desc": "Ignores 25% of the target's DEF."
+  },
+  "remove_debuffs": {
+    "name": "Remove All Debuffs",
+    "cat": "effect",
+    "group": "shape",
+    "value": 0,
+    "desc": "Clears every debuff from the whole friendly team."
+  },
+  "inc_spd": {
+    "name": "Increase SPD",
+    "cat": "buff",
+    "group": "stat",
+    "value": 0.2,
+    "desc": "Raises the champion's SPD by 20%."
+  },
+  "dec_spd": {
+    "name": "Decrease SPD",
+    "cat": "debuff",
+    "group": "stat",
+    "value": 0.15,
+    "desc": "Lowers the target's SPD by 15%."
+  }
+}
