@@ -15,7 +15,7 @@ try{
  const read=key=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),key),profile=()=>read(PROFILE_KEY),battle=()=>read(BATTLE_KEY);
  const go=async route=>{await page.goto('http://legends.local/#/'+route);await page.locator('.topbar').waitFor();};
  await go('home');assert.equal((await profile()).openRoster,false);
- await go('champion/shieldmaiden_runa');await page.getByRole('heading',{name:'A legend in the making'}).waitFor();assert.equal(await page.locator('.level-dial>b').textContent(),'1');assert.equal(await page.locator('.level-dial>small').textContent(),'/ 50');
+ await go('champion/shieldmaiden_runa');await page.getByRole('heading',{name:'A legend in the making'}).waitFor();assert.equal(await page.locator('.level-dial>b').textContent(),'1');assert.equal(await page.locator('.level-dial>small').textContent(),'/ 30');
  for(const width of [1440,760,390,320]){await page.setViewportSize({width,height:1000});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`development overflow ${width}`);await page.screenshot({path:`${root}artifacts/development-${width}-dossier.png`,fullPage:true});}
  await page.setViewportSize({width:390,height:844});
  const before=await profile();await page.locator('[data-action="train-preview"]').click();await page.getByRole('button',{name:'Cancel',exact:true}).click();assert.deepEqual(await profile(),before);

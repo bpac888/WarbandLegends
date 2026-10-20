@@ -4,7 +4,11 @@ Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-leg
 
 ## Current owner direction
 
-Focus on visual refinement, cleanup and polish. Keep the twenty existing tactical guides; **do not create more tactical guides**. Do not expand gameplay systems as part of this visual pass. Preserve existing combat, progression and artwork clarity.
+The owner requested ascension materials and requirements, then awakening materials/system after full ascension. They then asked to **save progress and continue later**. Pause implementation at this checkpoint. Keep the twenty existing tactical guides; do not add more. Never modify the original Warband Legends repository.
+
+## Paused v0.13 checkpoint — ascension & awakening
+
+Main remains the verified v0.12 commit `8eee4923d64b2e2078d8e71b71cdfce073cf17c5`. The local working files contain an unfinished v0.13. Read [ASCENSION-CHECKPOINT.md](ASCENSION-CHECKPOINT.md) before resuming. Native checks and build passed; the new browser suite has been written but has NOT run. Do not describe this checkpoint as a verified release or merge it to main before browser checks and visual review.
 
 ## Completed
 
