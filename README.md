@@ -21,7 +21,7 @@ node tools/serve.mjs --dist  # preview the production build
 
 ## What's playable
 
-- Refined scene-led menus, consistent card/button styling, clearer text, bright portrait framing and a more compact mobile event layout.
+- Midnight blue, amethyst and warm gold menus, clear text, bright portraits and consistent cards/dialogs. Battles fit the viewport on desktop and phones, with a landscape hero dock for short windows.
 - A cinematic splash screen, Citadel hub, Adventure map, dedicated roster/codex, animated summoning portal, quests, inventory, and settings.
 - Five level-1 starting champions, five Summon Seals, saved champion copies, disclosed rarity odds, first-clear rewards, and claimable starter quests.
 - Ascension-gated level caps, three awakening ranks (+9% maximum stats), ten illustrated materials, earned dungeon drops and confirmed gold purchases in the Supply Exchange. See [ascension and awakening](docs/ASCENSION.md).
@@ -30,7 +30,8 @@ node tools/serve.mjs --dist  # preview the production build
 - Fixed encounter strength: enemies do not scale up when your heroes improve.
 - Save export/import, collection-only or open-roster playtesting, and persistent animation preferences.
 - Full-art Collection/Codex cards without unowned dimming, combined element/rarity/mana/type/faction filters, name/stat sorting and clear-filter controls.
-- A five-element crest and teal/gold visual identity; a portal with accelerating swirls, light trails and bright champion emergence.
+- A five-element crest and midnight/amethyst/gold visual identity; a portal with accelerating swirls, light trails and bright champion emergence.
+- Prominent gold READY ribbons, available charge levels, glowing mana bars, a readiness count and a tap prompt.
 - A centered battle scene without text sidebars: seven visible attack lanes, straight-column rune projectiles, target previews, and elemental damage/healing/protection animations.
 - Illustrated Adventure and Campaign pages, image-led destination cards, and new world-map artwork.
 - Compact character cards with speed names, rarity/role symbols and icon-based stats; tile costs stay inside detailed ability explanations.
@@ -45,7 +46,7 @@ node tools/serve.mjs --dist  # preview the production build
 - 75 campaign encounters: 25 stages each in Normal, Hard and Nightmare, independent progress, guardian crossings and progressively ruined skins of the same illustrated world.
 - Nine local Arena rivals with four champions per team, rating, Arena Tokens and a token exchange.
 - Three monthly Special Events with original artwork, scheduled windows, 20 attempts per window and event-token rewards. No event practice option.
-- The original Warband Legends summoning page and portal ritual adapted to Legends, including single and ten-champion summons.
+- A framed Astral Gate with summon controls below the artwork, clear seal costs/shortages, and the original Warband Legends portal ritual adapted to Legends for single and ten-champion summons.
 - Four original Tavern illustrations reused as Citadel destinations.
 - Seven playable dungeons with original Warband Legends art, themed guardians, three difficulty tiers, saved clears, gold/XP and first-clear seals.
 - Battle log, ability details, hint, 1×/2× animation speed, and reduced-motion support.

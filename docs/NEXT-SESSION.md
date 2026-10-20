@@ -4,7 +4,7 @@ Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-leg
 
 ## Current owner direction
 
-The owner resumed the ascension and awakening checkpoint. v0.13 implementation and local verification are complete; see ASCENSION.md and QA.md. Publish only to Legends after exact-commit CI passes. Keep the twenty existing tactical guides; do not add new ones. No further save reset is authorized. The original Warband Legends repository must stay unchanged.
+The owner requested a new color palette, all battle content visible without vertical scrolling, unmistakable charged Specials, overall visual refinement and a summoning page suited to Legends. v0.14 addresses this presentation work. Retain the twenty existing tactical guides; add no new guides. Preserve hero IDs, abilities, combat rules, ascension, awakening and saves. Publish only to Legends after exact-commit CI passes. Leave Warband Legends untouched.
 
 ## Completed
 
@@ -19,6 +19,8 @@ The owner resumed the ascension and awakening checkpoint. v0.13 implementation a
 - **v0.12:** visual finishing across navigation, menus, cards, dialogs and mobile screens; scene artwork in Adventure destinations, brighter art framing, clearer secondary text and a tighter mobile Events composition. Existing guides and all gameplay remain unchanged.
 
 - **v0.13:** ascension-gated caps for every rarity, three post-maximum awakening ranks, ten illustrated materials, dungeon/campaign material rewards, shop purchases, dossier requirements and save migration. See [ascension and awakening](ASCENSION.md).
+
+- **v0.14:** midnight/amethyst/gold palette, viewport-sized battles with a landscape hero dock, clear READY ribbons/charge bars, and a framed Astral Gate with separate summon controls. See QA for verification.
 
 ## Next priorities
 

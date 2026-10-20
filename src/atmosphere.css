@@ -1,0 +1,161 @@
+/* v0.14 — midnight, amethyst and warm metallic accents. Element colors remain distinct. */
+:root {
+ --bg:#0b0e1c; --panel:#191e35; --card:#171c31; --line:#49516f;
+ --ivory:#f5f0eb; --muted:#b2b9cf; --gold:#f1cc8b; --accent:#b8a4ff;
+ --shell-line:#9ea8d142; --shell-ink:#151b30; --shell-soft:#bdc5dd; --shell-gold:#f1cc8b;
+ --finish-ink:#0d1224; --finish-surface:#1a213b; --finish-raised:#252d4b;
+ --finish-line:#a5a9d04d; --finish-gold:#f1cc8b; --finish-copy:#c6cee3;
+ --finish-shadow:0 14px 40px #05061166;
+}
+body {background:radial-gradient(ellipse at 5% 0,#64508833,transparent 48%),radial-gradient(ellipse at 100% 20%,#325b9633,transparent 50%),#0b0e1c;color:var(--ivory)}
+.topbar,.game-nav {background:#11172bed;border-color:#868bb344;backdrop-filter:blur(16px)}
+.topbar .brand,.brand-lockup {color:#f2d5a0}
+.game-nav button,.game-nav a,.wallet,.icon-button {color:#c6cee4;border-color:#7c86b34d;background:#1b2440}
+.game-nav .active,.game-nav button.active {background:linear-gradient(135deg,#3f3965,#283354);border-color:#b5a0eb;color:#ffe2aa;box-shadow:inset 0 1px #e4ccff22}
+.button.gold {background:linear-gradient(135deg,#ffe0aa,#d5ad72);border-color:#ffe3b2;color:#211b2a;box-shadow:0 5px 15px #06071740}
+.button.outline,.icon-button,.text-button {color:#d8d5ee}
+.button.outline {background:#202841;border-color:#8992ba77}
+.button:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible {outline:2px solid #d7b9ff;outline-offset:3px}
+.eyebrow {color:#d0b8f3}
+.page-heading p,.roster-mode-note,.mode-note,.team-footnote,.training-note {color:#bac4dd}
+.hero-banner {background-image:linear-gradient(90deg,#11162bd9,#2f37641a),url('../assets/scenes/world-map.svg')}
+.banner-shade {background:linear-gradient(90deg,#11162bf5,#25264dc9 42%,transparent 80%),linear-gradient(0deg,#101526aa,transparent 65%)}
+.hub-link,.team-caption,.world-card,.library-card,.encounter-card,.quest-card,.settings-panel,.inventory-card,.arena-rival,.exchange-offers>article,.exchange-balances>span,.event-calendar>button,.realm-heading,.chapter-intro,.hero-development,.champion-special,.passive-info,.special-level,.material-tile,.material-offer {
+ background-color:#191f35;border-color:#8791b64d;box-shadow:0 8px 25px #06081726;
+}
+.hub-link::before {background:linear-gradient(90deg,#181e36,#181e3655 65%,#181e3622)}
+.team-caption,.library-label {background:#181e33;color:#f4e6cf}
+.library-card:hover,.world-card:hover,.hub-link:hover {border-color:#bca3ea}
+.collection-toolbar,.library-filters,.roster-selects,.champion-story,.roster-save {border-color:#7e8ab44d}
+select,input:not([type=checkbox]) {background:#151c32!important;color:#ebedf6!important;border-color:#7684ad88!important}
+#modal {background:linear-gradient(145deg,#252b48,#121a30);border-color:#a29ac377;box-shadow:0 20px 90px #03040dcc}
+#modal::backdrop {background:#050918b8;backdrop-filter:blur(7px)}
+.modal-header {background:#1d2540;border-color:#7c86ae4d}
+#notice {background:#2c3150;border-color:#c0a1e4;color:#fff1ce}
+.materials-section,.ascension-panel {background:linear-gradient(135deg,#222941,#141b30);border-color:#8883b36b}
+.awakening-panel {background:radial-gradient(ellipse at top right,#70498e44,transparent 70%),#1a2036;border-color:#ad80bf77}
+.material-offer {background:radial-gradient(ellipse at top,#5f518333,transparent 65%),#131d32}
+.material-tile {background:#111b2f}.material-tile b{color:#f3dfbe}.material-tile small{color:#bdc7dd}
+.material-tile.missing {border-color:#a17b69}.material-tile strong {color:#a3e3ca}
+.ascension-road li {background:#111a30;border-color:#59668c}.ascension-road li.unlocked{background:linear-gradient(#403955,#222a43);border-color:#dfbe86}
+.special-level,.numbered-step,.ability-effects li,.champion-story {background-color:#171f35;border-color:#63729b55}
+.special-level>header>span {background:#242942;color:#d4d5f3}
+.card-stats>span,.hero-development p,.materials-section>p,.ascension-panel>p {color:#d0d7e7}
+.hero-xp-bar {background:#0d1428;border-color:#616c91}.hero-xp-bar>i{background:linear-gradient(90deg,#8275cb,#b8a3f2)}
+.event-challenge:after {background:linear-gradient(90deg,#10172eee,#172039bb 55%,transparent),linear-gradient(0deg,#10172e,transparent)}
+.summon-result-card.summon-reveal {background:#1c2441}
+/* Portal: same ritual, with a framed art scene and distinct controls below it. */
+.altar-page {position:relative;padding:26px;border-radius:22px;background:radial-gradient(ellipse at 50% 25%,#5a408144,transparent 65%),linear-gradient(145deg,#1b2340,#11172b);border-color:#9c89c56b}
+.altar-header {display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px}
+.altar-heading h1 {font:clamp(34px,4vw,55px) Georgia,serif;margin:9px 0;color:#f5dfb9}
+.altar-heading>p {margin:0;color:#bac5e0;font-size:13px;line-height:1.6}
+.altar-balance {flex-shrink:0;border-radius:14px;background:#252a48;border-color:#c1a3e066}
+.altar-balance .card-glyph {color:#d9b9ff}
+.altar-portal.summon-sanctum {height:auto;min-height:0;aspect-ratio:2.65;margin:0;border:1px solid #b4a0d566;border-radius:16px;background:#0a0d1c;overflow:hidden}
+.altar-portal>img {object-fit:cover;object-position:50% 44%;height:100%;position:absolute;inset:0}
+.altar-scene-caption {position:absolute;bottom:18px;left:20px;right:20px;padding:10px 14px;border:1px solid #a28bd655;border-radius:10px;background:#111830b8;backdrop-filter:blur(8px);color:#e0d5ef;letter-spacing:.14em;font-size:10px;text-align:center}
+.altar-actions {position:relative;inset:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;background:none;margin-top:18px}
+.altar-actions>button {min-height:134px;padding:18px;justify-content:center;gap:7px;background:linear-gradient(135deg,#3c345d,#222d4b);border:1px solid #a990d88a;border-radius:14px;box-shadow:inset 0 1px #f9e1ff18,0 8px 24px #080b1f55}
+.altar-actions>button:last-of-type {background:linear-gradient(135deg,#4c405b,#38324e);border-color:#d8bc8b99}
+.altar-actions>button:hover:not(:disabled){background:linear-gradient(135deg,#594a7c,#2c3b61);border-color:#e2ceff}
+.altar-actions>button>span {font:27px Georgia,serif;color:#ffe5be}
+.altar-actions small {font-size:12px;color:#d1d8e9;max-width:none}
+.altar-actions strong {font-size:14px;color:#ffdf9b;margin-top:3px}
+.altar-actions>button:disabled {opacity:.5}.altar-footer{margin:20px 4px 30px}.altar-footer .summon-odds{background:#151e34;border-color:#76799f55;border-radius:12px;padding:15px}
+/* Battle is sized to viewport height as well as width. No clipped or scrollable play surface. */
+body:has(.battle-shell) {margin:0;padding:0;background:radial-gradient(ellipse at 50% 30%,#39325b88,transparent 70%),#090e1e;overflow:hidden}
+body:has(.battle-shell) #app {height:100dvh;height:100svh;display:grid;grid-template-rows:50px minmax(0,1fr);padding:0}
+body:has(.battle-shell) .topbar {height:50px;min-height:0;max-width:760px;width:100%;margin:auto;padding:0 12px;background:#131b33bb}
+.battle-shell {height:100%;min-height:0;max-width:none;padding:4px 8px calc(4px + env(safe-area-inset-bottom));display:grid!important;grid-template-columns:minmax(0,1fr)!important;place-items:center;margin:0;overflow:visible}
+.battle-center {container-type:inline-size;width:min(680px,calc(100vw - 16px),calc((100svh - 190px)*.73));min-height:0;box-shadow:0 10px 50px #02051866}
+.battle-sky {padding:3px 0 0;border-radius:16px 16px 0 0;border-color:#8794bd77;background-image:linear-gradient(0deg,#15213dde,transparent 70%),var(--encounter-art)}
+.battle-sky-shade {background:linear-gradient(0deg,#151d33ee,transparent 75%)}
+.battle-title {height:27px;min-height:27px;padding:0 38px;position:relative}
+.battle-title>strong {font-size:clamp(10px,2.2cqw,14px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.battle-title>.mobile-back {top:0;left:7px;width:26px;height:25px;background:#1e2948;color:#f2d5a0}
+.encounter-tactics-button {top:0;right:7px;width:26px;height:25px;background:#1e2948;border-color:#8c96b766}
+.battle-shell .enemy-line {min-height:0;height:calc(22cqw + 48px);padding:3px 0 0;margin:0 8px;gap:3px;align-items:start}
+.enemy-target>img {height:22cqw;min-height:0;width:min(100%,150px);max-width:100%;object-fit:cover;border-radius:16px 16px 5px 5px}
+.enemy-name {font-size:clamp(7px,1.7cqw,10px);margin:2px 0;line-height:1.1}
+.enemy-hp {height:4px}.enemy-hp-label {font-size:clamp(7px,1.5cqw,9px);margin-top:2px;line-height:1.1}
+.enemy-mana {height:3px;margin-top:2px}.enemy-countdown {font-size:10px;padding:3px;top:1px;right:1px}.enemy-element {width:20px;height:20px;top:1px;left:1px}.enemy-element .rune-icon{width:14px;height:14px}
+.enemy-info {width:20px;height:20px;font-size:10px;top:23px;right:1px}
+.enemy-ground {display:none}
+.attack-lanes {height:18px;min-height:0;margin:0 8px;gap:3px}
+.lane-track b {font-size:13px}.lane-track i {background:linear-gradient(0deg,#a5b6f633,transparent)}
+.board-surround {padding:4px;background:linear-gradient(145deg,#b3a1bf,#36496c 25%,#202b4e 78%,#b49a74);border-color:#9d9cbd88}
+.board-heading {height:20px;min-height:20px;padding:0 2px 3px;font-size:clamp(7px,1.7cqw,10px);letter-spacing:.04em;align-items:center}
+.board {display:grid;grid-template-columns:repeat(7,minmax(0,1fr));grid-template-rows:repeat(5,minmax(0,1fr));width:100%;aspect-ratio:7/5;gap:2px;padding:2px;min-height:0;background:linear-gradient(135deg,#242d4e,#111b32);border-color:#7a80a766}
+.board .tile {aspect-ratio:auto;min-height:0;height:100%;width:100%;min-width:0;padding:0}
+.battle-feedback,.battle-feedback:empty {height:21px;min-height:21px;padding:2px 0;line-height:17px;font-size:clamp(8px,1.8cqw,11px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#e8d5fc}
+.battle-feedback button {padding:0 5px;font-size:inherit}
+.hero-line {gap:5px;align-items:start;margin:0}
+.hero-main,.hero-main>img {height:26cqw;min-height:0;max-height:none}
+.hero-main {border-radius:8px;border-color:#9ba7c766;background:#16213d;overflow:hidden}
+.hero-main>img {width:100%;object-fit:cover;opacity:1;object-position:center 15%}
+.hero-shade {background:linear-gradient(0deg,#0b1028fa 0%,#10172bd9 30%,transparent 70%)}
+.hero-name {font-size:clamp(8px,1.9cqw,12px);left:3px;right:3px;bottom:45px;line-height:1.05}
+.hero-health {bottom:33px;font-size:clamp(7px,1.6cqw,9px);line-height:1;color:#f2f4ff}
+.hero-main .hp-bar {left:3px;right:3px;bottom:27px;height:4px}
+.hero-main .hp-bar i{background:linear-gradient(90deg,#39786f,#82d7bd)}
+.mana-bar {bottom:16px;height:7px;left:3px;right:3px;background:#10142c;border-color:#929bd077}
+.mana-bar>i {background:linear-gradient(90deg,#6d72cd,#bca6ff)}
+.mana-label,.hero-unit.charged .mana-label {bottom:2px;height:11px;line-height:11px;letter-spacing:.02em;font-size:clamp(7px,1.6cqw,10px);color:#bcc4e5;white-space:nowrap}
+.hero-mana-speed {display:none}
+.hero-element {width:18px;height:18px;left:2px;top:3px}.hero-element .rune-icon{width:13px;height:13px}.hero-info{width:19px;height:19px;right:2px;top:3px;font-size:11px}
+.special-state {position:absolute;top:25px;left:3px;right:3px;display:flex;align-items:center;justify-content:center;gap:3px;min-height:18px;padding:2px;background:linear-gradient(100deg,#ffe6ac,#e7bd78);border:1px solid #fff1bf;border-radius:4px;color:#211b36;font-size:clamp(8px,1.9cqw,12px);font-weight:850;letter-spacing:.07em;box-shadow:0 2px 12px #ffe6ac66}
+.special-state .card-glyph{width:12px;height:13px}
+.hero-unit.charged .hero-main {border:2px solid #ffe3a0;box-shadow:0 0 0 1px #ffe7b366,0 0 22px #d4b9ff80}
+.hero-unit.charged .mana-label {background:#e8c88f;color:#201b32;border-radius:3px;left:3px;right:3px;font-weight:800}
+.hero-unit.charged .mana-bar>i {background:linear-gradient(90deg,#e5b967,#fff0bc);box-shadow:0 0 8px #e5bb75}
+.hero-unit.casting .hero-main {outline:2px solid #d2b1ff;outline-offset:2px}
+.turn-state.has-ready {color:#ffe2a3;font-weight:750}.turn-state.has-ready>i{background:#ffe0a3;box-shadow:0 0 8px #f6d17d}
+.battle-shell .statuses {min-height:0;height:18px;gap:1px;padding-top:1px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.battle-shell .statuses:empty {height:0;display:none}
+.battle-shell .status {width:16px;min-width:16px;height:17px;min-height:17px;padding:0;border-radius:3px}
+.battle-shell .status .effect-icon {width:12px;height:12px}.battle-shell .status small{font-size:7px}
+.battle-tools {height:29px;min-height:29px;padding:0;gap:14px;align-items:center}
+.battle-tools>.text-button {font-size:clamp(8px,1.9cqw,11px);padding:4px 0;color:#d5c6ed;min-height:26px}
+.battle-tools>.text-button>.card-glyph {width:12px;height:12px}
+@media(max-width:600px){
+ .altar-page{padding:18px;border-radius:17px}.altar-header{align-items:start;gap:12px}.altar-heading h1{font-size:32px;margin-top:9px}.altar-heading>p{font-size:11px}.altar-balance{padding:10px;gap:7px;flex-wrap:wrap;max-width:100px}.altar-balance>b{font-size:19px}.altar-balance>span{font-size:9px;width:100%}.altar-portal.summon-sanctum{aspect-ratio:1.3;margin:0}.altar-scene-caption{bottom:12px;left:10px;right:10px;font-size:8px;padding:9px}.altar-actions{gap:10px;margin-top:12px}.altar-actions>button{min-height:134px;padding:12px 8px}.altar-actions>button>span{font-size:22px}.altar-actions small{font-size:10px;line-height:1.5}.altar-actions strong{font-size:12px}.altar-footer{gap:12px}.hero-line{gap:4px}
+ .event-challenge:after{background:linear-gradient(transparent,#11172ccc 180px,#11172ef5 280px,#11172e)}
+}
+@media(max-height:600px){
+ .battle-center {width:min(680px,calc(100vw - 16px),calc((100svh - 170px)*.73))}
+ .battle-title {height:23px;min-height:23px}.battle-title>.mobile-back,.encounter-tactics-button{height:22px}
+ .battle-shell .enemy-line{height:calc(18cqw + 41px)}.enemy-target>img{height:18cqw}
+ .battle-shell .statuses{height:16px}.hero-main,.hero-main>img{height:max(76px,26cqw)}
+ .special-state {top:21px;min-height:14px;padding:0;font-size:8px}.hero-info{width:17px;height:17px}.hero-element{width:17px;height:17px}
+ .attack-lanes{height:13px}.board-heading{height:17px;min-height:17px}.battle-feedback,.battle-feedback:empty{height:18px;min-height:18px;line-height:14px}.battle-tools{height:25px;min-height:25px}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.hero-unit.charged .special-state{animation:ready-shimmer 2.4s ease-in-out infinite}}
+@keyframes ready-shimmer{50%{box-shadow:0 0 18px #f8dbaa99;filter:brightness(1.12)}}
+/* In short landscape windows, keep the attack lanes above the board and dock heroes beside it. */
+@media(orientation:landscape) and (max-height:600px){
+ .battle-center{width:min(calc(100vw - 16px),calc((100svh - 170px)*.95 + 150px));display:grid;grid-template-columns:minmax(0,1fr)140px;column-gap:10px}
+ .battle-sky{grid-column:1;grid-row:1}.board-surround{grid-column:1;grid-row:2}.battle-feedback{grid-column:1;grid-row:3;font-size:8px}.battle-tools{grid-column:1;grid-row:4;gap:9px}
+ .hero-line{grid-column:2;grid-row:1/5;display:grid;grid-template-columns:1fr;grid-template-rows:repeat(5,minmax(0,1fr));gap:4px;height:100%;min-height:0}
+ .battle-shell .enemy-line{height:72px;padding-top:1px;margin:0 5px}.enemy-target>img{height:34px;width:80%;border-radius:8px}.enemy-name{font-size:7px;margin:1px 0}.enemy-hp-label{font-size:7px}.enemy-hp{height:3px}.enemy-countdown{font-size:8px;padding:1px}.enemy-element{height:15px;width:15px}.enemy-element .rune-icon{height:10px;width:10px}.enemy-info{top:17px;width:15px;height:15px;font-size:9px}.attack-lanes{height:9px;margin:0 5px}
+ .hero-unit{height:100%;min-height:0;position:relative}.hero-main{height:100%;min-height:0;border-radius:7px}.hero-main>img{position:absolute;left:0;top:0;width:43px;height:100%;min-height:0}.hero-shade{background:linear-gradient(90deg,transparent,#111a2f55 32%,#111a2f 37%)}
+ .hero-name{top:5px;bottom:auto;left:47px;right:18px;font-size:9px;text-align:left}.hero-info{width:15px;height:15px;font-size:9px;top:2px;right:2px}.hero-element{width:15px;height:15px;top:2px;left:2px}.hero-element .rune-icon{height:10px;width:10px}
+ .hero-health{left:47px;right:3px;bottom:32px;font-size:8px}.hero-main .hp-bar{left:47px;bottom:25px;height:3px}.mana-bar{left:47px;bottom:16px;height:5px}.mana-label,.hero-unit.charged .mana-label{left:47px;right:3px;bottom:2px;font-size:7px;height:10px;line-height:10px}
+ .special-state{top:21px;left:2px;right:auto;width:38px;min-height:14px;font-size:7px;gap:1px;letter-spacing:0}.special-state .card-glyph{width:8px;height:9px}
+ .hero-unit .statuses{position:absolute;bottom:0;left:0;max-width:44px;height:14px}.battle-shell .status{width:13px;min-width:13px;height:14px;min-height:14px}.battle-shell .status .effect-icon{width:10px;height:10px}.battle-tools>.text-button{font-size:8px}
+}
+/* Shared details follow the same palette without recoloring elemental artwork. */
+.game-wallet>span{background:#1b2440;border-color:#8993bf55;color:#e9d1a4}.game-wallet small{color:#b5bfd9}
+.banner-copy h1 em{color:#c9b6ff}.banner-actions .button.outline{background:#242e4b;border-color:#9d99c577;color:#ded9f1}
+.citadel-destination>span{background:linear-gradient(transparent,#151b32db 40%,#11182efc)}
+.hero-level-mark,.level-dial,.card-role{background-color:#222a44;border-color:#b8a0cf77}
+.copy-badge{background:#1d2540e8}.team-portrait,.library-card,.citadel-destination{border-color:#7f89ad66}
+.altar-actions>button:disabled{opacity:.78}.altar-actions>button:disabled>span{color:#d8cdbd}
+.altar-actions .seal-shortage{font:11px Inter,Segoe UI,sans-serif;color:#dfb7c7;letter-spacing:.02em}
+@media(orientation:landscape) and (max-height:600px){.hero-unit .statuses{top:auto;right:auto}}
+@media(orientation:landscape) and (max-height:360px){
+ body:has(.battle-shell) #app{grid-template-rows:34px minmax(0,1fr)}body:has(.battle-shell) .topbar{height:34px}.topbar .icon-button{height:28px}.topbar .brand img{max-height:30px}
+ .battle-center{width:min(calc(100vw - 16px),calc((100svh - 110px)*.95 + 150px))}.battle-title{height:20px;min-height:20px}.battle-title>.mobile-back,.encounter-tactics-button{height:20px;width:22px}
+ .battle-shell .enemy-line{height:54px}.enemy-target>img{height:24px}.enemy-name{font-size:6px}.enemy-hp-label{font-size:6px}.enemy-info{top:12px}.enemy-unit .statuses{height:12px}.attack-lanes{height:6px}.board-heading{height:14px;min-height:14px;font-size:7px}.battle-feedback,.battle-feedback:empty{height:14px;min-height:14px;line-height:11px;font-size:7px}.battle-tools{height:20px;min-height:20px}.battle-tools>.text-button{min-height:20px;font-size:7px}
+}
+body.reduce-animation .special-state{animation:none!important}
+@media(orientation:landscape) and (max-height:360px){.hero-name{top:4px;font-size:8px}.hero-health{bottom:29px;font-size:7px}.hero-main .hp-bar{bottom:24px}}

@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's Warband Legends roster.",
@@ -19,6 +19,7 @@
     "roster:build": "node tools/rebalance-roster.mjs",
     "art:build": "node tools/make-runes.mjs",
     "test:tactics": "node tests/tactics-browser.mjs",
+    "test:viewport": "node tests/viewport-browser.mjs",
     "test:ascension": "node tests/ascension-browser.mjs",
     "test:covenant": "node tests/covenant-browser.mjs"
   },
