@@ -1,0 +1,334 @@
+/* v0.12 — shared visual finish. Combat, content, and saved progression are unchanged. */
+:root {
+  --finish-ink: #091b1e;
+  --finish-surface: #15302d;
+  --finish-raised: #1b3932;
+  --finish-line: #93ad7d40;
+  --finish-gold: #e7c992;
+  --finish-copy: #c2d2c7;
+  --finish-shadow: 0 12px 32px #020f142b;
+}
+body {
+  background: radial-gradient(ellipse at 10% 0, #244b3b52, transparent 45%),
+    radial-gradient(ellipse at 95% 30%, #1c354633, transparent 48%), #08191c;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #91c9b2; color: #0c2727; }
+button, input, select, summary { touch-action: manipulation; }
+select, input { color-scheme: dark; }
+button:focus-visible, a:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible {
+  outline: 2px solid #b9e0c9;
+  outline-offset: 4px;
+}
+.game-page, .home-shell { padding-bottom: 64px; }
+.game-page > .page-heading { margin-bottom: 32px; }
+.page-heading h1 { color: #f4e3c1; line-height: 1.12; text-wrap: balance; }
+.page-heading > div > p { color: var(--finish-copy); font-size: 14px; line-height: 1.8; }
+.page-heading .eyebrow, .section-heading .eyebrow { color: #d8c18c; }
+.section-heading h2 { color: #f1dfb9; }
+.text-button { color: #deca95; line-height: 1.7; }
+.text-button:hover { color: #fff0cd; }
+.topbar {
+  background: linear-gradient(110deg, #14312eea, #10252ce8);
+  border-bottom-color: #b8bc8540;
+  box-shadow: 0 6px 26px #020e1526;
+}
+.game-wallet > span { border-radius: 6px; background: #102b2bd9; }
+.game-wallet b { font-variant-numeric: tabular-nums; }
+.game-nav > button { border-radius: 8px; color: #b5c8c1; }
+.game-nav > button.active {
+  border-color: #c1b67d80;
+  background: linear-gradient(140deg, #345442c4, #1a3a32);
+  color: #f7e4b8;
+  box-shadow: inset 0 1px #f2dfb421, 0 3px 12px #020e1520;
+}
+.button { border-radius: 7px; line-height: 1.45; }
+.button.gold {
+  color: #263326;
+  background: linear-gradient(115deg, #f6dda8, #dfb778);
+  border: 1px solid #f0d7a3;
+  box-shadow: inset 0 1px #fff4d26b, 0 5px 17px #020f1429;
+}
+.button.outline { background: #15302d; border-color: #8ba27b70; color: #e4d1a4; }
+.button.gold:disabled { box-shadow: none; }
+.icon-button { border-radius: 7px; }
+.hero-banner {
+  border-color: #c0b88370;
+  border-radius: 16px;
+  box-shadow: var(--finish-shadow);
+}
+.banner-copy h1 { letter-spacing: -.035em; }
+.banner-copy > p { color: #c5d7cd; font-size: 14px; }
+.banner-seal small { max-width: 130px; margin-inline: auto; line-height: 1.8; }
+.citadel-destinations { gap: 20px; margin-top: 28px; }
+.citadel-destination {
+  border-radius: 12px;
+  border-color: #b2b38259;
+  box-shadow: var(--finish-shadow);
+}
+.citadel-destination > img { opacity: 1; filter: none; }
+.citadel-destination > span {
+  inset: 46% 0 0;
+  background: linear-gradient(transparent, #0d2529d9 47%, #0a2026fa);
+  padding: 24px 20px 20px;
+  gap: 9px;
+}
+.citadel-destination small { color: #c3d1c8; font-size: 10px; line-height: 1.7; }
+.citadel-destination strong { color: #f3dfb5; font-size: 29px; line-height: 1.14; }
+.citadel-destination em { color: #e0d09d; font-size: 11px; }
+.team-portrait, .library-card { border-radius: 11px; box-shadow: 0 8px 24px #020f1429; }
+.team-caption, .library-label {
+  background: linear-gradient(135deg, #1b3930, #142d2e);
+  border-top: 1px solid rgba(var(--rgb), .28);
+}
+.team-caption { padding: 14px; min-height: 99px; }
+.team-caption > strong { color: #f5e6c8; line-height: 1.18; }
+.library-card .library-label { padding: 14px; min-height: 118px; }
+.library-name { line-height: 1.16; }
+.library-card .card-speed, .team-caption > .card-speed { color: #cad9c6; }
+.library-card .card-stats { border-color: #9bb78c30; padding-top: 11px; }
+.hero-level-mark { border-color: #d0bd8377; box-shadow: 0 3px 9px #07191b45; }
+.collection-toolbar { gap: 18px; }
+.collection-tabs { gap: 5px; }
+.collection-tabs > button { border-radius: 7px; padding: 12px 17px; }
+.collection-tabs > button.active { color: #f1ddb0; background: #274c3d; border-color: #c1b37d80; }
+.collection-search input, .library-filters select, .settings-panel input:not([type=checkbox]) {
+  background: #102a2c;
+  border-color: #82a58a66;
+  border-radius: 7px;
+  color: #d8e4d8;
+  min-height: 44px;
+}
+.collection-search input::placeholder { color: #96b1a4; opacity: 1; }
+.library-filters > label { color: #b9cbbd; font-size: 11px; gap: 7px; }
+.library-filters select { font-size: 12px; padding: 12px 11px; }
+.library-summary { margin-block: 17px; }
+.library-count { color: #afc6b6; font-size: 12px; }
+.adventure-vista, .arena-vista, .exchange-vista { border-radius: 14px; box-shadow: var(--finish-shadow); }
+.world-grid { gap: 22px; }
+.world-card.scene-destination {
+  min-height: 300px;
+  padding: 24px;
+  border-radius: 13px;
+  border-color: #afad7961;
+  background: #132c2e;
+  box-shadow: var(--finish-shadow);
+}
+.world-card.scene-destination .destination-art {
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  mask-image: none;
+  opacity: 1;
+  filter: none;
+}
+.world-card.scene-destination::after {
+  background: linear-gradient(0deg, #071d25fa, #0c2229a6 37%, #0b202225 75%);
+}
+.world-card.scene-destination > .ui-icon {
+  width: 30px; height: 30px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #d7c28b55;
+  background: #102b29a8;
+  margin-bottom: 12px;
+}
+.world-card.scene-destination h2 { font-size: 34px; line-height: 1.12; margin-bottom: 12px; }
+.world-card.scene-destination > strong { margin-top: 0; font-size: 12px; color: #e3d3a8; }
+.world-card.scene-destination > .mode-label {
+  left: 18px; top: 18px; right: auto;
+  border-radius: 20px;
+  padding: 6px 10px;
+  background: #0b222bd9;
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+.world-card.scene-destination > .mode-label.ready { color: #d0e7bb; border-color: #b1c58c77; }
+.realm-tabs, .crossing-chapters { gap: 10px; }
+.realm-tabs > button, .crossing-chapters > button { border-radius: 8px; }
+.realm-tabs > button.active, .crossing-chapters > button.active { box-shadow: inset 0 1px #f1ddb321; }
+.campaign-map-viewport { border-radius: 14px; box-shadow: var(--finish-shadow); }
+.campaign-stop, .dungeon-card { border-radius: 12px; box-shadow: var(--finish-shadow); }
+.dungeon-copy p, .dungeon-lock-reason { line-height: 1.85; }
+.chapter-intro { box-shadow: var(--finish-shadow); }
+.arena-rival {
+  background: linear-gradient(135deg, #1c3830, #112b2d);
+  border-color: #9ca77c66;
+  border-radius: 12px;
+  box-shadow: var(--finish-shadow);
+}
+.arena-rival h2 { color: #f2dfba; line-height: 1.2; }
+.rival-portraits { gap: 8px; }
+.rival-portraits > span { border-radius: 7px; }
+.arena-rival > p { font-size: 12px; color: #bbcebf; }
+.rival-reward { padding-top: 16px; font-size: 11px; }
+.event-calendar > button { border-radius: 10px; border-color: #8ca67d66; }
+.event-calendar > button.active { background: linear-gradient(125deg, #34513d, #19342e); border-color: #dbbe81; }
+.event-calendar b { line-height: 1.2; }
+.event-copy > p { color: #c7d7cd; font-size: 13px; }
+.event-challenge { box-shadow: var(--finish-shadow); }
+.exchange-balances > span, .exchange-offers > article { border-radius: 11px; box-shadow: var(--finish-shadow); }
+.exchange-offers > article { background: linear-gradient(135deg, #213b31, #132d2b); }
+.exchange-offers h2 { line-height: 1.18; }
+.altar-page { border-radius: 14px; box-shadow: var(--finish-shadow); }
+.altar-actions > button { background: linear-gradient(0deg, #0b1831d9, transparent); }
+.altar-actions > button > span { color: #f6e5c2; text-shadow: 0 2px 9px #030a19; }
+.altar-actions small { color: #c8cfe1; }
+.altar-actions strong { color: #efd59b; }
+.altar-actions > button:disabled { opacity: 1; }
+.altar-actions > button:disabled > span { color: #c2bfbe; }
+.altar-actions > button:disabled strong { color: #c1ad83; }
+.recent-card { border-radius: 9px; border-color: #8fa37d66; }
+.champion-showcase { border-color: rgba(var(--rgb), .6); box-shadow: var(--finish-shadow); }
+.champion-biography h1 { line-height: 1.13; color: #f4e3c1; }
+.champion-title { color: #c0cdc3; line-height: 1.6; }
+.champion-base-stats { padding-block: 21px; }
+.dossier-sections > button { border-radius: 8px; min-height: 44px; }
+.hero-development, .settings-panel, .quest-card, .inventory-card {
+  border-color: #93ad7d55;
+  box-shadow: var(--finish-shadow);
+}
+.special-level, .hero-tactics, .passive-info, .encounter-tactics { border-radius: 10px; border-color: #8da67b66; }
+.special-targeting { color: #c5d7cb; }
+.special-sequence p { color: #ccdbd0; font-size: 13px; }
+.special-sequence small, .special-sequence em { color: #a9c2b1; }
+.charge-comparison dd { gap: 10px; }
+.quest-card .quest-copy p { color: #c1d2c5; font-size: 13px; }
+.quest-progress { height: 5px; border-radius: 10px; overflow: hidden; }
+.settings-panel { background: linear-gradient(135deg, #1a362f, #10282b); }
+.setting-row b { color: #e6d7b3; line-height: 1.6; }
+.setting-row p { font-size: 12px; line-height: 1.85; }
+.setting-row input[type=checkbox] { accent-color: #d1be81; cursor: pointer; }
+#modal:not([data-view=ritual]) {
+  border-color: #b9b27e8c;
+  border-radius: 14px;
+  background: #102a2a;
+  box-shadow: 0 25px 90px #020b13a8, inset 0 1px #ede2b329;
+}
+#modal::backdrop { background: #020d14b8; backdrop-filter: blur(7px); }
+.modal-header { background: linear-gradient(110deg, #234737c9, #142e2d); padding-block: 22px; }
+.modal-header h2 { color: #f0ddb3; line-height: 1.18; }
+.modal-body { padding: 26px; }
+.modal-body > p { color: #c3d3c6; line-height: 1.85; }
+.modal-actions { gap: 12px; padding-top: 15px; }
+#notice { border-radius: 9px; background: #193c32f5; border-color: #cbbf8380; color: #f0dfb8; box-shadow: 0 8px 30px #020e1466; }
+.battle-center { box-shadow: 0 12px 40px #020f1459; }
+.board-surround { border-color: #bbb47b80; background: linear-gradient(140deg, #34452e, #1d3d32); }
+.board { border-color: #a6b18860; background: #102c2c; }
+.battle-tools .text-button { color: #d3c59c; }
+.enemy-hp-label { color: #d2e1ce; }
+.enemy-info, .hero-info { background: #13312eea; border-color: #e0c995a1; color: #ffe7b4; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .citadel-destination, .scene-destination, .arena-rival, .dungeon-card, .team-portrait {
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+  .citadel-destination:hover, .scene-destination:hover, .arena-rival:hover {
+    transform: translateY(-3px);
+    border-color: #d5c087;
+    box-shadow: 0 12px 28px #020d1455;
+  }
+  .button:not(:disabled):hover { filter: brightness(1.06); }
+}
+@media (max-width: 1000px) {
+  .world-card.scene-destination { min-height: 275px; }
+  .citadel-destination > span { padding: 22px 17px; }
+}
+@media (max-width: 760px) {
+  .world-card.scene-destination h2 { font-size: 30px; }
+  .citadel-destination strong { font-size: 26px; }
+}
+@media (max-width: 600px) {
+  .game-page, .home-shell { padding-bottom: 40px; }
+  .game-page > .page-heading { margin-bottom: 25px; }
+  .page-heading > div > p { font-size: 13px; }
+  .page-heading h1 { font-size: clamp(33px, 9vw, 39px); }
+  .game-nav { background: linear-gradient(#15372ff5, #0e282afc); padding-top: 7px; }
+  .game-nav > button { border-radius: 8px; font-size: 9px; min-height: 49px; }
+  .game-nav > button.active { border-color: #b9b58280; }
+  .button { min-height: 44px; }
+  .banner-copy > p { font-size: 12px; }
+  .hero-banner { border-radius: 12px; }
+  .banner-seal small { font-size: 7px; }
+  .citadel-destinations { gap: 12px; }
+  .citadel-destination > span { inset: 42% 0 0; padding: 17px 12px; gap: 7px; }
+  .citadel-destination strong { font-size: 23px; }
+  .citadel-destination small { font-size: 9px; }
+  .citadel-destination em { font-size: 10px; }
+  .team-caption { padding: 11px 9px; }
+  .team-caption > strong { font-size: 18px; }
+  .library-card .library-label { padding: 12px 10px; min-height: 118px; }
+  .library-name { font-size: 22px; }
+  .library-card .card-speed { font-size: 10px; }
+  .collection-tabs > button { padding: 12px; font-size: 12px; }
+  .library-filters > label { font-size: 10px; }
+  .library-filters select { font-size: 11px; padding: 11px 9px; }
+  .world-grid { gap: 13px; }
+  .world-card.scene-destination { min-height: 235px; padding: 18px; }
+  .world-card.scene-destination h2 { font-size: 29px; }
+  .world-card.scene-destination > strong { font-size: 10px; }
+  .world-card.scene-destination > .mode-label { left: 12px; top: 12px; font-size: 7px; padding: 6px 8px; }
+  .world-card.scene-destination > .ui-icon { width: 27px; height: 27px; }
+  .adventure-vista > div { left: 23px; bottom: 25px; }
+  .arena-rival { padding: 22px; }
+  .arena-rival h2 { font-size: 27px; }
+  .rival-portraits { gap: 9px; }
+  .event-calendar > button { padding: 15px 10px; gap: 9px; }
+  .event-calendar b { font-size: 17px; }
+  .event-calendar span { font-size: 10px; line-height: 1.6; }
+  .event-calendar small { font-size: 7px; }
+  .event-challenge { display: block; padding-top: 0; min-height: 0; }
+  .event-full-art { position: relative; inset: auto; width: 100%; height: 205px; object-fit: cover; object-position: center; display: block; z-index: 0; }
+  .event-challenge::after { background: linear-gradient(#102632, #0c222a); }
+  .event-copy { width: 100%; padding: 26px 23px 30px; }
+  .event-copy > h2 { font-size: 36px; margin-top: 12px; }
+  .event-copy > p { font-size: 13px; line-height: 1.85; }
+  .event-attempts { margin-block: 23px 15px; }
+  .event-attempts > span { font-size: 12px; }
+  .event-actions .button { font-size: 11px; }
+  .exchange-offers > article { padding: 23px 13px; }
+  .exchange-offers h2 { font-size: 24px; }
+  .exchange-offers p { font-size: 11px; }
+  .exchange-offers .button { padding: 12px; font-size: 10px; }
+  .altar-actions > button > span { font-size: 29px; line-height: 1.15; }
+  .altar-actions small { font-size: 11px; line-height: 1.7; }
+  .altar-actions strong { font-size: 14px; }
+  .dossier-sections { gap: 9px; }
+  .dossier-sections > button { font-size: 12px; padding-inline: 15px; }
+  .champion-title { font-size: 17px; }
+  .hero-development { border-radius: 11px; }
+  .special-sequence p { font-size: 12px; }
+  .quest-card { border-radius: 11px; }
+  #modal:not([data-view=ritual]) { border-radius: 12px; }
+  .modal-header { padding: 20px 18px; }
+  .modal-header h2 { font-size: 28px; padding-right: 8px; }
+  .modal-body { padding: 22px 18px; }
+  .modal-header .icon-button { flex-shrink: 0; }
+  .enemy-hp-label, .hero-health { font-size: 8px; }
+  .hero-mana-speed .card-speed { font-size: 6.5px; }
+}
+@media (max-width: 350px) {
+  .game-nav > button { font-size: 8px; }
+  .citadel-destination strong { font-size: 21px; }
+  .citadel-destination > span { padding: 15px 10px; }
+  .citadel-destination small { font-size: 8px; }
+  .team-caption > strong { font-size: 16px; }
+  .library-name { font-size: 20px; }
+  .library-card .card-speed { font-size: 9px; }
+  .world-card.scene-destination { min-height: 225px; padding: 15px; }
+  .world-card.scene-destination h2 { font-size: 26px; }
+  .world-card.scene-destination > strong { font-size: 9px; }
+  .event-calendar > button { padding: 13px 8px; }
+  .event-calendar b { font-size: 15px; }
+  .event-calendar span { font-size: 9px; }
+  .event-copy { padding: 23px 19px; }
+  .event-copy > h2 { font-size: 33px; }
+  .event-full-art { height: 180px; }
+  .exchange-offers .button { font-size: 9px; }
+  .altar-actions > button > span { font-size: 25px; }
+  .altar-actions small { font-size: 10px; }
+  .hero-mana-speed .card-speed { font-size: 6px; }
+}
+.world-card.destination-dungeons .destination-art { object-position: 50% 18%; }

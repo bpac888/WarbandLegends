@@ -2,6 +2,10 @@
 
 Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-legends` unchanged. The owner authorizes implementing, testing and publishing Legends changes. The old instruction to defer development until the owner returned was satisfied when they asked to begin.
 
+## Current owner direction
+
+Focus on visual refinement, cleanup and polish. Keep the twenty existing tactical guides; **do not create more tactical guides**. Do not expand gameplay systems as part of this visual pass. Preserve existing combat, progression and artwork clarity.
+
 ## Completed
 
 - **v0.6:** artwork-led menus, full-art symbolic cards, seven attack lanes and elemental battle effects.
@@ -12,10 +16,14 @@ Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-leg
 
 - **v0.11:** The Hollow Covenant, authored stages 6–10 with escort-triggered Last Light; twenty reviewed tactical identities; charge comparisons and current enemy-kit inspection. See [the second chapter](COVENANT.md). No hero numbers changed; existing saves remain intact.
 
+- **v0.12:** visual finishing across navigation, menus, cards, dialogs and mobile screens; scene artwork in Adventure destinations, brighter art framing, clearer secondary text and a tighter mobile Events composition. Existing guides and all gameplay remain unchanged.
+
 ## Next priorities
 
+The following gameplay ideas are retained as future planning context; the current work is visual polish only.
+
 1. **Playtest the first two chapters.** Review the fast-flank ambush, relay support and both guardian warnings with real play. Reproducible probes and real UI fights are covered in QA, but human feedback is still needed. Stages 1–10 are authored; stages 11–25 retain existing formations and guardian markers. Extend the next group after reviewing pacing. Do not claim every chapter has unique objectives or phases.
-2. **Continue the hero-kit review in small groups.** Twenty tactical identities are reviewed; all heroes now have accurate ordered details. Review another representative group, focusing on distinguishable jobs, fast/slow tradeoffs and useful lower-rarity counters. Change numbers or remove merged-kit clutter only with concrete combat evidence. Preserve one Special plus passives and the existing standard/multi-charge concepts.
+2. **Keep existing guides; no new tactical guides.** The owner explicitly stopped guide expansion. The twenty existing guides remain. Concentrate on presentation, legibility, artwork framing and smooth navigation. Hero kit changes are not part of the current visual scope.
 3. **Prototype overheal as the first advanced combat family.** Before implementation, define cap, health display, healing restrictions, barrier interaction, HP-scaled damage and revival. Introduce it to a limited set of healers, then test actual interactions. No overheal rules or values are finalized yet.
 4. **Consider simple minions only after the health layer is stable.** Define timing, attack/protection, limits and removal first. Mega Minions, Fiends, troops, talents, alternate kits, Growth/Wither and extra facilities remain later possibilities.
 5. **Review long-term collection pacing.** Earned gold, training, seals and token exchanges work. Duplicates are retained and share development; no feeding or consumption exists. Any consumption feature must protect the last copy and clearly preview costs. Bad-luck protection is a design topic, not an approved numerical system yet.

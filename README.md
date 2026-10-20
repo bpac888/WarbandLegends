@@ -21,6 +21,7 @@ node tools/serve.mjs --dist  # preview the production build
 
 ## What's playable
 
+- Refined scene-led menus, consistent card/button styling, clearer text, bright portrait framing and a more compact mobile event layout.
 - A cinematic splash screen, Citadel hub, Adventure map, dedicated roster/codex, animated summoning portal, quests, inventory, and settings.
 - Five level-1 starting champions, five Summon Seals, saved champion copies, disclosed rarity odds, first-clear rewards, and claimable starter quests.
 - Visible hero levels, XP bars, stat-growth previews, gold training with confirmation, and a detailed Development / Special / Passive dossier.

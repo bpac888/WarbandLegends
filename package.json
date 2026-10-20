@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's Warband Legends roster.",
