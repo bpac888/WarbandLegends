@@ -4,7 +4,7 @@ Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-leg
 
 ## Current owner direction
 
-Replace Summon Seals entirely with Gems, earnable through levels/dungeons/events/quests and spendable beyond summons. Add quests with Gems, gold, items and XP. The owner explicitly approved a fresh Legends save for these changes. Reuse/repurpose compatible Warband Legends content, keep the games independent, and finish with UI clarity/simplicity/polish.
+Make event artwork fully visible, fill the battle viewport without scrolling, improve item and menu art, group outside-battle explanations in a Guide, track duplicate heroes individually, train with spare Common heroes, and preview a future real-money shop section without working transactions. Preserve the existing Legends save by migrating v0.15 counted copies.
 
 **No equipment in Legends.** Do not add gear, equipment slots, forging or set bonuses. Keep existing twenty tactical guides, create no new ones. Never modify the original Warband Legends repository. See GEMS-QUESTS.md and REUSE-AUDIT.md for the implemented systems and source audit.
 
@@ -25,6 +25,8 @@ Replace Summon Seals entirely with Gems, earnable through levels/dungeons/events
 - **v0.14:** midnight/amethyst/gold palette, viewport-sized battles with a landscape hero dock, clear READY ribbons/charge bars, and a framed Astral Gate with separate summon controls. See QA for verification.
 
 - **v0.15:** Gems replace seals; 43 quests; adapted account levels 1–100, milestones, daily gifts/Today’s Path, six portraits, ten faction emblems and three saved teams. Simplified shop departments and quest views, responsive batches and optional gift previews. Fresh save owner-approved; no equipment.
+
+- **v0.16:** Distinct hero copies with separate XP/ascension/awakening, migration from v0.15 saves, Common-hero training, twelve detailed item illustrations, larger screen-filling battles, fully visible event art, compact Guide, readable menus and a disabled Premium shop preview. See [v0.16 design and ownership rules](V016-VISUAL-ROSTER.md).
 
 ## Next priorities
 

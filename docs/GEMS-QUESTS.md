@@ -1,12 +1,12 @@
 # Gems, quests and the Keeper's journey · v0.15
 
-The owner approved a fresh start for this economy. New independent keys: `legends.runes.profile.v3` (schema 9), `legends.runes.battle.v5` (existing combat schema 3). Older keys are ignored, not deleted; old profile backups cannot be imported into this fresh economy. Nothing in Warband Legends is reset or changed.
+The owner approved a fresh start for this economy. New independent keys: `legends.runes.profile.v3` (schema 9 at v0.15; v0.16 migrates it to schema 10), `legends.runes.battle.v5` (existing combat schema 3). Older keys are ignored, not deleted; old profile backups cannot be imported into this fresh economy. Nothing in Warband Legends is reset or changed.
 
 ## Gems
 
 A new profile starts with five collected level 1 champions, 500 gold and 500 Gems. Summon Seals are removed from current resources, rewards, store offers and summoning controls. The blue-diamond Gem icon is locally bundled at `assets/items/gem.svg`. Buff Seal remains a status effect; it is unrelated to the retired currency.
 
-- One summon costs 100 Gems. Ten cost 900 Gems and guarantee at least one Rare, retaining the previous rarity roll rules (50% Common, 35% Rare, 13% Legendary, 2% Mythical). Duplicates retain shared development.
+- One summon costs 100 Gems. Ten cost 900 Gems and guarantee at least one Rare, retaining the previous rarity roll rules (50% Common, 35% Rare, 13% Legendary, 2% Mythical). Since v0.16, each summoned copy has its own development.
 - Each campaign first clear gives 100 Gems; campaign replays give none except 50 bonus Gems every fifth campaign victory.
 - Each dungeon's first tier-clear gives 100 Gems; each replay gives 10 Gems.
 - Special Event victories give 100 Gems on the first clear of each event and 25 on subsequent wins. Monthly attempt/calendar restrictions are unchanged.

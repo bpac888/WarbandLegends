@@ -1,3 +1,4 @@
+import {heroForId,uniqueHeroCount} from './hero-copies.js';
 import {addAccountXp,accountBattleXp,bumpPath} from './keeper.js';
 import {GEM_LIMIT} from './economy.js';
 import {SPECIAL_EVENTS,eventWindow,eventAttemptsLeft,EVENT_ATTEMPTS} from './modes.js';
@@ -34,7 +35,7 @@ export function modeReward(profile,battle){const e=getEncounter(battle.stageId),
 }
 export function settleMode(profile,battle,roster){if(battle.sandbox||!['victory','defeat'].includes(battle.phase)||profile.recorded.includes(battle.id))return profile;const e=getEncounter(battle.stageId);if(!['arena','event'].includes(e?.mode))return profile;
  const reward=modeReward(profile,battle),win=battle.phase==='victory';if(e.mode==='event'&&!reward.eventToken)return profile;
- let next=profile;if(reward.xp&&battle.progression)for(const id of new Set(battle.heroes.map(h=>h.id))){const c=roster.find(c=>c.id===id);if(c)next=addHeroXp(next,c,reward.xp);}
+ let next=profile;if(reward.xp&&battle.progression)for(const id of new Set(battle.heroes.map(h=>h.id))){const c=heroForId(roster,id);if(c)next=addHeroXp(next,c,reward.xp);}
  next=bumpPath(addAccountXp(next,accountBattleXp(e,win)),{wins:win?1:0,gems:reward.gems});
  next={...next,gold:cap(profile.gold+reward.gold),gems:Math.min(GEM_LIMIT,profile.gems+reward.gems),recorded:[...profile.recorded,battle.id].slice(-200)};
  if(e.mode==='arena')return {...next,arenaRating:cap(profile.arenaRating+reward.rating),arenaTokens:cap(profile.arenaTokens+reward.arenaTokens),arenaWins:cap(profile.arenaWins+(win?1:0)),arenaLosses:cap(profile.arenaLosses+(win?0:1))};

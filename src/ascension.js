@@ -10,7 +10,7 @@ export const MATERIALS=Object.freeze([
  ...[['red','Ember','#ff7662'],['blue','Glacier','#75cfff'],['green','Verdant','#88e5a1'],['yellow','Dawn','#ffe182'],['purple','Twilight','#cc9dff']].map(([id,label,color])=>({id:id+'-sigil',name:label+' Sigil',color,price:200,description:`An elemental seal for ${id} champions.`,source:'Supply Exchange · earned gold.'}))
 ]);
 export const materialById=id=>MATERIALS.find(m=>m.id===id);
-export const materialArt=id=>'./assets/items/'+id+'.svg';
+export const materialArt=id=>'./assets/items/'+id+'.webp';
 export function ascensionTier(profile,champion){const n=profile.ascensions?.[champion.id];return Number.isSafeInteger(n)&&n>=0?Math.min(n,ASCENSION_CAPS[champion.rarity].length-1):0;}
 export function currentLevelCap(profile,champion){return ASCENSION_CAPS[champion.rarity][ascensionTier(profile,champion)];}
 export function ascensionRequirements(champion,tier=0){

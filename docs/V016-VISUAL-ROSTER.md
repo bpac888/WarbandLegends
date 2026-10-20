@@ -1,0 +1,9 @@
+# v0.16 visual, roster and shop update
+
+Each owned copy now has an individual identity and its own XP, level, ascension and awakening. The Collection shows every owned copy; the Codex still shows each of the 135 source hero designs once at maximum stats. Five distinct copies can form a team, including two copies of the same design. All source catalogue IDs are unchanged. Current v0.15 profile saves migrate their old counted duplicates into separate level-one copies; the original first copy keeps its development. Current saved battles retain their captured stats and hero IDs. Quest collection milestones continue to count unique designs.
+
+Common-hero training consumes 1–10 selected, spare Common copies for 120 XP plus half of each donor’s stored XP, with a 25% same-color bonus. Gold cost is 25 per donor. XP stops at the target’s current ascension cap; excess is lost. Donors assigned to the current team, any saved warband, or an active saved battle cannot be consumed. At least five owned heroes must remain. The confirmation lists exactly which copies are consumed. Gold training remains available.
+
+The three Special Events show a large, uncovered art panel beside a compact boss card on desktop, and stack the image above the card on phones. The battle scene, board and five hero cards expand into the available viewport; nine established desktop/phone/landscape sizes still fit without page scrolling. New detailed inventory artwork covers ten progression materials plus gold and Gem shop offers. General explanations move into a topic-based Guide accessible on every non-battle page; tactical guides are unchanged.
+
+The Premium shop department is a nonfunctional preview of Gem bundles and progression materials. All purchase buttons are disabled; there are no prices, checkout calls, or real-money grants. No equipment is introduced. The original Warband Legends game remains separate and unchanged.
