@@ -19,4 +19,6 @@
 @media(max-width:430px){.material-offer .button{font-size:13px;min-height:45px}.material-offer h3{font-size:19px}.feeding-list label{min-height:72px}.game-page .page-heading h1{font-size:clamp(35px,10vw,47px)}}
 /* Keep the battle portrait framed like the same hero's collection card. */
 .hero-main>img{object-fit:contain;object-position:center}
+.summon-result-card>.hero-rank-track{position:absolute;top:45%;right:7px;left:auto;bottom:auto;display:flex;flex-direction:column;align-items:center;flex:none;gap:3px;width:30px;padding:5px 2px;transform:translateY(-50%);background:#10262ae8}
+.victory-hero>.victory-portrait{position:relative;display:block;flex:none;width:42px;height:56px;min-width:42px}.victory-portrait>img{display:block;width:100%;height:100%;object-fit:contain;border-radius:4px}.victory-portrait>.hero-rank-track{right:1px;top:50%;width:12px;padding:1px 0}.victory-portrait .rank-track-label{display:none}.victory-portrait .rank-chevron{width:9px;height:5px}.victory-portrait .rank-track-slots{gap:1px}
 @media(orientation:landscape) and (max-height:600px){.hero-main>.hero-rank-track{top:18px;right:auto;left:25px;width:14px;padding:1px 0}.hero-main .rank-chevron{width:10px;height:5px}}
