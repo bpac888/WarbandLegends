@@ -1,0 +1,93 @@
+/* Shared finishing layer. Keep artwork bright and put legible surfaces behind copy. */
+:root{--finish-edge:#a9a5d05c;--finish-warm:#f5ddad;--finish-copy:#d6ddef}
+.topbar{border-bottom:1px solid #ac9dcc4a;box-shadow:0 8px 26px #03071340}
+.game-nav>button{border-radius:9px}.game-nav>button.active{box-shadow:inset 0 1px #fff2,0 5px 16px #05091c54}
+.splash-screen .splash-content{filter:drop-shadow(0 8px 32px #02040bb0)}
+.home-shell .hero-banner{border-color:#b2a4ce7a;box-shadow:0 19px 44px #0206119c}
+.home-shell .hub-link,.home-shell .citadel-destination,.home-shell .team-portrait{border-color:#9a9cbb77;box-shadow:0 10px 28px #03071370}
+.home-shell .hub-link:hover,.home-shell .citadel-destination:hover{border-color:#f0d5a3b5;box-shadow:0 17px 34px #030713a8}
+.keeper-panel{border-color:#a9a5cf82;box-shadow:0 12px 30px #0307136b}
+.altar-page{border-color:#b5a1dc8c;box-shadow:0 18px 50px #05071a8a}
+.altar-portal{box-shadow:0 9px 30px #0508197d,inset 0 0 0 1px #e1d0fb30}
+.game-page{padding-bottom:clamp(48px,7vw,96px)}
+.game-page .page-heading{position:relative;isolation:isolate;overflow:hidden;padding:clamp(24px,3.4vw,44px);border:1px solid var(--finish-edge);border-radius:20px;background:linear-gradient(103deg,#171d39f5 0%,#222747e6 48%,#183847a0 100%),url('../assets/scenes/world-map.svg') center 53%/cover;box-shadow:0 18px 44px #04081449;margin-bottom:28px}
+.game-page .page-heading:after{content:'';position:absolute;z-index:-1;width:42%;aspect-ratio:1;right:-11%;top:-150%;border:1px solid #c7aef533;border-radius:50%;box-shadow:0 0 0 36px #c7aef509,0 0 0 73px #c7aef507;pointer-events:none}
+.game-page .page-heading h1{color:#fff0d0;text-shadow:0 2px 18px #04071990}
+.game-page .page-heading p{color:#d5e1ef;line-height:1.55;max-width:52ch}
+.game-page .page-heading .eyebrow{color:#e8c595}
+.page-roster .page-heading{background-image:linear-gradient(103deg,#171d39f5 0%,#222747e5 55%,#1838479c 100%),url('../assets/destinations/codex.svg')}
+.page-world .page-heading,.page-campaign .page-heading{background-image:linear-gradient(103deg,#171d39f5 0%,#222747d8 57%,#1838479c 100%),url('../assets/scenes/world-map.svg')}
+.page-dungeons .page-heading{background-image:linear-gradient(103deg,#171d39f5 0%,#222747d8 57%,#1838479c 100%),url('../assets/dungeons/voidbone-catacombs.svg')}
+.page-arena .page-heading{background-image:linear-gradient(103deg,#171d39f5 0%,#222747d8 57%,#1838479c 100%),url('../assets/destinations/arena.svg')}
+.page-events .page-heading{background-image:linear-gradient(103deg,#171d39f5 0%,#222747d8 57%,#1838479c 100%),url('../assets/events/veil-of-umbra.svg')}
+.page-shop .page-heading{background-image:linear-gradient(103deg,#171d39f5 0%,#222747d8 57%,#1838479c 100%),url('../assets/destinations/exchange.svg')}
+.page-summon .page-heading{background-image:linear-gradient(103deg,#171d39f5 0%,#222747d8 57%,#1838479c 100%),url('../assets/destinations/altar.svg')}
+.game-page .button,.game-page .text-button,.game-page select{transition:border-color .18s,background-color .18s,box-shadow .18s,transform .18s}
+.game-page .button:hover:not(:disabled),.game-page .text-button:hover,.game-page select:hover{filter:brightness(1.1)}
+.game-page .button:active:not(:disabled){transform:translateY(1px)}
+.game-page button:disabled{cursor:not-allowed}
+.game-page .section-heading h2{color:var(--finish-warm);text-wrap:balance}
+.game-page .section-heading .eyebrow{color:#d7b786}
+.game-page .empty-state{border:1px dashed #a9a5cc7a;border-radius:16px;background:radial-gradient(circle at 50% 0,#5d4e9a27,transparent 60%),#141b33;padding:30px 22px}
+.game-page .empty-state h3{color:#ffe4b6}
+.game-page .empty-state p{color:#c2cee3}
+
+/* Collection: leave the portraits unfiltered and let the controls recede. */
+.roster-mode-note{border-radius:10px;padding:12px 16px;color:#d7ebdf;background:#203d3c;border-color:#80b0a36e}
+.collection-toolbar{gap:14px}.collection-search input{min-height:45px;border-radius:10px}
+.collection-tabs>button{min-height:44px;border-radius:9px;font-size:13px}
+.library-filters label{font-size:11px;color:#c6d2e6;gap:7px}
+.library-filters select{font-size:13px;min-height:44px;border-radius:9px;border-color:#8d9bb478;background:#1b2540;color:#f0edf5}
+.library-card{border-color:#9997bd78;box-shadow:0 10px 26px #03091766}
+.library-card:hover,.team-portrait:hover,.roster-card:hover{box-shadow:0 16px 35px #0206129c,0 0 0 1px #e2be8a77}
+.library-card .library-label,.team-caption,.roster-label{background:linear-gradient(150deg,#1c2543,#151e35 70%);border-top:1px solid #d0b4804a}
+.library-card .card-stats{border-color:#a5a8c34a}.library-card .card-stats>span{color:#d5e4e5}
+.library-card .card-speed,.team-caption .card-speed{color:#d8e2ed}
+
+/* Adventure cards and maps share a clear frame and slightly warmer title treatment. */
+.citadel-destination,.world-card,.campaign-stop,.dungeon-card,.arena-rival,.event-challenge{box-shadow:0 13px 34px #0307136e}
+.citadel-destination:hover,.world-card:hover,.campaign-stop:not(.locked):hover,.dungeon-card:hover,.arena-rival:hover{border-color:#ead2a6ab;box-shadow:0 18px 40px #020611a0,0 0 0 1px #d8b98a50}
+.citadel-destination strong,.world-card h2,.campaign-stop h2,.dungeon-card h2,.arena-rival h2{color:#ffebc9;text-shadow:0 2px 12px #030616cf}
+.campaign-stop.locked{opacity:1}.campaign-stop.locked .campaign-enemy{filter:saturate(.82) brightness(.86)}
+.event-calendar>button{border-radius:12px;box-shadow:inset 0 1px #fff1,0 6px 18px #03071344}
+.event-calendar>button.active,.event-calendar>button[aria-pressed=true]{box-shadow:inset 0 1px #fff2,0 0 0 1px #e3cb9f88,0 9px 24px #050b226b}
+.event-copy{border-left:1px solid #c4aece37}.event-copy>p{color:#dce2ed}
+
+/* Shop materials keep their painted icons but gain a calmer reading order. */
+.shop-tabs{gap:9px}.shop-tabs>button{border-radius:10px;background:#202b48;border-color:#818daf70;color:#e2e9f3}
+.shop-tabs>button.active{background:linear-gradient(115deg,#75518f,#37668c);color:#fff5d8;border-color:#ead7ab}
+.material-offer{border:1px solid #879cc278;background:radial-gradient(circle at 50% 4%,#53669a5e,transparent 47%),linear-gradient(160deg,#1b2b4c,#171d36);box-shadow:inset 0 1px #ffffff18,0 10px 25px #03071355}
+.material-offer>img{filter:drop-shadow(0 9px 14px #010618a6)}
+.material-offer>h3{color:#ffe5b6;text-wrap:balance}.material-offer>p{color:#d9e0ed;line-height:1.45}.material-offer>small{color:#b8d8d4}
+.material-offer .button{letter-spacing:0;min-height:44px;border-radius:9px}
+.material-tile{background:linear-gradient(150deg,#18263e,#141d31);border-color:#8795b665}
+.material-tile b{color:#f4dda8}.material-tile small{color:#b8cbdb}
+
+/* Rewards and supporting pages use the same readable depth as the main destinations. */
+.quest-card,.settings-panel,.inventory-card,.daily-card,.premium-offers>article{border-color:#8c9db46b;box-shadow:inset 0 1px #ffffff0d,0 10px 25px #03071348}
+.quest-card.claimed{opacity:.82}.quest-card h2,.settings-panel h2,.inventory-card h2{color:#ffe5b7}
+.quest-card p,.settings-panel p,.inventory-card p{color:#d5dfec}
+.quest-reward .reward-symbols{line-height:1.35}
+.settings-panel input:not([type=checkbox]){min-height:45px;border-radius:9px}
+.inventory-card .treasure-art{filter:drop-shadow(0 10px 18px #0307138c)}
+.hero-development,.ascension-panel,.champion-special,.passive-info{border-color:#9f9fc374;box-shadow:0 12px 32px #03071355}
+.champion-showcase{box-shadow:0 15px 38px #020612a3}
+.dossier-sections>button{min-height:44px;border-color:#b8a8c17a}
+
+@media(max-width:700px){
+ .game-page .page-heading{padding:25px 20px;margin-bottom:20px;border-radius:15px}
+ .game-page .page-heading h1{font-size:clamp(32px,8.8vw,44px)}
+ .game-page .page-heading p{font-size:14px;line-height:1.5}
+ .library-filters{display:flex;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;gap:10px;max-width:none;padding:3px 3px 12px;margin-right:-3px;scrollbar-color:#847aa2 #151d35;scrollbar-width:thin}
+ .library-filters label{flex:0 0 134px;scroll-snap-align:start;font-size:11px}
+ .library-filters select{font-size:13px;padding:9px 10px;width:100%}
+ .library-summary{margin:8px 0 18px}
+ .event-calendar>button{min-height:91px}
+ .event-copy{border-left:0;border-top:1px solid #c4aece37}
+ .material-offer{padding:15px 11px}.material-offer>img{width:min(100%,100px);height:100px}
+ .material-offer>h3{font-size:19px;line-height:1.15}.material-offer>p{font-size:12px;line-height:1.42}
+ .material-offer>small{font-size:12px}.material-offer .button{font-size:12px;min-height:44px;padding:8px 5px}
+ .quest-card p{font-size:13px}
+}
+@media(max-width:370px){.material-offer>img{height:82px}.material-offer{padding:12px 8px}.material-offer>h3{font-size:17px}.material-offer .button{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.game-page .button,.game-page .text-button,.game-page select{transition:none}}
