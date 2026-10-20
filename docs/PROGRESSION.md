@@ -1,5 +1,7 @@
 # Hero development
 
+> Current economy/save rules: [Gems and account journey (v0.15)](GEMS-QUESTS.md). Seals and older save migration notes below describe earlier releases.
+
 Current v0.13 adds [ascension gates, illustrated materials and awakening](ASCENSION.md). The original leveling foundation below remains, with caps now opened through ascension and Codex maximums including full awakening.
 
 A complete first loop: win campaign encounters → gain XP and gold → level heroes or train them with gold → use stronger stats against fixed-strength encounters. This is an initial playable balance pass, not final end-game tuning.

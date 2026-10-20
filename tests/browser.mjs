@@ -29,17 +29,17 @@ const fs=require('node:fs/promises'),path=require('node:path'),assert=require('n
  await page.getByRole('button',{name:'Ailments',exact:true}).click();assert.ok(await page.getByRole('heading',{name:'Mana Block',exact:true}).isVisible());assert.ok(await page.getByRole('heading',{name:'Bleed',exact:true}).isVisible());
  await page.getByRole('button',{name:'Instant actions',exact:true}).click();assert.ok(await page.getByRole('heading',{name:'Dispel',exact:true}).isVisible());await page.screenshot({path:PREVIEW+'/effect-guide.png',fullPage:true});await page.getByRole('button',{name:'Close dialog'}).click();
 
- const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v4')));const move=validMoves(state.board)[0];
+ const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')));const move=validMoves(state.board)[0];
  await page.locator(`[data-index="${move[0]}"]`).focus();await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>document.activeElement.dataset.index),String(move[0]));
  await page.locator(`[data-index="${move[1]}"]`).focus();await page.keyboard.press('Enter');await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'1');assert.equal(await page.evaluate(()=>document.activeElement.dataset.index),String(move[1]));
  await reloadBattle();assert.equal(await page.locator('.move-counter b').textContent(),'1');
  await page.getByRole('button',{name:/Animation speed/}).click();assert.equal(await page.getByRole('button',{name:/Animation speed/}).textContent(),'2×');
  // Charge a genuine engine state to exercise skill targeting and persisted results.
  const charged=createBattle(roster,STARTER_TEAM,'ashen-gate',123);charged.heroes[0].mana=charged.heroes[0].manaMax;
- await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v4',JSON.stringify(s)),charged);await reloadBattle();
+ await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v5',JSON.stringify(s)),charged);await reloadBattle();
  await page.locator('[data-action="hero"][data-uid="hero-0"]').click();await page.getByRole('button',{name:'Cast Charge 2'}).click();await page.locator('[data-action="enemy"][data-uid="enemy-0"]').click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'0');
- assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v4')).heroes[0].mana),0);
- const dragState=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v4'))),dragMove=validMoves(dragState.board)[0];
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).heroes[0].mana),0);
+ const dragState=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5'))),dragMove=validMoves(dragState.board)[0];
  const from=await page.locator(`[data-index="${dragMove[0]}"]`).boundingBox(),to=await page.locator(`[data-index="${dragMove[1]}"]`).boundingBox();
  await page.mouse.move(from.x+from.width/2,from.y+from.height/2);await page.mouse.down();await page.mouse.move(to.x+to.width/2,to.y+to.height/2,{steps:5});await page.mouse.up();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'1');
  for(const width of [390,320]){await page.setViewportSize({width,height:844});await page.screenshot({path:`${PREVIEW}/mobile-${width}-battle.png`,fullPage:true});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`overflow at ${width}`);const tile=await page.locator('.tile').first().boundingBox();assert.ok(tile.width>=30);}
@@ -47,21 +47,21 @@ const fs=require('node:fs/promises'),path=require('node:path'),assert=require('n
  const three=roster.find(c=>c.id==='azure_sovereign'),threeTeam=[three.id,...STARTER_TEAM.slice(0,4)];
  for(const [amount,available] of [[5,1],[10,2],[15,3]]){
   const state=createBattle(roster,threeTeam,'ashen-gate',444);state.heroes[0].mana=amount;
-  await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v4',JSON.stringify(s)),state);await reloadBattle();
+  await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v5',JSON.stringify(s)),state);await reloadBattle();
   assert.equal(await page.locator('.hero-unit').first().locator('.charge-notch').count(),2);
   await page.locator('[data-action="hero"][data-uid="hero-0"]').click();assert.equal(await page.locator('[data-action="choose-charge"]:enabled').count(),available);
   assert.equal(await page.locator('.special-level').count(),3);assert.ok(await page.evaluate(()=>document.querySelector('#modal').scrollWidth<=document.querySelector('#modal').clientWidth));
   if(amount===10)await page.screenshot({path:PREVIEW+'/mobile-charge-levels.png',fullPage:true});
-  await page.getByRole('button',{name:'Close dialog'}).click();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v4')).heroes[0].mana),amount);
+  await page.getByRole('button',{name:'Close dialog'}).click();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).heroes[0].mana),amount);
   await page.locator('[data-action="hero"][data-uid="hero-0"]').click();await page.getByRole('button',{name:'Cast Charge '+available,exact:true}).click();await page.locator('[data-action="enemy"][data-uid="enemy-0"]').click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));
-  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v4')));assert.equal(saved.heroes[0].mana,0);assert.equal(saved.moves,0);assert.ok(saved.log.some(l=>l.text.includes('Charge '+available)));
+  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')));assert.equal(saved.heroes[0].mana,0);assert.equal(saved.moves,0);assert.ok(saved.log.some(l=>l.text.includes('Charge '+available)));
  }
  const affected=createBattle(roster,STARTER_TEAM,'ashen-gate',555);affected.heroes[1].effects={shield:{turns:2,source:'hero-1',appliedMove:0},guard:{turns:2,source:'hero-1',appliedMove:0}};affected.heroes[1].shield=200;
- await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v4',JSON.stringify(s)),affected);await reloadBattle();
+ await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v5',JSON.stringify(s)),affected);await reloadBattle();
  await page.locator('.hero-unit').nth(1).getByRole('button',{name:/Barrier on/}).click();assert.ok(await page.getByRole('heading',{name:'Barrier',exact:true}).isVisible());assert.ok(await page.getByRole('heading',{name:'Taunt',exact:true}).isVisible());await page.screenshot({path:PREVIEW+'/mobile-active-effects.png',fullPage:true});await page.getByRole('button',{name:'Close dialog'}).click();
  // The fresh progression session does not revive discarded older playtest battles.
- await page.evaluate(()=>{localStorage.removeItem('legends.runes.battle.v4');localStorage.setItem('legends.runes.battle.v1',JSON.stringify({version:1,moves:12}));localStorage.setItem('legends.runes.battle.v3',JSON.stringify({version:3,moves:15}));});await page.goto('http://legends.local/#/home');await page.reload();await page.locator('.hero-banner').waitFor();assert.equal(await page.getByRole('button',{name:'Resume battle'}).count(),0);
- const won=createBattle(roster,STARTER_TEAM,'ashen-gate',777);won.enemies.forEach(e=>e.hp=0);won.phase='victory';await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v4',JSON.stringify(s)),won);await page.goto('http://legends.local/#/home');await page.reload();assert.ok(await page.locator('.encounter-card[data-stage="frozen-pass"]').isEnabled());
+ await page.evaluate(()=>{localStorage.removeItem('legends.runes.battle.v5');localStorage.setItem('legends.runes.battle.v1',JSON.stringify({version:1,moves:12}));localStorage.setItem('legends.runes.battle.v3',JSON.stringify({version:3,moves:15}));});await page.goto('http://legends.local/#/home');await page.reload();await page.locator('.hero-banner').waitFor();assert.equal(await page.getByRole('button',{name:'Resume battle'}).count(),0);
+ const won=createBattle(roster,STARTER_TEAM,'ashen-gate',777);won.enemies.forEach(e=>e.hp=0);won.phase='victory';await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v5',JSON.stringify(s)),won);await page.goto('http://legends.local/#/home');await page.reload();assert.ok(await page.locator('.encounter-card[data-stage="frozen-pass"]').isEnabled());
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);assert.deepEqual(external,[]);
  console.log(JSON.stringify({passed:true,checks:['135 champion roster/search','charging filter and Special previews','2-charge and 3-charge casting/holding','fresh progression ignores discarded test battles','effect codex tabs and status inspection','35 loaded high-density rune artworks','start and help','7x5 board, 5 heroes, 3 enemies','keyboard match and restored focus','drag swap','save/reload','animation speed','mana skill targeting','390px and 320px overflow and tile sizing','victory unlock','no browser errors/missing assets/external API requests'],screenshots:8},null,2));await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

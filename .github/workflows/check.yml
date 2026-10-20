@@ -23,6 +23,7 @@ jobs:
       - run: npm run test:adventure
       - run: npm run test:modes
       - run: npm run test:tactics
+      - run: npm run test:economy
       - run: npm run test:viewport
       - run: npm run test:ascension
       - run: npm run test:covenant

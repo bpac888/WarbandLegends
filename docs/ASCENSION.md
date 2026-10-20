@@ -1,5 +1,7 @@
 # Ascension and awakening · v0.13
 
+> Current economy/save rules: [Gems and account journey (v0.15)](GEMS-QUESTS.md). Seals and older save migration notes below describe earlier releases.
+
 Open a collected champion's dossier and follow Development → Ascension → Awakening. Ascension opens the next level cap; awakening improves stats after all ascensions and the final level. Neither consumes champion copies or resets levels, XP, collection, or progress. Active fights keep their starting stats.
 
 ## Level caps

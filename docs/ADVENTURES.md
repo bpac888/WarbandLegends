@@ -1,5 +1,7 @@
 # Campaign and Dungeons · v0.8
 
+> Current economy/save rules: [Gems and account journey (v0.15)](GEMS-QUESTS.md). Seals and older save migration notes below describe earlier releases.
+
 Legends now adapts Warband Legends’ 25-stage × three-difficulty structure into its own match-3 engine. There are 75 campaign encounters and 21 dungeon encounters, all deterministic and playable with the existing roster and leveling system. No connection to the original game's server or saves is made.
 
 ## Campaign

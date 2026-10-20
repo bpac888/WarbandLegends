@@ -22,11 +22,12 @@ node tools/serve.mjs --dist  # preview the production build
 ## What's playable
 
 - Midnight blue, amethyst and warm gold menus, clear text, bright portraits and consistent cards/dialogs. Battles fit the viewport on desktop and phones, with a landscape hero dock for short windows.
+- Account levels 1–100, ten level milestones, a 180-day gift calendar followed by a 30-day loop, Today’s Path, six source portraits, ten faction emblems and three saved warbands. [Reuse audit](docs/REUSE-AUDIT.md). No equipment.
 - A cinematic splash screen, Citadel hub, Adventure map, dedicated roster/codex, animated summoning portal, quests, inventory, and settings.
-- Five level-1 starting champions, five Summon Seals, saved champion copies, disclosed rarity odds, first-clear rewards, and claimable starter quests.
+- Five level-1 starting champions, 500 Gems, saved copies, disclosed rarity odds, first-clear rewards, and 43 quests with Gems, gold, materials, account XP and champion XP.
 - Ascension-gated level caps, three awakening ranks (+9% maximum stats), ten illustrated materials, earned dungeon drops and confirmed gold purchases in the Supply Exchange. See [ascension and awakening](docs/ASCENSION.md).
 - Visible hero levels, XP bars, stat-growth previews, gold training with confirmation, and a detailed Development / Special / Passive dossier.
-- Campaign wins give each participating collected hero XP, including fallen allies. Replays grant XP and gold; every five victories earns an additional seal.
+- Campaign wins give each participating collected hero XP, including fallen allies. Replays grant XP and gold; every five victories earns 50 bonus Gems.
 - Fixed encounter strength: enemies do not scale up when your heroes improve.
 - Save export/import, collection-only or open-roster playtesting, and persistent animation preferences.
 - Full-art Collection/Codex cards without unowned dimming, combined element/rarity/mana/type/faction filters, name/stat sorting and clear-filter controls.
@@ -46,9 +47,9 @@ node tools/serve.mjs --dist  # preview the production build
 - 75 campaign encounters: 25 stages each in Normal, Hard and Nightmare, independent progress, guardian crossings and progressively ruined skins of the same illustrated world.
 - Nine local Arena rivals with four champions per team, rating, Arena Tokens and a token exchange.
 - Three monthly Special Events with original artwork, scheduled windows, 20 attempts per window and event-token rewards. No event practice option.
-- A framed Astral Gate with summon controls below the artwork, clear seal costs/shortages, and the original Warband Legends portal ritual adapted to Legends for single and ten-champion summons.
+- A framed Astral Gate with summon controls below the artwork, clear Gem prices/shortages, and the original Warband Legends portal ritual adapted to Legends for single and ten-champion summons.
 - Four original Tavern illustrations reused as Citadel destinations.
-- Seven playable dungeons with original Warband Legends art, themed guardians, three difficulty tiers, saved clears, gold/XP and first-clear seals.
+- Seven playable dungeons with original Warband Legends art, themed guardians, three difficulty tiers, saved clears, gold/XP and first-clear Gems.
 - Battle log, ability details, hint, 1×/2× animation speed, and reduced-motion support.
 - Fifteen high-density jewel tile images: elemental shields, four-match dragon crests and five-match prismatic gems; bright full-art champion cards and status badges, damage/healing numbers, and a tappable effect field guide.
 - Responsive mouse, touch-drag, and keyboard controls. Use Tab to reach a rune, arrow keys to navigate, and Enter to select each neighbor.
@@ -81,4 +82,4 @@ See the [game blueprint](docs/GAME-BLUEPRINT.md), [rules](docs/RULES.md), [roadm
 
 ## Updating your local copy
 
-Stop the local server with Control + C, then run `git pull origin main` and `npm start` in this repository. The older v0.7 progression release started a fresh journey, as approved by the owner: five collected level-1 heroes, 500 gold and five seals. Previous playtest progress is ignored; current progression saves persist normally on future reloads. Maximum stats and all 135 hero IDs remain unchanged. v0.8 preserves that journey and upgrades its three old encounter clears into the expanded campaign. See [progression rules](docs/PROGRESSION.md) and [campaign/dungeons](docs/ADVENTURES.md).
+Stop the local server with Control + C, then run `git pull origin main` and `npm start` here. The owner approved a fresh start for v0.15's Gem economy: five collected level-1 heroes,500gold and500Gems. New profile/battle namespaces ignore prior test progress without deleting old browser keys. Current v0.15 saves resume normally and can be exported/imported. [Gem economy and quests](docs/GEMS-QUESTS.md) explain the rules. Original Warband Legends remains unchanged.

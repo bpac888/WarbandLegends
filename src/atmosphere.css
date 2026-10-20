@@ -150,7 +150,7 @@ body:has(.battle-shell) .topbar {height:50px;min-height:0;max-width:760px;width:
 .hero-level-mark,.level-dial,.card-role{background-color:#222a44;border-color:#b8a0cf77}
 .copy-badge{background:#1d2540e8}.team-portrait,.library-card,.citadel-destination{border-color:#7f89ad66}
 .altar-actions>button:disabled{opacity:.78}.altar-actions>button:disabled>span{color:#d8cdbd}
-.altar-actions .seal-shortage{font:11px Inter,Segoe UI,sans-serif;color:#dfb7c7;letter-spacing:.02em}
+.altar-actions .gem-shortage{font:11px Inter,Segoe UI,sans-serif;color:#dfb7c7;letter-spacing:.02em}
 @media(orientation:landscape) and (max-height:600px){.hero-unit .statuses{top:auto;right:auto}}
 @media(orientation:landscape) and (max-height:360px){
  body:has(.battle-shell) #app{grid-template-rows:34px minmax(0,1fr)}body:has(.battle-shell) .topbar{height:34px}.topbar .icon-button{height:28px}.topbar .brand img{max-height:30px}

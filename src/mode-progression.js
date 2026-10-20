@@ -1,3 +1,5 @@
+import {addAccountXp,accountBattleXp,bumpPath} from './keeper.js';
+import {GEM_LIMIT} from './economy.js';
 import {SPECIAL_EVENTS,eventWindow,eventAttemptsLeft,EVENT_ATTEMPTS} from './modes.js';
 import {getEncounter} from './encounters.js';
 import {addHeroXp} from './development.js';
@@ -25,19 +27,20 @@ export function reserveEntry(profile,battle,now=new Date()){
  return {profile:next,battle:{...battle,eventWindow:window.key}};
 }
 export function modeReward(profile,battle){const e=getEncounter(battle.stageId),won=battle.phase==='victory';
- if(!e||battle.sandbox||!['victory','defeat'].includes(battle.phase))return {gold:0,seals:0,xp:0};
- if(e.mode==='arena')return {gold:won?e.rewards.gold:0,seals:0,xp:0,arenaTokens:won?e.arenaTokens:0,rating:won?18:-12};
- if(e.mode==='event'&&profile.eventEntry?.battleId===battle.id&&profile.eventEntry?.key===battle.eventWindow&&battle.eventWindow?.startsWith(e.eventId+':')){const first=won&&!profile.cleared.includes(e.id);return {gold:won?(first?450:150):0,seals:first?1:0,xp:won?Math.round(e.rewards.xp*(first?1.5:1)):0,eventToken:e.eventToken,eventTokens:won?8:0,first};}
- return {gold:0,seals:0,xp:0};
+ if(!e||battle.sandbox||!['victory','defeat'].includes(battle.phase))return {gold:0,gems:0,xp:0};
+ if(e.mode==='arena')return {gold:won?e.rewards.gold:0,gems:0,xp:0,accountXp:accountBattleXp(e,won),arenaTokens:won?e.arenaTokens:0,rating:won?18:-12};
+ if(e.mode==='event'&&profile.eventEntry?.battleId===battle.id&&profile.eventEntry?.key===battle.eventWindow&&battle.eventWindow?.startsWith(e.eventId+':')){const first=won&&!profile.cleared.includes(e.id);return {gold:won?(first?450:150):0,gems:won?(first?100:25):0,xp:won?Math.round(e.rewards.xp*(first?1.5:1)):0,accountXp:accountBattleXp(e,won),eventToken:e.eventToken,eventTokens:won?8:0,first};}
+ return {gold:0,gems:0,xp:0};
 }
 export function settleMode(profile,battle,roster){if(battle.sandbox||!['victory','defeat'].includes(battle.phase)||profile.recorded.includes(battle.id))return profile;const e=getEncounter(battle.stageId);if(!['arena','event'].includes(e?.mode))return profile;
  const reward=modeReward(profile,battle),win=battle.phase==='victory';if(e.mode==='event'&&!reward.eventToken)return profile;
  let next=profile;if(reward.xp&&battle.progression)for(const id of new Set(battle.heroes.map(h=>h.id))){const c=roster.find(c=>c.id===id);if(c)next=addHeroXp(next,c,reward.xp);}
- next={...next,gold:cap(profile.gold+reward.gold),seals:Math.min(999999,profile.seals+reward.seals),recorded:[...profile.recorded,battle.id].slice(-200)};
+ next=bumpPath(addAccountXp(next,accountBattleXp(e,win)),{wins:win?1:0,gems:reward.gems});
+ next={...next,gold:cap(profile.gold+reward.gold),gems:Math.min(GEM_LIMIT,profile.gems+reward.gems),recorded:[...profile.recorded,battle.id].slice(-200)};
  if(e.mode==='arena')return {...next,arenaRating:cap(profile.arenaRating+reward.rating),arenaTokens:cap(profile.arenaTokens+reward.arenaTokens),arenaWins:cap(profile.arenaWins+(win?1:0)),arenaLosses:cap(profile.arenaLosses+(win?0:1))};
  return {...next,eventWins:cap(profile.eventWins+(win?1:0)),eventTokens:{...profile.eventTokens,[e.eventToken]:cap(profile.eventTokens[e.eventToken]+reward.eventTokens)},eventEntry:null,cleared:win?[...new Set([...profile.cleared,e.id])]:profile.cleared};
 }
-export const EXCHANGE_OFFERS=[{id:'arena-seal',name:'Summon Seal',currency:'arenaTokens',label:'Arena Tokens',cost:40,seals:1},{id:'arena-gold',name:'Training gold',currency:'arenaTokens',label:'Arena Tokens',cost:20,gold:500},...SPECIAL_EVENTS.map(e=>({id:e.id+'-seal',name:'Summon Seal',currency:e.token,label:e.tokenName,cost:24,seals:1}))];
+export const EXCHANGE_OFFERS=[{id:'arena-gems',name:'100 Gems',currency:'arenaTokens',label:'Arena Tokens',cost:40,gems:100},{id:'arena-gold',name:'Training gold',currency:'arenaTokens',label:'Arena Tokens',cost:20,gold:500},...SPECIAL_EVENTS.map(e=>({id:e.id+'-gems',name:'100 Gems',currency:e.token,label:e.tokenName,cost:24,gems:100}))];
 export function exchange(profile,id){const offer=EXCHANGE_OFFERS.find(o=>o.id===id);if(!offer)return {profile,error:'Unknown exchange.'};const balance=offer.currency==='arenaTokens'?profile.arenaTokens:profile.eventTokens[offer.currency]||0;
- if(balance<offer.cost)return {profile,error:'Earn more tokens before making this exchange.'};if(offer.seals&&profile.seals>=999999||offer.gold&&profile.gold+offer.gold>999999999)return {profile,error:'That resource is already at its storage limit.'};
- const next={...profile,seals:Math.min(999999,profile.seals+(offer.seals||0)),gold:cap(profile.gold+(offer.gold||0))};if(offer.currency==='arenaTokens')next.arenaTokens=balance-offer.cost;else next.eventTokens={...profile.eventTokens,[offer.currency]:balance-offer.cost};return {profile:next,offer};}
+ if(balance<offer.cost)return {profile,error:'Earn more tokens before making this exchange.'};if(offer.gems&&profile.gems+offer.gems>GEM_LIMIT||offer.gold&&profile.gold+offer.gold>999999999)return {profile,error:'That resource is already at its storage limit.'};
+ const next={...profile,gems:Math.min(GEM_LIMIT,profile.gems+(offer.gems||0)),gold:cap(profile.gold+(offer.gold||0))};if(offer.currency==='arenaTokens')next.arenaTokens=balance-offer.cost;else next.eventTokens={...profile.eventTokens,[offer.currency]:balance-offer.cost};return {profile:bumpPath(next,{gems:offer.gems||0}),offer};}

@@ -138,3 +138,14 @@ The new `test:viewport` browser suite checks actual content bounds, not only hid
 The suite verifies READY labels for a partial charging tier and a regular charged hero, the available-Special count, and a real cast through the public controls: the selected ready cue disappears, mana is spent and the move count stays unchanged. Ready cues use text, gold borders, a filled mana bar and a tap prompt; meaning does not depend on animation or color alone. Reduced animation disables the optional shimmer.
 
 Desktop, phone and short-landscape screenshots were actually inspected. The Astral Gate keeps the original ritual timing, single/ten-summon prices, guarantee and collection behavior, with buttons below the artwork and explicit seal-shortage text. Home/roster/portal/inventory pages were checked at 1440/390/320 widths. No missing assets, external requests or browser errors were observed. GitHub Actions includes all eleven browser suites and preserves captures before main is updated.
+
+
+## Gems, account journey and UI cleanup · v0.15
+
+All 179 named native checks and the production build pass locally. New checks cover atomic Gem purchases/summons, storage bounds, reward idempotence, 43 quests, authorized fresh saves, account XP/caps, Los Angeles date boundaries, daily claims and clock rollback, saved-team ownership, and all 16 reused art files. All 135 hero IDs and the existing twenty tactical guides remain intact.
+
+All twelve browser suites pass locally: browser, shell, visuals, experience, development, adventure, modes, tactics, economy, viewport, ascension and covenant. The new economy suite buys materials and gold, summons, claims quests, plays two actual campaign victories, claims the calendar and daily chest, changes portraits, and saves/loads teams. Reload checks verify one-time rewards. Existing suites exercise real dungeon, Arena, event and guardian battles, ascension and awakening.
+
+Actual desktop/phone screenshots were reviewed for the Citadel, shop, quests, daily gifts, settings, portal and roster. Shop departments, six-at-a-time mobile quests, reward chips, optional gift previews and consistent blue surfaces simplify the pages. Widths 1440/760/390/320 are covered; the nine battle viewport sizes from v0.14 remain covered. No missing art, external runtime requests, horizontal overflow or browser errors were observed. GitHub Actions runs the same twelve suites and saves screenshots; publication requires success on the exact release commit.
+
+The owner explicitly approved discarding Legends test progress for the new economy. Profile schema 9 uses a new key and does not migrate old currency; the previous migration descriptions above are historical. Original Warband Legends remains unchanged. Equipment is explicitly excluded. See GEMS-QUESTS.md and REUSE-AUDIT.md for current rules and source mapping.

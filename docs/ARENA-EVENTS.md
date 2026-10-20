@@ -1,5 +1,7 @@
 # Arena, Special Events and the Altar · v0.9
 
+> Current economy/save rules: [Gems and account journey (v0.15)](GEMS-QUESTS.md). Seals and older save migration notes below describe earlier releases.
+
 Legends now has nine playable Arena rivals, each with four champions and seven covered attack lanes. These are local preset defense teams adapted from Warband Legends, not online players. Wins award gold, Arena Tokens and 18 rating; losses subtract 12 rating. Results settle once, including after reload.
 
 Special Events use America/Los_Angeles calendar dates every month: Crimson Eclipse 1–8, Frostwake Siege 9–16, Veil of Umbra 17–24. Each window has 20 attempts, paid when a real challenge starts. Leaving or losing does not refund an attempt. A saved challenge can finish after its entry window closes. There is no event practice button or out-of-window entry. The existing global open-roster testing setting still disables rewards; use Collection mode for normal progression.

@@ -1,0 +1,104 @@
+{
+  "sourceRepository": "bpac888/warband-legends",
+  "sourceRemoteCommit": "acf554c4666208758a0c198f9fc2c1aef6e54aa4",
+  "sourceCheckoutCommit": "7acb93f92e7fd6975e9546f36d998b31fa4ee8c1",
+  "equipment": "excluded by owner instruction",
+  "assets": [
+    {
+      "source": "frontend/src/assets/portraits/portrait-blood-priestess.png",
+      "sourceSha256": "2bbce0730aff0da94ed0ca3f9b8784365b28d208001c1b6fe5efa077ab43996d",
+      "output": "assets/portraits/blood-priestess.svg",
+      "outputSha256": "866fc2f9e017c89691e286b38f3bb6574708ddd26d0481e63e0e2583d60d4fe0"
+    },
+    {
+      "source": "frontend/src/assets/portraits/portrait-celestial-demon-prince.png",
+      "sourceSha256": "f56506a99aa98677511c489b964341c3e7d289b79ec632fec3e22f31dfc6e0a2",
+      "output": "assets/portraits/celestial-demon-prince.svg",
+      "outputSha256": "a0d2dc88a94b065a15fcfcaa38ce5677d05c5823f324dce058e325a4ce8d2466"
+    },
+    {
+      "source": "frontend/src/assets/portraits/portrait-dark-celestial.png",
+      "sourceSha256": "b8dc1f245835fb705f4c481a956378154024cf3d8d59eefae19310648f81569d",
+      "output": "assets/portraits/dark-celestial.svg",
+      "outputSha256": "07d989751c79ef7f471082e519ac8396f45af9200b88f5dbf568cd5c70f01550"
+    },
+    {
+      "source": "frontend/src/assets/portraits/portrait-desert-warrior.png",
+      "sourceSha256": "56b80c2d50b3c0d7c9cba11cb21e86451b3154922bcd4bfc775d4f38dabe8642",
+      "output": "assets/portraits/desert-warrior.svg",
+      "outputSha256": "b0cb4ecbb63a4d884178e19cf8c05aa00a8b5980b737bf1b69d86adec053d04c"
+    },
+    {
+      "source": "frontend/src/assets/portraits/portrait-frost-viking.png",
+      "sourceSha256": "41313bbd3b564b8d4333bdef20ec90abae08c7efa3308c94908f9880058252c2",
+      "output": "assets/portraits/frost-viking.svg",
+      "outputSha256": "45e4f25dca61241eb665fce5606df813f28339b73e5326b82869ce6d19d0761d"
+    },
+    {
+      "source": "frontend/src/assets/portraits/portrait-masked-heavy-warrior.png",
+      "sourceSha256": "c2afb3f96cf22b66df883bcac840b430c83f12aadd87bbc9e268b7c3bbcdbfc3",
+      "output": "assets/portraits/masked-heavy-warrior.svg",
+      "outputSha256": "8b96ec65f63cce9fa64d8427b7cbc391e3fb035cfdfdd4582a979772569e13bb"
+    },
+    {
+      "source": "frontend/public/factions/bloodcourt.png",
+      "sourceSha256": "0da9e6ac26da80cd28fa126c15fd2a3d3e7689b6f5ea264c99aa10cb8bbd9027",
+      "output": "assets/factions/bloodcourt.svg",
+      "outputSha256": "948ab33c4460f99fd2c25de2d47296edd4d1c15d55532036eee2c10a0e170897"
+    },
+    {
+      "source": "frontend/public/factions/chymera.png",
+      "sourceSha256": "96f85b2d97ddeb4a2a1805dcb2ec46ee8623e9b4b39c034448c811c8b30e0f16",
+      "output": "assets/factions/chymera.svg",
+      "outputSha256": "25db3b15540a5f4aa48f88786eebfd6fe2f81b3199c37643b29fedc029be5d1b"
+    },
+    {
+      "source": "frontend/public/factions/dragondynasty.png",
+      "sourceSha256": "ef77639787885afc84f88293d623baf3564e5fe3b0e0590a167a7b964bdad1d1",
+      "output": "assets/factions/dragondynasty.svg",
+      "outputSha256": "deac131a20c533899ae5961930c1fa03e661d8c4feaec8b604604b268d4b722c"
+    },
+    {
+      "source": "frontend/public/factions/duneriders.png",
+      "sourceSha256": "f8293bced64f82bad458877251b6fe485da5ff63c1ed8af0455208370035603c",
+      "output": "assets/factions/duneriders.svg",
+      "outputSha256": "8fd91d39b83c939ad7b3da693ae3c2f659b4bfcf2179633868993da67e34d018"
+    },
+    {
+      "source": "frontend/public/factions/frost.png",
+      "sourceSha256": "4c4ab1180057dcbca575419f256b56f6c35f1ae032ec9082b07b03b51e8719f7",
+      "output": "assets/factions/frost.svg",
+      "outputSha256": "4eeaadc471c8ec6611f61575057e811d36d631b259d07bdaf9727e6801ae3b19"
+    },
+    {
+      "source": "frontend/public/factions/ironclad.png",
+      "sourceSha256": "ebeb866dc6313b2e9c601ccc48805fcf7398fed66058b69be4ad231fd4ff7579",
+      "output": "assets/factions/ironclad.svg",
+      "outputSha256": "311e22e1f8ddd3ec33956b8a9bc31f862bdd2c633ffa8eb682ccdf5156b3bae1"
+    },
+    {
+      "source": "frontend/public/factions/neon_syndicate.png",
+      "sourceSha256": "99b95d849ad4b00edd93657ec7298330e7799ebc94510cfbb05938fd8c72a757",
+      "output": "assets/factions/neon_syndicate.svg",
+      "outputSha256": "945df11a284179bd40e02a72fc8d59a5f676104bbc3954fce31f6fd4ca8c8934"
+    },
+    {
+      "source": "frontend/public/factions/nether.png",
+      "sourceSha256": "12e506fd2c4f360274dd398497e77b2f5809478b8f0e77f66ff6cfbb61414fc6",
+      "output": "assets/factions/nether.svg",
+      "outputSha256": "3f44dc9e86a7d106f127101c7ea626f2635cfc2874f7859f6faadbf449aef7df"
+    },
+    {
+      "source": "frontend/public/factions/umbra.png",
+      "sourceSha256": "2d901bcc5aaacced9388cf884a205a8136ff17d9514487c88d6898ba67c8d9c0",
+      "output": "assets/factions/umbra.svg",
+      "outputSha256": "dbb46ef62aac8612fdb89d87859da02592558bf96689280184800bbc47c6f983"
+    },
+    {
+      "source": "frontend/public/factions/wildgrove.png",
+      "sourceSha256": "fade67d50567b88bb1ee3300a86cdbd7b666e82dcfe450a6332b64cbe3de3cae",
+      "output": "assets/factions/wildgrove.svg",
+      "outputSha256": "6f67780229a4247be3d6014e6edbe0382fb8615ab3fe6072c86a87d91308bf95"
+    }
+  ]
+}

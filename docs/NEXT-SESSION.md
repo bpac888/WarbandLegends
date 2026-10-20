@@ -4,7 +4,9 @@ Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-leg
 
 ## Current owner direction
 
-The owner requested a new color palette, all battle content visible without vertical scrolling, unmistakable charged Specials, overall visual refinement and a summoning page suited to Legends. v0.14 addresses this presentation work. Retain the twenty existing tactical guides; add no new guides. Preserve hero IDs, abilities, combat rules, ascension, awakening and saves. Publish only to Legends after exact-commit CI passes. Leave Warband Legends untouched.
+Replace Summon Seals entirely with Gems, earnable through levels/dungeons/events/quests and spendable beyond summons. Add quests with Gems, gold, items and XP. The owner explicitly approved a fresh Legends save for these changes. Reuse/repurpose compatible Warband Legends content, keep the games independent, and finish with UI clarity/simplicity/polish.
+
+**No equipment in Legends.** Do not add gear, equipment slots, forging or set bonuses. Keep existing twenty tactical guides, create no new ones. Never modify the original Warband Legends repository. See GEMS-QUESTS.md and REUSE-AUDIT.md for the implemented systems and source audit.
 
 ## Completed
 
@@ -22,6 +24,8 @@ The owner requested a new color palette, all battle content visible without vert
 
 - **v0.14:** midnight/amethyst/gold palette, viewport-sized battles with a landscape hero dock, clear READY ribbons/charge bars, and a framed Astral Gate with separate summon controls. See QA for verification.
 
+- **v0.15:** Gems replace seals; 43 quests; adapted account levels 1–100, milestones, daily gifts/Today’s Path, six portraits, ten faction emblems and three saved teams. Simplified shop departments and quest views, responsive batches and optional gift previews. Fresh save owner-approved; no equipment.
+
 ## Next priorities
 
 The following gameplay ideas are retained as future planning context; they are not automatic authorization for additional gameplay systems.
@@ -30,7 +34,7 @@ The following gameplay ideas are retained as future planning context; they are n
 2. **Keep existing guides; no new tactical guides.** The owner explicitly stopped guide expansion. The twenty existing guides remain. Concentrate on presentation, legibility, artwork framing and smooth navigation. Hero kit changes are not part of the current visual scope.
 3. **Prototype overheal as the first advanced combat family.** Before implementation, define cap, health display, healing restrictions, barrier interaction, HP-scaled damage and revival. Introduce it to a limited set of healers, then test actual interactions. No overheal rules or values are finalized yet.
 4. **Consider simple minions only after the health layer is stable.** Define timing, attack/protection, limits and removal first. Mega Minions, Fiends, troops, talents, alternate kits, Growth/Wither and extra facilities remain later possibilities.
-5. **Review long-term collection pacing.** Earned gold, training, seals and token exchanges work. Duplicates are retained and share development; no feeding or consumption exists. Any consumption feature must protect the last copy and clearly preview costs. Bad-luck protection is a design topic, not an approved numerical system yet.
+5. **Review long-term collection pacing.** Earned gold, training, Gems and token exchanges work. Duplicates are retained and share development; no feeding or consumption exists. Any consumption feature must protect the last copy and clearly preview costs. Bad-luck protection is a design topic, not an approved numerical system yet.
 
 ## Rare heroes and future tournaments
 

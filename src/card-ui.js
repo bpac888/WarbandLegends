@@ -1,7 +1,7 @@
 import {manaLabel} from './engine.js';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const paths={attack:'m4 20 15-15 2-3-4 2L2 18m1-6 9 9m-9 1 5-5',defense:'M12 2 3 6v7c0 5 9 9 9 9s9-4 9-9V6Z',health:'M12 21 3 12C-2 4 8 0 12 7c4-7 14-3 9 5Z',support:'M9 2h6v7h7v6h-7v7H9v-7H2V9h7Z',speed:'M14 2 5 14h6l-1 8 9-13h-6Z',faction:'M4 22V3l8-1 8 4-8 4-8-2',seal:'m12 2 7 10-7 10-7-10Zm0 6v8',gold:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4v12m4-10c-6-4-10 3-4 4s2 7-4 4',lock:'M6 10V7a6 6 0 0 1 12 0v3M4 10h16v12H4Zm8 4v4',check:'m4 12 5 5L21 5'};
-export const glyph=id=>`<svg class="card-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[id]||paths.faction}"/></svg>`;
+export const glyph=id=>id==='gem'?'<img class="card-glyph gem-icon" src="./assets/items/gem.svg" alt="" aria-hidden="true">':`<svg class="card-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[id]||paths.faction}"/></svg>`;
 export function rarityMark(rarity){return `<span class="rarity-mark rarity-${rarity}" role="img" aria-label="${esc(rarity)}" title="${esc(rarity)}">${Array.from({length:{common:1,rare:2,legendary:3,mythical:4}[rarity]||1},()=>'<i></i>').join('')}</span>`;}
 export function roleMark(role){return `<span class="card-role" role="img" aria-label="${esc(role)}" title="${esc(role)}">${glyph(role)}</span>`;}
 export function speedMark(unit){return `<span class="card-speed" title="Mana speed: ${esc(manaLabel(unit))}">${glyph('speed')}<span>${esc(manaLabel(unit))}</span></span>`;}

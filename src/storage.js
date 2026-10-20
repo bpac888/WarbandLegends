@@ -2,7 +2,7 @@ import {defaultProfile,normalizeProfile,awardVictory} from './progression.js';
 export {defaultProfile,STARTER_TEAM} from './progression.js';
 import {validateSave,STAGES,createBattle} from './engine.js';
 import {encounterAppearance} from './encounters.js';
-export const PROFILE_KEY='legends.runes.profile.v2', BATTLE_KEY='legends.runes.battle.v4';
+export const PROFILE_KEY='legends.runes.profile.v3', BATTLE_KEY='legends.runes.battle.v5';
 export const PREVIOUS_BATTLE_KEY='legends.runes.battle.v2';
 export const LEGACY_BATTLE_KEY='legends.runes.battle.v1';
 export function loadProfile(storage,roster){try{return normalizeProfile(JSON.parse(storage.getItem(PROFILE_KEY)),roster);}catch{return defaultProfile();}}
