@@ -17,3 +17,6 @@
 @media(max-width:700px){.training-offer{flex-wrap:wrap}.training-offer .button{width:100%}.summon-odds summary,.summon-odds>div,.summon-odds p{font-size:14px}.feeding-list{max-height:55vh}}
 @media(max-width:700px) and (min-height:601px){.battle-shell .enemy-name{font-size:11px}.battle-shell .hero-name{font-size:10px}}
 @media(max-width:430px){.material-offer .button{font-size:13px;min-height:45px}.material-offer h3{font-size:19px}.feeding-list label{min-height:72px}.game-page .page-heading h1{font-size:clamp(35px,10vw,47px)}}
+/* Keep the battle portrait framed like the same hero's collection card. */
+.hero-main>img{object-fit:contain;object-position:center}
+@media(orientation:landscape) and (max-height:600px){.hero-main>.hero-rank-track{top:18px;right:auto;left:25px;width:14px;padding:1px 0}.hero-main .rank-chevron{width:10px;height:5px}}

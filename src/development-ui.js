@@ -1,9 +1,16 @@
 import {ascensionPanel} from './ascension-ui.js';
 import {trainingQuote,developedChampion,heroDevelopment} from './development.js';
-import {tierLevel} from './ascension.js';
+import {ASCENSION_CAPS,ascensionTier,awakeningRank,tierLevel} from './ascension.js';
 import {glyph} from './card-ui.js';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function levelMark(champion,profile,{preview=false}={}){const owned=!!profile.collection[champion.id]&&!preview,d=heroDevelopment(profile,champion),stage=tierLevel(profile,champion,d.level);return `<span class="hero-level-mark" title="${owned?'Ascension tier and level':'Maximum-level codex preview'}">${owned?`T${stage.tier} · Lv. ${stage.level}`:'MAX'}</span>`;}
+export function rankTrack(champion,profile,{preview=false}={}){
+ const total=ASCENSION_CAPS[champion.rarity].length-1;
+ const ascended=preview?total:ascensionTier(profile,champion);
+ const breaks=preview&&champion.rarity!=='common'?2:awakeningRank(profile,champion);
+ const label=preview?`Maximum potential: ${total} ascensions${champion.rarity==='common'?'':', 2 Limit Breaks'}`:`${ascended} of ${total} ascensions, ${breaks} of ${champion.rarity==='common'?0:2} Limit Breaks`;
+ return `<span class="hero-rank-track" role="img" aria-label="${label}" title="${label}"><span class="rank-track-label" aria-hidden="true">ASCENSION</span><span class="rank-track-slots" aria-hidden="true">${Array.from({length:total},(_,i)=>`<i class="rank-chevron ${i>=ascended?'empty':i>=total-breaks?'limit-broken':'ascended'}"></i>`).join('')}</span></span>`;
+}
 export function developmentPanel(champion,profile){
  const owned=!!profile.collection[champion.id],q=trainingQuote(profile,champion),unit=developedChampion(champion,profile);
  if(!owned)return `<section class="hero-development codex-development" id="hero-development"><div class="growth-emblem" aria-hidden="true">${glyph('lock')}</div><div><span class="eyebrow">THE NEXT CHAPTER</span><h2>A legend yet to begin</h2><p>Collect this champion to start at level 1. The codex shows their maximum-level, fully Limit Broken stats.</p><button class="button gold" data-action="nav" data-page="summon">Visit the portal</button></div></section>`;
