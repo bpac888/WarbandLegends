@@ -1,6 +1,10 @@
+# Historical checkpoint
+
+The owner resumed this work. Current rules are in [ASCENSION.md](ASCENSION.md); final verification is recorded in [QA.md](QA.md). The paused-work notes below describe the original saved checkpoint, not the current release status.
+
 # Paused work: v0.13 ascension and awakening
 
-The owner asked to save progress and continue later. Stop development at this checkpoint.
+At the original checkpoint, the owner asked to save progress and continue later.
 
 ## Implemented locally
 

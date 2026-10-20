@@ -307,7 +307,7 @@ export function validateSave(value,roster) {
   if(!validScenario(value,getEncounter(value.stageId)))return false;
   const ids=new Set(roster.map(c=>c.id));
   if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==getEncounter(value.stageId).enemyIds.length)return false;
-  if(value.heroes?.some(u=>u.awakening!==undefined&&(!integer(u.awakening,1)||u.awakening>3||u.level!==levelCap(roster.find(c=>c.id===u.id)||{}))))return false;
+  if(value.heroes?.some(u=>!u||u.awakening!==undefined&&(!integer(u.awakening,1)||u.awakening>3||u.level!==levelCap(roster.find(c=>c.id===u.id)||{}))))return false;
   if(value.progression!==undefined&&(value.progression!==true||typeof value.sandbox!=='boolean'||value.heroes.some(u=>!u||!ids.has(u.id)||!integer(u.level,1)||u.level>levelCap(roster.find(c=>c.id===u.id)))))return false;
   if(new Set(value.board.map(t=>t.id)).size!==SIZE||new Set(value.heroes.map(u=>u.id)).size!==5)return false;
   const units=[...value.heroes,...value.enemies];

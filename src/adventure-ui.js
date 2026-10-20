@@ -1,3 +1,4 @@
+import {materialDrops,materialArt,materialById} from './ascension.js';
 import {CHAPTERS,chapterForStage} from './chapter.js';
 import {encounterTactics} from './tactics-ui.js';
 import {DIFFICULTIES,DUNGEONS,campaignStages,getEncounter,entryError} from './encounters.js';
@@ -6,7 +7,8 @@ import {SEAL_INTERVAL} from './progression.js';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const heading=(eyebrow,title,text)=>`<div class="page-heading"><div><span class="eyebrow">${eyebrow}</span><h1>${title}</h1><p>${text}</p></div><button class="button outline" data-action="roster">Edit warband</button></div>`;
 function tabs(mode,current,profile){return `<div class="realm-tabs" role="group" aria-label="${mode} difficulty">${DIFFICULTIES.map(d=>`<button data-action="${mode}-difficulty" data-difficulty="${d.id}" class="${current===d.id?'active':''}" aria-pressed="${current===d.id}" style="--realm-color:${d.color}"><span>${d.label}</span><small>${mode==='campaign'?`${profile.campaignProgress?.[d.id]||0} / 25`:DUNGEONS.filter(x=>profile.dungeonClears?.[`dungeon-${x.id}-${d.id}`]).length+' / 7'}</small></button>`).join('')}</div>`;}
-function rewardLine(profile,e){const first=!profile.cleared.includes(e.id),gold=first?(e.mode==='campaign'?500:e.rewards.gold*3):e.rewards.gold,xp=Math.round(e.rewards.xp*(first?1.5:1));return `<span class="reward-line" aria-label="${gold} gold, ${xp} XP per champion${first?', 1 summon seal':''}">${glyph('gold')} ${gold} <span class="xp-reward">+${xp} XP</span>${first?glyph('seal')+' 1':''}</span>`;}
+function materialRewardLine(e){return `<span class="material-loot" aria-label="Ascension and awakening material rewards">${Object.entries(materialDrops(e)).map(([id,n])=>`<span title="${materialById(id).name}"><img src="${materialArt(id)}" alt="${materialById(id).name}">${n}</span>`).join('')}</span>`;}
+function rewardLine(profile,e){const first=!profile.cleared.includes(e.id),gold=first?(e.mode==='campaign'?500:e.rewards.gold*3):e.rewards.gold,xp=Math.round(e.rewards.xp*(first?1.5:1));return `<span class="reward-line" aria-label="${gold} gold, ${xp} XP per champion${first?', 1 summon seal':''}">${glyph('gold')} ${gold} <span class="xp-reward">+${xp} XP</span>${first?glyph('seal')+' 1':''}</span>${profile.openRoster?'':materialRewardLine(e)}`;}
 export function campaign(profile,{difficulty='normal',chapter=0}={}){
  const diff=DIFFICULTIES.find(d=>d.id===difficulty)||DIFFICULTIES[0],stages=campaignStages(diff.id),progress=profile.campaignProgress?.[diff.id]||0;
  const part=Math.max(0,Math.min(4,chapter)),chapterInfo=chapterForStage(part*5+1),visible=stages.slice(part*5,part*5+5),points=stages.map(s=>s.map.join(',')).join(' ');

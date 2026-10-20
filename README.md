@@ -24,6 +24,7 @@ node tools/serve.mjs --dist  # preview the production build
 - Refined scene-led menus, consistent card/button styling, clearer text, bright portrait framing and a more compact mobile event layout.
 - A cinematic splash screen, Citadel hub, Adventure map, dedicated roster/codex, animated summoning portal, quests, inventory, and settings.
 - Five level-1 starting champions, five Summon Seals, saved champion copies, disclosed rarity odds, first-clear rewards, and claimable starter quests.
+- Ascension-gated level caps, three awakening ranks (+9% maximum stats), ten illustrated materials, earned dungeon drops and confirmed gold purchases in the Supply Exchange. See [ascension and awakening](docs/ASCENSION.md).
 - Visible hero levels, XP bars, stat-growth previews, gold training with confirmation, and a detailed Development / Special / Passive dossier.
 - Campaign wins give each participating collected hero XP, including fallen allies. Replays grant XP and gold; every five victories earns an additional seal.
 - Fixed encounter strength: enemies do not scale up when your heroes improve.
@@ -52,7 +53,7 @@ node tools/serve.mjs --dist  # preview the production build
 - Responsive mouse, touch-drag, and keyboard controls. Use Tab to reach a rune, arrow keys to navigate, and Enter to select each neighbor.
 - Separate team, encounter and progress saves on this browser. Reloading resumes the resolved action without replaying it. Clearing browser data removes these saves.
 
-Collected-only teams and level-1 heroes are the default. Enable open-roster playtesting in Settings to try all champions at maximum level; those battles award no XP, resources, victories or unlocks. Collection cards show actual development; the Codex always previews maximum-level stats. Campaign, Dungeons, local Arena, monthly Special Events and the Supply Exchange are playable. Alliance remains a foundation page. Arena opponents are preset teams, not online players. There are no online accounts, purchases, hero feeding, competitive play, or shared online progress. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](docs/RULES.md) [the full roster](docs/ROSTER.md), and [the effect review](docs/STATUS-REVIEW.md).
+Collected-only teams and level-1 heroes are the default. Enable open-roster playtesting in Settings to try all champions at maximum level; those battles award no XP, resources, victories or unlocks. Collection cards show actual development; the Codex always previews maximum-level, fully awakened stats. Campaign, Dungeons, local Arena, monthly Special Events and the Supply Exchange are playable. Alliance remains a foundation page. Arena opponents are preset teams, not online players. There are no online accounts, purchases, hero feeding, competitive play, or shared online progress. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](docs/RULES.md) [the full roster](docs/ROSTER.md), and [the effect review](docs/STATUS-REVIEW.md).
 
 ## Publish separately on Vercel
 

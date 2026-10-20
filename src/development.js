@@ -20,10 +20,10 @@ export function statsAtLevel(champion,level=1){
  const factor=.55+.45*(bounded-1)/(levelCap(champion)-1);
  return {atk:Math.round(champion.atk*factor),def:Math.round(champion.def*factor),hp:Math.round(champion.hp*factor)};
 }
-export function developedChampion(champion,profile,{preview=false}={}){
+export function developedChampion(champion,profile,{preview=false,sandbox=false}={}){
  const owned=!!profile.collection[champion.id],d=development(champion,profile.heroXp?.[champion.id],currentLevelCap(profile,champion));
  const level=preview||!owned?levelCap(champion):d.level;
- return {...champion,...awakenedStats(statsAtLevel(champion,level),preview||!owned?3:awakeningRank(profile,champion)),level,levelCap:levelCap(champion)};
+ return {...champion,...awakenedStats(statsAtLevel(champion,level),sandbox?0:preview||!owned?3:awakeningRank(profile,champion)),level,levelCap:levelCap(champion)};
 }
 export function trainingQuote(profile,champion){
  const d=development(champion,profile.heroXp?.[champion.id],currentLevelCap(profile,champion));

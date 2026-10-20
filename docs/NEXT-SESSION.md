@@ -4,11 +4,7 @@ Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-leg
 
 ## Current owner direction
 
-The owner requested ascension materials and requirements, then awakening materials/system after full ascension. They then asked to **save progress and continue later**. Pause implementation at this checkpoint. Keep the twenty existing tactical guides; do not add more. Never modify the original Warband Legends repository.
-
-## Paused v0.13 checkpoint — ascension & awakening
-
-Main remains the verified v0.12 commit `8eee4923d64b2e2078d8e71b71cdfce073cf17c5`. The local working files contain an unfinished v0.13. Read [ASCENSION-CHECKPOINT.md](ASCENSION-CHECKPOINT.md) before resuming. Native checks and build passed; the new browser suite has been written but has NOT run. Do not describe this checkpoint as a verified release or merge it to main before browser checks and visual review.
+The owner resumed the ascension and awakening checkpoint. v0.13 implementation and local verification are complete; see ASCENSION.md and QA.md. Publish only to Legends after exact-commit CI passes. Keep the twenty existing tactical guides; do not add new ones. No further save reset is authorized. The original Warband Legends repository must stay unchanged.
 
 ## Completed
 
@@ -22,9 +18,11 @@ Main remains the verified v0.12 commit `8eee4923d64b2e2078d8e71b71cdfce073cf17c5
 
 - **v0.12:** visual finishing across navigation, menus, cards, dialogs and mobile screens; scene artwork in Adventure destinations, brighter art framing, clearer secondary text and a tighter mobile Events composition. Existing guides and all gameplay remain unchanged.
 
+- **v0.13:** ascension-gated caps for every rarity, three post-maximum awakening ranks, ten illustrated materials, dungeon/campaign material rewards, shop purchases, dossier requirements and save migration. See [ascension and awakening](ASCENSION.md).
+
 ## Next priorities
 
-The following gameplay ideas are retained as future planning context; the current work is visual polish only.
+The following gameplay ideas are retained as future planning context; they are not automatic authorization for additional gameplay systems.
 
 1. **Playtest the first two chapters.** Review the fast-flank ambush, relay support and both guardian warnings with real play. Reproducible probes and real UI fights are covered in QA, but human feedback is still needed. Stages 1–10 are authored; stages 11–25 retain existing formations and guardian markers. Extend the next group after reviewing pacing. Do not claim every chapter has unique objectives or phases.
 2. **Keep existing guides; no new tactical guides.** The owner explicitly stopped guide expansion. The twenty existing guides remain. Concentrate on presentation, legibility, artwork framing and smooth navigation. Hero kit changes are not part of the current visual scope.
