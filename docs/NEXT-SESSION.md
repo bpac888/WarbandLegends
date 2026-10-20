@@ -4,7 +4,7 @@ Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-leg
 
 ## Current owner direction
 
-Make event artwork fully visible, fill the battle viewport without scrolling, improve item and menu art, group outside-battle explanations in a Guide, track duplicate heroes individually, train with spare Common heroes, and preview a future real-money shop section without working transactions. Preserve the existing Legends save by migrating v0.15 counted copies.
+Keep the v0.16 screen-filling battle, art-led menus, individual hero copies and Guide. The v0.17 direction promotes fourteen named Commons, balances the remaining Common elements, makes Common feeding required for levels, improves Gem income and summoning outcomes, and polishes the full interface. Preserve earned levels when migrating existing Legends saves.
 
 **No equipment in Legends.** Do not add gear, equipment slots, forging or set bonuses. Keep existing twenty tactical guides, create no new ones. Never modify the original Warband Legends repository. See GEMS-QUESTS.md and REUSE-AUDIT.md for the implemented systems and source audit.
 
@@ -28,6 +28,8 @@ Make event artwork fully visible, fill the battle viewport without scrolling, im
 
 - **v0.16:** Distinct hero copies with separate XP/ascension/awakening, migration from v0.15 saves, Common-hero training, twelve detailed item illustrations, larger screen-filling battles, fully visible event art, compact Guide, readable menus and a disabled Premium shop preview. See [v0.16 design and ownership rules](V016-VISUAL-ROSTER.md).
 
+- **v0.17:** Fourteen Common-to-Rare promotions; twenty Commons balanced four per color; three Fast Mythicals; feeding gates levels; stronger first-clear and selected quest Gem rewards; 50/30/7.5/1.5/11 summon outcomes with twin Commons; final visual polish. See [v0.17 rules](V017-ROSTER-AND-POLISH.md).
+
 ## Next priorities
 
 The following gameplay ideas are retained as future planning context; they are not automatic authorization for additional gameplay systems.
@@ -36,7 +38,7 @@ The following gameplay ideas are retained as future planning context; they are n
 2. **Keep existing guides; no new tactical guides.** The owner explicitly stopped guide expansion. The twenty existing guides remain. Concentrate on presentation, legibility, artwork framing and smooth navigation. Hero kit changes are not part of the current visual scope.
 3. **Prototype overheal as the first advanced combat family.** Before implementation, define cap, health display, healing restrictions, barrier interaction, HP-scaled damage and revival. Introduce it to a limited set of healers, then test actual interactions. No overheal rules or values are finalized yet.
 4. **Consider simple minions only after the health layer is stable.** Define timing, attack/protection, limits and removal first. Mega Minions, Fiends, troops, talents, alternate kits, Growth/Wither and extra facilities remain later possibilities.
-5. **Review long-term collection pacing.** Earned gold, training, Gems and token exchanges work. Duplicates are retained and share development; no feeding or consumption exists. Any consumption feature must protect the last copy and clearly preview costs. Bad-luck protection is a design topic, not an approved numerical system yet.
+5. **Review long-term collection pacing.** Common feeding now consumes spare, unassigned copies to unlock levels, with boosted first-clear Gem income and twin-Common summons. Observe whether supply keeps pace with Rare and Legendary development before changing prices or XP. Bad-luck protection remains a future design topic.
 
 ## Rare heroes and future tournaments
 

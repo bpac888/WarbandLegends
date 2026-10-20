@@ -39,8 +39,8 @@ function tier(c,entries,level,total,speed,tiles){
  const target=c.role==='support'?(c.rarity==='common'?'ally':'self'):'enemy';
  const baseDamage=c.role==='support'?(debuffs.length?(aoe?.7:1.1):0):c.role==='defense'?(aoe?1:1.6):(aoe?1.65:2.8);
  const damage=Math.round(baseDamage*ratio*pace*rareFactor*100)/100;
- const healing=c.role==='support'?Math.round((c.rarity==='common'?.32:c.rarity==='rare'?.25:.29)*Math.min(1.2,ratio)*pace*100)/100:0;
- const teamShield=c.role==='defense'&&['legendary','mythical'].includes(c.rarity);
+ const healing=c.role==='support'?Math.round((c.rarity==='common'?.32:c.rarity==='rare'?.32:.29)*Math.min(1.2,ratio)*pace*100)/100:0;
+ const teamShield=c.role==='defense'&&['rare','legendary','mythical'].includes(c.rarity);
  const effects=selected.filter(e=>!['aoe','ignore_def'].includes(e.id)).map(e=>{
   const scope=e.id==='guard'?'self':e.id==='remove_debuffs'?'allies':buffIds.has(e.id)?(c.role==='support'&&c.rarity!=='common'||teamShield&&e.id==='shield'?'allies':c.role==='support'?'ally':'self'):e.id==='taunt'?'enemies':aoe?'enemies':'enemy';
   return {id:e.id,turns:e.turns?Math.max(1,Math.min(3,Math.round(e.turns*(total>1&&level<total?.65:1)))):0,scope};
@@ -81,7 +81,7 @@ await writeFile('data/champions.json',JSON.stringify(roster,null,2)+'\n');
 const counts=(key,values)=>Object.fromEntries(values.map(v=>[v,roster.filter(c=>c[key]===v).length]));
 const report={version:3,champions:roster.length,colorCounts:counts('color',['red','blue','green','yellow','purple']),manaCounts:counts('manaSpeed',[...Object.keys(SPEEDS),'charging']),chargingChampions:roster.filter(c=>c.special.charging).map(c=>({id:c.id,tiles:c.special.levels.map(l=>l.tiles)})),rarities:Object.fromEntries(Object.keys(targets).map(r=>{const g=roster.filter(c=>c.rarity===r);return [r,{count:g.length,stats:Object.fromEntries(['atk','def','hp'].map(s=>[s,{min:Math.min(...g.map(c=>c[s])),average:g.reduce((n,c)=>n+c[s],0)/g.length,max:Math.max(...g.map(c=>c[s]))}]))}];}))};
 await writeFile('data/balance-report.json',JSON.stringify(report,null,2)+'\n');
-let table='# Legends champion balance\n\nAll 135 identities and rarities are preserved. Stats are the new max-level baseline; leveling is not implemented yet. Every champion has one Special, with optional charge levels, plus their adapted passive where present.\n\n';
+let table='# Legends champion balance\n\nAll 135 identities and IDs are preserved. Fourteen former Commons are now Rare. Stats shown are maximum-level baselines. Every champion has one Special, with optional charge levels, plus their adapted passive where present.\n\n';
 table+='| Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |\n| --- | --- | --- | --- | ---: | ---: | ---: | --- |\n';
 for(const c of roster)table+=`| ${c.name} | ${c.rarity} | ${c.color} | ${c.role} | ${c.atk} | ${c.def} | ${c.hp} | ${c.special.charging?'Charging '+c.special.levels.map(l=>l.tiles).join(' / '):labels[c.manaSpeed]+' '+c.special.levels[0].tiles} |\n`;
 table+='\n## Specials\n\n';

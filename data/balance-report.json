@@ -10,10 +10,10 @@
   },
   "manaCounts": {
     "very_fast": 8,
-    "fast": 20,
+    "fast": 23,
     "average": 64,
-    "slow": 20,
-    "very_slow": 11,
+    "slow": 19,
+    "very_slow": 9,
     "charging": 12
   },
   "chargingChampions": [
@@ -109,42 +109,42 @@
   ],
   "rarities": {
     "common": {
-      "count": 34,
+      "count": 20,
       "stats": {
         "atk": {
           "min": 351,
           "average": 460,
-          "max": 526
+          "max": 517
         },
         "def": {
-          "min": 398,
+          "min": 403,
           "average": 450,
           "max": 560
         },
         "hp": {
-          "min": 692,
+          "min": 703,
           "average": 800,
           "max": 980
         }
       }
     },
     "rare": {
-      "count": 40,
+      "count": 54,
       "stats": {
         "atk": {
-          "min": 527,
+          "min": 515,
           "average": 626,
-          "max": 718
+          "max": 716
         },
         "def": {
-          "min": 532,
+          "min": 530,
           "average": 600,
-          "max": 700
+          "max": 701
         },
         "hp": {
-          "min": 951,
+          "min": 946,
           "average": 1083,
-          "max": 1260
+          "max": 1250
         }
       }
     },

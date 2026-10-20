@@ -45,7 +45,7 @@
       "chargeLevels": 3
     },
     "ghoul_scavenger": {
-      "color": "green",
+      "color": "purple",
       "manaSpeed": "fast"
     },
     "shadow_thrall": {
@@ -57,7 +57,7 @@
       "manaSpeed": "average"
     },
     "cursed_acolyte": {
-      "color": "green",
+      "color": "red",
       "manaSpeed": "average"
     },
     "demon_witchblade": {
@@ -83,7 +83,7 @@
     },
     "Ashwind Warden": {
       "color": "yellow",
-      "manaSpeed": "slow"
+      "manaSpeed": "fast"
     },
     "iron_revenant": {
       "color": "blue",
@@ -91,7 +91,7 @@
     },
     "pale_matriarch": {
       "color": "purple",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "fast"
     },
     "frost_king": {
       "color": "blue",
@@ -99,7 +99,7 @@
     },
     "frost_sage": {
       "color": "blue",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "fast"
     },
     "blood_paladin": {
       "color": "red",
@@ -147,7 +147,7 @@
       "chargeLevels": 2
     },
     "paladin_of_dusk": {
-      "color": "purple",
+      "color": "yellow",
       "manaSpeed": "average"
     },
     "sister_seraphel": {
@@ -204,7 +204,7 @@
       "manaSpeed": "average"
     },
     "satyr_archer_kell": {
-      "color": "green",
+      "color": "red",
       "manaSpeed": "very_fast"
     },
     "thornveil_dryad": {
@@ -224,15 +224,15 @@
       "manaSpeed": "average"
     },
     "vinestrider": {
-      "color": "green",
+      "color": "blue",
       "manaSpeed": "average"
     },
     "mosswitch_lira": {
-      "color": "green",
+      "color": "blue",
       "manaSpeed": "average"
     },
     "beastmaster_gharn": {
-      "color": "blue",
+      "color": "green",
       "manaSpeed": "average"
     },
     "jarl_bjorn_ironhide": {
@@ -268,7 +268,7 @@
       "manaSpeed": "average"
     },
     "shadow_stalker": {
-      "color": "yellow",
+      "color": "purple",
       "manaSpeed": "very_fast"
     },
     "dune_queen_zaya": {
@@ -293,7 +293,7 @@
       "manaSpeed": "fast"
     },
     "plague_doctor_mors": {
-      "color": "purple",
+      "color": "green",
       "manaSpeed": "average"
     },
     "the_mutant": {
@@ -319,7 +319,7 @@
       "chargeLevels": 2
     },
     "spirit_fox_mei": {
-      "color": "red",
+      "color": "green",
       "manaSpeed": "fast"
     },
     "jade_archer_linh": {
@@ -343,7 +343,7 @@
       "manaSpeed": "very_fast"
     },
     "neon_biochem_doc": {
-      "color": "red",
+      "color": "green",
       "manaSpeed": "average"
     },
     "dragon_empress": {
@@ -397,7 +397,7 @@
       "manaSpeed": "very_slow"
     },
     "oasis_keeper_nahlia": {
-      "color": "blue",
+      "color": "green",
       "manaSpeed": "average"
     },
     "kassem_sunwall": {

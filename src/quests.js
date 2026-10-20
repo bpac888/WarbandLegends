@@ -6,10 +6,10 @@ import {GEM_LIMIT} from './economy.js';
 export const QUEST_CATEGORIES=[['all','All quests'],['campaign','Campaign'],['dungeons','Dungeons'],['arena','Arena'],['events','Events'],['collection','Collection'],['growth','Growth']];
 const q=(id,name,category,metric,goal,text,rewards)=>({id,name,category,metric,goal,text,gold:0,gems:0,xp:0,items:{},...rewards,accountXp:rewards.accountXp??50});
 export const QUESTS=[
- q('first-summon','An answer from beyond','collection','summons',1,'Summon your first champion.',{gems:100,gold:100,xp:50}),
- q('first-victory','Across the broken gate','campaign','wins',1,'Win your first campaign encounter.',{gems:200,gold:200,items:{'star-thread':2}}),
- q('ten-champions','A growing legend','collection','collection',10,'Collect ten different champions.',{gems:300,gold:500,xp:100}),
- ...[[5,100,500],[10,150,1000],[15,200,1500],[25,400,3000]].map(([goal,gems,gold])=>q('normal-'+goal,'The rune road · '+goal,'campaign','normal',goal,`Clear Normal campaign stage ${goal}.`,{gems,gold,xp:goal*10,items:{'star-thread':Math.ceil(goal/5)}})),
+ q('first-summon','An answer from beyond','collection','summons',1,'Summon your first champion.',{gems:150,gold:100,xp:50}),
+ q('first-victory','Across the broken gate','campaign','wins',1,'Win your first campaign encounter.',{gems:300,gold:200,items:{'star-thread':2}}),
+ q('ten-champions','A growing legend','collection','collection',10,'Collect ten different champions.',{gems:350,gold:500,xp:100}),
+ ...[[5,200,500],[10,250,1000],[15,300,1500],[25,500,3000]].map(([goal,gems,gold])=>q('normal-'+goal,'The rune road · '+goal,'campaign','normal',goal,`Clear Normal campaign stage ${goal}.`,{gems,gold,xp:goal*10,items:{'star-thread':Math.ceil(goal/5)}})),
  q('hard-five','Beyond the ashes','campaign','hard',5,'Clear Hard campaign stage 5.',{gems:250,gold:2000,items:{'aether-crystal':3},xp:300}),
  q('hard-complete','A world reclaimed','campaign','hard',25,'Clear all 25 Hard campaign stages.',{gems:500,gold:5000,items:{'sovereign-crown':2},xp:750}),
  q('nightmare-complete','Light in the nightmare','campaign','nightmare',25,'Clear all 25 Nightmare stages.',{gems:750,gold:6000,items:{'astral-heart':2,'awakened-ember':3},xp:1000}),
@@ -20,7 +20,7 @@ export const QUESTS=[
  ...[[10,150,500],[30,250,1500],[100,500,4000]].map(([goal,gems,gold])=>q('summons-'+goal,'Voices through the gate · '+goal,'collection','summons',goal,`Summon ${goal} champions in total.`,{gems,gold,xp:100})),
  ...[[20,200,1000],[40,350,2500],[80,500,5000]].map(([goal,gems,gold])=>q('collection-'+goal,'Hall of legends · '+goal,'collection','collection',goal,`Collect ${goal} different champions.`,{gems,gold,items:{'star-thread':4},xp:200})),
  ...[[500,75,300],[5000,150,1000],[25000,250,2500]].map(([goal,gems,gold])=>q('growth-xp-'+goal,'Strength in the making · '+goal,'growth','totalXp',goal,`Build ${goal.toLocaleString()} total champion XP through battles, training or quests.`,{gems,gold,items:{'star-thread':3},xp:goal===500?75:250})),
- q('first-ascension','Rise beyond the limit','growth','ascensions',1,'Ascend a champion once.',{gems:150,gold:1000,items:{'aether-crystal':2},xp:150}),
+ q('first-ascension','Rise beyond the limit','growth','ascensions',1,'Ascend a champion once.',{gems:250,gold:1000,items:{'aether-crystal':2},xp:150}),
  q('five-ascensions','A rising warband','growth','ascensions',5,'Complete five ascensions across your roster.',{gems:300,gold:2500,items:{'sovereign-crown':1},xp:400}),
  ...Array.from({length:10},(_,i)=>{const level=(i+1)*10,tier=i+1;return q('keeper-'+level,'Keeper milestone · '+level,'growth','accountLevel',level,`Reach account level ${level}.`,{gems:(8+tier*4)*5,gold:200+tier*150+level*8,items:level>=50?{'awakened-ember':tier}:{'aether-crystal':tier},accountXp:0});}),
  q('first-awakening','The power within','growth','awakenings',1,'Awaken a champion for the first time.',{gems:400,gold:3000,items:{'astral-heart':1,'awakened-ember':2},xp:500})

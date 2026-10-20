@@ -1,0 +1,19 @@
+/* v0.17 finishing pass: make progression, rewards, and combat labels read as one system. */
+.game-page .page-heading h1,.game-page .altar-heading h1{line-height:1.08;text-wrap:balance}
+.game-page .page-heading p{max-width:64ch}
+.game-page .button,.game-page button{font-weight:650}
+.game-page button:focus-visible,.battle-shell button:focus-visible,.feeding-list input:focus-visible{outline:3px solid #ffe0a0;outline-offset:3px}
+.library-card:focus-visible,.roster-card:focus-visible{box-shadow:0 0 0 3px #f2d9a8,0 16px 36px #050713a8}
+.training-offer{border:1px solid #d9ba8175;border-radius:13px;background:linear-gradient(105deg,#2d443a99,#26345191);padding:15px 18px;gap:14px}
+.training-offer b{color:#ffe2a7;font-size:16px}.training-offer small{color:#d1dfed;font-size:13px;line-height:1.45}.training-offer .button{min-height:47px;white-space:nowrap}
+.hero-development .development-intro>p{max-width:52ch;color:#d6e4df;line-height:1.55}
+.hero-development .xp-caption{color:#e9d6a8}.hero-development .growth-stats{border-top:1px solid #c2b58445}
+.feeding-list{max-height:min(53vh,460px)}.feeding-list label{min-height:74px;padding:9px 11px;background:linear-gradient(115deg,#1f3152,#1d2440)}.feeding-list label:hover{border-color:#d4b785}.feeding-list img{width:49px;height:58px}.feeding-list b{font-size:15px}.feeding-list small{font-size:13px;white-space:normal;line-height:1.35}.feeding-summary{border-radius:10px;background:#263654;border:1px solid #bc9d6b5c;padding:11px 13px;color:#ffe2ae;line-height:1.45}
+.summon-odds{border:1px solid #9585bb68;border-radius:13px;background:linear-gradient(130deg,#1a2946,#302442)}.summon-odds summary{font-size:14px;color:#ecd8ff;cursor:pointer}.summon-odds>div{font-size:14px;padding:7px 10px;border-bottom:1px solid #a1a2c92c}.summon-odds>div b{color:#ffe1ab}.summon-odds p{font-size:14px;line-height:1.5}
+.summon-results.has-twins{background:radial-gradient(circle at 50% 0,#644f9440,transparent 70%)}.summon-results.has-twins .summon-summary{color:#fbe2ba;font-size:17px}.summon-result-card:has(small:first-of-type){transition:transform .2s,box-shadow .2s}.summon-result-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px #050817a8}
+.summon-result-card small{letter-spacing:.055em;line-height:1.35}.summon-result-card:has(small) strong{line-height:1.2}
+@media(min-height:601px){.battle-shell .enemy-name{font-size:clamp(11px,.95vw,14px);font-weight:700;text-shadow:0 2px 8px #000}.battle-shell .enemy-hp-label{font-size:11px}.battle-shell .hero-name{font-size:clamp(11px,.9vw,13px);text-shadow:0 2px 6px #000}}
+.material-offer{border-color:#799bc077}.material-offer:hover{border-color:#ceafd381;box-shadow:0 16px 34px #03071a88}.material-offer .button{min-height:45px;line-height:1.25}
+@media(max-width:700px){.training-offer{flex-wrap:wrap}.training-offer .button{width:100%}.summon-odds summary,.summon-odds>div,.summon-odds p{font-size:14px}.feeding-list{max-height:55vh}}
+@media(max-width:700px) and (min-height:601px){.battle-shell .enemy-name{font-size:11px}.battle-shell .hero-name{font-size:10px}}
+@media(max-width:430px){.material-offer .button{font-size:13px;min-height:45px}.material-offer h3{font-size:19px}.feeding-list label{min-height:72px}.game-page .page-heading h1{font-size:clamp(35px,10vw,47px)}}

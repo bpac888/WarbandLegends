@@ -110,7 +110,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "abyss_lord",
@@ -223,7 +223,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 252% ATK damage to one enemy."
+    "ability_desc": "Deal 252% ATK damage to selected enemy."
   },
   {
     "template_id": "voltaic_priest",
@@ -333,7 +333,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "spore_engineer",
@@ -342,9 +342,9 @@
     "rarity": "rare",
     "faction": "chymera",
     "role": "support",
-    "hp": 1047,
-    "atk": 576,
-    "def": 607,
+    "hp": 1075,
+    "atk": 579,
+    "def": 616,
     "ability_name": "Colony Bloom",
     "lore": "Fen no longer eats. The colony behind the glass is very grateful — and very hungry for someone else.",
     "image_url": "/api/static/champions/spore_engineer.png",
@@ -364,7 +364,7 @@
           "tiles": 8,
           "target": "self",
           "damage": 0,
-          "healing": 0.17,
+          "healing": 0.22,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -382,7 +382,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 1.03,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -401,7 +401,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy."
+    "ability_desc": "Restore 32% max HP to all living allies. Deal 103% ATK damage to lowest-hp living enemy."
   },
   {
     "template_id": "transmuter_prime",
@@ -487,7 +487,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 314% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 314% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "steel_oracle",
@@ -650,14 +650,14 @@
     "rarity": "common",
     "faction": "nether",
     "role": "attack",
-    "hp": 769,
-    "atk": 514,
-    "def": 407,
+    "hp": 779,
+    "atk": 509,
+    "def": 412,
     "ability_name": "Carrion Strike",
     "lore": "She remembers nothing of her old name — only the taste of teeth, and the polite hunger of empty things.",
     "image_url": "/api/static/champions/ghoul_scavenger.png",
     "id": "ghoul_scavenger",
-    "color": "green",
+    "color": "purple",
     "source_image": "/api/static/champions/ghoul_scavenger.png",
     "portrait": "assets/champions/ghoul_scavenger.webp",
     "passive": null,
@@ -686,7 +686,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy."
+    "ability_desc": "Deal 217% ATK damage to selected enemy."
   },
   {
     "template_id": "shadow_thrall",
@@ -695,9 +695,9 @@
     "rarity": "rare",
     "faction": "umbra",
     "role": "support",
-    "hp": 1070,
-    "atk": 584,
-    "def": 580,
+    "hp": 1093,
+    "atk": 586,
+    "def": 590,
     "ability_name": "Veil Step",
     "lore": "The bargain he made was simple: an end to the pain. The price has yet to be tallied in full.",
     "image_url": "/api/static/champions/shadow_thrall.png",
@@ -717,7 +717,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -736,7 +736,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "pit_grunt",
@@ -745,9 +745,9 @@
     "rarity": "rare",
     "faction": "nether",
     "role": "defense",
-    "hp": 1200,
-    "atk": 546,
-    "def": 690,
+    "hp": 1199,
+    "atk": 549,
+    "def": 692,
     "ability_name": "Cleaver Charge",
     "lore": "Brakkar lost an eye, two horns, and the lower half of his pride to a recruiter. He has not stopped fighting since.",
     "image_url": "/api/static/champions/pit_grunt.png",
@@ -786,7 +786,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "cursed_acolyte",
@@ -795,14 +795,14 @@
     "rarity": "common",
     "faction": "bloodcourt",
     "role": "support",
-    "hp": 843,
-    "atk": 387,
-    "def": 482,
+    "hp": 853,
+    "atk": 382,
+    "def": 489,
     "ability_name": "Hexlight",
     "lore": "Iyr was kind, once, in a small village no one remembers. The verses she now whispers belong to no kind god.",
     "image_url": "/api/static/champions/cursed_acolyte.png",
     "id": "cursed_acolyte",
-    "color": "green",
+    "color": "red",
     "source_image": "/api/static/champions/cursed_acolyte.png",
     "portrait": "assets/champions/cursed_acolyte.webp",
     "passive": null,
@@ -1099,7 +1099,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 224% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 224% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "Ashwind Warden",
@@ -1125,17 +1125,17 @@
       "value": 0.5,
       "desc": "Shield pools are 50% larger."
     },
-    "manaSpeed": "slow",
+    "manaSpeed": "fast",
     "special": {
       "name": "Sweeping Edge",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "slow",
-          "tiles": 12,
+          "speed": "fast",
+          "tiles": 8,
           "target": "enemy",
-          "damage": 1.81,
+          "damage": 1.48,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -1165,7 +1165,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 181% ATK damage to one enemy."
+    "ability_desc": "Deal 148% ATK damage to selected enemy."
   },
   {
     "template_id": "iron_revenant",
@@ -1220,7 +1220,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "pale_matriarch",
@@ -1245,18 +1245,18 @@
       "kind": "unblockable_buffs",
       "desc": "Cannot have buffs blocked."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "fast",
     "special": {
       "name": "Cradle-Song of Wormsong",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "fast",
+          "tiles": 8,
           "target": "self",
           "damage": 0,
-          "healing": 0.34,
+          "healing": 0.26,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -1285,7 +1285,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 34% max HP to all living allies."
+    "ability_desc": "Restore 26% max HP to all living allies."
   },
   {
     "template_id": "frost_king",
@@ -1381,18 +1381,18 @@
       ],
       "desc": "Immune to Mana Slow."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "fast",
     "special": {
       "name": "Ice Blast",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "fast",
+          "tiles": 8,
           "target": "self",
           "damage": 0,
-          "healing": 0.34,
+          "healing": 0.26,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -1421,7 +1421,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 34% max HP to all living allies."
+    "ability_desc": "Restore 26% max HP to all living allies."
   },
   {
     "template_id": "blood_paladin",
@@ -1487,7 +1487,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 181% ATK damage to one enemy."
+    "ability_desc": "Deal 181% ATK damage to selected enemy."
   },
   {
     "template_id": "lady_death",
@@ -1587,7 +1587,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 32% max HP to all living allies. Deal 121% ATK damage to the weakest enemy."
+    "ability_desc": "Restore 32% max HP to all living allies. Deal 121% ATK damage to lowest-hp living enemy."
   },
   {
     "template_id": "shade_prince",
@@ -1637,7 +1637,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 280% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 280% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "crimson_praetor",
@@ -1682,7 +1682,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 280% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 280% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "umbral_hierarch",
@@ -1792,7 +1792,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 280% ATK damage to one enemy."
+    "ability_desc": "Deal 280% ATK damage to selected enemy."
   },
   {
     "template_id": "veil_dancer",
@@ -1847,7 +1847,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 252% ATK damage to one enemy."
+    "ability_desc": "Deal 252% ATK damage to selected enemy."
   },
   {
     "template_id": "crimson_castellan",
@@ -1897,7 +1897,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 280% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 280% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "pit_scout",
@@ -1906,9 +1906,9 @@
     "rarity": "common",
     "faction": "nether",
     "role": "attack",
-    "hp": 739,
-    "atk": 511,
-    "def": 421,
+    "hp": 749,
+    "atk": 507,
+    "def": 426,
     "ability_name": "Rusted Bolt",
     "lore": "Rhagz has never won a duel — he has never stayed long enough for one to begin.",
     "image_url": "/api/static/champions/pit_scout.png",
@@ -1942,7 +1942,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 193% ATK damage to one enemy."
+    "ability_desc": "Deal 193% ATK damage to selected enemy."
   },
   {
     "template_id": "archangel_lucifer",
@@ -2020,7 +2020,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 160% ATK damage to one enemy."
+    "ability_desc": "Deal 160% ATK damage to selected enemy."
   },
   {
     "template_id": "paladin_of_dusk",
@@ -2029,14 +2029,14 @@
     "rarity": "rare",
     "faction": "ironclad",
     "role": "defense",
-    "hp": 1214,
-    "atk": 539,
-    "def": 683,
+    "hp": 1215,
+    "atk": 541,
+    "def": 685,
     "ability_name": "Last Rites",
     "lore": "Born as the sun kissed the horizon, he walks forever in that knife-thin hour — cursed to guard it, blessed to endure it.",
     "image_url": "/api/static/champions/hero-2.png",
     "id": "paladin_of_dusk",
-    "color": "purple",
+    "color": "yellow",
     "source_image": "/api/static/champions/hero-2.png",
     "portrait": "assets/champions/paladin_of_dusk.webp",
     "passive": null,
@@ -2064,13 +2064,13 @@
             {
               "id": "shield",
               "turns": 1,
-              "scope": "self"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "sister_seraphel",
@@ -2079,9 +2079,9 @@
     "rarity": "rare",
     "faction": "frost",
     "role": "support",
-    "hp": 1116,
-    "atk": 573,
-    "def": 590,
+    "hp": 1145,
+    "atk": 575,
+    "def": 599,
     "ability_name": "Resurrection Hymn",
     "lore": "She sings in two keys at once — radiant and shadow — and the dying remember both names before they rise.",
     "image_url": "/api/static/champions/hero-3.png",
@@ -2101,7 +2101,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -2120,7 +2120,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "justiciar_vael",
@@ -2129,9 +2129,9 @@
     "rarity": "common",
     "faction": "ironclad",
     "role": "attack",
-    "hp": 741,
-    "atk": 514,
-    "def": 435,
+    "hp": 751,
+    "atk": 509,
+    "def": 441,
     "ability_name": "Divine Verdict",
     "lore": "Vael judges with one hand and pardons with the other. Both hands hold a blade.",
     "image_url": "/api/static/champions/hero-4.png",
@@ -2159,7 +2159,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 217% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "solar_scribe",
@@ -2168,9 +2168,9 @@
     "rarity": "common",
     "faction": "duneriders",
     "role": "attack",
-    "hp": 692,
-    "atk": 522,
-    "def": 404,
+    "hp": 703,
+    "atk": 517,
+    "def": 408,
     "ability_name": "Chronicle of Doom",
     "lore": "He does not predict the battle. He edits it — golden strokes that the world is too polite to refuse.",
     "image_url": "/api/static/champions/hero-5.png",
@@ -2204,7 +2204,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 241% ATK damage to one enemy."
+    "ability_desc": "Deal 241% ATK damage to selected enemy."
   },
   {
     "template_id": "executor_model_z",
@@ -2263,8 +2263,8 @@
     "rarity": "common",
     "faction": "ironclad",
     "role": "defense",
-    "hp": 973,
-    "atk": 352,
+    "hp": 980,
+    "atk": 351,
     "def": 560,
     "ability_name": "Fortress Mode",
     "lore": "It was built to hold the line while better machines reloaded. The better machines are ash. It is still holding.",
@@ -2299,7 +2299,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 138% ATK damage to one enemy."
+    "ability_desc": "Deal 138% ATK damage to selected enemy."
   },
   {
     "template_id": "the_saboteur",
@@ -2308,9 +2308,9 @@
     "rarity": "common",
     "faction": "ironclad",
     "role": "attack",
-    "hp": 765,
-    "atk": 508,
-    "def": 408,
+    "hp": 775,
+    "atk": 504,
+    "def": 414,
     "ability_name": "Kill Switch",
     "lore": "No one hired him. The war simply developed a preference for things that stop working when he walks by.",
     "image_url": "/api/static/champions/hero-7.png",
@@ -2344,7 +2344,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy."
+    "ability_desc": "Deal 217% ATK damage to selected enemy."
   },
   {
     "template_id": "grease_monkey",
@@ -2353,9 +2353,9 @@
     "rarity": "common",
     "faction": "ironclad",
     "role": "support",
-    "hp": 824,
-    "atk": 398,
-    "def": 473,
+    "hp": 834,
+    "atk": 393,
+    "def": 479,
     "ability_name": "Full Overhaul",
     "lore": "Talks to engines the way priests talk to gods. The engines answer more often.",
     "image_url": "/api/static/champions/hero-8.png",
@@ -2398,9 +2398,9 @@
     "rarity": "rare",
     "faction": "ironclad",
     "role": "attack",
-    "hp": 983,
-    "atk": 700,
-    "def": 546,
+    "hp": 1019,
+    "atk": 699,
+    "def": 557,
     "ability_name": "Railgun Overture",
     "lore": "Distance is a kindness he refuses to offer. The rifle speaks first; apologies never follow.",
     "image_url": "/api/static/champions/hero-9.png",
@@ -2457,7 +2457,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "professor_vile",
@@ -2567,7 +2567,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "potion_tosser_quinn",
@@ -2576,9 +2576,9 @@
     "rarity": "rare",
     "faction": "chymera",
     "role": "support",
-    "hp": 1089,
-    "atk": 590,
-    "def": 587,
+    "hp": 1116,
+    "atk": 592,
+    "def": 596,
     "ability_name": "Experimental Cocktail",
     "lore": "Quinn's recipes have three ingredients: genius, spite, and a refusal to write anything down.",
     "image_url": "/api/static/champions/hero-35.png",
@@ -2598,7 +2598,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 1.03,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -2617,7 +2617,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy."
+    "ability_desc": "Restore 32% max HP to all living allies. Deal 103% ATK damage to lowest-hp living enemy."
   },
   {
     "template_id": "elder_rootmother",
@@ -2681,9 +2681,9 @@
     "rarity": "rare",
     "faction": "wildgrove",
     "role": "support",
-    "hp": 1065,
+    "hp": 1092,
     "atk": 596,
-    "def": 606,
+    "def": 614,
     "ability_name": "Call of the Wild",
     "lore": "He does not command the forest. He asks, and the forest answers with teeth.",
     "image_url": "/api/static/champions/hero-12.png",
@@ -2703,7 +2703,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 1.03,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -2722,7 +2722,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies. Deal 103% ATK damage to the weakest enemy."
+    "ability_desc": "Restore 32% max HP to all living allies. Deal 103% ATK damage to lowest-hp living enemy."
   },
   {
     "template_id": "satyr_archer_kell",
@@ -2731,14 +2731,14 @@
     "rarity": "common",
     "faction": "wildgrove",
     "role": "attack",
-    "hp": 743,
-    "atk": 508,
-    "def": 408,
+    "hp": 753,
+    "atk": 504,
+    "def": 412,
     "ability_name": "Arrow Storm",
     "lore": "Kell laughs when he misses. He has not laughed in a very long time.",
     "image_url": "/api/static/champions/hero-14.png",
     "id": "satyr_archer_kell",
-    "color": "green",
+    "color": "red",
     "source_image": "/api/static/champions/hero-14.png",
     "portrait": "assets/champions/satyr_archer_kell.webp",
     "passive": null,
@@ -2761,7 +2761,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 193% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 193% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "thornveil_dryad",
@@ -2820,9 +2820,9 @@
     "rarity": "rare",
     "faction": "wildgrove",
     "role": "defense",
-    "hp": 1193,
-    "atk": 540,
-    "def": 696,
+    "hp": 1192,
+    "atk": 544,
+    "def": 697,
     "ability_name": "Wrath of the Ancients",
     "lore": "He slept beneath the World Root for three thousand years. When the Elderwood burned, he woke — and the forest woke hungry.",
     "image_url": "/api/static/champions/hero-41.png",
@@ -2861,7 +2861,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "thornweaver_seraph",
@@ -2920,9 +2920,9 @@
     "rarity": "rare",
     "faction": "wildgrove",
     "role": "attack",
-    "hp": 1004,
+    "hp": 1019,
     "atk": 683,
-    "def": 556,
+    "def": 562,
     "ability_name": "Timberfall",
     "lore": "Elias felled the Heart-Tree on a dare. The King did not kill him — bark ate his flesh, and the debt became a body.",
     "image_url": "/api/static/champions/hero-43.png",
@@ -2961,7 +2961,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "vinestrider",
@@ -2970,14 +2970,14 @@
     "rarity": "common",
     "faction": "wildgrove",
     "role": "attack",
-    "hp": 720,
-    "atk": 500,
-    "def": 421,
+    "hp": 730,
+    "atk": 495,
+    "def": 426,
     "ability_name": "Stranglehold",
     "lore": "Wardens swear she was a child once. The vines disagree — they remember only hunger and green light.",
     "image_url": "/api/static/champions/hero-44.png",
     "id": "vinestrider",
-    "color": "green",
+    "color": "blue",
     "source_image": "/api/static/champions/hero-44.png",
     "portrait": "assets/champions/vinestrider.webp",
     "passive": null,
@@ -3006,7 +3006,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 241% ATK damage to one enemy."
+    "ability_desc": "Deal 241% ATK damage to selected enemy."
   },
   {
     "template_id": "mosswitch_lira",
@@ -3015,14 +3015,14 @@
     "rarity": "common",
     "faction": "wildgrove",
     "role": "support",
-    "hp": 867,
-    "atk": 398,
-    "def": 476,
+    "hp": 877,
+    "atk": 394,
+    "def": 482,
     "ability_name": "Verdant Blessing",
     "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth.",
     "image_url": "/api/static/champions/hero-45.png",
     "id": "mosswitch_lira",
-    "color": "green",
+    "color": "blue",
     "source_image": "/api/static/champions/hero-45.png",
     "portrait": "assets/champions/mosswitch_lira.webp",
     "passive": null,
@@ -3060,14 +3060,14 @@
     "rarity": "rare",
     "faction": "frost",
     "role": "attack",
-    "hp": 1022,
+    "hp": 1044,
     "atk": 685,
-    "def": 539,
+    "def": 547,
     "ability_name": "Primal Rage",
     "lore": "Gharn does not tame beasts. He bargains in blood and winter, and the pack always collects.",
     "image_url": "/api/static/champions/hero-13.png",
     "id": "beastmaster_gharn",
-    "color": "blue",
+    "color": "green",
     "source_image": "/api/static/champions/hero-13.png",
     "portrait": "assets/champions/beastmaster_gharn.webp",
     "passive": null,
@@ -3093,7 +3093,7 @@
               "scope": "enemy"
             },
             {
-              "id": "frostbite",
+              "id": "burn",
               "turns": 2,
               "scope": "enemy"
             },
@@ -3106,7 +3106,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "jarl_bjorn_ironhide",
@@ -3156,7 +3156,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 280% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 280% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "shieldmaiden_runa",
@@ -3165,8 +3165,8 @@
     "rarity": "rare",
     "faction": "frost",
     "role": "defense",
-    "hp": 1238,
-    "atk": 541,
+    "hp": 1236,
+    "atk": 543,
     "def": 683,
     "ability_name": "Glacier Stance",
     "lore": "Runa carries the raven-marked shield of her clan, its rim scarred by battles fought long before her birth. Before each campaign, she repaints the blue oath-marks on her face and names those she has sworn to bring home. In the northern shieldwalls, her place is wherever the line begins to bend.",
@@ -3206,7 +3206,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "ice_shaman_sigrid",
@@ -3215,9 +3215,9 @@
     "rarity": "rare",
     "faction": "frost",
     "role": "attack",
-    "hp": 994,
-    "atk": 699,
-    "def": 558,
+    "hp": 1029,
+    "atk": 698,
+    "def": 568,
     "ability_name": "Absolute Zero",
     "lore": "Sigrid speaks to wind the way others speak to kings. The wind is crueler, and more honest.",
     "image_url": "/api/static/champions/hero-28.png",
@@ -3256,7 +3256,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "berserker_ulf",
@@ -3306,7 +3306,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 280% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 280% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "wolf_handler_torv",
@@ -3315,9 +3315,9 @@
     "rarity": "common",
     "faction": "frost",
     "role": "support",
-    "hp": 876,
-    "atk": 390,
-    "def": 466,
+    "hp": 886,
+    "atk": 384,
+    "def": 473,
     "ability_name": "Winter Hunt",
     "lore": "Torv's wolves do not love him. They respect the same hunger, and that is enough.",
     "image_url": "/api/static/champions/hero-30.png",
@@ -3360,9 +3360,9 @@
     "rarity": "rare",
     "faction": "bloodcourt",
     "role": "attack",
-    "hp": 973,
-    "atk": 704,
-    "def": 542,
+    "hp": 1002,
+    "atk": 702,
+    "def": 552,
     "ability_name": "Soul Harvest",
     "lore": "Some say the great war exists merely to feed him. Vlad has never bothered to disagree.",
     "image_url": "/api/static/champions/hero-16.png",
@@ -3401,7 +3401,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 237% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   },
   {
     "template_id": "cult_zealot",
@@ -3410,9 +3410,9 @@
     "rarity": "rare",
     "faction": "umbra",
     "role": "attack",
-    "hp": 1021,
-    "atk": 705,
-    "def": 554,
+    "hp": 1046,
+    "atk": 704,
+    "def": 565,
     "ability_name": "Mass Consecration",
     "lore": "He offered himself first. The god accepted, then asked for everyone else.",
     "image_url": "/api/static/champions/hero-17.png",
@@ -3451,18 +3451,18 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "succubus_lilth",
     "name": "Succubus Lilth",
     "title": "Smile That Empties the Vein",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "umbra",
     "role": "attack",
-    "hp": 724,
-    "atk": 514,
-    "def": 404,
+    "hp": 955,
+    "atk": 681,
+    "def": 534,
     "ability_name": "Dark Embrace",
     "lore": "Lilth never hunts the strong. She waits until they beg to be weak.",
     "image_url": "/api/static/champions/hero-19.png",
@@ -3481,9 +3481,9 @@
           "speed": "average",
           "tiles": 10,
           "target": "enemy",
-          "damage": 2.41,
+          "damage": 2.63,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
@@ -3496,7 +3496,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 241% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "shadow_stalker",
@@ -3505,14 +3505,14 @@
     "rarity": "common",
     "faction": "duneriders",
     "role": "attack",
-    "hp": 765,
-    "atk": 518,
-    "def": 405,
+    "hp": 775,
+    "atk": 513,
+    "def": 410,
     "ability_name": "Night Hunt",
     "lore": "It does not cast a shadow. It is the shadow — and the dunes keep its secrets buried shallow.",
     "image_url": "/api/static/champions/hero-20.png",
     "id": "shadow_stalker",
-    "color": "yellow",
+    "color": "purple",
     "source_image": "/api/static/champions/hero-20.png",
     "portrait": "assets/champions/shadow_stalker.webp",
     "passive": null,
@@ -3535,7 +3535,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 193% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 193% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "dune_queen_zaya",
@@ -3599,9 +3599,9 @@
     "rarity": "rare",
     "faction": "duneriders",
     "role": "attack",
-    "hp": 951,
-    "atk": 707,
-    "def": 535,
+    "hp": 982,
+    "atk": 705,
+    "def": 547,
     "ability_name": "Death Mirage",
     "lore": "You see heat shimmer. You feel a cut. By the time you understand both were her, she is already gone.",
     "image_url": "/api/static/champions/hero-22.png",
@@ -3640,7 +3640,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 213% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 213% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "camel_rider_rashid",
@@ -3649,9 +3649,9 @@
     "rarity": "rare",
     "faction": "duneriders",
     "role": "attack",
-    "hp": 1026,
-    "atk": 704,
-    "def": 541,
+    "hp": 1050,
+    "atk": 703,
+    "def": 549,
     "ability_name": "Sandstorm Volley",
     "lore": "Rashid measures distance in heartbeats and graves. His camel has never lost a race with death.",
     "image_url": "/api/static/champions/hero-23.png",
@@ -3685,7 +3685,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 263% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "dune_mage_sorra",
@@ -3757,9 +3757,9 @@
     "rarity": "common",
     "faction": "duneriders",
     "role": "attack",
-    "hp": 762,
-    "atk": 500,
-    "def": 433,
+    "hp": 772,
+    "atk": 495,
+    "def": 439,
     "ability_name": "Whirlwind",
     "lore": "Jax never starts wars. He finishes the paperwork — pockets first, mercy never.",
     "image_url": "/api/static/champions/hero-25.png",
@@ -3787,7 +3787,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 217% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "plague_doctor_mors",
@@ -3796,14 +3796,14 @@
     "rarity": "rare",
     "faction": "nether",
     "role": "attack",
-    "hp": 1003,
+    "hp": 1035,
     "atk": 678,
-    "def": 549,
+    "def": 558,
     "ability_name": "Black Death",
     "lore": "Mors no longer asks what ails you. He already knows — and he brought enough for everyone.",
     "image_url": "/api/static/champions/hero-32.png",
     "id": "plague_doctor_mors",
-    "color": "purple",
+    "color": "green",
     "source_image": "/api/static/champions/hero-32.png",
     "portrait": "assets/champions/plague_doctor_mors.webp",
     "passive": null,
@@ -3837,7 +3837,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "the_mutant",
@@ -3846,9 +3846,9 @@
     "rarity": "common",
     "faction": "chymera",
     "role": "attack",
-    "hp": 755,
-    "atk": 492,
-    "def": 414,
+    "hp": 765,
+    "atk": 487,
+    "def": 420,
     "ability_name": "Adaptive Evolution",
     "lore": "They numbered the failures. This one ate the chalkboard and walked out wearing a new name.",
     "image_url": "/api/static/champions/hero-34.png",
@@ -3882,7 +3882,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 241% ATK damage to one enemy."
+    "ability_desc": "Deal 241% ATK damage to selected enemy."
   },
   {
     "template_id": "void_herald_mara",
@@ -3891,9 +3891,9 @@
     "rarity": "common",
     "faction": "dragondynasty",
     "role": "attack",
-    "hp": 721,
-    "atk": 516,
-    "def": 398,
+    "hp": 732,
+    "atk": 511,
+    "def": 403,
     "ability_name": "Oblivion",
     "lore": "Mara drinks from the dark between stars. Empires taste the same going down.",
     "image_url": "/api/static/champions/hero-18.png",
@@ -3927,7 +3927,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 241% ATK damage to one enemy."
+    "ability_desc": "Deal 241% ATK damage to selected enemy."
   },
   {
     "template_id": "azure_sovereign",
@@ -4067,9 +4067,9 @@
     "rarity": "rare",
     "faction": "dragondynasty",
     "role": "defense",
-    "hp": 1218,
-    "atk": 543,
-    "def": 685,
+    "hp": 1222,
+    "atk": 545,
+    "def": 687,
     "ability_name": "Celestial Roar",
     "lore": "Xuan does not block the blow. He becomes the mountain the blow regrets meeting.",
     "image_url": "/api/static/champions/hero-38.png",
@@ -4126,7 +4126,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "spirit_fox_mei",
@@ -4135,14 +4135,14 @@
     "rarity": "rare",
     "faction": "dragondynasty",
     "role": "attack",
-    "hp": 992,
+    "hp": 1015,
     "atk": 708,
-    "def": 548,
+    "def": 558,
     "ability_name": "Nine Tails",
     "lore": "Mei smiles with too many mouths. Only one of them is kind, and it is rarely showing.",
     "image_url": "/api/static/champions/hero-39.png",
     "id": "spirit_fox_mei",
-    "color": "red",
+    "color": "green",
     "source_image": "/api/static/champions/hero-39.png",
     "portrait": "assets/champions/spirit_fox_mei.webp",
     "passive": null,
@@ -4176,7 +4176,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 237% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   },
   {
     "template_id": "jade_archer_linh",
@@ -4185,9 +4185,9 @@
     "rarity": "common",
     "faction": "dragondynasty",
     "role": "attack",
-    "hp": 708,
-    "atk": 501,
-    "def": 424,
+    "hp": 719,
+    "atk": 496,
+    "def": 430,
     "ability_name": "Heaven's Wrath",
     "lore": "Linh's arrows do not seek hearts. Hearts simply happen to stand where destiny already aimed.",
     "image_url": "/api/static/champions/hero-40.png",
@@ -4221,7 +4221,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy."
+    "ability_desc": "Deal 217% ATK damage to selected enemy."
   },
   {
     "template_id": "neon_wire runner",
@@ -4230,9 +4230,9 @@
     "rarity": "common",
     "faction": "neon_syndicate",
     "role": "attack",
-    "hp": 733,
-    "atk": 512,
-    "def": 428,
+    "hp": 744,
+    "atk": 508,
+    "def": 435,
     "ability_name": "Overclock Circuit",
     "lore": "Kaelen sells stolen memory shards just to afford clean water. In the dark dacha woods, wire is cheaper than iron.",
     "image_url": "/api/static/champions/neon_wirerunner.png",
@@ -4266,18 +4266,18 @@
         }
       ]
     },
-    "ability_desc": "Deal 193% ATK damage to one enemy."
+    "ability_desc": "Deal 193% ATK damage to selected enemy."
   },
   {
     "template_id": "neon_scrap_enforcer",
     "name": "Boran, Chrome Fist",
     "title": "The Debt Collector",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "neon_syndicate",
     "role": "defense",
-    "hp": 946,
-    "atk": 353,
-    "def": 555,
+    "hp": 1163,
+    "atk": 532,
+    "def": 661,
     "ability_name": "Kinetic Block",
     "lore": "He traded his flesh for scrap metal to survive the winter. Now he works for the bosses who bought his soul.",
     "image_url": "/api/static/champions/neon_scrapenforcer.png",
@@ -4296,33 +4296,33 @@
           "speed": "average",
           "tiles": 10,
           "target": "enemy",
-          "damage": 1.38,
+          "damage": 1.5,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
               "id": "shield",
               "turns": 2,
-              "scope": "self"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 138% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "neon_glitch_weaver",
     "name": "Nadia, the Patchwork Witch",
     "title": "Splicer of Broken Codes",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "neon_syndicate",
     "role": "support",
-    "hp": 869,
-    "atk": 394,
-    "def": 478,
+    "hp": 1092,
+    "atk": 568,
+    "def": 599,
     "ability_name": "Signal Jam",
     "lore": "Nadia hotwires the ancient runes left in the dirt, mixing dark fantasy witchcraft with broken neon tech.",
     "image_url": "/api/static/champions/neon_glitchweaver.png",
@@ -4340,23 +4340,23 @@
           "level": 1,
           "speed": "average",
           "tiles": 10,
-          "target": "ally",
+          "target": "self",
           "damage": 0,
           "healing": 0.32,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
               "id": "mana_surge",
               "turns": 3,
-              "scope": "ally"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 32% max HP to one living ally."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "neon_hologram_assassin",
@@ -4365,9 +4365,9 @@
     "rarity": "rare",
     "faction": "neon_syndicate",
     "role": "attack",
-    "hp": 969,
-    "atk": 705,
-    "def": 532,
+    "hp": 1003,
+    "atk": 701,
+    "def": 543,
     "ability_name": "Digital Mirage",
     "lore": "Vesper leaves behind nothing but glowing pink static and cold bodies. She is hunted by law and lawbreaker alike.",
     "image_url": "/api/static/champions/neon_hologramassassin.png",
@@ -4406,7 +4406,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 211% ATK damage to one enemy."
+    "ability_desc": "Deal 211% ATK damage to selected enemy."
   },
   {
     "template_id": "neon_biochem_doc",
@@ -4415,14 +4415,14 @@
     "rarity": "rare",
     "faction": "neon_syndicate",
     "role": "support",
-    "hp": 1170,
-    "atk": 575,
-    "def": 606,
+    "hp": 1172,
+    "atk": 578,
+    "def": 615,
     "ability_name": "Starlight Injection",
     "lore": "The Syndicate keeps him alive because he is the only one who can graft neon wire into dying, frozen skin.",
     "image_url": "/api/static/champions/neon_biochemdoc.png",
     "id": "neon_biochem_doc",
-    "color": "red",
+    "color": "green",
     "source_image": "/api/static/champions/neon_biochemdoc.png",
     "portrait": "assets/champions/neon_biochem_doc.webp",
     "passive": null,
@@ -4437,7 +4437,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -4456,7 +4456,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "dragon_empress",
@@ -4585,9 +4585,9 @@
     "rarity": "rare",
     "faction": "bloodcourt",
     "role": "defense",
-    "hp": 1233,
-    "atk": 539,
-    "def": 691,
+    "hp": 1240,
+    "atk": 542,
+    "def": 694,
     "ability_name": "Scarlet Bulwark",
     "lore": "Ravel swore to guard the stair for one night. The court has since forgotten to tell him the night ended.",
     "image_url": "/api/static/champions/ravel.png",
@@ -4620,13 +4620,13 @@
             {
               "id": "shield",
               "turns": 1,
-              "scope": "self"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "carmine_veinreader",
@@ -4635,9 +4635,9 @@
     "rarity": "rare",
     "faction": "bloodcourt",
     "role": "support",
-    "hp": 1061,
-    "atk": 578,
-    "def": 598,
+    "hp": 1087,
+    "atk": 580,
+    "def": 608,
     "ability_name": "Sanguine Rite",
     "lore": "Carmine reads futures in spilled blood. She is always very careful whose.",
     "image_url": "/api/static/champions/carmine_veinreader.png",
@@ -4657,7 +4657,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -4676,7 +4676,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "neon_volt_guardian",
@@ -4685,9 +4685,9 @@
     "rarity": "rare",
     "faction": "neon_syndicate",
     "role": "defense",
-    "hp": 1200,
-    "atk": 544,
-    "def": 686,
+    "hp": 1213,
+    "atk": 547,
+    "def": 691,
     "ability_name": "Empowered Aegis",
     "lore": "A defector from the traditional armies, Jarek found honor among criminals who actually pay for their defense.",
     "image_url": "/api/static/champions/neon_voltguardian.png",
@@ -4720,13 +4720,13 @@
             {
               "id": "shield",
               "turns": 3,
-              "scope": "self"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "neon_laser_blade",
@@ -4781,7 +4781,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 252% ATK damage to one enemy."
+    "ability_desc": "Deal 252% ATK damage to selected enemy."
   },
   {
     "template_id": "neon_hacker_empress",
@@ -4896,7 +4896,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "neon_singularity_reaper",
@@ -5017,9 +5017,9 @@
     "rarity": "common",
     "faction": "umbra",
     "role": "support",
-    "hp": 839,
-    "atk": 394,
-    "def": 474,
+    "hp": 849,
+    "atk": 389,
+    "def": 481,
     "ability_name": "Slip Through",
     "lore": "No one remembers the Alley Shade. Not even, some nights, the Alley Shade.",
     "image_url": "/api/static/champions/alley_shade.png",
@@ -5059,12 +5059,12 @@
     "template_id": "fjordwatch_hald",
     "name": "Fjordwatch Hald",
     "title": "Keeper of the Last Bridge",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "frost",
     "role": "defense",
-    "hp": 960,
-    "atk": 352,
-    "def": 560,
+    "hp": 1151,
+    "atk": 515,
+    "def": 669,
     "ability_name": "Rimebound Guard",
     "lore": "Hald has kept the same fjord bridge through thirty winters. His shield is patched, his axe is dull, and no traveler under his watch has ever been left to the snow.",
     "image_url": "/api/static/champions/fjordwatch_hald.png",
@@ -5083,22 +5083,22 @@
           "speed": "average",
           "tiles": 10,
           "target": "enemy",
-          "damage": 1.38,
+          "damage": 1.5,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
               "id": "shield",
               "turns": 2,
-              "scope": "self"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 138% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "shellback_brukk",
@@ -5107,9 +5107,9 @@
     "rarity": "common",
     "faction": "chymera",
     "role": "defense",
-    "hp": 963,
+    "hp": 974,
     "atk": 352,
-    "def": 555,
+    "def": 560,
     "ability_name": "Shellback Challenge",
     "lore": "Bred to survive the menagerie's cruelest trials, Brukk broke his collar and stood in the doorway while the smaller experiments escaped. He has never learned to stop guarding it.",
     "image_url": "/api/static/champions/shellback_brukk.png",
@@ -5143,7 +5143,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 138% ATK damage to one enemy."
+    "ability_desc": "Deal 138% ATK damage to selected enemy."
   },
   {
     "template_id": "oakenhart_first_warden",
@@ -5209,7 +5209,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 194% ATK damage to one enemy."
+    "ability_desc": "Deal 194% ATK damage to selected enemy."
   },
   {
     "template_id": "oasis_keeper_nahlia",
@@ -5218,14 +5218,14 @@
     "rarity": "rare",
     "faction": "duneriders",
     "role": "support",
-    "hp": 1094,
-    "atk": 594,
-    "def": 609,
+    "hp": 1116,
+    "atk": 595,
+    "def": 617,
     "ability_name": "Waters of the Hidden Spring",
     "lore": "Nahlia knows the buried springs that never appear on caravan maps. She has crossed the salt wastes with a single waterskin, and never once kept its last drop for herself.",
     "image_url": "/api/static/champions/oasis_keeper_nahlia.png",
     "id": "oasis_keeper_nahlia",
-    "color": "blue",
+    "color": "green",
     "source_image": "/api/static/champions/oasis_keeper_nahlia.png",
     "portrait": "assets/champions/oasis_keeper_nahlia.webp",
     "passive": null,
@@ -5240,7 +5240,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -5259,7 +5259,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "kassem_sunwall",
@@ -5314,7 +5314,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "cinder_mender_vessa",
@@ -5323,9 +5323,9 @@
     "rarity": "rare",
     "faction": "nether",
     "role": "support",
-    "hp": 1079,
-    "atk": 600,
-    "def": 598,
+    "hp": 1098,
+    "atk": 602,
+    "def": 606,
     "ability_name": "Ashes Unbound",
     "lore": "Vessa once tended the furnaces beneath the Seventh Pit, where mercy was counted as wasted fuel. When a broken legion crawled home, she stole a coal from the punishment fires and taught it to close wounds instead. Now her lantern burns for anyone still breathing, and the pitmasters follow its light with chains.",
     "image_url": "/api/static/champions/cinder_mender_vessa.png",
@@ -5345,7 +5345,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -5364,7 +5364,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "veyr_hollow_gate",
@@ -5373,9 +5373,9 @@
     "rarity": "rare",
     "faction": "umbra",
     "role": "defense",
-    "hp": 1236,
-    "atk": 543,
-    "def": 674,
+    "hp": 1230,
+    "atk": 546,
+    "def": 675,
     "ability_name": "None Shall Follow",
     "lore": "When the Nameless Quarter slipped into shadow, its watchman held the evacuation gate until the last lantern crossed. Dawn found only his armor, still standing. Veyr no longer remembers the people he saved, but whenever footsteps flee through the dark, he turns his shield toward whatever follows.",
     "image_url": "/api/static/champions/veyr_hollow_gate.png",
@@ -5414,7 +5414,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "aurelia_last_foundry",
@@ -5491,9 +5491,9 @@
     "rarity": "rare",
     "faction": "dragondynasty",
     "role": "support",
-    "hp": 1108,
-    "atk": 602,
-    "def": 583,
+    "hp": 1133,
+    "atk": 604,
+    "def": 591,
     "ability_name": "Breath of the Jade Spring",
     "lore": "Lian left the imperial physicians after learning that medicine was reserved for officers. With a cracked jade bowl and a satchel of mountain herbs, he now walks the rainward steps between villages. The little dragon in his bowl was once offered a throne; it chose to help him carry water instead.",
     "image_url": "/api/static/champions/jade_mender_lian.png",
@@ -5513,7 +5513,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -5532,7 +5532,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "carapace_warden_korr",
@@ -5541,9 +5541,9 @@
     "rarity": "rare",
     "faction": "chymera",
     "role": "defense",
-    "hp": 1260,
-    "atk": 527,
-    "def": 687,
+    "hp": 1250,
+    "atk": 531,
+    "def": 689,
     "ability_name": "Living Carapace",
     "lore": "The alchemists recorded Korr as a number and called his growing shell a useful accident. He memorized every name scratched beneath the other cages before breaking the locks. Now he carries those names etched inside his armor, so that even the changed and forgotten can find someone who remembers them.",
     "image_url": "/api/static/champions/carapace_warden_korr.png",
@@ -5576,24 +5576,24 @@
             {
               "id": "shield",
               "turns": 2,
-              "scope": "self"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "redknife_tavin",
     "name": "Redknife Tavin",
     "title": "A Blade Below the Banquet",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "bloodcourt",
     "role": "attack",
-    "hp": 745,
-    "atk": 526,
-    "def": 421,
+    "hp": 961,
+    "atk": 692,
+    "def": 546,
     "ability_name": "Find the Seam",
     "lore": "Tavin spent ten years opening carriage doors for nobles who never learned his name. He learned theirs, and where their expensive armor leaves a seam. Now the servants of the lower court pay him in copper and safe beds, and no carriage passes their streets without permission.",
     "image_url": "/api/static/champions/redknife_tavin.png",
@@ -5612,9 +5612,9 @@
           "speed": "fast",
           "tiles": 8,
           "target": "enemy",
-          "damage": 2.17,
+          "damage": 2.37,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
@@ -5627,7 +5627,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   },
   {
     "template_id": "vitriol_stalker_syth",
@@ -5636,9 +5636,9 @@
     "rarity": "rare",
     "faction": "chymera",
     "role": "attack",
-    "hp": 974,
-    "atk": 705,
-    "def": 546,
+    "hp": 999,
+    "atk": 704,
+    "def": 556,
     "ability_name": "Expose the Wound",
     "lore": "Syth was bred to hunt escaped specimens through the glass gardens. Then a frightened child offered the hunter a name instead of a number. The handlers found their cages empty the next morning. Somewhere beyond the broken greenhouse, Syth is still learning which things deserve to be hunted.",
     "image_url": "/api/static/champions/vitriol_stalker_syth.png",
@@ -5677,7 +5677,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 237% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   },
   {
     "template_id": "rivet_mender_orsa",
@@ -5686,9 +5686,9 @@
     "rarity": "rare",
     "faction": "ironclad",
     "role": "support",
-    "hp": 1140,
-    "atk": 574,
-    "def": 617,
+    "hp": 1158,
+    "atk": 576,
+    "def": 624,
     "ability_name": "Back on Your Feet",
     "lore": "Orsa fixes what the quartermasters mark beyond repair: cracked boilers, bent knees, and soldiers too tired to stand. She carries no commission and accepts no medals. When a warband reaches the next town alive, someone always finds a fresh copper rivet tucked into their coat.",
     "image_url": "/api/static/champions/rivet_mender_orsa.png",
@@ -5708,7 +5708,7 @@
           "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.25,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -5727,7 +5727,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 25% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "eira_hearthwarden",
@@ -5837,7 +5837,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "vorrek_walking_siege",
@@ -5906,15 +5906,15 @@
     "template_id": "rimebow_tessa",
     "name": "Rimebow Tessa",
     "title": "Hunter of the Ice Road",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "frost",
     "role": "attack",
-    "hp": 765,
-    "atk": 511,
+    "hp": 988,
+    "atk": 680,
     "ability_name": "Winterward Shot",
     "lore": "Tessa knows every safe crossing on the winter road and every sound the lake makes before it breaks. She used to hunt only to feed the waystations. Since the raiders came north, she has found that patience and a frost-tipped arrow can keep a caravan fed in other ways.",
     "image_url": "/api/static/champions/rimebow_tessa.png",
-    "def": 414,
+    "def": 542,
     "id": "rimebow_tessa",
     "color": "blue",
     "source_image": "/api/static/champions/rimebow_tessa.png",
@@ -5930,9 +5930,9 @@
           "speed": "very_fast",
           "tiles": 6.5,
           "target": "enemy",
-          "damage": 1.93,
+          "damage": 2.11,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
@@ -5945,7 +5945,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 193% ATK damage to one enemy."
+    "ability_desc": "Deal 211% ATK damage to selected enemy."
   },
   {
     "template_id": "caravan_warden_samira",
@@ -5954,12 +5954,12 @@
     "rarity": "rare",
     "faction": "duneriders",
     "role": "defense",
-    "hp": 1246,
-    "atk": 540,
+    "hp": 1245,
+    "atk": 543,
     "ability_name": "Come Through Me",
     "lore": "Samira has never led a caravan. She rides beside its last wagon, where broken axles, exhausted camels and frightened children are easiest to leave behind. Her shield bears the route marks of seven deserts, and not one of them ends at an abandoned camp.",
     "image_url": "/api/static/champions/caravan_warden_samira.png",
-    "def": 678,
+    "def": 679,
     "id": "caravan_warden_samira",
     "color": "yellow",
     "source_image": "/api/static/champions/caravan_warden_samira.png",
@@ -5995,7 +5995,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "arcmaw_rhex",
@@ -6004,12 +6004,12 @@
     "rarity": "rare",
     "faction": "chymera",
     "role": "attack",
-    "hp": 974,
-    "atk": 715,
+    "hp": 991,
+    "atk": 714,
     "ability_name": "Short the Lifeline",
     "lore": "The academy fitted Rhex with copper teeth to measure how much lightning living bone could bear. Rhex answered by biting through the power cable. Now the escaped brawler follows the hum of laboratory generators, leaving dark windows and empty restraint chairs behind.",
     "image_url": "/api/static/champions/arcmaw_rhex.png",
-    "def": 558,
+    "def": 568,
     "id": "arcmaw_rhex",
     "color": "yellow",
     "source_image": "/api/static/champions/arcmaw_rhex.png",
@@ -6045,21 +6045,21 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "gallows_marksman_oren",
     "name": "Gallows Marksman Oren",
     "title": "One Bolt Before the Bell",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "bloodcourt",
     "role": "attack",
-    "hp": 739,
-    "atk": 517,
+    "hp": 966,
+    "atk": 682,
     "ability_name": "Mark for the Reckoning",
     "lore": "Oren once rang the execution bell above the lower court. The night an innocent family climbed the scaffold, he took down the crossbow reserved for escapees and turned it toward the guards. He still counts the bells before each shot, though he no longer waits for permission.",
     "image_url": "/api/static/champions/gallows_marksman_oren.png",
-    "def": 416,
+    "def": 546,
     "id": "gallows_marksman_oren",
     "color": "yellow",
     "source_image": "/api/static/champions/gallows_marksman_oren.png",
@@ -6075,9 +6075,9 @@
           "speed": "fast",
           "tiles": 8,
           "target": "enemy",
-          "damage": 2.17,
+          "damage": 2.37,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
@@ -6090,7 +6090,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   },
   {
     "template_id": "nerez_veil_bastion",
@@ -6145,18 +6145,18 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "kesh_duststep",
     "name": "Kesh Duststep",
     "title": "Courier of the Broken Sunroad",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "veldtborn",
     "role": "attack",
-    "hp": 728,
-    "atk": 508,
-    "def": 430,
+    "hp": 946,
+    "atk": 674,
+    "def": 556,
     "ability_name": "Between the Plates",
     "lore": "Kesh's black ear-tufts rise above every market crowd, usually just before the shouting starts. The caracal courier knows the buried paths between the scattered prides and carries their messages inside hollow knife handles. When the sunroad fell, he delivered every warning before asking who would pay him.",
     "image_url": "/api/static/champions/kesh_duststep.png",
@@ -6175,27 +6175,27 @@
           "speed": "very_fast",
           "tiles": 6.5,
           "target": "enemy",
-          "damage": 1.93,
+          "damage": 2.11,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": true,
           "effects": []
         }
       ]
     },
-    "ability_desc": "Deal 193% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 211% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "mavra_dusktrail",
     "name": "Mavra Dusktrail",
     "title": "The Path the Hunters Fear",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "veldtborn",
     "role": "attack",
-    "hp": 786,
-    "atk": 504,
-    "def": 430,
+    "hp": 1001,
+    "atk": 670,
+    "def": 554,
     "ability_name": "Break the Pursuit",
     "lore": "The smoky markings across Mavra's puma shoulders look like the canyon shadows in which she grew up. She once guided trophy hunters to the high passes, until she discovered what they carried in their covered wagons. Now her arrows guide the prisoners home, and the hunters learn how far a scream travels in the dusk.",
     "image_url": "/api/static/champions/mavra_dusktrail.png",
@@ -6214,9 +6214,9 @@
           "speed": "average",
           "tiles": 10,
           "target": "enemy",
-          "damage": 2.41,
+          "damage": 2.63,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
@@ -6229,18 +6229,18 @@
         }
       ]
     },
-    "ability_desc": "Deal 241% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "nima_dewthread",
     "name": "Nima Dewthread",
     "title": "Tender of the Rain-Sewn Camps",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "veldtborn",
     "role": "support",
-    "hp": 823,
-    "atk": 388,
-    "def": 459,
+    "hp": 1040,
+    "atk": 562,
+    "def": 579,
     "ability_name": "Rain on the Wounded Road",
     "lore": "Nima sews names into the hems of the tents she repairs, so no lost traveler is ever only a stranger. Her clouded-leopard fur carries pale green whorls that brighten before rain. She learned her craft patching refugees rather than soldiers, and still insists that a healer's first duty is to leave someone a road home.",
     "image_url": "/api/static/champions/nima_dewthread.png",
@@ -6258,23 +6258,23 @@
           "level": 1,
           "speed": "average",
           "tiles": 10,
-          "target": "ally",
+          "target": "self",
           "damage": 0,
           "healing": 0.32,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
               "id": "heal",
               "turns": 1,
-              "scope": "ally"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 32% max HP to one living ally."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "sahri_sunspoke",
@@ -6283,9 +6283,9 @@
     "rarity": "rare",
     "faction": "veldtborn",
     "role": "attack",
-    "hp": 957,
-    "atk": 718,
-    "def": 548,
+    "hp": 988,
+    "atk": 716,
+    "def": 560,
     "ability_name": "Open the Horizon",
     "lore": "Sahri's cheetah tear-marks fork into white sunbursts at her temples, a sign the old racers called a blessing. She won the dawn circuit with two broken sabers and gave the prize to the camps outside the walls. The arena masters still want their champion back; they have yet to catch her.",
     "image_url": "/api/static/champions/sahri_sunspoke.png",
@@ -6329,7 +6329,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 237% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   },
   {
     "template_id": "ilyra_snowglass",
@@ -6338,9 +6338,9 @@
     "rarity": "rare",
     "faction": "veldtborn",
     "role": "attack",
-    "hp": 988,
-    "atk": 711,
-    "def": 549,
+    "hp": 1012,
+    "atk": 709,
+    "def": 558,
     "ability_name": "The Glacier's Edge",
     "lore": "Blue threads run between the charcoal rosettes of Ilyra's snow-leopard coat, as though the mountain sky were caught beneath her fur. She guards the abandoned monastery road with daggers cut from its last unbroken window. The valley calls her an assassin; the children crossing the pass call her the lantern in the snow.",
     "image_url": "/api/static/champions/ilyra_snowglass.png",
@@ -6374,7 +6374,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 237% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 237% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "toruun_basalt_mane",
@@ -6383,9 +6383,9 @@
     "rarity": "rare",
     "faction": "veldtborn",
     "role": "defense",
-    "hp": 1244,
-    "atk": 537,
-    "def": 700,
+    "hp": 1239,
+    "atk": 540,
+    "def": 701,
     "ability_name": "Answer to the Gate",
     "lore": "Toruun braided the bronze gate-rings of his ruined city into his black lion's mane. When the survivors asked where they should build their next wall, he set down his shield and told them to begin behind him. The road is crowded now, and he has not moved.",
     "image_url": "/api/static/champions/toruun_basalt_mane.png",
@@ -6424,7 +6424,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 150% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "rhazek_cinderstripe",
@@ -6529,7 +6529,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "oruun_prism_seer",
@@ -6720,7 +6720,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 252% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 252% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "nera_red_ledger",
@@ -6729,9 +6729,9 @@
     "rarity": "rare",
     "faction": "bloodcourt",
     "role": "attack",
-    "hp": 981,
-    "atk": 704,
-    "def": 555,
+    "hp": 1007,
+    "atk": 703,
+    "def": 566,
     "ability_name": "Close the Account",
     "lore": "Nera kept the Bloodcourt's accounts until she found an entire village listed as an acceptable expense. She copied every name into a red ledger and took her fencing blade to the next banquet. The nobles call her a thief; their servants call her when another account needs settling.",
     "image_url": "/api/static/champions/nera_red_ledger.png",
@@ -6770,18 +6770,18 @@
         }
       ]
     },
-    "ability_desc": "Deal 213% ATK damage to one enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 213% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "tovin_glassheart",
     "name": "Tovin Glassheart",
     "title": "Physician of the Unfinished",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "chymera",
     "role": "support",
-    "hp": 821,
-    "atk": 402,
-    "def": 466,
+    "hp": 1036,
+    "atk": 576,
+    "def": 586,
     "ability_name": "Hold Together",
     "lore": "Tovin survived the procedure because another patient held the glass over his artificial heart until the seal set. He has spent every day since returning that favor. His conservatory clinic admits any creature that can find the door, and his charts begin with a name instead of a specimen number.",
     "image_url": "/api/static/champions/tovin_glassheart.png",
@@ -6799,23 +6799,23 @@
           "level": 1,
           "speed": "average",
           "tiles": 10,
-          "target": "ally",
+          "target": "self",
           "damage": 0,
           "healing": 0.32,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
               "id": "inc_def",
               "turns": 1,
-              "scope": "ally"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 32% max HP to one living ally."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "suyin_monsoon_bell",
@@ -6975,7 +6975,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to one enemy."
+    "ability_desc": "Deal 176% ATK damage to selected enemy."
   },
   {
     "template_id": "dagan_rivetstorm",
@@ -6984,9 +6984,9 @@
     "rarity": "rare",
     "faction": "ironclad",
     "role": "attack",
-    "hp": 984,
-    "atk": 716,
-    "def": 552,
+    "hp": 1003,
+    "atk": 715,
+    "def": 560,
     "ability_name": "Pull the Weak Rivet",
     "lore": "Dagan designed the bolt-launcher to fix bridge plates without hanging workers over the furnace pits. The overseers ordered him to make it a weapon instead. He obliged, then tested the first production model on the locks of the workers' barracks. He still calls the recoil a manufacturing defect.",
     "image_url": "/api/static/champions/dagan_rivetstorm.png",
@@ -7025,18 +7025,18 @@
         }
       ]
     },
-    "ability_desc": "Deal 263% ATK damage to one enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "tali_scrapshot",
     "name": "Tali, Scrapshot",
     "title": "One Good Circuit Left",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "neon_syndicate",
     "role": "attack",
-    "hp": 757,
-    "atk": 517,
-    "def": 404,
+    "hp": 978,
+    "atk": 682,
+    "def": 530,
     "ability_name": "Cut the Supply",
     "lore": "Tali built her first crossbow from a hospital sign, three broken drones and the only working circuit in the scrap market. She sells protection to rooftop couriers for a meal and a battery charge. The syndicate keeps offering a contract; she keeps sending the contract back pinned to a dead security drone.",
     "image_url": "/api/static/champions/tali_scrapshot.png",
@@ -7055,9 +7055,9 @@
           "speed": "fast",
           "tiles": 8,
           "target": "enemy",
-          "damage": 2.17,
+          "damage": 2.37,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
@@ -7070,18 +7070,18 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   },
   {
     "template_id": "edrik_mournwall",
     "name": "Edrik Mournwall",
     "title": "Keeper of the Candle Gate",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "nether",
     "role": "defense",
-    "hp": 980,
-    "atk": 351,
-    "def": 550,
+    "hp": 1189,
+    "atk": 535,
+    "def": 657,
     "ability_name": "Borrowed Rest",
     "lore": "Edrik remembers burying a soldier whose final request was that someone guard the candles. Death erased the soldier's name, but not the request. He carries a coffin lid where his old gate once stood, turning wandering horrors away from the small lights the living still leave behind.",
     "image_url": "/api/static/champions/edrik_mournwall.png",
@@ -7100,33 +7100,33 @@
           "speed": "average",
           "tiles": 10,
           "target": "enemy",
-          "damage": 1.38,
+          "damage": 1.5,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
               "id": "shield",
               "turns": 2,
-              "scope": "self"
+              "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 138% ATK damage to one enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "venn_sablethread",
     "name": "Venn Sablethread",
     "title": "Tailor of the Last Escape",
-    "rarity": "common",
+    "rarity": "rare",
     "faction": "umbra",
     "role": "attack",
-    "hp": 759,
-    "atk": 516,
-    "def": 421,
+    "hp": 983,
+    "atk": 683,
+    "def": 550,
     "ability_name": "Catch the Hem",
     "lore": "Venn stitched mourning clothes for families who could no longer afford to mourn. He began hiding escape maps in the lining, then silver needles in his sleeves. The city watch has learned to fear a tailor who measures the distance to every rooftop before he measures a coat.",
     "image_url": "/api/static/champions/venn_sablethread.png",
@@ -7145,9 +7145,9 @@
           "speed": "fast",
           "tiles": 8,
           "target": "enemy",
-          "damage": 2.17,
+          "damage": 2.37,
           "healing": 0,
-          "healScope": "ally",
+          "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
@@ -7160,7 +7160,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 217% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   },
   {
     "template_id": "renn_briarhook",
@@ -7169,9 +7169,9 @@
     "rarity": "rare",
     "faction": "wildgrove",
     "role": "attack",
-    "hp": 1003,
-    "atk": 712,
-    "def": 558,
+    "hp": 1023,
+    "atk": 711,
+    "def": 568,
     "ability_name": "Leave the Wound Open",
     "lore": "Renn once marked trees for the royal timber road until he heard voices beneath the bark. His hook now tears the axle pins from the logging wagons, and the abandoned road grows narrower every spring. He keeps the last survey stake on his belt to remember how easily a straight line becomes a wound.",
     "image_url": "/api/static/champions/renn_briarhook.png",
@@ -7210,6 +7210,6 @@
         }
       ]
     },
-    "ability_desc": "Deal 237% ATK damage to one enemy."
+    "ability_desc": "Deal 237% ATK damage to selected enemy."
   }
 ]

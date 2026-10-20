@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
 import {defaultProfile,normalizeProfile,validateProfile,summon,awardVictory} from '../src/progression.js';
 import {heroForId,battleRoster,ownedHeroes,uniqueHeroCount} from '../src/hero-copies.js';
-import {addHeroXp,developedChampion,development} from '../src/development.js';
+import {addHeroXp,developedChampion,development,heroDevelopment,levelCap} from '../src/development.js';
 import {feedingQuote,consumeCommons} from '../src/feeding.js';
 import {makeBackup,parseBackup} from '../src/save-files.js';
 import {createBattle,validateSave} from '../src/engine.js';
@@ -11,7 +11,7 @@ const summonCommon=p=>summon(p,roster,()=>0);
 test('duplicate copies have independent XP, can fight together, and survive a saved battle',()=>{
  let p=defaultProfile();p.gems=5000;const a=summonCommon(p);p=a.profile;const b=summonCommon(p);p=b.profile;
  assert.notEqual(a.copyId,b.copyId);assert.equal(uniqueHeroCount(p),6);assert.equal(ownedHeroes(p,roster).length,7);
- const original=heroForId(roster,a.copyId),duplicate=heroForId(roster,b.copyId);p=addHeroXp(p,original,1000);
+ const original=heroForId(roster,a.copyId),duplicate=heroForId(roster,b.copyId);p=addHeroXp({...p,feedLevels:{...p.feedLevels,[a.copyId]:4}},original,1000);
  assert.ok(developedChampion(original,p).level>1);assert.equal(developedChampion(duplicate,p).level,1);
  p.team=[a.copyId,b.copyId,...p.team.slice(0,3)];assert.ok(validateProfile(p,roster));
  const available=battleRoster(p,roster),fight=createBattle(available,p.team,'ashen-gate',43,{progression:true,levels:Object.fromEntries(p.team.map(id=>[id,development(heroForId(roster,id),p.heroXp[id]).level]))});
@@ -37,11 +37,11 @@ test('Common feeding protects active and saved heroes, rejects stale or repeated
 test('schema 9 saves migrate counted copies without sharing further growth',()=>{
  const old=defaultProfile();old.profileVersion=9;delete old.copySequence;old.collection[old.team[0]]=3;old.heroXp[old.team[0]]=200;
  const migrated=normalizeProfile(old,roster),copies=Object.keys(migrated.collection).filter(id=>id===old.team[0]||id.startsWith(old.team[0]+'~'));
- assert.equal(migrated.profileVersion,10);assert.equal(copies.length,3);assert.equal(migrated.heroXp[old.team[0]],200);assert.equal(migrated.heroXp[copies[1]],undefined);assert.ok(validateProfile(migrated,roster));assert.equal(migrated.team[0],old.team[0]);assert.deepEqual(parseBackup(JSON.stringify(makeBackup(old,null)),roster).profile,migrated);
+ assert.equal(migrated.profileVersion,11);assert.equal(copies.length,3);assert.equal(migrated.heroXp[old.team[0]],200);assert.equal(migrated.heroXp[copies[1]],undefined);assert.ok(validateProfile(migrated,roster));assert.equal(migrated.team[0],old.team[0]);assert.deepEqual(parseBackup(JSON.stringify(makeBackup(old,null)),roster).profile,migrated);
 });
 test('a duplicate can ascend and awaken without changing its sibling',async()=>{
  const {MATERIALS,ascensionTier,awakeningRank}=await import('../src/ascension.js');const {ascendChampion,awakenChampion,xpForLevel,levelCap}=await import('../src/development.js');
  let p={...defaultProfile(),gems:5000,gold:999999,materials:Object.fromEntries(MATERIALS.map(m=>[m.id,999]))};const first=summonCommon(p),second=summonCommon(first.profile);p=second.profile;
- const a=heroForId(roster,first.copyId),b=heroForId(roster,second.copyId);p=addHeroXp(p,b,999999);const asc=ascendChampion(p,b,0);assert.ok(!asc.error);p=asc.profile;assert.equal(ascensionTier(p,b),1);assert.equal(ascensionTier(p,a),0);
+ const a=heroForId(roster,first.copyId),b=heroForId(roster,second.copyId);p={...p,feedLevels:{...p.feedLevels,[b.id]:levelCap(b)}};p=addHeroXp(p,b,999999);const asc=ascendChampion(p,b,0);assert.ok(!asc.error);p=asc.profile;assert.equal(ascensionTier(p,b),1);assert.equal(ascensionTier(p,a),0);
  p=addHeroXp(p,b,999999);const aw=awakenChampion(p,b,0);assert.ok(!aw.error);assert.equal(awakeningRank(aw.profile,b),1);assert.equal(awakeningRank(aw.profile,a),0);assert.equal(developedChampion(a,aw.profile).level,1);assert.ok(validateProfile(aw.profile,roster));
 });
