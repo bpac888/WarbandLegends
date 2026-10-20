@@ -37,11 +37,11 @@ test('Common feeding protects active and saved heroes, rejects stale or repeated
 test('schema 9 saves migrate counted copies without sharing further growth',()=>{
  const old=defaultProfile();old.profileVersion=9;delete old.copySequence;old.collection[old.team[0]]=3;old.heroXp[old.team[0]]=200;
  const migrated=normalizeProfile(old,roster),copies=Object.keys(migrated.collection).filter(id=>id===old.team[0]||id.startsWith(old.team[0]+'~'));
- assert.equal(migrated.profileVersion,11);assert.equal(copies.length,3);assert.equal(migrated.heroXp[old.team[0]],200);assert.equal(migrated.heroXp[copies[1]],undefined);assert.ok(validateProfile(migrated,roster));assert.equal(migrated.team[0],old.team[0]);assert.deepEqual(parseBackup(JSON.stringify(makeBackup(old,null)),roster).profile,migrated);
+ assert.equal(migrated.profileVersion,12);assert.equal(copies.length,3);assert.equal(migrated.heroXp[old.team[0]],200);assert.equal(migrated.heroXp[copies[1]],undefined);assert.ok(validateProfile(migrated,roster));assert.equal(migrated.team[0],old.team[0]);assert.deepEqual(parseBackup(JSON.stringify(makeBackup(old,null)),roster).profile,migrated);
 });
-test('a duplicate can ascend and awaken without changing its sibling',async()=>{
- const {MATERIALS,ascensionTier,awakeningRank}=await import('../src/ascension.js');const {ascendChampion,awakenChampion,xpForLevel,levelCap}=await import('../src/development.js');
- let p={...defaultProfile(),gems:5000,gold:999999,materials:Object.fromEntries(MATERIALS.map(m=>[m.id,999]))};const first=summonCommon(p),second=summonCommon(first.profile);p=second.profile;
- const a=heroForId(roster,first.copyId),b=heroForId(roster,second.copyId);p={...p,feedLevels:{...p.feedLevels,[b.id]:levelCap(b)}};p=addHeroXp(p,b,999999);const asc=ascendChampion(p,b,0);assert.ok(!asc.error);p=asc.profile;assert.equal(ascensionTier(p,b),1);assert.equal(ascensionTier(p,a),0);
- p=addHeroXp(p,b,999999);const aw=awakenChampion(p,b,0);assert.ok(!aw.error);assert.equal(awakeningRank(aw.profile,b),1);assert.equal(awakeningRank(aw.profile,a),0);assert.equal(developedChampion(a,aw.profile).level,1);assert.ok(validateProfile(aw.profile,roster));
+test('a duplicate can ascend and Limit Break without changing its sibling',async()=>{
+ const {MATERIALS,ascensionTier,awakeningRank,ASCENSION_CAPS}=await import('../src/ascension.js');const {ascendChampion,awakenChampion,levelCap}=await import('../src/development.js');
+ let p={...defaultProfile(),gems:5000,gold:999999,materials:Object.fromEntries(MATERIALS.map(m=>[m.id,999]))};const rare=()=>{let n=0;return ()=>n++%2===0?.5:0;};const first=summon(p,roster,rare()),second=summon(first.profile,roster,rare());p=second.profile;
+ const a=heroForId(roster,first.copyId),b=heroForId(roster,second.copyId);p={...p,feedLevels:{...p.feedLevels,[b.id]:levelCap(b)}};for(let tier=0;tier<ASCENSION_CAPS[b.rarity].length-1;tier++){p=addHeroXp(p,b,999999);const asc=ascendChampion(p,b,tier);assert.ok(!asc.error);p=asc.profile;}assert.equal(ascensionTier(p,b),2);assert.equal(ascensionTier(p,a),0);
+ p=addHeroXp(p,b,999999);const limit=awakenChampion(p,b,0);assert.ok(!limit.error);assert.equal(awakeningRank(limit.profile,b),1);assert.equal(awakeningRank(limit.profile,a),0);assert.equal(developedChampion(a,limit.profile).level,1);assert.ok(validateProfile(limit.profile,roster));
 });

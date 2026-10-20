@@ -57,3 +57,5 @@ Tournaments are not implemented. Future rules should be visible before team sele
 - Arena currently uses preset local defense teams. Events use the browser's LA calendar; online competition needs a separate authoritative foundation.
 
 Read [design direction](DESIGN-DIRECTION.md) for the conceptual reference and [QA](QA.md) for real verification results. Reference mechanics are inspiration, not an instruction to implement all of them.
+
+- **v0.18:** Ascension tier levels restart visually at 1 while underlying XP and power remain; each ascension gives immediate 2% ATK/DEF/HP. Two Limit Breaks replace three Awakening ranks for Rare, Legendary and Mythical heroes, adding five levels and 3% immediate stats apiece. Commons finish at their normal cap. Specials always start at full power and never gain ranks. v0.17 saves migrate to schema 12. See [current hero progression](ASCENSION.md).

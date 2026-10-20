@@ -6,6 +6,7 @@ import {createBattle,COLORS} from '../src/engine.js';
 import {defaultProfile,STARTER_TEAM} from '../src/progression.js';
 import {PROFILE_KEY,BATTLE_KEY} from '../src/storage.js';
 import {filterChampions} from '../src/collection.js';
+import {developedChampion} from '../src/development.js';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json','utf8'));
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
@@ -23,7 +24,7 @@ try{
  for(const [key,value]of [['color','red'],['role','attack'],['rarity','legendary'],['faction','dragondynasty'],['mana','charging']]){await page.locator('#collection-'+key).selectOption(value);const filters={tab:'all',color:'red',role:'attack',rarity:'legendary',faction:'dragondynasty',mana:'charging'};const selected=Object.fromEntries(await Promise.all(['color','role','rarity','faction','mana'].map(async k=>[k,await page.locator('#collection-'+k).inputValue()])));assert.equal(await page.locator('.library-card').count(),filterChampions(roster,defaultProfile(),{tab:'all',...selected}).length);}
  await page.locator('[data-action="reset-collection"]').first().click();assert.equal(await page.locator('.library-card').count(),135);
  await page.locator('#collection-search').fill('dragon dynasty');assert.equal(await page.locator('.library-card').count(),roster.filter(c=>c.faction==='dragondynasty').length);
- await page.locator('[data-action="reset-collection"]').first().click();await page.locator('#collection-sort').selectOption('attack');const ids=await page.locator('.library-card').evaluateAll(cards=>cards.map(c=>c.dataset.id));assert.deepEqual(ids,filterChampions(roster,defaultProfile(),{tab:'all',sort:'attack'}).map(c=>c.id));
+ await page.locator('[data-action="reset-collection"]').first().click();await page.locator('#collection-sort').selectOption('attack');const ids=await page.locator('.library-card').evaluateAll(cards=>cards.map(c=>c.dataset.id));assert.deepEqual(ids,filterChampions(roster.map(c=>developedChampion(c,defaultProfile(),{preview:true})),defaultProfile(),{tab:'all',sort:'attack'}).map(c=>c.id));
  await page.locator('[data-action="roster"]').first().click();await page.locator('.roster-card').first().waitFor();assert.ok(await page.locator('.roster-card>img').evaluateAll(imgs=>imgs.every(i=>getComputedStyle(i).filter==='none'&&getComputedStyle(i).opacity==='1')));await page.getByRole('button',{name:'Close dialog'}).click();
  const state=createBattle(roster,STARTER_TEAM,'ashen-gate',4848);for(let i=0;i<15;i++){state.board[i].color=COLORS[i%5];state.board[i].special=[null,'blast','prism'][Math.floor(i/5)];}
  await page.evaluate(({p,b,pk,bk})=>{localStorage.setItem(pk,JSON.stringify(p));localStorage.setItem(bk,JSON.stringify(b));},{p:{...defaultProfile(),helpSeen:true},b:state,pk:PROFILE_KEY,bk:BATTLE_KEY});

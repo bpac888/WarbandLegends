@@ -1,4 +1,4 @@
-import {awakenedStats} from './ascension.js';
+import {awakenedStats,normalLevelCap,ASCENSION_CAPS} from './ascension.js';
 import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js';
 import {SCENARIOS,validScenario} from './chapter.js';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
@@ -78,7 +78,7 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
   const state={version:VERSION,id:`runes-${seed>>>0}-${stage.id}`,stageId,rng:seed>>>0||1,nextTile:1,eventId:0,moves:0,cascades:0,phase:'playing',log:[],heroes:teamIds.map((id,i)=>makeUnit(byId.get(id),'hero',i)),enemies:[]};
   if(options.progression){
     state.progression=true;state.sandbox=options.sandbox===true;
-    for(const hero of state.heroes){const source=byId.get(hero.id);hero.level=state.sandbox?levelCap(source):Math.max(1,Math.min(levelCap(source),Math.trunc(options.levels?.[hero.id])||1));const rank=!state.sandbox&&hero.level===levelCap(source)&&Number.isInteger(options.awakenings?.[hero.id])?Math.max(0,Math.min(3,options.awakenings[hero.id])):0;if(rank)hero.awakening=rank;Object.assign(hero,awakenedStats(statsAtLevel(source,hero.level),rank));hero.maxHp=hero.hp;}
+    for(const hero of state.heroes){const source=byId.get(hero.id);hero.level=state.sandbox?normalLevelCap(source):Math.max(1,Math.min(levelCap(source),Math.trunc(options.levels?.[hero.id])||1));const tier=state.sandbox?0:Math.max(0,Math.min(ASCENSION_CAPS[source.rarity].length-1,Math.trunc(options.ascensions?.[hero.id])||0));const rank=!state.sandbox&&source.rarity!=='common'&&tier===ASCENSION_CAPS[source.rarity].length-1&&Number.isInteger(options.awakenings?.[hero.id])?Math.max(0,Math.min(2,options.awakenings[hero.id])):0;if(rank)hero.awakening=rank;Object.assign(hero,awakenedStats(statsAtLevel(source,hero.level),rank,tier));hero.maxHp=hero.hp;}
   }
   const meanHp=state.heroes.reduce((n,u)=>n+u.hp,0)/5,meanAtk=state.heroes.reduce((n,u)=>n+u.atk,0)/5;
   state.enemies=stage.enemyIds.map((id,i)=>{
@@ -98,6 +98,10 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
     if(stage.opening.mana){const {index,amount}=stage.opening.mana;gainMana(state.enemies[index],amount,{flat:true});message(state,`${state.enemies[index].name} begins with ${amount} tile charge.`,'mana',state.enemies[index].uid);}
   }
   if(stage.scenario)state.scenario={id:stage.scenario,triggered:false};
+  if(state.progression&&!state.sandbox)for(const hero of state.heroes)if(hero.awakening===2){
+    const power={attack:'inc_atk',defense:'inc_def',support:'mana_surge'}[hero.role];
+    if(power)applyEffect(state,hero,hero,power,2);
+  }
   return state;
 }
 function effective(unit,stat) {
@@ -307,7 +311,7 @@ export function validateSave(value,roster) {
   if(!validScenario(value,getEncounter(value.stageId)))return false;
   const ids=new Set(roster.map(c=>c.id));
   if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==getEncounter(value.stageId).enemyIds.length)return false;
-  if(value.heroes?.some(u=>!u||u.awakening!==undefined&&(!integer(u.awakening,1)||u.awakening>3||u.level!==levelCap(roster.find(c=>c.id===u.id)||{}))))return false;
+  if(value.heroes?.some(u=>!u||u.awakening!==undefined&&(!integer(u.awakening,1)||u.awakening>2||u.level<normalLevelCap(roster.find(c=>c.id===u.id)||{rarity:'common'})+(u.awakening-1)*5)))return false;
   if(value.progression!==undefined&&(value.progression!==true||typeof value.sandbox!=='boolean'||value.heroes.some(u=>!u||!ids.has(u.id)||!integer(u.level,1)||u.level>levelCap(roster.find(c=>c.id===u.id)))))return false;
   if(new Set(value.board.map(t=>t.id)).size!==SIZE||new Set(value.heroes.map(u=>u.id)).size!==5)return false;
   const units=[...value.heroes,...value.enemies];

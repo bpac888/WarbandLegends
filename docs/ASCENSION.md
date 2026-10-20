@@ -1,66 +1,31 @@
-# Ascension and awakening · v0.13
+# Hero progression · v0.18
 
-> Current economy/save rules: [Gems and account journey (v0.15)](GEMS-QUESTS.md). Seals and older save migration notes below describe earlier releases.
+Legends has four rarities. Each owned copy starts in ascension tier 1 at level 1. Feed unused Common heroes to unlock three overall levels and earn XP; matching color grants 25% more XP. Battles and some quests also grant XP, but visible levels cannot exceed the feeding limit. Feeding costs 25 gold per Common and permanently consumes that copy. Specials are always at full power; training, ascension and Limit Breaks do not change the Special coefficients, effects, mana speed or passive. Higher ATK can still raise the damage of an ATK-based Special.
 
-Open a collected champion's dossier and follow Development → Ascension → Awakening. Ascension opens the next level cap; awakening improves stats after all ascensions and the final level. Neither consumes champion copies or resets levels, XP, collection, or progress. Active fights keep their starting stats.
+## Ascension
 
-## Level caps
-
-| Rarity | Starting cap | Ascension caps | Awakening eligibility |
-| --- | ---: | --- | --- |
-| Common | 20 | 30 | Fully ascended, Lv. 30 |
-| Rare | 30 | 40 → 50 | Fully ascended, Lv. 50 |
-| Legendary | 40 | 50 → 60 → 70 | Fully ascended, Lv. 70 |
-| Mythical | 40 | 50 → 60 → 70 → 80 | Fully ascended, Lv. 80 |
-
-Reach the current cap, gather the displayed materials and gold, and confirm an ascension. The cap increases, while current level, XP and stats remain the same until new levels are earned. XP stops at the current cap; overflow is not stored. The existing unawakened maximum stats, XP curves, gold training rates, mana speeds, Specials and passives are unchanged.
-
-## Materials and acquisition
-
-| Material | Earned from | Gold price per item |
+| Rarity | Overall cap by tier | Final normal cap |
 | --- | --- | ---: |
-| Star Thread | Every campaign/dungeon victory: 1 | 75 |
-| Aether Crystal | Every dungeon victory: 1 | 300 |
-| Sovereign Crown | Every Hard/Nightmare dungeon victory: 1 | 1,500 |
-| Awakened Ember | Every Nightmare dungeon victory: 1 | 2,000 |
-| Astral Heart | Every Nightmare dungeon victory: 1 | 4,000 |
-| Ember Sigil | Supply Exchange; red champions | 200 |
-| Glacier Sigil | Supply Exchange; blue champions | 200 |
-| Verdant Sigil | Supply Exchange; green champions | 200 |
-| Dawn Sigil | Supply Exchange; yellow champions | 200 |
-| Twilight Sigil | Supply Exchange; purple champions | 200 |
+| Common | 20 → 30 | 30 |
+| Rare | 30 → 40 → 50 | 50 |
+| Legendary | 40 → 50 → 60 → 70 | 70 |
+| Mythical | 40 → 50 → 60 → 70 → 80 | 80 |
 
-All ten have distinct scalable illustrated icons, inventory entries and shop offers. The shop sells one at a time with confirmation. Gold is earned in-game. The existing Arena/event token exchanges remain available. Campaign/dungeon previews show material rewards; results show awarded materials. Replays pay the listed drops. Losses, abandonments, locked encounters and playtesting grant none. A resolved battle pays only once. Each material has a 999,999 storage cap.
+Reach the current overall cap, then spend the shown gold, Star Thread, matching-color Sigils and (for higher rarities) Aether Crystals or Sovereign Crowns. Ascension immediately adds 2% to ATK, DEF and HP, opens the next cap and displays the new tier at level 1. Earned XP, actual overall level, collection, Specials and combat power are retained. The tier notation is a display of progress within each tier: for example, a Legendary at overall level 40 becomes tier 2 level 1, then tier 2 level 11 at overall level 50. A battle already in progress retains its starting stats.
 
-## Ascension costs
+## Limit Breaks
 
-Rarity weight `w`: Common 1, Rare 2, Legendary 3, Mythical 4. For the next ascension step `s`:
+After full ascension and the final normal level, Rare, Legendary and Mythical heroes can take two Limit Breaks. Commons have no Limit Breaks. Each break adds 3% immediate ATK, DEF and HP and opens five further overall levels. The hero still needs Common feeders and XP to reach those levels. LB2 requires reaching the LB1 cap first.
 
-- Gold: `500 × w × s`.
-- Star Thread: `2 × w × s`.
-- Matching-color Sigils: `w × s`.
-- Rare and higher: `s × (w−1)` Aether Crystals.
-- Legendary step 3: 1 Sovereign Crown.
-- Mythical steps 3/4: 2/3 Sovereign Crowns.
+| Rarity | Normal max | LB1 max | LB2 max |
+| --- | ---: | ---: | ---: |
+| Common | 30 | — | — |
+| Rare | 50 | 55 | 60 |
+| Legendary | 70 | 75 | 80 |
+| Mythical | 80 | 85 | 90 |
 
-Example: a Legendary champion's first ascension at Lv. 40 needs1,500 gold, 6 Thread, 3 matching Sigils and 2 Crystals. It opens Lv. 50.
+LB1 costs gold, Awakened Embers and matching-color Sigils. LB2 costs more of those plus Astral Hearts. Nightmare dungeon victories drop Embers and Hearts; the Supply Exchange sells materials for earned gold or Gems. The dossier previews exact owned/required counts and the immediate stat result. At LB2, an Attack hero opens each battle with Attack Up, a Defense hero with Defense Up, and a Support hero with Mana Surge; each lasts two board moves. This automatic boon applies at battle start, not to an already active fight. No hero copy is consumed by ascension or Limit Breaking.
 
-## Awakening
+## Stats and saves
 
-Each champion has three awakening ranks after reaching the final level and completing every ascension. Each rank adds 3% of unawakened maximum ATK, DEF and HP, up to 9% total. Bonuses are additive to the base maximum, not compounded: `round(base × [1 + 0.03 × rank])`.
-
-For next awakening rank `s`, using the same rarity weight `w`:
-
-- Gold: `1,500 × w × s`.
-- Awakened Embers and matching Sigils: `w × s` each.
-- Ranks 2/3 additionally require 1/2 Astral Hearts.
-
-The dossier previews the resulting stats and exact owned/required quantities. Confirmation rechecks ownership, full ascension, maximum level, materials, gold and current rank. A stale confirmation cannot advance another rank. Cancel spends nothing. Specials, mana speed and passives are unaffected.
-
-## Stats, saves and compatibility
-
-Collection shows actual level and awakening stats. Codex shows final-level, rank 3 maximum stats. An owned champion's dossier shows their current development; unowned dossiers clearly preview maximum stats. Optional open-roster playtest battles retain unawakened maximum stats and pay no rewards.
-
-Profile schema 8 uses the existing profile/battle keys. Schemas 5–7 migrate XP with the minimum ascensions needed to retain earned levels; no reset or stat loss. At an exact cap, that cap is retained until its next ascension is earned. Existing fully leveled heroes keep the ascensions needed for their level and start at awakening rank 0. Materials start empty. Current-schema saves validate tiers, ownership, XP caps, counts and awakening eligibility; exports/imports retain all new fields. Active battles retain captured stats even if a champion ascends or awakens outside the battle.
-
-All 135 hero IDs, source roster baselines/art and 20 existing tactical guides are preserved. The original Warband Legends repository is untouched. Prices, costs and bonuses are an initial playable balance pass and can be tuned later.
+Unascended level 1 starts at about 55% of the hero's original maximum stats. At the final normal level, raw level growth reaches the original roster baseline. Ascension adds 2% per completed step; Limit Breaks add 3% per step and additional level growth. Bonuses add to the level-derived stats and round to integers. Collection shows current stats and tier level; Codex previews the fully ascended, LB2 maximum (or Common normal maximum). Existing v0.17 profiles migrate to schema 12, retaining heroes, XP, feeding unlocks, resources and ascensions. Previous Awakening progress becomes LB1 if the hero is eligible; LB2 must be earned under the new rules. Older supported backup profiles migrate on import. An in-progress battle using the retired third Awakening rank may need to be restarted under the new rules. All 135 hero IDs and original Specials are unchanged.

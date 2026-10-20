@@ -1,3 +1,5 @@
+> Current progression: see [Hero progression v0.18](ASCENSION.md). The historical design notes below describe the earlier foundation.
+
 # Hero development
 
 > Current economy/save rules: [Gems and account journey (v0.15)](GEMS-QUESTS.md). Seals and older save migration notes below describe earlier releases.
