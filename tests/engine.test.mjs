@@ -1,11 +1,13 @@
+import {defaultProfile as newProfile} from '../src/progression.js';
+import {REFERENCE_TEAM,referenceProfile} from './reference-team.mjs';
 import test from 'node:test';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 import {readFile,stat} from 'node:fs/promises';
 import {COLORS,STAGES,advantage,neighbors,findMatches,validMoves,createBattle,swap,activate,cast,validateSave,skillDescription,MANA_SPEEDS,manaLevels,readyLevel,VERSION} from '../src/engine.js';
-import {STARTER_TEAM,PROFILE_KEY,BATTLE_KEY,LEGACY_BATTLE_KEY,defaultProfile,loadProfile,loadBattle,save,recordVictory} from '../src/storage.js';
+import {PROFILE_KEY,BATTLE_KEY,LEGACY_BATTLE_KEY,loadProfile,loadBattle,save,recordVictory} from '../src/storage.js';
 const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url)));
-const make=(seed=42,team=STARTER_TEAM)=>createBattle(roster,team,STAGES[0].id,seed);
+const make=(seed=42,team=REFERENCE_TEAM)=>createBattle(roster,team,STAGES[0].id,seed);
 const quiet=state=>{state.enemies.forEach(e=>{e.hp=e.maxHp=100000;e.countdown=99;});return state;};
 const board=()=>Array.from({length:35},(_,i)=>({id:i+1,color:COLORS[(i%7+Math.floor(i/7)*2)%5],special:null}));
 function setupRun(length){const s=quiet(make());s.board=board();s.board[7].color='red';for(let i=1;i<length;i++)s.board[i].color='red';s.board[0].color='blue';s.nextTile=100;return s;}
@@ -37,8 +39,8 @@ test('lethal damage triggers passive revival once',()=>{const s=quiet(make());s.
 test('victory and defeat terminate combat and prohibit further actions',()=>{const s=make();s.enemies.forEach(e=>e.hp=1);const a=s.heroes[0];a.mana=a.manaMax;a.special.levels.forEach(l=>{l.effects=[];l.aoe=true;l.damage=2.8;});const won=cast(s,a.uid,'enemy-0').state;assert.equal(won.phase,'victory');assert.ok(swap(won,...validMoves(won.board)[0]).error);const loss=make();loss.heroes.forEach(h=>{h.hp=1;h.passive=null;h.effects.poison={turns:1,source:'enemy-0',appliedMove:0};});assert.equal(swap(loss,...validMoves(loss.board)[0]).state.phase,'defeat');});
 test('all champion skills have an explicit target and adapted explanation',()=>{for(const c of roster){const d=skillDescription(c);assert.ok(d.name&&d.text);assert.ok(['ally','self','enemy'].includes(d.target));}});
 test('serialized save resumes with the same RNG and next combat outcome',()=>{const s=make();const store=memory();assert.ok(save(store,BATTLE_KEY,s));const restored=loadBattle(store,roster);const move=validMoves(s.board)[0];assert.deepEqual(swap(s,...move),swap(restored,...move));});
-test('malformed saves safely reset instead of crashing',()=>{for(const mutate of [s=>s.board.pop(),s=>s.heroes[0].effects.poison=null,s=>s.enemies[0].lanes=null,s=>s.heroes[0].atk=NaN,s=>s.nextTile=1,s=>s.rng=0,s=>s.enemies[0].uid='bad',s=>s.log=[{text:7}]]){const s=make();mutate(s);const store=memory();save(store,BATTLE_KEY,s);assert.equal(loadBattle(store,roster),null);}const store={getItem:()=>'{bad'};assert.equal(loadBattle(store,roster),null);assert.deepEqual(loadProfile(store,roster),defaultProfile());assert.equal(save({setItem(){throw Error('quota');}},BATTLE_KEY,make()),false);});
-test('own save namespace and victories are idempotent and unlock the next stage',()=>{assert.ok(PROFILE_KEY.startsWith('legends.runes.'));assert.ok(BATTLE_KEY.startsWith('legends.runes.'));const s=make();s.phase='victory';const p=recordVictory(defaultProfile(),s);assert.equal(p.wins,1);assert.equal(p.unlocked,1);assert.equal(recordVictory(p,s),p);});
+test('malformed saves safely reset instead of crashing',()=>{for(const mutate of [s=>s.board.pop(),s=>s.heroes[0].effects.poison=null,s=>s.enemies[0].lanes=null,s=>s.heroes[0].atk=NaN,s=>s.nextTile=1,s=>s.rng=0,s=>s.enemies[0].uid='bad',s=>s.log=[{text:7}]]){const s=make();mutate(s);const store=memory();save(store,BATTLE_KEY,s);assert.equal(loadBattle(store,roster),null);}const store={getItem:()=>'{bad'};assert.equal(loadBattle(store,roster),null);assert.deepEqual(loadProfile(store,roster),newProfile());assert.equal(save({setItem(){throw Error('quota');}},BATTLE_KEY,make()),false);});
+test('own save namespace and victories are idempotent and unlock the next stage',()=>{assert.ok(PROFILE_KEY.startsWith('legends.runes.'));assert.ok(BATTLE_KEY.startsWith('legends.runes.'));const s=make();s.phase='victory';const p=recordVictory(referenceProfile(),s);assert.equal(p.wins,1);assert.equal(p.unlocked,1);assert.equal(recordVictory(p,s),p);});
 test('30 seeded encounters simulate to completion without stalls or invalid saves',()=>{for(let seed=1;seed<=30;seed++){let s=make(seed);let count=0;while(s.phase==='playing'&&count++<160){for(const hero of s.heroes){if(hero.hp>0&&readyLevel(hero)>0){const targets=(manaLevels(hero).find(l=>l.level===readyLevel(hero)).target==='enemy'?s.enemies:s.heroes).filter(u=>u.hp>0);const r=cast(s,hero.uid,targets[0].uid);s=r.state;if(s.phase!=='playing')break;}}if(s.phase!=='playing')break;s=swap(s,...validMoves(s.board)[0]).state;assert.ok(validateSave(s,roster),`invalid seed ${seed}`);}assert.notEqual(s.phase,'playing',`seed ${seed} stalled`);}});
 
 test('standard mana speeds use the requested exact fractional tile thresholds',()=>{
@@ -53,7 +55,7 @@ test('charging Specials use cumulative 8/10 or 5/10/15 gates, not repeated costs
  for(const c of charging){const gates=c.special.levels.map(l=>l.tiles);assert.deepEqual(gates,c.special.levels.length===2?[8,10]:[5,10,15]);const u={...structuredClone(c),hp:c.hp,mana:0};for(let i=0;i<gates.length;i++){u.mana=gates[i]-.01;assert.equal(readyLevel(u),i);u.mana=gates[i];assert.equal(readyLevel(u),i+1);}}
 });
 test('charging champions can cast early or hold for stronger versions and spend all charge',()=>{
- const c=roster.find(c=>c.special.levels.length===3&&c.role==='attack');const ids=[c.id,...STARTER_TEAM.filter(id=>id!==c.id).slice(0,4)];
+ const c=roster.find(c=>c.special.levels.length===3&&c.role==='attack');const ids=[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)];
  const state=quiet(make(12,ids)),actor=state.heroes[0];actor.mana=4;assert.ok(cast(state,actor.uid,'enemy-0',1).error);actor.mana=5;
  assert.ok(cast(state,actor.uid,'enemy-0',2).error);const early=cast(state,actor.uid,'enemy-0',1);assert.ok(!early.error);assert.equal(early.state.heroes[0].mana,0);assert.equal(early.state.moves,0);
  actor.mana=15;const full=cast(state,actor.uid,'enemy-0',3);assert.ok(!full.error);assert.equal(full.state.heroes[0].mana,0);
@@ -84,17 +86,17 @@ test('Legendary and Rare stat means match the supplied max-level reference',()=>
  for(const [rarity,means,bounds]of [['legendary',{atk:760,def:726,hp:1393},{atk:[596,854],def:[598,850],hp:[1226,1645]}],['rare',{atk:626,def:600,hp:1083},{atk:[501,776],def:[440,752],hp:[835,1330]}]]){const group=roster.filter(c=>c.rarity===rarity);for(const stat of ['atk','def','hp']){assert.equal(group.reduce((n,c)=>n+c[stat],0)/group.length,means[stat]);for(const c of group)assert.ok(Number.isInteger(c[stat])&&c[stat]>=bounds[stat][0]&&c[stat]<=bounds[stat][1],`${c.id} ${stat}`);}}
 });
 test('every champion can cast each level with valid targeting and finite results',()=>{
- for(const c of roster)for(const level of c.special.levels){const ids=[c.id,...STARTER_TEAM.filter(id=>id!==c.id).slice(0,4)];const s=make(123,ids),actor=s.heroes[0];actor.mana=level.tiles;const target=level.target==='enemy'?s.enemies[0]:level.target==='self'?actor:s.heroes[1];s.heroes[1].hp=Math.floor(s.heroes[1].maxHp*.5);const r=cast(s,actor.uid,target.uid,level.level);assert.ok(!r.error,`${c.id} level ${level.level}`);assert.ok(validateSave(r.state,roster),`${c.id} produced invalid state`);assert.equal(r.state.heroes[0].mana,0);assert.ok(r.state.log.some(l=>l.text.includes(c.special.name)));}
+ for(const c of roster)for(const level of c.special.levels){const ids=[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)];const s=make(123,ids),actor=s.heroes[0];actor.mana=level.tiles;const target=level.target==='enemy'?s.enemies[0]:level.target==='self'?actor:s.heroes[1];s.heroes[1].hp=Math.floor(s.heroes[1].maxHp*.5);const r=cast(s,actor.uid,target.uid,level.level);assert.ok(!r.error,`${c.id} level ${level.level}`);assert.ok(validateSave(r.state,roster),`${c.id} produced invalid state`);assert.equal(r.state.heroes[0].mana,0);assert.ok(r.state.log.some(l=>l.text.includes(c.special.name)));}
 });
 test('mana buffs affect enemy Special charge, not attack countdowns',()=>{
  const s=quiet(make());s.enemies[1].countdown=1;s.enemies[1].effects.mana_surge={turns:2,source:'enemy-1',appliedMove:0};const r=swap(s,...validMoves(s.board)[0]).state;assert.equal(r.enemies[1].mana,4.8);assert.equal(r.enemies[1].countdown,r.enemies[1].baseCountdown);
 });
 test('legacy saves keep the team/progression and restart active encounters with new rules',()=>{
- const store=memory(),profile=defaultProfile();profile.wins=3;profile.unlocked=2;profile.cleared=['ashen-gate','frozen-pass'];save(store,PROFILE_KEY,profile);
+ const store=memory(),profile=referenceProfile();profile.wins=3;profile.unlocked=2;profile.cleared=['ashen-gate','frozen-pass'];save(store,PROFILE_KEY,profile);
  const legacy=make();legacy.version=1;legacy.moves=9;legacy.heroes.forEach(h=>{h.mana=100;h.manaMax=100;h.hp=50;});save(store,LEGACY_BATTLE_KEY,legacy);const backup=store.getItem(LEGACY_BATTLE_KEY);
  const migrated=loadBattle(store,roster);assert.equal(migrated.version,VERSION);assert.equal(migrated.moves,0);assert.ok(migrated.restartedForRules);assert.deepEqual(migrated.heroes.map(h=>h.id),legacy.heroes.map(h=>h.id));assert.ok(migrated.heroes.every(h=>h.mana===0&&h.hp===h.maxHp));assert.deepEqual(loadProfile(store,roster),profile);assert.equal(store.getItem(LEGACY_BATTLE_KEY),backup);assert.ok(validateSave(migrated,roster));
  save(store,BATTLE_KEY,migrated);assert.deepEqual(loadBattle(store,roster),migrated);
 });
 test('completed legacy victories do not pay or unlock twice during migration',()=>{
- const store=memory(),legacy=make();legacy.version=1;legacy.phase='victory';legacy.enemies.forEach(e=>e.hp=0);save(store,LEGACY_BATTLE_KEY,legacy);const profile=recordVictory(defaultProfile(),legacy);const migrated=loadBattle(store,roster);assert.equal(migrated.phase,'victory');assert.equal(recordVictory(profile,migrated),profile);
+ const store=memory(),legacy=make();legacy.version=1;legacy.phase='victory';legacy.enemies.forEach(e=>e.hp=0);save(store,LEGACY_BATTLE_KEY,legacy);const profile=recordVictory(referenceProfile(),legacy);const migrated=loadBattle(store,roster);assert.equal(migrated.phase,'victory');assert.equal(recordVictory(profile,migrated),profile);
 });

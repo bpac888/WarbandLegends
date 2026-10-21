@@ -1,8 +1,8 @@
+import {REFERENCE_TEAM,referenceProfile} from './reference-team.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createBattle,cast,swap,activate,validMoves,validateSave} from '../src/engine.js';
-import {STARTER_TEAM,defaultProfile} from '../src/progression.js';
 import {campaignStages,getEncounter} from '../src/encounters.js';
 import {SCENARIOS,scenarioStatus} from '../src/chapter.js';
 import {chargeComparison} from '../src/special-plan.js';
@@ -11,12 +11,12 @@ import {campaign} from '../src/adventure-ui.js';
 import {loadBattle,BATTLE_KEY} from '../src/storage.js';
 import {makeBackup,parseBackup} from '../src/save-files.js';
 const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url)));
-const make=(n=10)=>createBattle(roster,STARTER_TEAM,`campaign-normal-${String(n).padStart(2,'0')}`,99,{progression:true});
+const make=(n=10)=>createBattle(roster,REFERENCE_TEAM,`campaign-normal-${String(n).padStart(2,'0')}`,99,{progression:true});
 const ready=(s,index=2)=>{const h=s.heroes[index];h.mana=h.manaMax;return h;};
 const trigger=()=>{const s=make();s.enemies[0].hp=s.enemies[2].hp=0;const actor=ready(s);return cast(s,actor.uid,actor.uid);};
 test('second chapter authors five distinct tactics in all difficulties without changing stage identities or locks',()=>{
- for(const difficulty of ['normal','hard','nightmare']){const stages=campaignStages(difficulty).slice(5,10);assert.equal(new Set(stages.map(s=>s.tacticLabel)).size,5);for(const [i,e]of stages.entries()){assert.equal(e.number,i+6);assert.equal(e.id,`campaign-${difficulty}-${String(i+6).padStart(2,'0')}`);assert.equal(e.chapter,'The Hollow Covenant');const b=createBattle(roster,STARTER_TEAM,e.id,33,{progression:true});assert.ok(validateSave(b,roster),e.id);assert.match(encounterTactics(e),/Encounter tactics/);}}
- const html=campaign(defaultProfile(),{chapter:1});assert.match(html,/The Hollow Covenant/);assert.match(html,/STAGES 6–10/);assert.equal((html.match(/class="campaign-node/g)||[]).length,0);assert.equal((html.match(/class="map-node campaign-node/g)||[]).length,25);assert.match(html,/data-stage="campaign-normal-06"[^>]*disabled/);
+ for(const difficulty of ['normal','hard','nightmare']){const stages=campaignStages(difficulty).slice(5,10);assert.equal(new Set(stages.map(s=>s.tacticLabel)).size,5);for(const [i,e]of stages.entries()){assert.equal(e.number,i+6);assert.equal(e.id,`campaign-${difficulty}-${String(i+6).padStart(2,'0')}`);assert.equal(e.chapter,'The Hollow Covenant');const b=createBattle(roster,REFERENCE_TEAM,e.id,33,{progression:true});assert.ok(validateSave(b,roster),e.id);assert.match(encounterTactics(e),/Encounter tactics/);}}
+ const html=campaign(referenceProfile(),{chapter:1});assert.match(html,/The Hollow Covenant/);assert.match(html,/STAGES 6–10/);assert.equal((html.match(/class="campaign-node/g)||[]).length,0);assert.equal((html.match(/class="map-node campaign-node/g)||[]).length,25);assert.match(html,/data-stage="campaign-normal-06"[^>]*disabled/);
 });
 test('regeneration, relay charge, ailment wards and death pacts are real opening state',()=>{
  assert.equal(make(6).enemies[1].effects.heal.turns,2);assert.equal(make(7).enemies[2].mana,8);assert.equal(make(7).enemies[2].manaMax,12);
@@ -50,7 +50,7 @@ test('special-rune and board actions check escort defeat only after their full r
  for(const special of [false,true]){const s=make();s.enemies[0].hp=s.enemies[2].hp=0;s.enemies[1].countdown=10;s.enemies[1].def=100000;let r;if(special){s.board[0].special='blast';r=activate(s,0);}else r=swap(s,...validMoves(s.board)[0]);assert.ok(r.state.scenario.triggered);assert.equal(r.frames.at(-2).kind,'mechanic');assert.equal(r.frames.at(-1).kind,'settled');}
 });
 test('both guardian types persist independently; legacy fights keep their original roster and rules',()=>{
- const s=trigger().state,p=defaultProfile(),b=parseBackup(JSON.stringify(makeBackup(p,s)),roster).battle;assert.deepEqual(b,s);const loaded=loadBattle({getItem:key=>key===BATTLE_KEY?JSON.stringify(s):null},roster);assert.deepEqual(loaded.scenario,s.scenario);assert.ok(validateSave(loaded,roster));
+ const s=trigger().state,p=referenceProfile(),b=parseBackup(JSON.stringify(makeBackup(p,s)),roster).battle;assert.deepEqual(b,s);const loaded=loadBattle({getItem:key=>key===BATTLE_KEY?JSON.stringify(s):null},roster);assert.deepEqual(loaded.scenario,s.scenario);assert.ok(validateSave(loaded,roster));
  const old=make();delete old.scenario;old.enemies[0].hp=old.enemies[2].hp=0;const actor=ready(old),r=cast(old,actor.uid,actor.uid);assert.ok(!r.state.scenario);assert.ok(validateSave(r.state,roster));assert.match(encounterTactics(getEncounter(old.stageId),old),/Last Light/);assert.match(encounterTactics(getEncounter(old.stageId),old),/keeps its original rules/);
  const swapped=make();swapped.scenario.id='iron-overpressure';assert.equal(validateSave(swapped,roster),false);assert.equal(Object.keys(SCENARIOS).length,2);
 });

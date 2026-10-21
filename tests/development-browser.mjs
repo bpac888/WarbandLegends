@@ -1,3 +1,4 @@
+import {referenceProfile} from './reference-team.mjs';
 import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -5,7 +6,7 @@ import assert from 'node:assert/strict';
 import {validMoves,readyLevel,manaLevels,living} from '../src/engine.js';
 import {development,statsAtLevel} from '../src/development.js';
 import {PROFILE_KEY,BATTLE_KEY} from '../src/storage.js';
-import {defaultProfile,summon} from '../src/progression.js';
+import {summon} from '../src/progression.js';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json','utf8'));
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
@@ -15,11 +16,11 @@ try{
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  const read=key=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),key),profile=()=>read(PROFILE_KEY),battle=()=>read(BATTLE_KEY);
  const go=async route=>{await page.goto('http://legends.local/#/'+route);await page.locator('.topbar').waitFor();};
- await go('home');assert.equal((await profile()).openRoster,false);
+ await go('home');assert.equal((await profile()).openRoster,false);await page.evaluate(({key,p})=>localStorage.setItem(key,JSON.stringify(p)),{key:PROFILE_KEY,p:referenceProfile()});await page.reload();await page.locator('.topbar').waitFor();
  await go('champion/shieldmaiden_runa');await page.getByRole('heading',{name:'A legend in the making'}).waitFor();assert.equal(await page.locator('.level-dial>b').textContent(),'1');assert.equal(await page.locator('.level-dial>small').textContent(),'/ 30');
  for(const width of [1440,760,390,320]){await page.setViewportSize({width,height:1000});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`development overflow ${width}`);await page.screenshot({path:`${root}artifacts/development-${width}-dossier.png`,fullPage:true});}
  await page.setViewportSize({width:390,height:844});
- const donor=summon(defaultProfile(),roster,()=>0);await page.evaluate(({key,p})=>localStorage.setItem(key,JSON.stringify(p)),{key:PROFILE_KEY,p:donor.profile});await page.reload();await page.locator('.level-dial').waitFor();
+ const donor=summon(referenceProfile(),roster,()=>0);await page.evaluate(({key,p})=>localStorage.setItem(key,JSON.stringify(p)),{key:PROFILE_KEY,p:donor.profile});await page.reload();await page.locator('.level-dial').waitFor();
  const before=await profile();await page.locator('[data-action="feed-preview"]').click();await page.getByRole('button',{name:'Cancel',exact:true}).click();assert.deepEqual(await profile(),before);
  await page.locator('[data-action="feed-preview"]').click();assert.ok(await page.locator('.feeding-list').isVisible());assert.ok(await page.evaluate(()=>document.querySelector('#modal').scrollWidth<=document.querySelector('#modal').clientWidth));await page.screenshot({path:root+'artifacts/development-mobile-training.png',fullPage:true});
  await page.locator(`[name="feed-copy"][value="${donor.copyId}"]`).check();await page.locator('[data-action="feed-confirm"]').click();assert.equal(await page.locator('.level-dial>b').textContent(),'4');assert.ok((await profile()).gold<before.gold);assert.equal(development(roster.find(c=>c.id==='shieldmaiden_runa'),(await profile()).heroXp.shieldmaiden_runa).level,4);await page.reload();await page.locator('.level-dial').waitFor();assert.equal(await page.locator('.level-dial>b').textContent(),'4');assert.equal(await page.locator('[data-action="feed-confirm"]').count(),0);

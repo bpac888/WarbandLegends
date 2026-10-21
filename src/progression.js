@@ -10,7 +10,7 @@ import {ENCOUNTERS,DIFFICULTIES,getEncounter,entryError} from './encounters.js';
 import {addHeroXp,xpForLevel,levelCap} from './development.js';
 export const PROFILE_VERSION=12;
 export const CAMPAIGN_REWARDS=Object.freeze(Object.fromEntries(ENCOUNTERS.map(e=>[e.id,e.rewards])));
-export const STARTER_TEAM=['dragonmage','shieldmaiden_runa','steel_oracle','dune_queen_zaya','wraith_archer'];
+export const STARTER_TEAM=['nima_dewthread','ravel','plague_doctor_mors','gallows_marksman_oren','cult_zealot'];
 export const SUMMON_ODDS=[{rarity:'common',chance:50},{rarity:'rare',chance:30},{rarity:'legendary',chance:7.5},{rarity:'mythical',chance:1.5},{rarity:'double_common',chance:11}];
 export function defaultProfile(){return {...defaultModes(),...defaultKeeper(),profileVersion:PROFILE_VERSION,copySequence:0,name:'Rune Keeper',team:[...STARTER_TEAM],unlocked:0,wins:0,cleared:[],recorded:[],speed:1,helpSeen:false,gold:500,gems:INITIAL_GEMS,collection:Object.fromEntries(STARTER_TEAM.map(id=>[id,1])),summons:0,history:[],claimed:[],heroXp:{},ascensions:{},awakenings:{},materials:{},campaignProgress:{normal:0,hard:0,nightmare:0},dungeonClears:{},dungeonWins:0,openRoster:false,reducedMotion:false};}
 const safeInt=(v,fallback,max=999999999)=>Number.isSafeInteger(v)&&v>=0&&v<=max?v:fallback;

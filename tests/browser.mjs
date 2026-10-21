@@ -1,3 +1,4 @@
+import {REFERENCE_TEAM} from './reference-team.mjs';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
@@ -35,7 +36,7 @@ const fs=require('node:fs/promises'),path=require('node:path'),assert=require('n
  await reloadBattle();assert.equal(await page.locator('.move-counter b').textContent(),'1');
  await page.getByRole('button',{name:/Animation speed/}).click();assert.equal(await page.getByRole('button',{name:/Animation speed/}).textContent(),'2×');
  // Charge a genuine engine state to exercise skill targeting and persisted results.
- const charged=createBattle(roster,STARTER_TEAM,'ashen-gate',123);charged.heroes[0].mana=charged.heroes[0].manaMax;
+ const charged=createBattle(roster,REFERENCE_TEAM,'ashen-gate',123);charged.heroes[0].mana=charged.heroes[0].manaMax;
  await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v5',JSON.stringify(s)),charged);await reloadBattle();
  await page.locator('[data-action="hero"][data-uid="hero-0"]').click();await page.getByRole('button',{name:'Cast Charge 2'}).click();await page.locator('[data-action="enemy"][data-uid="enemy-0"]').click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'0');
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).heroes[0].mana),0);

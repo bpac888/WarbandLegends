@@ -1,11 +1,12 @@
+import {REFERENCE_TEAM} from './reference-team.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createBattle,cast,swap,validMoves,validateSave,readyLevel} from '../src/engine.js';
 import {EFFECTS,BUFFS,DEBUFFS,DOTS} from '../src/effects.js';
-import {STARTER_TEAM,PREVIOUS_BATTLE_KEY,loadBattle} from '../src/storage.js';
+import {PREVIOUS_BATTLE_KEY,loadBattle} from '../src/storage.js';
 const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url)));
-const fresh=()=>{const s=createBattle(roster,STARTER_TEAM,'ashen-gate',42);for(const e of s.enemies){e.hp=e.maxHp=100000;e.countdown=99;e.passive=null;}return s;};
+const fresh=()=>{const s=createBattle(roster,REFERENCE_TEAM,'ashen-gate',42);for(const e of s.enemies){e.hp=e.maxHp=100000;e.countdown=99;e.passive=null;}return s;};
 const status=(source='hero-0',turns=2)=>({turns,source,appliedMove:0});
 function spec(s,effects=[],extra={}){const h=s.heroes[0];h.mana=h.manaMax;h.special.levels=h.special.levels.map(l=>({...l,target:'self',damage:0,healing:0,effects,aoe:false,...extra}));return s;}
 const perform=s=>cast(s,'hero-0','hero-0').state;
@@ -40,4 +41,4 @@ test('Riposte responds once to a direct Special, not to runes or DoT',()=>{const
 test('adapted passive immunities reference actual live ailments',()=>{const sage=roster.find(c=>c.id==='frost_sage'),voidHero=roster.find(c=>c.id==='yshmir_worldwound');assert.deepEqual(sage.passive.immune,['mana_slow']);assert.deepEqual(voidHero.passive.immune,['mana_block']);for(const c of roster)for(const id of c.passive?.immune||[])assert.ok(DEBUFFS.has(id),c.id+' '+id);});
 test('every authored effect has a valid category, duration and counterplay',()=>{for(const c of roster)for(const l of c.special.levels)for(const e of l.effects){assert.ok(EFFECTS[e.id],c.id+' '+e.id);assert.ok(['self','ally','allies','enemy','enemies','other_allies'].includes(e.scope));assert.equal(e.turns>0,EFFECTS[e.id].timed,c.id+' '+e.id);if(e.id==='guard')assert.equal(e.scope,'self');}assert.ok(!EFFECTS.taunt);});
 test('v2 battle migration preserves health, charge, RNG, board and progress while adapting old taunts',()=>{const s=fresh();s.version=2;s.moves=7;s.heroes[0].hp-=100;s.heroes[0].mana=4.2;s.heroes[0].effects.taunt=status('enemy-1');const raw=JSON.stringify(s),store={getItem:key=>key===PREVIOUS_BATTLE_KEY?raw:null};const r=loadBattle(store,roster);assert.equal(r.version,3);assert.ok(r.updatedStatusRules);assert.equal(r.heroes[0].hp,s.heroes[0].hp);assert.equal(r.heroes[0].mana,4.2);assert.equal(r.rng,s.rng);assert.deepEqual(r.board,s.board);assert.equal(r.moves,7);assert.ok(!r.heroes[0].effects.taunt);assert.ok(r.enemies[1].effects.guard);assert.ok(validateSave(r,roster));});
-test('Frost Sage and Yshmir actually block their adapted mana ailments in combat',()=>{for(const [id,ailment]of [['frost_sage','mana_slow'],['yshmir_worldwound','mana_block']]){const s=createBattle(roster,[id,...STARTER_TEAM.slice(0,4)],'ashen-gate',42);const r=perform(spec(s,[{id:ailment,turns:2,scope:'self'}]));assert.ok(!r.heroes[0].effects[ailment]);assert.ok(r.log.some(l=>l.text.includes('passive immunity')));}});
+test('Frost Sage and Yshmir actually block their adapted mana ailments in combat',()=>{for(const [id,ailment]of [['frost_sage','mana_slow'],['yshmir_worldwound','mana_block']]){const s=createBattle(roster,[id,...REFERENCE_TEAM.slice(0,4)],'ashen-gate',42);const r=perform(spec(s,[{id:ailment,turns:2,scope:'self'}]));assert.ok(!r.heroes[0].effects[ailment]);assert.ok(r.log.some(l=>l.text.includes('passive immunity')));}});
