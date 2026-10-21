@@ -1,0 +1,48 @@
+/* The Citadel's five main destinations share the top bar with the new crest. */
+.topbar.with-nav{width:100%;max-width:1520px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(10px,1.6vw,26px);padding-inline:clamp(14px,2.5vw,42px)}
+.topbar.with-nav .brand{flex:none;min-width:0;white-space:nowrap}
+.topbar.with-nav .brand-sigil{width:52px;height:58px;flex:none}
+.topbar.with-nav .brand>span:last-child{font-size:clamp(17px,1.5vw,24px);letter-spacing:.15em;line-height:1.05;text-shadow:0 2px 14px #040d11}
+.topbar.with-nav .brand small{font-size:clamp(6px,.55vw,9px);letter-spacing:.24em;margin-top:5px}
+.topbar.with-nav .game-nav{position:static;left:auto;right:auto;bottom:auto;z-index:auto;display:flex;align-items:center;justify-content:center;gap:clamp(3px,.5vw,9px);max-width:none;min-width:0;margin:0;padding:0;border:0;background:none;box-shadow:none;backdrop-filter:none}
+.topbar.with-nav .game-nav>button{min-width:0;min-height:43px;padding:8px clamp(5px,.7vw,11px);gap:6px;white-space:nowrap;font-size:clamp(9px,.72vw,12px);border-radius:9px}
+.topbar.with-nav .game-nav .ui-icon{width:18px;height:18px}
+.topbar.with-nav .topbar-right{flex:none;min-width:0}
+.topbar.with-nav .game-wallet>span{padding:6px 8px}
+.splash-emblem{width:106px;height:124px;margin:15px 0 12px;border:0;background:none;box-shadow:none;transform:none}
+.splash-emblem img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 5px 23px #d2a45462)}
+body:has(.topbar-nav){padding-bottom:0}
+.warband-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px 18px}
+.warband-actions .button{min-height:36px;padding:7px 13px;font-size:10px}
+@media(max-width:1080px){
+ .topbar.with-nav{height:auto;min-height:108px;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:55px 46px;column-gap:10px;row-gap:0;padding:4px clamp(11px,2vw,22px) 7px}
+ .topbar.with-nav .brand{grid-column:1;grid-row:1}
+ .topbar.with-nav .brand-sigil{width:37px;height:45px}
+ .topbar.with-nav .topbar-right{grid-column:2;grid-row:1}
+ .topbar.with-nav .game-nav{grid-column:1/-1;grid-row:2;width:100%;justify-content:space-between;gap:4px}
+ .topbar.with-nav .game-nav>button{flex:1;min-height:42px;padding:5px 4px;font-size:11px}
+}
+@media(max-width:600px){
+ .topbar.with-nav{min-height:111px;grid-template-rows:54px 47px;padding:4px 9px 6px}
+ .topbar.with-nav .brand{gap:5px}
+ .topbar.with-nav .brand-sigil{width:33px;height:41px}
+ .topbar.with-nav .brand>span:last-child{font-size:17px;letter-spacing:.1em}
+ .topbar.with-nav .brand small{font-size:5px;letter-spacing:.16em;margin-top:2px}
+ .topbar.with-nav .topbar-right{gap:4px}
+ .topbar.with-nav .game-wallet{gap:3px}
+ .topbar.with-nav .game-wallet>span{min-height:27px;padding:3px 4px;gap:3px}
+ .topbar.with-nav .game-wallet b{font-size:9px}
+ .topbar.with-nav .game-wallet .ui-icon{width:12px;height:12px}
+ .topbar.with-nav .topbar-right>.icon-button{width:27px;min-width:27px;height:29px;min-height:29px;padding:3px}
+ .topbar.with-nav .game-nav>button{flex-direction:row;gap:4px;min-height:42px;padding:4px 2px;font-size:9px;letter-spacing:0}
+ .topbar.with-nav .game-nav .ui-icon{width:15px;height:15px}
+ .splash-emblem{width:79px!important;height:94px!important;margin:12px auto!important}
+ .warband-actions{gap:5px 10px}
+ .warband-actions .button{min-height:31px;padding:5px 9px;font-size:9px}
+}
+@media(max-width:370px){
+ .topbar.with-nav .brand>span:last-child{font-size:14px}
+ .topbar.with-nav .brand-sigil{width:29px;height:37px}
+ .topbar.with-nav .game-nav>button{flex-direction:column;gap:1px;font-size:8px}
+ .topbar.with-nav .game-nav .ui-icon{width:15px;height:15px}
+}
