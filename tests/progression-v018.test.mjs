@@ -7,7 +7,7 @@ import {defaultProfile,normalizeProfile,validateProfile} from '../src/progressio
 import {createBattle,validateSave} from '../src/engine.js';
 const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url)));
 const rare=roster.find(c=>c.id==='shieldmaiden_runa');
-const rich=c=>({...defaultProfile(),gold:999999,feedLevels:{[c.id]:levelCap(c)},materials:Object.fromEntries(MATERIALS.map(m=>[m.id,999]))});
+const rich=c=>({...defaultProfile(),gold:999999,materials:Object.fromEntries(MATERIALS.map(m=>[m.id,999]))});
 test('a new ascension tier visibly restarts at 1 while actual level, XP, stats and full Special remain',()=>{
  let p=addHeroXp(rich(rare),rare,999999),before=developedChampion(rare,p),earned=p.heroXp[rare.id];
  assert.deepEqual(tierLevel(p,rare,before.level),{tier:1,level:30,cap:30});

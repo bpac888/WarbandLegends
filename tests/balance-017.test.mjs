@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {defaultProfile,normalizeProfile,validateProfile,summon,summonBatch,victoryRewards} from '../src/progression.js';
 import {heroForId} from '../src/hero-copies.js';
-import {developedChampion,addHeroXp,heroDevelopment,trainChampion} from '../src/development.js';
+import {developedChampion,addHeroXp,heroDevelopment,trainChampion,development} from '../src/development.js';
 import {consumeCommons,feedingQuote} from '../src/feeding.js';
 import {QUESTS} from '../src/quests.js';
 import {summonResults} from '../src/summoning-ui.js';
@@ -23,9 +23,9 @@ test('twin-Common outcome gives two independent heroes for one 100-Gem call',()=
  const html=summonResults({...r,count:1,twinCount:1});assert.equal((html.match(/class="summon-result-card/g)||[]).length,2);assert.match(html,/twin-Common bonus/);assert.ok(r.results.every(x=>html.includes(`data-id="${x.copyId}"`)));
 });
 test('ten calls can award extra Commons and still guarantee a Rare',()=>{const p={...defaultProfile(),gems:900},r=summonBatch(p,roster,()=>.99,10);assert.equal(r.count,10);assert.equal(r.results.length,19);assert.equal(r.twinCount,9);assert.equal(r.results.at(-1).champion.rarity,'rare');assert.equal(r.profile.gems,0);assert.equal(r.profile.summons,19);assert.ok(validateProfile(r.profile,roster));});
-test('battle XP cannot bypass Common feeding; each consumed Common unlocks three levels',()=>{
- let p={...defaultProfile(),gems:5000};const target=roster.find(c=>c.id===p.team[0]);p=addHeroXp(p,target,2000);assert.equal(developedChampion(target,p).level,1);assert.ok(trainChampion(p,target,0).error);
- const donor=summon(p,roster,()=>0);p=donor.profile;const q=feedingQuote(p,target,[donor.copyId],roster);assert.ok(!q.error);const r=consumeCommons(p,target,[donor.copyId],roster,{expectedXp:p.heroXp[target.id]});assert.ok(!r.error);assert.equal(r.profile.feedLevels[target.id],4);assert.equal(heroDevelopment(r.profile,target).level,4);assert.equal(r.profile.collection[donor.copyId],undefined);assert.ok(validateProfile(r.profile,roster));
+test('battle XP levels heroes directly and feeding triples Common donor XP',()=>{
+ let p={...defaultProfile(),gems:5000};const target=roster.find(c=>c.id===p.team[0]);p=addHeroXp(p,target,2000);assert.equal(heroDevelopment(p,target).level,development(target,2000,30).level);assert.ok(trainChampion(p,target,0).error);
+ const donor=summon(p,roster,()=>0);p=donor.profile;const q=feedingQuote(p,target,[donor.copyId],roster);assert.ok(!q.error);assert.equal(q.xp,donor.champion.color===target.color?450:360);const r=consumeCommons(p,target,[donor.copyId],roster,{expectedXp:p.heroXp[target.id]});assert.ok(!r.error);assert.equal(r.profile.heroXp[target.id],p.heroXp[target.id]+q.gained);assert.equal(heroDevelopment(r.profile,target).level,q.after.level);assert.equal(r.profile.collection[donor.copyId],undefined);assert.ok(validateProfile(r.profile,roster));
 });
-test('old Legends saves retain their earned level when the feeding requirement begins',()=>{const c=roster.find(h=>h.id==='dragonmage'),p=defaultProfile();p.profileVersion=10;p.heroXp[c.id]=1000;const migrated=normalizeProfile(p,roster);assert.equal(migrated.profileVersion,12);assert.ok(migrated.feedLevels[c.id]>1);assert.equal(heroDevelopment(migrated,c).level,migrated.feedLevels[c.id]);assert.ok(validateProfile(migrated,roster));});
+test('old Legends saves retain XP and no longer have a feeding limit',()=>{const c=roster.find(h=>h.id==='dragonmage'),p=defaultProfile();p.profileVersion=10;p.heroXp[c.id]=1000;p.feedLevels={[c.id]:1};const migrated=normalizeProfile(p,roster);assert.equal(migrated.profileVersion,12);assert.equal(migrated.feedLevels,undefined);assert.equal(heroDevelopment(migrated,c).level,development(c,1000,40).level);assert.ok(validateProfile(migrated,roster));});
 test('first-clear campaign and selected quests give more Gems for feeding summons',()=>{const p=defaultProfile(),reward=victoryRewards(p,{phase:'victory',stageId:'ashen-gate'});assert.equal(reward.gems,200);assert.equal(QUESTS.find(q=>q.id==='first-victory').gems,300);assert.equal(QUESTS.find(q=>q.id==='normal-5').gems,200);});

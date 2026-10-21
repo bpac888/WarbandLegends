@@ -2,7 +2,6 @@ import {ascensionTier,currentLevelCap,ascensionRequirements,awakeningRank,awaken
 // Hero growth is separate from the immutable maximum-level roster and combat effects.
 export const LEVEL_CAPS=Object.freeze({common:30,rare:50,legendary:70,mythical:80});
 const XP_WEIGHTS={common:1,rare:1.25,legendary:1.6,mythical:2};
-export const FEED_LEVELS=3;
 export function levelCap(champion){return normalLevelCap(champion)+(champion.rarity==='common'?0:LIMIT_BREAK_LEVELS*LIMIT_BREAK_RANKS);}
 export function xpForLevel(champion,level){
  const n=Math.max(0,Math.min(levelCap(champion),Math.trunc(level))-1);
@@ -15,8 +14,7 @@ export function development(champion,xp=0,cap=levelCap(champion)){
  const floor=xpForLevel(champion,level),next=level===cap?floor:xpForLevel(champion,level+1);
  return {level,cap,xp:total,maxXp,atCap:level===cap,earned:total-floor,needed:next-floor,remaining:next-total,ratio:level===cap?1:(total-floor)/(next-floor)};
 }
-export function growthCap(profile,champion){return Math.min(currentLevelCap(profile,champion),Math.max(1,profile.feedLevels?.[champion.id]||1));}
-export function heroDevelopment(profile,champion){return development(champion,profile.heroXp?.[champion.id],growthCap(profile,champion));}
+export function heroDevelopment(profile,champion){return development(champion,profile.heroXp?.[champion.id],currentLevelCap(profile,champion));}
 export function statsAtLevel(champion,level=1){
  const bounded=Math.max(1,Math.min(levelCap(champion),Math.trunc(level)||1));
  const factor=.55+.45*(bounded-1)/(normalLevelCap(champion)-1);
@@ -30,7 +28,7 @@ export function developedChampion(champion,profile,{preview=false,sandbox=false}
 }
 export function trainingQuote(profile,champion){
  const d=heroDevelopment(profile,champion),physicalCap=currentLevelCap(profile,champion);
- const error=!profile.collection[champion.id]?'Collect this champion before training.':d.atCap&&d.cap===physicalCap?(ascensionTier(profile,champion)<ASCENSION_CAPS[champion.rarity].length-1?'Ascend this champion to unlock the next level cap.':awakeningRank(profile,champion)<LIMIT_BREAK_RANKS&&champion.rarity!=='common'?'Limit Break this champion to unlock five more levels.':'This champion is at maximum level.'):'Feed Common heroes to unlock and earn levels.';
+ const error=!profile.collection[champion.id]?'Collect this champion before training.':d.atCap?(ascensionTier(profile,champion)<ASCENSION_CAPS[champion.rarity].length-1?'Ascend this champion to raise the level cap.':awakeningRank(profile,champion)<LIMIT_BREAK_RANKS&&champion.rarity!=='common'?'Limit Break this champion to raise the level cap by five.':'This champion is at maximum level.'):null;
  const tier=ascensionTier(profile,champion);return {...d,physicalCap,bankedXp:profile.heroXp?.[champion.id]||0,cost:0,error,current:awakenedStats(statsAtLevel(champion,d.level),awakeningRank(profile,champion),tier),next:awakenedStats(statsAtLevel(champion,Math.min(physicalCap,d.level+1)),awakeningRank(profile,champion),tier)};
 }
 export function trainChampion(profile,champion,expectedXp){

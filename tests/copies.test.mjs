@@ -11,7 +11,7 @@ const summonCommon=p=>summon(p,roster,()=>0);
 test('duplicate copies have independent XP, can fight together, and survive a saved battle',()=>{
  let p=defaultProfile();p.gems=5000;const a=summonCommon(p);p=a.profile;const b=summonCommon(p);p=b.profile;
  assert.notEqual(a.copyId,b.copyId);assert.equal(uniqueHeroCount(p),6);assert.equal(ownedHeroes(p,roster).length,7);
- const original=heroForId(roster,a.copyId),duplicate=heroForId(roster,b.copyId);p=addHeroXp({...p,feedLevels:{...p.feedLevels,[a.copyId]:4}},original,1000);
+ const original=heroForId(roster,a.copyId),duplicate=heroForId(roster,b.copyId);p=addHeroXp({...p},original,1000);
  assert.ok(developedChampion(original,p).level>1);assert.equal(developedChampion(duplicate,p).level,1);
  p.team=[a.copyId,b.copyId,...p.team.slice(0,3)];assert.ok(validateProfile(p,roster));
  const available=battleRoster(p,roster),fight=createBattle(available,p.team,'ashen-gate',43,{progression:true,levels:Object.fromEntries(p.team.map(id=>[id,development(heroForId(roster,id),p.heroXp[id]).level]))});
@@ -42,6 +42,6 @@ test('schema 9 saves migrate counted copies without sharing further growth',()=>
 test('a duplicate can ascend and Limit Break without changing its sibling',async()=>{
  const {MATERIALS,ascensionTier,awakeningRank,ASCENSION_CAPS}=await import('../src/ascension.js');const {ascendChampion,awakenChampion,levelCap}=await import('../src/development.js');
  let p={...defaultProfile(),gems:5000,gold:999999,materials:Object.fromEntries(MATERIALS.map(m=>[m.id,999]))};const rare=()=>{let n=0;return ()=>n++%2===0?.5:0;};const first=summon(p,roster,rare()),second=summon(first.profile,roster,rare());p=second.profile;
- const a=heroForId(roster,first.copyId),b=heroForId(roster,second.copyId);p={...p,feedLevels:{...p.feedLevels,[b.id]:levelCap(b)}};for(let tier=0;tier<ASCENSION_CAPS[b.rarity].length-1;tier++){p=addHeroXp(p,b,999999);const asc=ascendChampion(p,b,tier);assert.ok(!asc.error);p=asc.profile;}assert.equal(ascensionTier(p,b),2);assert.equal(ascensionTier(p,a),0);
+ const a=heroForId(roster,first.copyId),b=heroForId(roster,second.copyId);p={...p};for(let tier=0;tier<ASCENSION_CAPS[b.rarity].length-1;tier++){p=addHeroXp(p,b,999999);const asc=ascendChampion(p,b,tier);assert.ok(!asc.error);p=asc.profile;}assert.equal(ascensionTier(p,b),2);assert.equal(ascensionTier(p,a),0);
  p=addHeroXp(p,b,999999);const limit=awakenChampion(p,b,0);assert.ok(!limit.error);assert.equal(awakeningRank(limit.profile,b),1);assert.equal(awakeningRank(limit.profile,a),0);assert.equal(developedChampion(a,limit.profile).level,1);assert.ok(validateProfile(limit.profile,roster));
 });

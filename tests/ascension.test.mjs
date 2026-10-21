@@ -4,7 +4,7 @@ import {ascensionQuote,ascendChampion,awakeningQuote,awakenChampion,trainingQuot
 import {defaultProfile,normalizeProfile,validateProfile,awardVictory,victoryRewards} from '../src/progression.js';
 import {createBattle,validateSave} from '../src/engine.js';import {getEncounter,ENCOUNTERS} from '../src/encounters.js';import {makeBackup,parseBackup} from '../src/save-files.js';
 const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url))),hero=roster.find(c=>c.id==='dragonmage');
-const rich=c=>({...defaultProfile(),collection:{...defaultProfile().collection,[c.id]:1,[c.id+'~1']:1},copySequence:1,gold:999999,feedLevels:{[c.id]:levelCap(c)},materials:Object.fromEntries(MATERIALS.map(m=>[m.id,999]))});
+const rich=c=>({...defaultProfile(),collection:{...defaultProfile().collection,[c.id]:1,[c.id+'~1']:1},copySequence:1,gold:999999,materials:Object.fromEntries(MATERIALS.map(m=>[m.id,999]))});
 const max=c=>({...rich(c),heroXp:{[c.id]:xpForLevel(c,ASCENSION_CAPS[c.rarity].at(-1))},ascensions:{[c.id]:ASCENSION_CAPS[c.rarity].length-1}});
 test('all 135 heroes ascend through their rarity caps, retain XP and gain immediate stats',()=>{for(const c of roster){let p=rich(c);const caps=ASCENSION_CAPS[c.rarity];for(let tier=0;tier<caps.length;tier++){
  assert.equal(currentLevelCap(p,c),caps[tier]);p=addHeroXp(p,c,999999999);assert.equal(developedChampion(c,p).level,caps[tier]);assert.equal(addHeroXp(p,c,1),p);

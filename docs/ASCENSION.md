@@ -1,6 +1,6 @@
-# Hero progression · v0.18
+# Hero progression
 
-Legends has four rarities. Each owned copy starts in ascension tier 1 at level 1. Feed unused Common heroes to unlock three overall levels and earn XP; matching color grants 25% more XP. Battles and some quests also grant XP, but visible levels cannot exceed the feeding limit. Feeding costs 25 gold per Common and permanently consumes that copy. Specials are always at full power; training, ascension and Limit Breaks do not change the Special coefficients, effects, mana speed or passive. Higher ATK can still raise the damage of an ATK-based Special.
+Legends has four rarities. Each owned copy starts in ascension tier 1 at level 1. Feed unused Common heroes for at least 360 XP each; matching color grants 25% more XP. Battles and some quests also grant XP. XP alone determines levels within the current Ascension or Limit Break cap. Feeding costs 25 gold per Common and permanently consumes that copy. Specials are always at full power; training, ascension and Limit Breaks do not change the Special coefficients, effects, mana speed or passive. Higher ATK can still raise the damage of an ATK-based Special.
 
 ## Ascension
 
@@ -15,7 +15,7 @@ Reach the current overall cap, then spend the shown gold, Star Thread, matching-
 
 ## Limit Breaks
 
-After full ascension and the final normal level, Rare, Legendary and Mythical heroes can take two Limit Breaks. Commons have no Limit Breaks. Each break adds 3% immediate ATK, DEF and HP and opens five further overall levels. The hero still needs Common feeders and XP to reach those levels. LB2 requires reaching the LB1 cap first.
+After full ascension and the final normal level, Rare, Legendary and Mythical heroes can take two Limit Breaks. Commons have no Limit Breaks. Each break adds 3% immediate ATK, DEF and HP and opens five further overall levels. The hero still needs XP to reach those levels, from Common feeders, battles or quests. LB2 requires reaching the LB1 cap first.
 
 | Rarity | Normal max | LB1 max | LB2 max |
 | --- | ---: | ---: | ---: |
@@ -28,4 +28,4 @@ LB1 costs gold, Awakened Embers and matching-color Sigils. LB2 costs more of tho
 
 ## Stats and saves
 
-Unascended level 1 starts at about 55% of the hero's original maximum stats. At the final normal level, raw level growth reaches the original roster baseline. Ascension adds 2% per completed step; Limit Breaks add 3% per step and additional level growth. Bonuses add to the level-derived stats and round to integers. Collection shows current stats and tier level; Codex previews the fully ascended, LB2 maximum (or Common normal maximum). Existing v0.17 profiles migrate to schema 12, retaining heroes, XP, feeding unlocks, resources and ascensions. Previous Awakening progress becomes LB1 if the hero is eligible; LB2 must be earned under the new rules. Older supported backup profiles migrate on import. An in-progress battle using the retired third Awakening rank may need to be restarted under the new rules. All 135 hero IDs and original Specials are unchanged.
+Unascended level 1 starts at about 55% of the hero's original maximum stats. At the final normal level, raw level growth reaches the original roster baseline. Ascension adds 2% per completed step; Limit Breaks add 3% per step and additional level growth. Bonuses add to the level-derived stats and round to integers. Collection shows current stats and tier level; Codex previews the fully ascended, LB2 maximum (or Common normal maximum). Existing v0.17 profiles migrate to schema 12, retaining heroes, XP, resources and ascensions. Legacy feeding limits are discarded. Previous Awakening progress becomes LB1 if the hero is eligible; LB2 must be earned under the new rules. Older supported backup profiles migrate on import. An in-progress battle using the retired third Awakening rank may need to be restarted under the new rules. All 135 hero IDs and original Specials are unchanged.
