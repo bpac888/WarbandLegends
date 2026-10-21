@@ -1,0 +1,34 @@
+/* Give the encounter, runes, and champions the full battle viewport. */
+body:has(.battle-shell) .battle-topbar{width:100%;max-width:none;margin:0;padding-inline:clamp(10px,2vw,32px);background:#131b33d9}
+.battle-topbar .brand{margin-right:auto}
+.battle-topbar .topbar-right{margin-left:auto;gap:8px}
+.battle-topbar .effect-guide-button{gap:5px;padding-inline:9px}
+.battle-topbar .effect-guide-button .card-glyph{width:16px;height:16px}
+.battle-center .battle-title{position:absolute;inset:3px 3px auto;z-index:5;height:0;min-height:0;padding:0;border:0;pointer-events:none}
+.battle-center .battle-title>button{pointer-events:auto}
+.battle-center .board-surround{padding-top:4px}
+.battle-shell .enemy-hp{display:block;height:7px;min-height:7px;margin:4px auto 2px;background:#241f34;border:1px solid #e7baae8c;box-shadow:0 0 8px #090914bb}
+.battle-shell .enemy-hp>i{background:linear-gradient(90deg,#ad4148,#f18073)}
+.battle-shell .enemy-hp-label{display:block;line-height:1.15;color:#fff1ed;text-shadow:0 1px 4px #080b18}
+.battle-shell .enemy-mana{display:block;height:6px;min-height:6px;margin:4px auto 2px;background:#111932;border:1px solid #92aeec9c;border-radius:3px;overflow:hidden;box-shadow:0 0 8px #090914bb}
+.battle-shell .enemy-mana>i{display:block;height:100%;background:linear-gradient(90deg,#4670bd,#a4d9ff);box-shadow:0 0 7px #83caff88}
+@media(min-height:601px){
+ body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,29fr) minmax(0,53fr) 21px minmax(0,18fr)}
+ .battle-center .battle-sky{grid-template-rows:minmax(0,1fr) 18px}
+ .battle-shell .enemy-target>img{height:min(15svh,145px)}
+ .battle-shell .enemy-line{align-items:center}
+ .battle-shell .hero-main{height:calc(100% - 18px)}
+ .battle-shell .hero-main>img{height:100%}
+}
+@media(max-width:520px){
+ .battle-topbar .topbar-right{gap:4px}
+ .battle-topbar .effect-guide-button{width:30px;min-width:30px;padding:0}
+ .battle-topbar .effect-guide-button>span{display:none}
+ .battle-topbar .brand>span:last-child{font-size:15px;letter-spacing:.07em}
+}
+@media(max-height:600px){
+ .battle-center .battle-sky{grid-template-rows:minmax(0,1fr) 9px}
+ .battle-shell .enemy-line{height:100%;min-height:0;align-items:center}
+ .battle-shell .enemy-hp{height:4px;min-height:4px;margin:1px auto}
+ .battle-shell .enemy-mana{height:4px;min-height:4px;margin:1px auto}
+}

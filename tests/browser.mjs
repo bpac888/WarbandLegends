@@ -33,17 +33,17 @@ const fs=require('node:fs/promises'),path=require('node:path'),assert=require('n
 
  const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')));const move=validMoves(state.board)[0];
  await page.locator(`[data-index="${move[0]}"]`).focus();await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>document.activeElement.dataset.index),String(move[0]));
- await page.locator(`[data-index="${move[1]}"]`).focus();await page.keyboard.press('Enter');await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'1');assert.equal(await page.evaluate(()=>document.activeElement.dataset.index),String(move[1]));
- await reloadBattle();assert.equal(await page.locator('.move-counter b').textContent(),'1');
+ await page.locator(`[data-index="${move[1]}"]`).focus();await page.keyboard.press('Enter');await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).moves),1);assert.equal(await page.evaluate(()=>document.activeElement.dataset.index),String(move[1]));
+ await reloadBattle();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).moves),1);
  await page.getByRole('button',{name:/Animation speed/}).click();assert.equal(await page.getByRole('button',{name:/Animation speed/}).textContent(),'2×');
  // Charge a genuine engine state to exercise skill targeting and persisted results.
  const charged=createBattle(roster,REFERENCE_TEAM,'ashen-gate',123);charged.heroes[0].mana=charged.heroes[0].manaMax;
  await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v5',JSON.stringify(s)),charged);await reloadBattle();
- await page.locator('[data-action="hero"][data-uid="hero-0"]').click();await page.getByRole('button',{name:'Cast Charge 2'}).click();await page.locator('[data-action="enemy"][data-uid="enemy-0"]').click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'0');
+ await page.locator('[data-action="hero"][data-uid="hero-0"]').click();await page.getByRole('button',{name:'Cast Charge 2'}).click();await page.locator('[data-action="enemy"][data-uid="enemy-0"]').click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).moves),0);
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).heroes[0].mana),0);
  const dragState=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5'))),dragMove=validMoves(dragState.board)[0];
  const from=await page.locator(`[data-index="${dragMove[0]}"]`).boundingBox(),to=await page.locator(`[data-index="${dragMove[1]}"]`).boundingBox();
- await page.mouse.move(from.x+from.width/2,from.y+from.height/2);await page.mouse.down();await page.mouse.move(to.x+to.width/2,to.y+to.height/2,{steps:5});await page.mouse.up();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.locator('.move-counter b').textContent(),'1');
+ await page.mouse.move(from.x+from.width/2,from.y+from.height/2);await page.mouse.down();await page.mouse.move(to.x+to.width/2,to.y+to.height/2,{steps:5});await page.mouse.up();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).moves),1);
  for(const width of [390,320]){await page.setViewportSize({width,height:844});await page.screenshot({path:`${PREVIEW}/mobile-${width}-battle.png`,fullPage:true});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`overflow at ${width}`);const tile=await page.locator('.tile').first().boundingBox();assert.ok(tile.width>=30);}
  // Three-charge UI: exact gates, holding charge, choosing a lower unlocked level.
  const three=roster.find(c=>c.id==='azure_sovereign'),threeTeam=[three.id,...STARTER_TEAM.slice(0,4)];
