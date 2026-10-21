@@ -15,7 +15,7 @@ for(const id of ['gold-pouch','gold-chest'])if((await stat('assets/items/'+id+'.
 for(const id of AVATARS)if((await stat('assets/portraits/'+id+'.svg')).size<1000)throw Error('Missing profile artwork: '+id);
 if((await stat('assets/items/gem.svg')).size<1000)throw Error('Missing Gem icon');
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
-for(const path of ['index.html','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
+for(const path of ['index.html','manifest.webmanifest','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
 const manifest={version:'0.16.0',champions:roster.length,campaignStages:75,dungeons:7,dungeonEncounters:21,arenaRivals:9,specialEvents:3,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
 await writeFile('dist/build.json',JSON.stringify(manifest,null,2)+'\n');
 console.log(`Built independent static game: ${roster.length} champions and local portraits → dist/`);

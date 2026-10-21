@@ -1,0 +1,12 @@
+{
+  "id": "./",
+  "name": "Legends · Runes of War",
+  "short_name": "Legends",
+  "description": "A single-player match-3 RPG.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0e1c",
+  "theme_color": "#0b0e1c",
+  "icons": [{"src": "./assets/brand/legends-favicon.png", "sizes": "128x128", "type": "image/png"}]
+}
