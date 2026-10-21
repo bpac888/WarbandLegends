@@ -91,3 +91,63 @@
 }
 @media(max-width:370px){.material-offer>img{height:82px}.material-offer{padding:12px 8px}.material-offer>h3{font-size:17px}.material-offer .button{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.game-page .button,.game-page .text-button,.game-page select{transition:none}}
+
+/* Hero dossier: the portrait leads, progression follows without repeated stats. */
+.page-champion{padding-top:18px}
+.page-champion>.text-button{margin-bottom:4px}
+.page-champion .champion-page{grid-template-columns:minmax(0,275px) minmax(0,1fr);gap:30px;align-items:center;max-width:950px;margin:8px auto 0}
+.page-champion .champion-showcase>img{display:block;width:100%;aspect-ratio:3/4;object-fit:contain}
+.page-champion .champion-showcase>.hero-level-mark{position:absolute;top:auto;right:auto;bottom:14px;left:14px;display:inline-flex;width:auto;padding:8px 12px;font-size:17px;background:#161c37ed;border-color:#e1c687af;box-shadow:0 4px 15px #030712ab}
+.page-champion .champion-showcase>.hero-rank-track{position:absolute;top:auto;right:14px;bottom:14px;left:auto;transform:none}
+.page-champion .champion-biography>.eyebrow{display:block;font-size:15px;font-weight:750;letter-spacing:.07em;line-height:1.4;color:#e7c58f;text-transform:uppercase}
+.page-champion .champion-biography>h1{font-size:clamp(37px,4vw,53px);margin:8px 0 5px}
+.page-champion .champion-title{font-size:20px;margin:7px 0 16px;color:#d4dbeb;line-height:1.35}
+.page-champion .champion-biography .detail-element{display:inline-flex;align-items:center;gap:10px;font-size:18px;font-weight:700;line-height:1.3;color:#f2e0bf}
+.page-champion .champion-biography .detail-element .rune-icon{width:26px;height:26px}
+.page-champion .champion-story{margin-top:18px;padding:12px 0}
+.page-champion .champion-page-actions{margin-top:16px}
+.page-champion .dossier-sections{max-width:950px;margin:16px auto 18px;justify-content:flex-start;gap:8px}
+.page-champion .dossier-sections>button{padding:10px 16px}
+.page-champion .hero-development,.page-champion .champion-special,.page-champion .passive-info,.page-champion .codex-development{max-width:1100px;margin-left:auto;margin-right:auto}
+.page-champion .hero-development{gap:24px;padding:25px;margin-bottom:16px}
+.page-champion .development-intro>p{margin-bottom:12px}
+.page-champion .level-dial{margin-top:12px;width:92px;height:92px}
+.page-champion .level-dial>b{font-size:36px}
+.page-champion .growth-stats{margin:12px 0}
+.page-champion .growth-stats>div{padding:9px 0}
+.page-champion .training-offer{padding:11px 14px}
+.page-champion .advancement-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:1100px;margin:0 auto 18px;align-items:start}
+.page-champion .ascension-panel{margin:0;padding:22px;min-width:0}
+.page-champion .ascension-panel .section-heading{margin-bottom:13px}
+.page-champion .ascension-panel>p{margin:9px 0;line-height:1.5}
+.page-champion .ascension-panel .material-grid{margin:13px 0;gap:9px}
+.page-champion .champion-special{margin-top:18px;margin-bottom:18px;padding:0;background:transparent;border:0;box-shadow:none}
+.page-champion .passive-info{margin-top:18px}
+/* Keep the ascension track inside the lower part of each portrait, above the role icon. */
+.library-art>.hero-rank-track{top:auto;bottom:44px;transform:none}
+.team-portrait>.hero-rank-track{top:auto;bottom:108px;transform:none}
+.roster-card>.hero-rank-track{top:auto;bottom:82px;transform:none}
+.hero-main>.hero-rank-track{top:36px}
+.summon-result-card>.hero-rank-track{top:63%}
+.victory-portrait>.hero-rank-track{top:63%}
+@media(max-width:900px){.page-champion .advancement-pair{grid-template-columns:1fr}.page-champion .champion-page{grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:22px}}
+@media(max-width:600px){
+ .page-champion .champion-page{grid-template-columns:1fr;gap:17px;margin-top:8px}
+ .page-champion .champion-showcase{width:min(66vw,220px);max-width:220px}
+ .page-champion .champion-showcase>.hero-level-mark{left:10px;bottom:10px;padding:6px 9px;font-size:14px}
+ .page-champion .champion-showcase>.hero-rank-track{right:8px;bottom:10px}
+ .page-champion .champion-biography>.eyebrow{font-size:13px}
+ .page-champion .champion-biography>h1{font-size:37px}
+ .page-champion .champion-title{font-size:17px;margin-bottom:12px}
+ .page-champion .champion-biography .detail-element{font-size:16px}
+ .page-champion .champion-biography .detail-element .rune-icon{width:22px;height:22px}
+ .page-champion .champion-story{margin-top:13px}
+ .page-champion .dossier-sections{margin:16px 0;gap:7px}
+ .page-champion .dossier-sections>button{padding:9px 10px;font-size:11px}
+ .page-champion .hero-development{padding:20px;gap:14px}
+ .page-champion .level-dial{width:76px;height:76px}
+ .page-champion .level-dial>b{font-size:30px}
+ .page-champion .ascension-panel{padding:19px}
+ .hero-main>.hero-rank-track{top:29px}
+}
+@media(orientation:landscape) and (max-height:600px){.hero-main>.hero-rank-track{top:22px}}
