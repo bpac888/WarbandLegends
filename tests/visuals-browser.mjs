@@ -16,6 +16,7 @@ try{
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  const go=async route=>{await page.goto('http://legends.local/#/'+route);await page.locator('.topbar').waitFor();};
  await go('roster');await page.locator('[data-tab="all"]').click();assert.equal(await page.locator('.library-card').count(),135);
+ assert.equal(await page.locator('.codex-owned-mark').count(),5);assert.equal(await page.locator('.library-card.unowned .codex-owned-mark').count(),0);assert.equal(await page.locator('.library-card.owned .codex-owned-mark').count(),5);await page.locator('.library-card.owned').first().screenshot({path:root+'artifacts/codex-owned-card.png'});
  await page.locator('.library-art>img').evaluateAll(imgs=>imgs.forEach(i=>i.loading='eager'));
  await page.waitForFunction(()=>[...document.querySelectorAll('.library-art>img')].every(i=>i.complete&&i.naturalWidth>0));
  assert.ok(await page.locator('.library-art>img').evaluateAll(imgs=>imgs.every(i=>getComputedStyle(i).filter==='none'&&getComputedStyle(i).opacity==='1'&&getComputedStyle(i).objectFit==='contain')));
