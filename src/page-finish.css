@@ -1,0 +1,65 @@
+/* Shared card metadata: a complete symbol row with ownership at the far edge. */
+.library-label>.library-symbols{display:flex;align-items:center;gap:9px;min-height:26px;width:100%}
+.library-symbols>.faction-emblem{float:none;display:block;flex:none;width:25px;height:25px;margin:0;object-fit:contain}
+.library-symbols>.rarity-mark{flex:none;margin:0}
+.library-symbols>.codex-owned-mark{display:inline-flex;align-items:center;justify-content:center;flex:none;width:23px;height:23px;margin:0 0 0 auto;border:1px solid #b7d39a77;border-radius:50%;background:#244337b8;color:#e2eab9;box-shadow:0 2px 8px #07141066}
+.library-symbols>.codex-owned-mark .card-glyph{width:14px;height:14px}
+.library-label>.library-symbols+.library-name{margin-top:7px}
+
+/* The Special belongs beside the full-size hero portrait. */
+.page-champion .dossier-sections{max-width:1200px;margin:9px auto 14px}
+.page-champion .champion-page{grid-template-columns:minmax(0,430px) minmax(0,1fr);max-width:1200px;gap:clamp(26px,3vw,48px);align-items:start;margin-top:0}
+.page-champion .champion-showcase{width:100%;max-width:none}
+.page-champion .champion-biography{min-width:0;padding:3px 0}
+.page-champion .champion-biography>h1{margin:6px 0 4px}
+.page-champion .champion-title{margin:3px 0 11px}
+.page-champion .champion-story{margin:10px 0 0;padding:8px 0}
+.page-champion .champion-biography .champion-special{max-width:none;width:100%;margin:16px 0 0;padding:0;background:none;border:0;box-shadow:none}
+.page-champion .champion-special .section-heading{margin-bottom:9px}
+.page-champion .champion-special .section-heading h2{font-size:clamp(25px,2.1vw,32px);line-height:1.15}
+.page-champion .champion-special .special-levels{grid-template-columns:1fr;gap:10px;margin:10px 0 0}
+.page-champion .champion-special .special-level{padding:14px 16px}
+.page-champion .hero-development{margin-top:20px}
+
+/* One campaign entrance and four evenly sized Adventure destinations. */
+.page-world .page-heading{padding:22px 28px;margin-bottom:16px;background:linear-gradient(115deg,#162b40,#1b2840 70%,#123c42)}
+.page-world .page-heading:after{opacity:.38}
+.page-world .page-heading h1{margin:5px 0 6px}
+.page-world .page-heading p{margin:0}
+.page-world .adventure-vista{height:330px;margin-bottom:17px}
+.page-world .adventure-vista>div{bottom:26px}
+.page-world .adventure-vista h2{margin:7px 0 14px}
+.page-world .world-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.page-world .world-card{min-height:280px}
+
+/* New high-resolution splash painting replaces the three small portrait crops. */
+.splash-landscape{background-image:url('../assets/scenes/legends-splash.webp');background-position:center;background-size:cover;filter:none;transform:none}
+.splash-atmosphere{background:linear-gradient(90deg,#06101ef2 0%,#081728d5 24%,#09182a6b 44%,transparent 72%),linear-gradient(0deg,#07111b8c,transparent 30%,#07111b30)}
+.splash-content{width:min(55%,660px)}
+.splash-content h1{color:#fff3d9;text-shadow:0 5px 28px #020816,0 0 40px #a8824844}
+.splash-enter{box-shadow:0 9px 29px #0306119c,0 0 0 1px #fff1bf5c}
+
+/* Future daily bundles remain clearly preview-only. */
+.premium-offers>.vip-offer{border-color:#c3b57f9c;background:radial-gradient(circle at 50% 12%,#29669a7d,transparent 52%),linear-gradient(145deg,#172e58,#1a2346 70%,#352743)}
+.premium-offers>.vip-month{border-color:#d8bc8aa8;background:radial-gradient(circle at 50% 12%,#59479f88,transparent 52%),linear-gradient(145deg,#282e65,#24234d 70%,#49304d)}
+.premium-offers>.vip-offer img{filter:drop-shadow(0 8px 20px #316ba677)}
+.premium-offers>.vip-offer p{font-size:14px;line-height:1.5}
+
+@media(max-width:1100px){.page-world .world-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-champion .champion-page{grid-template-columns:minmax(0,350px) minmax(0,1fr);gap:25px}}
+@media(max-width:600px){
+ .library-symbols>.faction-emblem{width:22px;height:22px}
+ .library-symbols>.codex-owned-mark{width:21px;height:21px}
+ .page-champion .champion-page{grid-template-columns:1fr;gap:17px}
+ .page-champion .champion-showcase{width:min(90vw,390px);max-width:100%;margin-inline:auto}
+ .page-champion .champion-biography{padding:0}
+ .page-champion .champion-special{margin-top:13px}
+ .page-world .page-heading{padding:17px 19px;margin-bottom:14px}
+ .page-world .adventure-vista{height:265px;margin-bottom:14px}
+ .page-world .adventure-vista>div{left:21px;bottom:19px}
+ .page-world .adventure-vista h2{font-size:34px;margin:5px 0 13px}
+ .page-world .world-grid{gap:12px}
+ .page-world .world-card{min-height:220px}
+ .splash-landscape{background-position:64% center}
+ .splash-atmosphere{background:linear-gradient(0deg,#06111efb 0%,#071423ed 21%,#07172875 47%,transparent 78%),linear-gradient(90deg,#0813227a,transparent 55%)}
+ .splash-content{width:100%}
+}
