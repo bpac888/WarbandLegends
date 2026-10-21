@@ -17,8 +17,7 @@ import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js';
 import {animateLaneShots,animateSpecial,clearBattleEffects} from './battle-fx.js';
 import {DEFAULT_FILTERS,filterChampions} from './collection.js';
 import * as Shell from './shell.js';
-import {summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js';
-import {makeBackup,parseBackup} from './save-files.js';
+import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js';
 import {EFFECTS} from './effects.js';
 import {effectIcon} from './icons.js';
 import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText,MANA_SPEEDS} from './engine.js';
@@ -165,9 +164,8 @@ document.addEventListener('click',event=>{
   if(action==='gem-confirm'){const r=buyWithGems(profile,id);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderShell('shop');toast(r.offer.name+' purchased.');return;}
   if(action==='claim-quest'){const result=claimQuest(profile,id,roster);if(result.error)toast(result.error);else{profile=result.profile;persist(PROFILE_KEY,profile);renderShell('quests');toast('Quest rewards added to your inventory.');}return;}
   if(action==='save-name'){const input=document.querySelector('#player-name');const name=input.value.trim().slice(0,24);if(!name){toast('Enter a player name first.');return;}profile.name=name;persist(PROFILE_KEY,profile);renderShell('settings');toast('Player name saved.');return;}
-  if(action==='export-save'){exportSave();return;}
-  if(action==='import-save'){document.querySelector('#save-file').click();return;}
-  if(action==='confirm-import'){importSave();return;}
+  if(action==='restart-preview'){openModal('Restart your journey?',`<p>This will erase this browser's Legends progress, champions, resources, quests and current battle. You will begin again with the starter team.</p><div class="modal-actions"><button class="button outline" data-action="close">Keep progress</button><button class="button gold" data-action="restart-confirm">Erase progress and restart</button></div>`,'restart');return;}
+  if(action==='restart-confirm'&&modal.dataset.view==='restart'){restartJourney();return;}
 
   if(action==='close'){if(modal.dataset.view==='ritual')finishRitual();else closeModal();return;}
   if(action==='home'){closeModal();go('home');return;}
@@ -213,7 +211,7 @@ app.addEventListener('pointerup',event=>{if(!drag)return;const old=drag;drag=nul
 app.addEventListener('click',event=>{if(Date.now()<suppressClickUntil&&event.target.closest('[data-index]')){event.stopPropagation();event.preventDefault();}},true);
 app.addEventListener('pointercancel',()=>{drag=null;});
 app.addEventListener('keydown',event=>{const tile=event.target.closest('[data-index]');if(!tile)return;const i=Number(tile.dataset.index),delta={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[event.key];if(delta){event.preventDefault();const n=i+delta;if(n>=0&&n<35&&(!(Math.abs(delta)===1)||Math.floor(i/7)===Math.floor(n/7)))app.querySelector(`[data-index="${n}"]`)?.focus();}});
-let collectionFilters={...DEFAULT_FILTERS},summoning=false,summonToken=0,portalReveal=null,importCandidate=null;
+let collectionFilters={...DEFAULT_FILTERS},summoning=false,summonToken=0,portalReveal=null;
 function go(path){const hash='#/'+path;if(location.hash!==hash)history.pushState(null,'',hash);renderRoute();}
 function renderRoute(){
   if(!profile)return;
@@ -246,8 +244,7 @@ async function openPortal(count=1){
  if(reduced){finishRitual();return;}openModal('A soul crosses the threshold',ritualHTML(result,'arriving'),'ritual');await new Promise(resolve=>setTimeout(resolve,2800));if(token!==summonToken||screen!=='summon')return;finishRitual();
 }
 modal.addEventListener('cancel',event=>{if(modal.dataset.view==='ritual'){event.preventDefault();finishRitual();}});
-function exportSave(){const blob=new Blob([JSON.stringify(makeBackup(profile,battle),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='legends-runes-save.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Save backup exported.');}
-function importSave(){if(!importCandidate)return;const previousProfile=storage.getItem(PROFILE_KEY),previousBattle=storage.getItem(BATTLE_KEY);try{storage.setItem(BATTLE_KEY,JSON.stringify(importCandidate.battle));storage.setItem(PROFILE_KEY,JSON.stringify(importCandidate.profile));}catch{try{if(previousBattle===null)storage.removeItem(BATTLE_KEY);else storage.setItem(BATTLE_KEY,previousBattle);if(previousProfile===null)storage.removeItem(PROFILE_KEY);else storage.setItem(PROFILE_KEY,previousProfile);}catch{}toast('The save could not be written. Export your current progress and check browser storage.');return;}profile=importCandidate.profile;battle=importCandidate.battle;importCandidate=null;go('home');toast('Your saved journey has been restored.');}
+function restartJourney(){const oldProfile=storage.getItem(PROFILE_KEY),oldBattle=storage.getItem(BATTLE_KEY),fresh=defaultProfile();try{storage.setItem(PROFILE_KEY,JSON.stringify(fresh));storage.removeItem(BATTLE_KEY);}catch{try{if(oldProfile===null)storage.removeItem(PROFILE_KEY);else storage.setItem(PROFILE_KEY,oldProfile);if(oldBattle!==null)storage.setItem(BATTLE_KEY,oldBattle);}catch{}toast('Restart failed. Your saved progress is still available.');return;}profile=fresh;battle=null;displayedBattle=null;byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));go('splash');toast('A new journey begins.');}
 window.addEventListener('hashchange',renderRoute);
 document.addEventListener('keydown',event=>{if(screen==='splash'&&event.key==='Enter'&&!event.repeat){event.preventDefault();go('home');}});
 document.addEventListener('input',event=>{if(event.target.id==='collection-search'){collectionFilters.query=event.target.value;renderLibrary();}});
@@ -256,7 +253,6 @@ document.addEventListener('change',async event=>{
  if(['collection-color','collection-rarity','collection-mana','collection-role','collection-faction','collection-sort'].includes(id)){collectionFilters[id.replace('collection-','')]=event.target.value;renderLibrary();}
  if(id==='open-roster'){const oldTeam=profile.team.join('|');profile=setOpenRoster(profile,event.target.checked);persist(PROFILE_KEY,profile);if(oldTeam!==profile.team.join('|'))toast('Your team now uses collected champions. You can adjust it in the roster.');}
  if(id==='reduced-animation'){profile.reducedMotion=event.target.checked;document.body.classList.toggle('reduce-animation',profile.reducedMotion);persist(PROFILE_KEY,profile);}
- if(id==='save-file'){const file=event.target.files[0];event.target.value='';if(!file)return;try{if(file.size>1000000)throw Error('Choose a save file smaller than 1 MB.');importCandidate=parseBackup(await file.text(),roster);openModal('Restore this journey?',`<p><strong>${esc(importCandidate.profile.name)}</strong> · ${Object.keys(importCandidate.profile.collection).length} collected champions · ${importCandidate.profile.wins} victories.</p><p>This replaces this browser's current Legends progress. Export a backup first if you want to keep both.</p><div class="modal-actions"><button class="button outline" data-action="close">Cancel</button><button class="button gold" data-action="confirm-import">Import this save</button></div>`,'import');}catch(error){importCandidate=null;toast(error.message);}}
 });
 async function boot(){try{
   const responses=await Promise.all([fetch('./data/champions.json'),fetch('./data/effects.json')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=loadBattle(storage,battleRoster(profile,roster),{currentOnly:true});const restarted=battle?.restartedForRules,migrated=battle?.updatedStatusRules;if(battle){delete battle.restartedForRules;delete battle.updatedStatusRules;settleVictory();persist(PROFILE_KEY,profile);persist(BATTLE_KEY,battle);}persist(PROFILE_KEY,profile);renderRoute();if(migrated)toast('Your saved battle now uses the updated effect rules. Health, charge, board and progress are kept.');else if(restarted)toast('Your team and cleared encounters are kept. The saved battle restarted with the new Specials and tile-charge rules.');
