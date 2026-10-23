@@ -6,7 +6,7 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b0e1c",
-  "theme_color": "#0b0e1c",
+  "background_color": "#292329",
+  "theme_color": "#292329",
   "icons": [{"src": "./assets/brand/legends-favicon.png", "sizes": "128x128", "type": "image/png"}]
 }

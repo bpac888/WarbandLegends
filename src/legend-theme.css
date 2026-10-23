@@ -1,0 +1,105 @@
+/* Short repeating color transitions echo the five gems in the Legends crest. */
+:root{
+ --legend-gradient:repeating-linear-gradient(125deg,#492735 0px,#594329 85px,#244b3b 170px,#264858 255px,#493452 340px,#492735 425px);
+ --legend-surface:linear-gradient(135deg,#252226ed,#17201fed);
+ --legend-edge:#c8b18959;
+ --bg:#231e26;--panel:#242429;--card:#202427;--line:#786c65;
+ --finish-surface:#252429;--finish-raised:#323035;--finish-ink:#191c20;--shell-ink:#202426;
+}
+body,body:has(.battle-shell){background:var(--legend-gradient);background-color:#292329;color:#f6efe3}
+.topbar{background:linear-gradient(#1b1b21c9,#181d20e8),var(--legend-gradient);border-color:var(--legend-edge)}
+.topbar.with-nav .game-nav{background:none}
+.topbar .icon-button,.topbar .game-wallet>span,.topbar .game-nav>button{background:#202425d9;border-color:#c3ad8855;color:#ece6dc}
+.topbar .game-nav>button.active{background:linear-gradient(135deg,#795b3c,#3e4942);border-color:#edce8fa1;color:#fff0c8}
+.game-page,.home-shell{padding-top:18px;padding-bottom:28px}
+.game-page .page-heading{min-height:0;padding:20px 24px;margin-bottom:18px;border-radius:14px;background-image:linear-gradient(105deg,#262126ed,#202c26d9 65%,#3d2c37c4),var(--heading-art,url('../assets/scenes/world-map.svg'))}
+.game-page .page-heading h1{font-size:clamp(30px,3.5vw,43px);line-height:1.12}
+.game-page .page-heading p{margin-top:8px;line-height:1.5}
+.game-page .page-heading:after{display:none}
+.game-page .section-heading{margin-bottom:14px}
+.game-page :is(.settings-panel,.inventory-card,.materials-section,.ascension-panel,.hero-development,.champion-special,.team-caption,.event-copy,.material-offer,.gem-offer,.material-tile,.exchange-offers>article,.exchange-balances>span,.premium-offers>article,.special-level,.daily-card,.chronicle-card){background:var(--legend-surface);border-color:var(--legend-edge)}
+.game-page :is(.collection-tabs>button,.shop-tabs>button,.event-calendar>button){background:#25292bd9;border-color:#baa68a66;color:#e2ded7}
+.game-page :is(.collection-tabs>button.active,.shop-tabs>button.active,.event-calendar>button.active){background:linear-gradient(135deg,#6d513e,#3a4d42);border-color:#dec18b;color:#fff0c9}
+.game-page .button.outline{background:#24292cd9;border-color:#b3a28b77}
+.game-page :is(.settings-panel,.materials-section,.ascension-panel,.hero-development){padding:20px;margin-top:18px;margin-bottom:18px;border-radius:14px}
+.game-page :is(.material-grid,.library-grid,.quest-list,.chronicle-grid,.settings-grid,.arena-rivals,.dungeon-grid,.exchange-offers,.premium-offers){gap:14px}
+.game-page .material-grid{margin-top:16px;margin-bottom:16px}
+.game-page .material-tile small,.game-page .training-note,.game-page .mode-note{color:#c4c5bb}
+.home-shell .citadel-destinations{gap:14px;margin-top:0;margin-bottom:20px}
+.home-shell .citadel-destination>span{background:#242729;padding:12px 16px}
+.home-shell .keeper-panel{margin-top:16px;margin-bottom:16px;padding:18px 22px;background:var(--legend-surface);border-color:var(--legend-edge)}
+.page-roster .team-caption{padding:16px 20px;margin-bottom:16px}
+.page-roster .library-filters{margin-top:12px;margin-bottom:12px;gap:10px}
+.page-roster .library-summary{margin:12px 0}
+.page-roster .roster-save{padding:16px 0;margin-top:14px}
+.page-settings .settings-panel{margin-top:0}.page-settings .settings-panel h2{margin-bottom:14px}
+.page-settings .setting-row{margin-top:16px;padding-top:16px}
+.page-inventory .inventory-grid{gap:14px}.page-inventory .inventory-card{min-height:150px;padding:20px}
+.page-inventory .materials-section{margin-top:20px}.page-inventory .material-tile{padding:12px 14px}
+.page-inventory .vault-actions{margin-top:18px;padding-top:18px}
+.page-shop .shop-wallet{margin:14px 0;padding:12px 16px;background:#202729e8;border-color:var(--legend-edge)}
+.page-shop .shop-tabs{margin:14px 0 18px}
+.page-shop .material-offer,.page-shop .gem-offer{padding:18px 14px;gap:10px;background:var(--legend-surface);border-color:var(--legend-edge)}
+.page-shop .materials-section{margin-top:0}
+.page-summon .altar-page{padding-top:20px;background:var(--legend-surface);border-color:var(--legend-edge)}
+.page-summon .altar-page>h1{margin-top:0;margin-bottom:16px}
+.page-summon .altar-footer{margin-top:16px;padding-top:16px;padding-bottom:18px}
+.page-events .event-calendar>button{min-height:80px;padding:12px}
+.page-events .event-challenge{margin-top:12px;margin-bottom:18px}
+.page-events .event-copy{padding:22px 26px}
+.page-arena .arena-vista,.page-world .adventure-vista{height:290px;margin-bottom:18px}
+.page-world .world-grid{gap:14px}.page-world .world-card{min-height:230px}
+.page-campaign .campaign-map{gap:14px;margin-top:18px}
+.page-campaign .campaign-stop{padding:20px;min-height:0}
+.page-quests .chronicle-card{padding:18px;min-height:0}
+.page-daily .daily-vista{margin-bottom:18px}
+.page-champion .champion-story{margin:10px 0;padding:10px 0}
+#modal{background:linear-gradient(135deg,#30282f,#1d2826);border-color:#c5ad8b88}.modal-header{background:#262729}
+.guide-layout nav button{background:#282b2c;border-color:#a7957a66}.guide-layout nav button.active{background:#5d4c3f;border-color:#dfbf8a;color:#fff0cc}
+.splash-screen{background:var(--legend-gradient)}
+.splash-atmosphere{background:linear-gradient(90deg,#211920ed,#211d25c9 30%,transparent 75%),linear-gradient(0deg,#211c24ed,transparent 65%)}
+@media(max-width:600px){
+ .game-page,.home-shell{padding-top:14px;padding-bottom:24px}
+ .game-page .page-heading{padding:17px 18px;margin-bottom:14px;gap:12px}
+ .game-page .page-heading h1{font-size:32px}
+ .game-page :is(.settings-panel,.materials-section,.ascension-panel,.hero-development){padding:16px;margin-top:14px;margin-bottom:14px}
+ .game-page :is(.material-grid,.library-grid,.quest-list,.chronicle-grid,.settings-grid,.arena-rivals,.dungeon-grid,.exchange-offers,.premium-offers){gap:10px}
+ .home-shell .citadel-destinations{gap:10px;margin-bottom:16px}
+ .home-shell .citadel-destination>span{padding:10px}
+ .home-shell .keeper-panel{padding:14px;margin-top:14px;margin-bottom:14px}
+ .page-roster .team-caption{padding:14px;margin-bottom:12px}
+ .page-shop .material-offer,.page-shop .gem-offer{padding:14px 10px}
+ .page-inventory .inventory-card{min-height:140px;padding:16px}
+ .page-events .event-calendar>button{padding:10px 7px;min-height:78px}
+ .page-events .event-copy{padding:18px 20px}
+ .page-arena .arena-vista,.page-world .adventure-vista{height:235px;margin-bottom:14px}
+ .page-world .world-card{min-height:200px}
+ .page-campaign .campaign-stop{padding:18px}
+ .page-quests .chronicle-card{padding:15px}
+}
+/* Keep utility panels compact, without squeezing champion artwork. */
+.game-page .keeper-panel,.game-page .daily-objectives,.game-page .team-slots>article,.game-page .library-label{background:var(--legend-surface);border-color:var(--legend-edge)}
+.page-roster .warband-section{margin-top:0}
+.page-roster .team-portrait{aspect-ratio:auto;align-self:start;background:#202626}
+.page-roster .team-caption{margin:0;padding:10px 8px;min-height:104px;background:#222928}
+.page-roster .team-caption>strong{font-size:18px;min-height:0;margin:6px 0;line-height:1.15}
+.page-quests .quest-banner{min-height:150px;padding:22px}
+.page-quests .quest-banner:after,.page-daily .daily-vista:after{background:linear-gradient(90deg,#211e26ed,#26392cba 58%,#3c293959)}
+.page-quests .quest-categories{margin:14px 0;gap:7px}
+.page-quests .quest-categories>button,.page-quests .quest-status>button{background:#272c2e;border-color:#bca48866;color:#e3dfd7}
+.page-quests .quest-categories>button.active,.page-quests .quest-status>button.active{background:#5b4a3d;border-color:#dbbd89;color:#fff0cf}
+.page-daily .daily-vista{min-height:250px}
+.page-daily .daily-vista>div{padding:24px}
+.page-daily .daily-objectives{padding:20px;margin-top:18px}
+.game-page .profile-extras{margin-top:18px}
+@media(max-width:600px){
+ .page-roster .team-caption{min-height:104px;padding:10px 8px}
+ .page-roster .team-caption>strong{font-size:16px}
+ .page-quests .quest-banner{min-height:150px;padding:18px}
+ .page-daily .daily-vista>div{padding:20px}
+ .page-daily .daily-objectives{padding:16px}
+}
+.page-roster{--heading-art:url('../assets/destinations/codex.svg')}.page-dungeons{--heading-art:url('../assets/dungeons/voidbone-catacombs.svg')}.page-arena{--heading-art:url('../assets/destinations/arena.svg')}.page-events{--heading-art:url('../assets/events/veil-of-umbra.svg')}.page-shop{--heading-art:url('../assets/destinations/exchange.svg')}.page-summon{--heading-art:url('../assets/destinations/altar.svg')}
+.page-quests .quest-status{margin-top:16px}.page-quests .quest-status b{background:#1c2324;color:#e4ddcf}
+.game-page select,.game-page input:not([type=checkbox]){background:#202729!important;border-color:#bba38488!important;color:#f1ebe0!important}
+.page-summon .altar-balance{background:#2f293b;border-color:#c5ac8b66}
