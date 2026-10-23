@@ -22,7 +22,7 @@ node tools/serve.mjs --dist  # preview the production build
 ## What's playable
 
 - Richer blue, violet and gold menus, larger readable text, a compact Guide for general rules, and vivid full-art event panels. Battles use the available screen area while fitting desktop, phone and short landscape viewports.
-- Account levels 1–100, ten level milestones, a 180-day gift calendar followed by a 30-day loop, Today’s Path, six source portraits, ten faction emblems and three saved warbands. [Reuse audit](REUSE-AUDIT.md). No equipment.
+- Account levels 1–100, ten level milestones, a 180-day gift calendar followed by a 30-day loop, Today’s Path, six source portraits, ten faction emblems and three saved warbands in the Codex Teams tab. [Reuse audit](REUSE-AUDIT.md). No equipment.
 - A cinematic splash screen, Citadel hub, Adventure map, dedicated roster/codex, animated summoning portal, quests, inventory, and settings.
 - Five level-1 starting champions, 500 Gems, independently leveled duplicate hero copies, 200 Gems per first-clear Campaign stage, and 43 quests with Gems, gold, materials, account XP and champion XP.
 - Ascension tiers with retained power and immediate stat gains, two five-level Limit Breaks for Rare and higher heroes, ten illustrated materials, earned dungeon drops and confirmed gold purchases in the Supply Exchange. See [hero progression](ASCENSION.md).
@@ -30,7 +30,7 @@ node tools/serve.mjs --dist  # preview the production build
 - Summoning odds: Common 50%, Rare 30%, Legendary 7.5%, Mythical 1.5%, or two independently owned Commons 11%. Fourteen former Commons are Rares, and the remaining twenty Commons are balanced four per element.
 - Campaign wins give each participating collected hero XP, including fallen allies. Replays grant XP and gold; every five victories earns 50 bonus Gems.
 - Fixed encounter strength: enemies do not scale up when your heroes improve.
-- Save export/import, collection-only or open-roster playtesting, and persistent animation preferences.
+- Save export/import, collection-only or open-roster playtesting, and device-based reduced-motion support.
 - Full-art Collection/Codex cards without unowned dimming, combined element/rarity/mana/type/faction filters, name/stat sorting and clear-filter controls.
 - A five-element crest and midnight/amethyst/gold visual identity; a portal with accelerating swirls, light trails and bright champion emergence.
 - Prominent gold READY ribbons, available charge levels, glowing mana bars, a readiness count and a tap prompt.
@@ -54,7 +54,7 @@ node tools/serve.mjs --dist  # preview the production build
 - Battle log, ability details, hint, 1×/2× animation speed, and reduced-motion support.
 - Fifteen high-density jewel tile images: elemental shields, four-match dragon crests and five-match prismatic gems; bright full-art champion cards and status badges, damage/healing numbers, and a tappable effect field guide.
 - Responsive mouse, touch-drag, and keyboard controls. Use Tab to reach a rune, arrow keys to navigate, and Enter to select each neighbor.
-- Separate team, encounter and progress saves on this browser. Reloading resumes the resolved action without replaying it. Clearing browser data removes these saves.
+- Team and account progress are saved in this browser. Battles are session-only: leaving, reloading or closing abandons the attempt. Event attempts are spent on entry and are not refunded. Clearing browser data removes account saves.
 
 Collected-only teams and level-1 heroes are the default. Enable open-roster playtesting in Settings to try all champions at maximum level; those battles award no XP, resources, victories or unlocks. Collection cards show actual development; the Codex always previews maximum-level, fully Limit Broken stats. Campaign, Dungeons, local Arena, monthly Special Events and the Supply Exchange are playable. Alliance remains a foundation page. Arena opponents are preset teams, not online players. There are no online accounts, working real-money purchases, competitive play, or shared online progress. The Premium shop section is a disabled layout preview. It uses portrait-based animations rather than 3D models. Original A2/A3 kits are merged into one Special. Colors are individually assigned (27 of each), numeric SPD is removed, and stats use the new rarity baselines; see [rules](RULES.md) [the full roster](ROSTER.md), and [the effect review](STATUS-REVIEW.md).
 

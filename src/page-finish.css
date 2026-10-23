@@ -85,7 +85,7 @@
     margin-top: 8px !important;
     margin-bottom: 8px !important;
   }
-  .splash-screen .splash-content h1 { font-size: clamp(38px, 11vh, 55px); }
+  .splash-screen .splash-content h1 { font-size: clamp(35px, 10.2vh, 51px); }
   .splash-screen .splash-subtitle { margin-top: 6px; }
   .splash-screen .splash-rule { margin-top: 12px; margin-bottom: 12px; }
   .splash-screen .splash-caption { bottom: 12px; }
@@ -104,4 +104,52 @@
 .altar-page .altar-portal > img {
   object-fit: contain;
   object-position: center;
+}
+
+/* The Collection, Codex and Teams tabs stay together on narrow phones. */
+@media (max-width: 600px) {
+  .collection-tabs { width: 100%; display: flex; gap: 4px; }
+  .collection-tabs > button { flex: 1; padding-inline: 7px; }
+}
+
+/* Give each Tavern destination its complete artwork, with a separate caption. */
+.home-shell .citadel-destinations {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.home-shell .citadel-destination { aspect-ratio: auto; }
+.home-shell .citadel-destination > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  mask-image: none;
+  filter: none;
+  opacity: 1;
+}
+.home-shell .citadel-destination:hover > img { transform: none; }
+.home-shell .citadel-destination > span {
+  position: static;
+  inset: auto;
+  padding: 16px 18px;
+  background: #141c31;
+}
+@media (max-width: 600px) {
+  .home-shell .citadel-destinations { gap: 10px; }
+  .home-shell .citadel-destination > span { padding: 12px 10px; }
+  .home-shell .citadel-destination strong { font-size: 21px; }
+  .topbar.with-nav .game-nav > button { font-size: 10px; flex-direction: row; }
+}
+
+/* Use more of the original crest's detail in the header. */
+.topbar.with-nav .brand-sigil { width: 72px; height: 80px; }
+.battle-topbar .brand-sigil { width: 40px; height: 48px; flex-shrink: 0; }
+@media (max-width: 1080px) {
+  .topbar.with-nav { grid-template-rows: 72px 46px; min-height: 129px; }
+  .topbar.with-nav .brand-sigil { width: 56px; height: 64px; }
+}
+@media (max-width: 600px) {
+  .topbar.with-nav { grid-template-rows: 68px 38px 47px; min-height: 163px; }
+  .battle-topbar .brand-sigil { width: 34px; height: 42px; }
 }

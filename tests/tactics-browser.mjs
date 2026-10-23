@@ -1,3 +1,4 @@
+import {battleFixtureResponse} from './battle-fixture.mjs';
 import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -15,7 +16,7 @@ try{
  const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),errors=[];
  await context.route('**/*',async route=>{
   const u=new URL(route.request().url());if(u.hostname!=='legends.local'){errors.push('External '+u.hostname);return route.abort();}
-  try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:await fs.readFile(p),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}
+  try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:battleFixtureResponse(p,await fs.readFile(p)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}
   catch{errors.push('Missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}
  });
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
@@ -49,12 +50,12 @@ try{
   if(captured||!b.scenario?.triggered||b.phase!=='playing')return;captured=true;atTrigger=b;
   assert.equal(await page.locator('.overpressure-active').count(),1);await page.screenshot({path:root+'artifacts/tactics-boss-overpressure.png',fullPage:true});
   await page.getByRole('button',{name:'Encounter tactics',exact:true}).click();assert.equal(await page.locator('.scenario-state').getAttribute('data-scenario-phase'),'triggered');await page.screenshot({path:root+'artifacts/tactics-boss-phase-detail.png',fullPage:true});await page.getByRole('button',{name:'Close dialog',exact:true}).click();
-  await page.reload();await page.locator('.board').waitFor();const restored=await read(BATTLE_KEY);assert.deepEqual(restored.scenario,b.scenario);assert.equal(restored.moves,b.moves);
+  const current=await read(BATTLE_KEY);assert.deepEqual(current.scenario,b.scenario);assert.equal(current.moves,b.moves);
  });
- assert.ok(captured,'real UI fight crosses the phase threshold');assert.equal(outcome.phase,'victory');assert.ok(outcome.scenario.triggered);assert.equal(phaseEvents.size,1);assert.equal((await read(PROFILE_KEY)).campaignProgress.normal,5);const rewarded=await read(PROFILE_KEY);await page.reload();await page.getByRole('heading',{name:'The crossing is yours.'}).waitFor();assert.deepEqual(await read(PROFILE_KEY),rewarded);
- // Legacy saves never gain a new phase when resumed. New preview still describes the new encounter.
- const legacy=structuredClone(atTrigger);delete legacy.scenario;await page.evaluate(({k,b})=>localStorage.setItem(k,JSON.stringify(b)),{k:BATTLE_KEY,b:legacy});await page.reload();await page.locator('.board').waitFor();await page.getByRole('button',{name:'Encounter tactics',exact:true}).click();assert.match(await page.locator('.encounter-tactics').textContent(),/keeps its original rules/);await page.getByRole('button',{name:'Close dialog',exact:true}).click();
- for(const width of [390,320]){await page.setViewportSize({width,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));const tactics=await page.getByRole('button',{name:'Encounter tactics',exact:true}).boundingBox(),back=await page.getByRole('button',{name:'Save and return home'}).boundingBox();assert.ok(tactics.x>=back.x+back.width);await page.screenshot({path:`${root}artifacts/tactics-${width}-battle.png`,fullPage:true});}
+ assert.ok(captured,'real UI fight crosses the phase threshold');assert.equal(outcome.phase,'victory');assert.ok(outcome.scenario.triggered);assert.equal(phaseEvents.size,1);assert.equal((await read(PROFILE_KEY)).campaignProgress.normal,5);const rewarded=await read(PROFILE_KEY);await page.reload();await page.locator('.topbar').waitFor();assert.equal(await page.locator('.board').count(),0);assert.deepEqual(await read(PROFILE_KEY),rewarded);
+ // Legacy engine fixtures never gain a new phase. New preview still describes the new encounter.
+ const legacy=structuredClone(atTrigger);delete legacy.scenario;await page.evaluate(({k,b})=>localStorage.setItem(k,JSON.stringify(b)),{k:BATTLE_KEY,b:legacy});await page.reload();await go('battle');await page.locator('.board').waitFor();await page.getByRole('button',{name:'Encounter tactics',exact:true}).click();assert.match(await page.locator('.encounter-tactics').textContent(),/keeps its original rules/);await page.getByRole('button',{name:'Close dialog',exact:true}).click();
+ for(const width of [390,320]){await page.setViewportSize({width,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));const tactics=await page.getByRole('button',{name:'Encounter tactics',exact:true}).boundingBox(),back=await page.getByRole('button',{name:'Abandon battle and return home'}).boundingBox();assert.ok(tactics.x>=back.x+back.width);await page.screenshot({path:`${root}artifacts/tactics-${width}-battle.png`,fullPage:true});}
  assert.deepEqual(errors,[]);
- console.log(JSON.stringify({passed:true,checks:['twenty reviewed identities, all displayed resolution orders','desktop/tablet/390/320 detailed Specials','ward/ritual/guardian previews','real level10 boss UI victory with one-time Overpressure','phase persists across reload and cannot rearm','one-time chapter rewards and progression','legacy fights keep original rules','mobile controls and overflow','no missing assets/external calls/browser errors']},null,2));
+ console.log(JSON.stringify({passed:true,checks:['twenty reviewed identities, all displayed resolution orders','desktop/tablet/390/320 detailed Specials','ward/ritual/guardian previews','real level10 boss UI victory with one-time Overpressure','phase survives inspection and cannot rearm','one-time chapter rewards and progression','legacy fights keep original rules','mobile controls and overflow','no missing assets/external calls/browser errors']},null,2));
 }finally{await browser.close();}

@@ -27,3 +27,8 @@ export function loadBattle(storage,roster,{currentOnly=false}={}){try{
 }catch{return null;}}
 export function save(storage,key,value){try{storage.setItem(key,JSON.stringify(value));return true;}catch{return false;}}
 export function recordVictory(profile,battle,roster){return awardVictory(profile,battle,roster);}
+
+// Battles are session-only. Remove snapshots left by earlier releases.
+export function clearBattleSave(storage){
+  try{for(const key of [BATTLE_KEY,PREVIOUS_BATTLE_KEY,LEGACY_BATTLE_KEY])storage.removeItem(key);return true;}catch{return false;}
+}

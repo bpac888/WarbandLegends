@@ -28,6 +28,7 @@ jobs:
       - run: npm run test:viewport
       - run: npm run test:ascension
       - run: npm run test:covenant
+      - run: npm run test:lifecycle
       # Keep diagnostic images only for failed checks; storage limits must not mask test results.
       - name: Preserve failed-check visual captures
         if: failure()

@@ -1,3 +1,4 @@
+import {battleFixtureResponse} from './battle-fixture.mjs';
 import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -12,7 +13,7 @@ const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.re
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
 try{
  const context=await browser.newContext({viewport:{width:1440,height:1100},reducedMotion:'no-preference'}),errors=[];
- await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='legends.local'){errors.push('external '+u.host);return route.abort();}try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:await fs.readFile(p),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}catch{errors.push('missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}});
+ await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='legends.local'){errors.push('external '+u.host);return route.abort();}try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:battleFixtureResponse(p,await fs.readFile(p)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}catch{errors.push('missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  const go=async route=>{await page.goto('http://legends.local/#/'+route);await page.locator('.topbar').waitFor();};
  await go('roster');await page.locator('[data-tab="all"]').click();assert.equal(await page.locator('.library-card').count(),135);
@@ -41,6 +42,6 @@ try{
  await page.screenshot({path:root+'artifacts/identity-special-board.png',fullPage:true});
  for(const width of [390,320]){await page.setViewportSize({width,height:844});await page.screenshot({path:`${root}artifacts/identity-${width}-battle.png`,fullPage:true});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
  await page.setViewportSize({width:1440,height:1000});await go('summon');await page.locator('[data-action="summon"]').click();await page.waitForTimeout(600);assert.equal(await page.locator('.summon-reveal').count(),0);assert.equal(await page.locator('.is-activating .summon-ritual-vortex').count(),2);await page.screenshot({path:root+'artifacts/identity-portal-activation.png',fullPage:true});await page.locator('.summon-reveal').first().waitFor();await page.waitForTimeout(1100);assert.ok(await page.locator('.summon-reveal img').evaluateAll(imgs=>imgs.every(i=>getComputedStyle(i).filter==='none')));await page.screenshot({path:root+'artifacts/identity-portal-arrival.png',fullPage:true});
- await go('settings');await page.locator('#reduced-animation').check();await go('summon');await page.locator('[data-action="summon"]').click();await page.locator('.summon-reveal').first().waitFor();assert.ok(await page.locator('.summon-reveal').evaluateAll(cards=>cards.every(i=>getComputedStyle(i).animationName==='none')));
+ await go('settings');await page.emulateMedia({reducedMotion:'reduce'});await go('summon');await page.locator('[data-action="summon"]').click();await page.locator('.summon-reveal').first().waitFor();assert.ok(await page.locator('.summon-reveal').evaluateAll(cards=>cards.every(i=>getComputedStyle(i).animationName==='none')));
  assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,checks:['all 135 portraits load without dimming or veil','full portrait artwork above labels','combined filters, readable faction search, sorting and reset','bright team selection portraits','15 real tile variants render with correct special types','desktop and 390px/320px battle layout','portal activation before reveal and bright arrival','reduced animation preference','no missing assets, external calls or browser errors']},null,2));
 }finally{await browser.close();}

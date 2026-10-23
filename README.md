@@ -17,7 +17,7 @@ Each game has its own code, hosting and saves. Legends bundles its own copies of
 
 Open **[Legends](https://legends-runes-boris.givingjoy7.chatgpt.site)** in your phone's browser. An existing Home Screen shortcut uses that same address. Refresh or reopen the game after an update.
 
-Progress is stored locally in that browser. Use the game's save export/import before clearing browser data or changing devices.
+Account progress is stored locally in that browser. Leaving, refreshing or closing a battle abandons it; encounters must be started again. Use the game's save export/import before clearing browser data or changing devices.
 
 ## Develop locally
 

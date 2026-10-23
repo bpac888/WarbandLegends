@@ -1,3 +1,4 @@
+import {battleFixtureResponse} from './battle-fixture.mjs';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
@@ -11,9 +12,9 @@ const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.re
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
 try{
  const context=await browser.newContext({viewport:{width:1440,height:1100},reducedMotion:'no-preference'}),errors=[];
- await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='legends.local'){errors.push('external '+u.host);return route.abort();}try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:await fs.readFile(p),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}catch{errors.push('missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}});
+ await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='legends.local'){errors.push('external '+u.host);return route.abort();}try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:battleFixtureResponse(p,await fs.readFile(p)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}catch{errors.push('missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await fs.mkdir(root+'artifacts',{recursive:true});
- await page.goto('http://legends.local/#/home');await page.locator('.home-team').waitFor();
+ await page.goto('http://legends.local/#/home');await page.locator('.citadel-destinations').waitFor();
  async function loadBattle(state,reducedMotion=false){await page.evaluate(({state,reducedMotion,pk,bk})=>{const p=JSON.parse(localStorage.getItem(pk));p.helpSeen=true;p.reducedMotion=reducedMotion;localStorage.setItem(pk,JSON.stringify(p));localStorage.setItem(bk,JSON.stringify(state));},{state,reducedMotion,pk:PROFILE_KEY,bk:BATTLE_KEY});await page.reload();await page.locator('.topbar').waitFor();await page.goto('http://legends.local/#/battle');await page.locator('.board').waitFor({timeout:5000}).catch(async e=>{console.error(JSON.stringify({errors,body:await page.locator('body').innerText()}));await page.screenshot({path:root+'artifacts/experience-load-error.png',fullPage:true});throw e;});}
  const state=createBattle(roster,STARTER_TEAM,'ashen-gate',945);await loadBattle(state);
  assert.equal(await page.locator('.battle-sidebar,.battle-journal').count(),0);assert.equal(await page.locator('.lane-track').count(),7);

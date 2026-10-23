@@ -23,7 +23,8 @@
     "test:refresh": "node tests/refresh-browser.mjs",
     "test:viewport": "node tests/viewport-browser.mjs",
     "test:ascension": "node tests/ascension-browser.mjs",
-    "test:covenant": "node tests/covenant-browser.mjs"
+    "test:covenant": "node tests/covenant-browser.mjs",
+    "test:lifecycle": "node tests/battle-lifecycle-browser.mjs"
   },
   "engines": {
     "node": ">=22"

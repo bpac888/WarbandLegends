@@ -7,7 +7,7 @@ export function feedingQuote(profile,target,donors,roster,{battle=null}={}){
  const d=heroDevelopment(profile,target),physical=currentLevelCap(profile,target),guard=protectedCopies(profile,battle);
  let error=!profile.collection[target.id]?'Collect this hero before training.':d.atCap&&d.cap===physical?'Ascend or choose a hero below their level cap.':!Array.isArray(donors)||!donors.length||donors.length>10?'Select 1–10 Common heroes.':new Set(donors).size!==donors.length?'Select each copy once.':null;
  const rows=[];
- if(!error)for(const id of donors){const c=heroForId(roster,id);if(!c||!profile.collection[id]||c.rarity!=='common'||id===target.id||guard.has(id)){error='A selected hero is unavailable or assigned to a team or saved battle.';break;}rows.push({id,name:c.name,level:development(c,profile.heroXp[id],currentLevelCap(profile,c)).level,xp:Math.floor(3*(120+Math.floor((profile.heroXp[id]||0)/2))*(c.color===target.color?1.25:1))});}
+ if(!error)for(const id of donors){const c=heroForId(roster,id);if(!c||!profile.collection[id]||c.rarity!=='common'||id===target.id||guard.has(id)){error='A selected hero is unavailable or assigned to a team or active battle.';break;}rows.push({id,name:c.name,level:development(c,profile.heroXp[id],currentLevelCap(profile,c)).level,xp:Math.floor(3*(120+Math.floor((profile.heroXp[id]||0)/2))*(c.color===target.color?1.25:1))});}
  const xp=rows.reduce((n,c)=>n+c.xp,0),gold=rows.length*25,gained=Math.max(0,Math.min(xpForPhysical(target,physical)-(profile.heroXp[target.id]||0),xp));
  if(!error&&Object.keys(profile.collection).length-rows.length<5)error='Keep at least five collected heroes.';
  if(!error&&profile.gold<gold)error='You need 25 gold per Common hero.';
