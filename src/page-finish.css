@@ -63,3 +63,15 @@
  .splash-atmosphere{background:linear-gradient(0deg,#06111efb 0%,#071423ed 21%,#07172875 47%,transparent 78%),linear-gradient(90deg,#0813227a,transparent 55%)}
  .splash-content{width:100%}
 }
+
+/* Keep the remaining splash message and primary action easy to read on phones. */
+.splash-screen .splash-content > .eyebrow {
+  display: block;
+  font-size: clamp(14px, 1.5vw, 20px);
+  line-height: 1.5;
+  letter-spacing: .15em;
+}
+.splash-screen .splash-enter {
+  font-size: clamp(18px, 1.6vw, 22px);
+  min-height: 56px;
+}
