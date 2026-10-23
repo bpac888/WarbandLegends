@@ -10,7 +10,7 @@ export const MATERIALS=Object.freeze([
  {id:'awakened-ember',name:'Awakened Ember',color:'#ffad6b',price:2000,description:'A spark used for Limit Breaks after full ascension.',source:'Every Nightmare dungeon victory.'},
  {id:'astral-heart',name:'Astral Heart',color:'#eeaaff',price:4000,description:'A celestial core for the second Limit Break.',source:'Every Nightmare dungeon victory.'},
  {id:'sovereign-crown',name:'Sovereign Crown',color:'#ffc65a',price:1500,description:'A relic required for the final Legendary and Mythical ascensions.',source:'Hard and Nightmare dungeon victories.'},
- ...[['red','Ember','#ff7662'],['blue','Glacier','#75cfff'],['green','Verdant','#88e5a1'],['yellow','Dawn','#ffe182'],['purple','Twilight','#cc9dff']].map(([id,label,color])=>({id:id+'-sigil',name:label+' Sigil',color,price:200,description:`An elemental seal for ${id} champions.`,source:'Supply Exchange · earned gold.'}))
+ ...[['red','Ember','#ff7662'],['blue','Glacier','#75cfff'],['green','Verdant','#88e5a1'],['yellow','Dawn','#ffe182'],['purple','Twilight','#cc9dff']].map(([id,label,color])=>({id:id+'-sigil',name:label+' Sigil',color,price:200,description:`An elemental seal for ${id} champions.`,source:'Shop · earned gold.'}))
 ]);
 export const materialById=id=>MATERIALS.find(m=>m.id===id);
 export const materialArt=id=>'./assets/items/'+id+'.webp';

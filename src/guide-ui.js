@@ -34,7 +34,7 @@ const topics=[
  ['rewards','Rewards & supplies',[
   ['Daily gifts','Claim your gift and Today’s Path from the Tavern. Daily rewards reset at midnight in Los Angeles; missed days keep your calendar place.'],
   ['Quests','Filter Active, Ready or Completed quests. Each reward can be claimed once. Collection goals count different hero designs.'],
-  ['Inventory & Exchange','Inventory shows your currencies and materials. Supply Exchange trades gold, Gems or earned tokens for supplies.'],
+  ['Inventory & Exchange','Inventory shows your currencies and materials. Shop trades gold, Gems or earned tokens for supplies.'],
  ]],
  ['account','Progress & Settings',[
   ['Keep your progress','Heroes, teams and completed rewards save in this browser. Another device or browser has a separate save. Clearing browser data removes your progress.'],
