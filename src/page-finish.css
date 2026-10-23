@@ -93,3 +93,15 @@
 
 /* Keep the odds table readable after removing the explanatory paragraph. */
 .altar-footer .summon-odds { width: 100%; }
+
+/* Show the complete square altar painting instead of cropping it into a banner. */
+.altar-page .altar-portal.summon-sanctum {
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+}
+.altar-page .altar-portal > img {
+  object-fit: contain;
+  object-position: center;
+}
