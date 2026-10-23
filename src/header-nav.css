@@ -46,3 +46,27 @@ body:has(.topbar-nav){padding-bottom:0}
  .topbar.with-nav .game-nav>button{flex-direction:column;gap:1px;font-size:8px}
  .topbar.with-nav .game-nav .ui-icon{width:15px;height:15px}
 }
+
+/* Give the vault shortcut a visible label, including on small phone screens. */
+.topbar.with-nav .topbar-right > .inventory-button {
+  width: auto;
+  min-width: 0;
+  gap: 6px;
+  padding-inline: 9px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .topbar.with-nav {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 44px 38px 47px;
+    min-height: 139px;
+  }
+  .topbar.with-nav .topbar-right {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: flex-end;
+  }
+  .topbar.with-nav .game-nav { grid-row: 3; }
+}
+.topbar.with-nav .inventory-button > span { display: inline; }
