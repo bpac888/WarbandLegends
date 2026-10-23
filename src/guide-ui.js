@@ -1,4 +1,48 @@
-// General explanations live here; in-battle instructions and existing tactical notes stay available.
-export const guideTopics={roster:'heroes',champion:'growth',shop:'shop',summon:'summon',daily:'daily',quests:'quests',events:'events',arena:'arena',inventory:'growth',settings:'account',campaign:'adventure',dungeons:'adventure',world:'adventure'};
-const topics=[['overview','Getting started',[['Your next step','Choose Adventure to play Campaign, Dungeons, Arena or Special Events. Start with the Normal campaign, then use rewards to build your warband.'],['Find your way','The five main tabs stay available outside battle. The Guide collects general explanations here; battle help remains beside the runeboard.']]],['heroes','Your heroes',[['One card, one hero','Your Collection shows every owned copy separately, with its own level, ascension and Limit Breaks. The Codex shows each of the 135 hero designs once at maximum stats.'],['Build a team','Choose five hero copies. Different copies of the same hero can fight together. A rainbow team covers every color; stacking a color combines tile attack and charges those heroes together.']]],['growth','Levels & training',[['Three paths to XP','Collected heroes earn XP from victories and some quests. Consume Common heroes to gain XP. Each copy develops independently.'],['Common-hero training','Select up to ten unused Common heroes: 360 XP plus 1.5 times their stored XP, with a 25% bonus for the same color. Cost: 25 gold each. Selected copies are permanently consumed. Current teams and saved warbands are protected.'],['Ascension & Limit Breaks','XP stops at the current ascension cap; excess XP is lost. Ascend with gold and materials to start a new tier at level 1 while keeping earned power. After full ascension and maximum level, two Limit Breaks each unlock five levels and add 3% ATK, DEF and HP. Specials are always at full power. At Limit Break 2, Attack heroes start battles with Attack Up, Defense heroes with Defense Up, and Support heroes with Mana Surge for two moves.']]],['adventure','Adventure',[['The rune road','Campaign has 25 stages on Normal, Hard and Nightmare. Complete a difficulty to open the next. Dungeons offer seven realms with three tiers. Preview enemies and rewards before entering.'],['Leaving a battle','Leaving the battle screen, refreshing or closing the game abandons the fight. Start the encounter again from the beginning; completed rewards and account progress stay saved.'],['Rewards','Campaign first clears give Gems; every fifth campaign victory adds a bonus. Dungeon victories award materials and Gems, with a larger first-clear reward. Playtesting mode grants no rewards.']]],['arena','Arena',[['Local rivals','Nine preset rival warbands, four enemies each. Arena is local single-player; these are not live player accounts. Win rating and Arena Tokens, then spend tokens in the shop.']]],['events','Special Events',[['Monthly windows','Crimson Eclipse: 1st–8th. Frostwake Siege: 9th–16th. Veil of Umbra: 17th–24th. Dates follow America/Los_Angeles.'],['Attempts & rewards','Each event window gives 20 attempts. Starting a real challenge spends one, including losses or abandoned fights. Unspent attempts expire. Wins award matching event tokens, Gems, gold and hero XP.']]],['summon','Summoning',[['The Astral Gate','One summon costs 100 Gems; ten cost 900. Ten summons guarantee at least one Rare or better. Odds: Common 50%, Rare 30%, Legendary 7.5%, Mythical 1.5%, two Commons 11%.'],['Fresh copies','Every summon adds a separate level-one hero. Duplicate copies do not share XP, ascensions or Limit Breaks. No summon resources or saves are shared with Warband Legends.']]],['shop','Shop & Gems',[['Choose your currency','Buy champion materials with gold or Gems. Trade Gems for gold, or exchange Arena and event tokens for rewards. Check the confirmation before spending. Materials are shared; hero growth is individual.'],['Premium preview','The Premium section is a disabled layout preview. Purchases, prices, checkout and payments are not active. It cannot charge real money or grant products. No equipment is available.']]],['daily','Daily rewards',[['Calendar gift','Claim once per Los Angeles calendar day. Missed days keep your place. After 180 days, gifts repeat through a 30-day calendar.'],["Today’s Path",'Win two real battles, earn 150 Gems and summon once today. The chest can be claimed once. Quest, calendar and exchange Gems count as earnings; spending does not.']]],['quests','Quests',[['Choose a goal','Filter by category and Active, Ready or Completed. Each milestone can be claimed once. Collection milestones count different hero designs, not duplicate copies.'],['XP rewards','Hero XP goes to each collected copy in your current team, up to its current cap. Account XP is separate.']]],['account','Your account',[['Two kinds of level','Account levels run from 1–100 and unlock milestone quests. Account levels do not increase hero combat stats. Each hero has its own level.'],['Keep your journey','This independent single-player game saves in your browser. Export a backup in Settings before moving computers or clearing browser data. The Teams tab in Codex holds three saved warbands so you can reuse owned teams.']]]];
-export function guideHTML(id='overview'){const selected=topics.find(t=>t[0]===id)||topics[0];return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section><span class="eyebrow">THE GUIDE</span><h2>${selected[1]}</h2>${selected[2].map(([title,body])=>`<article><h3>${title}</h3><p>${body}</p></article>`).join('')}</section></div>`;}
+// One concise source for the Guide and battle help.
+export const guideTopics={roster:'heroes',champion:'growth',shop:'rewards',summon:'summon',daily:'rewards',quests:'rewards',events:'adventure',arena:'adventure',inventory:'rewards',settings:'account',campaign:'adventure',dungeons:'adventure',world:'adventure'};
+const battleRules=[
+ ['Match & attack','Swap neighboring runes to match 3 or more. Attacks follow their columns; empty lanes give double mana. Invalid swaps cost nothing.'],
+ ['Specials & turns','Match a hero’s color to charge their Special. Tap a ready hero to cast or choose a charge level. Casting spends all their mana but no turn. Enemy countdowns advance once per board move.'],
+ ['Special runes','Match 4 for a Blast rune; 5 or more for a Prism. Tap one twice or swap it with a neighbor to activate it.'],
+ ['Elements','Red beats Green, Green beats Blue, and Blue beats Red. Yellow and Purple are strong against each other.'],
+ ['Leaving a fight','Leaving the battle screen, refreshing or closing the game abandons it. Start again from the beginning; completed rewards stay saved.'],
+];
+const topics=[
+ ['overview','Start here',[
+  ['Find your way','Tavern opens the four main areas. Adventure leads to battles, Codex manages heroes and teams, Summon opens The Altar, and Quests offers rewards.'],
+  ['Your first steps','Choose your five heroes in Codex, then start the Normal campaign in Adventure.'],
+ ]],
+ ['heroes','Heroes & Teams',[
+  ['Your warband','Change champions at the top of Codex. Choose five owned copies; copies of the same hero can fight together.'],
+  ['The three tabs','Collection shows your owned copies and their growth. Codex previews every hero at maximum stats. Teams saves and loads up to three warbands.'],
+ ]],
+ ['growth','Hero growth',[
+  ['Level up','Earn hero XP from victories and quests, or feed unused Common heroes. Feeding consumes them permanently; current and saved teams are protected. Account level is separate from hero strength.'],
+  ['Ascend & Limit Break','At the level cap, ascend with gold and materials. The new tier starts at level 1 while keeping earned power. Fully ascended Rare and higher heroes can Limit Break twice, unlocking five more levels each time.'],
+ ]],
+ ['battles','Battles',battleRules],
+ ['adventure','Adventure',[
+  ['Campaign & Dungeons','Clear Normal, Hard, then Nightmare. Dungeons offer materials and first-clear rewards. Preview enemies and rewards before entering.'],
+  ['Arena','Fight preset rival teams to earn rating and Arena Tokens. These are single-player battles.'],
+  ['Monthly windows','Crimson Eclipse: 1st–8th. Frostwake Siege: 9th–16th. Veil of Umbra: 17th–24th. Dates use Los Angeles time.'],
+  ['Event attempts','Each event window has 20 attempts. Starting a fight spends one, even if you leave or lose. Wins earn event tokens and other rewards.'],
+ ]],
+ ['summon','The Altar',[
+  ['Ten calls & twins','Ten calls guarantee a Rare or better. Twin calls give two Common copies. If the first nine calls are all Commons, a final Common or twin result becomes one Rare.'],
+  ['Check the rates','Open Summoning odds below the summon buttons. Prices and any Gem shortage appear on the buttons.'],
+ ]],
+ ['rewards','Rewards & supplies',[
+  ['Daily gifts','Claim your gift and Today’s Path from the Tavern. Daily rewards reset at midnight in Los Angeles; missed days keep your calendar place.'],
+  ['Quests','Filter Active, Ready or Completed quests. Each reward can be claimed once. Collection goals count different hero designs.'],
+  ['Inventory & Exchange','Inventory shows your currencies and materials. Supply Exchange trades gold, Gems or earned tokens for supplies.'],
+ ]],
+ ['account','Progress & Settings',[
+  ['Keep your progress','Heroes, teams and completed rewards save in this browser. Another device or browser has a separate save. Clearing browser data removes your progress.'],
+  ['Playtesting','Open roster in Settings lets you try all heroes at maximum level. Playtest battles give no rewards or progress.'],
+ ]],
+];
+export function guideHTML(id='overview'){
+ const selected=topics.find(t=>t[0]===id)||topics[0];
+ return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section><h2>${selected[1]}</h2>${selected[2].map(([title,body])=>`<article><h3>${title}</h3><p>${body}</p></article>`).join('')}</section></div>`;
+}
+export function battleHelpHTML(){return `<div class="help-grid">${battleRules.map(([title,body])=>`<section><b>${title}</b><p>${body}</p></section>`).join('')}</div>`;}

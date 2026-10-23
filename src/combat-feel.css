@@ -1,0 +1,19 @@
+/* Combat atmosphere stays outside the board's input and layout. */
+.battle-pressure-vignette{position:fixed;inset:0;z-index:8;pointer-events:none;background:radial-gradient(ellipse at center,transparent 44%,#8c091440 75%,#b30b22c9 100%);box-shadow:inset 0 0 45px #970c204d;opacity:var(--battle-pressure,0)}
+.battle-pressure-vignette.pressure-critical{animation:pressure-breath 3s ease-in-out infinite}
+@keyframes pressure-breath{50%{opacity:calc(var(--battle-pressure) * .72)}}
+.battle-hit-flash{position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 65px #e22d3a99;animation:hit-edge .23s ease-out both}.battle-hit-flash.hit-guard{box-shadow:inset 0 0 50px #62cce99c}
+@keyframes hit-edge{from{opacity:.85}to{opacity:0}}
+.combat-contact{position:fixed;width:66px;height:66px;margin:-33px;border:3px solid #fff0cf;border-radius:50%;box-shadow:0 0 18px rgba(var(--rgb),.9),inset 0 0 13px rgba(var(--rgb),.8);pointer-events:none;animation:contact-burst .42s ease-out both}
+.combat-contact.contact-guard{border-color:#9cecff;border-style:double;border-width:6px;box-shadow:0 0 20px #6edbff9c}
+@keyframes contact-burst{from{transform:scale(.25);opacity:1}to{transform:scale(1.5);opacity:0}}
+.combat-knockout{position:fixed;width:100px;height:100px;margin:-50px;display:grid;place-items:center;font-size:80px;color:var(--rune);text-shadow:0 0 25px var(--rune);pointer-events:none;animation:knockout-flare .6s ease-out both}
+@keyframes knockout-flare{from{transform:scale(.4);opacity:1}to{transform:scale(1.8) rotate(35deg);opacity:0}}
+.special-announcement.mythic-cinematic{position:fixed;left:50%;top:13%;width:min(780px,94vw);max-width:94vw;padding:0;border:0;border-radius:0;background:none;box-shadow:none;display:block;transform:translateX(-50%);animation:mythic-reveal var(--cinematic-time,1100ms) ease both;z-index:12}
+.mythic-stage{position:relative;height:240px;display:flex;align-items:center;justify-content:center;gap:24px;overflow:hidden;background:linear-gradient(90deg,transparent,#091b29e8 18%,#152b30ef 75%,transparent);border-block:1px solid rgba(var(--rgb),.65);box-shadow:0 0 45px rgba(var(--rgb),.2)}
+.mythic-seal{position:absolute;left:8%;top:5%;height:90%;aspect-ratio:1;border:2px solid rgba(var(--rgb),.6);border-radius:50%;display:grid;place-items:center;word-spacing:12px;font-size:30px;color:var(--rune);text-shadow:0 0 18px var(--rune);transform:rotate(-15deg);box-shadow:0 0 25px rgba(var(--rgb),.4),inset 0 0 30px rgba(var(--rgb),.25)}
+.mythic-portrait{position:relative;width:190px;height:100%;object-fit:contain;filter:drop-shadow(0 0 14px rgba(var(--rgb),.6))}.mythic-copy{position:relative;display:flex;flex-direction:column;gap:10px;max-width:48%;text-shadow:0 2px 8px #000}.mythic-copy small{font-size:10px;letter-spacing:.35em;color:#f4d58f}.special-announcement .mythic-copy strong{font-size:clamp(23px,4vw,36px);line-height:1.1}.mythic-copy span{font:italic 17px Georgia;color:#f3e1b4}
+@keyframes mythic-reveal{0%{opacity:0;transform:translateX(-53%) scale(.96)}18%,75%{opacity:1;transform:translateX(-50%) scale(1)}100%{opacity:0;transform:translateX(-47%) scale(1.02)}}
+@media(max-width:600px){.mythic-stage{height:190px;gap:8px}.mythic-portrait{width:42%}.mythic-copy{max-width:50%;gap:8px}.mythic-copy small{font-size:8px;letter-spacing:.2em}.mythic-copy span{font-size:13px}.mythic-seal{font-size:20px;left:0}.special-announcement.mythic-cinematic{top:17%}}
+.still-hit,.combat-contact.contact-still{animation:none;opacity:.55}.combat-contact.contact-still{transform:scale(.7)}
+@media(prefers-reduced-motion:reduce){.battle-pressure-vignette,.battle-hit-flash,.combat-contact,.combat-knockout{animation:none}.mythic-cinematic{display:none!important}}
