@@ -1,0 +1,32 @@
+/* Phone header: identity and help, resources, then evenly spaced destinations. */
+@media(max-width:600px){
+ .topbar.with-nav{display:grid;grid-template-columns:minmax(0,1fr) 38px 82px;grid-template-rows:64px 38px 44px;gap:8px;padding:6px max(10px,env(safe-area-inset-right)) 10px max(10px,env(safe-area-inset-left));height:auto;min-height:0;align-items:center}
+ .topbar.with-nav .topbar-right{display:contents}
+ .topbar.with-nav .brand{grid-column:1;grid-row:1;gap:7px;min-width:0}
+ .topbar.with-nav .brand-sigil{width:56px;height:64px;flex-shrink:0}
+ .topbar.with-nav .brand>span:last-child{font-size:17px;letter-spacing:.11em}
+ .topbar.with-nav .brand small{font-size:5px;letter-spacing:.18em;margin-top:4px}
+ .topbar.with-nav .topbar-right>[data-page="settings"]{grid-column:2;grid-row:1;width:38px;min-width:38px;height:38px;min-height:38px;border-radius:9px;padding:8px;justify-self:stretch}
+ .topbar.with-nav .topbar-right>.header-guide{grid-column:3;grid-row:1;display:flex;gap:7px;width:100%;min-width:0;height:38px;min-height:38px;padding:8px;font-size:12px;border-radius:9px;justify-self:stretch}
+ .topbar.with-nav .header-guide>span:first-child{font-size:17px}
+ .topbar.with-nav .game-wallet{grid-column:1/3;grid-row:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;min-width:0}
+ .topbar.with-nav .game-wallet>span{display:flex;justify-content:center;min-width:0;height:38px;min-height:38px;padding:6px 4px;gap:5px;overflow:hidden;border-radius:8px}
+ .topbar.with-nav .game-wallet b{font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap}
+ .topbar.with-nav .game-wallet small{display:none}
+ .topbar.with-nav .game-wallet .ui-icon,.topbar.with-nav .game-wallet .card-glyph{width:14px;height:14px;flex-shrink:0}
+ .topbar.with-nav .topbar-right>.inventory-button{grid-column:3;grid-row:2;display:flex;justify-content:center;gap:5px;min-width:0;width:100%;height:38px;min-height:38px;padding:6px 5px;font-size:11px;border-radius:8px}
+ .topbar.with-nav .inventory-button>.ui-icon{width:15px;height:15px}
+ .topbar.with-nav .game-nav{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:0;padding:0;width:100%}
+ .topbar.with-nav .game-nav>button{width:100%;min-width:0;min-height:44px;height:44px;display:flex;flex-direction:row;align-items:center;justify-content:center;padding:6px 2px;font-size:10px;letter-spacing:0;border-radius:8px}
+}
+@media(max-width:350px){
+ .topbar.with-nav{grid-template-columns:minmax(0,1fr) 36px 76px;column-gap:6px}
+ .topbar.with-nav .brand>span:last-child{font-size:15px}
+ .topbar.with-nav .brand-sigil{width:48px;height:56px}
+ .topbar.with-nav .game-wallet{gap:6px}
+ .topbar.with-nav .game-wallet>span{gap:3px}
+ .topbar.with-nav .game-wallet b{font-size:10px}
+ .topbar.with-nav .game-nav{gap:4px}
+ .topbar.with-nav .game-nav>button{font-size:9px}
+}
+.topbar-right .header-guide>span{display:inline!important}
