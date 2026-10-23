@@ -1,0 +1,55 @@
+/* Champion dossiers keep growth actions close, with advanced rituals tucked away. */
+.page-champion .champion-page{grid-template-columns:minmax(0,400px) minmax(0,1fr);max-width:1080px;gap:28px;align-items:start;margin-top:16px}
+.page-champion .champion-showcase{border-radius:14px;overflow:hidden;border-color:#c9af806b;box-shadow:0 10px 30px #07090a66}
+.page-champion .champion-biography>h1{font-size:clamp(32px,3.5vw,46px);line-height:1.1;margin:8px 0}
+.page-champion .champion-title{font-size:14px;line-height:1.5;margin:8px 0 12px;color:#d9cbbb}
+.page-champion .detail-element{margin:10px 0 14px;line-height:1.5}
+.page-champion .dossier-sections{max-width:1080px;margin:8px auto 14px;gap:8px;flex-wrap:wrap}
+.page-champion .dossier-sections>button{min-height:38px;padding:8px 13px;border-radius:8px;background:#252a2ccf;border-color:#bea78666}
+.page-champion .champion-special{padding:16px;margin:14px 0 0;border-radius:12px;border:1px solid #bfa7844d}
+.page-champion .champion-special .section-heading{margin-bottom:10px}
+.page-champion .special-level{padding:14px;border-radius:10px}
+.page-champion .hero-development{margin-top:20px;margin-bottom:14px;gap:22px;padding:20px}
+.page-champion .development-intro h2{font-size:29px;line-height:1.15}
+.page-champion .growth-stats{margin:14px 0}
+.page-champion .growth-stats>div{padding:10px 0}
+.page-champion .growth-rules{margin-top:14px}
+.page-champion .advancement-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:14px;margin:14px 0 20px}
+.page-champion .advancement-menu{padding:0;margin:0;border:1px solid #c2aa8266;border-radius:12px;background:var(--legend-surface);overflow:hidden;min-width:0}
+.page-champion .advancement-menu>summary{display:flex;align-items:center;gap:12px;min-height:64px;padding:16px 18px;cursor:pointer;list-style:none;color:#f5dfb5;touch-action:manipulation}
+.page-champion .advancement-menu>summary::-webkit-details-marker{display:none}
+.page-champion .advancement-menu>summary h2{font:25px Georgia,serif;margin:0;flex:1;line-height:1.2}
+.page-champion .advancement-menu>summary>span{font-size:12px;white-space:nowrap;color:#d7c9b6;font-variant-numeric:tabular-nums}
+.page-champion .advancement-menu>summary::after{content:'⌄';font-size:22px;line-height:1;flex-shrink:0;transition:transform .15s}
+.page-champion .advancement-menu[open]>summary{border-bottom:1px solid #c2aa823d;background:#b28b4210}
+.page-champion .advancement-menu[open]>summary::after{transform:rotate(180deg)}
+.page-champion .advancement-menu>summary:hover{background:#c7a15c14}
+.page-champion .advancement-menu>summary:focus-visible{outline:2px solid #eed198;outline-offset:-4px;border-radius:10px}
+.page-champion .advancement-content{padding:18px}
+.page-champion .advancement-content>p{font-size:13px;line-height:1.65;color:#d2d6cc;margin:12px 0}
+.page-champion .advancement-content>small{display:block;color:#c7cdbf;margin:8px 0;font-size:12px}
+.page-champion .advancement-content>.card-stats{margin:12px 0}
+.page-champion .advancement-content .ascension-road{margin:0 0 16px;gap:7px}
+.page-champion .advancement-content .ascension-road li{padding:12px 5px;background:#222c2c;min-width:60px}
+.page-champion .advancement-content .ascension-road li.unlocked{background:#5a4b35;color:#ffebbc}
+.page-champion .advancement-content .material-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.page-champion .advancement-content .material-tile{flex-direction:column;text-align:center;padding:12px 8px;gap:8px}
+.page-champion .advancement-content .material-tile img{width:64px;height:64px}
+.page-champion .advancement-content>.button{min-height:44px;width:100%;white-space:normal;margin-top:10px}
+.page-champion .passive-info{margin-top:16px;padding:20px;border-radius:12px}
+@media(max-width:700px){
+ .page-champion .champion-page{grid-template-columns:1fr;gap:18px}
+ .page-champion .champion-showcase{width:min(84vw,340px);max-width:100%;margin-inline:auto}
+ .page-champion .champion-biography>h1{font-size:34px}
+ .page-champion .champion-special{padding:14px}
+ .page-champion .hero-development{padding:16px;gap:16px;margin-top:16px}
+ .page-champion .advancement-pair{grid-template-columns:1fr;gap:10px;margin:12px 0 16px}
+ .page-champion .advancement-menu>summary{min-height:62px;padding:16px}
+ .page-champion .advancement-menu>summary h2{font-size:24px}
+ .page-champion .advancement-content{padding:16px}
+ .page-champion .passive-info{padding:16px}
+}
+@media(prefers-reduced-motion:reduce){.page-champion .advancement-menu>summary::after{transition:none}}
+.page-champion .advancement-pair,.page-champion .passive-info{max-width:1100px;margin-inline:auto}
+.page-champion .champion-story{padding:10px 12px;border:1px solid #c2aa823d;border-radius:8px;background:#232a2b99}
+.page-champion .champion-story>summary{color:#e6d1aa;font-size:12px;line-height:1.5;cursor:pointer}
