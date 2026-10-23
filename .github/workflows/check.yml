@@ -28,11 +28,13 @@ jobs:
       - run: npm run test:viewport
       - run: npm run test:ascension
       - run: npm run test:covenant
-      - name: Preserve visual review captures
-        if: always()
+      # Keep diagnostic images only for failed checks; storage limits must not mask test results.
+      - name: Preserve failed-check visual captures
+        if: failure()
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: legends-browser-captures
           path: artifacts/*.png
-          retention-days: 7
+          retention-days: 3
           if-no-files-found: ignore
