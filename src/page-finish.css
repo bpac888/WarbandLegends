@@ -75,3 +75,18 @@
   font-size: clamp(18px, 1.6vw, 22px);
   min-height: 56px;
 }
+
+@media (max-height: 500px) and (min-aspect-ratio: 4/3) {
+  .splash-screen { align-items: center; padding-bottom: 0; }
+  .splash-screen .splash-content { padding-top: 16px; padding-bottom: 46px; }
+  .splash-screen .splash-emblem {
+    width: 44px !important;
+    height: 50px !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .splash-screen .splash-content h1 { font-size: clamp(38px, 11vh, 55px); }
+  .splash-screen .splash-subtitle { margin-top: 6px; }
+  .splash-screen .splash-rule { margin-top: 12px; margin-bottom: 12px; }
+  .splash-screen .splash-caption { bottom: 12px; }
+}
