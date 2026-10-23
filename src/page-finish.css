@@ -90,3 +90,6 @@
   .splash-screen .splash-rule { margin-top: 12px; margin-bottom: 12px; }
   .splash-screen .splash-caption { bottom: 12px; }
 }
+
+/* Keep the odds table readable after removing the explanatory paragraph. */
+.altar-footer .summon-odds { width: 100%; }
