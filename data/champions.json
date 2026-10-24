@@ -25,17 +25,17 @@
       ],
       "desc": "Immune to Mana Block."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "average",
     "special": {
       "name": "Unmake",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "average",
+          "tiles": 10,
           "target": "enemy",
-          "damage": 2.01,
+          "damage": 1.7,
           "healing": 0,
           "healScope": "allies",
           "aoe": true,
@@ -55,7 +55,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 201% ATK damage to all living enemies, ignoring 25% of DEF."
+    "ability_desc": "Deal 170% ATK damage to all living enemies, ignoring 25% of DEF."
   },
   {
     "template_id": "necropolis_titan",
@@ -138,17 +138,17 @@
       ],
       "desc": "Immune to Burn."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "slow",
     "special": {
       "name": "Cinder Cataclysm",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "slow",
+          "tiles": 12,
           "target": "enemy",
-          "damage": 2.01,
+          "damage": 1.87,
           "healing": 0,
           "healScope": "allies",
           "aoe": true,
@@ -173,7 +173,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 201% ATK damage to all living enemies."
+    "ability_desc": "Deal 187% ATK damage to all living enemies."
   },
   {
     "template_id": "mercuric_saboteur",
@@ -1313,47 +1313,37 @@
       ],
       "desc": "Immune to Decrease ATK."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "fast",
     "special": {
       "name": "Direwolf Flank",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
-          "target": "self",
-          "damage": 0,
-          "healing": 0.34,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 1.7,
+          "healing": 0,
           "healScope": "allies",
-          "aoe": false,
+          "aoe": true,
           "pierce": false,
           "effects": [
             {
-              "id": "block_debuffs",
-              "turns": 3,
-              "scope": "allies"
-            },
-            {
-              "id": "mana_surge",
+              "id": "dec_def",
               "turns": 2,
-              "scope": "allies"
+              "scope": "enemies"
             },
             {
-              "id": "strengthen",
-              "turns": 1,
-              "scope": "allies"
-            },
-            {
-              "id": "revive_on_death",
+              "id": "frostbite",
               "turns": 2,
-              "scope": "allies"
+              "scope": "enemies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 34% max HP to all living allies."
+    "ability_desc": "Deal 170% ATK damage to all living enemies."
   },
   {
     "template_id": "frost_sage",
@@ -1390,38 +1380,28 @@
           "level": 1,
           "speed": "fast",
           "tiles": 8,
-          "target": "self",
-          "damage": 0,
-          "healing": 0.26,
+          "target": "enemy",
+          "damage": 2.6,
+          "healing": 0,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
-              "id": "inc_def",
+              "id": "mana_slow",
               "turns": 2,
-              "scope": "allies"
+              "scope": "enemy"
             },
             {
-              "id": "heal",
-              "turns": 3,
-              "scope": "allies"
-            },
-            {
-              "id": "strengthen",
-              "turns": 2,
-              "scope": "allies"
-            },
-            {
-              "id": "remove_debuffs",
-              "turns": 0,
-              "scope": "allies"
+              "id": "mana_block",
+              "turns": 1,
+              "scope": "enemy"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 26% max HP to all living allies."
+    "ability_desc": "Deal 260% ATK damage to selected enemy."
   },
   {
     "template_id": "blood_paladin",
@@ -4376,17 +4356,17 @@
     "source_image": "/api/static/champions/neon_hologramassassin.png",
     "portrait": "assets/champions/neon_hologram_assassin.webp",
     "passive": null,
-    "manaSpeed": "very_fast",
+    "manaSpeed": "average",
     "special": {
       "name": "Digital Mirage",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_fast",
-          "tiles": 6.5,
+          "speed": "average",
+          "tiles": 10,
           "target": "enemy",
-          "damage": 2.11,
+          "damage": 2.63,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -4406,7 +4386,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 211% ATK damage to selected enemy."
+    "ability_desc": "Deal 263% ATK damage to selected enemy."
   },
   {
     "template_id": "neon_biochem_doc",
@@ -5169,17 +5149,17 @@
       "value": 0.05,
       "desc": "Heals 5% of his own max HP at the start of each of his turns, up to full health."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "slow",
     "special": {
       "name": "Sanctuary of the First Oak",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "slow",
+          "tiles": 12,
           "target": "enemy",
-          "damage": 1.94,
+          "damage": 1.81,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -5209,7 +5189,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 194% ATK damage to selected enemy."
+    "ability_desc": "Deal 181% ATK damage to selected enemy."
   },
   {
     "template_id": "oasis_keeper_nahlia",
@@ -5442,18 +5422,69 @@
       ],
       "desc": "Immune to Decrease DEF. This permanent protection affects only Aurelia."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "charging",
     "special": {
       "name": "Reforge the Fallen Line",
-      "charging": false,
+      "charging": true,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "charge_1",
+          "tiles": 5,
           "target": "self",
           "damage": 0,
-          "healing": 0.34,
+          "healing": 0.11,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_def",
+              "turns": 1,
+              "scope": "allies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "charge_2",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.2,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_def",
+              "turns": 1,
+              "scope": "allies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "allies"
+            },
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "speed": "charge_3",
+          "tiles": 15,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.32,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -5482,7 +5513,7 @@
         }
       ]
     },
-    "ability_desc": "Restore 34% max HP to all living allies."
+    "ability_desc": "Restore 32% max HP to all living allies."
   },
   {
     "template_id": "jade_mender_lian",
@@ -5865,17 +5896,17 @@
       ],
       "desc": "Vorrek is immune to Weaken. This permanent protection affects only him."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "average",
     "special": {
       "name": "Break the Unbroken",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "average",
+          "tiles": 10,
           "target": "enemy",
-          "damage": 2.01,
+          "damage": 1.7,
           "healing": 0,
           "healScope": "allies",
           "aoe": true,
@@ -5900,7 +5931,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 201% ATK damage to all living enemies."
+    "ability_desc": "Deal 170% ATK damage to all living enemies."
   },
   {
     "template_id": "rimebow_tessa",
@@ -6635,17 +6666,17 @@
       ],
       "desc": "Azhar is permanently immune to Weaken. This protection affects only him."
     },
-    "manaSpeed": "very_slow",
+    "manaSpeed": "very_fast",
     "special": {
       "name": "No Throne Above the Dawn",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "very_fast",
+          "tiles": 6.5,
           "target": "enemy",
-          "damage": 2.01,
+          "damage": 1.36,
           "healing": 0,
           "healScope": "allies",
           "aoe": true,
@@ -6670,7 +6701,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 201% ATK damage to all living enemies."
+    "ability_desc": "Deal 136% ATK damage to all living enemies."
   },
   {
     "template_id": "sivren_stillgrass",

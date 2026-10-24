@@ -4,9 +4,9 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
-| Yshmir, the Worldwound | mythical | purple | attack | 916 | 757 | 1416 | Very Slow 13.5 |
+| Yshmir, the Worldwound | mythical | purple | attack | 916 | 757 | 1416 | Average 10 |
 | Ossir, Necropolis Titan | legendary | purple | defense | 667 | 823 | 1568 | Slow 12 |
-| Malzhur, the Abyss Lord | mythical | red | attack | 908 | 758 | 1453 | Very Slow 13.5 |
+| Malzhur, the Abyss Lord | mythical | red | attack | 908 | 758 | 1453 | Slow 12 |
 | Ashrim, Quicksilver Saboteur | legendary | blue | attack | 811 | 661 | 1318 | Fast 8 |
 | Yorkine, Voltaic Priest | legendary | yellow | support | 711 | 734 | 1479 | Slow 12 |
 | The Bronze Juggernaut | legendary | red | defense | 670 | 801 | 1555 | Slow 12 |
@@ -26,7 +26,7 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 | Ashwind Warden | mythical | yellow | defense | 763 | 870 | 1618 | Fast 8 |
 | Karthos, The Revenant | legendary | blue | defense | 674 | 820 | 1578 | Slow 12 |
 | Sable, Pale Matriarch | mythical | purple | support | 801 | 806 | 1553 | Fast 8 |
-| Frost King | mythical | blue | support | 774 | 796 | 1604 | Very Slow 13.5 |
+| Frost King | mythical | blue | support | 774 | 796 | 1604 | Fast 8 |
 | Frost Sage | mythical | blue | support | 797 | 818 | 1601 | Fast 8 |
 | Sir Aurel, the Crimson Paladin | mythical | red | defense | 748 | 875 | 1653 | Slow 12 |
 | Lady Death | legendary | purple | attack | 846 | 690 | 1301 | Average 10 |
@@ -86,7 +86,7 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 | Kaelen, the Grid Runner | common | yellow | attack | 508 | 435 | 744 | Very Fast 6.5 |
 | Boran, Chrome Fist | rare | red | defense | 532 | 661 | 1163 | Average 10 |
 | Nadia, the Patchwork Witch | rare | purple | support | 568 | 599 | 1092 | Average 10 |
-| Vesper, Neon Phantom | rare | purple | attack | 701 | 543 | 1003 | Very Fast 6.5 |
+| Vesper, Neon Phantom | rare | purple | attack | 701 | 543 | 1003 | Average 10 |
 | Dr. Aris, Cyber-Stitcher | rare | green | support | 578 | 615 | 1172 | Average 10 |
 | Dragon Empress | mythical | red | support | 786 | 829 | 1562 | Charging 5 / 10 / 15 |
 | Ravel, the Guard | rare | red | defense | 542 | 694 | 1240 | Average 10 |
@@ -99,12 +99,12 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 | The Alley Shade | common | purple | support | 389 | 481 | 849 | Average 10 |
 | Fjordwatch Hald | rare | blue | defense | 515 | 669 | 1151 | Average 10 |
 | Shellback Brukk | common | green | defense | 352 | 560 | 974 | Average 10 |
-| Oakenhart, the First Warden | mythical | green | defense | 755 | 877 | 1640 | Very Slow 13.5 |
+| Oakenhart, the First Warden | mythical | green | defense | 755 | 877 | 1640 | Slow 12 |
 | Oasis-Keeper Nahlia | rare | green | support | 595 | 617 | 1116 | Average 10 |
 | Kassem, the Sunwall | legendary | yellow | defense | 660 | 825 | 1526 | Slow 12 |
 | Cinder-Mender Vessa | rare | red | support | 602 | 606 | 1098 | Average 10 |
 | Veyr, the Hollow Gate | rare | purple | defense | 546 | 675 | 1230 | Average 10 |
-| Aurelia, the Last Foundry | mythical | yellow | support | 775 | 809 | 1588 | Very Slow 13.5 |
+| Aurelia, the Last Foundry | mythical | yellow | support | 775 | 809 | 1588 | Charging 5 / 10 / 15 |
 | Jade-Mender Lian | rare | green | support | 604 | 591 | 1133 | Average 10 |
 | Carapace Warden Korr | rare | yellow | defense | 531 | 689 | 1250 | Average 10 |
 | Redknife Tavin | rare | red | attack | 692 | 546 | 961 | Fast 8 |
@@ -112,7 +112,7 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 | Rivet-Mender Orsa | rare | blue | support | 576 | 624 | 1158 | Average 10 |
 | Eira, the Hearthwarden | legendary | yellow | support | 710 | 734 | 1468 | Average 10 |
 | Shen, the Bronze Horizon | legendary | yellow | defense | 658 | 837 | 1575 | Slow 12 |
-| Vorrek, the Walking Siege | mythical | red | attack | 916 | 764 | 1482 | Very Slow 13.5 |
+| Vorrek, the Walking Siege | mythical | red | attack | 916 | 764 | 1482 | Average 10 |
 | Rimebow Tessa | rare | blue | attack | 680 | 542 | 988 | Very Fast 6.5 |
 | Caravan Warden Samira | rare | yellow | defense | 543 | 679 | 1245 | Average 10 |
 | Arcmaw Rhex | rare | yellow | attack | 714 | 568 | 991 | Average 10 |
@@ -127,7 +127,7 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 | Rhazek Cinderstripe | legendary | red | attack | 821 | 678 | 1307 | Average 10 |
 | Vaelka, the Obsidian Watch | legendary | purple | defense | 668 | 825 | 1559 | Slow 12 |
 | Oruun, the Prism-Seer | legendary | yellow | support | 722 | 732 | 1431 | Charging 8 / 10 |
-| Azhar, the Rosetted Sun | mythical | yellow | attack | 918 | 755 | 1425 | Very Slow 13.5 |
+| Azhar, the Rosetted Sun | mythical | yellow | attack | 918 | 755 | 1425 | Very Fast 6.5 |
 | Sivren, the Stillgrass Knife | legendary | green | attack | 838 | 664 | 1287 | Fast 8 |
 | Nera, the Red Ledger | rare | red | attack | 703 | 566 | 1007 | Fast 8 |
 | Tovin Glassheart | rare | blue | support | 576 | 586 | 1036 | Average 10 |
@@ -144,7 +144,7 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 
 ### Yshmir, the Worldwound — Unmake
 
-- 13.5 tiles: Deal 201% ATK damage to all living enemies, ignoring 25% of DEF. Buff Seal (All living enemies, 2 turns); Defense Down (All living enemies, 1 turns).
+- 10 tiles: Deal 170% ATK damage to all living enemies, ignoring 25% of DEF. Buff Seal (All living enemies, 2 turns); Defense Down (All living enemies, 1 turns).
 
 Passive: **Unclosing Wound** — Immune to Mana Block.
 
@@ -154,7 +154,7 @@ Passive: **Unclosing Wound** — Immune to Mana Block.
 
 ### Malzhur, the Abyss Lord — Cinder Cataclysm
 
-- 13.5 tiles: Deal 201% ATK damage to all living enemies. Attack Up (Caster, 2 turns); Attack Down (All living enemies, 3 turns); Poison (All living enemies, 2 turns).
+- 12 tiles: Deal 187% ATK damage to all living enemies. Attack Up (Caster, 2 turns); Attack Down (All living enemies, 3 turns); Poison (All living enemies, 2 turns).
 
 Passive: **Cold of the Pit** — Immune to Burn.
 
@@ -248,13 +248,13 @@ Passive: **Crimson Mandate** — Cannot have buffs blocked.
 
 ### Frost King — Direwolf Flank
 
-- 13.5 tiles: Restore 34% max HP to all living allies. Ailment Ward (All living allies, 3 turns); Mana Flow (All living allies, 2 turns); Damage Ward (All living allies, 1 turns); Death Ward (All living allies, 2 turns).
+- 8 tiles: Deal 170% ATK damage to all living enemies. Defense Down (All living enemies, 2 turns); Frostbite (All living enemies, 2 turns).
 
 Passive: **Rime Crown** — Immune to Decrease ATK.
 
 ### Frost Sage — Ice Blast
 
-- 8 tiles: Restore 26% max HP to all living allies. Cleanse (All living allies); Defense Up (All living allies, 2 turns); Regeneration (All living allies, 3 turns); Damage Ward (All living allies, 2 turns).
+- 8 tiles: Deal 260% ATK damage to selected enemy. Mana Slow (Selected enemy, 2 turns); Mana Block (Selected enemy, 1 turns).
 
 Passive: **Glacier's Patience** — Immune to Mana Slow.
 
@@ -500,7 +500,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Vesper, Neon Phantom — Digital Mirage
 
-- 6.5 tiles: Deal 211% ATK damage to selected enemy. Mana Block (Selected enemy, 2 turns); Buff Seal (Selected enemy, 1 turns).
+- 10 tiles: Deal 263% ATK damage to selected enemy. Mana Block (Selected enemy, 2 turns); Buff Seal (Selected enemy, 1 turns).
 
 ### Dr. Aris, Cyber-Stitcher — Starlight Injection
 
@@ -560,7 +560,7 @@ Passive: **Entropy Bloom** — Heals 5% of max HP every turn.
 
 ### Oakenhart, the First Warden — Sanctuary of the First Oak
 
-- 13.5 tiles: Deal 194% ATK damage to selected enemy. Defense Up (Caster, 2 turns); Riposte (Caster, 1 turns); Barrier (All living allies, 2 turns); Taunt (Caster, 2 turns).
+- 12 tiles: Deal 181% ATK damage to selected enemy. Defense Up (Caster, 2 turns); Riposte (Caster, 1 turns); Barrier (All living allies, 2 turns); Taunt (Caster, 2 turns).
 
 Passive: **Heartwood Renewal** — Heals 5% of his own max HP at the start of each of his turns, up to full health.
 
@@ -582,7 +582,9 @@ Passive: **Heartwood Renewal** — Heals 5% of his own max HP at the start of ea
 
 ### Aurelia, the Last Foundry — Reforge the Fallen Line
 
-- 13.5 tiles: Restore 34% max HP to all living allies. Cleanse (All living allies); Defense Up (All living allies, 2 turns); Damage Ward (All living allies, 2 turns); Barrier (All living allies, 2 turns).
+- Charge 1 · 5 tiles: Restore 11% max HP to all living allies. Defense Up (All living allies, 1 turns); Damage Ward (All living allies, 1 turns).
+- Charge 2 · 10 tiles: Restore 20% max HP to all living allies. Cleanse (All living allies); Defense Up (All living allies, 1 turns); Damage Ward (All living allies, 1 turns).
+- Charge 3 · 15 tiles: Restore 32% max HP to all living allies. Cleanse (All living allies); Defense Up (All living allies, 2 turns); Damage Ward (All living allies, 2 turns); Barrier (All living allies, 2 turns).
 
 Passive: **Tempered Resolve** — Immune to Decrease DEF. This permanent protection affects only Aurelia.
 
@@ -616,7 +618,7 @@ Passive: **Tempered Resolve** — Immune to Decrease DEF. This permanent protect
 
 ### Vorrek, the Walking Siege — Break the Unbroken
 
-- 13.5 tiles: Deal 201% ATK damage to all living enemies. Attack Up (Caster, 2 turns); Buff Seal (All living enemies, 1 turns); Defense Down (All living enemies, 2 turns).
+- 10 tiles: Deal 170% ATK damage to all living enemies. Attack Up (Caster, 2 turns); Buff Seal (All living enemies, 1 turns); Defense Down (All living enemies, 2 turns).
 
 Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent protection affects only him.
 
@@ -679,7 +681,7 @@ Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent pro
 
 ### Azhar, the Rosetted Sun — No Throne Above the Dawn
 
-- 13.5 tiles: Deal 201% ATK damage to all living enemies. Attack Up (Caster, 2 turns); Buff Seal (All living enemies, 1 turns); Defense Down (All living enemies, 2 turns).
+- 6.5 tiles: Deal 136% ATK damage to all living enemies. Attack Up (Caster, 2 turns); Buff Seal (All living enemies, 1 turns); Defense Down (All living enemies, 2 turns).
 
 Passive: **Sunscar Oath** — Azhar is permanently immune to Weaken. This protection affects only him.
 

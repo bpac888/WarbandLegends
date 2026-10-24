@@ -52,10 +52,12 @@ function tier(c,entries,level,total,speed,tiles){
   if(changes.damageScale)spec.damage=Math.round(spec.damage*changes.damageScale*100)/100;
   if(changes.healingScale)spec.healing=Math.round(spec.healing*changes.healingScale*100)/100;
  }
+ if(design[c.id].specialOverride)Object.assign(spec,clone(design[c.id].specialOverride));
  return spec;
 }
 const roster=source.map(c=>{
  const d=design[c.id];if(!d)throw Error('Missing design '+c.id);
+ if(c.rarity==='mythical'&&d.manaSpeed==='very_slow')throw Error('Mythicals cannot use Very Slow mana: '+c.id);
  const entries=merge(c),total=d.chargeLevels||1;
  const levels=Array.from({length:total},(_,i)=>tier(c,entries,i+1,total,total===1?d.manaSpeed:total===2?['fast','average'][i]:['charge_1','charge_2','charge_3'][i],total===1?SPEEDS[d.manaSpeed]:total===2?[8,10][i]:[5,10,15][i]));
  const {spd,kit,ability_desc,...identity}=c;

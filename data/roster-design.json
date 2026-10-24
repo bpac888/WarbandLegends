@@ -3,7 +3,7 @@
   "champions": {
     "yshmir_worldwound": {
       "color": "purple",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "average"
     },
     "necropolis_titan": {
       "color": "purple",
@@ -11,7 +11,7 @@
     },
     "abyss_lord": {
       "color": "red",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "slow"
     },
     "mercuric_saboteur": {
       "color": "blue",
@@ -95,11 +95,47 @@
     },
     "frost_king": {
       "color": "blue",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "fast",
+      "specialOverride": {
+        "target": "enemy",
+        "damage": 1.7,
+        "healing": 0,
+        "aoe": true,
+        "effects": [
+          {
+            "id": "dec_def",
+            "turns": 2,
+            "scope": "enemies"
+          },
+          {
+            "id": "frostbite",
+            "turns": 2,
+            "scope": "enemies"
+          }
+        ]
+      }
     },
     "frost_sage": {
       "color": "blue",
-      "manaSpeed": "fast"
+      "manaSpeed": "fast",
+      "specialOverride": {
+        "target": "enemy",
+        "damage": 2.6,
+        "healing": 0,
+        "aoe": false,
+        "effects": [
+          {
+            "id": "mana_slow",
+            "turns": 2,
+            "scope": "enemy"
+          },
+          {
+            "id": "mana_block",
+            "turns": 1,
+            "scope": "enemy"
+          }
+        ]
+      }
     },
     "blood_paladin": {
       "color": "red",
@@ -340,7 +376,7 @@
     },
     "neon_hologram_assassin": {
       "color": "purple",
-      "manaSpeed": "very_fast"
+      "manaSpeed": "average"
     },
     "neon_biochem_doc": {
       "color": "green",
@@ -394,7 +430,7 @@
     },
     "oakenhart_first_warden": {
       "color": "green",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "slow"
     },
     "oasis_keeper_nahlia": {
       "color": "green",
@@ -414,7 +450,8 @@
     },
     "aurelia_last_foundry": {
       "color": "yellow",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "charging",
+      "chargeLevels": 3
     },
     "jade_mender_lian": {
       "color": "green",
@@ -446,7 +483,7 @@
     },
     "vorrek_walking_siege": {
       "color": "red",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "average"
     },
     "rimebow_tessa": {
       "color": "blue",
@@ -507,7 +544,7 @@
     },
     "azhar_rosetted_sun": {
       "color": "yellow",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "very_fast"
     },
     "sivren_stillgrass": {
       "color": "green",

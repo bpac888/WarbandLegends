@@ -10,11 +10,11 @@
   },
   "manaCounts": {
     "very_fast": 8,
-    "fast": 23,
-    "average": 64,
-    "slow": 19,
-    "very_slow": 9,
-    "charging": 12
+    "fast": 24,
+    "average": 67,
+    "slow": 21,
+    "very_slow": 2,
+    "charging": 13
   },
   "chargingChampions": [
     {
@@ -93,6 +93,14 @@
     },
     {
       "id": "neon_singularity_reaper",
+      "tiles": [
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "id": "aurelia_last_foundry",
       "tiles": [
         5,
         10,

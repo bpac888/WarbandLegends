@@ -50,7 +50,7 @@ test('standard mana speeds use the requested exact fractional tile thresholds',(
  for(const [c,before,after] of [[veryFast,6,7],[slowest,13,14]]){const u={...structuredClone(c),hp:c.hp,mana:before};assert.equal(readyLevel(u),0);u.mana=after;assert.equal(readyLevel(u),1);}
 });
 test('charging Specials use cumulative 8/10 or 5/10/15 gates, not repeated costs',()=>{
- const charging=roster.filter(c=>c.special.charging);assert.equal(charging.length,12);
+ const charging=roster.filter(c=>c.special.charging);assert.equal(charging.length,13);
  assert.ok(charging.some(c=>c.special.levels.length===2));assert.ok(charging.some(c=>c.special.levels.length===3));
  for(const c of charging){const gates=c.special.levels.map(l=>l.tiles);assert.deepEqual(gates,c.special.levels.length===2?[8,10]:[5,10,15]);const u={...structuredClone(c),hp:c.hp,mana:0};for(let i=0;i<gates.length;i++){u.mana=gates[i]-.01;assert.equal(readyLevel(u),i);u.mana=gates[i];assert.equal(readyLevel(u),i+1);}}
 });
@@ -76,9 +76,10 @@ test('new roster has one Special, no SPD stat, balanced colors, and all original
  for(const c of roster){assert.equal('spd' in c,false);assert.equal('kit' in c,false);assert.equal('a2' in c,false);assert.equal('a3' in c,false);assert.ok(c.special.name);assert.equal(c.passive?.id,source.find(o=>o.id===c.id).passive?.id);assert.equal(c.passive?.name,source.find(o=>o.id===c.id).passive?.name);assert.equal(c.rarity,source.find(o=>o.id===c.id).rarity);}
 });
 test('full Specials retain merged source effects except deliberate match-3 revisions',async()=>{
- const changed=JSON.parse(await readFile(new URL('../data/status-design.json',import.meta.url))).champions;
+ const changed=JSON.parse(await readFile(new URL('../data/status-design.json',import.meta.url))).champions,design=JSON.parse(await readFile(new URL('../data/roster-design.json',import.meta.url))).champions;
  const source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url)));
  for(const c of roster){const original=source.find(o=>o.id===c.id),expected=new Map();for(const [raw,turns]of [...original.kit.a2,...original.kit.a3]){const id=raw==='taunt'?'guard':raw==='inc_spd'?'mana_surge':raw==='dec_spd'?'mana_slow':raw==='burn'&&c.color==='blue'?'frostbite':raw;expected.set(id,Math.max(turns,expected.get(id)||0));}
+  if(design[c.id].specialOverride){for(const [key,value]of Object.entries(design[c.id].specialOverride))assert.deepEqual(c.special.levels.at(-1)[key],value,c.id+' '+key);continue;}
   if(changed[c.id])continue;const full=c.special.levels.at(-1);assert.equal(full.aoe,expected.has('aoe'),c.id);assert.equal(full.pierce,expected.has('ignore_def'),c.id);expected.delete('aoe');expected.delete('ignore_def');assert.deepEqual(new Map(full.effects.map(e=>[e.id,e.turns])),expected,c.id);assert.equal(new Set(full.effects.map(e=>e.id)).size,full.effects.length);
  }
 });
@@ -99,4 +100,12 @@ test('legacy saves keep the team/progression and restart active encounters with 
 });
 test('completed legacy victories do not pay or unlock twice during migration',()=>{
  const store=memory(),legacy=make();legacy.version=1;legacy.phase='victory';legacy.enemies.forEach(e=>e.hp=0);save(store,LEGACY_BATTLE_KEY,legacy);const profile=recordVictory(referenceProfile(),legacy);const migrated=loadBattle(store,roster);assert.equal(migrated.phase,'victory');assert.equal(recordVictory(profile,migrated),profile);
+});
+
+test('Mythicals exclude Very Slow and Vesper uses Average mana',()=>{
+ const mythicals=roster.filter(c=>c.rarity==='mythical');assert.ok(mythicals.every(c=>['very_fast','fast','average','slow','charging'].includes(c.manaSpeed)));
+ assert.deepEqual(new Set(mythicals.map(c=>c.manaSpeed)),new Set(['very_fast','fast','average','slow','charging']));
+ const vesper=roster.find(c=>c.id==='neon_hologram_assassin');assert.equal(vesper.manaSpeed,'average');assert.equal(vesper.special.charging,false);assert.equal(manaLevels(vesper)[0].tiles,10);
+ const state=quiet(make(12,['aurelia_last_foundry',...REFERENCE_TEAM.slice(0,4)]));
+ for(const [i,gate]of [5,10,15].entries()){state.heroes[0].mana=gate;const r=cast(state,'hero-0','hero-0',i+1);assert.ok(!r.error);assert.equal(r.state.heroes[0].mana,0);assert.equal(r.state.moves,0);}
 });
