@@ -57,11 +57,11 @@ function tier(c,entries,level,total,speed,tiles){
 }
 const roster=source.map(c=>{
  const d=design[c.id];if(!d)throw Error('Missing design '+c.id);
- if(c.rarity==='mythical'&&d.manaSpeed==='very_slow')throw Error('Mythicals cannot use Very Slow mana: '+c.id);
+ if(c.rarity==='mythical'&&c.id!=='yshmir_worldwound'&&d.manaSpeed==='very_slow')throw Error('Only Yshmir may use Very Slow Mythical mana: '+c.id);
  const entries=merge(c),total=d.chargeLevels||1;
  const levels=Array.from({length:total},(_,i)=>tier(c,entries,i+1,total,total===1?d.manaSpeed:total===2?['fast','average'][i]:['charge_1','charge_2','charge_3'][i],total===1?SPEEDS[d.manaSpeed]:total===2?[8,10][i]:[5,10,15][i]));
  const {spd,kit,ability_desc,...identity}=c;
- const passive=clone(c.passive);if(passive?.immune){passive.immune=passive.immune.map(id=>id==='dec_spd'?'mana_slow':id==='taunt'?'mana_block':id);if(c.passive.immune.includes('dec_spd'))passive.desc='Immune to Mana Slow.';if(c.passive.immune.includes('taunt'))passive.desc='Immune to Mana Block.';}
+ const passive=clone(d.passiveOverride||c.passive);if(passive?.immune){passive.immune=passive.immune.map(id=>id==='dec_spd'?'mana_slow':id==='taunt'?'mana_block':id);if(c.passive.immune.includes('dec_spd'))passive.desc='Immune to Mana Slow.';if(c.passive.immune.includes('taunt'))passive.desc='Immune to Mana Block.';}
  return {...identity,color:d.color,manaSpeed:d.manaSpeed,special:{name:c.ability_name,charging:total>1,levels},ability_desc:'',passive};
 });
 for(const rarity of Object.keys(targets)){

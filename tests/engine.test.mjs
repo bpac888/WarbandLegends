@@ -102,9 +102,9 @@ test('completed legacy victories do not pay or unlock twice during migration',()
  const store=memory(),legacy=make();legacy.version=1;legacy.phase='victory';legacy.enemies.forEach(e=>e.hp=0);save(store,LEGACY_BATTLE_KEY,legacy);const profile=recordVictory(referenceProfile(),legacy);const migrated=loadBattle(store,roster);assert.equal(migrated.phase,'victory');assert.equal(recordVictory(profile,migrated),profile);
 });
 
-test('Mythicals exclude Very Slow and Vesper uses Average mana',()=>{
- const mythicals=roster.filter(c=>c.rarity==='mythical');assert.ok(mythicals.every(c=>['very_fast','fast','average','slow','charging'].includes(c.manaSpeed)));
- assert.deepEqual(new Set(mythicals.map(c=>c.manaSpeed)),new Set(['very_fast','fast','average','slow','charging']));
+test('Yshmir is the only Very Slow Mythical and Vesper uses Average mana',()=>{
+ const mythicals=roster.filter(c=>c.rarity==='mythical');assert.deepEqual(mythicals.filter(c=>c.manaSpeed==='very_slow').map(c=>c.id),['yshmir_worldwound']);
+ assert.deepEqual(new Set(mythicals.map(c=>c.manaSpeed)),new Set(['very_fast','fast','average','slow','very_slow','charging']));
  const vesper=roster.find(c=>c.id==='neon_hologram_assassin');assert.equal(vesper.manaSpeed,'average');assert.equal(vesper.special.charging,false);assert.equal(manaLevels(vesper)[0].tiles,10);
  const state=quiet(make(12,['aurelia_last_foundry',...REFERENCE_TEAM.slice(0,4)]));
  for(const [i,gate]of [5,10,15].entries()){state.heroes[0].mana=gate;const r=cast(state,'hero-0','hero-0',i+1);assert.ok(!r.error);assert.equal(r.state.heroes[0].mana,0);assert.equal(r.state.moves,0);}

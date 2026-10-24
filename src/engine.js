@@ -118,10 +118,10 @@ function revive(state,target) {
 function heal(state,target,amount,label='Healing') {
   if(target.hp<=0)return;const actual=Math.min(target.maxHp-target.hp,Math.max(0,Math.round(amount)));target.hp+=actual;if(actual)message(state,`${target.name}: +${actual} HP · ${label}`,'heal',target.uid);
 }
-function hit(state,attacker,target,power,{color=attacker?.color,pierce=false,counter=true,label='Rune strike',crit=false}={}) {
+function hit(state,attacker,target,power,{color=attacker?.color,pierce=false,counter=true,label='Rune strike',crit=false,fixed=false}={}) {
   if(target.hp<=0)return;
-  let amount=power*advantage(color,target.color)*500/(500+effective(target,'def')*(has(target,`vulnerable_${color}`)?.75:1)*(pierce?.75:1));
-  if(has(target,'strengthen'))amount*=.85;if(has(target,'weaken'))amount*=1.15;
+  let amount=fixed?power:power*advantage(color,target.color)*500/(500+effective(target,'def')*(has(target,`vulnerable_${color}`)?.75:1)*(pierce?.75:1));
+  if(!fixed){if(has(target,'strengthen'))amount*=.85;if(has(target,'weaken'))amount*=1.15;}
   amount=Math.max(1,Math.round(amount*(crit?1.5:1)));
   const absorbed=Math.min(target.shield,amount);target.shield-=absorbed;amount-=absorbed;
   if(absorbed)message(state,`${target.name}: shield absorbs ${absorbed}.`,'shield',target.uid);
@@ -144,6 +144,19 @@ function startTurn(state,unit) {
   if(has(unit,'heal'))heal(state,unit,unit.maxHp*.1,'Regeneration');
   if(unit.passive?.kind==='regen')heal(state,unit,unit.maxHp*(unit.passive.value||.05),unit.passive.name);
   for(const id of DOTS)if(unit.hp>0&&has(unit,id)){const amount=Math.max(1,Math.round(unit.maxHp*EFFECTS[id].value));unit.hp=Math.max(0,unit.hp-amount);message(state,`${unit.name}: −${amount} · ${effectName(id)}`,'damage',unit.uid);revive(state,unit);}
+}
+function periodicPassives(state,frames){
+ for(const actor of [...state.heroes,...state.enemies]){
+  if(finish(state))break;
+  const passive=actor.passive;
+  if(actor.hp<=0||passive?.kind!=='periodic_max_hp_strike'||state.moves%passive.interval!==0)continue;
+  const foes=actor.side==='hero'?state.enemies:state.heroes,targets=living(foes);
+  if(!targets.length)break;
+  const target=targets[Math.floor(roll(state)*targets.length)];
+  message(state,`${actor.name}: ${passive.name} · turn ${state.moves}`,'skill',actor.uid);
+  hit(state,actor,target,target.maxHp*passive.value,{fixed:true,color:null,label:passive.name});
+  finish(state);frame(state,frames,'passive',{actor:actor.uid,target:target.uid,name:passive.name});
+ }
 }
 function endTurn(state,unit) {
   for(const [id,effect]of Object.entries(unit.effects)){if(effect.appliedMove>=state.moves)continue;if(--effect.turns<=0){removeEffect(unit,id);message(state,`${unit.name}: ${effectName(id)} expired.`,'neutral',unit.uid);}}
@@ -275,6 +288,7 @@ export function swap(state,a,b) {
   const groups=findMatches(next.board);
   if(specialIndex===null&&!groups.some(g=>g.includes(a)||g.includes(b)))return {state,frames:[],error:'That swap makes no match. No turn was used.'};
   next.moves++;const upkeepEvent=next.eventId;for(const unit of [...next.heroes,...next.enemies])startTurn(next,unit);if(next.eventId!==upkeepEvent)frame(next,frames,'upkeep');
+  if(!finish(next))periodicPassives(next,frames);
   if(finish(next)){frame(next,frames,'result');return {state:next,frames};}
   frame(next,frames,'swap',{a,b});
   const activation=specialIndex===null?null:{indices:[specialIndex],color:next.board[specialIndex===a?b:a].color};
@@ -286,6 +300,7 @@ export function activate(state,index) {
   if(!Number.isInteger(index)||index<0||index>=SIZE||!state.board[index]?.special)return {state,frames:[],error:'Select a special rune.'};
   if(state.phase!=='playing')return {state,frames:[],error:'This encounter is finished.'};
   const next=clone(state),frames=[];next.moves++;const upkeepEvent=next.eventId;for(const unit of [...next.heroes,...next.enemies])startTurn(next,unit);if(next.eventId!==upkeepEvent)frame(next,frames,'upkeep');
+  if(!finish(next))periodicPassives(next,frames);
   if(!finish(next)){resolveBoard(next,frames,[],index,{indices:[index],color:next.board[index].color});if(next.phase==='playing')enemyPhase(next,frames);}
   encounterPhase(next,frames);frame(next,frames,'settled');return {state:next,frames};
 }

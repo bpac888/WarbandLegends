@@ -67,7 +67,7 @@ function renderBattle(state=battle,frame={}){
   if(frame.kind&&previous)animateNumbers(previous,state);
   paintLanePreview(selectedRune);
   if(frame.kind==='match')animateLaneShots(frame,state,app,{speed:profile.speed,reduced:reducedAnimation()});
-  if(['enemy','skill','mechanic'].includes(frame.kind)&&previous)animateSpecial(previous,state,frame,app,{speed:profile.speed,reduced:reducedAnimation()});
+  if(['enemy','skill','mechanic','passive'].includes(frame.kind)&&previous)animateSpecial(previous,state,frame,app,{speed:profile.speed,reduced:reducedAnimation()});
   if(frame.kind&&previous)animateBattleFeedback(previous,state,frame,app,{speed:profile.speed,reduced:reducedAnimation()});
   if(modal.open&&modal.dataset.view==='history')renderHistory(state);
 }
@@ -85,7 +85,7 @@ async function play(result){
   const focusAfter=document.activeElement?.dataset.index;
   battle=result.state;settleVictory();persist(PROFILE_KEY,profile);
   busy=true;pendingCaster=null;selectedRune=null;const token=++animationToken;
-  for(const frame of result.frames){if(token!==animationToken)return;renderBattle(frame.state,frame);const ms={swap:160,match:650,fall:260,enemy:750,upkeep:450,skill:1250,mechanic:1250,shuffle:600,settled:50,result:400}[frame.kind]||300;await new Promise(resolve=>setTimeout(resolve,(window.matchMedia('(prefers-reduced-motion: reduce)').matches)?50:ms/profile.speed));}
+  for(const frame of result.frames){if(token!==animationToken)return;renderBattle(frame.state,frame);const ms={swap:160,match:650,fall:260,enemy:750,upkeep:450,skill:1250,mechanic:1250,passive:950,shuffle:600,settled:50,result:400}[frame.kind]||300;await new Promise(resolve=>setTimeout(resolve,(window.matchMedia('(prefers-reduced-motion: reduce)').matches)?50:ms/profile.speed));}
   if(token!==animationToken)return;busy=false;renderBattle();if(focusAfter!==undefined)app.querySelector(`[data-index="${focusAfter}"]`)?.focus({preventScroll:true});if(battle.phase!=='playing')showResult();
 }
 function start(stageId){

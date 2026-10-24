@@ -4,7 +4,7 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
-| Yshmir, the Worldwound | mythical | purple | attack | 916 | 757 | 1416 | Average 10 |
+| Yshmir, the Worldwound | mythical | purple | attack | 916 | 757 | 1416 | Very Slow 13.5 |
 | Ossir, Necropolis Titan | legendary | purple | defense | 667 | 823 | 1568 | Slow 12 |
 | Malzhur, the Abyss Lord | mythical | red | attack | 908 | 758 | 1453 | Slow 12 |
 | Ashrim, Quicksilver Saboteur | legendary | blue | attack | 811 | 661 | 1318 | Fast 8 |
@@ -144,9 +144,9 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 
 ### Yshmir, the Worldwound — Unmake
 
-- 10 tiles: Deal 170% ATK damage to all living enemies, ignoring 25% of DEF. Buff Seal (All living enemies, 2 turns); Defense Down (All living enemies, 1 turns).
+- 13.5 tiles: Deal 201% ATK damage to all living enemies, ignoring 25% of DEF. Buff Seal (All living enemies, 2 turns); Defense Down (All living enemies, 1 turns).
 
-Passive: **Unclosing Wound** — Immune to Mana Block.
+Passive: **Unclosing Wound** — On turns 5, 10, 15 and every fifth board turn thereafter, Yshmir deals damage equal to 20% of one random living enemy's maximum HP. Triggers only while Yshmir is alive.
 
 ### Ossir, Necropolis Titan — Verdict of the Silent Court
 

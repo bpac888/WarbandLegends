@@ -11,9 +11,9 @@
   "manaCounts": {
     "very_fast": 8,
     "fast": 24,
-    "average": 67,
+    "average": 66,
     "slow": 21,
-    "very_slow": 2,
+    "very_slow": 3,
     "charging": 13
   },
   "chargingChampions": [

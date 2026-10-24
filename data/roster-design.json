@@ -3,7 +3,15 @@
   "champions": {
     "yshmir_worldwound": {
       "color": "purple",
-      "manaSpeed": "average"
+      "manaSpeed": "very_slow",
+      "passiveOverride": {
+        "id": "unclosing_wound",
+        "name": "Unclosing Wound",
+        "kind": "periodic_max_hp_strike",
+        "interval": 5,
+        "value": 0.2,
+        "desc": "On turns 5, 10, 15 and every fifth board turn thereafter, Yshmir deals damage equal to 20% of one random living enemy's maximum HP. Triggers only while Yshmir is alive."
+      }
     },
     "necropolis_titan": {
       "color": "purple",

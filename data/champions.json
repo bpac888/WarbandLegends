@@ -19,23 +19,22 @@
     "passive": {
       "id": "unclosing_wound",
       "name": "Unclosing Wound",
-      "kind": "immune_control",
-      "immune": [
-        "mana_block"
-      ],
-      "desc": "Immune to Mana Block."
+      "kind": "periodic_max_hp_strike",
+      "interval": 5,
+      "value": 0.2,
+      "desc": "On turns 5, 10, 15 and every fifth board turn thereafter, Yshmir deals damage equal to 20% of one random living enemy's maximum HP. Triggers only while Yshmir is alive."
     },
-    "manaSpeed": "average",
+    "manaSpeed": "very_slow",
     "special": {
       "name": "Unmake",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "average",
-          "tiles": 10,
+          "speed": "very_slow",
+          "tiles": 13.5,
           "target": "enemy",
-          "damage": 1.7,
+          "damage": 2.01,
           "healing": 0,
           "healScope": "allies",
           "aoe": true,
@@ -55,7 +54,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 170% ATK damage to all living enemies, ignoring 25% of DEF."
+    "ability_desc": "Deal 201% ATK damage to all living enemies, ignoring 25% of DEF."
   },
   {
     "template_id": "necropolis_titan",
@@ -2063,7 +2062,7 @@
     "atk": 575,
     "def": 599,
     "ability_name": "Resurrection Hymn",
-    "lore": "She sings in two keys at once — radiant and shadow — and the dying remember both names before they rise.",
+    "lore": "From an icebound sanctuary, Sister Seraphel leads the Frost's Liminal Choir. Her hymns carry across the northern wastes, guiding lost warriors home and lending strength to those who stand against the winter.",
     "image_url": "/api/static/champions/hero-3.png",
     "id": "sister_seraphel",
     "color": "yellow",
@@ -3875,7 +3874,7 @@
     "atk": 511,
     "def": 403,
     "ability_name": "Oblivion",
-    "lore": "Mara drinks from the dark between stars. Empires taste the same going down.",
+    "lore": "Mara serves the Dragon Dynasty as its envoy to the starless reaches beyond the sky. Bearing a pact sealed with ancient dragonfire, she returns from the void with warnings for the throne and ruin for its enemies.",
     "image_url": "/api/static/champions/hero-18.png",
     "id": "void_herald_mara",
     "color": "purple",
