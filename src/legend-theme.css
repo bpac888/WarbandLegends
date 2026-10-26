@@ -1,15 +1,15 @@
 /* Short repeating color transitions echo the five gems in the Legends crest. */
 :root{
- --legend-gradient:repeating-linear-gradient(125deg,#492735 0px,#594329 85px,#244b3b 170px,#264858 255px,#493452 340px,#492735 425px);
+ --legend-gradient:repeating-linear-gradient(125deg,#854855 0px,#97743b 85px,#367b5c 170px,#397c95 255px,#80568f 340px,#854855 425px);
  --legend-surface:linear-gradient(135deg,#252226ed,#17201fed);
  --legend-edge:#c8b18959;
  --bg:#231e26;--panel:#242429;--card:#202427;--line:#786c65;
  --finish-surface:#252429;--finish-raised:#323035;--finish-ink:#191c20;--shell-ink:#202426;
 }
 body,body:has(.battle-shell){background:var(--legend-gradient);background-color:#292329;color:#f6efe3}
-.topbar{background:linear-gradient(#1b1b21c9,#181d20e8),var(--legend-gradient);border-color:var(--legend-edge)}
+body .topbar.with-nav,body .topbar.battle-topbar{background:var(--legend-gradient);border-color:#f1d4a285}
 .topbar.with-nav .game-nav{background:none}
-.topbar .icon-button,.topbar .game-wallet>span,.topbar .game-nav>button{background:#202425d9;border-color:#c3ad8855;color:#ece6dc}
+.topbar .icon-button,.topbar .game-wallet>span,.topbar .game-nav>button{background:#19242b9c;border-color:#eed9b075;color:#fff4e4}
 .topbar .game-nav>button.active{background:linear-gradient(135deg,#795b3c,#3e4942);border-color:#edce8fa1;color:#fff0c8}
 .game-page,.home-shell{padding-top:18px;padding-bottom:28px}
 .game-page .page-heading{min-height:0;padding:20px 24px;margin-bottom:18px;border-radius:14px;background-image:linear-gradient(105deg,#262126ed,#202c26d9 65%,#3d2c37c4),var(--heading-art,url('../assets/scenes/world-map.svg'))}
@@ -110,3 +110,6 @@ body,body:has(.battle-shell){background:var(--legend-gradient);background-color:
 .page-world .world-card.destination-shop .destination-art{filter:brightness(1.4) saturate(1.1)}
 .page-world .world-card.destination-shop::after{background:linear-gradient(0deg,#090b15b8,transparent 55%)}
 .page-world .world-card.destination-shop h2{text-shadow:0 2px 5px #000,0 3px 14px #000}
+.topbar .settings-gear{width:25px;height:25px;object-fit:contain;filter:drop-shadow(0 1px 2px #07101799)}
+.topbar.with-nav .topbar-right>[data-page="settings"]{display:flex;align-items:center;justify-content:center;padding:5px}
+@media(max-width:600px){.topbar.with-nav .topbar-right>[data-page="settings"]>.settings-gear{width:25px;height:25px}}

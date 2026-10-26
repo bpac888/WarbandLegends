@@ -11,7 +11,7 @@ for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/
 for(const e of ENCOUNTERS)if(e.enemyIds.some(id=>!roster.some(c=>c.id===id)))throw Error('Unknown encounter champion: '+e.id);
 for(const path of [...DIFFICULTIES.map(d=>d.art),...DUNGEONS.map(d=>d.art),'assets/dungeons/magma-wyrm.svg',...['altar','adventure','codex','exchange','arena'].map(id=>'assets/destinations/'+id+'.svg'),...['crimson-eclipse','frostwake-siege','veil-of-umbra'].map(id=>'assets/events/'+id+'.svg')])if((await stat(path)).size<1000)throw Error('Missing adventure artwork: '+path);
 for(const m of MATERIALS)if((await stat('assets/items/'+m.id+'.webp')).size<5000)throw Error('Missing new material artwork: '+m.id);
-for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inventory-gems'])if((await stat('assets/items/'+id+'.webp')).size<5000)throw Error('Missing shop artwork: '+id);
+for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inventory-gems','settings-gear'])if((await stat('assets/items/'+id+'.webp')).size<5000)throw Error('Missing shop artwork: '+id);
 for(const id of AVATARS)if((await stat('assets/portraits/'+id+'.svg')).size<1000)throw Error('Missing profile artwork: '+id);
 if((await stat('assets/items/gem.svg')).size<1000)throw Error('Missing Gem icon');
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
