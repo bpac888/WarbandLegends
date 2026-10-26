@@ -103,3 +103,10 @@ body,body:has(.battle-shell){background:var(--legend-gradient);background-color:
 .page-quests .quest-status{margin-top:16px}.page-quests .quest-status b{background:#1c2324;color:#e4ddcf}
 .game-page select,.game-page input:not([type=checkbox]){background:#202729!important;border-color:#bba38488!important;color:#f1ebe0!important}
 .page-summon .altar-balance{background:#2f293b;border-color:#c5ac8b66}
+/* Frame the Umbra landmark inside the Adventure destination card. */
+.page-world .world-card.destination-events .destination-art{object-position:100% 50%;filter:brightness(1.45) saturate(1.15);opacity:1;mask-image:none}
+.page-world .world-card.destination-events::after{background:linear-gradient(0deg,#090b15b8,transparent 55%)}
+.page-world .world-card.destination-events h2{text-shadow:0 2px 5px #000,0 3px 14px #000}
+.page-world .world-card.destination-shop .destination-art{filter:brightness(1.4) saturate(1.1)}
+.page-world .world-card.destination-shop::after{background:linear-gradient(0deg,#090b15b8,transparent 55%)}
+.page-world .world-card.destination-shop h2{text-shadow:0 2px 5px #000,0 3px 14px #000}
