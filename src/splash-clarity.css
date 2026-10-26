@@ -1,0 +1,6 @@
+/* Show the original splash colors without a screen-wide tint. */
+.splash-landscape{filter:none;opacity:1;transform:none;background-blend-mode:normal}
+.splash-atmosphere,.splash-screen::before{display:none}
+.splash-screen .splash-content{text-shadow:0 2px 5px #000,0 4px 18px #000c}
+.splash-screen .splash-content>h1{text-shadow:0 3px 7px #000,0 5px 24px #000a}
+@media(max-width:760px) and (orientation:portrait){.splash-landscape{background-position:70% center}}
