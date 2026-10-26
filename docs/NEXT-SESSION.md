@@ -4,7 +4,7 @@ Continue only the independent `bpac888/Legends` game. Leave `bpac888/warband-leg
 
 ## Current owner direction
 
-Keep the v0.16 screen-filling battle, art-led menus, individual hero copies and Guide. The v0.17 direction promotes fourteen named Commons, balances the remaining Common elements, makes Common feeding required for levels, improves Gem income and summoning outcomes, and polishes the full interface. Preserve earned levels when migrating existing Legends saves.
+Keep the v0.16 screen-filling battle, art-led menus, individual hero copies and Guide. The v0.17 direction promotes fourteen named Commons, balances the remaining Common elements, allows Common and Rare feeding for levels, improves Gem income and summoning outcomes, and polishes the full interface. Preserve earned levels when migrating existing Legends saves.
 
 **No equipment in Legends.** Do not add gear, equipment slots, forging or set bonuses. Keep existing twenty tactical guides, create no new ones. Never modify the original Warband Legends repository. See GEMS-QUESTS.md and REUSE-AUDIT.md for the implemented systems and source audit.
 
@@ -38,7 +38,7 @@ The following gameplay ideas are retained as future planning context; they are n
 2. **Keep existing guides; no new tactical guides.** The owner explicitly stopped guide expansion. The twenty existing guides remain. Concentrate on presentation, legibility, artwork framing and smooth navigation. Hero kit changes are not part of the current visual scope.
 3. **Prototype overheal as the first advanced combat family.** Before implementation, define cap, health display, healing restrictions, barrier interaction, HP-scaled damage and revival. Introduce it to a limited set of healers, then test actual interactions. No overheal rules or values are finalized yet.
 4. **Consider simple minions only after the health layer is stable.** Define timing, attack/protection, limits and removal first. Mega Minions, Fiends, troops, talents, alternate kits, Growth/Wither and extra facilities remain later possibilities.
-5. **Review long-term collection pacing.** Common feeding now consumes spare, unassigned copies to unlock levels, with boosted first-clear Gem income and twin-Common summons. Observe whether supply keeps pace with Rare and Legendary development before changing prices or XP. Bad-luck protection remains a future design topic.
+5. **Review long-term collection pacing.** Common and Rare feeding consumes spare, unassigned copies to unlock levels, with boosted first-clear Gem income and twin-Common summons. Rare donors grant 3× Common XP; Rare copies fed to the same character grant 5× normal Rare XP (15× Common XP); gold stays 25 per donor. Observe whether supply keeps pace with Rare and Legendary development before changing prices or XP. Bad-luck protection remains a future design topic.
 
 ## Rare heroes and future tournaments
 

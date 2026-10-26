@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import {rea
 import {defaultProfile,normalizeProfile,validateProfile,summon,awardVictory} from '../src/progression.js';
 import {heroForId,battleRoster,ownedHeroes,uniqueHeroCount} from '../src/hero-copies.js';
 import {addHeroXp,developedChampion,development,heroDevelopment,levelCap} from '../src/development.js';
-import {feedingQuote,consumeCommons} from '../src/feeding.js';
+import {feedingQuote,consumeHeroes} from '../src/feeding.js';
 import {makeBackup,parseBackup} from '../src/save-files.js';
 import {createBattle,validateSave} from '../src/engine.js';
 import {questProgress,QUESTS} from '../src/quests.js';
@@ -23,15 +23,15 @@ test('duplicate copies have independent XP, can fight together, and survive a sa
 test('Common feeding costs gold, applies color bonus, and consumes only selected spare copies',()=>{
  let p=defaultProfile();p.gems=5000;const a=summonCommon(p),b=summonCommon(a.profile),donor=b.copyId,target=heroForId(roster,p.team[0]);p=b.profile;
  const profileBefore=structuredClone(p),q=feedingQuote(p,target,[donor],roster);assert.ok(!q.error);assert.equal(q.gold,25);assert.ok(q.gained>0);
- const r=consumeCommons(p,target,[donor],roster,{expectedXp:0});assert.ok(!r.error);assert.equal(r.profile.gold,p.gold-25);assert.equal(r.profile.collection[donor],undefined);assert.equal(r.profile.collection[a.copyId],1);assert.equal(r.profile.heroXp[target.id],q.gained);assert.deepEqual(p,profileBefore);assert.ok(validateProfile(r.profile,roster));
- assert.ok(consumeCommons(r.profile,target,[donor],roster,{expectedXp:q.gained}).error);
+ const r=consumeHeroes(p,target,[donor],roster,{expectedXp:0});assert.ok(!r.error);assert.equal(r.profile.gold,p.gold-25);assert.equal(r.profile.collection[donor],undefined);assert.equal(r.profile.collection[a.copyId],1);assert.equal(r.profile.heroXp[target.id],q.gained);assert.deepEqual(p,profileBefore);assert.ok(validateProfile(r.profile,roster));
+ assert.ok(consumeHeroes(r.profile,target,[donor],roster,{expectedXp:q.gained}).error);
 });
 test('Common feeding protects active and saved heroes, rejects stale or repeated selections and preserves five heroes',()=>{
  let p=defaultProfile();p.gems=5000;const c=summonCommon(p);p=c.profile;const target=heroForId(roster,p.team[0]),donor=c.copyId;
  assert.ok(feedingQuote(p,target,[p.team[1]],roster).error);assert.ok(feedingQuote(p,target,[donor,donor],roster).error);
  p.teamSlots[0]=[donor,...p.team.slice(0,4)];assert.ok(feedingQuote(p,target,[donor],roster).error);p.teamSlots[0]=null;
  const b=createBattle(battleRoster(p,roster),[donor,...p.team.slice(0,4)],'ashen-gate',4,{progression:true});assert.ok(feedingQuote(p,target,[donor],roster,{battle:b}).error);
- assert.ok(consumeCommons(p,target,[donor],roster,{expectedXp:99}).error);
+ assert.ok(consumeHeroes(p,target,[donor],roster,{expectedXp:99}).error);
  const only={...p,collection:Object.fromEntries(Object.entries(p.collection).filter(([id])=>id!==p.team[4]))};assert.ok(feedingQuote(only,target,[donor],roster).error);
 });
 test('schema 9 saves migrate counted copies without sharing further growth',()=>{

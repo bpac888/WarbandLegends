@@ -74,4 +74,4 @@ Actions save before visual playback. Local saves are single-player browser data,
 
 ## Hero levels (v0.7)
 
-The table above describes maximum-level baselines. Collected champions now start at level 1 and gain XP/stat growth through campaign wins or confirmed gold training. Caps are Common 30, Rare 50, Legendary 70 and Mythical 80. Mana thresholds and kits do not change with levels. Campaign enemy stats are fixed; playtesting uses maximum levels without rewards. See [progression rules](PROGRESSION.md) for formulas, reward values, duplicate behavior and the owner-approved fresh-start policy.
+The table above describes maximum-level baselines. Collected champions start at level 1 and gain XP from victories, quests, or feeding spare Common and Rare copies. Rare donors grant 3× Common XP; a Rare copy of the same character grants 5× its normal Rare XP. Feeding costs 25 Gold per donor and preserves team-assigned copies. XP stops at the current level cap. Mana thresholds and kits do not change with levels. See [current progression rules](ASCENSION.md) for feeding, ascension and Limit Break details.

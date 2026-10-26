@@ -17,7 +17,7 @@ const topics=[
   ['The three tabs','Collection shows your owned copies and their growth. Codex previews every hero at maximum stats. Teams saves and loads up to three warbands.'],
  ]],
  ['growth','Hero growth',[
-  ['Level up','Earn hero XP from victories and quests, or feed unused Common heroes. Feeding consumes them permanently; current and saved teams are protected. Account level is separate from hero strength.'],
+  ['Level up','Earn XP from battles and quests, or feed spare Common or Rare copies for 25 Gold each. Rares give 3× Common XP; matching colors add 25%. A Rare copy of the same character gives 5× its normal Rare XP (15× Common XP). Donors are permanently consumed; current and saved teams are protected.'],
   ['Ascend & Limit Break','At the level cap, ascend with gold and materials. The new tier starts at level 1 while keeping earned power. Fully ascended Rare and higher heroes can Limit Break twice, unlocking five more levels each time.'],
  ]],
  ['battles','Battles',battleRules],

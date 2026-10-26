@@ -1,5 +1,5 @@
 import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js';
-import {feedingQuote,consumeCommons,availableCommons,feedingConfirmation} from './feeding.js';
+import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js';
 import {guideHTML,guideTopics,battleHelpHTML} from './guide-ui.js';
 import {AVATARS,claimDaily,claimPath,teamSlot} from './keeper.js';
 import {keeperPanel,dailyPage,profileExtras} from './keeper-ui.js';
@@ -173,8 +173,8 @@ document.addEventListener('click',event=>{
   if(action==='help'){if(screen==='battle')showHelp();else openGuide(button.dataset.topic||'overview');return;}
   if(action==='open-guide'){openGuide(button.dataset.topic||'overview');return;}
   if(action==='guide-topic'){openGuide(button.dataset.topic);return;}
-  if(action==='feed-preview'){const target=byId.get(id);if(!target)return;if(!availableCommons(profile,target,roster,battle).length){toast('Summon a spare Common hero to train this champion.');return;}openModal('Train with Common heroes',feedingConfirmation(profile,target,roster,battle),'feeding');return;}
-  if(action==='feed-confirm'){const donors=[...modalContent.querySelectorAll('[name="feed-copy"]:checked')].map(n=>n.value);const r=consumeCommons(profile,byId.get(id),donors,roster,{battle,expectedXp:Number(button.dataset.xp)});if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderChampionPage(id);toast('Training complete · +'+r.gained+' XP · level '+r.before+' → '+r.after+'.');return;}
+  if(action==='feed-preview'){const target=byId.get(id);if(!target)return;if(!availableDonors(profile,target,roster,battle).length){toast('Collect a spare Common or Rare hero to train this champion.');return;}openModal('Train with Common & Rare heroes',feedingConfirmation(profile,target,roster,battle),'feeding');return;}
+  if(action==='feed-confirm'){const donors=[...modalContent.querySelectorAll('[name="feed-copy"]:checked')].map(n=>n.value);const r=consumeHeroes(profile,byId.get(id),donors,roster,{battle,expectedXp:Number(button.dataset.xp)});if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderChampionPage(id);toast('Training complete · +'+r.gained+' XP · level '+r.before+' → '+r.after+'.');return;}
   if(action==='history'){renderHistory();return;}
   if(action==='speed'){profile.speed=profile.speed===1?2:1;persist(PROFILE_KEY,profile);button.textContent=`${profile.speed}×`;button.setAttribute('aria-label',`Animation speed ${profile.speed} times`);return;}
   if(action==='roster'){openRoster();return;}

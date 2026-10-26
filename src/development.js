@@ -32,7 +32,7 @@ export function trainingQuote(profile,champion){
  const tier=ascensionTier(profile,champion);return {...d,physicalCap,bankedXp:profile.heroXp?.[champion.id]||0,cost:0,error,current:awakenedStats(statsAtLevel(champion,d.level),awakeningRank(profile,champion),tier),next:awakenedStats(statsAtLevel(champion,Math.min(physicalCap,d.level+1)),awakeningRank(profile,champion),tier)};
 }
 export function trainChampion(profile,champion,expectedXp){
- return {profile,error:'Feed Common heroes to grow this champion.'};
+ return {profile,error:'Feed Common or Rare heroes to grow this champion.'};
 }
 export function addHeroXp(profile,champion,amount){
  if(!profile.collection[champion.id]||!Number.isSafeInteger(amount)||amount<=0)return profile;

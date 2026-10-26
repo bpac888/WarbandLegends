@@ -1,6 +1,6 @@
 # Hero progression
 
-Legends has four rarities. Each owned copy starts in ascension tier 1 at level 1. Feed unused Common heroes for at least 360 XP each; matching color grants 25% more XP. Battles and some quests also grant XP. XP alone determines levels within the current Ascension or Limit Break cap. Feeding costs 25 gold per Common and permanently consumes that copy. Specials are always at full power; training, ascension and Limit Breaks do not change the Special coefficients, effects, mana speed or passive. Higher ATK can still raise the damage of an ATK-based Special.
+Legends has four rarities. Each owned copy starts in ascension tier 1 at level 1. Feed unused Common heroes for at least 360 XP each, or Rare heroes for three times that XP (at least 1,080). Matching color grants 25% more XP. A Rare donor fed to another copy of the same character grants five times its normal Rare XP (15× the equivalent Common XP), including the color bonus and XP carried by a trained donor. Battles and some quests also grant XP. XP alone determines levels within the current Ascension or Limit Break cap. Feeding costs 25 gold per donor and permanently consumes that copy. Specials are always at full power; training, ascension and Limit Breaks do not change the Special coefficients, effects, mana speed or passive. Higher ATK can still raise the damage of an ATK-based Special.
 
 ## Ascension
 
@@ -15,7 +15,7 @@ Reach the current overall cap, then spend the shown gold, Star Thread, matching-
 
 ## Limit Breaks
 
-After full ascension and the final normal level, Rare, Legendary and Mythical heroes can take two Limit Breaks. Commons have no Limit Breaks. Each break adds 3% immediate ATK, DEF and HP and opens five further overall levels. The hero still needs XP to reach those levels, from Common feeders, battles or quests. LB2 requires reaching the LB1 cap first.
+After full ascension and the final normal level, Rare, Legendary and Mythical heroes can take two Limit Breaks. Commons have no Limit Breaks. Each break adds 3% immediate ATK, DEF and HP and opens five further overall levels. The hero still needs XP to reach those levels, from Common or Rare feeders, battles or quests. LB2 requires reaching the LB1 cap first.
 
 | Rarity | Normal max | LB1 max | LB2 max |
 | --- | ---: | ---: | ---: |

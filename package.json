@@ -25,7 +25,8 @@
     "test:ascension": "node tests/ascension-browser.mjs",
     "test:covenant": "node tests/covenant-browser.mjs",
     "test:lifecycle": "node tests/battle-lifecycle-browser.mjs",
-    "test:combat-feel": "node tests/combat-feel-browser.mjs"
+    "test:combat-feel": "node tests/combat-feel-browser.mjs",
+    "test:feeding": "node tests/feeding-browser.mjs"
   },
   "engines": {
     "node": ">=22"
