@@ -2,6 +2,8 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {EFFECTS,BUFFS} from '../src/effects.js';
+// Existing live records are authoritative: a catalog rebuild may add heroes, never rebalance them.
+const retained=new Map(JSON.parse(await readFile('data/champions.json','utf8')).map(c=>[c.id,c]));
 const source=JSON.parse(await readFile('data/source-champions.json','utf8'));
 const design=JSON.parse(await readFile('data/roster-design.json','utf8')).champions;
 export const SPEEDS={very_fast:6.5,fast:8,average:10,slow:12,very_slow:13.5};
@@ -59,7 +61,7 @@ const roster=source.map(c=>{
  const d=design[c.id];if(!d)throw Error('Missing design '+c.id);
  if(c.rarity==='mythical'&&c.id!=='yshmir_worldwound'&&d.manaSpeed==='very_slow')throw Error('Only Yshmir may use Very Slow Mythical mana: '+c.id);
  const entries=merge(c),total=d.chargeLevels||1;
- const levels=Array.from({length:total},(_,i)=>tier(c,entries,i+1,total,total===1?d.manaSpeed:total===2?['fast','average'][i]:['charge_1','charge_2','charge_3'][i],total===1?SPEEDS[d.manaSpeed]:total===2?[8,10][i]:[5,10,15][i]));
+ const levels=d.levelOverrides?clone(d.levelOverrides):Array.from({length:total},(_,i)=>tier(c,entries,i+1,total,total===1?d.manaSpeed:total===2?['fast','average'][i]:['charge_1','charge_2','charge_3'][i],total===1?SPEEDS[d.manaSpeed]:total===2?[8,10][i]:[5,10,15][i]));
  const {spd,kit,ability_desc,...identity}=c;
  const passive=clone(d.passiveOverride||c.passive);if(passive?.immune){passive.immune=passive.immune.map(id=>id==='dec_spd'?'mana_slow':id==='taunt'?'mana_block':id);if(c.passive.immune.includes('dec_spd'))passive.desc='Immune to Mana Slow.';if(c.passive.immune.includes('taunt'))passive.desc='Immune to Mana Block.';}
  return {...identity,color:d.color,manaSpeed:d.manaSpeed,special:{name:c.ability_name,charging:total>1,levels},ability_desc:'',passive};
@@ -75,15 +77,16 @@ for(const rarity of Object.keys(targets)){
   while(difference){let changed=false;for(const c of order){const delta=Math.sign(difference);if(c[stat]+delta<min||c[stat]+delta>max)continue;c[stat]+=delta;difference-=delta;changed=true;if(!difference)break;}if(!changed)throw Error('Impossible stat target');}
  }
 }
+for(let i=0;i<roster.length;i++){const saved=retained.get(roster[i].id);if(saved)roster[i]=clone(saved);else if(design[roster[i].id].statsOverride)Object.assign(roster[i],clone(design[roster[i].id].statsOverride));}
 const {skillDescription}=await import('../src/engine.js');
 const effects=EFFECTS;
 await writeFile('data/effects.json',JSON.stringify(effects,null,2)+'\n');
-for(const c of roster)c.ability_desc=skillDescription(c,effects,c.special.levels.length).text;
+for(const c of roster)if(!retained.has(c.id))c.ability_desc=skillDescription(c,effects,c.special.levels.length).text;
 await writeFile('data/champions.json',JSON.stringify(roster,null,2)+'\n');
 const counts=(key,values)=>Object.fromEntries(values.map(v=>[v,roster.filter(c=>c[key]===v).length]));
 const report={version:3,champions:roster.length,colorCounts:counts('color',['red','blue','green','yellow','purple']),manaCounts:counts('manaSpeed',[...Object.keys(SPEEDS),'charging']),chargingChampions:roster.filter(c=>c.special.charging).map(c=>({id:c.id,tiles:c.special.levels.map(l=>l.tiles)})),rarities:Object.fromEntries(Object.keys(targets).map(r=>{const g=roster.filter(c=>c.rarity===r);return [r,{count:g.length,stats:Object.fromEntries(['atk','def','hp'].map(s=>[s,{min:Math.min(...g.map(c=>c[s])),average:g.reduce((n,c)=>n+c[s],0)/g.length,max:Math.max(...g.map(c=>c[s]))}]))}];}))};
 await writeFile('data/balance-report.json',JSON.stringify(report,null,2)+'\n');
-let table='# Legends champion balance\n\nAll 135 identities and IDs are preserved. Fourteen former Commons are now Rare. Stats shown are maximum-level baselines. Every champion has one Special, with optional charge levels, plus their adapted passive where present.\n\n';
+let table=`# Warband Legends Champion Catalog\n\n${roster.length} champions. All original 135 records and portraits are preserved. The expansion adds 1 Mythical, 11 Legendaries and 3 Rares. Stats below are maximum-level baselines; each owned copy develops independently.\n\n`;
 table+='| Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |\n| --- | --- | --- | --- | ---: | ---: | ---: | --- |\n';
 for(const c of roster)table+=`| ${c.name} | ${c.rarity} | ${c.color} | ${c.role} | ${c.atk} | ${c.def} | ${c.hp} | ${c.special.charging?'Charging '+c.special.levels.map(l=>l.tiles).join(' / '):labels[c.manaSpeed]+' '+c.special.levels[0].tiles} |\n`;
 table+='\n## Specials\n\n';

@@ -1,20 +1,20 @@
 {
   "version": 3,
-  "champions": 135,
+  "champions": 150,
   "colorCounts": {
-    "red": 27,
-    "blue": 27,
-    "green": 27,
-    "yellow": 27,
-    "purple": 27
+    "red": 30,
+    "blue": 30,
+    "green": 30,
+    "yellow": 30,
+    "purple": 30
   },
   "manaCounts": {
     "very_fast": 8,
-    "fast": 24,
-    "average": 66,
-    "slow": 21,
+    "fast": 28,
+    "average": 72,
+    "slow": 24,
     "very_slow": 3,
-    "charging": 13
+    "charging": 15
   },
   "chargingChampions": [
     {
@@ -113,6 +113,21 @@
         8,
         10
       ]
+    },
+    {
+      "id": "varya_stormbound_circuit",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "skeldra_night_aurora",
+      "tiles": [
+        5,
+        10,
+        15
+      ]
     }
   ],
   "rarities": {
@@ -137,7 +152,7 @@
       }
     },
     "rare": {
-      "count": 54,
+      "count": 57,
       "stats": {
         "atk": {
           "min": 515,
@@ -157,27 +172,27 @@
       }
     },
     "legendary": {
-      "count": 47,
+      "count": 58,
       "stats": {
         "atk": {
-          "min": 650,
+          "min": 640,
           "average": 760,
-          "max": 846
+          "max": 850
         },
         "def": {
-          "min": 661,
+          "min": 640,
           "average": 726,
           "max": 837
         },
         "hp": {
-          "min": 1281,
+          "min": 1250,
           "average": 1393,
           "max": 1586
         }
       }
     },
     "mythical": {
-      "count": 14,
+      "count": 15,
       "stats": {
         "atk": {
           "min": 748,

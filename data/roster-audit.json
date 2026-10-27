@@ -1,0 +1,997 @@
+{
+  "version": 1,
+  "scope": "Roster coverage audit, not a measured PvP win-rate study. Future recommendations are not implemented.",
+  "originalRecordsPreserved": true,
+  "before": {
+    "total": 135,
+    "rarity": {
+      "mythical": 14,
+      "legendary": 47,
+      "rare": 54,
+      "common": 20
+    },
+    "color": {
+      "red": 27,
+      "blue": 27,
+      "green": 27,
+      "yellow": 27,
+      "purple": 27
+    },
+    "type": {
+      "attack": 69,
+      "defense": 30,
+      "support": 36
+    },
+    "speed": {
+      "very_fast": 8,
+      "fast": 24,
+      "average": 66,
+      "slow": 21,
+      "very_slow": 3,
+      "charging": 13
+    }
+  },
+  "additions": {
+    "total": 15,
+    "rarity": {
+      "mythical": 1,
+      "legendary": 11,
+      "rare": 3,
+      "common": 0
+    },
+    "color": {
+      "red": 3,
+      "blue": 3,
+      "green": 3,
+      "yellow": 3,
+      "purple": 3
+    },
+    "type": {
+      "attack": 8,
+      "defense": 4,
+      "support": 3
+    },
+    "speed": {
+      "very_fast": 0,
+      "fast": 4,
+      "average": 6,
+      "slow": 3,
+      "very_slow": 0,
+      "charging": 2
+    }
+  },
+  "after": {
+    "total": 150,
+    "rarity": {
+      "mythical": 15,
+      "legendary": 58,
+      "rare": 57,
+      "common": 20
+    },
+    "color": {
+      "red": 30,
+      "blue": 30,
+      "green": 30,
+      "yellow": 30,
+      "purple": 30
+    },
+    "type": {
+      "attack": 77,
+      "defense": 34,
+      "support": 39
+    },
+    "speed": {
+      "very_fast": 8,
+      "fast": 28,
+      "average": 72,
+      "slow": 24,
+      "very_slow": 3,
+      "charging": 15
+    }
+  },
+  "byFaction": {
+    "bloodcourt": {
+      "total": 14,
+      "rarity": {
+        "mythical": 2,
+        "legendary": 5,
+        "rare": 6,
+        "common": 1
+      },
+      "color": {
+        "red": 9,
+        "blue": 0,
+        "green": 1,
+        "yellow": 1,
+        "purple": 3
+      },
+      "type": {
+        "attack": 8,
+        "defense": 2,
+        "support": 4
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 5,
+        "average": 7,
+        "slow": 2,
+        "very_slow": 0,
+        "charging": 0
+      },
+      "before": 13,
+      "mythicals": [
+        {
+          "name": "Sable, Pale Matriarch",
+          "color": "purple",
+          "manaSpeed": "fast"
+        },
+        {
+          "name": "Sir Aurel, the Crimson Paladin",
+          "color": "red",
+          "manaSpeed": "slow"
+        }
+      ]
+    },
+    "chymera": {
+      "total": 14,
+      "rarity": {
+        "mythical": 1,
+        "legendary": 5,
+        "rare": 6,
+        "common": 2
+      },
+      "color": {
+        "red": 0,
+        "blue": 2,
+        "green": 7,
+        "yellow": 4,
+        "purple": 1
+      },
+      "type": {
+        "attack": 6,
+        "defense": 2,
+        "support": 6
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 2,
+        "average": 8,
+        "slow": 1,
+        "very_slow": 0,
+        "charging": 3
+      },
+      "before": 14,
+      "mythicals": [
+        {
+          "name": "Vex, the Elixir Apotheon",
+          "color": "green",
+          "manaSpeed": "charging"
+        }
+      ]
+    },
+    "dragondynasty": {
+      "total": 14,
+      "rarity": {
+        "mythical": 1,
+        "legendary": 7,
+        "rare": 4,
+        "common": 2
+      },
+      "color": {
+        "red": 4,
+        "blue": 3,
+        "green": 4,
+        "yellow": 1,
+        "purple": 2
+      },
+      "type": {
+        "attack": 9,
+        "defense": 2,
+        "support": 3
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 2,
+        "average": 7,
+        "slow": 1,
+        "very_slow": 0,
+        "charging": 4
+      },
+      "before": 13,
+      "mythicals": [
+        {
+          "name": "Dragon Empress",
+          "color": "red",
+          "manaSpeed": "charging"
+        }
+      ]
+    },
+    "duneriders": {
+      "total": 14,
+      "rarity": {
+        "mythical": 2,
+        "legendary": 5,
+        "rare": 4,
+        "common": 3
+      },
+      "color": {
+        "red": 1,
+        "blue": 1,
+        "green": 1,
+        "yellow": 7,
+        "purple": 4
+      },
+      "type": {
+        "attack": 7,
+        "defense": 4,
+        "support": 3
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 5,
+        "average": 5,
+        "slow": 2,
+        "very_slow": 0,
+        "charging": 1
+      },
+      "before": 12,
+      "mythicals": [
+        {
+          "name": "Ashwind Warden",
+          "color": "yellow",
+          "manaSpeed": "fast"
+        },
+        {
+          "name": "Nayara, Keeper of the Deep Well",
+          "color": "blue",
+          "manaSpeed": "fast"
+        }
+      ]
+    },
+    "frost": {
+      "total": 14,
+      "rarity": {
+        "mythical": 2,
+        "legendary": 5,
+        "rare": 6,
+        "common": 1
+      },
+      "color": {
+        "red": 1,
+        "blue": 9,
+        "green": 1,
+        "yellow": 2,
+        "purple": 1
+      },
+      "type": {
+        "attack": 6,
+        "defense": 3,
+        "support": 5
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 2,
+        "average": 9,
+        "slow": 1,
+        "very_slow": 0,
+        "charging": 1
+      },
+      "before": 13,
+      "mythicals": [
+        {
+          "name": "Frost King",
+          "color": "blue",
+          "manaSpeed": "fast"
+        },
+        {
+          "name": "Frost Sage",
+          "color": "blue",
+          "manaSpeed": "fast"
+        }
+      ]
+    },
+    "ironclad": {
+      "total": 14,
+      "rarity": {
+        "mythical": 2,
+        "legendary": 4,
+        "rare": 4,
+        "common": 4
+      },
+      "color": {
+        "red": 5,
+        "blue": 3,
+        "green": 1,
+        "yellow": 5,
+        "purple": 0
+      },
+      "type": {
+        "attack": 6,
+        "defense": 5,
+        "support": 3
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 2,
+        "average": 6,
+        "slow": 3,
+        "very_slow": 0,
+        "charging": 3
+      },
+      "before": 14,
+      "mythicals": [
+        {
+          "name": "Aurelia, the Last Foundry",
+          "color": "yellow",
+          "manaSpeed": "charging"
+        },
+        {
+          "name": "Vorrek, the Walking Siege",
+          "color": "red",
+          "manaSpeed": "average"
+        }
+      ]
+    },
+    "neon_syndicate": {
+      "total": 13,
+      "rarity": {
+        "mythical": 1,
+        "legendary": 4,
+        "rare": 7,
+        "common": 1
+      },
+      "color": {
+        "red": 2,
+        "blue": 4,
+        "green": 1,
+        "yellow": 3,
+        "purple": 3
+      },
+      "type": {
+        "attack": 6,
+        "defense": 3,
+        "support": 4
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 2,
+        "average": 6,
+        "slow": 2,
+        "very_slow": 0,
+        "charging": 2
+      },
+      "before": 11,
+      "mythicals": [
+        {
+          "name": "Zero, The Singularity",
+          "color": "purple",
+          "manaSpeed": "charging"
+        }
+      ]
+    },
+    "nether": {
+      "total": 13,
+      "rarity": {
+        "mythical": 1,
+        "legendary": 6,
+        "rare": 4,
+        "common": 2
+      },
+      "color": {
+        "red": 4,
+        "blue": 2,
+        "green": 4,
+        "yellow": 1,
+        "purple": 2
+      },
+      "type": {
+        "attack": 6,
+        "defense": 5,
+        "support": 2
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 1,
+        "average": 5,
+        "slow": 5,
+        "very_slow": 1,
+        "charging": 0
+      },
+      "before": 11,
+      "mythicals": [
+        {
+          "name": "Malzhur, the Abyss Lord",
+          "color": "red",
+          "manaSpeed": "slow"
+        }
+      ]
+    },
+    "umbra": {
+      "total": 14,
+      "rarity": {
+        "mythical": 1,
+        "legendary": 7,
+        "rare": 5,
+        "common": 1
+      },
+      "color": {
+        "red": 0,
+        "blue": 1,
+        "green": 1,
+        "yellow": 1,
+        "purple": 11
+      },
+      "type": {
+        "attack": 8,
+        "defense": 3,
+        "support": 3
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 3,
+        "average": 7,
+        "slow": 2,
+        "very_slow": 1,
+        "charging": 0
+      },
+      "before": 12,
+      "mythicals": [
+        {
+          "name": "Yshmir, the Worldwound",
+          "color": "purple",
+          "manaSpeed": "very_slow"
+        }
+      ]
+    },
+    "veldtborn": {
+      "total": 13,
+      "rarity": {
+        "mythical": 1,
+        "legendary": 5,
+        "rare": 7,
+        "common": 0
+      },
+      "color": {
+        "red": 2,
+        "blue": 3,
+        "green": 2,
+        "yellow": 4,
+        "purple": 2
+      },
+      "type": {
+        "attack": 8,
+        "defense": 3,
+        "support": 2
+      },
+      "speed": {
+        "very_fast": 2,
+        "fast": 3,
+        "average": 5,
+        "slow": 2,
+        "very_slow": 0,
+        "charging": 1
+      },
+      "before": 11,
+      "mythicals": [
+        {
+          "name": "Azhar, the Rosetted Sun",
+          "color": "yellow",
+          "manaSpeed": "very_fast"
+        }
+      ]
+    },
+    "wildgrove": {
+      "total": 13,
+      "rarity": {
+        "mythical": 1,
+        "legendary": 5,
+        "rare": 4,
+        "common": 3
+      },
+      "color": {
+        "red": 2,
+        "blue": 2,
+        "green": 7,
+        "yellow": 1,
+        "purple": 1
+      },
+      "type": {
+        "attack": 7,
+        "defense": 2,
+        "support": 4
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 1,
+        "average": 7,
+        "slow": 3,
+        "very_slow": 1,
+        "charging": 0
+      },
+      "before": 11,
+      "mythicals": [
+        {
+          "name": "Oakenhart, the First Warden",
+          "color": "green",
+          "manaSpeed": "slow"
+        }
+      ]
+    }
+  },
+  "byRarity": {
+    "mythical": {
+      "total": 15,
+      "rarity": {
+        "mythical": 15,
+        "legendary": 0,
+        "rare": 0,
+        "common": 0
+      },
+      "color": {
+        "red": 4,
+        "blue": 3,
+        "green": 2,
+        "yellow": 3,
+        "purple": 3
+      },
+      "type": {
+        "attack": 6,
+        "defense": 3,
+        "support": 6
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 5,
+        "average": 1,
+        "slow": 3,
+        "very_slow": 1,
+        "charging": 4
+      }
+    },
+    "legendary": {
+      "total": 58,
+      "rarity": {
+        "mythical": 0,
+        "legendary": 58,
+        "rare": 0,
+        "common": 0
+      },
+      "color": {
+        "red": 13,
+        "blue": 11,
+        "green": 10,
+        "yellow": 12,
+        "purple": 12
+      },
+      "type": {
+        "attack": 30,
+        "defense": 15,
+        "support": 13
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 6,
+        "average": 20,
+        "slow": 21,
+        "very_slow": 2,
+        "charging": 8
+      }
+    },
+    "rare": {
+      "total": 57,
+      "rarity": {
+        "mythical": 0,
+        "legendary": 0,
+        "rare": 57,
+        "common": 0
+      },
+      "color": {
+        "red": 9,
+        "blue": 12,
+        "green": 14,
+        "yellow": 11,
+        "purple": 11
+      },
+      "type": {
+        "attack": 28,
+        "defense": 14,
+        "support": 15
+      },
+      "speed": {
+        "very_fast": 2,
+        "fast": 12,
+        "average": 40,
+        "slow": 0,
+        "very_slow": 0,
+        "charging": 3
+      }
+    },
+    "common": {
+      "total": 20,
+      "rarity": {
+        "mythical": 0,
+        "legendary": 0,
+        "rare": 0,
+        "common": 20
+      },
+      "color": {
+        "red": 4,
+        "blue": 4,
+        "green": 4,
+        "yellow": 4,
+        "purple": 4
+      },
+      "type": {
+        "attack": 13,
+        "defense": 2,
+        "support": 5
+      },
+      "speed": {
+        "very_fast": 4,
+        "fast": 5,
+        "average": 11,
+        "slow": 0,
+        "very_slow": 0,
+        "charging": 0
+      }
+    }
+  },
+  "byColor": {
+    "red": {
+      "total": 30,
+      "rarity": {
+        "mythical": 4,
+        "legendary": 13,
+        "rare": 9,
+        "common": 4
+      },
+      "color": {
+        "red": 30,
+        "blue": 0,
+        "green": 0,
+        "yellow": 0,
+        "purple": 0
+      },
+      "type": {
+        "attack": 20,
+        "defense": 5,
+        "support": 5
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 5,
+        "average": 17,
+        "slow": 4,
+        "very_slow": 0,
+        "charging": 3
+      }
+    },
+    "blue": {
+      "total": 30,
+      "rarity": {
+        "mythical": 3,
+        "legendary": 11,
+        "rare": 12,
+        "common": 4
+      },
+      "color": {
+        "red": 0,
+        "blue": 30,
+        "green": 0,
+        "yellow": 0,
+        "purple": 0
+      },
+      "type": {
+        "attack": 11,
+        "defense": 9,
+        "support": 10
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 6,
+        "average": 16,
+        "slow": 5,
+        "very_slow": 0,
+        "charging": 2
+      }
+    },
+    "green": {
+      "total": 30,
+      "rarity": {
+        "mythical": 2,
+        "legendary": 10,
+        "rare": 14,
+        "common": 4
+      },
+      "color": {
+        "red": 0,
+        "blue": 0,
+        "green": 30,
+        "yellow": 0,
+        "purple": 0
+      },
+      "type": {
+        "attack": 15,
+        "defense": 6,
+        "support": 9
+      },
+      "speed": {
+        "very_fast": 1,
+        "fast": 6,
+        "average": 14,
+        "slow": 4,
+        "very_slow": 2,
+        "charging": 3
+      }
+    },
+    "yellow": {
+      "total": 30,
+      "rarity": {
+        "mythical": 3,
+        "legendary": 12,
+        "rare": 11,
+        "common": 4
+      },
+      "color": {
+        "red": 0,
+        "blue": 0,
+        "green": 0,
+        "yellow": 30,
+        "purple": 0
+      },
+      "type": {
+        "attack": 13,
+        "defense": 9,
+        "support": 8
+      },
+      "speed": {
+        "very_fast": 3,
+        "fast": 4,
+        "average": 12,
+        "slow": 6,
+        "very_slow": 0,
+        "charging": 5
+      }
+    },
+    "purple": {
+      "total": 30,
+      "rarity": {
+        "mythical": 3,
+        "legendary": 12,
+        "rare": 11,
+        "common": 4
+      },
+      "color": {
+        "red": 0,
+        "blue": 0,
+        "green": 0,
+        "yellow": 0,
+        "purple": 30
+      },
+      "type": {
+        "attack": 18,
+        "defense": 5,
+        "support": 7
+      },
+      "speed": {
+        "very_fast": 2,
+        "fast": 7,
+        "average": 13,
+        "slow": 5,
+        "very_slow": 1,
+        "charging": 2
+      }
+    }
+  },
+  "byType": {
+    "attack": {
+      "total": 77,
+      "rarity": {
+        "mythical": 6,
+        "legendary": 30,
+        "rare": 28,
+        "common": 13
+      },
+      "color": {
+        "red": 20,
+        "blue": 11,
+        "green": 15,
+        "yellow": 13,
+        "purple": 18
+      },
+      "type": {
+        "attack": 77,
+        "defense": 0,
+        "support": 0
+      },
+      "speed": {
+        "very_fast": 8,
+        "fast": 22,
+        "average": 32,
+        "slow": 5,
+        "very_slow": 1,
+        "charging": 9
+      }
+    },
+    "defense": {
+      "total": 34,
+      "rarity": {
+        "mythical": 3,
+        "legendary": 15,
+        "rare": 14,
+        "common": 2
+      },
+      "color": {
+        "red": 5,
+        "blue": 9,
+        "green": 6,
+        "yellow": 9,
+        "purple": 5
+      },
+      "type": {
+        "attack": 0,
+        "defense": 34,
+        "support": 0
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 2,
+        "average": 16,
+        "slow": 14,
+        "very_slow": 0,
+        "charging": 2
+      }
+    },
+    "support": {
+      "total": 39,
+      "rarity": {
+        "mythical": 6,
+        "legendary": 13,
+        "rare": 15,
+        "common": 5
+      },
+      "color": {
+        "red": 5,
+        "blue": 10,
+        "green": 9,
+        "yellow": 8,
+        "purple": 7
+      },
+      "type": {
+        "attack": 0,
+        "defense": 0,
+        "support": 39
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 4,
+        "average": 24,
+        "slow": 5,
+        "very_slow": 2,
+        "charging": 4
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "priority": 1,
+      "faction": "ironclad",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "concept": "Void-powered siege gunner",
+      "reason": "First purple Ironclad; adds a fast offensive alternative to the defensive faction."
+    },
+    {
+      "priority": 2,
+      "faction": "chymera",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "concept": "Volcanic mutation berserker",
+      "reason": "First red Chymera; a deliberate heavy hitter instead of another healer."
+    },
+    {
+      "priority": 3,
+      "faction": "bloodcourt",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "charging",
+      "concept": "Winter-blood duelist",
+      "reason": "First blue Bloodcourt; flexible early strike or charged execution."
+    },
+    {
+      "priority": 4,
+      "faction": "umbra",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "concept": "Cinder-shadow assassin",
+      "reason": "First red Umbra; broadens a faction with 11 purple champions."
+    },
+    {
+      "priority": 5,
+      "faction": "dragondynasty",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "very_fast",
+      "concept": "Sun-dragon lancer",
+      "reason": "First yellow attacker in Dragon Dynasty; adds a quick, modest-damage opener."
+    },
+    {
+      "priority": 6,
+      "faction": "duneriders",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "concept": "Venom-dune falconer",
+      "reason": "First green Dune Riders attacker; currently green has only a Rare support."
+    },
+    {
+      "priority": 7,
+      "faction": "neon_syndicate",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "charging",
+      "concept": "Biotech railblade hunter",
+      "reason": "First green Neon attacker; green currently has only a Rare support."
+    },
+    {
+      "priority": 8,
+      "faction": "nether",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "concept": "Gravefrost executioner",
+      "reason": "First blue Nether attacker; existing blue options are both defenders."
+    },
+    {
+      "priority": 9,
+      "faction": "wildgrove",
+      "color": "yellow",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "fast",
+      "concept": "Dawn-pollen mender",
+      "reason": "First yellow Wildgrove support; an accessible cleanse-focused option."
+    },
+    {
+      "priority": 10,
+      "faction": "veldtborn",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "fast",
+      "concept": "Night-pride spirit keeper",
+      "reason": "First purple Veldtborn support; rounds out its attacker/defender pair."
+    },
+    {
+      "priority": 11,
+      "faction": "frost",
+      "color": "red",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "average",
+      "concept": "Hearthfire shield-bearer",
+      "reason": "First red Frost defender; accessible protection without another blue champion."
+    },
+    {
+      "priority": 12,
+      "faction": "chymera",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "slow",
+      "concept": "Amethyst-shell mutation",
+      "reason": "First purple Chymera defender; purple currently has only a Rare support."
+    }
+  ]
+}

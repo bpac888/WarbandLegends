@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "originalCount": 135,
+  "totalCount": 150,
+  "originalRecordsSha256": "a9c1e7d08f1fc83a22cdccdd1ddc6ba59311e04ed8ac280a4d2611146927ff0a",
+  "originalSourceRecordsSha256": "0ee61a80b307c71ab678a8145842d55531b2f4afda1e9547c068534663d04126",
+  "originalIdsSha256": "5ceb67b54c3745ee5e92d7b39321f016d5990afaf719c49e2e3e5e27a741869a",
+  "addedChampionIds": [
+    "varya_stormbound_circuit",
+    "iona_signal_keeper",
+    "morthane_last_lantern",
+    "vorga_ashen_oath",
+    "velis_moonroot_reaver",
+    "sera_emberleaf_tender",
+    "nayara_deep_well",
+    "qadir_glassveil_warden",
+    "thalen_mossveil_hunter",
+    "elyra_candle_lost",
+    "zareen_ember_pride",
+    "kharuun_rimeclaw_bastion",
+    "valcera_briar_magistrate",
+    "skeldra_night_aurora",
+    "hanrui_river_scale"
+  ],
+  "newRarities": {
+    "mythical": 1,
+    "legendary": 11,
+    "rare": 3
+  },
+  "newRoles": {
+    "attack": 8,
+    "defense": 4,
+    "support": 3
+  },
+  "newColorCounts": {
+    "red": 3,
+    "blue": 3,
+    "green": 3,
+    "yellow": 3,
+    "purple": 3
+  },
+  "artwork": "New original character portraits generated for this expansion; existing artwork retained."
+}

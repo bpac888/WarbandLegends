@@ -1,6 +1,6 @@
-# Legends champion balance
+# Warband Legends Champion Catalog
 
-All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. Stats shown are maximum-level baselines. Every champion has one Special, with optional charge levels, plus their adapted passive where present.
+150 champions. All original 135 records and portraits are preserved. The expansion adds 1 Mythical, 11 Legendaries and 3 Rares. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -139,6 +139,21 @@ All 135 identities and IDs are preserved. Fourteen former Commons are now Rare. 
 | Edrik Mournwall | rare | blue | defense | 535 | 657 | 1189 | Average 10 |
 | Venn Sablethread | rare | purple | attack | 683 | 550 | 983 | Fast 8 |
 | Renn Briarhook | rare | green | attack | 711 | 568 | 1023 | Fast 8 |
+| Varya, the Stormbound Circuit | legendary | red | attack | 822 | 680 | 1305 | Charging 8 / 10 |
+| Iona, Signal Keeper | rare | yellow | support | 570 | 650 | 1169 | Average 10 |
+| Morthane, the Last Lantern | legendary | green | attack | 790 | 715 | 1360 | Slow 12 |
+| Vorga, Ashen Oath | legendary | yellow | defense | 665 | 810 | 1515 | Slow 12 |
+| Velis, Moonroot Reaver | legendary | purple | attack | 810 | 705 | 1330 | Average 10 |
+| Sera, Emberleaf Tender | legendary | red | support | 740 | 696 | 1398 | Average 10 |
+| Nayara, Keeper of the Deep Well | mythical | blue | support | 835 | 800 | 1540 | Fast 8 |
+| Qadir, Glassveil Warden | legendary | purple | defense | 690 | 790 | 1500 | Fast 8 |
+| Thalen, Mossveil Hunter | legendary | green | attack | 835 | 663 | 1300 | Fast 8 |
+| Elyra, Candle of the Lost | legendary | yellow | defense | 640 | 820 | 1540 | Average 10 |
+| Zareen, Ember-Pride Huntress | rare | red | attack | 660 | 580 | 1040 | Fast 8 |
+| Kharuun, Rimeclaw Bastion | legendary | blue | defense | 700 | 780 | 1490 | Slow 12 |
+| Valcera, Briar Magistrate | legendary | green | attack | 818 | 687 | 1335 | Average 10 |
+| Skeldra, the Night Aurora | legendary | purple | attack | 850 | 640 | 1250 | Charging 5 / 10 / 15 |
+| Hanrui, River-Scale Spear | rare | blue | attack | 648 | 570 | 1040 | Average 10 |
 
 ## Specials
 
@@ -728,4 +743,81 @@ Passive: **Sunscar Oath** — Azhar is permanently immune to Weaken. This protec
 ### Renn Briarhook — Leave the Wound Open
 
 - 8 tiles: Deal 237% ATK damage to selected enemy. Poison (Selected enemy, 1 turns); Vulnerability (Selected enemy, 2 turns).
+
+### Varya, the Stormbound Circuit — Cut the Current
+
+- Charge 1 · 8 tiles: Deal 180% ATK damage to selected enemy. Mana Slow (Selected enemy, 1 turns).
+- Charge 2 · 10 tiles: Deal 260% ATK damage to selected enemy. Dispel (Selected enemy); Mana Slow (Selected enemy, 2 turns).
+
+Passive: **Unbroken Circuit** — Immune to Mana Slow.
+
+### Iona, Signal Keeper — Keep the Signal
+
+- 10 tiles: Restore 30% max HP to all living allies. Mana Flow (All living allies, 1 turns).
+
+### Morthane, the Last Lantern — Harvest of Names
+
+- 12 tiles: Deal 155% ATK damage to all living enemies. Poison (All living enemies, 2 turns); Vulnerability (All living enemies, 1 turns).
+
+Passive: **The Unburied** — Immune to Poison.
+
+### Vorga, Ashen Oath — Hold the Furnace Gate
+
+- 12 tiles: Deal 165% ATK damage to selected enemy. Taunt (Caster, 2 turns); Damage Ward (Caster, 2 turns); Barrier (All living allies, 1 turns).
+
+Passive: **Emberbound** — Immune to Burn.
+
+### Velis, Moonroot Reaver — Roots Beneath the Oath
+
+- 10 tiles: Deal 250% ATK damage to selected enemy. Umbral Defense Down (Selected enemy, 2 turns); Buff Seal (Selected enemy, 1 turns).
+
+### Sera, Emberleaf Tender — A Hearth for Every Root
+
+- 10 tiles: Restore 28% max HP to all living allies. Cleanse (All living allies); Regeneration (All living allies, 1 turns).
+
+Passive: **Emberleaf Pact** — Immune to Burn.
+
+### Nayara, Keeper of the Deep Well — The River Remembers
+
+- 8 tiles: Restore 24% max HP to all living allies. Cleanse (All living allies); Ailment Ward (All living allies, 1 turns).
+
+Passive: **Heart of the Deep Well** — Restore 3% of Nayara's maximum HP at the start of each board move.
+
+### Qadir, Glassveil Warden — Mirrors Against the Blade
+
+- 8 tiles: Deal 130% ATK damage to selected enemy. Dispel (Selected enemy); Barrier (Caster, 2 turns); Riposte (Caster, 1 turns).
+
+### Thalen, Mossveil Hunter — Through the False Door
+
+- 8 tiles: Deal 225% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy); Poison (Selected enemy, 1 turns).
+
+### Elyra, Candle of the Lost — Stand Within the Light
+
+- 10 tiles: Empower your warband with the effects below. Barrier (All living allies, 2 turns); Ailment Ward (All living allies, 1 turns); Taunt (Caster, 1 turns).
+
+Passive: **Borrowed Dawn** — Revive once per battle at 20% maximum HP.
+
+### Zareen, Ember-Pride Huntress — Run Through the Cinders
+
+- 8 tiles: Deal 220% ATK damage to selected enemy. Burn (Selected enemy, 2 turns).
+
+### Kharuun, Rimeclaw Bastion — The Pass Will Hold
+
+- 12 tiles: Deal 105% ATK damage to all living enemies. Defense Up (All living allies, 2 turns); Riposte (All living allies, 1 turns).
+
+Passive: **Rimeclaw** — Immune to Frostbite.
+
+### Valcera, Briar Magistrate — The Thorn in the Verdict
+
+- 10 tiles: Deal 260% ATK damage to selected enemy. Poison (Selected enemy, 2 turns); Attack Down (Selected enemy, 1 turns).
+
+### Skeldra, the Night Aurora — Arrows Beyond Midnight
+
+- Charge 1 · 5 tiles: Deal 95% ATK damage to selected enemy. Mana Slow (Selected enemy, 1 turns).
+- Charge 2 · 10 tiles: Deal 155% ATK damage to all living enemies. Frostbite (All living enemies, 2 turns).
+- Charge 3 · 15 tiles: Deal 205% ATK damage to all living enemies. Dispel (All living enemies); Frostbite (All living enemies, 2 turns).
+
+### Hanrui, River-Scale Spear — Part the River
+
+- 10 tiles: Deal 250% ATK damage to selected enemy. Defense Down (Selected enemy, 2 turns).
 

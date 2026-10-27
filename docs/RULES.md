@@ -2,7 +2,7 @@
 
 ## The roster
 
-The four rarities remain **Common, Rare, Legendary and Mythical**. All 135 champion IDs, identities, lore, portraits and existing passives are preserved. Colors are now assigned individually rather than inherited from faction: **27 red, 27 blue, 27 green, 27 yellow, 27 purple**. Every color has all four rarities and all three roles. Themes take priority within each pool: frost/water is blue, fire/blood is red, jade/nature/alchemy is green, sunlight/lightning is yellow, and shadow/void/death is purple. There are intentional theme-based exceptions, such as the Shade Prince's cold blue flames and green corrosive undead.
+The four rarities remain **Common, Rare, Legendary and Mythical**. The roster has 150 champions, including 15 new additions. All 135 earlier champion records and portraits are preserved. Colors are now assigned individually rather than inherited from faction: **30 red, 30 blue, 30 green, 30 yellow, 30 purple**. Every color has all four rarities and all three roles. Themes take priority within each pool: frost/water is blue, fire/blood is red, jade/nature/alchemy is green, sunlight/lightning is yellow, and shadow/void/death is purple. There are intentional theme-based exceptions, such as the Shade Prince's cold blue flames and green corrosive undead.
 
 The new ATK/DEF/HP numbers are the game's **max-level balance baseline**, used directly in the current unlocked-roster prototype. Leveling is not implemented yet. Rarity averages:
 

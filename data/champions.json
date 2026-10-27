@@ -7241,5 +7241,856 @@
       ]
     },
     "ability_desc": "Deal 237% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "varya_stormbound_circuit",
+    "name": "Varya, the Stormbound Circuit",
+    "title": "Blade of the Broken Grid",
+    "rarity": "legendary",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 1305,
+    "atk": 822,
+    "def": 680,
+    "ability_name": "Cut the Current",
+    "lore": "Varya once maintained the private power lines above the frozen workers' quarter. When the owners ordered her to cut the heat, she wired the grid into her armor and turned its current against their guards. The city still follows the red lightning that marks her path.",
+    "image_url": "/assets/champions/varya_stormbound_circuit.webp",
+    "id": "varya_stormbound_circuit",
+    "color": "red",
+    "source_image": "assets/champions/varya_stormbound_circuit.webp",
+    "portrait": "assets/champions/varya_stormbound_circuit.webp",
+    "passive": {
+      "id": "unbroken_circuit",
+      "name": "Unbroken Circuit",
+      "immune": [
+        "mana_slow"
+      ],
+      "desc": "Immune to Mana Slow."
+    },
+    "manaSpeed": "charging",
+    "special": {
+      "name": "Cut the Current",
+      "charging": true,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 1.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 260% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "iona_signal_keeper",
+    "name": "Iona, Signal Keeper",
+    "title": "Lantern of the Rooftop Routes",
+    "rarity": "rare",
+    "faction": "neon_syndicate",
+    "role": "support",
+    "hp": 1169,
+    "atk": 570,
+    "def": 650,
+    "ability_name": "Keep the Signal",
+    "lore": "Iona repairs the signal lanterns that rooftop couriers leave for one another in the snow. Her small brass drones carry medicine where the Syndicate's gates stay shut. When the network falls silent, she lights the first safe route herself.",
+    "image_url": "/assets/champions/iona_signal_keeper.webp",
+    "id": "iona_signal_keeper",
+    "color": "yellow",
+    "source_image": "assets/champions/iona_signal_keeper.webp",
+    "portrait": "assets/champions/iona_signal_keeper.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Keep the Signal",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.3,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_surge",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 30% max HP to all living allies."
+  },
+  {
+    "template_id": "morthane_last_lantern",
+    "name": "Morthane, the Last Lantern",
+    "title": "Reaper of the Unburied Names",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "attack",
+    "hp": 1360,
+    "atk": 790,
+    "def": 715,
+    "ability_name": "Harvest of Names",
+    "lore": "Morthane carried the final lantern through a battlefield whose dead had been denied burial. Every forgotten name fed its green flame. He now opens that lantern before the armies that spend their soldiers carelessly, and the unburied answer.",
+    "image_url": "/assets/champions/morthane_last_lantern.webp",
+    "id": "morthane_last_lantern",
+    "color": "green",
+    "source_image": "assets/champions/morthane_last_lantern.webp",
+    "portrait": "assets/champions/morthane_last_lantern.webp",
+    "passive": {
+      "id": "unburied",
+      "name": "The Unburied",
+      "immune": [
+        "poison"
+      ],
+      "desc": "Immune to Poison."
+    },
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Harvest of Names",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemies"
+            },
+            {
+              "id": "weaken",
+              "turns": 1,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 155% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "vorga_ashen_oath",
+    "name": "Vorga, Ashen Oath",
+    "title": "Shield of the Furnace Exiles",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "defense",
+    "hp": 1515,
+    "atk": 665,
+    "def": 810,
+    "ability_name": "Hold the Furnace Gate",
+    "lore": "Vorga was forged to guard the furnace gates, not the prisoners behind them. She broke that oath when the youngest exile called her by name. Now her amber shield stands between the pitmasters and anyone who reaches the cold side of the gate.",
+    "image_url": "/assets/champions/vorga_ashen_oath.webp",
+    "id": "vorga_ashen_oath",
+    "color": "yellow",
+    "source_image": "assets/champions/vorga_ashen_oath.webp",
+    "portrait": "assets/champions/vorga_ashen_oath.webp",
+    "passive": {
+      "id": "emberbound",
+      "name": "Emberbound",
+      "immune": [
+        "burn"
+      ],
+      "desc": "Immune to Burn."
+    },
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Hold the Furnace Gate",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.65,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 165% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "velis_moonroot_reaver",
+    "name": "Velis, Moonroot Reaver",
+    "title": "Hunter Beneath the Silver Boughs",
+    "rarity": "legendary",
+    "faction": "wildgrove",
+    "role": "attack",
+    "hp": 1330,
+    "atk": 810,
+    "def": 705,
+    "ability_name": "Roots Beneath the Oath",
+    "lore": "The moonroot grew around the first oath-stone that an invading king broke. Velis rose from its branches with the names of every felled grove carved beneath their bark. Beneath the silver boughs, a conqueror's promises no longer offer shelter.",
+    "image_url": "/assets/champions/velis_moonroot_reaver.webp",
+    "id": "velis_moonroot_reaver",
+    "color": "purple",
+    "source_image": "assets/champions/velis_moonroot_reaver.webp",
+    "portrait": "assets/champions/velis_moonroot_reaver.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Roots Beneath the Oath",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.5,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "vulnerable_purple",
+              "turns": 2,
+              "scope": "enemy"
+            },
+            {
+              "id": "block_buffs",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 250% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "sera_emberleaf_tender",
+    "name": "Sera, Emberleaf Tender",
+    "title": "Healer of the Returning Grove",
+    "rarity": "legendary",
+    "faction": "wildgrove",
+    "role": "support",
+    "hp": 1398,
+    "atk": 740,
+    "def": 696,
+    "ability_name": "A Hearth for Every Root",
+    "lore": "Sera returned to a grove reduced to charcoal and found one red leaf still warm in the ashes. She sheltered it in a copper bowl until roots began to grow through the burn. Her healing fire carries that first leaf from camp to camp, leaving green shoots where the wounded rested.",
+    "image_url": "/assets/champions/sera_emberleaf_tender.webp",
+    "id": "sera_emberleaf_tender",
+    "color": "red",
+    "source_image": "assets/champions/sera_emberleaf_tender.webp",
+    "portrait": "assets/champions/sera_emberleaf_tender.webp",
+    "passive": {
+      "id": "emberleaf_pact",
+      "name": "Emberleaf Pact",
+      "immune": [
+        "burn"
+      ],
+      "desc": "Immune to Burn."
+    },
+    "manaSpeed": "average",
+    "special": {
+      "name": "A Hearth for Every Root",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.28,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "heal",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 28% max HP to all living allies."
+  },
+  {
+    "template_id": "nayara_deep_well",
+    "name": "Nayara, Keeper of the Deep Well",
+    "title": "Voice of the Buried River",
+    "rarity": "mythical",
+    "faction": "duneriders",
+    "role": "support",
+    "hp": 1540,
+    "atk": 835,
+    "def": 800,
+    "ability_name": "The River Remembers",
+    "lore": "Nayara refused the pearl throne while a single caravan still searched for water. The buried river answered by lifting its oldest well into the moonlight. Wherever she walks, its blue current washes poison from the weary and carries them one crossing farther from the desert's hunger.",
+    "image_url": "/assets/champions/nayara_deep_well.webp",
+    "id": "nayara_deep_well",
+    "color": "blue",
+    "source_image": "assets/champions/nayara_deep_well.webp",
+    "portrait": "assets/champions/nayara_deep_well.webp",
+    "passive": {
+      "id": "deep_well_heart",
+      "name": "Heart of the Deep Well",
+      "kind": "regen",
+      "value": 0.03,
+      "desc": "Restore 3% of Nayara's maximum HP at the start of each board move."
+    },
+    "manaSpeed": "fast",
+    "special": {
+      "name": "The River Remembers",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.24,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 24% max HP to all living allies."
+  },
+  {
+    "template_id": "qadir_glassveil_warden",
+    "name": "Qadir, Glassveil Warden",
+    "title": "Keeper of the Unbroken Caravan",
+    "rarity": "legendary",
+    "faction": "duneriders",
+    "role": "defense",
+    "hp": 1500,
+    "atk": 690,
+    "def": 790,
+    "ability_name": "Mirrors Against the Blade",
+    "lore": "Qadir makes his armor from glass left behind when lightning strikes the dunes. Each violet plate remembers a blow that failed to reach the caravan behind him. Raiders see a dozen wardens in its reflections; the travelers know that one has always been enough.",
+    "image_url": "/assets/champions/qadir_glassveil_warden.webp",
+    "id": "qadir_glassveil_warden",
+    "color": "purple",
+    "source_image": "assets/champions/qadir_glassveil_warden.webp",
+    "portrait": "assets/champions/qadir_glassveil_warden.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Mirrors Against the Blade",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 1.3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "counterattack",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 130% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "thalen_mossveil_hunter",
+    "name": "Thalen, Mossveil Hunter",
+    "title": "Stalker of the Forgotten Streets",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 1300,
+    "atk": 835,
+    "def": 663,
+    "ability_name": "Through the False Door",
+    "lore": "Thalen remembers every door that vanished when the old quarter slipped into shadow. Moss has grown through his armor, but his knives still find the hinges of a false refuge. He follows those who hunt the lost, leaving their borrowed protections hanging open behind them.",
+    "image_url": "/assets/champions/thalen_mossveil_hunter.webp",
+    "id": "thalen_mossveil_hunter",
+    "color": "green",
+    "source_image": "assets/champions/thalen_mossveil_hunter.webp",
+    "portrait": "assets/champions/thalen_mossveil_hunter.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Through the False Door",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.25,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "poison",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 225% ATK damage to selected enemy, ignoring 25% of DEF."
+  },
+  {
+    "template_id": "elyra_candle_lost",
+    "name": "Elyra, Candle of the Lost",
+    "title": "Warden of the Borrowed Dawn",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "defense",
+    "hp": 1540,
+    "atk": 640,
+    "def": 820,
+    "ability_name": "Stand Within the Light",
+    "lore": "Elyra lights a candle for every traveler who disappears beneath the veil. She carries their flames through the ruined streets, forming a doorway no pursuing shade may cross. When her own light falters, the candles she once sheltered gather to lift it again.",
+    "image_url": "/assets/champions/elyra_candle_lost.webp",
+    "id": "elyra_candle_lost",
+    "color": "yellow",
+    "source_image": "assets/champions/elyra_candle_lost.webp",
+    "portrait": "assets/champions/elyra_candle_lost.webp",
+    "passive": {
+      "id": "borrowed_dawn",
+      "name": "Borrowed Dawn",
+      "kind": "revive_once",
+      "value": 0.2,
+      "desc": "Revive once per battle at 20% maximum HP."
+    },
+    "manaSpeed": "average",
+    "special": {
+      "name": "Stand Within the Light",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            },
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Empower your warband with the effects below."
+  },
+  {
+    "template_id": "zareen_ember_pride",
+    "name": "Zareen, Ember-Pride Huntress",
+    "title": "Spear of the Open Sunroad",
+    "rarity": "rare",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 1040,
+    "atk": 660,
+    "def": 580,
+    "ability_name": "Run Through the Cinders",
+    "lore": "Zareen learned to hunt in the red dust beyond the sun-prides' walls. When tribute riders began taking children instead of coin, she lit their tax banners with her spear. The camps still follow the ember trail that leads around the princes' gates.",
+    "image_url": "/assets/champions/zareen_ember_pride.webp",
+    "id": "zareen_ember_pride",
+    "color": "red",
+    "source_image": "assets/champions/zareen_ember_pride.webp",
+    "portrait": "assets/champions/zareen_ember_pride.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Run Through the Cinders",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.2,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 220% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "kharuun_rimeclaw_bastion",
+    "name": "Kharuun, Rimeclaw Bastion",
+    "title": "Shield of the High Snowroad",
+    "rarity": "legendary",
+    "faction": "veldtborn",
+    "role": "defense",
+    "hp": 1490,
+    "atk": 700,
+    "def": 780,
+    "ability_name": "The Pass Will Hold",
+    "lore": "Kharuun keeps the mountain crossing that the lowland courts declared impossible to defend. Snow gathers in the rosettes of his coat while caravans pass beneath his bronze shield. Those who come to close the road learn that every traveler behind him has a claw ready to answer.",
+    "image_url": "/assets/champions/kharuun_rimeclaw_bastion.webp",
+    "id": "kharuun_rimeclaw_bastion",
+    "color": "blue",
+    "source_image": "assets/champions/kharuun_rimeclaw_bastion.webp",
+    "portrait": "assets/champions/kharuun_rimeclaw_bastion.webp",
+    "passive": {
+      "id": "rimeclaw",
+      "name": "Rimeclaw",
+      "immune": [
+        "frostbite"
+      ],
+      "desc": "Immune to Frostbite."
+    },
+    "manaSpeed": "slow",
+    "special": {
+      "name": "The Pass Will Hold",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "counterattack",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 105% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "valcera_briar_magistrate",
+    "name": "Valcera, Briar Magistrate",
+    "title": "The Court's Unwritten Sentence",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 1335,
+    "atk": 818,
+    "def": 687,
+    "ability_name": "The Thorn in the Verdict",
+    "lore": "Valcera knows which verdicts are written before the accused enters the hall. She keeps a second record in the thorns beneath the magistrates' gardens. At the next banquet, a green stain on the wine is the only warning that their own sentence has arrived.",
+    "image_url": "/assets/champions/valcera_briar_magistrate.webp",
+    "id": "valcera_briar_magistrate",
+    "color": "green",
+    "source_image": "assets/champions/valcera_briar_magistrate.webp",
+    "portrait": "assets/champions/valcera_briar_magistrate.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "The Thorn in the Verdict",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 260% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "skeldra_night_aurora",
+    "name": "Skeldra, the Night Aurora",
+    "title": "Hunter Beyond the Last Watchfire",
+    "rarity": "legendary",
+    "faction": "frost",
+    "role": "attack",
+    "hp": 1250,
+    "atk": 850,
+    "def": 640,
+    "ability_name": "Arrows Beyond Midnight",
+    "lore": "Skeldra follows the violet lights beyond the northern watchfires, where even the winter road loses its name. Her black-ice bow stores the silence between aurora pulses. She can loose one arrow at the first sign of pursuit, or wait until the entire sky answers with her.",
+    "image_url": "/assets/champions/skeldra_night_aurora.webp",
+    "id": "skeldra_night_aurora",
+    "color": "purple",
+    "source_image": "assets/champions/skeldra_night_aurora.webp",
+    "portrait": "assets/champions/skeldra_night_aurora.webp",
+    "passive": null,
+    "manaSpeed": "charging",
+    "special": {
+      "name": "Arrows Beyond Midnight",
+      "charging": true,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "charge_1",
+          "tiles": 5,
+          "target": "enemy",
+          "damage": 0.95,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "charge_2",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "frostbite",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "speed": "charge_3",
+          "tiles": 15,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            },
+            {
+              "id": "frostbite",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 205% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "hanrui_river_scale",
+    "name": "Hanrui, River-Scale Spear",
+    "title": "Lancer of the Rainward Steps",
+    "rarity": "rare",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 1040,
+    "atk": 648,
+    "def": 570,
+    "ability_name": "Part the River",
+    "lore": "Hanrui was ordered to hold a river bridge against farmers fleeing the imperial levy. He lowered his spear for the refugees and raised it when the officers followed. The river has bent around his blade ever since, opening a crossing where a wall was meant to stand.",
+    "image_url": "/assets/champions/hanrui_river_scale.webp",
+    "id": "hanrui_river_scale",
+    "color": "blue",
+    "source_image": "assets/champions/hanrui_river_scale.webp",
+    "portrait": "assets/champions/hanrui_river_scale.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Part the River",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.5,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 250% ATK damage to selected enemy."
   }
 ]
