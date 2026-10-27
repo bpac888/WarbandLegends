@@ -1,12 +1,14 @@
-@font-face{font-family:'Legends Title';src:url('../assets/fonts/cinzel-decorative.ttf') format('truetype');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:'Legends Title';src:url('../assets/fonts/dark-mystic.otf') format('opentype');font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:'Legends Main';src:url('../assets/fonts/lora.ttf') format('truetype');font-style:normal;font-weight:400 700;font-display:swap}
 @font-face{font-family:'Legends Sub';src:url('../assets/fonts/source-sans-3.ttf') format('truetype');font-style:normal;font-weight:400 700;font-display:swap}
 :root{--font-title:'Legends Title',serif;--font-main:'Legends Main',serif;--font-sub:'Legends Sub',sans-serif}
 body,body *{font-family:var(--font-main)!important}
 body :is(p,small,label,input,select,textarea,button,.eyebrow,.card-speed,.battle-feedback,.hero-name,.enemy-name,.mana-label),body :is(button,label,.game-wallet,.battle-shell,.modal-body,.guide-layout) *{font-family:var(--font-sub)!important}
 body :is(h1,h2,h3,h4,h5,h6,.library-name,.team-caption>strong){font-family:var(--font-main)!important}
-body .splash-content h1,body .brand>span:last-child{font-family:var(--font-title)!important;font-weight:700}
+body .splash-content h1,body .brand>span:last-child{font-family:var(--font-title)!important;font-weight:400}
 body .brand>span:last-child small{font-family:var(--font-sub)!important}
 .topbar .game-wallet>span>.wallet-art{width:28px;height:28px;object-fit:contain;flex-shrink:0;border-radius:4px}
 @media(max-width:600px){.topbar.with-nav .game-wallet>span>.wallet-art{width:25px;height:25px}.topbar.with-nav .game-wallet b{font-size:11px}.topbar.with-nav .brand>span:last-child{font-size:16px;letter-spacing:.06em}.splash-screen .splash-content h1{font-size:clamp(36px,10.5vw,64px)}}
 @media(max-width:350px){.topbar.with-nav .game-wallet>span>.wallet-art{width:20px;height:20px}.topbar.with-nav .game-wallet b{font-size:10px}.topbar.with-nav .brand>span:last-child{font-size:14px}}
+
+@media(min-width:1101px){.splash-screen .splash-content{container-type:inline-size}.splash-screen .splash-content h1{font-size:clamp(40px,19cqi,110px)}}
