@@ -43,3 +43,43 @@ body:has(.battle-shell) .battle-dock{grid-row:2;display:flex;align-items:center;
 /* Empty feedback should give its space to the portraits. Keep controls clear of the home indicator without reserving a full extra strip. */
 .battle-center .battle-feedback:empty{height:0;min-height:0;padding:0}
 body:has(.battle-shell) .battle-dock{padding-bottom:max(2px,calc(env(safe-area-inset-bottom,0px) - 12px))}
+
+/* Put numbers on the bars and reserve only a compact caption under each portrait. */
+.battle-shell .hero-main .hp-bar{bottom:11px;height:12px;left:3px;right:3px;overflow:visible}
+.battle-shell .hero-health,.battle-shell .enemy-hp-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;height:100%;margin:0;font-size:8px;line-height:1;font-weight:700;color:#fff;text-shadow:0 1px 2px #000,0 0 3px #000;white-space:nowrap;z-index:1;pointer-events:none}
+.battle-shell .hero-name{bottom:26px;left:3px;right:3px;margin:0;font-size:clamp(8px,1.9cqw,12px);line-height:1.05}
+.battle-shell .mana-bar{bottom:3px;height:6px;left:3px;right:3px}
+.battle-shell .enemy-line{align-items:stretch;margin-inline:4px;gap:4px}
+.battle-shell .enemy-unit{display:flex;flex-direction:column;min-height:0;height:100%;max-width:230px}
+.battle-shell .enemy-target{display:flex;flex-direction:column;align-items:center;flex:1;min-height:0;padding:0;gap:0}
+.battle-shell .enemy-target>img{flex:1;min-height:0;height:0;width:100%;max-width:100%;object-fit:cover;object-position:center 20%;mask-image:none;border-radius:10px 10px 3px 3px}
+.battle-shell .enemy-name{flex-shrink:0;width:100%;margin:2px 0;line-height:1.05;font-size:clamp(8px,1.9cqw,11px)}
+.battle-shell .enemy-hp{position:relative;width:90%;height:12px;min-height:12px;flex-shrink:0;margin:0 auto;overflow:visible}
+.battle-shell .enemy-mana{width:82%;height:4px;min-height:4px;margin:2px auto;flex-shrink:0}
+body:has(.battle-shell) .battle-dock{min-height:24px;padding-top:1px;padding-bottom:max(1px,calc(env(safe-area-inset-bottom,0px) - 20px))}
+.battle-dock .icon-button,.battle-dock .auto-battle-toggle{height:22px;min-height:22px;padding:1px 6px;font-size:11px;border-radius:6px}
+.battle-dock .battle-exit{font-size:17px}
+.battle-dock .auto-battle-toggle{min-width:60px}
+.battle-guide-split{border-radius:6px}
+.battle-guide-split .icon-button{height:20px;min-height:20px;width:32px;border-radius:0;padding:1px}
+.battle-dock .guide-nav-art,.battle-dock .effect-guide-button .card-glyph{width:16px;height:16px}
+@media(orientation:portrait),(min-height:601px){
+ .battle-shell .hero-shade{background:linear-gradient(0deg,#0b1028f2 0,#0b1028eb 36px,transparent 58px)}
+}
+@media(orientation:landscape) and (max-height:600px){
+ .battle-shell .hero-name{top:3px;bottom:auto;left:61px;right:5px;font-size:8px}
+ .battle-shell .hero-main .hp-bar{left:61px;right:5px;bottom:11px;height:10px}
+ .battle-shell .hero-health{font-size:7px}
+ .battle-shell .mana-bar{left:61px;right:5px;bottom:3px;height:5px}
+ .battle-shell .enemy-name{font-size:7px;margin:1px 0}
+ .battle-shell .enemy-hp{height:10px;min-height:10px}
+ .battle-shell .enemy-hp-label{font-size:7px}
+ .battle-shell .enemy-mana{height:3px;min-height:3px;margin:1px auto}
+}
+/* Fill the taller hero frame instead of letterboxing the artwork. */
+.battle-shell .hero-main>img{object-fit:cover;object-position:center 20%}
+.battle-shell .enemy-name{font-size:clamp(9px,2.5cqw,12px)}
+@media(orientation:landscape) and (max-height:600px){.battle-shell .enemy-name{font-size:7px}}
+.battle-center .battle-sky{grid-template-rows:minmax(0,1fr) 8px}
+.battle-shell .attack-lanes{height:8px;min-height:0}
+.battle-shell .lane-track b{font-size:9px;line-height:8px}
