@@ -157,3 +157,8 @@
 /* Keep dialog action buttons steady while hovering or scrolling into view. */
 #modal .button{transition:background-color .15s,border-color .15s,box-shadow .15s}
 #modal .button:hover:not(:disabled){transform:none}
+
+/* Keep a small page-end gutter, with no space reserved for the former bottom bar. */
+body:has(.topbar.with-nav){padding-bottom:0}
+body:has(.topbar.with-nav) .game-page,body:has(.topbar.with-nav) .home-shell{padding-bottom:8px}
+.game-page>:last-child{margin-bottom:0}

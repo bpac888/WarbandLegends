@@ -35,3 +35,6 @@ body:has(.home-shell){padding-bottom:0}
 /* Three Adventure areas remain after keeping Shop in the Tavern. */
 .page-world .world-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:760px){.page-world .world-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-world .world-card:last-child{grid-column:1/-1}}
+/* Let the artwork use the space reclaimed from the compact header and captions. */
+@media(min-width:360px) and (max-width:600px){.home-shell .citadel-destination>img{height:max(calc((100svh - 300px)/2),calc((100vw - 26px)/2))}}
+@media(max-width:359px){.home-shell .citadel-destination>img{height:max(calc((100svh - 350px)/2),calc((100vw - 26px)/2))}}
