@@ -37,7 +37,7 @@ test('Common feeding protects active and saved heroes, rejects stale or repeated
 test('schema 9 saves migrate counted copies without sharing further growth',()=>{
  const old=defaultProfile();old.profileVersion=9;delete old.copySequence;old.collection[old.team[0]]=3;old.heroXp[old.team[0]]=200;
  const migrated=normalizeProfile(old,roster),copies=Object.keys(migrated.collection).filter(id=>id===old.team[0]||id.startsWith(old.team[0]+'~'));
- assert.equal(migrated.profileVersion,12);assert.equal(copies.length,3);assert.equal(migrated.heroXp[old.team[0]],200);assert.equal(migrated.heroXp[copies[1]],undefined);assert.ok(validateProfile(migrated,roster));assert.equal(migrated.team[0],old.team[0]);assert.deepEqual(parseBackup(JSON.stringify(makeBackup(old,null)),roster).profile,migrated);
+ assert.equal(migrated.profileVersion,13);assert.equal(copies.length,3);assert.equal(migrated.heroXp[old.team[0]],200);assert.equal(migrated.heroXp[copies[1]],undefined);assert.ok(validateProfile(migrated,roster));assert.equal(migrated.team[0],old.team[0]);assert.deepEqual(parseBackup(JSON.stringify(makeBackup(old,null)),roster).profile,migrated);
 });
 test('a duplicate can ascend and Limit Break without changing its sibling',async()=>{
  const {MATERIALS,ascensionTier,awakeningRank,ASCENSION_CAPS}=await import('../src/ascension.js');const {ascendChampion,awakenChampion,levelCap}=await import('../src/development.js');

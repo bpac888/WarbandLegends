@@ -8,14 +8,14 @@ import {defaultModes,normalizeModes,validateModes,modeReward,settleMode} from '.
 import {ENCOUNTERS,DIFFICULTIES,getEncounter,entryError} from './encounters.js';
 // Local game-loop foundation. No purchases, original-game accounts or shared economy.
 import {addHeroXp,xpForLevel,levelCap} from './development.js';
-export const PROFILE_VERSION=12;
+export const PROFILE_VERSION=13;
 export const CAMPAIGN_REWARDS=Object.freeze(Object.fromEntries(ENCOUNTERS.map(e=>[e.id,e.rewards])));
 export const STARTER_TEAM=['nima_dewthread','ravel','plague_doctor_mors','gallows_marksman_oren','cult_zealot'];
 export const SUMMON_ODDS=[{rarity:'common',chance:50},{rarity:'rare',chance:30},{rarity:'legendary',chance:7.5},{rarity:'mythical',chance:1.5},{rarity:'double_common',chance:11}];
 export function defaultProfile(){return {...defaultModes(),...defaultKeeper(),profileVersion:PROFILE_VERSION,copySequence:0,name:'Rune Keeper',team:[...STARTER_TEAM],unlocked:0,wins:0,cleared:[],recorded:[],speed:1,helpSeen:false,gold:500,gems:INITIAL_GEMS,collection:Object.fromEntries(STARTER_TEAM.map(id=>[id,1])),summons:0,history:[],claimed:[],heroXp:{},ascensions:{},awakenings:{},materials:{},campaignProgress:{normal:0,hard:0,nightmare:0},dungeonClears:{},dungeonWins:0,openRoster:false,reducedMotion:false};}
 const safeInt=(v,fallback,max=999999999)=>Number.isSafeInteger(v)&&v>=0&&v<=max?v:fallback;
 export function normalizeProfile(raw,roster){
- const base=defaultProfile();if(raw?.profileVersion===9)raw=splitLegacyCopies(raw,roster);if(![10,11,PROFILE_VERSION].includes(raw?.profileVersion))return base;const catalogue=roster;roster=battleRoster(raw,roster);const ids=new Set(roster.map(c=>c.id)),p=raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};
+ const base=defaultProfile();if(raw?.profileVersion===9)raw=splitLegacyCopies(raw,roster);if(![10,11,12,PROFILE_VERSION].includes(raw?.profileVersion))return base;const catalogue=roster;roster=battleRoster(raw,roster);const ids=new Set(roster.map(c=>c.id)),p=raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};
  const team=Array.isArray(p.team)&&p.team.length===5&&new Set(p.team).size===5&&p.team.every(id=>ids.has(id))?[...p.team]:base.team;
  const cleared=Array.isArray(p.cleared)?[...new Set(p.cleared.filter(id=>!!getEncounter(id)))]:[];
  const collection={};for(const [id,n]of Object.entries(p.collection&&typeof p.collection==='object'&&!Array.isArray(p.collection)?p.collection:{}))if(validCopyId(id,catalogue)&&n===1)collection[id]=1;
@@ -28,7 +28,7 @@ export function normalizeProfile(raw,roster){
   const rawTier=p.ascensions?.[c.id];const tier=Number.isSafeInteger(rawTier)&&rawTier>=0&&rawTier<caps.length?rawTier:0;
   if(tier)ascensions[c.id]=tier;
   const rank=p.awakenings?.[c.id],normal=caps.at(-1);if(tier===caps.length-1&&c.rarity!=='common'&&Number.isSafeInteger(rank)&&rank>0&&heroXp[c.id]>=xpForLevel(c,normal)){
-   if(p.profileVersion<PROFILE_VERSION)awakenings[c.id]=1;
+   if(p.profileVersion<12)awakenings[c.id]=1;
    else if(rank<=2&&heroXp[c.id]>=xpForLevel(c,normal+(rank-1)*5))awakenings[c.id]=rank;
   }
   if(heroXp[c.id]!==undefined)heroXp[c.id]=Math.min(heroXp[c.id],xpForLevel(c,caps[tier]+(awakenings[c.id]||0)*5));

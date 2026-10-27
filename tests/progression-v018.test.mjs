@@ -29,7 +29,7 @@ test('two Limit Breaks unlock exactly five levels apiece; Commons cannot Limit B
 });
 test('v0.17 Awakening saves migrate to first Limit Break while retaining heroes and resources',()=>{
  const old={...rich(rare),profileVersion:11,heroXp:{[rare.id]:xpForLevel(rare,50)},ascensions:{[rare.id]:2},awakenings:{[rare.id]:3},gems:412,materials:{'awakened-ember':7}};
- const updated=normalizeProfile(old,roster);assert.equal(updated.profileVersion,12);assert.equal(updated.gems,412);assert.equal(updated.materials['awakened-ember'],7);assert.equal(updated.heroXp[rare.id],old.heroXp[rare.id]);assert.equal(updated.awakenings[rare.id],1);assert.equal(awakeningRank(updated,rare),1);assert.ok(validateProfile(updated,roster));
+ const updated=normalizeProfile(old,roster);assert.equal(updated.profileVersion,13);assert.equal(updated.gems,412);assert.equal(updated.materials['awakened-ember'],7);assert.equal(updated.heroXp[rare.id],old.heroXp[rare.id]);assert.equal(updated.awakenings[rare.id],1);assert.equal(awakeningRank(updated,rare),1);assert.ok(validateProfile(updated,roster));
 });
 test('LB2 gives each role its opening boon once, while lower ranks and sandbox have none',()=>{
  const p=referenceProfile(),heroes=p.team.slice(0,3),base={progression:true,levels:Object.fromEntries(heroes.map(id=>[id,levelCap(roster.find(c=>c.id===id))])),ascensions:Object.fromEntries(heroes.map(id=>{const c=roster.find(c=>c.id===id);return [id,ASCENSION_CAPS[c.rarity].length-1]})),awakenings:Object.fromEntries(heroes.map(id=>[id,2]))};

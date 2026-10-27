@@ -1,6 +1,7 @@
-import {GEM_ART,GOLD_ART} from './currency-art.js';
+import {GEM_ART,GOLD_ART,ENERGY_ART} from './currency-art.js';
 const colors=[['red','Red'],['blue','Blue'],['green','Green'],['yellow','Yellow'],['purple','Purple']];
 const offers=[
+ {id:'energy-refill',name:'Energy Refill',art:ENERGY_ART,amount:'Full Energy',detail:'Restores Energy to your current maximum.'},
  {id:'gem-cache',name:'Gems',art:GEM_ART,amount:'500 Gems',detail:'For summons and supplies.'},
  {id:'gem-treasury',name:'Gem Treasury',art:GEM_ART,amount:'1,500 Gems',bonus:'Bonus: 250 Gems',total:'1,750 Gems total'},
  {id:'ascension-kit',name:'Ascension Kit',art:'aether-crystal.webp',detail:'Ascension materials for your chosen color.',kit:true},

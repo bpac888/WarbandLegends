@@ -22,7 +22,7 @@ try{
  await page.evaluate(k=>{const p=JSON.parse(localStorage.getItem(k));p.gold=999999999;p.gems=999999999;localStorage.setItem(k,JSON.stringify(p));},PROFILE_KEY);
  for(const width of [320,360,375,390,430,600]){
   await page.setViewportSize({width,height:844});await go('home');
-  assert.ok(await page.locator('.game-wallet>span').evaluateAll(ns=>ns.length===2&&ns.every(n=>getComputedStyle(n).display!=='none'&&n.scrollWidth<=n.clientWidth)),`currency clipped ${width}`);
+  assert.ok(await page.locator('.game-wallet>span').evaluateAll(ns=>ns.length===3&&ns.every(n=>getComputedStyle(n).display!=='none'&&n.scrollWidth<=n.clientWidth)),`currency clipped ${width}`);
   assert.ok(await page.locator('.header-guide>img').evaluateAll(ns=>ns.length===1&&ns.every(n=>getComputedStyle(n).display!=='none')),`guide hidden ${width}`);
   const boxes=await page.locator('.with-nav .brand,.with-nav .game-wallet,.with-nav .inventory-button,.with-nav [data-page="settings"],.with-nav .header-guide,.with-nav .game-nav>button').evaluateAll(ns=>ns.map(n=>{const r=n.getBoundingClientRect();return {l:r.left,r:r.right,t:r.top,b:r.bottom};}));
   assert.ok(boxes.every(r=>r.l>=0&&r.r<=width+.5),`header clipping ${width}`);

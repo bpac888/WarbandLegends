@@ -1,3 +1,4 @@
+import {refreshEnergy,energyStatus} from './keeper.js';
 import {applyAutoAction} from './auto-battle.js';
 import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js';
 import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js';
@@ -121,8 +122,9 @@ async function play(result){
   if(token!==animationToken)return;busy=false;renderBattle();if(focusAfter!==undefined)app.querySelector(`[data-index="${focusAfter}"]`)?.focus({preventScroll:true});if(battle.phase!=='playing'){stopAuto();renderBattle();showResult();}
 }
 function start(stageId){
+  syncEnergy();
   const error=entryError(profile,stageId);if(error){toast(error);return;}
-  const begin=()=>{const seed=crypto.getRandomValues(new Uint32Array(1))[0];battle=createBattle(battleRoster(profile,roster),profile.team,stageId,seed,{progression:true,sandbox:profile.openRoster,awakenings:profile.awakenings,ascensions:profile.ascensions,levels:Object.fromEntries(profile.team.map(id=>[id,heroDevelopment(profile,byId.get(id)).level]))});const reserved=reserveEntry(profile,battle);if(reserved.error){toast(reserved.error);battle=null;return;}stopAuto();profile=reserved.profile;battle=reserved.battle;battleSpeed=1;persist(PROFILE_KEY,profile);selectedEnemy=battle.enemies[1].uid;go('battle');if(!profile.helpSeen){profile.helpSeen=true;persist(PROFILE_KEY,profile);showHelp();}};
+  const begin=()=>{const seed=crypto.getRandomValues(new Uint32Array(1))[0];battle=createBattle(battleRoster(profile,roster),profile.team,stageId,seed,{progression:true,sandbox:profile.openRoster,awakenings:profile.awakenings,ascensions:profile.ascensions,levels:Object.fromEntries(profile.team.map(id=>[id,heroDevelopment(profile,byId.get(id)).level]))});const reserved=reserveEntry(profile,battle);if(reserved.error){profile=reserved.profile;persist(PROFILE_KEY,profile);closeModal();toast(reserved.error);battle=null;return;}stopAuto();profile=reserved.profile;battle=reserved.battle;battleSpeed=1;persist(PROFILE_KEY,profile);selectedEnemy=battle.enemies[1].uid;go('battle');if(!profile.helpSeen){profile.helpSeen=true;persist(PROFILE_KEY,profile);showHelp();}};
 
   begin();
 }
@@ -254,6 +256,7 @@ window.addEventListener('pageshow',event=>{if(event.persisted)renderRoute();});
 function go(path){const hash='#/'+path;if(location.hash!==hash)history.pushState(null,'',hash);renderRoute();}
 function renderRoute(){
   if(!profile)return;
+  syncEnergy();
   document.body.classList.toggle('reduce-animation',reducedAnimation());
   const raw=location.hash.replace(/^#\/?/,'')||'splash',parts=raw.split('/'),page=parts[0];
   if(page!=='battle'&&battle)abandonBattle();
@@ -297,3 +300,10 @@ async function boot(){try{
   const responses=await Promise.all([fetch('./data/champions.json'),fetch('./data/effects.json')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
+
+function syncEnergy(){
+ if(!profile)return;const updated=refreshEnergy(profile);if(updated!==profile){profile=updated;persist(PROFILE_KEY,profile);}
+ const e=energyStatus(profile),label=app.querySelector('.energy-amount');if(label){label.textContent=`${e.current}/${e.max}`;label.setAttribute('aria-label',`${e.current} of ${e.max} Energy`);}
+}
+setInterval(syncEnergy,15000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncEnergy();});

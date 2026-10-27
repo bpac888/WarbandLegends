@@ -8,3 +8,5 @@ export const TOKEN_ART=Object.freeze({
  frostwake_shard:'./assets/items/frostwake-shard.webp',
  veil_mark:'./assets/items/veil-mark.webp',
 });
+
+export const ENERGY_ART='./assets/items/energy.webp';

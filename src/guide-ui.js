@@ -6,7 +6,7 @@ const battleRules=[
  ['Mana','Empty lanes give double mana. Specials spend all charge without using a board move. Enemies gain 4 charge per attack opportunity.'],
 ];
 const topics=[
- ['battles','Battles',battleRules],
+ ['battles','Battles',[...battleRules,['Energy','Campaign and Dungeons cost 1/2/3 Energy on Normal/Hard/Nightmare; Arena costs 1. The cap is 50 + profile level. Midnight PST and profile level-ups refill it fully. Leaving or losing does not refund energy. Special Events use attempts instead.']]],
  ['growth','Heroes',[
   ['Feeding','Feed Common or Rare copies for 25 Gold each. Rare: 3× Common XP; same-hero Rare: another 5×. Same color: +25%. Team copies are protected.'],
   ['Ascension','Tiers restart at level 1, retain earned power and add 2% stats. Each copy develops separately.'],

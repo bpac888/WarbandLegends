@@ -27,7 +27,8 @@
     "test:lifecycle": "node tests/battle-lifecycle-browser.mjs",
     "test:combat-feel": "node tests/combat-feel-browser.mjs",
     "test:feeding": "node tests/feeding-browser.mjs",
-    "test:auto": "node tests/auto-battle-browser.mjs"
+    "test:auto": "node tests/auto-battle-browser.mjs",
+    "test:energy": "node tests/energy-browser.mjs"
   },
   "engines": {
     "node": ">=22"

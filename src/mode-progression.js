@@ -1,5 +1,5 @@
 import {heroForId,uniqueHeroCount} from './hero-copies.js';
-import {addAccountXp,accountBattleXp,bumpPath} from './keeper.js';
+import {addAccountXp,accountBattleXp,bumpPath,spendEnergy,energyCost,refreshEnergy} from './keeper.js';
 import {GEM_LIMIT} from './economy.js';
 import {SPECIAL_EVENTS,eventWindow,eventAttemptsLeft,EVENT_ATTEMPTS} from './modes.js';
 import {getEncounter} from './encounters.js';
@@ -19,7 +19,8 @@ export function validateModes(p){if(['arenaRating','arenaTokens','arenaWins','ar
 }
 export function reserveEntry(profile,battle,now=new Date()){
  const e=getEncounter(battle.stageId);if(!e)return {profile,error:'Unknown encounter.'};
- if(e.mode!=='event'||battle.sandbox)return {profile:{...profile,eventEntry:null},battle};
+ if(e.mode!=='event'&&battle.energySpent===energyCost(e))return {profile:{...refreshEnergy(profile,now),eventEntry:null},battle};
+ if(e.mode!=='event'||battle.sandbox){const paid=spendEnergy(profile,e,now);return paid.error?paid:{profile:{...paid.profile,eventEntry:null},battle:{...battle,energySpent:paid.cost}};}
  const window=eventWindow(e.eventId,now);if(!window.active)return {profile,error:'This event is outside its monthly window.'};
  // Pay on entry, before any battle playback. Leaving or losing does not refund an attempt.
  if(profile.eventEntry?.battleId===battle.id&&profile.eventEntry.key===window.key)return {profile,battle:{...battle,eventWindow:window.key}};
