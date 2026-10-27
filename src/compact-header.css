@@ -95,5 +95,5 @@ body:has(.topbar.with-nav) .game-page>:last-child{margin-bottom:0}
  .page-settings .avatar-options{grid-template-columns:repeat(auto-fit,minmax(50px,60px));gap:5px}
  .page-settings .avatar-options img{height:56px}
 }
-.page-settings .avatar-options{grid-template-columns:repeat(6,minmax(0,1fr));max-width:430px}
+.page-settings .avatar-options{grid-template-columns:repeat(2,minmax(0,1fr));max-width:430px;gap:10px}
 .page-settings .avatar-options img{width:100%;height:auto;aspect-ratio:1;object-fit:cover}
