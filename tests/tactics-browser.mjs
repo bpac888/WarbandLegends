@@ -29,13 +29,13 @@ try{
  await page.evaluate(({k,p})=>localStorage.setItem(k,JSON.stringify(p)),{k:PROFILE_KEY,p});await page.reload();await page.locator('.topbar').waitFor();
  // Every displayed step matches its source plan; ordering is visible, not buried in a tooltip.
  for(const id of Object.keys(HERO_INSIGHTS)){
-  await go('champion/'+id);await page.locator('.hero-tactics summary').click();assert.ok(await page.locator('.hero-tactics').evaluate(n=>n.open));
+  await go('champion/'+id);assert.equal(await page.locator('#hero-special .hero-tactics').count(),0);await page.getByRole('button',{name:'Guide',exact:true}).click();await page.locator('#modal .hero-tactics summary').click();assert.ok(await page.locator('#modal .hero-tactics').evaluate(n=>n.open));await page.locator('#modal [data-action="close"]').click();
   const c=roster.find(c=>c.id===id);for(const level of c.special.levels){const row=page.locator(`[data-charge-level="${level.level}"]`);assert.deepEqual(await row.locator('[data-step-kind]').evaluateAll(nodes=>nodes.map(n=>n.dataset.stepKind)),skillDescription(c,{},level.level).steps.map(s=>s.kind));}
  }
- await go('champion/dragonmage');await page.locator('.hero-tactics summary').click();await page.locator('#hero-special').screenshot({path:root+'artifacts/tactics-1440-dragon-special.png'});
+ await go('champion/dragonmage');assert.equal(await page.locator('#hero-special .hero-tactics').count(),0);await page.locator('#hero-special').screenshot({path:root+'artifacts/tactics-1440-dragon-special.png'});
  for(const width of [760,390,320]){
   await page.setViewportSize({width,height:844});
-  for(const id of ['dragonmage','grove_druid','frost_sage','shieldmaiden_runa']){await go('champion/'+id);await page.locator('.hero-tactics summary').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width} ${id}`);}
+  for(const id of ['dragonmage','grove_druid','frost_sage','shieldmaiden_runa']){await go('champion/'+id);assert.equal(await page.locator('#hero-special .hero-tactics').count(),0);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width} ${id}`);}
   await page.locator('#hero-special').screenshot({path:`${root}artifacts/tactics-${width}-runa-special.png`});
   await go('campaign');await page.locator('.campaign-node[data-stage="campaign-normal-05"]').click();await page.getByRole('region',{name:'Encounter tactics'}).waitFor();assert.match(await page.locator('.encounter-tactics').textContent(),/Overpressure/);assert.ok(await page.locator('#modal').evaluate(n=>n.scrollWidth<=n.clientWidth));await page.screenshot({path:`${root}artifacts/tactics-${width}-boss-preview.png`,fullPage:true});await page.getByRole('button',{name:'Back',exact:true}).click();
  }

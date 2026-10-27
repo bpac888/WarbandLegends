@@ -13,5 +13,5 @@ export function encounterTactics(stage,state=null){
 export function chargeComparisonHTML(unit,level){
  const index=unit.special.levels.findIndex(s=>s.level===level);if(index<1)return '';
  const changes=chargeComparison(unit.special.levels[index-1],unit.special.levels[index]);
- return `<details class="charge-comparison"><summary>Compare with Charge ${unit.special.levels[index-1].level}</summary><dl>${changes.map(c=>`<div><dt>${esc(c.name)}</dt><dd><span>${esc(c.before)}</span><b aria-hidden="true">→</b><strong>${esc(c.after)}</strong></dd></div>`).join('')}</dl><p>Casting either charge spends all stored charge. More charge can change targets as well as power.</p></details>`;
+ return `<details class="charge-comparison"><summary>Compare with Charge ${unit.special.levels[index-1].level}</summary><dl>${changes.map(c=>`<div><dt>${esc(c.name)}</dt><dd><span>${esc(c.before)}</span><b aria-hidden="true">→</b><strong>${esc(c.after)}</strong></dd></div>`).join('')}</dl></details>`;
 }
