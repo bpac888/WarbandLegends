@@ -30,3 +30,6 @@
  .topbar.with-nav .game-nav>button{font-size:9px}
 }
 .topbar-right .header-guide>span{display:inline!important}
+
+/* Keep Safari and Home Screen headers crisp instead of frosting the page behind them. */
+body .topbar,body .topbar .game-nav{backdrop-filter:none;-webkit-backdrop-filter:none}
