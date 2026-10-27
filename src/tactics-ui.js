@@ -3,7 +3,7 @@ import {HERO_INSIGHTS} from './hero-insights.js';
 import {scenarioStatus,SCENARIOS} from './chapter.js';
 import {glyph} from './card-ui.js';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function heroInsight(unit){const insight=HERO_INSIGHTS[unit.baseId||unit.id.split('~')[0]];return insight?`<details class="hero-tactics"><summary>${glyph(unit.role==='defense'?'defense':unit.role==='support'?'health':'attack')} ${esc(insight.role)} · How to use this Special</summary><p>${esc(insight.decision)}</p><p class="tactics-counter"><b>Know the limits</b>${esc(insight.counter)}</p></details>`:'';}
+export function heroInsight(unit){const insight=HERO_INSIGHTS[unit.baseId||unit.id.split('~')[0]];return insight?`<details class="hero-tactics"><summary>${glyph(unit.role==='defense'?'defense':unit.role==='support'?'health':'attack')} ${esc(insight.role)} · Special Tips</summary><p>${esc(insight.decision)}</p><p class="tactics-counter"><b>Limits</b>${esc(insight.counter)}</p></details>`:'';}
 export function encounterTactics(stage,state=null){
  const status=state&&scenarioStatus(state);
  if(!stage.tactic&&!status)return '';

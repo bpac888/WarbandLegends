@@ -28,7 +28,7 @@ const fs=require('node:fs/promises'),path=require('node:path'),assert=require('n
  assert.equal(await page.locator('.tile').count(),35);assert.equal(await page.locator('.hero-unit').count(),5);assert.equal(await page.locator('.enemy-unit').count(),3);
  await page.screenshot({path:PREVIEW+'/desktop-battle.png',fullPage:true});
  assert.equal(await page.locator('.board .rune-art').count(),35);assert.ok(await page.locator('.board .rune-art').evaluateAll(images=>images.every(i=>i.complete&&i.naturalWidth>0)));
- await page.getByRole('button',{name:'Effects guide',exact:true}).click();await page.getByRole('heading',{name:'The effect field guide'}).waitFor();assert.ok(await page.getByRole('heading',{name:'Tile Boost',exact:true}).isVisible());
+ await page.getByRole('button',{name:'Effects guide',exact:true}).click();await page.getByRole('heading',{name:'Effects Field Guide'}).waitFor();assert.ok(await page.getByRole('heading',{name:'Tile Boost',exact:true}).isVisible());
  await page.getByRole('button',{name:'Ailments',exact:true}).click();assert.ok(await page.getByRole('heading',{name:'Mana Block',exact:true}).isVisible());assert.ok(await page.getByRole('heading',{name:'Bleed',exact:true}).isVisible());
  await page.getByRole('button',{name:'Instant actions',exact:true}).click();assert.ok(await page.getByRole('heading',{name:'Dispel',exact:true}).isVisible());await page.screenshot({path:PREVIEW+'/effect-guide.png',fullPage:true});await page.getByRole('button',{name:'Close dialog'}).click();
 
