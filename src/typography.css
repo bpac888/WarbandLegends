@@ -1,4 +1,4 @@
-@font-face{font-family:'Legends Title';src:url('../assets/fonts/dark-mystic.otf') format('opentype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Legends Title';src:url('../assets/fonts/runewood.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:'Legends Main';src:url('../assets/fonts/lora.ttf') format('truetype');font-style:normal;font-weight:400 700;font-display:swap}
 @font-face{font-family:'Legends Sub';src:url('../assets/fonts/source-sans-3.ttf') format('truetype');font-style:normal;font-weight:400 700;font-display:swap}
 :root{--font-title:'Legends Title',serif;--font-main:'Legends Main',serif;--font-sub:'Legends Sub',sans-serif}
