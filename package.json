@@ -30,7 +30,8 @@
     "test:auto": "node tests/auto-battle-browser.mjs",
     "test:energy": "node tests/energy-browser.mjs",
     "roster:audit": "node tools/audit-roster.mjs",
-    "test:roster-expansion": "node tests/roster-expansion-browser.mjs"
+    "test:roster-expansion": "node tests/roster-expansion-browser.mjs",
+    "test:auto-calm": "node tests/auto-calm-browser.mjs"
   },
   "engines": {
     "node": ">=22"

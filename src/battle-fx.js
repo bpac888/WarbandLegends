@@ -70,7 +70,7 @@ function mythicCinematic(plan,speed){
  for(const [tag,text]of [['small','MYTHICAL'],['strong',plan.champion],['span',plan.name]]){const line=document.createElement(tag);line.textContent=text;copy.append(line);}
  stage.append(seal,art,copy);node.append(stage);document.querySelector('#effects-layer')?.append(node);later(()=>node.remove(),1100/speed);
 }
-export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduced=false}={}){
+export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduced=false,calm=false}={}){
  const impacts=planImpactFeedback(previous,current,frame);
  const special=planSpecialEffects(previous,current,frame),delay=reduced?0:(frame.kind==='match'?390:special?.special?220:70)/speed;
  if(frame.kind==='match'&&frame.combo>1&&!reduced){
@@ -79,10 +79,10 @@ export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduc
  if(!impacts.length)return;
  later(()=>{
   const allies=impacts.filter(i=>i.side==='hero'),hurt=allies.some(i=>i.damage>0);
-  if(allies.length){
+  if(allies.length&&!calm){
    const veil=document.createElement('div');veil.className=`battle-hit-flash ${hurt?'hit-health':'hit-guard'} ${reduced?'still-hit':''}`;veil.setAttribute('aria-hidden','true');document.querySelector('#effects-layer')?.append(veil);later(()=>veil.remove(),(reduced?120:230)/speed);
   }
-  if(!reduced&&allies.length){
+  if(!reduced&&!calm&&allies.length){
    const strength=Math.min(6,1.5+Math.max(...allies.map(i=>i.fraction))*16),center=root.querySelector('.battle-center');
    motion(center,[{transform:'translate(0,0)'},{transform:`translate(${-strength}px,${strength*.35}px)`,offset:.2},{transform:`translate(${strength*.65}px,${-strength*.25}px)`,offset:.45},{transform:`translate(${-strength*.3}px,0)`,offset:.7},{transform:'translate(0,0)'}],{duration:(hurt?250:140)/speed,easing:'ease-out'});
   }
@@ -91,7 +91,7 @@ export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduc
    const portrait=unit.querySelector('.hero-main,.enemy-target'),pos=center(portrait,.45);if(!pos)continue;
    const type=hit.damage?'hurt':'guard',ring=spawn(`combat-contact ${hit.color} contact-${type} ${reduced?'contact-still':''}`,pos.x,pos.y,(reduced?150:420)/speed);ring.setAttribute('aria-hidden','true');
    if(!reduced){
-    motion(portrait,[{transform:'translateY(0)',filter:'brightness(1)'},{transform:`translateY(${hit.side==='hero'?4:-4}px) scale(.97)`,filter:'brightness(1.35)',offset:.25},{transform:'translateY(0)',filter:'brightness(1)'}],{duration:240/speed});
+    if(!calm)motion(portrait,[{transform:'translateY(0)',filter:'brightness(1)'},{transform:`translateY(${hit.side==='hero'?4:-4}px) scale(.97)`,filter:'brightness(1.35)',offset:.25},{transform:'translateY(0)',filter:'brightness(1)'}],{duration:240/speed});
     if(hit.knockout){const flare=spawn(`combat-knockout ${hit.color}`,pos.x,pos.y,600/speed,'✦');flare.setAttribute('aria-hidden','true');}
    }
   }

@@ -3,3 +3,13 @@
 .auto-choice{outline:2px solid #f7df9c!important;outline-offset:-2px;filter:brightness(1.2)}
 @media(max-width:600px){.battle-topbar .auto-battle-toggle{font-size:10px;padding:4px 6px}}
 @media(max-width:370px){.battle-topbar .brand>span:last-child{display:none}.battle-topbar .brand{gap:0;flex:none}}
+
+/* Auto keeps the stage steady while runes, damage and spell effects still play. */
+.battle-shell.auto-running .battle-center .battle-feedback{display:none}
+.battle-shell.auto-running .hero-unit.attacking,
+.battle-shell.auto-running .enemy-unit.attacking,
+.battle-shell.auto-running .special-caster .hero-main,
+.battle-shell.auto-running .special-caster .enemy-target>img,
+.battle-shell.auto-running .basic-attacker .enemy-target>img,
+.battle-shell.auto-running .special-hit-strike .hero-main,
+.battle-shell.auto-running .special-hit-strike .enemy-target>img{animation:none;transform:none}

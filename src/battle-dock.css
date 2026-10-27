@@ -83,3 +83,13 @@ body:has(.battle-shell) .battle-dock{min-height:24px;padding-top:1px;padding-bot
 .battle-center .battle-sky{grid-template-rows:minmax(0,1fr) 8px}
 .battle-shell .attack-lanes{height:8px;min-height:0}
 .battle-shell .lane-track b{font-size:9px;line-height:8px}
+
+/* Status badges overlay the art, so gaining or losing an effect never resizes it. */
+.battle-shell .battle-center .hero-line .hero-unit .hero-main{height:100%;border-width:2px}
+.battle-shell .battle-center .hero-unit .statuses,
+.battle-shell .battle-center .enemy-unit .statuses{position:absolute;top:auto;bottom:38px;left:2px;right:2px;transform:none;width:auto;height:auto;max-width:none;max-height:calc(100% - 66px);overflow:auto;scrollbar-width:none;padding:1px;gap:2px;z-index:4}
+.battle-shell .battle-center .enemy-unit .statuses{bottom:28px}
+@media(orientation:landscape) and (max-height:600px){
+ .battle-shell .battle-center .hero-unit .statuses{left:60px;right:3px;bottom:22px;max-height:20px;justify-content:flex-start;flex-wrap:nowrap}
+ .battle-shell .battle-center .enemy-unit .statuses{max-height:16px;bottom:23px;flex-wrap:nowrap}
+}
