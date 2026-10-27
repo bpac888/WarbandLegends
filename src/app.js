@@ -177,7 +177,7 @@ document.addEventListener('click',event=>{
   if(action==='campaign-difficulty'){campaignDifficulty=button.dataset.difficulty;campaignChapter=Math.min(4,Math.floor(Math.min(24,profile.campaignProgress[campaignDifficulty])/5));renderShell('campaign');return;}
   if(action==='campaign-chapter'){const old=document.querySelector('.campaign-map-viewport'),position=old?{left:old.scrollLeft,top:old.scrollTop}:null;campaignChapter=Number(button.dataset.chapter);renderShell('campaign',false);if(position)document.querySelector('.campaign-map-viewport')?.scrollTo(position);document.querySelector('.crossing-chapters')?.scrollIntoView({block:'center'});return;}
   if(action==='dungeon-difficulty'){dungeonDifficulty=button.dataset.difficulty;renderShell('dungeons');return;}
-  if(action==='preview-encounter'){const e=getEncounter(stage);if(e)openModal(e.name,Shell.encounterPreview(profile,stage),'encounter');return;}
+  if(action==='preview-encounter'){const e=getEncounter(stage);if(e){const campaign=e.mode==='campaign',title=campaign?`${{normal:'Normal',hard:'Hard',nightmare:'Nightmare'}[e.difficulty]} · Stage ${e.number} · ${esc(e.name)}`:esc(e.name);openModal(title,Shell.encounterPreview(profile,stage),campaign?'campaign-stage':'encounter');}return;}
   if(action==='nav'){go(button.dataset.page);return;}
   if(action==='champion'){go('champion/'+encodeURIComponent(id)+(button.dataset.preview==='true'?'/codex':''));return;}
   if(action==='reset-collection'){collectionFilters={...DEFAULT_FILTERS,tab:collectionFilters.tab};renderCollectionPage();return;}
