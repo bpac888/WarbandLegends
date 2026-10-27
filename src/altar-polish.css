@@ -24,3 +24,13 @@
  .page-summon .altar-actions>button>span{font-size:18px}
  .page-summon .altar-actions .gem-shortage{font-size:10px}
 }
+
+/* Grow the painting into the available viewport rather than ending at a fixed square. */
+body:has(.page-summon) #app{min-height:100svh;display:flex;flex-direction:column;box-sizing:border-box}
+body:has(.page-summon) .topbar{flex-shrink:0}
+.game-page.page-summon{display:flex;flex:1;width:100%;min-height:0}
+.page-summon .altar-page{display:flex;flex-direction:column;flex:1;width:100%;min-height:0}
+.page-summon .altar-header{width:100%;flex-shrink:0}
+.page-summon .altar-page .altar-portal.summon-sanctum{flex:1;aspect-ratio:auto;min-height:clamp(230px,70vw,420px);height:auto}
+.page-summon .altar-portal>img{width:100%;height:100%;object-fit:cover;object-position:center}
+.page-summon .altar-actions{width:100%;flex-shrink:0}
