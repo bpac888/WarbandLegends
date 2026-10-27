@@ -11,7 +11,6 @@ const topics=[
   ['Feeding','Feed Common or Rare copies for 25 Gold each. Rare: 3× Common XP; same-hero Rare: another 5×. Same color: +25%. Team copies are protected.'],
   ['Ascension','Tiers restart at level 1, retain earned power and add 2% stats. Each copy develops separately.'],
   ['Limit Break','Rare and higher: two breaks after full ascension. Each adds 5 levels and 3% stats. The second grants a 2-move role buff.'],
-  ['Profile Milestones','Claim milestone rewards in Quests every 10 profile levels.'],
  ]],
  ['summon','Summoning',[
   ['Summoning Odds',SUMMON_ODDS.map(o=>`${o.rarity==='double_common'?'Two Commons':o.rarity[0].toUpperCase()+o.rarity.slice(1)}: ${o.chance}%`).join(' · ')],
