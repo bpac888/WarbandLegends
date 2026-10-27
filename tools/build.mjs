@@ -13,7 +13,6 @@ for(const path of [...DIFFICULTIES.map(d=>d.art),...DUNGEONS.map(d=>d.art),'asse
 for(const m of MATERIALS)if((await stat('assets/items/'+m.id+'.webp')).size<5000)throw Error('Missing new material artwork: '+m.id);
 for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inventory-gems','settings-gear'])if((await stat('assets/items/'+id+'.webp')).size<5000)throw Error('Missing shop artwork: '+id);
 for(const id of AVATARS)if((await stat('assets/portraits/'+id+'.svg')).size<1000)throw Error('Missing profile artwork: '+id);
-if((await stat('assets/items/gem.svg')).size<1000)throw Error('Missing Gem icon');
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
 for(const path of ['index.html','manifest.webmanifest','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
 const manifest={version:'0.16.0',champions:roster.length,campaignStages:75,dungeons:7,dungeonEncounters:21,arenaRivals:9,specialEvents:3,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};

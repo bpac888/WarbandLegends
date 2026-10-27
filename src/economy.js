@@ -4,7 +4,7 @@ export const SUMMON_COST=100;
 export const TEN_SUMMON_COST=900;
 export const INITIAL_GEMS=500;
 export const GEM_INTERVAL=5;
-export const GEM_ART='./assets/items/gem.svg';
+export {GEM_ART} from './currency-art.js';
 export const GEM_OFFERS=[
  {id:'gold-pouch',name:'Gold Pouch',cost:100,gold:1000,description:'1,000 gold for champion training and ascension.'},
  {id:'gold-chest',name:'Gold Chest',cost:500,gold:5500,description:'5,500 gold for your growing warband.'},

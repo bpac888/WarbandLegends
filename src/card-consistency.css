@@ -1,0 +1,7 @@
+/* Reserve the same name and speed space in Codex and owned-copy cards. */
+.library-card .library-label{display:flex;flex-direction:column;flex:1;gap:0}
+.library-card .library-name{line-height:1.16;min-height:2.32em;flex-shrink:0}
+.library-card .card-speed{min-height:2.4em;flex-shrink:0;align-items:center}
+.library-card .card-stats{margin-top:auto;flex-shrink:0}
+.currency-icon{object-fit:contain;filter:none}
+.card-glyph.currency-icon{width:24px;height:24px;flex-shrink:0;vertical-align:middle}
