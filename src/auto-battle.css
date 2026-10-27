@@ -1,0 +1,5 @@
+.battle-topbar .auto-battle-toggle{min-height:32px;padding:5px 9px;border:1px solid #dfd7af9c;border-radius:8px;background:#253345eb;color:#fff2d2;font-size:12px;line-height:1.2;white-space:nowrap}
+.battle-topbar .auto-battle-toggle.active{background:#335c40f2;border-color:#d6edab;color:#f4ffdb}
+.auto-choice{outline:2px solid #f7df9c!important;outline-offset:-2px;filter:brightness(1.2)}
+@media(max-width:600px){.battle-topbar .auto-battle-toggle{font-size:10px;padding:4px 6px}}
+@media(max-width:370px){.battle-topbar .brand>span:last-child{display:none}.battle-topbar .brand{gap:0;flex:none}}

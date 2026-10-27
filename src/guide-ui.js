@@ -8,6 +8,7 @@ const battleRules=[
  ['Special runes','Match 4 for a Blast rune; 5 or more for a Prism. Tap one twice or swap it with a neighbor to activate it.'],
  ['Elements','Red beats Green, Green beats Blue, and Blue beats Red. Yellow and Purple are strong against each other.'],
  ['Battle speed','Every battle starts at ×1 on phone and desktop. The ×2 button speeds up only the current battle.'],
+ ['Auto battle','Tap Auto in battle to let your team choose matches, targets and Specials at ×2 speed. Tap Auto again or make a manual move to take over. Menus pause Auto; every new battle starts with Auto off and speed ×1. Auto weighs survival, mana, elements and enemy threats; it cannot guarantee a win.'],
  ['Leaving a fight','Leaving the battle screen, refreshing or closing the game abandons it. Start again from the beginning; completed rewards stay saved.'],
 ];
 const topics=[

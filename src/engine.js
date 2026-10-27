@@ -67,7 +67,7 @@ function freshBoard(state) {
   throw new Error('Unable to create a playable board');
 }
 function message(state,text,tone='neutral',unitId=null) {state.log.push({id:++state.eventId,move:state.moves,text,tone,unitId});state.log=state.log.slice(-80);}
-function frame(state,frames,kind,extra={}) {frames.push({kind,state:clone(state),...clone(extra)});}
+function frame(state,frames,kind,extra={}) {if(!frames)return;frames.push({kind,state:clone(state),...clone(extra)});}
 function makeUnit(source,side,index) {
   return {...clone(source),uid:`${side}-${index}`,side,hp:source.hp,maxHp:source.hp,mana:0,manaMax:manaLevels(source).at(-1).tiles,shield:0,effects:{},reviveUsed:false,passiveReviveUsed:false,actions:0};
 }
@@ -279,32 +279,32 @@ function resolveBoard(state,frames,initialGroups,preferred,activation=null) {
   }while(groups.length&&combo<60);
   if(findMatches(state.board).length||!validMoves(state.board).length){state.board=freshBoard(state);message(state,'The runes realign · a fresh, playable board.','combo');frame(state,frames,'shuffle');}
 }
-export function swap(state,a,b) {
+export function swap(state,a,b,options={}) {
   if(state.phase!=='playing')return {state,frames:[],error:'This encounter is finished.'};
   if(!neighbors(a,b))return {state,frames:[],error:'Swap two neighboring runes.'};
-  const next=clone(state),frames=[];
+  const next=clone(state),frames=options.frames===false?null:[];
   [next.board[a],next.board[b]]=[next.board[b],next.board[a]];
   const specialIndex=next.board[a].special?a:next.board[b].special?b:null;
   const groups=findMatches(next.board);
   if(specialIndex===null&&!groups.some(g=>g.includes(a)||g.includes(b)))return {state,frames:[],error:'That swap makes no match. No turn was used.'};
   next.moves++;const upkeepEvent=next.eventId;for(const unit of [...next.heroes,...next.enemies])startTurn(next,unit);if(next.eventId!==upkeepEvent)frame(next,frames,'upkeep');
   if(!finish(next))periodicPassives(next,frames);
-  if(finish(next)){frame(next,frames,'result');return {state:next,frames};}
+  if(finish(next)){frame(next,frames,'result');return {state:next,frames:frames||[]};}
   frame(next,frames,'swap',{a,b});
   const activation=specialIndex===null?null:{indices:[specialIndex],color:next.board[specialIndex===a?b:a].color};
   resolveBoard(next,frames,groups,b,activation);
   if(next.phase==='playing')enemyPhase(next,frames);
-  encounterPhase(next,frames);frame(next,frames,'settled');return {state:next,frames};
+  encounterPhase(next,frames);frame(next,frames,'settled');return {state:next,frames:frames||[]};
 }
-export function activate(state,index) {
+export function activate(state,index,options={}) {
   if(!Number.isInteger(index)||index<0||index>=SIZE||!state.board[index]?.special)return {state,frames:[],error:'Select a special rune.'};
   if(state.phase!=='playing')return {state,frames:[],error:'This encounter is finished.'};
-  const next=clone(state),frames=[];next.moves++;const upkeepEvent=next.eventId;for(const unit of [...next.heroes,...next.enemies])startTurn(next,unit);if(next.eventId!==upkeepEvent)frame(next,frames,'upkeep');
+  const next=clone(state),frames=options.frames===false?null:[];next.moves++;const upkeepEvent=next.eventId;for(const unit of [...next.heroes,...next.enemies])startTurn(next,unit);if(next.eventId!==upkeepEvent)frame(next,frames,'upkeep');
   if(!finish(next))periodicPassives(next,frames);
   if(!finish(next)){resolveBoard(next,frames,[],index,{indices:[index],color:next.board[index].color});if(next.phase==='playing')enemyPhase(next,frames);}
-  encounterPhase(next,frames);frame(next,frames,'settled');return {state:next,frames};
+  encounterPhase(next,frames);frame(next,frames,'settled');return {state:next,frames:frames||[]};
 }
-export function cast(state,heroUid,targetUid,level=null) {
+export function cast(state,heroUid,targetUid,level=null,options={}) {
   if(state.phase!=='playing')return {state,frames:[],error:'This encounter is finished.'};
   const actor=state.heroes.find(u=>u.uid===heroUid);
   if(!actor||actor.hp<=0)return {state,frames:[],error:'Choose a living champion.'};
@@ -313,9 +313,9 @@ export function cast(state,heroUid,targetUid,level=null) {
   const side=spec.target==='enemy'?state.enemies:state.heroes;
   const target=spec.target==='self'?actor:side.find(u=>u.uid===targetUid&&u.hp>0);
   if(!target)return {state,frames:[],error:`Choose a living ${spec.target==='enemy'?'enemy':'ally'}.`};
-  const next=clone(state),frames=[],nextActor=next.heroes.find(u=>u.uid===heroUid);nextActor.mana=0;
+  const next=clone(state),frames=options.frames===false?null:[],nextActor=next.heroes.find(u=>u.uid===heroUid);nextActor.mana=0;
   resolveSkill(next,nextActor,[...next.heroes,...next.enemies].find(u=>u.uid===target.uid),requested);finish(next);
-  frame(next,frames,'skill',{actor:heroUid,target:spec.target==='enemy'&&!spec.aoe?protectedTarget(state.enemies,target).uid:target.uid,level:requested});encounterPhase(next,frames);return {state:next,frames};
+  frame(next,frames,'skill',{actor:heroUid,target:spec.target==='enemy'&&!spec.aoe?protectedTarget(state.enemies,target).uid:target.uid,level:requested});encounterPhase(next,frames);return {state:next,frames:frames||[]};
 }
 export function validateSave(value,roster) {
   const integer=(n,min=0)=>Number.isSafeInteger(n)&&n>=min;

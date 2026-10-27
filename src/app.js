@@ -1,3 +1,4 @@
+import {applyAutoAction} from './auto-battle.js';
 import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js';
 import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js';
 import {guideHTML,guideTopics,battleHelpHTML} from './guide-ui.js';
@@ -31,13 +32,41 @@ const role=id=>({attack:'ATK',defense:'DEF',support:'SUP'}[id]||id);
 const percent=(a,b)=>Math.max(0,Math.min(100,a/b*100));
 let displayedBattle=null;
 let battleSpeed=1;
+let autoEnabled=false,autoWorker=null,autoTimer=null,autoJob=0,autoThinking=false,autoIntent='',manualBattleSpeed=1;
+function pauseAuto(){autoJob++;clearTimeout(autoTimer);autoTimer=null;autoWorker?.terminate();autoWorker=null;autoThinking=false;autoIntent='';}
+function stopAuto(){pauseAuto();selectedRune=null;pendingCaster=null;if(autoEnabled)battleSpeed=manualBattleSpeed;autoEnabled=false;}
+function scheduleAuto(){
+ if(!autoEnabled||busy||screen!=='battle'||battle?.phase!=='playing'||modal.open||document.hidden||autoTimer||autoThinking)return;
+ autoTimer=setTimeout(()=>{autoTimer=null;if(!autoEnabled||busy||modal.open||document.hidden||screen!=='battle'||battle?.phase!=='playing')return;
+  autoThinking=true;const id=++autoJob;
+  try{
+   autoWorker??=new Worker(new URL('./auto-worker.js',import.meta.url),{type:'module'});
+   autoWorker.onerror=()=>{stopAuto();if(screen==='battle')renderBattle();toast('Auto paused. You can continue manually.');};
+   autoWorker.onmessage=({data})=>{
+    if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;
+    if(data.error||!data.action){stopAuto();renderBattle();return;}
+    const action=data.action,units=[...battle.heroes,...battle.enemies];
+    selectedRune=action.kind==='swap'?action.a:action.kind==='activate'?action.index:null;
+    if(action.kind==='cast'){selectedEnemy=action.target.startsWith('enemy')?action.target:selectedEnemy;autoIntent=`${units.find(u=>u.uid===action.actor)?.name} → ${units.find(u=>u.uid===action.target)?.name}`;}
+    else autoIntent=action.kind==='activate'?'Activate rune':'Match runes';
+    renderBattle();
+    if(action.kind==='swap')for(const n of [action.a,action.b])app.querySelector(`[data-index="${n}"]`)?.classList.add('auto-choice');
+    else if(action.kind==='cast')for(const uid of [action.actor,action.target])app.querySelector(`[data-unit="${uid}"]`)?.classList.add('auto-choice');
+    autoTimer=setTimeout(()=>{autoTimer=null;if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;autoThinking=false;autoIntent='';const result=applyAutoAction(battle,action,{frames:true});if(result.error){stopAuto();renderBattle();return;}play(result);},260);
+   };
+   autoWorker.postMessage({id,state:battle});
+  }catch{stopAuto();renderBattle();toast('Auto paused. You can continue manually.');}
+ },160);
+}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseAuto();else scheduleAuto();});
+modal.addEventListener('close',scheduleAuto);
 let campaignDifficulty='normal',campaignChapter=0,dungeonDifficulty='normal',selectedEvent=null;
 let roster=[],effects={},byId=new Map(),profile,battle=null,screen='splash',busy=false,selectedRune=null,pendingCaster=null,pendingLevel=1,selectedEnemy=null,animationToken=0,noticeTimer,storage,storageWarned=false;
 try{storage=window.localStorage;}catch{storage={getItem:()=>null,setItem:()=>{throw Error('unavailable');}};}
 const persist=(key,value)=>{if(key===PROFILE_KEY&&roster.length)byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));if(!save(storage,key,value)&&!storageWarned){storageWarned=true;toast('Browser storage is unavailable. You can play, but this session cannot be saved.');}};
 function toast(text){notice.textContent=text;notice.classList.add('show');clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>notice.classList.remove('show'),4400);}
 function brand(){return `<a class="brand" href="./" data-action="home" aria-label="Legends home"><span class="brand-sigil"><img src="./assets/brand/legends-crest.webp" alt=""></span><span>LEGENDS<small>RUNES OF WAR</small></span></a>`;}
-function header(inBattle=false,page='home',guidePage=page){return `<header class="topbar ${inBattle?'battle-topbar':'with-nav'}">${brand()}${inBattle?'':Shell.navigation(page)}<div class="topbar-right">${inBattle?`<button class="icon-button" data-action="history" aria-label="Battle log">☷ <span>Log</span></button><button class="icon-button" data-action="speed" aria-label="Animation speed ${battleSpeed} times">${battleSpeed}×</button><button class="icon-button effect-guide-button" data-action="effects-guide" aria-label="Effects guide" title="Effects guide">${glyph('defense')}<span>Effects</span></button>`:`${Shell.wallet(profile)}<button class="icon-button inventory-button" data-action="nav" data-page="inventory" aria-label="Inventory">${Shell.uiIcon('inventory')}<span>Inventory</span></button><button class="icon-button" data-action="nav" data-page="settings" aria-label="Settings">${Shell.uiIcon('settings')}</button>`}<button class="icon-button header-guide" data-action="help" data-topic="${guideTopics[guidePage]||'overview'}" aria-label="Guide"><span aria-hidden="true">?</span><span>Guide</span></button></div></header>`;}
+function header(inBattle=false,page='home',guidePage=page){return `<header class="topbar ${inBattle?'battle-topbar':'with-nav'}">${brand()}${inBattle?'':Shell.navigation(page)}<div class="topbar-right">${inBattle?`<button class="icon-button" data-action="history" aria-label="Battle log">☷ <span>Log</span></button><button class="icon-button" data-action="speed" aria-label="Animation speed ${battleSpeed} times" ${autoEnabled?'disabled title="Auto uses ×2 speed"':''}>${battleSpeed}×</button><button class="auto-battle-toggle ${autoEnabled?'active':''}" data-action="auto-battle" aria-label="Auto battle" aria-pressed="${autoEnabled}" ${battle?.phase!=='playing'?'disabled':''}>Auto ${autoEnabled?'On':'Off'}</button><button class="icon-button effect-guide-button" data-action="effects-guide" aria-label="Effects guide" title="Effects guide">${glyph('defense')}<span>Effects</span></button>`:`${Shell.wallet(profile)}<button class="icon-button inventory-button" data-action="nav" data-page="inventory" aria-label="Inventory">${Shell.uiIcon('inventory')}<span>Inventory</span></button><button class="icon-button" data-action="nav" data-page="settings" aria-label="Settings">${Shell.uiIcon('settings')}</button>`}<button class="icon-button header-guide" data-action="help" data-topic="${guideTopics[guidePage]||'overview'}" aria-label="Guide"><span aria-hidden="true">?</span><span>Guide</span></button></div></header>`;}
 function elementLegend(){return `<div class="element-guide"><span class="element red">${rune('red')} Ember</span><b>›</b><span class="element green">${rune('green')} Verdant</span><b>›</b><span class="element blue">${rune('blue')} Frost</span><b>›</b><span class="element red small">${rune('red')}</span><span class="guide-divider"></span><span class="element yellow">${rune('yellow')}</span><b>⇄</b><span class="element purple">${rune('purple')}</span></div>`;}
 function renderHome(){
   clearBattleEffects();screen='home';busy=false;pendingCaster=null;selectedRune=null;animationToken++;
@@ -60,13 +89,14 @@ function renderBattle(state=battle,frame={}){
   const last=state.log[state.log.length-1],readyCount=state.heroes.filter(u=>u.hp>0&&readyLevel(u)).length;
   app.innerHTML=`${header(true)}<main class="battle-shell"><div class="battle-pressure-vignette ${pressure.critical?'pressure-critical':''}" style="--battle-pressure:${pressure.intensity}" aria-hidden="true"></div><section class="battle-center encounter-battle" data-mode="${stage.mode}" data-difficulty="${stage.difficulty}" style="--encounter-art:url('${new URL(stage.art,document.baseURI).href}')" data-scene="${stage.id}" aria-label="Puzzle battle"><div class="battle-sky"><div class="battle-sky-shade"></div><div class="battle-title"><button class="encounter-tactics-button" data-action="encounter-tactics" aria-label="Encounter tactics" title="Encounter tactics">${glyph('defense')}</button><button class="mobile-back" data-action="home" aria-label="Abandon battle and return home">←</button></div><div class="enemy-line" data-scenario-phase="${state.scenario?.triggered?'triggered':state.scenario?'waiting':'none'}">${state.enemies.map((u,i)=>`<article class="enemy-unit ${u.color} ${u.hp<=0?'fallen':''} ${frame.actor===u.uid?'attacking':''} ${i===1&&state.scenario?.triggered&&u.hp>0?'guardian-phase-active '+(state.scenario.id==='iron-overpressure'?'overpressure-active':'last-light-active'):''} ${selectedEnemy===u.uid?'targeted':''}" style="grid-column:${stage.mode==='arena'?'auto':`${u.lanes[0]+1} / span ${u.lanes.length}`}" data-unit="${u.uid}"><button class="enemy-target" data-action="enemy" data-uid="${u.uid}" aria-label="Target ${esc(u.name)}, ${u.hp} health, attacks in ${u.countdown} moves" ${u.hp<=0?'disabled':''}><span class="enemy-countdown">⚔ <b>${u.countdown}</b></span><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640"><span class="enemy-ground"></span><span class="enemy-name">${esc(u.name)}</span><span class="enemy-hp hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i></span><span class="enemy-hp-label">${Math.ceil(u.hp)} / ${u.maxHp}${u.shield?' + '+u.shield+' ◈':''}</span><span class="enemy-mana" aria-label="Special charge ${chargeText(u.mana)} of ${u.manaMax}"><i style="width:${percent(u.mana,u.manaMax)}%"></i></span><span class="enemy-element">${rune(u.color)}</span></button><button class="enemy-info" data-action="inspect-unit" data-uid="${u.uid}" aria-label="Enemy ability details for ${esc(u.name)}">i</button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div><div class="attack-lanes" aria-label="Seven attack lanes">${Array.from({length:7},(_,column)=>{const target=state.enemies.find(e=>e.hp>0&&e.lanes.includes(column));return `<span class="lane-track ${target?'':'lane-empty'} ${frame.shots?.some(s=>s.index%7===column)?'lane-active':''}" data-lane="${column}" data-lane-target="${target?.uid||''}" role="img" aria-label="Lane ${column+1}: ${target?esc(target.name):'empty, double mana'}" title="${target?esc(target.name):'Empty lane · double mana'}"><i></i><b>${target?'⌃':'◇'}</b></span>`;}).join('')}</div></div>
   <div class="board-surround"><div class="board ${busy?'resolving':''}" role="grid" aria-label="Seven column, five row runeboard" aria-rowcount="5" aria-colcount="7" data-testid="board">${state.board.map((t,i)=>`<button class="tile ${t.color} ${t.special?'special '+t.special:''} ${selectedRune===i?'selected':''} ${cleared.has(i)?'matched':''} ${frame.kind==='fall'?'falling':''}" role="gridcell" aria-rowindex="${Math.floor(i/7)+1}" aria-colindex="${i%7+1}" data-action="tile" data-index="${i}" data-tile-id="${t.id}" aria-selected="${selectedRune===i}" aria-label="${ELEMENTS[t.color].name}${t.special?' '+(t.special==='prism'?'Prismatic Rune':'Blast Rune'):' rune'}, row ${Math.floor(i/7)+1}, column ${i%7+1}" ${busy?'disabled':''} style="--tile-order:${Math.floor(i/7)}"><img class="rune-art" src="./assets/runes/${t.color}${t.special?'-'+t.special:''}.svg" alt="" width="256" height="256" draggable="false">${t.special?`<span class="special-mark" aria-hidden="true">${t.special==='prism'?'5+':'4'}</span>`:''}</button>`).join('')}</div></div>
-  <div class="battle-feedback" role="status" aria-live="polite">${actor?`<strong>${esc(actor.special.name)}</strong> · Choose ${castingSpec.target==='ally'?'an ally':'an enemy'} <button data-action="cancel-cast">Cancel</button>`:busy?(frame.kind==='match'?`${frame.combo||1}×`:''):readyCount?'Tap a glowing champion to use their Special':''}</div>
+  <div class="battle-feedback" role="status" aria-live="polite">${actor?`<strong>${esc(actor.special.name)}</strong> · Choose ${castingSpec.target==='ally'?'an ally':'an enemy'} <button data-action="cancel-cast">Cancel</button>`:busy?(frame.kind==='match'?`${frame.combo||1}×`:''):autoEnabled?`Auto · ${esc(autoIntent||'Choosing next action…')}`:readyCount?'Tap a glowing champion to use their Special':''}</div>
   <div class="hero-line">${state.heroes.map(u=>`<article class="hero-unit ${u.color} ${u.hp<=0?'fallen':''} ${readyLevel(u)?'charged':''} ${pendingCaster===u.uid?'casting':''} ${frame.actor===u.uid?'attacking':''}" data-unit="${u.uid}"><button class="hero-main" data-action="hero" data-uid="${u.uid}" aria-label="${esc(u.name)}, ${u.hp} health, ${chargeText(u.mana)} of ${u.manaMax} tile charge, ${manaLabel(u)}${readyLevel(u)?', Special ready'+(u.special.charging?', charge '+readyLevel(u):''):''}" ${u.hp<=0?'disabled':''}><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640"><div class="hero-shade"></div>${rankTrack(u,profile)}${readyLevel(u)?`<span class="special-state">${glyph('speed')}${u.special.charging?'READY · '+readyLevel(u):'READY'}</span>`:''}<span class="hero-name">${esc(u.name)}</span><span class="hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i></span><span class="hero-health">${Math.ceil(u.hp)}${u.shield?' + '+u.shield+' ◈':''}</span>${manaBar(u)}<span class="mana-label">${u.hp<=0?'✕':readyLevel(u)?'TAP FOR SPECIAL':'CHARGING'}</span><span class="hero-mana-speed">${speedMark(u)}</span><span class="hero-element">${rune(u.color)}</span></button><button class="hero-info" data-action="inspect-unit" data-uid="${u.uid}" aria-label="Ability details for ${esc(u.name)}">i</button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div>
   </section>
 </main>`;
   if(focusedIndex!==undefined&&!busy)app.querySelector(`[data-index="${focusedIndex}"]`)?.focus({preventScroll:true});
   if(frame.kind&&previous)animateNumbers(previous,state);
   paintLanePreview(selectedRune);
+  scheduleAuto();
   if(frame.kind==='match')animateLaneShots(frame,state,app,{speed:battleSpeed,reduced:reducedAnimation()});
   if(['enemy','skill','mechanic','passive'].includes(frame.kind)&&previous)animateSpecial(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation()});
   if(frame.kind&&previous)animateBattleFeedback(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation()});
@@ -87,15 +117,15 @@ async function play(result){
   battle=result.state;settleVictory();persist(PROFILE_KEY,profile);
   busy=true;pendingCaster=null;selectedRune=null;const token=++animationToken;
   for(const frame of result.frames){if(token!==animationToken)return;renderBattle(frame.state,frame);const ms={swap:160,match:650,fall:260,enemy:750,upkeep:450,skill:1250,mechanic:1250,passive:950,shuffle:600,settled:50,result:400}[frame.kind]||300;await new Promise(resolve=>setTimeout(resolve,(window.matchMedia('(prefers-reduced-motion: reduce)').matches)?50:ms/battleSpeed));}
-  if(token!==animationToken)return;busy=false;renderBattle();if(focusAfter!==undefined)app.querySelector(`[data-index="${focusAfter}"]`)?.focus({preventScroll:true});if(battle.phase!=='playing')showResult();
+  if(token!==animationToken)return;busy=false;renderBattle();if(focusAfter!==undefined)app.querySelector(`[data-index="${focusAfter}"]`)?.focus({preventScroll:true});if(battle.phase!=='playing'){stopAuto();renderBattle();showResult();}
 }
 function start(stageId){
   const error=entryError(profile,stageId);if(error){toast(error);return;}
-  const begin=()=>{const seed=crypto.getRandomValues(new Uint32Array(1))[0];battle=createBattle(battleRoster(profile,roster),profile.team,stageId,seed,{progression:true,sandbox:profile.openRoster,awakenings:profile.awakenings,ascensions:profile.ascensions,levels:Object.fromEntries(profile.team.map(id=>[id,heroDevelopment(profile,byId.get(id)).level]))});const reserved=reserveEntry(profile,battle);if(reserved.error){toast(reserved.error);battle=null;return;}profile=reserved.profile;battle=reserved.battle;battleSpeed=1;persist(PROFILE_KEY,profile);selectedEnemy=battle.enemies[1].uid;go('battle');if(!profile.helpSeen){profile.helpSeen=true;persist(PROFILE_KEY,profile);showHelp();}};
+  const begin=()=>{const seed=crypto.getRandomValues(new Uint32Array(1))[0];battle=createBattle(battleRoster(profile,roster),profile.team,stageId,seed,{progression:true,sandbox:profile.openRoster,awakenings:profile.awakenings,ascensions:profile.ascensions,levels:Object.fromEntries(profile.team.map(id=>[id,heroDevelopment(profile,byId.get(id)).level]))});const reserved=reserveEntry(profile,battle);if(reserved.error){toast(reserved.error);battle=null;return;}stopAuto();profile=reserved.profile;battle=reserved.battle;battleSpeed=1;persist(PROFILE_KEY,profile);selectedEnemy=battle.enemies[1].uid;go('battle');if(!profile.helpSeen){profile.helpSeen=true;persist(PROFILE_KEY,profile);showHelp();}};
 
   begin();
 }
-function openModal(title,body,view='info'){modal.dataset.view=view;modalContent.innerHTML=`<header class="modal-header"><div><span class="eyebrow">LEGENDS · RUNES OF WAR</span><h2 id="modal-title">${title}</h2></div><button class="icon-button" data-action="close" aria-label="Close dialog">×</button></header><div class="modal-body">${body}</div>`;if(!modal.open)modal.showModal();}
+function openModal(title,body,view='info'){pauseAuto();modal.dataset.view=view;modalContent.innerHTML=`<header class="modal-header"><div><span class="eyebrow">LEGENDS · RUNES OF WAR</span><h2 id="modal-title">${title}</h2></div><button class="icon-button" data-action="close" aria-label="Close dialog">×</button></header><div class="modal-body">${body}</div>`;if(!modal.open)modal.showModal();}
 function settleVictory(){if(['victory','defeat'].includes(battle?.phase)&&(['arena','event'].includes(getEncounter(battle.stageId)?.mode)||battle.phase==='victory')&&!battle.sandbox&&!profile.recorded.includes(battle.id)){
  const reward=victoryRewards(profile,battle),before=profile;profile=recordVictory(profile,battle,roster);
  battle.rewardSummary={...reward,growth:reward.xp?battle.heroes.filter(h=>before.collection[h.id]).map(h=>{const c=byId.get(h.id),old=heroDevelopment(before,c),next=heroDevelopment(profile,c);return {id:h.id,name:h.name,portrait:h.portrait,before:old.level,after:next.level,gained:(profile.heroXp[h.id]||0)-(before.heroXp[h.id]||0),cap:next.cap,ratio:next.ratio};}):[]};
@@ -126,10 +156,12 @@ function renderRoster(){
   modalContent.querySelectorAll('[data-action="filter"]').forEach(b=>b.classList.toggle('active',b.dataset.color===rosterFilter));
 }
 function tapTile(index){if(busy||screen!=='battle'||pendingCaster)return;if(selectedRune===index){if(battle.board[index].special)play(activate(battle,index));else{selectedRune=null;renderBattle();}return;}if(selectedRune!==null){const a=selectedRune;selectedRune=null;play(swap(battle,a,index));if(!busy)renderBattle();}else{selectedRune=index;renderBattle();}}
-function closeModal(){if(modal.open)modal.close();modal.dataset.view='';}
+function closeModal(){if(modal.open)modal.close();modal.dataset.view='';scheduleAuto();}
 document.addEventListener('click',event=>{
   const button=event.target.closest('[data-action]');if(!button||button.disabled)return;const {action,id,uid,stage,color,index}=button.dataset;
   if(button.tagName==='A')event.preventDefault();
+  if(['tile','hero','enemy','choose-charge'].includes(action)&&autoEnabled){stopAuto();if(screen==='battle'&&!busy)renderBattle();}
+  if(action==='auto-battle'){if(!battle||battle.phase!=='playing')return;if(autoEnabled)stopAuto();else{manualBattleSpeed=battleSpeed;autoEnabled=true;battleSpeed=2;pendingCaster=null;selectedRune=null;}if(!busy)renderBattle();else{button.textContent=autoEnabled?'Auto On':'Auto Off';button.setAttribute('aria-pressed',String(autoEnabled));button.classList.toggle('active',autoEnabled);}return;}
   if(action==='encounter-tactics'){const state=displayedBattle||battle,stage=getEncounter(state.stageId);openModal(esc(stage.name),encounterTactics(stage,state)||`<p>${esc(stage.description)}</p><p>Defeat the enemy warband. Read attack countdowns, elements and lanes.</p>`,'tactics');return;}
   if(action==='dossier-section'){document.getElementById(button.dataset.section)?.scrollIntoView({behavior:reducedAnimation()?'instant':'smooth',block:'start'});return;}
   if(action==='material-preview'){openModal('Acquire material',materialConfirmation(profile,id),'material');return;}
@@ -202,7 +234,7 @@ modal.addEventListener('click',event=>{if(event.target===modal)closeModal();});
 modal.addEventListener('close',()=>{modal.dataset.view='';});
 document.addEventListener('input',event=>{if(event.target.id==='champion-search'){rosterQuery=event.target.value;renderRoster();}});
 let drag=null,suppressClickUntil=0;
-app.addEventListener('pointerdown',event=>{const tile=event.target.closest('[data-index]');if(tile&&!busy&&!pendingCaster){drag={index:Number(tile.dataset.index),x:event.clientX,y:event.clientY};}});
+app.addEventListener('pointerdown',event=>{const tile=event.target.closest('[data-index]');if(tile&&!busy&&!pendingCaster){if(autoEnabled)stopAuto();drag={index:Number(tile.dataset.index),x:event.clientX,y:event.clientY};}});
 app.addEventListener('pointerup',event=>{if(!drag)return;const old=drag;drag=null;const distance=Math.hypot(event.clientX-old.x,event.clientY-old.y);if(distance<14)return;const target=document.elementFromPoint(event.clientX,event.clientY)?.closest('[data-index]');if(target){event.preventDefault();suppressClickUntil=Date.now()+400;selectedRune=null;play(swap(battle,old.index,Number(target.dataset.index)));}});
 // Suppress the synthetic click after a drag before the delegated click handler runs.
 app.addEventListener('click',event=>{if(Date.now()<suppressClickUntil&&event.target.closest('[data-index]')){event.stopPropagation();event.preventDefault();}},true);
@@ -210,6 +242,7 @@ app.addEventListener('pointercancel',()=>{drag=null;});
 app.addEventListener('keydown',event=>{const tile=event.target.closest('[data-index]');if(!tile)return;const i=Number(tile.dataset.index),delta={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[event.key];if(delta){event.preventDefault();const n=i+delta;if(n>=0&&n<35&&(!(Math.abs(delta)===1)||Math.floor(i/7)===Math.floor(n/7)))app.querySelector(`[data-index="${n}"]`)?.focus();}});
 let collectionFilters={...DEFAULT_FILTERS},summoning=false,summonToken=0,portalReveal=null;
 function abandonBattle(){
+  stopAuto();
   clearBattleEffects();
   animationToken++;busy=false;battle=null;displayedBattle=null;pendingCaster=null;selectedRune=null;selectedEnemy=null;
   clearBattleSave(storage);
@@ -223,7 +256,7 @@ function renderRoute(){
   document.body.classList.toggle('reduce-animation',reducedAnimation());
   const raw=location.hash.replace(/^#\/?/,'')||'splash',parts=raw.split('/'),page=parts[0];
   if(page!=='battle'&&battle)abandonBattle();
-  animationToken++;busy=false;pendingCaster=null;selectedRune=null;closeModal();clearBattleEffects();
+  pauseAuto();animationToken++;busy=false;pendingCaster=null;selectedRune=null;closeModal();clearBattleEffects();
   if(page!=='summon'){summonToken++;summoning=false;portalReveal=null;}
   if(page==='splash'){screen='splash';app.innerHTML=Shell.splash();}
   else if(page==='home')renderHome();
