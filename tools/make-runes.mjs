@@ -5,4 +5,4 @@ for(const color of ['red','blue','green','yellow','purple'])for(const suffix of 
  const file=`assets/runes/${color}${suffix}.svg`,art=await readFile(file,'utf8');
  if(!art.includes('viewBox="0 0 320 320"')||!art.includes('data:image/webp;base64,')||art.length<10000)throw Error('Invalid curated tile artwork: '+file);
 }
-console.log('Verified fifteen high-density rune artworks: shields, dragon crests and prismatic gems.');
+console.log('Verified fifteen high-density rune artworks: five distinct elemental silhouettes with Blast and Prism badges.');
