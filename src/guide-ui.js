@@ -1,11 +1,10 @@
+import {SUMMON_ODDS} from './progression.js';
 import {heroInsight} from './tactics-ui.js';
 // Keep only rules that cannot be read directly from the controls.
-export const guideTopics={roster:'growth',champion:'growth',shop:'rewards',summon:'summon',daily:'rewards',quests:'rewards',events:'adventure',arena:'adventure',inventory:'rewards',settings:'account',campaign:'adventure',dungeons:'adventure',world:'adventure'};
+export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
 const battleRules=[
- ['Elements','Red → Green → Blue → Red. Yellow and Purple are strong against each other.'],
+ ['Elements','<img class="element-advantages" src="./assets/guide/element-advantages.webp" alt="Red beats Green; Green beats Blue; Blue beats Red. Yellow and Purple are strong against each other.">'],
  ['Mana','Empty lanes give double mana. Specials spend all charge without using a turn. Enemies gain 4 charge per attack opportunity.'],
- ['Special runes','Match 4: Blast. Match 5+: Prism. Activate by swapping or tapping twice.'],
- ['Auto & speed','Auto plays at ×2; manual input takes over. Each battle resets to ×1 with Auto off.'],
 ];
 const topics=[
  ['battles','Battles',battleRules],
@@ -14,20 +13,9 @@ const topics=[
   ['Ascension','New tiers restart at level 1, keeping power and adding 2% stats. Copies grow independently; Codex shows maximum stats.'],
   ['Limit Break','Rare and higher: two breaks after full ascension, each adding 5 levels and 3% stats. Break 2 grants a two-move opening buff based on role.'],
  ]],
- ['adventure','Events & Arena',[
-  ['Event dates','Los Angeles time: Crimson Eclipse 1–8; Frostwake Siege 9–16; Veil of Umbra 17–24.'],
-  ['Attempts','20 per event window. Entering spends one, including abandoned fights. Arena opponents are preset teams.'],
- ]],
  ['summon','Summoning',[
+  ['Summoning Odds',SUMMON_ODDS.map(o=>`${o.rarity==='double_common'?'Two Commons':o.rarity[0].toUpperCase()+o.rarity.slice(1)}: ${o.chance}%`).join(' · ')],
   ['Ten calls','Guarantees a Rare or better. Two-Common results still occur; if needed, the final call becomes one Rare.'],
- ]],
- ['rewards','Rewards',[
-  ['Daily reset','Midnight in Los Angeles. Missed days keep your calendar progress.'],
-  ['Counting progress','Daily gifts and quest Gems count toward Today’s Path. Collection quests count different hero designs, not copies.'],
- ]],
- ['account','Saves',[
-  ['Your save','Progress belongs to this browser; clearing its data deletes it. Leaving or refreshing abandons unfinished battles.'],
-  ['Playtesting','Open-roster battles grant no rewards or progress.'],
  ]],
 ];
 export function guideHTML(id='overview',champion=null){

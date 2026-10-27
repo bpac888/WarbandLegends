@@ -1,5 +1,5 @@
 /* Phone header: identity and help, resources, then evenly spaced destinations. */
-@media(max-width:600px){
+@media(max-width:760px){
  .topbar.with-nav{display:grid;grid-template-columns:minmax(0,1fr) 38px 82px;grid-template-rows:64px 38px 44px;gap:8px;padding:6px max(10px,env(safe-area-inset-right)) 10px max(10px,env(safe-area-inset-left));height:auto;min-height:0;align-items:center}
  .topbar.with-nav .topbar-right{display:contents}
  .topbar.with-nav .brand{grid-column:1;grid-row:1;gap:7px;min-width:0}

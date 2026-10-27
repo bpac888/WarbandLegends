@@ -1,0 +1,37 @@
+/* Compact profile, full-color artwork, and no obsolete bottom-nav spacer. */
+body:has(.home-shell){padding-bottom:0}
+.home-shell{max-width:1320px;padding:10px 16px 12px}
+.home-shell .keeper-panel{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:10px;align-items:center;margin:0 0 12px;padding:10px 12px;border-radius:12px}
+.home-shell .keeper-panel>img{width:48px;height:48px}
+.home-shell .keeper-panel .eyebrow{font-size:8px;letter-spacing:.08em}
+.home-shell .keeper-panel h2{font-size:23px;line-height:1.15;margin:3px 0 5px;white-space:nowrap}
+.home-shell .keeper-panel h2 small{font-size:12px}
+.home-shell .keeper-panel>div>small{font-size:10px;line-height:1.2}
+.home-shell .keeper-panel .keeper-xp{margin:4px 0;height:5px}
+.home-shell .keeper-panel>.button{width:auto;min-height:44px;padding:8px 12px;font-size:11px;line-height:1.25;letter-spacing:.02em;justify-content:center}
+.home-shell .citadel-destinations{max-width:none;gap:12px;margin:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.home-shell .citadel-destination{aspect-ratio:auto}
+.home-shell .citadel-destination>img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;opacity:1;mask-image:none;filter:brightness(1.28);transform:none}
+.home-shell .citadel-destination::before,.home-shell .citadel-destination::after{display:none}
+.home-shell .citadel-destination>span{position:static;inset:auto;background:#242729;padding:10px 12px;gap:4px}
+.home-shell .citadel-destination strong{font-size:clamp(18px,2.3vw,24px);line-height:1.2}
+.home-shell .citadel-destination em{font-size:10px;line-height:1.2}
+@media(max-width:600px){
+ .home-shell{padding:8px 8px 10px}
+ .home-shell .keeper-panel{grid-template-columns:44px minmax(0,1fr) 100px;gap:8px;padding:8px;margin-bottom:10px}
+ .home-shell .keeper-panel>img{width:44px;height:44px}
+ .home-shell .keeper-panel .eyebrow{font-size:7px}
+ .home-shell .keeper-panel h2{font-size:20px;margin:2px 0 4px}
+ .home-shell .keeper-panel h2 small{font-size:10px}
+ .home-shell .keeper-panel>div>small{font-size:9px}
+ .home-shell .keeper-panel>.button{width:100%;padding:7px 5px;font-size:10px;white-space:normal}
+ .home-shell .citadel-destinations{gap:10px}
+ .home-shell .citadel-destination>span{padding:9px 10px;gap:3px}
+}
+
+@media(max-width:600px){
+ .home-shell .citadel-destination>img{height:max(calc((100svh - 390px)/2),calc((100vw - 26px)/2));aspect-ratio:auto;object-fit:cover;object-position:center}
+}
+/* Three Adventure areas remain after keeping Shop in the Tavern. */
+.page-world .world-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:760px){.page-world .world-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-world .world-card:last-child{grid-column:1/-1}}

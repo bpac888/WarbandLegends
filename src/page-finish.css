@@ -153,3 +153,7 @@
   .topbar.with-nav { grid-template-rows: 68px 38px 47px; min-height: 163px; }
   .battle-topbar .brand-sigil { width: 34px; height: 42px; }
 }
+
+/* Keep dialog action buttons steady while hovering or scrolling into view. */
+#modal .button{transition:background-color .15s,border-color .15s,box-shadow .15s}
+#modal .button:hover:not(:disabled){transform:none}

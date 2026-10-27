@@ -7,11 +7,11 @@ const roster=JSON.parse(await readFile('data/champions.json','utf8'));
 if(roster.length!==135||new Set(roster.map(c=>c.id)).size!==135)throw Error('Roster identity check failed');
 for(const c of roster){if(!/^assets\/champions\/[a-zA-Z0-9_ -]+\.webp$/.test(c.portrait)||(await stat(c.portrait)).size<1000)throw Error(`Missing portrait: ${c.id}`);}
 for(const color of ['red','blue','green','yellow','purple'])for(const suffix of ['','-blast','-prism'])if((await stat(`assets/runes/${color}${suffix}.svg`)).size<10000)throw Error('Missing rune artwork: '+color+suffix);
-for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/world-map.svg','assets/brand/warband-crest.webp','assets/brand/warband-favicon.png','assets/brand/warband-touch.png','assets/brand/warband-wordmark.png'])if((await stat(path)).size<500)throw Error('Missing brand artwork');
+for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/world-map.svg','assets/brand/warband-crest.webp','assets/brand/warband-favicon.png','assets/brand/warband-touch.png','assets/brand/warband-wordmark.png','assets/guide/element-advantages.webp'])if((await stat(path)).size<500)throw Error('Missing brand artwork');
 for(const e of ENCOUNTERS)if(e.enemyIds.some(id=>!roster.some(c=>c.id===id)))throw Error('Unknown encounter champion: '+e.id);
 for(const path of [...DIFFICULTIES.map(d=>d.art),...DUNGEONS.map(d=>d.art),'assets/dungeons/magma-wyrm.svg',...['altar','adventure','codex','exchange','arena'].map(id=>'assets/destinations/'+id+'.svg'),...['crimson-eclipse','frostwake-siege','veil-of-umbra'].map(id=>'assets/events/'+id+'.svg')])if((await stat(path)).size<1000)throw Error('Missing adventure artwork: '+path);
 for(const m of MATERIALS)if((await stat('assets/items/'+m.id+'.webp')).size<5000)throw Error('Missing new material artwork: '+m.id);
-for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inventory-gems','settings-gear'])if((await stat('assets/items/'+id+'.webp')).size<5000)throw Error('Missing shop artwork: '+id);
+for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inventory-gems','settings-gear','quest-scrolls','tavern-house'])if((await stat('assets/items/'+id+'.webp')).size<5000)throw Error('Missing shop artwork: '+id);
 for(const id of AVATARS)if((await stat('assets/portraits/'+id+'.svg')).size<1000)throw Error('Missing profile artwork: '+id);
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
 for(const path of ['index.html','manifest.webmanifest','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});

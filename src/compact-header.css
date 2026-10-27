@@ -1,0 +1,43 @@
+/* Compact Bag control and a dedicated, accessible quest-scroll shortcut. */
+.topbar.with-nav .inventory-button{min-width:52px;padding:7px 10px;font-size:12px;letter-spacing:.02em}
+.topbar.with-nav .inventory-button>span{display:inline}
+.topbar.with-nav .game-nav>.quests-shortcut,.topbar.with-nav .game-nav>.home-shortcut{display:flex;align-items:center;justify-content:center;width:44px;min-width:44px;min-height:44px;flex:0 0 44px;padding:4px}
+.quests-nav-art,.home-nav-art{display:block;width:30px;height:30px;object-fit:contain;flex-shrink:0;filter:none}
+@media(max-width:760px){
+ .topbar.with-nav{grid-template-columns:minmax(0,1fr) 40px 72px;grid-template-rows:56px 40px 44px;gap:6px;padding-top:6px;padding-bottom:8px}
+ .topbar.with-nav .brand-sigil{width:56px;height:56px}
+ .topbar.with-nav .topbar-right>[data-page="settings"]{width:40px;min-width:40px;height:40px;min-height:40px}
+ .topbar.with-nav .topbar-right>.header-guide{height:40px;min-height:40px;font-size:11px;gap:5px}
+ .topbar.with-nav .game-wallet>span{height:40px;min-height:40px}
+ .topbar.with-nav .topbar-right>.inventory-button{width:100%;height:40px;min-height:40px;font-size:12px;padding:6px}
+ .topbar.with-nav .game-nav{grid-template-columns:44px repeat(3,minmax(0,1fr)) 44px;gap:5px}
+ .topbar.with-nav .game-nav>button{font-size:11px}
+ .topbar.with-nav .game-nav>.quests-shortcut,.topbar.with-nav .game-nav>.home-shortcut{width:44px}
+}
+@media(max-width:350px){.topbar.with-nav .game-nav{gap:4px}.topbar.with-nav .game-nav>button{font-size:10px}}
+
+@media(min-width:761px) and (max-width:1200px){
+ .topbar.with-nav{height:auto;min-height:108px;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:55px 46px;gap:0 10px;padding:4px 18px 7px}
+ .topbar.with-nav .brand{grid-column:1;grid-row:1}
+ .topbar.with-nav .brand-sigil{width:52px;height:52px}
+ .topbar.with-nav .topbar-right{grid-column:2;grid-row:1}
+ .topbar.with-nav .game-nav{grid-column:1/-1;grid-row:2;width:100%;justify-content:space-between;gap:5px}
+ .topbar.with-nav .game-nav>button{flex:1;min-height:44px;font-size:12px}
+ .topbar.with-nav .game-nav>.quests-shortcut,.topbar.with-nav .game-nav>.home-shortcut{flex:0 0 44px}
+}
+
+/* Currency chips fit their contents instead of stretching across the row. */
+.topbar.with-nav .game-wallet{display:flex;gap:6px;align-items:center;justify-content:flex-start}
+.topbar.with-nav .game-wallet>span{width:auto;flex:0 1 auto;min-width:0;padding:5px 6px;gap:4px}
+
+@media(min-width:761px) and (max-width:900px){
+ .topbar.with-nav .brand{gap:7px}
+ .topbar.with-nav .brand-sigil{width:44px;height:44px}
+ .topbar.with-nav .brand .brand-name{width:126px}
+ .topbar.with-nav .topbar-right{gap:5px}
+}
+
+.topbar.with-nav .brand{justify-self:start;max-width:100%}
+
+/* Let the shared navigation meet each page without a divider or shadow. */
+.topbar{border-bottom:0;box-shadow:none}
