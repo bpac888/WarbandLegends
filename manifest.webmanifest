@@ -1,12 +1,18 @@
 {
   "id": "./",
-  "name": "Legends · Runes of War",
-  "short_name": "Legends",
+  "name": "Warband Legends \u00b7 Runes of War",
+  "short_name": "Warband Legends",
   "description": "A single-player match-3 RPG.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#292329",
   "theme_color": "#292329",
-  "icons": [{"src": "./assets/brand/legends-favicon.png", "sizes": "128x128", "type": "image/png"}]
+  "icons": [
+    {
+      "src": "./assets/brand/warband-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
-# Legends documentation
+# Warband Legends documentation
 
-[Back to Legends](../README.md) · [Play the game](https://legends-runes-boris.givingjoy7.chatgpt.site)
+[Back to Warband Legends](../README.md) · [Play the game](https://legends-runes-boris.givingjoy7.chatgpt.site)
 
 ## Start here
 

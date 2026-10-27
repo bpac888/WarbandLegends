@@ -1,4 +1,4 @@
-# Legends combat rules · v0.3
+# Warband Legends combat rules · v0.3
 
 ## The roster
 

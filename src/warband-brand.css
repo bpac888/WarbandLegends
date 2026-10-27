@@ -1,0 +1,6 @@
+/* One mark and title for the active game; keep save identities unchanged. */
+body .brand-prefix{display:block;font-family:var(--font-title)!important;font-weight:400;line-height:1;letter-spacing:.16em}
+.brand-name>.brand-prefix{font-size:.55em;margin-bottom:.28em}
+.splash-content h1>.brand-prefix{font-size:.46em;margin-bottom:.28em}
+.brand .brand-sigil>img,.splash-emblem>img{object-fit:contain}
+body .loading h1{font-family:var(--font-title)!important;font-weight:400}
