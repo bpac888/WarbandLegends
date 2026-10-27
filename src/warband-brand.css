@@ -1,6 +1,10 @@
-/* One mark and title for the active game; keep save identities unchanged. */
-body .brand-prefix{display:block;font-family:var(--font-title)!important;font-weight:400;line-height:1;letter-spacing:.16em}
-.brand-name>.brand-prefix{font-size:.55em;margin-bottom:.28em}
-.splash-content h1>.brand-prefix{font-size:.46em;margin-bottom:.28em}
+/* Use the supplied lettering as title artwork; save identities stay unchanged. */
+.title-wordmark{display:block;width:100%;height:auto;object-fit:contain;filter:invert(1) sepia(.25) drop-shadow(0 2px 3px #0008)}
+.brand .brand-name{display:block;width:156px;line-height:1;flex-shrink:0}
+.brand .brand-name small{margin-top:6px}
+.splash-screen .splash-content h1{font-size:inherit;line-height:1;white-space:normal}
 .brand .brand-sigil>img,.splash-emblem>img{object-fit:contain}
-body .loading h1{font-family:var(--font-title)!important;font-weight:400}
+.loading h1{width:min(80vw,500px)}
+.battle-topbar .brand .brand-name{width:90px}
+@media(max-width:600px){.topbar.with-nav .brand .brand-name{width:126px}}
+@media(max-width:350px){.topbar.with-nav .brand .brand-name{width:110px}}
