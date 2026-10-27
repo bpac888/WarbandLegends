@@ -41,3 +41,9 @@
 
 /* Let the shared navigation meet each page without a divider or shadow. */
 .topbar{border-bottom:0;box-shadow:none}
+
+/* A shared leather backpack shortcut keeps the Bag control recognizable. */
+.bag-nav-art{display:block;width:32px;height:32px;object-fit:contain;flex-shrink:0}
+.topbar.with-nav .inventory-button{padding:3px 8px}
+.topbar.with-nav .topbar-right>.header-guide{gap:0}
+@media(max-width:760px){.topbar.with-nav .topbar-right>.inventory-button{padding:3px 6px}}
