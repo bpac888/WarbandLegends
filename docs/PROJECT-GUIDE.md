@@ -31,7 +31,7 @@ node tools/serve.mjs --dist  # preview the production build
 - Campaign wins give each participating collected hero XP, including fallen allies. Replays grant XP and gold; every five victories earns 50 bonus Gems.
 - Fixed encounter strength: enemies do not scale up when your heroes improve.
 - Save export/import, collection-only or open-roster playtesting, and device-based reduced-motion support.
-- Full-art Collection/Codex cards without unowned dimming, combined element/rarity/mana/type/faction filters, name/stat sorting and clear-filter controls.
+- Full-art Collection/Codex cards without unowned dimming, Element and Rarity filters, Rarity (default) or Element sorting, and a clear-filter control.
 - A five-element crest and midnight/amethyst/gold visual identity; a portal with accelerating swirls, light trails and bright champion emergence.
 - Prominent gold READY ribbons, available charge levels, glowing mana bars, a readiness count and a tap prompt.
 - A centered battle scene without text sidebars: seven visible attack lanes, straight-column rune projectiles, target previews, and elemental damage/healing/protection animations.

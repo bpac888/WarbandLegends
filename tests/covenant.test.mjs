@@ -16,7 +16,7 @@ const ready=(s,index=2)=>{const h=s.heroes[index];h.mana=h.manaMax;return h;};
 const trigger=()=>{const s=make();s.enemies[0].hp=s.enemies[2].hp=0;const actor=ready(s);return cast(s,actor.uid,actor.uid);};
 test('second chapter authors five distinct tactics in all difficulties without changing stage identities or locks',()=>{
  for(const difficulty of ['normal','hard','nightmare']){const stages=campaignStages(difficulty).slice(5,10);assert.equal(new Set(stages.map(s=>s.tacticLabel)).size,5);for(const [i,e]of stages.entries()){assert.equal(e.number,i+6);assert.equal(e.id,`campaign-${difficulty}-${String(i+6).padStart(2,'0')}`);assert.equal(e.chapter,'The Hollow Covenant');const b=createBattle(roster,REFERENCE_TEAM,e.id,33,{progression:true});assert.ok(validateSave(b,roster),e.id);assert.match(encounterTactics(e),/Encounter tactics/);}}
- const html=campaign(referenceProfile(),{chapter:1});assert.match(html,/The Hollow Covenant/);assert.match(html,/STAGES 6–10/);assert.equal((html.match(/class="campaign-node/g)||[]).length,0);assert.equal((html.match(/class="map-node campaign-node/g)||[]).length,25);assert.match(html,/data-stage="campaign-normal-06"[^>]*disabled/);
+ const html=campaign(referenceProfile());assert.doesNotMatch(html,/class="chapter-intro"|crossing-chapters|expanded-stages/);assert.equal((html.match(/class="campaign-node/g)||[]).length,0);assert.equal((html.match(/class="map-node campaign-node/g)||[]).length,25);assert.match(html,/data-stage="campaign-normal-06"[^>]*disabled/);
 });
 test('regeneration, relay charge, ailment wards and death pacts are real opening state',()=>{
  assert.equal(make(6).enemies[1].effects.heal.turns,2);assert.equal(make(7).enemies[2].mana,8);assert.equal(make(7).enemies[2].manaMax,12);
