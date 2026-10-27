@@ -30,13 +30,14 @@ const faction=id=>id.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase()).repla
 const role=id=>({attack:'ATK',defense:'DEF',support:'SUP'}[id]||id);
 const percent=(a,b)=>Math.max(0,Math.min(100,a/b*100));
 let displayedBattle=null;
+let battleSpeed=1;
 let campaignDifficulty='normal',campaignChapter=0,dungeonDifficulty='normal',selectedEvent=null;
 let roster=[],effects={},byId=new Map(),profile,battle=null,screen='splash',busy=false,selectedRune=null,pendingCaster=null,pendingLevel=1,selectedEnemy=null,animationToken=0,noticeTimer,storage,storageWarned=false;
 try{storage=window.localStorage;}catch{storage={getItem:()=>null,setItem:()=>{throw Error('unavailable');}};}
 const persist=(key,value)=>{if(key===PROFILE_KEY&&roster.length)byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));if(!save(storage,key,value)&&!storageWarned){storageWarned=true;toast('Browser storage is unavailable. You can play, but this session cannot be saved.');}};
 function toast(text){notice.textContent=text;notice.classList.add('show');clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>notice.classList.remove('show'),4400);}
 function brand(){return `<a class="brand" href="./" data-action="home" aria-label="Legends home"><span class="brand-sigil"><img src="./assets/brand/legends-crest.webp" alt=""></span><span>LEGENDS<small>RUNES OF WAR</small></span></a>`;}
-function header(inBattle=false,page='home',guidePage=page){return `<header class="topbar ${inBattle?'battle-topbar':'with-nav'}">${brand()}${inBattle?'':Shell.navigation(page)}<div class="topbar-right">${inBattle?`<button class="icon-button" data-action="history" aria-label="Battle log">☷ <span>Log</span></button><button class="icon-button" data-action="speed" aria-label="Animation speed ${profile.speed} times">${profile.speed}×</button><button class="icon-button effect-guide-button" data-action="effects-guide" aria-label="Effects guide" title="Effects guide">${glyph('defense')}<span>Effects</span></button>`:`${Shell.wallet(profile)}<button class="icon-button inventory-button" data-action="nav" data-page="inventory" aria-label="Inventory">${Shell.uiIcon('inventory')}<span>Inventory</span></button><button class="icon-button" data-action="nav" data-page="settings" aria-label="Settings">${Shell.uiIcon('settings')}</button>`}<button class="icon-button header-guide" data-action="help" data-topic="${guideTopics[guidePage]||'overview'}" aria-label="Guide"><span aria-hidden="true">?</span><span>Guide</span></button></div></header>`;}
+function header(inBattle=false,page='home',guidePage=page){return `<header class="topbar ${inBattle?'battle-topbar':'with-nav'}">${brand()}${inBattle?'':Shell.navigation(page)}<div class="topbar-right">${inBattle?`<button class="icon-button" data-action="history" aria-label="Battle log">☷ <span>Log</span></button><button class="icon-button" data-action="speed" aria-label="Animation speed ${battleSpeed} times">${battleSpeed}×</button><button class="icon-button effect-guide-button" data-action="effects-guide" aria-label="Effects guide" title="Effects guide">${glyph('defense')}<span>Effects</span></button>`:`${Shell.wallet(profile)}<button class="icon-button inventory-button" data-action="nav" data-page="inventory" aria-label="Inventory">${Shell.uiIcon('inventory')}<span>Inventory</span></button><button class="icon-button" data-action="nav" data-page="settings" aria-label="Settings">${Shell.uiIcon('settings')}</button>`}<button class="icon-button header-guide" data-action="help" data-topic="${guideTopics[guidePage]||'overview'}" aria-label="Guide"><span aria-hidden="true">?</span><span>Guide</span></button></div></header>`;}
 function elementLegend(){return `<div class="element-guide"><span class="element red">${rune('red')} Ember</span><b>›</b><span class="element green">${rune('green')} Verdant</span><b>›</b><span class="element blue">${rune('blue')} Frost</span><b>›</b><span class="element red small">${rune('red')}</span><span class="guide-divider"></span><span class="element yellow">${rune('yellow')}</span><b>⇄</b><span class="element purple">${rune('purple')}</span></div>`;}
 function renderHome(){
   clearBattleEffects();screen='home';busy=false;pendingCaster=null;selectedRune=null;animationToken++;
@@ -66,9 +67,9 @@ function renderBattle(state=battle,frame={}){
   if(focusedIndex!==undefined&&!busy)app.querySelector(`[data-index="${focusedIndex}"]`)?.focus({preventScroll:true});
   if(frame.kind&&previous)animateNumbers(previous,state);
   paintLanePreview(selectedRune);
-  if(frame.kind==='match')animateLaneShots(frame,state,app,{speed:profile.speed,reduced:reducedAnimation()});
-  if(['enemy','skill','mechanic','passive'].includes(frame.kind)&&previous)animateSpecial(previous,state,frame,app,{speed:profile.speed,reduced:reducedAnimation()});
-  if(frame.kind&&previous)animateBattleFeedback(previous,state,frame,app,{speed:profile.speed,reduced:reducedAnimation()});
+  if(frame.kind==='match')animateLaneShots(frame,state,app,{speed:battleSpeed,reduced:reducedAnimation()});
+  if(['enemy','skill','mechanic','passive'].includes(frame.kind)&&previous)animateSpecial(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation()});
+  if(frame.kind&&previous)animateBattleFeedback(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation()});
   if(modal.open&&modal.dataset.view==='history')renderHistory(state);
 }
 function reducedAnimation(){return window.matchMedia('(prefers-reduced-motion: reduce)').matches;}
@@ -78,19 +79,19 @@ app.addEventListener('focusin',event=>{const tile=event.target.closest('[data-in
 app.addEventListener('pointerout',event=>{if(event.target.closest('.board')&&!event.relatedTarget?.closest?.('.board')&&!busy)paintLanePreview(selectedRune);});
 function animateNumbers(previous,current){for(const unit of [...current.heroes,...current.enemies]){
  const before=[...previous.heroes,...previous.enemies].find(u=>u.uid===unit.uid);if(!before||before.hp===unit.hp)continue;const target=app.querySelector(`[data-unit="${unit.uid}"]`)?.getBoundingClientRect();if(!target)continue;
- const label=document.createElement('span'),delta=Math.round(unit.hp-before.hp);label.className=`combat-number ${delta>0?'restored':'wounded'}`;label.style.cssText=`left:${target.x+target.width/2}px;top:${target.y+target.height*.42}px`;label.textContent=(delta>0?'+':'−')+Math.abs(delta);document.querySelector('#effects-layer').append(label);setTimeout(()=>label.remove(),900/profile.speed);
+ const label=document.createElement('span'),delta=Math.round(unit.hp-before.hp);label.className=`combat-number ${delta>0?'restored':'wounded'}`;label.style.cssText=`left:${target.x+target.width/2}px;top:${target.y+target.height*.42}px`;label.textContent=(delta>0?'+':'−')+Math.abs(delta);document.querySelector('#effects-layer').append(label);setTimeout(()=>label.remove(),900/battleSpeed);
 }}
 async function play(result){
   if(result.error){toast(result.error);return;}
   const focusAfter=document.activeElement?.dataset.index;
   battle=result.state;settleVictory();persist(PROFILE_KEY,profile);
   busy=true;pendingCaster=null;selectedRune=null;const token=++animationToken;
-  for(const frame of result.frames){if(token!==animationToken)return;renderBattle(frame.state,frame);const ms={swap:160,match:650,fall:260,enemy:750,upkeep:450,skill:1250,mechanic:1250,passive:950,shuffle:600,settled:50,result:400}[frame.kind]||300;await new Promise(resolve=>setTimeout(resolve,(window.matchMedia('(prefers-reduced-motion: reduce)').matches)?50:ms/profile.speed));}
+  for(const frame of result.frames){if(token!==animationToken)return;renderBattle(frame.state,frame);const ms={swap:160,match:650,fall:260,enemy:750,upkeep:450,skill:1250,mechanic:1250,passive:950,shuffle:600,settled:50,result:400}[frame.kind]||300;await new Promise(resolve=>setTimeout(resolve,(window.matchMedia('(prefers-reduced-motion: reduce)').matches)?50:ms/battleSpeed));}
   if(token!==animationToken)return;busy=false;renderBattle();if(focusAfter!==undefined)app.querySelector(`[data-index="${focusAfter}"]`)?.focus({preventScroll:true});if(battle.phase!=='playing')showResult();
 }
 function start(stageId){
   const error=entryError(profile,stageId);if(error){toast(error);return;}
-  const begin=()=>{const seed=crypto.getRandomValues(new Uint32Array(1))[0];battle=createBattle(battleRoster(profile,roster),profile.team,stageId,seed,{progression:true,sandbox:profile.openRoster,awakenings:profile.awakenings,ascensions:profile.ascensions,levels:Object.fromEntries(profile.team.map(id=>[id,heroDevelopment(profile,byId.get(id)).level]))});const reserved=reserveEntry(profile,battle);if(reserved.error){toast(reserved.error);battle=null;return;}profile=reserved.profile;battle=reserved.battle;persist(PROFILE_KEY,profile);selectedEnemy=battle.enemies[1].uid;go('battle');if(!profile.helpSeen){profile.helpSeen=true;persist(PROFILE_KEY,profile);showHelp();}};
+  const begin=()=>{const seed=crypto.getRandomValues(new Uint32Array(1))[0];battle=createBattle(battleRoster(profile,roster),profile.team,stageId,seed,{progression:true,sandbox:profile.openRoster,awakenings:profile.awakenings,ascensions:profile.ascensions,levels:Object.fromEntries(profile.team.map(id=>[id,heroDevelopment(profile,byId.get(id)).level]))});const reserved=reserveEntry(profile,battle);if(reserved.error){toast(reserved.error);battle=null;return;}profile=reserved.profile;battle=reserved.battle;battleSpeed=1;persist(PROFILE_KEY,profile);selectedEnemy=battle.enemies[1].uid;go('battle');if(!profile.helpSeen){profile.helpSeen=true;persist(PROFILE_KEY,profile);showHelp();}};
 
   begin();
 }
@@ -176,7 +177,7 @@ document.addEventListener('click',event=>{
   if(action==='feed-preview'){const target=byId.get(id);if(!target)return;if(!availableDonors(profile,target,roster,battle).length){toast('Collect a spare Common or Rare hero to train this champion.');return;}openModal('Train with Common & Rare heroes',feedingConfirmation(profile,target,roster,battle),'feeding');return;}
   if(action==='feed-confirm'){const donors=[...modalContent.querySelectorAll('[name="feed-copy"]:checked')].map(n=>n.value);const r=consumeHeroes(profile,byId.get(id),donors,roster,{battle,expectedXp:Number(button.dataset.xp)});if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderChampionPage(id);toast('Training complete · +'+r.gained+' XP · level '+r.before+' → '+r.after+'.');return;}
   if(action==='history'){renderHistory();return;}
-  if(action==='speed'){profile.speed=profile.speed===1?2:1;persist(PROFILE_KEY,profile);button.textContent=`${profile.speed}×`;button.setAttribute('aria-label',`Animation speed ${profile.speed} times`);return;}
+  if(action==='speed'){battleSpeed=battleSpeed===1?2:1;button.textContent=`${battleSpeed}×`;button.setAttribute('aria-label',`Animation speed ${battleSpeed} times`);return;}
   if(action==='roster'){openRoster();return;}
   if(action==='inspect-roster'){go('champion/'+encodeURIComponent(id));return;}
   if(action==='roster-details'){inspectingFromRoster=true;inspect(byId.get(id));return;}

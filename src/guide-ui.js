@@ -7,6 +7,7 @@ const battleRules=[
  ['Enemy Specials','Enemies gain 4 charge at each attack opportunity and cast their highest charge when full. Your matches do not charge them.'],
  ['Special runes','Match 4 for a Blast rune; 5 or more for a Prism. Tap one twice or swap it with a neighbor to activate it.'],
  ['Elements','Red beats Green, Green beats Blue, and Blue beats Red. Yellow and Purple are strong against each other.'],
+ ['Battle speed','Every battle starts at ×1 on phone and desktop. The ×2 button speeds up only the current battle.'],
  ['Leaving a fight','Leaving the battle screen, refreshing or closing the game abandons it. Start again from the beginning; completed rewards stay saved.'],
 ];
 const topics=[
