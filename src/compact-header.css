@@ -71,3 +71,7 @@
  .topbar.with-nav .game-wallet b{font-size:9px}
  .topbar.with-nav .game-nav>button{font-size:11px}
 }
+
+.adventure-nav-art{display:block;width:32px;height:32px;object-fit:contain;flex-shrink:0}
+.topbar.with-nav .game-nav>.adventure-shortcut{display:flex;align-items:center;justify-content:center;width:44px;min-width:44px;min-height:44px;flex:0 0 44px;padding:4px}
+@media(max-width:760px){.topbar.with-nav .game-nav{grid-template-columns:44px minmax(0,1fr) 44px minmax(0,1fr) 44px}}
