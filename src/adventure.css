@@ -3,16 +3,16 @@
 @media(prefers-reduced-motion:reduce){.dungeon-illustration>img{transition:none}.dungeon-card:hover .dungeon-illustration>img{transform:none}}body.reduce-animation .dungeon-illustration>img{transition:none}
 
 /* Campaign entry is a small confirmation, with the stage as its only copy. */
-#modal[data-view="campaign-stage"]{width:min(380px,calc(100vw - 28px))}
-#modal[data-view="campaign-stage"] .modal-header{padding:18px;align-items:flex-start;border-bottom:0}
-#modal[data-view="campaign-stage"] .modal-header .eyebrow{display:none}
-#modal[data-view="campaign-stage"] .modal-header h2{font-size:21px;line-height:1.35;margin:0;overflow-wrap:anywhere}
-#modal[data-view="campaign-stage"] .modal-header .icon-button{min-width:36px;min-height:36px}
-#modal[data-view="campaign-stage"] .modal-body{padding:0 18px 18px}
-#modal[data-view="campaign-stage"] .modal-actions{margin:0}
-#modal[data-view="campaign-stage"] .modal-actions .button{width:100%;min-height:44px;font-size:14px;letter-spacing:.04em}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]){width:min(380px,calc(100vw - 28px))}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-header{padding:18px;align-items:flex-start;border-bottom:0}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-header .eyebrow{display:none}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-header h2{font-size:21px;line-height:1.35;margin:0;overflow-wrap:anywhere}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-header .icon-button{min-width:36px;min-height:36px}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-body{padding:0 18px 18px}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-actions{margin:0}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-actions .button{width:100%;min-height:44px;font-size:14px;letter-spacing:.04em}
 
-#modal[data-view="campaign-stage"] .modal-header::before,#modal[data-view="campaign-stage"] .modal-header::after{display:none}
+#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-header::before,#modal:is([data-view="campaign-stage"],[data-view="dungeon-stage"]) .modal-header::after{display:none}
 
 /* A compact realm card keeps the heading separate from the map artwork. */
 .page-campaign .campaign-realm-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px;padding:18px 22px;margin:0 0 16px;border:1px solid #e4cfa14d;border-left:3px solid var(--realm-color);border-radius:12px;background:#242729;box-shadow:none}

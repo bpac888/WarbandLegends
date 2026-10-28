@@ -175,7 +175,7 @@ document.addEventListener('click',event=>{
   if(action==='multi-summon'){openPortal(10);return;}
   if(action==='campaign-difficulty'){campaignDifficulty=button.dataset.difficulty;renderShell('campaign');return;}
   if(action==='dungeon-difficulty'){dungeonDifficulty=button.dataset.difficulty;renderShell('dungeons');return;}
-  if(action==='preview-encounter'){const e=getEncounter(stage);if(e){const campaign=e.mode==='campaign',title=campaign?`${{normal:'Normal',hard:'Hard',nightmare:'Nightmare'}[e.difficulty]} · Stage ${e.number} · ${esc(e.name)}`:esc(e.name);openModal(title,Shell.encounterPreview(profile,stage),campaign?'campaign-stage':'encounter');}return;}
+  if(action==='preview-encounter'){const e=getEncounter(stage);if(e){const campaign=e.mode==='campaign',dungeon=e.mode==='dungeon',difficulty={normal:'Normal',hard:'Hard',nightmare:'Nightmare'}[e.difficulty],title=campaign?`${difficulty} · Stage ${e.number} · ${esc(e.name)}`:dungeon?`${esc(e.bossName)} · ${difficulty}`:esc(e.name);openModal(title,Shell.encounterPreview(profile,stage),campaign?'campaign-stage':dungeon?'dungeon-stage':'encounter');}return;}
   if(action==='nav'){go(button.dataset.page);return;}
   if(action==='champion'){go('champion/'+encodeURIComponent(id)+(button.dataset.preview==='true'?'/codex':''));return;}
   if(action==='reset-collection'){collectionFilters={...DEFAULT_FILTERS,tab:collectionFilters.tab};renderCollectionPage();return;}

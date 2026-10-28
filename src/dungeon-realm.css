@@ -1,0 +1,74 @@
+/* One illustrated guardian realm; no cards, names or stat panels over the art. */
+.menu-theme .game-page.page-dungeons{max-width:1400px;padding:9px 18px 10px}
+.page-dungeons .dungeon-page-heading{display:flex;justify-content:center;align-items:center;margin:0 auto 8px}
+.page-dungeons .dungeon-page-heading h1{font-size:38px;line-height:1.1;margin:0;letter-spacing:.02em;text-shadow:0 2px 12px #031e22}
+.menu-theme .page-dungeons .realm-tabs{margin:0 auto 10px;max-width:620px;padding:4px;gap:5px;flex-wrap:nowrap}
+.menu-theme .page-dungeons .realm-tabs>button{flex:1;min-width:0;min-height:44px;max-width:none;padding:7px 10px;gap:7px;justify-content:center;flex-direction:row}
+.page-dungeons .realm-tabs small{white-space:nowrap;flex-shrink:0}
+.page-dungeons .dungeon-realm{position:relative;isolation:isolate;width:100%;aspect-ratio:3/2;margin:0 auto;border:1px solid #d9c69496;border-radius:17px;overflow:hidden;box-shadow:0 18px 60px #031b2859,0 0 24px #66c9c615;background:#152c33;container-type:inline-size}
+.page-dungeons .dungeon-realm-painting,.page-dungeons .dungeon-realm-painting>img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;opacity:1;filter:none;mask-image:none}
+.page-dungeons .dungeon-realm-painting{pointer-events:none}
+.page-dungeons .dungeon-art-effects,.page-dungeons .dungeon-guardian-choices{position:absolute;inset:0;pointer-events:none}
+.page-dungeons .dungeon-art-effects{overflow:hidden}
+.page-dungeons .dungeon-guardian{--x:17%;--y:25%;--w:31%;--h:41%;position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);min-height:0;max-width:none;display:block;transform:translate(-50%,-50%);padding:0;border:0;border-radius:25%;background:none;color:#ffe9b6;box-shadow:none;filter:none;opacity:1;pointer-events:auto;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:none}
+.page-dungeons .guardian-obsidian_vault{--x:49%;--y:25%;--w:31%}
+.page-dungeons .guardian-voidbone_catacombs{--x:82%;--y:25%;--w:32%}
+.page-dungeons .guardian-eclipse_spire{--x:13%;--y:73%;--w:24%;--h:47%}
+.page-dungeons .guardian-hellgate_forge{--x:39%;--y:73%;--w:24%;--h:47%}
+.page-dungeons .guardian-prismatic_vat{--x:64%;--y:73%;--w:24%;--h:47%}
+.page-dungeons .guardian-magmaheart_crucible{--x:88%;--y:73%;--w:22%;--h:47%}
+.page-dungeons .dungeon-guardian:hover,.page-dungeons .dungeon-guardian:active{background:none;transform:translate(-50%,-50%);box-shadow:none;filter:none}
+.page-dungeons .dungeon-guardian:disabled{cursor:not-allowed;opacity:1;filter:none}
+.page-dungeons .dungeon-guardian:focus-visible{outline:2px solid #ffe9ad;outline-offset:-4px}
+.page-dungeons .guardian-focus{position:absolute;inset:4%;border:1px solid #fff0bf00;border-radius:30%;background:radial-gradient(ellipse at center 92%,#ffe8a92b,transparent 43%);opacity:0;box-shadow:inset 0 0 24px #ffe2a91c,0 0 20px #ffdb9225;transition:opacity .35s,border-color .35s;pointer-events:none}
+.page-dungeons .dungeon-guardian:is(:hover,:focus-visible):not(:disabled) .guardian-focus{opacity:1;border-color:#ffe8a973}
+.page-dungeons .dungeon-guardian:active:not(:disabled) .guardian-focus{opacity:1;border-color:#fff0c2}
+.page-dungeons .guardian-seal{position:absolute;left:50%;bottom:3%;display:grid;place-items:center;width:30px;height:30px;transform:translateX(-50%);border:1px solid #e1c28aab;border-radius:50%;background:#152635e8;box-shadow:0 2px 8px #06111dcc;color:#fff0bb;pointer-events:none}
+.page-dungeons .guardian-seal .card-glyph{width:17px;height:17px}
+.page-dungeons .guardian-cleared .guardian-seal{background:#214d40ed;border-color:#c7e4aa;color:#e6ffd3}
+.page-dungeons .dungeon-soul-aura{position:absolute;left:7%;top:65%;width:10%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,transparent 52%,#e0b1ff66 65%,transparent 73%);mix-blend-mode:screen;transform:translate(-50%,-50%);animation:dungeon-aura-breathe 8s ease-in-out infinite}
+.page-dungeons .dungeon-alchemy-orbit{position:absolute;left:68%;top:82%;width:8%;aspect-ratio:1;border-radius:50%;background:conic-gradient(transparent 30deg,#caffde99 55deg,transparent 105deg,transparent 210deg,#f5d79799 235deg,transparent 285deg);mask:radial-gradient(closest-side,transparent 87%,#000 91%,#000 94%,transparent 99%);mix-blend-mode:screen;transform:translate(-50%,-50%);animation:dungeon-orbit 18s linear infinite}
+.page-dungeons .dungeon-heart-glow{position:absolute;left:49%;top:21%;width:4%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff2bb2e,transparent 68%);mix-blend-mode:screen;animation:dungeon-heartbeat 6s ease-in-out infinite}
+.page-dungeons .dungeon-fall-glint{position:absolute;left:48%;top:49%;width:1%;height:8%;background:linear-gradient(transparent,#d9ffff66,transparent);mix-blend-mode:screen;animation:dungeon-fall-glide 4.5s ease-in-out infinite}
+.page-dungeons .dungeon-embers{position:absolute;inset:0}
+.page-dungeons .dungeon-embers i{position:absolute;left:var(--x);top:var(--y);width:3px;height:3px;border-radius:50%;background:#ffdfa3;box-shadow:0 0 6px #ffb14c;opacity:0;animation:dungeon-ember-rise 10s ease-in-out infinite;animation-delay:calc(var(--n)*-1.6s)}
+.page-dungeons .dungeon-realm-corner{position:absolute;width:21px;height:21px;border:1px solid #f3d9a3b3;pointer-events:none}
+.page-dungeons .dungeon-nw{left:7px;top:7px;border-right:0;border-bottom:0;border-top-left-radius:8px}
+.page-dungeons .dungeon-ne{right:7px;top:7px;border-left:0;border-bottom:0;border-top-right-radius:8px}
+.page-dungeons .dungeon-sw{left:7px;bottom:7px;border-right:0;border-top:0;border-bottom-left-radius:8px}
+.page-dungeons .dungeon-se{right:7px;bottom:7px;border-left:0;border-top:0;border-bottom-right-radius:8px}
+@keyframes dungeon-aura-breathe{0%,100%{opacity:.25;transform:translate(-50%,-50%) scale(.96)}50%{opacity:.8;transform:translate(-50%,-50%) scale(1.05)}}
+@keyframes dungeon-orbit{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes dungeon-heartbeat{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes dungeon-fall-glide{0%,100%{opacity:.2;translate:0 -3px}50%{opacity:.7;translate:0 5px}}
+@keyframes dungeon-ember-rise{0%,100%{opacity:0;transform:translate(0,0)}30%{opacity:.8}85%{opacity:.15;transform:translate(8px,-24px)}}
+@media(min-width:1000px){.page-dungeons .dungeon-realm{width:min(100%,calc((100svh - 210px)*1.5))}}
+@media(max-width:700px){
+ .menu-theme .game-page.page-dungeons{padding:7px 7px 8px}
+ .page-dungeons .dungeon-page-heading h1{font-size:30px}
+ .page-dungeons .dungeon-realm{aspect-ratio:2/3;border-radius:13px}
+ .page-dungeons .dungeon-guardian{--x:26%;--y:15%;--w:46%;--h:26%}
+ .page-dungeons .guardian-obsidian_vault{--x:74%;--y:15%;--w:46%;--h:26%}
+ .page-dungeons .guardian-voidbone_catacombs{--x:26%;--y:40%;--w:46%;--h:23%}
+ .page-dungeons .guardian-eclipse_spire{--x:74%;--y:40%;--w:46%;--h:23%}
+ .page-dungeons .guardian-hellgate_forge{--x:26%;--y:65%;--w:46%;--h:24%}
+ .page-dungeons .guardian-prismatic_vat{--x:74%;--y:65%;--w:46%;--h:24%}
+ .page-dungeons .guardian-magmaheart_crucible{--x:50%;--y:89%;--w:94%;--h:21%}
+ .page-dungeons .guardian-seal{width:24px;height:24px;bottom:2%}
+ .page-dungeons .guardian-seal .card-glyph{width:14px;height:14px}
+ .page-dungeons .dungeon-soul-aura{left:66%;top:43%;width:15%}
+ .page-dungeons .dungeon-alchemy-orbit{left:82%;top:67%;width:15%}
+ .page-dungeons .dungeon-heart-glow{left:77%;top:12%;width:6%}
+ .page-dungeons .dungeon-fall-glint{left:49%;top:32%;width:1.8%;height:7%}
+}
+@media(max-width:375px){
+ .menu-theme .page-dungeons .realm-tabs>button{flex-direction:column;gap:2px;padding:5px 3px}
+ .page-dungeons .realm-tabs>button>span{font-size:12px}
+}
+.menu-motion-paused .page-dungeons .dungeon-art-effects *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){
+ .page-dungeons .dungeon-art-effects *{animation:none!important}
+ .page-dungeons .guardian-focus{transition:none}
+ .page-dungeons .dungeon-soul-aura{opacity:.3}
+ .page-dungeons .dungeon-embers i{opacity:.2}
+}
