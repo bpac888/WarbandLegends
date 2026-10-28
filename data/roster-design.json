@@ -57,8 +57,34 @@
       "manaSpeed": "fast"
     },
     "shadow_thrall": {
-      "color": "purple",
-      "manaSpeed": "average"
+      "color": "blue",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.28,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_def",
+              "turns": 1,
+              "scope": "ally"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 833,
+        "atk": 412,
+        "def": 472
+      }
     },
     "pit_grunt": {
       "color": "red",
@@ -183,7 +209,33 @@
     },
     "pit_scout": {
       "color": "green",
-      "manaSpeed": "very_fast"
+      "manaSpeed": "very_fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "very_fast",
+          "tiles": 6.5,
+          "target": "enemy",
+          "damage": 2.12,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1029,
+        "atk": 678,
+        "def": 546
+      }
     },
     "archangel_lucifer": {
       "color": "yellow",
@@ -192,11 +244,63 @@
     },
     "paladin_of_dusk": {
       "color": "yellow",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.3,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 933,
+        "atk": 382,
+        "def": 537
+      }
     },
     "sister_seraphel": {
       "color": "yellow",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.28,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "ally"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 833,
+        "atk": 412,
+        "def": 472
+      }
     },
     "justiciar_vael": {
       "color": "yellow",
@@ -224,8 +328,33 @@
     },
     "ironwall_sniper": {
       "color": "blue",
-      "manaSpeed": "charging",
-      "chargeLevels": 2
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 733,
+        "atk": 522,
+        "def": 413
+      }
     },
     "professor_vile": {
       "color": "green",
@@ -245,7 +374,33 @@
     },
     "grove_druid": {
       "color": "green",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.28,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_def",
+              "turns": 1,
+              "scope": "ally"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 833,
+        "atk": 412,
+        "def": 473
+      }
     },
     "satyr_archer_kell": {
       "color": "red",
@@ -269,7 +424,33 @@
     },
     "vinestrider": {
       "color": "blue",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.63,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1028,
+        "atk": 678,
+        "def": 546
+      }
     },
     "mosswitch_lira": {
       "color": "blue",
@@ -277,7 +458,33 @@
     },
     "beastmaster_gharn": {
       "color": "green",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 733,
+        "atk": 522,
+        "def": 413
+      }
     },
     "jarl_bjorn_ironhide": {
       "color": "blue",
@@ -305,11 +512,63 @@
     },
     "cult_zealot": {
       "color": "purple",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 733,
+        "atk": 522,
+        "def": 413
+      }
     },
     "succubus_lilth": {
-      "color": "purple",
-      "manaSpeed": "average"
+      "color": "red",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 733,
+        "atk": 522,
+        "def": 413
+      }
     },
     "shadow_stalker": {
       "color": "purple",
@@ -320,12 +579,52 @@
       "manaSpeed": "slow"
     },
     "desert_assassin": {
-      "color": "purple",
-      "manaSpeed": "fast"
+      "color": "red",
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 1.9,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "hp": 734,
+        "atk": 522,
+        "def": 413
+      }
     },
     "camel_rider_rashid": {
       "color": "yellow",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "hp": 734,
+        "atk": 522,
+        "def": 413
+      }
     },
     "dune_mage_sorra": {
       "color": "yellow",
@@ -334,7 +633,27 @@
     },
     "scavenger_jax": {
       "color": "red",
-      "manaSpeed": "fast"
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.37,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "hp": 1028,
+        "atk": 678,
+        "def": 546
+      }
     },
     "plague_doctor_mors": {
       "color": "green",
@@ -342,7 +661,33 @@
     },
     "the_mutant": {
       "color": "green",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.63,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1028,
+        "atk": 678,
+        "def": 546
+      }
     },
     "void_herald_mara": {
       "color": "purple",
@@ -359,12 +704,63 @@
     },
     "jade_monk_xuan": {
       "color": "green",
-      "manaSpeed": "charging",
-      "chargeLevels": 2
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.3,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "heal",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 934,
+        "atk": 382,
+        "def": 538
+      }
     },
     "spirit_fox_mei": {
       "color": "green",
-      "manaSpeed": "fast"
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 1.9,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 734,
+        "atk": 521,
+        "def": 413
+      }
     },
     "jade_archer_linh": {
       "color": "green",
@@ -372,15 +768,67 @@
     },
     "neon_wire runner": {
       "color": "yellow",
-      "manaSpeed": "very_fast"
+      "manaSpeed": "very_fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "very_fast",
+          "tiles": 6.5,
+          "target": "enemy",
+          "damage": 2.12,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1028,
+        "atk": 678,
+        "def": 546
+      }
     },
     "neon_scrap_enforcer": {
       "color": "red",
       "manaSpeed": "average"
     },
     "neon_glitch_weaver": {
-      "color": "purple",
-      "manaSpeed": "average"
+      "color": "blue",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.28,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_surge",
+              "turns": 1,
+              "scope": "ally"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 834,
+        "atk": 411,
+        "def": 473
+      }
     },
     "neon_hologram_assassin": {
       "color": "purple",
@@ -434,7 +882,38 @@
     },
     "shellback_brukk": {
       "color": "green",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.5,
+          "healing": 0,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1248,
+        "atk": 524,
+        "def": 701
+      }
     },
     "oakenhart_first_warden": {
       "color": "green",

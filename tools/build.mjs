@@ -1,3 +1,4 @@
+import {beforeRarityRevision} from '../src/rarity-revision.js';
 import {AVATARS} from '../src/keeper.js';
 import {MATERIALS} from '../src/ascension.js';
 import {ENCOUNTERS,DIFFICULTIES,DUNGEONS} from '../src/encounters.js';
@@ -5,9 +6,9 @@ import {readFile,writeFile,cp,mkdir,rm,stat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const roster=JSON.parse(await readFile('data/champions.json','utf8'));
 const expansion=JSON.parse(await readFile('data/roster-expansion-4.json','utf8'));
-if(createHash('sha256').update(JSON.stringify(roster.slice(0,expansion.originalCount))).digest('hex')!==expansion.originalRecordsSha256)throw Error('Existing champion records changed');
+if(createHash('sha256').update(JSON.stringify(beforeRarityRevision(roster.slice(0,expansion.originalCount)))).digest('hex')!==expansion.originalRecordsSha256)throw Error('Existing champion records changed');
 const sourceRoster=JSON.parse(await readFile('data/source-champions.json','utf8'));
-if(createHash('sha256').update(JSON.stringify(sourceRoster.slice(0,expansion.originalCount))).digest('hex')!==expansion.originalSourceRecordsSha256)throw Error('Existing source records changed');
+if(createHash('sha256').update(JSON.stringify(beforeRarityRevision(sourceRoster.slice(0,expansion.originalCount),{source:true}))).digest('hex')!==expansion.originalSourceRecordsSha256)throw Error('Existing source records changed');
 if(roster.length!==expansion.totalCount||new Set(roster.map(c=>c.id)).size!==expansion.totalCount)throw Error('Roster identity check failed');
 if((await stat('assets/factions/astral_concord.webp')).size<1000)throw Error('Missing Astral Concord emblem');
 for(const c of roster){if(!/^assets\/champions\/[a-zA-Z0-9_ -]+\.webp$/.test(c.portrait)||(await stat(c.portrait)).size<1000)throw Error(`Missing portrait: ${c.id}`);}

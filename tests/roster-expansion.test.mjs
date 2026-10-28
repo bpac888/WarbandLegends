@@ -1,3 +1,4 @@
+import {beforeRarityRevision} from '../src/rarity-revision.js';
 import test from 'node:test';
 import {historicalRecords} from '../src/roster-identity.js';
 import assert from 'node:assert/strict';
@@ -55,5 +56,5 @@ test('post-expansion audit is current and every future recommendation fills an e
  const audit=await read('docs/history/roster-audit-150.json');assert.equal(audit.after.total,150);assert.equal(audit.recommendations.length,12);
  for(const color of ['red','blue','green','yellow','purple'])assert.equal(audit.after.color[color],30);
  for(const f of Object.values(audit.byFaction))assert.ok(f.total>=13&&f.total<=14);
- for(const x of audit.recommendations)assert.ok(!roster.slice(0,150).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role));
+ for(const x of audit.recommendations)assert.ok(!beforeRarityRevision(roster.slice(0,150)).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role));
 });

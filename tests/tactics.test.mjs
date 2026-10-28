@@ -1,5 +1,6 @@
 import {REFERENCE_TEAM,referenceProfile} from './reference-team.mjs';
 import test from 'node:test';
+import {beforeRarityRevision} from '../src/rarity-revision.js';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createBattle,cast,swap,activate,validMoves,validateSave,skillDescription} from '../src/engine.js';
@@ -22,9 +23,9 @@ test('all Specials describe exactly their shared execution plan in resolution or
  assert.deepEqual(roster,snapshot);
 });
 test('support targeting describes selected enemies and automatic lowest current HP accurately',()=>{
- const druid=roster.find(c=>c.id==='grove_druid'),d=skillDescription(druid);assert.match(d.targeting,/lowest current-HP/);assert.match(d.text,/lowest-HP living enemy/i);assert.match(d.targeting,/Taunt/);
+ const druid=beforeRarityRevision(roster).find(c=>c.id==='grove_druid'),d=skillDescription(druid);assert.match(d.targeting,/lowest current-HP/);assert.match(d.text,/lowest-HP living enemy/i);assert.match(d.targeting,/Taunt/);
  const modified=structuredClone(druid);modified.special.levels[0].target='enemy';const selected=skillDescription(modified);assert.match(selected.text,/selected enemy/);assert.doesNotMatch(selected.targeting,/chosen automatically/);
- const s=createBattle(roster,['grove_druid',...REFERENCE_TEAM.slice(0,4)],'ashen-gate',24);s.enemies[0].hp=200;s.enemies[1].hp=100;s.enemies[2].hp=300;const actor=charged(s,0),r=cast(s,actor.uid,actor.uid);assert.ok(r.state.enemies[1].effects.poison);assert.ok(!r.state.enemies[0].effects.poison);assert.ok(r.state.enemies[1].hp<100);
+ const s=createBattle(beforeRarityRevision(roster),['grove_druid',...REFERENCE_TEAM.slice(0,4)],'ashen-gate',24);s.enemies[0].hp=200;s.enemies[1].hp=100;s.enemies[2].hp=300;const actor=charged(s,0),r=cast(s,actor.uid,actor.uid);assert.ok(r.state.enemies[1].effects.poison);assert.ok(!r.state.enemies[0].effects.poison);assert.ok(r.state.enemies[1].hp<100);
 });
 test('actual wardbreaker logs Dispel, Vulnerability and hit in the displayed order',()=>{
  const s=fresh('ashen-gate'),target=s.enemies[0];target.hp=target.maxHp=5000;target.effects.inc_def={turns:2,source:target.uid,appliedMove:0};const actor=charged(s,4),r=cast(s,actor.uid,target.uid);const logs=r.state.log.slice(s.log.length).map(l=>l.text);const dispel=logs.findIndex(t=>t.includes('dispelled')),ailment=logs.findIndex(t=>t.includes('Vulnerability')),hit=logs.findIndex(t=>t.includes('· '+actor.special.name));assert.ok(dispel>=0&&dispel<ailment&&ailment<hit);assert.deepEqual(skillDescription(actor).steps.map(s=>s.kind),['dispel','debuff','damage']);

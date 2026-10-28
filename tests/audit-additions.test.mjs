@@ -1,3 +1,4 @@
+import {beforeRarityRevision} from '../src/rarity-revision.js';
 import test from 'node:test';
 import {historicalRecords} from '../src/roster-identity.js';
 import assert from 'node:assert/strict';
@@ -19,7 +20,7 @@ test('all 150 previous records and source identities are preserved exactly',asyn
 });
 test('the 12 additions match the approved rarity, role, color and speed mix',()=>{
  assert.deepEqual(count('rarity'),{legendary:9,rare:3});assert.deepEqual(count('role'),{attack:8,defense:2,support:2});assert.deepEqual(count('color'),{blue:2,green:2,purple:3,red:3,yellow:2});assert.deepEqual(count('manaSpeed'),{average:3,charging:2,fast:4,slow:2,very_fast:1});
- for(const x of manifest.implementedRecommendations){const c=added.find(c=>c.id===x.championId);for(const k of ['faction','color','rarity','role','manaSpeed'])assert.equal(c[k],x[k]);assert.ok(!roster.slice(0,150).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role));}
+ for(const x of manifest.implementedRecommendations){const c=added.find(c=>c.id===x.championId);for(const k of ['faction','color','rarity','role','manaSpeed'])assert.equal(c[k],x[k]);assert.ok(!beforeRarityRevision(roster.slice(0,150)).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role));}
  for(const c of added)for(const l of c.special.levels)for(const e of l.effects){assert.ok(EFFECTS[e.id]);assert.ok(Number.isInteger(e.turns)&&e.turns>=0&&e.turns<=3);}
 });
 test('every new charge tier damages, heals, cleanses, dispels and applies effects to the declared recipients without spending a board turn',()=>{

@@ -1,11 +1,12 @@
+import {beforeRarityRevision} from '../src/rarity-revision.js';
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {factionLabel} from '../src/collection.js';
 const read=async p=>JSON.parse(await readFile(p,'utf8'));
 const roster=await read('data/champions.json'),expansion=await read('data/roster-expansion-4.json'),before=roster.slice(0,expansion.originalCount),added=roster.slice(expansion.originalCount);
 const sha=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
-if(sha(before)!==expansion.originalRecordsSha256)throw Error('An existing champion changed');
-if(sha((await read('data/source-champions.json')).slice(0,expansion.originalCount))!==expansion.originalSourceRecordsSha256)throw Error('An existing source champion changed');
+if(sha(beforeRarityRevision(before))!==expansion.originalRecordsSha256)throw Error('An existing champion changed');
+if(sha(beforeRarityRevision((await read('data/source-champions.json')).slice(0,expansion.originalCount),{source:true}))!==expansion.originalSourceRecordsSha256)throw Error('An existing source champion changed');
 if(roster.length!==expansion.totalCount||new Set(roster.map(c=>c.id)).size!==roster.length)throw Error('Roster identity check failed');
 if(added.length!==15||added.some(c=>c.faction!=='astral_concord')||added.some(c=>!expansion.addedChampionIds.includes(c.id)))throw Error('Astral Concord manifest mismatch');
 const colors=['red','blue','green','yellow','purple'],rarities=['mythical','legendary','rare','common'],roles=['attack','defense','support'],speeds=['very_fast','fast','average','slow','very_slow','charging'];
@@ -17,7 +18,7 @@ const report={version:4,scope:'Roster coverage audit after adding the 15-charact
 await writeFile('data/roster-audit.json',JSON.stringify(report,null,2)+'\n');
 const title=s=>s.replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase());
 const table=(heads,rows)=>'| '+heads.join(' | ')+' |\n| '+heads.map(()=> '---').join(' | ')+' |\n'+rows.map(r=>'| '+r.join(' | ')+' |').join('\n')+'\n';
-let md=`# Warband Legends Roster Audit — ${roster.length} Champions\n\nAstral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. All 174 prior champions retain their complete records, names, portraits, abilities and stats.\n\n`;
+let md=`# Warband Legends Roster Audit — ${roster.length} Champions\n\nAstral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. The subsequent owner-requested rarity revision changes nineteen Common/Rare records. Character identities and artwork are preserved; current counts below include the revision.\n\n`;
 md+='## Before and After\n\n'+table(['Category','Before','Added','After'],[['Total',before.length,added.length,roster.length],...rarities.map(k=>[title(k),report.before.rarity[k],report.additions.rarity[k],report.after.rarity[k]]),...roles.map(k=>[title(k),report.before.type[k],report.additions.type[k],report.after.type[k]]),...colors.map(k=>[title(k),report.before.color[k],report.additions.color[k],report.after.color[k]])]);
 md+=`\nAttackers remain the majority: **${report.after.type.attack}/${roster.length} (${(report.after.type.attack/roster.length*100).toFixed(1)}%)**. The faction has three champions per element and more attackers than either other role. Rarity tiers provide early accessible choices alongside seven Legendaries and two Mythicals.\n\n`;
 md+='## Astral Concord\n\n'+table(['Champion','Element','Rarity','Type','Speed'],added.map(c=>[c.name,title(c.color),title(c.rarity),{attack:'ATK',defense:'DEF',support:'SUP'}[c.role],title(c.manaSpeed)]));
@@ -25,5 +26,5 @@ md+='\n## Factions and Mythicals\n\n'+table(['Faction','Before → After','Red /
 md+='\nEvery faction has all five elements. Astral Concord begins with 15 champions, comparable to the existing factions’ 15–16. Its two Mythicals are a limited capstone rather than the majority of its roster.\n\n';
 md+='## Speed Coverage\n\n'+table(['Speed',...rarities.map(title),'Total'],speeds.map(s=>[title(s),...rarities.map(r=>report.byRarity[r].speed[s]),report.after.speed[s]]));
 md+='\nYshmir remains the only Very Slow Mythical. New designs use existing supported effects and charge tiers; no new faction-wide combat bonus is applied.\n\n';
-md+='## Validation and Limits\n\nSummon rarity odds and the ten-call guarantee are unchanged; new champions join their matching rarity pools. Build and audit checks fingerprint all 174 original records directly, alongside source records. New-character checks cover balanced coverage, unique names, Specials, summon eligibility, save compatibility, Auto actions and portrait quality. This is a coverage audit, not a measured matchup win-rate study. Previous reports remain available for [174](history/ROSTER-AUDIT-174.md), [162](history/ROSTER-AUDIT-162.md) and [150](history/ROSTER-AUDIT-150.md) champions.\n';
+md+='## Validation and Limits\n\nSummon rarity odds and the ten-call guarantee are unchanged; new champions join their matching rarity pools. Build and audit checks fingerprint original records after verifying and reversing only the explicitly approved nineteen-record rarity revision. New-character checks cover balanced coverage, unique names, Specials, summon eligibility, save compatibility, Auto actions and portrait quality. This is a coverage audit, not a measured matchup win-rate study. Previous reports remain available for [174](history/ROSTER-AUDIT-174.md), [162](history/ROSTER-AUDIT-162.md) and [150](history/ROSTER-AUDIT-150.md) champions.\n';
 await writeFile('docs/ROSTER_AUDIT.md',md);console.log(JSON.stringify({total:roster.length,added:added.length,rarities:report.after.rarity,roles:report.after.type},null,2));

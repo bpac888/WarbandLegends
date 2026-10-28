@@ -50,7 +50,7 @@ test('standard mana speeds use the requested exact fractional tile thresholds',(
  for(const [c,before,after] of [[veryFast,6,7],[slowest,13,14]]){const u={...structuredClone(c),hp:c.hp,mana:before};assert.equal(readyLevel(u),0);u.mana=after;assert.equal(readyLevel(u),1);}
 });
 test('charging Specials use cumulative 8/10 or 5/10/15 gates, not repeated costs',()=>{
- const charging=roster.filter(c=>c.special.charging);assert.equal(charging.length,21);
+ const charging=roster.filter(c=>c.special.charging);assert.equal(charging.length,19);
  assert.ok(charging.some(c=>c.special.levels.length===2));assert.ok(charging.some(c=>c.special.levels.length===3));
  for(const c of charging){const gates=c.special.levels.map(l=>l.tiles);assert.deepEqual(gates,c.special.levels.length===2?[8,10]:[5,10,15]);const u={...structuredClone(c),hp:c.hp,mana:0};for(let i=0;i<gates.length;i++){u.mana=gates[i]-.01;assert.equal(readyLevel(u),i);u.mana=gates[i];assert.equal(readyLevel(u),i+1);}}
 });
@@ -72,7 +72,7 @@ test('tile clears grant one charge each, preserve fractional gains, and cap at e
 });
 test('new roster has one Special, no SPD stat, balanced colors, and all original passives',async()=>{
  const source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url)));
- for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,color==='purple'?37:38);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
+ for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,({red:40,blue:40,green:38,yellow:38,purple:33})[color]);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
  for(const c of roster){assert.equal('spd' in c,false);assert.equal('kit' in c,false);assert.equal('a2' in c,false);assert.equal('a3' in c,false);assert.ok(c.special.name);assert.equal(c.passive?.id,source.find(o=>o.id===c.id).passive?.id);assert.equal(c.passive?.name,source.find(o=>o.id===c.id).passive?.name);assert.equal(c.rarity,source.find(o=>o.id===c.id).rarity);}
 });
 test('full Specials retain merged source effects except deliberate match-3 revisions',async()=>{

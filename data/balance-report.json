@@ -2,19 +2,19 @@
   "version": 3,
   "champions": 189,
   "colorCounts": {
-    "red": 38,
-    "blue": 38,
+    "red": 40,
+    "blue": 40,
     "green": 38,
     "yellow": 38,
-    "purple": 37
+    "purple": 33
   },
   "manaCounts": {
     "very_fast": 9,
     "fast": 41,
-    "average": 86,
+    "average": 88,
     "slow": 29,
     "very_slow": 3,
-    "charging": 21
+    "charging": 19
   },
   "chargingChampions": [
     {
@@ -55,13 +55,6 @@
       ]
     },
     {
-      "id": "ironwall_sniper",
-      "tiles": [
-        8,
-        10
-      ]
-    },
-    {
       "id": "dune_mage_sorra",
       "tiles": [
         8,
@@ -74,13 +67,6 @@
         5,
         10,
         15
-      ]
-    },
-    {
-      "id": "jade_monk_xuan",
-      "tiles": [
-        8,
-        10
       ]
     },
     {
@@ -176,12 +162,12 @@
   ],
   "rarities": {
     "common": {
-      "count": 20,
+      "count": 27,
       "stats": {
         "atk": {
           "min": 351,
           "average": 460,
-          "max": 517
+          "max": 522
         },
         "def": {
           "min": 403,
@@ -196,7 +182,7 @@
       }
     },
     "rare": {
-      "count": 69,
+      "count": 62,
       "stats": {
         "atk": {
           "min": 515,

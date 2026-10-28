@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-189 champions. The newest expansion adds the 15-character Astral Concord faction. Existing gameplay records, display names and portraits are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
+189 champions. The newest expansion adds the 15-character Astral Concord faction. The owner-requested Common/Rare revision is included; artwork and character identities are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -15,7 +15,7 @@
 | The Oracle | legendary | green | support | 717 | 746 | 1410 | Average 10 |
 | Vex, the Elixir Apotheon | mythical | green | attack | 916 | 759 | 1460 | Charging 5 / 10 / 15 |
 | Drekka the Scavenger | common | purple | attack | 509 | 412 | 779 | Fast 8 |
-| The Hooded Thrall | rare | purple | support | 586 | 590 | 1093 | Average 10 |
+| The Hooded Thrall | common | blue | support | 412 | 472 | 833 | Average 10 |
 | Murgash the Pit Grunt | rare | red | defense | 549 | 692 | 1199 | Average 10 |
 | Acolyte Iyr | common | red | support | 382 | 489 | 853 | Average 10 |
 | Vethra Witchblade | legendary | red | attack | 826 | 678 | 1325 | Average 10 |
@@ -37,55 +37,55 @@
 | Hexandra, Brimstone Witch | legendary | red | attack | 828 | 674 | 1311 | Average 10 |
 | Neve the Veil Dancer | legendary | purple | attack | 826 | 699 | 1304 | Fast 8 |
 | Crimson Castellan | legendary | red | attack | 843 | 674 | 1291 | Average 10 |
-| Rhagz, Pit Scout | common | green | attack | 507 | 426 | 749 | Very Fast 6.5 |
+| Rhagz, Pit Scout | rare | green | attack | 678 | 546 | 1029 | Very Fast 6.5 |
 | Archangel Lucifer | legendary | yellow | defense | 680 | 792 | 1524 | Charging 8 / 10 |
-| Paladin of Dusk | rare | yellow | defense | 541 | 685 | 1215 | Average 10 |
-| Sister Seraphel | rare | yellow | support | 575 | 599 | 1145 | Average 10 |
+| Paladin of Dusk | common | yellow | defense | 382 | 537 | 933 | Average 10 |
+| Sister Seraphel | common | yellow | support | 412 | 472 | 833 | Average 10 |
 | Justiciar Gethren | common | yellow | attack | 509 | 441 | 751 | Fast 8 |
 | Solar Scribe | common | yellow | attack | 517 | 408 | 703 | Average 10 |
 | Executor Model Z | legendary | red | attack | 829 | 694 | 1327 | Slow 12 |
 | Aegis Construct MK4 | common | blue | defense | 351 | 560 | 980 | Average 10 |
 | The Saboteur | common | red | attack | 504 | 414 | 775 | Fast 8 |
 | Grease Monkey | common | yellow | support | 393 | 479 | 834 | Average 10 |
-| Ironwall Sniper | rare | blue | attack | 699 | 557 | 1019 | Charging 8 / 10 |
+| Ironwall Sniper | common | blue | attack | 522 | 413 | 733 | Average 10 |
 | Professor Vile | legendary | green | support | 722 | 734 | 1372 | Average 10 |
 | Chem-Tank Brax | legendary | green | defense | 652 | 815 | 1523 | Slow 12 |
 | Potion-Tosser Quinn | rare | purple | support | 592 | 596 | 1116 | Average 10 |
 | Elder Rootmother | legendary | green | support | 699 | 737 | 1409 | Very Slow 13.5 |
-| Grove Druid | rare | green | support | 596 | 614 | 1092 | Average 10 |
+| Grove Druid | common | green | support | 412 | 473 | 833 | Average 10 |
 | Satyr Archer Kell | common | red | attack | 504 | 412 | 753 | Very Fast 6.5 |
 | Thornveil Dryad | legendary | green | attack | 823 | 682 | 1315 | Slow 12 |
 | The Verdant King | rare | green | defense | 544 | 697 | 1192 | Average 10 |
 | Thornweaver Seraph | legendary | yellow | attack | 815 | 689 | 1293 | Slow 12 |
 | Barkskin Bruiser | rare | green | attack | 683 | 562 | 1019 | Average 10 |
-| Vinestrider | common | blue | attack | 495 | 426 | 730 | Average 10 |
+| Vinestrider | rare | blue | attack | 678 | 546 | 1028 | Average 10 |
 | Mosswitch Brynna | common | blue | support | 394 | 482 | 877 | Average 10 |
-| Beastmaster Gharn | rare | green | attack | 685 | 547 | 1044 | Average 10 |
+| Beastmaster Gharn | common | green | attack | 522 | 413 | 733 | Average 10 |
 | Jarl Bjorn Ironhide | legendary | blue | attack | 823 | 676 | 1331 | Average 10 |
 | Shieldmaiden Runa | rare | blue | defense | 543 | 683 | 1236 | Average 10 |
 | Ice-Shaman Sigrid | rare | blue | attack | 698 | 568 | 1029 | Average 10 |
 | Berserker Loki | legendary | red | attack | 827 | 685 | 1308 | Average 10 |
 | Wolf-Handler Stellan | common | blue | support | 384 | 473 | 886 | Average 10 |
 | Vlad the Soul-Eater | rare | purple | attack | 702 | 552 | 1002 | Fast 8 |
-| Cult Zealot | rare | purple | attack | 704 | 565 | 1046 | Average 10 |
-| Succubus Lilth | rare | purple | attack | 681 | 534 | 955 | Average 10 |
+| Cult Zealot | common | purple | attack | 522 | 413 | 733 | Average 10 |
+| Succubus Lilth | common | red | attack | 522 | 413 | 733 | Average 10 |
 | Dune Stalker | common | purple | attack | 513 | 410 | 775 | Very Fast 6.5 |
 | Dune-Queen Zaya | legendary | yellow | support | 710 | 723 | 1403 | Slow 12 |
-| Desert Assassin | rare | purple | attack | 705 | 547 | 982 | Fast 8 |
-| Camel-Rider Rashid | rare | yellow | attack | 703 | 549 | 1050 | Average 10 |
+| Desert Assassin | common | red | attack | 522 | 413 | 734 | Fast 8 |
+| Camel-Rider Rashid | common | yellow | attack | 522 | 413 | 734 | Average 10 |
 | Dune Mage Juhara | legendary | yellow | attack | 811 | 680 | 1332 | Charging 8 / 10 |
-| Scavenger Jax | common | red | attack | 495 | 439 | 772 | Fast 8 |
+| Scavenger Jax | rare | red | attack | 678 | 546 | 1028 | Fast 8 |
 | Plague Doctor Mors | rare | green | attack | 678 | 558 | 1035 | Average 10 |
-| The Abyss Mutant | common | green | attack | 487 | 420 | 765 | Average 10 |
+| The Abyss Mutant | rare | green | attack | 678 | 546 | 1028 | Average 10 |
 | Void-Herald Mara | common | purple | attack | 511 | 403 | 732 | Average 10 |
 | Azure Sovereign | legendary | blue | attack | 822 | 691 | 1288 | Charging 5 / 10 / 15 |
 | Dragon Samurai Kenshin | legendary | red | attack | 820 | 693 | 1281 | Average 10 |
-| Jade Monk Xuan | rare | green | defense | 545 | 687 | 1222 | Charging 8 / 10 |
-| Spirit-Fox Mei | rare | green | attack | 708 | 558 | 1015 | Fast 8 |
+| Jade Monk Xuan | common | green | defense | 382 | 538 | 934 | Average 10 |
+| Spirit-Fox Mei | common | green | attack | 521 | 413 | 734 | Fast 8 |
 | Jade Archer Linh | common | green | attack | 496 | 430 | 719 | Fast 8 |
-| Kaelen, the Grid Runner | common | yellow | attack | 508 | 435 | 744 | Very Fast 6.5 |
+| Kaelen, the Grid Runner | rare | yellow | attack | 678 | 546 | 1028 | Very Fast 6.5 |
 | Boran, Chrome Fist | rare | red | defense | 532 | 661 | 1163 | Average 10 |
-| Nadia, the Patchwork Witch | rare | purple | support | 568 | 599 | 1092 | Average 10 |
+| Nadia, the Patchwork Witch | common | blue | support | 411 | 473 | 834 | Average 10 |
 | Vesper, Neon Phantom | rare | purple | attack | 701 | 543 | 1003 | Average 10 |
 | Dr. Aris, Cyber-Stitcher | rare | green | support | 578 | 615 | 1172 | Average 10 |
 | Dragon Empress | mythical | red | support | 786 | 829 | 1562 | Charging 5 / 10 / 15 |
@@ -98,7 +98,7 @@
 | Zero, The Singularity | mythical | purple | attack | 917 | 727 | 1505 | Charging 5 / 10 / 15 |
 | The Alley Shade | common | purple | support | 389 | 481 | 849 | Average 10 |
 | Fjordwatch Hald | rare | blue | defense | 515 | 669 | 1151 | Average 10 |
-| Shellback Brukk | common | green | defense | 352 | 560 | 974 | Average 10 |
+| Shellback Brukk | rare | green | defense | 524 | 701 | 1248 | Average 10 |
 | Oakenhart, the First Warden | mythical | green | defense | 755 | 877 | 1640 | Slow 12 |
 | Oasis-Keeper Safiya | rare | green | support | 595 | 617 | 1116 | Average 10 |
 | Kassem, the Sunwall | legendary | yellow | defense | 660 | 825 | 1526 | Slow 12 |
@@ -253,7 +253,7 @@ Passive: **Perfected Blood** — Immune to Poison.
 
 ### The Hooded Thrall — Veil Step
 
-- 10 tiles: Restore 32% max HP to all living allies. Defense Up (All living allies, 1 turns); Regeneration (All living allies, 3 turns).
+- 10 tiles: Restore 28% max HP to one living ally. Defense Up (Selected ally, 1 turns).
 
 ### Murgash the Pit Grunt — Cleaver Charge
 
@@ -352,7 +352,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Rhagz, Pit Scout — Rusted Bolt
 
-- 6.5 tiles: Deal 193% ATK damage to selected enemy. Poison (Selected enemy, 2 turns).
+- 6.5 tiles: Deal 212% ATK damage to selected enemy. Poison (Selected enemy, 2 turns).
 
 ### Archangel Lucifer — Apocalyptic Wrath
 
@@ -361,11 +361,11 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Paladin of Dusk — Last Rites
 
-- 10 tiles: Deal 150% ATK damage to selected enemy. Damage Ward (Caster, 1 turns); Barrier (All living allies, 1 turns).
+- 10 tiles: Deal 130% ATK damage to selected enemy. Damage Ward (Caster, 1 turns).
 
-### Sister Seraphel — Resurrection Hymn
+### Sister Seraphel — Sheltering Hymn
 
-- 10 tiles: Restore 32% max HP to all living allies. Regeneration (All living allies, 2 turns); Damage Ward (All living allies, 2 turns).
+- 10 tiles: Restore 28% max HP to one living ally. Damage Ward (Selected ally, 1 turns).
 
 ### Justiciar Gethren — Divine Verdict
 
@@ -393,8 +393,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Ironwall Sniper — Railgun Overture
 
-- Charge 1 · 8 tiles: Deal 179% ATK damage to selected enemy. Mana Slow (Selected enemy, 1 turns).
-- Charge 2 · 10 tiles: Deal 263% ATK damage to selected enemy. Mana Slow (Selected enemy, 2 turns); Defense Down (Selected enemy, 2 turns).
+- 10 tiles: Deal 210% ATK damage to selected enemy. Mana Slow (Selected enemy, 1 turns).
 
 ### Professor Vile — Adrenaline Injection
 
@@ -414,7 +413,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Grove Druid — Call of the Wild
 
-- 10 tiles: Restore 32% max HP to all living allies. Deal 103% ATK damage to lowest-hp living enemy. Defense Up (All living allies, 1 turns); Poison (Lowest-HP living enemy, 2 turns).
+- 10 tiles: Restore 28% max HP to one living ally. Defense Up (Selected ally, 1 turns).
 
 ### Satyr Archer Kell — Arrow Storm
 
@@ -438,7 +437,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Vinestrider — Stranglehold
 
-- 10 tiles: Deal 241% ATK damage to selected enemy. Poison (Selected enemy, 3 turns).
+- 10 tiles: Deal 263% ATK damage to selected enemy. Poison (Selected enemy, 2 turns).
 
 ### Mosswitch Brynna — Verdant Blessing
 
@@ -446,7 +445,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Beastmaster Gharn — Primal Rage
 
-- 10 tiles: Deal 263% ATK damage to selected enemy. Tile Boost (Caster, 2 turns); Mana Slow (Selected enemy, 2 turns); Burn (Selected enemy, 2 turns).
+- 10 tiles: Deal 210% ATK damage to selected enemy. Mana Slow (Selected enemy, 1 turns).
 
 ### Jarl Bjorn Ironhide — Ragnarok
 
@@ -474,11 +473,11 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Cult Zealot — Mass Consecration
 
-- 10 tiles: Deal 263% ATK damage to selected enemy. Vulnerability (Selected enemy, 2 turns); Buff Seal (Selected enemy, 2 turns).
+- 10 tiles: Deal 210% ATK damage to selected enemy. Buff Seal (Selected enemy, 1 turns).
 
 ### Succubus Lilth — Dark Embrace
 
-- 10 tiles: Deal 263% ATK damage to selected enemy. Buff Seal (Selected enemy, 3 turns).
+- 10 tiles: Deal 210% ATK damage to selected enemy. Buff Seal (Selected enemy, 1 turns).
 
 ### Dune Stalker — Night Hunt
 
@@ -490,11 +489,11 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Desert Assassin — Death Mirage
 
-- 8 tiles: Deal 213% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy); Mana Slow (Selected enemy, 3 turns).
+- 8 tiles: Deal 190% ATK damage to selected enemy, ignoring 25% of DEF. .
 
 ### Camel-Rider Rashid — Sandstorm Volley
 
-- 10 tiles: Deal 263% ATK damage to selected enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 1 turns).
+- 10 tiles: Deal 210% ATK damage to selected enemy, ignoring 25% of DEF. .
 
 ### Dune Mage Juhara — Desert Vortex
 
@@ -503,7 +502,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Scavenger Jax — Whirlwind
 
-- 8 tiles: Deal 217% ATK damage to selected enemy, ignoring 25% of DEF. .
+- 8 tiles: Deal 237% ATK damage to selected enemy, ignoring 25% of DEF. .
 
 ### Plague Doctor Mors — Black Death
 
@@ -511,7 +510,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### The Abyss Mutant — Adaptive Evolution
 
-- 10 tiles: Deal 241% ATK damage to selected enemy. Defense Down (Selected enemy, 1 turns).
+- 10 tiles: Deal 263% ATK damage to selected enemy. Defense Down (Selected enemy, 2 turns).
 
 ### Void-Herald Mara — Oblivion
 
@@ -529,12 +528,11 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Jade Monk Xuan — Celestial Roar
 
-- Charge 1 · 8 tiles: Deal 102% ATK damage to selected enemy. Regeneration (Caster, 1 turns).
-- Charge 2 · 10 tiles: Deal 150% ATK damage to selected enemy. Regeneration (Caster, 2 turns); Taunt (Caster, 2 turns).
+- 10 tiles: Deal 130% ATK damage to selected enemy. Regeneration (Caster, 1 turns).
 
 ### Spirit-Fox Mei — Nine Tails
 
-- 8 tiles: Deal 237% ATK damage to selected enemy. Attack Up (Caster, 2 turns); Burn (Selected enemy, 3 turns).
+- 8 tiles: Deal 190% ATK damage to selected enemy. Burn (Selected enemy, 1 turns).
 
 ### Jade Archer Linh — Heaven's Wrath
 
@@ -542,7 +540,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Kaelen, the Grid Runner — Overclock Circuit
 
-- 6.5 tiles: Deal 193% ATK damage to selected enemy. Buff Seal (Selected enemy, 3 turns).
+- 6.5 tiles: Deal 212% ATK damage to selected enemy. Buff Seal (Selected enemy, 2 turns).
 
 ### Boran, Chrome Fist — Kinetic Block
 
@@ -550,7 +548,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Nadia, the Patchwork Witch — Signal Jam
 
-- 10 tiles: Restore 32% max HP to all living allies. Mana Flow (All living allies, 3 turns).
+- 10 tiles: Restore 28% max HP to one living ally. Mana Flow (Selected ally, 1 turns).
 
 ### Vesper, Neon Phantom — Digital Mirage
 
@@ -610,7 +608,7 @@ Passive: **Entropy Bloom** — Heals 5% of max HP every turn.
 
 ### Shellback Brukk — Shellback Challenge
 
-- 10 tiles: Deal 138% ATK damage to selected enemy. Taunt (Caster, 1 turns).
+- 10 tiles: Deal 150% ATK damage to selected enemy. Taunt (Caster, 2 turns); Barrier (All living allies, 1 turns).
 
 ### Oakenhart, the First Warden — Sanctuary of the First Oak
 
