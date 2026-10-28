@@ -190,6 +190,11 @@ body.menu-theme :is(p,small,label){line-height:1.55}
 .menu-theme .quest-banner{border:1px solid #c3d1b44d;border-radius:16px;box-shadow:var(--ui-shadow)}
 .menu-theme .quest-banner h2{font-size:36px;line-height:1.1}
 .menu-theme .quest-banner p{font-size:12px;color:#cad8ca}
+.menu-theme .campaign-victory-bonus{display:grid;grid-template-columns:36px minmax(0,1fr) auto;align-items:center;column-gap:10px;row-gap:5px;margin:12px 0;padding:10px 12px;border:1px solid #b8d2bd3b;border-radius:12px;background:#102e376e;color:#e6e5cc;font-size:12px}
+.menu-theme .campaign-victory-bonus>img{grid-row:1/3;width:36px;height:36px;object-fit:contain}
+.menu-theme .campaign-victory-bonus>b{font-size:12px;white-space:nowrap;color:#ead7a4;font-variant-numeric:tabular-nums}
+.menu-theme .campaign-victory-bonus>.quest-progress{grid-column:2/4;width:100%;height:5px;margin:0}
+
 .menu-theme .chronicle-card{padding:0!important;overflow:hidden}
 .menu-theme .chronicle-card.ready{border-color:#e3ca8b99;box-shadow:inset 0 1px #f4dbad26,0 0 25px #dabd6624,var(--ui-shadow)}
 .menu-theme .chronicle-art{border-radius:0;overflow:hidden}

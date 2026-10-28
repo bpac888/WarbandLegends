@@ -42,3 +42,7 @@ The menu Guide now includes an Effects tab beside Factions, with Buffs, Ailments
 Adventure experiments with an illustrated menu: the Campaign kingdom, Special Events portal, dragon-carved Dungeons entrance and Arena are clickable regions in one detailed realm. A second composition is tailored to phones. Large transparent hit areas, visible destination names, keyboard focus and the existing four routes provide navigation without individual cards or text panels. The Shop and Alliance remain outside Adventure.
 
 The bright paintings have no dimming layer. CSS adds slow portal light, a rotating portal ring, waterfall glints, embers and fireflies; these effects cannot intercept input or alter layout. System reduced motion disables motion, and hidden-tab motion pauses. The new stylesheet is scoped to Adventure. Tavern, character artwork/data and combat are unchanged. `npm run test:realm-map` checks destination navigation at six widths, phone artwork selection, hit areas, keyboard entry, reduced motion, pausing and Tavern preservation.
+
+## Campaign Follow-up — v0.25.1
+
+Campaign now has only its title, difficulty tabs and the map. The description, Edit Warband button, realm summary and scrolling hint are removed. The map fills the available screen below the header and tabs, while stage hit targets remain 44 pixels. It centers on the current stage horizontally and vertically on entry. The recurring 50-Gem campaign victory bonus and its progress move to a compact row on Quests; awarding rules and saves are unchanged.
