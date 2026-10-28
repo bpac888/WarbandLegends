@@ -1,3 +1,4 @@
+import {realmMap} from './realm-map.js';
 import {energyStatus} from './keeper.js';
 import {GEM_ART,GOLD_ART,ENERGY_ART} from './currency-art.js';
 import {ownedHeroes,uniqueHeroCount} from './hero-copies.js';
@@ -27,11 +28,6 @@ export const stageArt=id=>({
  'veil-sanctum':{portrait:'./assets/champions/yshmir_worldwound.webp',color:'purple',x:82,y:25},
 }[id]||{portrait:'./'+(getEncounter(id)?.portrait||'assets/champions/dragon_empress.webp'),color:'yellow',x:50,y:50});
 const modeArt={dungeons:'abyss_lord',arena:'blood_paladin',events:'frost_king',alliance:'oakenhart_first_warden',shop:'elixir_apotheon'};
-const destinationScenes={
- dungeons:'assets/dungeons/obsidian-vault.svg',arena:'assets/destinations/arena.svg',
- events:'assets/events/veil-of-umbra.svg',alliance:'assets/destinations/codex.svg',
- shop:'assets/destinations/exchange.svg',
-};
 export function hubLinks(profile){return `<section class="hub-links"><button class="hub-link portal-link" data-action="nav" data-page="summon"><img class="hub-art" src="./assets/scenes/portal.webp" alt=""><span class="hub-link-icon">${uiIcon('summon')}</span><span><small>THE ASTRAL GATE</small><strong>Summon</strong><em>${profile.gems} Gems</em></span>${uiIcon('arrow')}</button><button class="hub-link" data-action="nav" data-page="roster"><img class="hub-art" src="./assets/champions/pale_matriarch.webp" alt=""><span class="hub-link-icon">${uiIcon('roster')}</span><span><small>YOUR WARBAND</small><strong>Collection</strong><em>${Object.keys(profile.collection).length} champions</em></span>${uiIcon('arrow')}</button><button class="hub-link" data-action="nav" data-page="quests"><img class="hub-art" src="./assets/champions/blood_paladin.webp" alt=""><span class="hub-link-icon">${uiIcon('quests')}</span><span><small>A PATH TO FOLLOW</small><strong>Quests</strong><em>${QUESTS.filter(q=>!profile.claimed.includes(q.id)&&questProgress(profile,q)>=q.goal).length} rewards ready</em></span>${uiIcon('arrow')}</button></section>`;}
 export const MODES={
  dungeons:{title:'Dungeons',kicker:'DESCEND BEYOND THE LIGHT',text:'Elemental vaults, dangerous guardians, and rewards worth the descent.',items:['Element-specific dungeon entrances','Boss mechanics and difficulty tiers','Ascension and awakening materials'],icon:'chest'},
@@ -40,7 +36,7 @@ export const MODES={
  alliance:{title:'Alliance',kicker:'STRONGER AT YOUR SIDE',text:'A future gathering place for allies and cooperative challenges.',items:['Alliance creation and member management','Cooperative boss encounters','Online identity, chat and shared progress'],icon:'roster'},
  shop:{title:'Shop',kicker:'PREPARE FOR THE JOURNEY',text:'A reserved home for earned-resource exchanges and future supplies.',items:['Earned gold and material exchanges','Clear prices and item descriptions','No purchases or paid offers in this foundation'],icon:'inventory'},
 };
-export function world(){return `<section class="adventure-vista"><img src="./assets/scenes/world-map.svg" alt="An emerald citadel, frozen mountains and eclipse spires across the realms"><div><span class="eyebrow">THREE REALMS · 75 STAGES</span><h2>The Rune Road</h2><button class="button gold" data-action="nav" data-page="campaign">Enter Campaign ${uiIcon('arrow')}</button></div><span class="vista-compass" aria-hidden="true">✧</span></section><div class="world-grid">${Object.entries(MODES).filter(([id])=>!['alliance','shop'].includes(id)).map(([id,m])=>`<button class="world-card scene-destination destination-${id}" data-action="nav" data-page="${id}"><img class="destination-art" src="./${destinationScenes[id]}" alt=""><h2>${m.title}</h2></button>`).join('')}</div>`;}
+export function world(){return realmMap();}
 export {campaign,dungeons,encounterPreview} from './adventure-ui.js';
 export {arena,events,exchangePage,exchangeConfirmation,tavernDestinations} from './arena-events-ui.js';
 export function foundation(id){const m=MODES[id];const features={dungeons:['Boss encounters','Distinct realms','Rare treasures'],arena:['Your defense team','Rival warbands','Climb the ranks'],events:['Changing challenges','Seasonal bosses','Event treasures'],alliance:['Find your allies','Cooperative battles','Shared adventures'],shop:['Supplies','Materials','Earned exchanges']};return `${pageHeading(m.kicker,m.title,'A new destination on the horizon.')}<section class="destination-preview destination-${id}"><div class="destination-landscape"></div><img class="destination-champion" src="./assets/champions/${modeArt[id]}.webp" alt=""><div class="destination-copy"><span class="mode-label">NOT PLAYABLE YET</span><h2>${m.title}</h2><div class="destination-features">${features[id].map((label,i)=>`<span>${uiIcon([m.icon,'world','chest'][i])}<b>${label}</b></span>`).join('')}</div><button class="button gold" data-action="nav" data-page="campaign">Play the campaign ${uiIcon('arrow')}</button></div></section>`;}
