@@ -949,12 +949,12 @@
     "template_id": "plague_doctor",
     "name": "Quill, the Plague Sovereign",
     "title": "Black Coat, Brass Beak",
-    "rarity": "legendary",
+    "rarity": "rare",
     "faction": "nether",
     "role": "support",
-    "hp": 1390,
-    "atk": 717,
-    "def": 736,
+    "hp": 1072,
+    "atk": 574,
+    "def": 590,
     "ability_name": "Censer of Rot",
     "lore": "He used to cure people. He used to. The mask kept whispering ideas he could not unhear.",
     "image_url": "/api/static/champions/plague_doctor.png",
@@ -963,42 +963,32 @@
     "source_image": "/api/static/champions/plague_doctor.png",
     "portrait": "assets/champions/plague_doctor.webp",
     "passive": null,
-    "manaSpeed": "very_slow",
+    "manaSpeed": "average",
     "special": {
       "name": "Censer of Rot",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "very_slow",
-          "tiles": 13.5,
+          "speed": "average",
+          "tiles": 10,
           "target": "self",
           "damage": 0,
-          "healing": 0.34,
+          "healing": 0.26,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
-              "id": "block_debuffs",
-              "turns": 2,
-              "scope": "allies"
-            },
-            {
               "id": "remove_debuffs",
               "turns": 0,
-              "scope": "allies"
-            },
-            {
-              "id": "revive_on_death",
-              "turns": 2,
               "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 34% max HP to all living allies."
+    "ability_desc": "Restore 26% max HP to all living allies."
   },
   {
     "template_id": "dragonslayer",
@@ -1567,12 +1557,12 @@
     "template_id": "shade_prince",
     "name": "The Shade Prince",
     "title": "Crowned in Five Cold Flames",
-    "rarity": "legendary",
+    "rarity": "rare",
     "faction": "umbra",
     "role": "attack",
-    "hp": 1293,
-    "atk": 839,
-    "def": 688,
+    "hp": 1010,
+    "atk": 710,
+    "def": 550,
     "ability_name": "Coronation of Ash",
     "lore": "He was the youngest of five brothers. The eldest four are the flames that follow him now.",
     "image_url": "/api/static/champions/shade_prince.png",
@@ -1591,7 +1581,7 @@
           "speed": "average",
           "tiles": 10,
           "target": "enemy",
-          "damage": 2.8,
+          "damage": 2.45,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -1599,19 +1589,14 @@
           "effects": [
             {
               "id": "mana_block",
-              "turns": 2,
-              "scope": "enemy"
-            },
-            {
-              "id": "block_buffs",
-              "turns": 2,
+              "turns": 1,
               "scope": "enemy"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 280% ATK damage to selected enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 245% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "crimson_praetor",
@@ -2459,12 +2444,12 @@
     "template_id": "chem_tank_brax",
     "name": "Chem-Tank Brax",
     "title": "Hazmat Heart, Iron Lung",
-    "rarity": "legendary",
+    "rarity": "rare",
     "faction": "ironclad",
     "role": "defense",
-    "hp": 1523,
-    "atk": 652,
-    "def": 815,
+    "hp": 1230,
+    "atk": 530,
+    "def": 705,
     "ability_name": "Chemical Fortress",
     "lore": "Brax is less a soldier than a walking spill. The plating is the only thing that keeps the spill polite.",
     "image_url": "/api/static/champions/hero-33.png",
@@ -2473,42 +2458,37 @@
     "source_image": "/api/static/champions/hero-33.png",
     "portrait": "assets/champions/chem_tank_brax.webp",
     "passive": null,
-    "manaSpeed": "slow",
+    "manaSpeed": "average",
     "special": {
       "name": "Chemical Fortress",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "slow",
-          "tiles": 12,
+          "speed": "average",
+          "tiles": 10,
           "target": "enemy",
-          "damage": 1.76,
+          "damage": 1.5,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
-              "id": "inc_def",
-              "turns": 1,
+              "id": "guard",
+              "turns": 2,
               "scope": "self"
             },
             {
               "id": "shield",
               "turns": 1,
               "scope": "allies"
-            },
-            {
-              "id": "guard",
-              "turns": 2,
-              "scope": "self"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 176% ATK damage to selected enemy."
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   },
   {
     "template_id": "potion_tosser_quinn",
@@ -3918,12 +3898,12 @@
     "template_id": "dragon_samurai_kenshin",
     "name": "Dragon Samurai Kenshin",
     "title": "Blood of the Scale, Edge of the Wind",
-    "rarity": "legendary",
+    "rarity": "rare",
     "faction": "dragondynasty",
     "role": "attack",
-    "hp": 1281,
-    "atk": 820,
-    "def": 693,
+    "hp": 1020,
+    "atk": 690,
+    "def": 555,
     "ability_name": "Thousand Cuts",
     "lore": "Kenshin's blade is faster than apology. His dragon blood has never learned patience.",
     "image_url": "/api/static/champions/hero-37.png",
@@ -3942,7 +3922,7 @@
           "speed": "average",
           "tiles": 10,
           "target": "enemy",
-          "damage": 1.65,
+          "damage": 1.4,
           "healing": 0,
           "healScope": "allies",
           "aoe": true,
@@ -3952,17 +3932,12 @@
               "id": "burn",
               "turns": 1,
               "scope": "enemies"
-            },
-            {
-              "id": "counterattack",
-              "turns": 2,
-              "scope": "self"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 165% ATK damage to all living enemies."
+    "ability_desc": "Deal 140% ATK damage to all living enemies."
   },
   {
     "template_id": "jade_monk_xuan",

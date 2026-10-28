@@ -3041,6 +3041,701 @@ export const RARITY_REVISION=[
       },
       "passive": null
     }
+  },
+  {
+    "id": "dragon_samurai_kenshin",
+    "batch": 2,
+    "name": "Dragon Samurai Kenshin",
+    "before": {
+      "template_id": "dragon_samurai_kenshin",
+      "name": "Dragon Samurai Kenshin",
+      "title": "Blood of the Scale, Edge of the Wind",
+      "rarity": "legendary",
+      "faction": "dragondynasty",
+      "role": "attack",
+      "hp": 1281,
+      "atk": 820,
+      "def": 693,
+      "ability_name": "Thousand Cuts",
+      "lore": "Kenshin's blade is faster than apology. His dragon blood has never learned patience.",
+      "image_url": "/api/static/champions/hero-37.png",
+      "id": "dragon_samurai_kenshin",
+      "color": "red",
+      "source_image": "/api/static/champions/hero-37.png",
+      "portrait": "assets/champions/dragon_samurai_kenshin.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Thousand Cuts",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 1.65,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": true,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "burn",
+                "turns": 1,
+                "scope": "enemies"
+              },
+              {
+                "id": "counterattack",
+                "turns": 2,
+                "scope": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 165% ATK damage to all living enemies."
+    },
+    "sourceBefore": {
+      "template_id": "dragon_samurai_kenshin",
+      "name": "Dragon Samurai Kenshin",
+      "title": "Blood of the Scale, Edge of the Wind",
+      "rarity": "legendary",
+      "faction": "dragondynasty",
+      "role": "attack",
+      "hp": 2169,
+      "atk": 319,
+      "def": 188,
+      "spd": 130,
+      "ability_name": "Thousand Cuts",
+      "ability_desc": "Blazing cuts across the entire line, and Kenshin answers the next two blows he takes.",
+      "lore": "Kenshin's blade is faster than apology. His dragon blood has never learned patience.",
+      "image_url": "/api/static/champions/hero-37.png",
+      "id": "dragon_samurai_kenshin",
+      "color": "red",
+      "source_image": "/api/static/champions/hero-37.png",
+      "portrait": "assets/champions/dragon_samurai_kenshin.webp",
+      "kit": {
+        "a2": [
+          [
+            "burn",
+            1
+          ]
+        ],
+        "a3": [
+          [
+            "aoe",
+            0
+          ],
+          [
+            "counterattack",
+            2
+          ]
+        ]
+      },
+      "passive": null
+    },
+    "after": {
+      "template_id": "dragon_samurai_kenshin",
+      "name": "Dragon Samurai Kenshin",
+      "title": "Blood of the Scale, Edge of the Wind",
+      "rarity": "rare",
+      "faction": "dragondynasty",
+      "role": "attack",
+      "hp": 1020,
+      "atk": 690,
+      "def": 555,
+      "ability_name": "Thousand Cuts",
+      "lore": "Kenshin's blade is faster than apology. His dragon blood has never learned patience.",
+      "image_url": "/api/static/champions/hero-37.png",
+      "id": "dragon_samurai_kenshin",
+      "color": "red",
+      "source_image": "/api/static/champions/hero-37.png",
+      "portrait": "assets/champions/dragon_samurai_kenshin.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Thousand Cuts",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 1.4,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": true,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "burn",
+                "turns": 1,
+                "scope": "enemies"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 140% ATK damage to all living enemies."
+    },
+    "sourceAfter": {
+      "template_id": "dragon_samurai_kenshin",
+      "name": "Dragon Samurai Kenshin",
+      "title": "Blood of the Scale, Edge of the Wind",
+      "rarity": "rare",
+      "faction": "dragondynasty",
+      "role": "attack",
+      "hp": 1020,
+      "atk": 690,
+      "def": 555,
+      "spd": 130,
+      "ability_name": "Thousand Cuts",
+      "ability_desc": "Deal 140% ATK damage to all living enemies.",
+      "lore": "Kenshin's blade is faster than apology. His dragon blood has never learned patience.",
+      "image_url": "/api/static/champions/hero-37.png",
+      "id": "dragon_samurai_kenshin",
+      "color": "red",
+      "source_image": "/api/static/champions/hero-37.png",
+      "portrait": "assets/champions/dragon_samurai_kenshin.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "burn",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    }
+  },
+  {
+    "id": "shade_prince",
+    "batch": 2,
+    "name": "The Shade Prince",
+    "before": {
+      "template_id": "shade_prince",
+      "name": "The Shade Prince",
+      "title": "Crowned in Five Cold Flames",
+      "rarity": "legendary",
+      "faction": "umbra",
+      "role": "attack",
+      "hp": 1293,
+      "atk": 839,
+      "def": 688,
+      "ability_name": "Coronation of Ash",
+      "lore": "He was the youngest of five brothers. The eldest four are the flames that follow him now.",
+      "image_url": "/api/static/champions/shade_prince.png",
+      "id": "shade_prince",
+      "color": "blue",
+      "source_image": "/api/static/champions/shade_prince.png",
+      "portrait": "assets/champions/shade_prince.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Coronation of Ash",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 2.8,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": true,
+            "effects": [
+              {
+                "id": "mana_block",
+                "turns": 2,
+                "scope": "enemy"
+              },
+              {
+                "id": "block_buffs",
+                "turns": 2,
+                "scope": "enemy"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 280% ATK damage to selected enemy, ignoring 25% of DEF."
+    },
+    "sourceBefore": {
+      "template_id": "shade_prince",
+      "name": "The Shade Prince",
+      "title": "Crowned in Five Cold Flames",
+      "rarity": "legendary",
+      "faction": "umbra",
+      "role": "attack",
+      "hp": 2080,
+      "atk": 342,
+      "def": 172,
+      "spd": 132,
+      "ability_name": "Coronation of Ash",
+      "ability_desc": "Shadow-cuts of five dead kings — they ignore a quarter of the foe's armour and seal them off from any blessing for two rounds.",
+      "lore": "He was the youngest of five brothers. The eldest four are the flames that follow him now.",
+      "image_url": "/api/static/champions/shade_prince.png",
+      "id": "shade_prince",
+      "color": "purple",
+      "source_image": "/api/static/champions/shade_prince.png",
+      "portrait": "assets/champions/shade_prince.webp",
+      "kit": {
+        "a2": [
+          [
+            "dec_spd",
+            3
+          ]
+        ],
+        "a3": [
+          [
+            "block_buffs",
+            2
+          ],
+          [
+            "ignore_def",
+            0
+          ]
+        ]
+      },
+      "passive": null
+    },
+    "after": {
+      "template_id": "shade_prince",
+      "name": "The Shade Prince",
+      "title": "Crowned in Five Cold Flames",
+      "rarity": "rare",
+      "faction": "umbra",
+      "role": "attack",
+      "hp": 1010,
+      "atk": 710,
+      "def": 550,
+      "ability_name": "Coronation of Ash",
+      "lore": "He was the youngest of five brothers. The eldest four are the flames that follow him now.",
+      "image_url": "/api/static/champions/shade_prince.png",
+      "id": "shade_prince",
+      "color": "blue",
+      "source_image": "/api/static/champions/shade_prince.png",
+      "portrait": "assets/champions/shade_prince.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Coronation of Ash",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 2.45,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": true,
+            "effects": [
+              {
+                "id": "mana_block",
+                "turns": 1,
+                "scope": "enemy"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 245% ATK damage to selected enemy, ignoring 25% of DEF."
+    },
+    "sourceAfter": {
+      "template_id": "shade_prince",
+      "name": "The Shade Prince",
+      "title": "Crowned in Five Cold Flames",
+      "rarity": "rare",
+      "faction": "umbra",
+      "role": "attack",
+      "hp": 1010,
+      "atk": 710,
+      "def": 550,
+      "spd": 132,
+      "ability_name": "Coronation of Ash",
+      "ability_desc": "Deal 245% ATK damage to selected enemy, ignoring 25% of DEF.",
+      "lore": "He was the youngest of five brothers. The eldest four are the flames that follow him now.",
+      "image_url": "/api/static/champions/shade_prince.png",
+      "id": "shade_prince",
+      "color": "purple",
+      "source_image": "/api/static/champions/shade_prince.png",
+      "portrait": "assets/champions/shade_prince.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "mana_block",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    }
+  },
+  {
+    "id": "chem_tank_brax",
+    "batch": 2,
+    "name": "Chem-Tank Brax",
+    "before": {
+      "template_id": "chem_tank_brax",
+      "name": "Chem-Tank Brax",
+      "title": "Hazmat Heart, Iron Lung",
+      "rarity": "legendary",
+      "faction": "ironclad",
+      "role": "defense",
+      "hp": 1523,
+      "atk": 652,
+      "def": 815,
+      "ability_name": "Chemical Fortress",
+      "lore": "Brax is less a soldier than a walking spill. The plating is the only thing that keeps the spill polite.",
+      "image_url": "/api/static/champions/hero-33.png",
+      "id": "chem_tank_brax",
+      "color": "green",
+      "source_image": "/api/static/champions/hero-33.png",
+      "portrait": "assets/champions/chem_tank_brax.webp",
+      "passive": null,
+      "manaSpeed": "slow",
+      "special": {
+        "name": "Chemical Fortress",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "target": "enemy",
+            "damage": 1.76,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "inc_def",
+                "turns": 1,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 1,
+                "scope": "allies"
+              },
+              {
+                "id": "guard",
+                "turns": 2,
+                "scope": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 176% ATK damage to selected enemy."
+    },
+    "sourceBefore": {
+      "template_id": "chem_tank_brax",
+      "name": "Chem-Tank Brax",
+      "title": "Hazmat Heart, Iron Lung",
+      "rarity": "legendary",
+      "faction": "ironclad",
+      "role": "defense",
+      "hp": 2471,
+      "atk": 235,
+      "def": 246,
+      "spd": 101,
+      "ability_name": "Chemical Fortress",
+      "ability_desc": "Seals the chemical fortress — shields settle over the whole warband while the struck foe can attack nothing but Brax for two rounds.",
+      "lore": "Brax is less a soldier than a walking spill. The plating is the only thing that keeps the spill polite.",
+      "image_url": "/api/static/champions/hero-33.png",
+      "id": "chem_tank_brax",
+      "color": "blue",
+      "source_image": "/api/static/champions/hero-33.png",
+      "portrait": "assets/champions/chem_tank_brax.webp",
+      "kit": {
+        "a2": [
+          [
+            "inc_def",
+            1
+          ]
+        ],
+        "a3": [
+          [
+            "shield",
+            1
+          ],
+          [
+            "taunt",
+            2
+          ]
+        ]
+      },
+      "passive": null
+    },
+    "after": {
+      "template_id": "chem_tank_brax",
+      "name": "Chem-Tank Brax",
+      "title": "Hazmat Heart, Iron Lung",
+      "rarity": "rare",
+      "faction": "ironclad",
+      "role": "defense",
+      "hp": 1230,
+      "atk": 530,
+      "def": 705,
+      "ability_name": "Chemical Fortress",
+      "lore": "Brax is less a soldier than a walking spill. The plating is the only thing that keeps the spill polite.",
+      "image_url": "/api/static/champions/hero-33.png",
+      "id": "chem_tank_brax",
+      "color": "green",
+      "source_image": "/api/static/champions/hero-33.png",
+      "portrait": "assets/champions/chem_tank_brax.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Chemical Fortress",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 1.5,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "guard",
+                "turns": 2,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 150% ATK damage to selected enemy."
+    },
+    "sourceAfter": {
+      "template_id": "chem_tank_brax",
+      "name": "Chem-Tank Brax",
+      "title": "Hazmat Heart, Iron Lung",
+      "rarity": "rare",
+      "faction": "ironclad",
+      "role": "defense",
+      "hp": 1230,
+      "atk": 530,
+      "def": 705,
+      "spd": 101,
+      "ability_name": "Chemical Fortress",
+      "ability_desc": "Deal 150% ATK damage to selected enemy.",
+      "lore": "Brax is less a soldier than a walking spill. The plating is the only thing that keeps the spill polite.",
+      "image_url": "/api/static/champions/hero-33.png",
+      "id": "chem_tank_brax",
+      "color": "blue",
+      "source_image": "/api/static/champions/hero-33.png",
+      "portrait": "assets/champions/chem_tank_brax.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "guard",
+            2
+          ],
+          [
+            "shield",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    }
+  },
+  {
+    "id": "plague_doctor",
+    "batch": 2,
+    "name": "Quill, the Plague Sovereign",
+    "before": {
+      "template_id": "plague_doctor",
+      "name": "Quill, the Plague Sovereign",
+      "title": "Black Coat, Brass Beak",
+      "rarity": "legendary",
+      "faction": "nether",
+      "role": "support",
+      "hp": 1390,
+      "atk": 717,
+      "def": 736,
+      "ability_name": "Censer of Rot",
+      "lore": "He used to cure people. He used to. The mask kept whispering ideas he could not unhear.",
+      "image_url": "/api/static/champions/plague_doctor.png",
+      "id": "plague_doctor",
+      "color": "green",
+      "source_image": "/api/static/champions/plague_doctor.png",
+      "portrait": "assets/champions/plague_doctor.webp",
+      "passive": null,
+      "manaSpeed": "very_slow",
+      "special": {
+        "name": "Censer of Rot",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "very_slow",
+            "tiles": 13.5,
+            "target": "self",
+            "damage": 0,
+            "healing": 0.34,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "block_debuffs",
+                "turns": 2,
+                "scope": "allies"
+              },
+              {
+                "id": "remove_debuffs",
+                "turns": 0,
+                "scope": "allies"
+              },
+              {
+                "id": "revive_on_death",
+                "turns": 2,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Restore 34% max HP to all living allies."
+    },
+    "sourceBefore": {
+      "template_id": "plague_doctor",
+      "name": "Quill, the Plague Sovereign",
+      "title": "Black Coat, Brass Beak",
+      "rarity": "legendary",
+      "faction": "nether",
+      "role": "support",
+      "hp": 2042,
+      "atk": 290,
+      "def": 212,
+      "spd": 119,
+      "ability_name": "Censer of Rot",
+      "ability_desc": "Swings the censer of rot — every curse is lifted from the warband and each ally is promised one return from death.",
+      "lore": "He used to cure people. He used to. The mask kept whispering ideas he could not unhear.",
+      "image_url": "/api/static/champions/plague_doctor.png",
+      "id": "plague_doctor",
+      "color": "purple",
+      "source_image": "/api/static/champions/plague_doctor.png",
+      "portrait": "assets/champions/plague_doctor.webp",
+      "kit": {
+        "a2": [
+          [
+            "block_debuffs",
+            2
+          ]
+        ],
+        "a3": [
+          [
+            "remove_debuffs",
+            0
+          ],
+          [
+            "revive_on_death",
+            2
+          ]
+        ]
+      },
+      "passive": null
+    },
+    "after": {
+      "template_id": "plague_doctor",
+      "name": "Quill, the Plague Sovereign",
+      "title": "Black Coat, Brass Beak",
+      "rarity": "rare",
+      "faction": "nether",
+      "role": "support",
+      "hp": 1072,
+      "atk": 574,
+      "def": 590,
+      "ability_name": "Censer of Rot",
+      "lore": "He used to cure people. He used to. The mask kept whispering ideas he could not unhear.",
+      "image_url": "/api/static/champions/plague_doctor.png",
+      "id": "plague_doctor",
+      "color": "green",
+      "source_image": "/api/static/champions/plague_doctor.png",
+      "portrait": "assets/champions/plague_doctor.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Censer of Rot",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "self",
+            "damage": 0,
+            "healing": 0.26,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "remove_debuffs",
+                "turns": 0,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Restore 26% max HP to all living allies."
+    },
+    "sourceAfter": {
+      "template_id": "plague_doctor",
+      "name": "Quill, the Plague Sovereign",
+      "title": "Black Coat, Brass Beak",
+      "rarity": "rare",
+      "faction": "nether",
+      "role": "support",
+      "hp": 1072,
+      "atk": 574,
+      "def": 590,
+      "spd": 119,
+      "ability_name": "Censer of Rot",
+      "ability_desc": "Restore 26% max HP to all living allies.",
+      "lore": "He used to cure people. He used to. The mask kept whispering ideas he could not unhear.",
+      "image_url": "/api/static/champions/plague_doctor.png",
+      "id": "plague_doctor",
+      "color": "purple",
+      "source_image": "/api/static/champions/plague_doctor.png",
+      "portrait": "assets/champions/plague_doctor.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "remove_debuffs",
+            0
+          ]
+        ]
+      },
+      "passive": null
+    }
   }
 ];
 export function beforeRarityRevision(records,{source=false}={}){const m=new Map(RARITY_REVISION.map(x=>[x.id,x]));return records.map(c=>{const x=m.get(c.id);if(!x)return c;const expected=source?x.sourceAfter:x.after;if(JSON.stringify(c)!==JSON.stringify(expected))throw Error("Unexpected rarity revision: "+c.id);return structuredClone(source?x.sourceBefore:x.before);});}

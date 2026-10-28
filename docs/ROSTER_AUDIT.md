@@ -1,6 +1,6 @@
 # Warband Legends Roster Audit — 189 Champions
 
-Astral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. The subsequent owner-requested rarity revision changes nineteen Common/Rare records. Character identities and artwork are preserved; current counts below include the revision.
+Astral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. The subsequent owner-requested rarity revision changes twenty-three rarity records. Character identities and artwork are preserved; current counts below include the revision.
 
 ## Before and After
 
@@ -8,8 +8,8 @@ Astral Concord adds fifteen original star-born champions inspired by mythical he
 | --- | --- | --- | --- |
 | Total | 174 | 15 | 189 |
 | Mythical | 15 | 2 | 17 |
-| Legendary | 76 | 7 | 83 |
-| Rare | 56 | 6 | 62 |
+| Legendary | 72 | 7 | 79 |
+| Rare | 60 | 6 | 66 |
 | Common | 27 | 0 | 27 |
 | Attack | 93 | 8 | 101 |
 | Defense | 38 | 3 | 41 |
@@ -67,13 +67,13 @@ Every faction has all five elements. Astral Concord begins with 15 champions, co
 | --- | --- | --- | --- | --- | --- |
 | Very Fast | 1 | 2 | 4 | 2 | 9 |
 | Fast | 5 | 15 | 15 | 6 | 41 |
-| Average | 2 | 26 | 41 | 19 | 88 |
-| Slow | 4 | 24 | 1 | 0 | 29 |
-| Very Slow | 1 | 2 | 0 | 0 | 3 |
+| Average | 2 | 24 | 45 | 19 | 90 |
+| Slow | 4 | 23 | 1 | 0 | 28 |
+| Very Slow | 1 | 1 | 0 | 0 | 2 |
 | Charging | 4 | 14 | 1 | 0 | 19 |
 
 Yshmir remains the only Very Slow Mythical. New designs use existing supported effects and charge tiers; no new faction-wide combat bonus is applied.
 
 ## Validation and Limits
 
-Summon rarity odds and the ten-call guarantee are unchanged; new champions join their matching rarity pools. Build and audit checks fingerprint original records after verifying and reversing only the explicitly approved nineteen-record rarity revision. New-character checks cover balanced coverage, unique names, Specials, summon eligibility, save compatibility, Auto actions and portrait quality. This is a coverage audit, not a measured matchup win-rate study. Previous reports remain available for [174](history/ROSTER-AUDIT-174.md), [162](history/ROSTER-AUDIT-162.md) and [150](history/ROSTER-AUDIT-150.md) champions.
+Summon rarity odds and the ten-call guarantee are unchanged; new champions join their matching rarity pools. Build and audit checks fingerprint original records after verifying and reversing only the explicitly approved twenty-three-record rarity revision. New-character checks cover balanced coverage, unique names, Specials, summon eligibility, save compatibility, Auto actions and portrait quality. This is a coverage audit, not a measured matchup win-rate study. Previous reports remain available for [174](history/ROSTER-AUDIT-174.md), [162](history/ROSTER-AUDIT-162.md) and [150](history/ROSTER-AUDIT-150.md) champions.

@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import {defaultProfile} from '../src/progression.js';
 import {PROFILE_KEY} from '../src/storage.js';
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
-const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json')),added=roster.filter(c=>RARITY_REVISION.some(x=>x.id===c.id));
+const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json')),added=roster.filter(c=>RARITY_REVISION.some(x=>!x.batch&&x.id===c.id));
 const nameAudit=JSON.parse(await fs.readFile(root+'data/roster-name-audit.json'));
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
 try{

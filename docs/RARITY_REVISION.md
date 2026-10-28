@@ -29,3 +29,7 @@ Common elements: **5 Red, 6 Blue, 5 Green, 6 Yellow, 5 Purple**. Total rarity co
 Common kits use a single charge tier, lower damage and shorter effects; supports heal one chosen ally. New Rare kits have higher stats and stronger damage or protection. Only the four demoted characters with permitted element changes move colors: Succubus Lilth and Desert Assassin become Red; Nadia and the Hooded Thrall become Blue.
 
 Historical expansion checks reverse only this approved, strictly verified revision before comparing their original fingerprints. Other records remain unchanged.
+
+## Later Legendary-to-Rare Revision
+
+Dragon Samurai Kenshin, Chem-Tank Brax, Quill (the Plague Sovereign) and the Shade Prince now become Rare, with lower stats and simpler Specials. Their artwork and elements are unchanged. Current counts: **27 Common, 66 Rare, 79 Legendary, 17 Mythical**.

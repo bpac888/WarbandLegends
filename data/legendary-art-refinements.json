@@ -1,0 +1,178 @@
+[
+  {
+    "id": "transmuter_prime",
+    "name": "Auroline, Transmuter Prime",
+    "referenceSha256": "313155116d4212e32e166f3cad45b7b29e09c8142b54ef38ce69aac5f23e9f8c",
+    "publishedSha256": "d752422053d13e3aa7bc6ba25e6c65047564ba649acba60bf2ebf21f19bbc3b3",
+    "referenceDimensions": [
+      1084,
+      1451
+    ],
+    "publishedDimensions": [
+      1084,
+      1451
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "azure_sovereign",
+    "name": "Azure Sovereign",
+    "referenceSha256": "ef54ae3d341c536b07d78e6b6d50d8d8939427c2becfaf3ae54318f356cb179e",
+    "publishedSha256": "eebb029dfb569f87e0b478fbfc11fc36506b1ddfdc1f0363e6e6edd70c11fb82",
+    "referenceDimensions": [
+      896,
+      1200
+    ],
+    "publishedDimensions": [
+      1084,
+      1451
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "neon_god_overlord",
+    "name": "Baron Viktor, The Cybergod",
+    "referenceSha256": "f19c4a359e5e69d7449ae7ac26af26d20b32c3c5719d7707ebec03cb610ccf7a",
+    "publishedSha256": "c709ca669160a0062ede60134c4897d63881708fd68f0c6bed28755c1d9b70e6",
+    "referenceDimensions": [
+      896,
+      1200
+    ],
+    "publishedDimensions": [
+      1085,
+      1450
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "berserker_ulf",
+    "name": "Berserker Loki",
+    "referenceSha256": "04c7e14d6704d974cb67131b63a01baadcf75f224cbde5e19c29e95c9f9f27eb",
+    "publishedSha256": "e3a43843d50b83356493f39eea269d9a8f21ab46ea8f22eff2b630d9d70df912",
+    "referenceDimensions": [
+      896,
+      1280
+    ],
+    "publishedDimensions": [
+      1049,
+      1499
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "executor_model_z",
+    "name": "Executor Model Z",
+    "referenceSha256": "e36c530a32cb82052155ef58c86fbef25174fdc2228ade1d81d4f6c010414319",
+    "publishedSha256": "2622434edcc12013fac5aab7d42d15f001becd3fd98550de7b55e36856651c1d",
+    "referenceDimensions": [
+      896,
+      1200
+    ],
+    "publishedDimensions": [
+      1084,
+      1451
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "brimstone_witch",
+    "name": "Hexandra, Brimstone Witch",
+    "referenceSha256": "7574fd826408206ae4930792b0deeae71e5d1cf76f692fabe8bc112a0c97266f",
+    "publishedSha256": "3ddbde731309d312318193fb3fd336b30d795dadb74f27164e18a7f5a54e0a82",
+    "referenceDimensions": [
+      896,
+      1200
+    ],
+    "publishedDimensions": [
+      1084,
+      1451
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "jarl_bjorn_ironhide",
+    "name": "Jarl Bjorn Ironhide",
+    "referenceSha256": "d8afb9ae890782d3cff86f3055aab1e784ec9f2a73c5c168c0a3a77dc944a33f",
+    "publishedSha256": "2f0fd6274d986f186258e3aba169e776947cbc0d69016ee2cd250b27ae9bde25",
+    "referenceDimensions": [
+      896,
+      1200
+    ],
+    "publishedDimensions": [
+      1084,
+      1451
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "necropolis_titan",
+    "name": "Ossir, Necropolis Titan",
+    "referenceSha256": "5784d6c8b45eddec0c255f3f95a0032ea1f4176a29ae21937c4c914f6e56d387",
+    "publishedSha256": "a5547f2d13acf4ab1addb2e5250ab7b4402a4145dfcc0fff17bff6ed4ec17aba",
+    "referenceDimensions": [
+      895,
+      1200
+    ],
+    "publishedDimensions": [
+      1083,
+      1453
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "wraith_archer",
+    "name": "Selka the Wraith",
+    "referenceSha256": "c35052043b0c1419bb5f405af76c92a61ec7f0d0e980c80342c1c98dfff725c5",
+    "publishedSha256": "0996af6cc4916ca7ae12db723e501a376fe9d9db617855ab47441abe2143b4ba",
+    "referenceDimensions": [
+      896,
+      1200
+    ],
+    "publishedDimensions": [
+      1084,
+      1451
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "steel_oracle",
+    "name": "The Oracle",
+    "referenceSha256": "6aa7a58cc4ad7d972958d89a2aaeab5a7b7881a7f574b69493b5a4ec112add6c",
+    "publishedSha256": "53b1443d2a67d9b953906f14cc9b644a201a140f5661223bcdd97263c947b7b9",
+    "referenceDimensions": [
+      1084,
+      1451
+    ],
+    "publishedDimensions": [
+      1084,
+      1451
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  },
+  {
+    "id": "crimson_praetor",
+    "name": "Vharos, Crimson Praetor",
+    "referenceSha256": "d96d1ef681815db5988a3fbc579a7457ce6e9bd58b20bf2256e233fe352b6158",
+    "publishedSha256": "759121a910335cc34613eb72be8bf01e2327ebc5dccd35de5d4ab067ba09d977",
+    "referenceDimensions": [
+      1084,
+      1451
+    ],
+    "publishedDimensions": [
+      1085,
+      1450
+    ],
+    "method": "Edit of current in-game portrait using explicit image reference",
+    "webpQuality": 92
+  }
+]

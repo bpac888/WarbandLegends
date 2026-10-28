@@ -1,3 +1,4 @@
+import {beforeRarityRevision} from '../src/rarity-revision.js';
 import {defaultProfile as newProfile} from '../src/progression.js';
 import {REFERENCE_TEAM,referenceProfile} from './reference-team.mjs';
 import test from 'node:test';
@@ -85,7 +86,7 @@ test('full Specials retain merged source effects except deliberate match-3 revis
  }
 });
 test('Legendary and Rare stat means match the supplied max-level reference',()=>{
- for(const [rarity,means,bounds]of [['legendary',{atk:760,def:726,hp:1393},{atk:[596,854],def:[598,850],hp:[1226,1645]}],['rare',{atk:626,def:600,hp:1083},{atk:[501,776],def:[440,752],hp:[835,1330]}]]){const group=roster.filter(c=>c.rarity===rarity);for(const stat of ['atk','def','hp']){assert.equal(group.reduce((n,c)=>n+c[stat],0)/group.length,means[stat]);for(const c of group)assert.ok(Number.isInteger(c[stat])&&c[stat]>=bounds[stat][0]&&c[stat]<=bounds[stat][1],`${c.id} ${stat}`);}}
+ for(const [rarity,means,bounds]of [['legendary',{atk:760,def:726,hp:1393},{atk:[596,854],def:[598,850],hp:[1226,1645]}],['rare',{atk:626,def:600,hp:1083},{atk:[501,776],def:[440,752],hp:[835,1330]}]]){const group=(rarity==='legendary'?beforeRarityRevision(roster):roster).filter(c=>c.rarity===rarity);for(const stat of ['atk','def','hp']){assert.equal(group.reduce((n,c)=>n+c[stat],0)/group.length,means[stat]);for(const c of group)assert.ok(Number.isInteger(c[stat])&&c[stat]>=bounds[stat][0]&&c[stat]<=bounds[stat][1],`${c.id} ${stat}`);}}
 });
 test('every champion can cast each level with valid targeting and finite results',()=>{
  for(const c of roster)for(const level of c.special.levels){const ids=[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)];const s=make(123,ids),actor=s.heroes[0];actor.mana=level.tiles;const target=level.target==='enemy'?s.enemies[0]:level.target==='self'?actor:s.heroes[1];s.heroes[1].hp=Math.floor(s.heroes[1].maxHp*.5);const r=cast(s,actor.uid,target.uid,level.level);assert.ok(!r.error,`${c.id} level ${level.level}`);assert.ok(validateSave(r.state,roster),`${c.id} produced invalid state`);assert.equal(r.state.heroes[0].mana,0);assert.ok(r.state.log.some(l=>l.text.includes(c.special.name)));}

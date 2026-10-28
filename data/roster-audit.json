@@ -1,13 +1,14 @@
 {
   "version": 4,
-  "scope": "Roster coverage audit after adding the 15-character Astral Concord faction. Not a measured PvP win-rate study.",
-  "originalRecordsPreserved": true,
+  "scope": "Current roster coverage after Astral Concord and the approved rarity revisions. Not a measured PvP win-rate study.",
+  "historicalBaselineVerified": true,
+  "approvedRarityRevisionCount": 23,
   "before": {
     "total": 174,
     "rarity": {
       "mythical": 15,
-      "legendary": 76,
-      "rare": 56,
+      "legendary": 72,
+      "rare": 60,
       "common": 27
     },
     "color": {
@@ -25,9 +26,9 @@
     "speed": {
       "very_fast": 9,
       "fast": 37,
-      "average": 80,
-      "slow": 27,
-      "very_slow": 3,
+      "average": 82,
+      "slow": 26,
+      "very_slow": 2,
       "charging": 18
     }
   },
@@ -64,8 +65,8 @@
     "total": 189,
     "rarity": {
       "mythical": 17,
-      "legendary": 83,
-      "rare": 62,
+      "legendary": 79,
+      "rare": 66,
       "common": 27
     },
     "color": {
@@ -83,9 +84,9 @@
     "speed": {
       "very_fast": 9,
       "fast": 41,
-      "average": 88,
-      "slow": 29,
-      "very_slow": 3,
+      "average": 90,
+      "slow": 28,
+      "very_slow": 2,
       "charging": 19
     }
   },
@@ -215,8 +216,8 @@
       "total": 16,
       "rarity": {
         "mythical": 1,
-        "legendary": 9,
-        "rare": 2,
+        "legendary": 8,
+        "rare": 3,
         "common": 4
       },
       "color": {
@@ -336,8 +337,8 @@
       "total": 16,
       "rarity": {
         "mythical": 2,
-        "legendary": 6,
-        "rare": 2,
+        "legendary": 5,
+        "rare": 3,
         "common": 6
       },
       "color": {
@@ -355,8 +356,8 @@
       "speed": {
         "very_fast": 0,
         "fast": 4,
-        "average": 7,
-        "slow": 3,
+        "average": 8,
+        "slow": 2,
         "very_slow": 0,
         "charging": 2
       },
@@ -415,8 +416,8 @@
       "total": 16,
       "rarity": {
         "mythical": 1,
-        "legendary": 9,
-        "rare": 5,
+        "legendary": 8,
+        "rare": 6,
         "common": 1
       },
       "color": {
@@ -434,9 +435,9 @@
       "speed": {
         "very_fast": 1,
         "fast": 2,
-        "average": 6,
+        "average": 7,
         "slow": 5,
-        "very_slow": 1,
+        "very_slow": 0,
         "charging": 1
       },
       "before": 16,
@@ -452,8 +453,8 @@
       "total": 16,
       "rarity": {
         "mythical": 1,
-        "legendary": 9,
-        "rare": 2,
+        "legendary": 8,
+        "rare": 3,
         "common": 4
       },
       "color": {
@@ -591,58 +592,58 @@
       }
     },
     "legendary": {
-      "total": 83,
+      "total": 79,
       "rarity": {
         "mythical": 0,
-        "legendary": 83,
+        "legendary": 79,
         "rare": 0,
         "common": 0
       },
       "color": {
-        "red": 16,
-        "blue": 17,
-        "green": 16,
+        "red": 15,
+        "blue": 16,
+        "green": 14,
         "yellow": 17,
         "purple": 17
       },
       "type": {
-        "attack": 47,
-        "defense": 18,
-        "support": 18
+        "attack": 45,
+        "defense": 17,
+        "support": 17
       },
       "speed": {
         "very_fast": 2,
         "fast": 15,
-        "average": 26,
-        "slow": 24,
-        "very_slow": 2,
+        "average": 24,
+        "slow": 23,
+        "very_slow": 1,
         "charging": 14
       }
     },
     "rare": {
-      "total": 62,
+      "total": 66,
       "rarity": {
         "mythical": 0,
         "legendary": 0,
-        "rare": 62,
+        "rare": 66,
         "common": 0
       },
       "color": {
-        "red": 14,
-        "blue": 13,
-        "green": 15,
+        "red": 15,
+        "blue": 14,
+        "green": 17,
         "yellow": 12,
         "purple": 8
       },
       "type": {
-        "attack": 32,
-        "defense": 16,
-        "support": 14
+        "attack": 34,
+        "defense": 17,
+        "support": 15
       },
       "speed": {
         "very_fast": 4,
         "fast": 15,
-        "average": 41,
+        "average": 45,
         "slow": 1,
         "very_slow": 0,
         "charging": 1
@@ -683,8 +684,8 @@
       "total": 40,
       "rarity": {
         "mythical": 5,
-        "legendary": 16,
-        "rare": 14,
+        "legendary": 15,
+        "rare": 15,
         "common": 5
       },
       "color": {
@@ -712,8 +713,8 @@
       "total": 40,
       "rarity": {
         "mythical": 4,
-        "legendary": 17,
-        "rare": 13,
+        "legendary": 16,
+        "rare": 14,
         "common": 6
       },
       "color": {
@@ -741,8 +742,8 @@
       "total": 38,
       "rarity": {
         "mythical": 2,
-        "legendary": 16,
-        "rare": 15,
+        "legendary": 14,
+        "rare": 17,
         "common": 5
       },
       "color": {
@@ -760,9 +761,9 @@
       "speed": {
         "very_fast": 1,
         "fast": 8,
-        "average": 18,
-        "slow": 6,
-        "very_slow": 2,
+        "average": 20,
+        "slow": 5,
+        "very_slow": 1,
         "charging": 3
       }
     },
@@ -830,8 +831,8 @@
       "total": 101,
       "rarity": {
         "mythical": 7,
-        "legendary": 47,
-        "rare": 32,
+        "legendary": 45,
+        "rare": 34,
         "common": 15
       },
       "color": {
@@ -859,8 +860,8 @@
       "total": 41,
       "rarity": {
         "mythical": 4,
-        "legendary": 18,
-        "rare": 16,
+        "legendary": 17,
+        "rare": 17,
         "common": 3
       },
       "color": {
@@ -878,8 +879,8 @@
       "speed": {
         "very_fast": 0,
         "fast": 3,
-        "average": 21,
-        "slow": 16,
+        "average": 22,
+        "slow": 15,
         "very_slow": 0,
         "charging": 1
       }
@@ -888,8 +889,8 @@
       "total": 47,
       "rarity": {
         "mythical": 6,
-        "legendary": 18,
-        "rare": 14,
+        "legendary": 17,
+        "rare": 15,
         "common": 9
       },
       "color": {
@@ -907,9 +908,9 @@
       "speed": {
         "very_fast": 0,
         "fast": 9,
-        "average": 27,
+        "average": 28,
         "slow": 5,
-        "very_slow": 2,
+        "very_slow": 1,
         "charging": 4
       }
     }

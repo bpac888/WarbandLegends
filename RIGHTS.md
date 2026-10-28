@@ -29,3 +29,5 @@ The third expansion adds twelve original character portraits and faction-specifi
 The Astral Concord expansion adds fifteen original image-generated portraits and one original faction emblem. Its alien designs loosely evoke public-domain mythical archetypes, with original names, lore and kits. No third-party character art is copied. All 174 prior characters are unchanged; `data/roster-expansion-4.json` fingerprints that baseline.
 
 Artwork-quality restoration re-encodes 131 existing original-source portraits at native resolution and WebP quality 92. Their compositions and provenance are unchanged; no replacement artwork is generated. See `docs/ARTWORK_QUALITY.md`.
+
+Eleven Legendary portraits receive image-generated edits explicitly referencing the current owner-provided in-game portraits, preserving their general designs while increasing detail and rendering quality. No third-party character art is used. Four separately demoted Rare characters retain their exact portrait files. See `docs/LEGENDARY_REFINEMENTS.md`.

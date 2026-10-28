@@ -105,7 +105,33 @@
     },
     "plague_doctor": {
       "color": "green",
-      "manaSpeed": "very_slow"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.26,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1072,
+        "atk": 574,
+        "def": 590
+      }
     },
     "dragonslayer": {
       "color": "red",
@@ -185,7 +211,33 @@
     },
     "shade_prince": {
       "color": "blue",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": [
+            {
+              "id": "mana_block",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1010,
+        "atk": 710,
+        "def": 550
+      }
     },
     "crimson_praetor": {
       "color": "red",
@@ -362,7 +414,38 @@
     },
     "chem_tank_brax": {
       "color": "green",
-      "manaSpeed": "slow"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.5,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1230,
+        "atk": 530,
+        "def": 705
+      }
     },
     "potion_tosser_quinn": {
       "color": "purple",
@@ -700,7 +783,33 @@
     },
     "dragon_samurai_kenshin": {
       "color": "red",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.4,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 1,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1020,
+        "atk": 690,
+        "def": 555
+      }
     },
     "jade_monk_xuan": {
       "color": "green",

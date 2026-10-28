@@ -20,7 +20,7 @@
 | Acolyte Iyr | common | red | support | 382 | 489 | 853 | Average 10 |
 | Vethra Witchblade | legendary | red | attack | 826 | 678 | 1325 | Average 10 |
 | Dragon Mage | legendary | red | attack | 832 | 677 | 1310 | Charging 8 / 10 |
-| Quill, the Plague Sovereign | legendary | green | support | 717 | 736 | 1390 | Very Slow 13.5 |
+| Quill, the Plague Sovereign | rare | green | support | 574 | 590 | 1072 | Average 10 |
 | Dragon Slayer | legendary | red | attack | 814 | 668 | 1312 | Average 10 |
 | Selka the Wraith | legendary | purple | attack | 818 | 686 | 1317 | Very Fast 6.5 |
 | Ashwind Warden | mythical | yellow | defense | 763 | 870 | 1618 | Fast 8 |
@@ -31,7 +31,7 @@
 | Sir Aurel, the Crimson Paladin | mythical | red | defense | 748 | 875 | 1653 | Slow 12 |
 | Lady Death | legendary | purple | attack | 846 | 690 | 1301 | Average 10 |
 | The Sin Archon | legendary | purple | support | 731 | 718 | 1368 | Slow 12 |
-| The Shade Prince | legendary | blue | attack | 839 | 688 | 1293 | Average 10 |
+| The Shade Prince | rare | blue | attack | 710 | 550 | 1010 | Average 10 |
 | Vharos, Crimson Praetor | legendary | red | attack | 832 | 694 | 1318 | Average 10 |
 | Ithreya, Umbral Hierarch | legendary | purple | support | 704 | 749 | 1439 | Slow 12 |
 | Hexandra, Brimstone Witch | legendary | red | attack | 828 | 674 | 1311 | Average 10 |
@@ -49,7 +49,7 @@
 | Grease Monkey | common | yellow | support | 393 | 479 | 834 | Average 10 |
 | Ironwall Sniper | common | blue | attack | 522 | 413 | 733 | Average 10 |
 | Professor Vile | legendary | green | support | 722 | 734 | 1372 | Average 10 |
-| Chem-Tank Brax | legendary | green | defense | 652 | 815 | 1523 | Slow 12 |
+| Chem-Tank Brax | rare | green | defense | 530 | 705 | 1230 | Average 10 |
 | Potion-Tosser Quinn | rare | purple | support | 592 | 596 | 1116 | Average 10 |
 | Elder Rootmother | legendary | green | support | 699 | 737 | 1409 | Very Slow 13.5 |
 | Grove Druid | common | green | support | 412 | 473 | 833 | Average 10 |
@@ -79,7 +79,7 @@
 | The Abyss Mutant | rare | green | attack | 678 | 546 | 1028 | Average 10 |
 | Void-Herald Mara | common | purple | attack | 511 | 403 | 732 | Average 10 |
 | Azure Sovereign | legendary | blue | attack | 822 | 691 | 1288 | Charging 5 / 10 / 15 |
-| Dragon Samurai Kenshin | legendary | red | attack | 820 | 693 | 1281 | Average 10 |
+| Dragon Samurai Kenshin | rare | red | attack | 690 | 555 | 1020 | Average 10 |
 | Jade Monk Xuan | common | green | defense | 382 | 538 | 934 | Average 10 |
 | Spirit-Fox Mei | common | green | attack | 521 | 413 | 734 | Fast 8 |
 | Jade Archer Linh | common | green | attack | 496 | 430 | 719 | Fast 8 |
@@ -274,7 +274,7 @@ Passive: **Perfected Blood** — Immune to Poison.
 
 ### Quill, the Plague Sovereign — Censer of Rot
 
-- 13.5 tiles: Restore 34% max HP to all living allies. Cleanse (All living allies); Ailment Ward (All living allies, 2 turns); Death Ward (All living allies, 2 turns).
+- 10 tiles: Restore 26% max HP to all living allies. Cleanse (All living allies).
 
 ### Dragon Slayer — Dragon Slash
 
@@ -328,7 +328,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### The Shade Prince — Coronation of Ash
 
-- 10 tiles: Deal 280% ATK damage to selected enemy, ignoring 25% of DEF. Mana Block (Selected enemy, 2 turns); Buff Seal (Selected enemy, 2 turns).
+- 10 tiles: Deal 245% ATK damage to selected enemy, ignoring 25% of DEF. Mana Block (Selected enemy, 1 turns).
 
 ### Vharos, Crimson Praetor — Praetorian Verdict
 
@@ -401,7 +401,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Chem-Tank Brax — Chemical Fortress
 
-- 12 tiles: Deal 176% ATK damage to selected enemy. Defense Up (Caster, 1 turns); Barrier (All living allies, 1 turns); Taunt (Caster, 2 turns).
+- 10 tiles: Deal 150% ATK damage to selected enemy. Taunt (Caster, 2 turns); Barrier (All living allies, 1 turns).
 
 ### Potion-Tosser Quinn — Experimental Cocktail
 
@@ -524,7 +524,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 ### Dragon Samurai Kenshin — Thousand Cuts
 
-- 10 tiles: Deal 165% ATK damage to all living enemies. Riposte (Caster, 2 turns); Burn (All living enemies, 1 turns).
+- 10 tiles: Deal 140% ATK damage to all living enemies. Burn (All living enemies, 1 turns).
 
 ### Jade Monk Xuan — Celestial Roar
 

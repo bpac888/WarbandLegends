@@ -628,15 +628,15 @@
     "template_id": "plague_doctor",
     "name": "Quill, the Plague Sovereign",
     "title": "Black Coat, Brass Beak",
-    "rarity": "legendary",
+    "rarity": "rare",
     "faction": "nether",
     "role": "support",
-    "hp": 2042,
-    "atk": 290,
-    "def": 212,
+    "hp": 1072,
+    "atk": 574,
+    "def": 590,
     "spd": 119,
     "ability_name": "Censer of Rot",
-    "ability_desc": "Swings the censer of rot — every curse is lifted from the warband and each ally is promised one return from death.",
+    "ability_desc": "Restore 26% max HP to all living allies.",
     "lore": "He used to cure people. He used to. The mask kept whispering ideas he could not unhear.",
     "image_url": "/api/static/champions/plague_doctor.png",
     "id": "plague_doctor",
@@ -644,20 +644,11 @@
     "source_image": "/api/static/champions/plague_doctor.png",
     "portrait": "assets/champions/plague_doctor.webp",
     "kit": {
-      "a2": [
-        [
-          "block_debuffs",
-          2
-        ]
-      ],
+      "a2": [],
       "a3": [
         [
           "remove_debuffs",
           0
-        ],
-        [
-          "revive_on_death",
-          2
         ]
       ]
     },
@@ -1110,15 +1101,15 @@
     "template_id": "shade_prince",
     "name": "The Shade Prince",
     "title": "Crowned in Five Cold Flames",
-    "rarity": "legendary",
+    "rarity": "rare",
     "faction": "umbra",
     "role": "attack",
-    "hp": 2080,
-    "atk": 342,
-    "def": 172,
+    "hp": 1010,
+    "atk": 710,
+    "def": 550,
     "spd": 132,
     "ability_name": "Coronation of Ash",
-    "ability_desc": "Shadow-cuts of five dead kings — they ignore a quarter of the foe's armour and seal them off from any blessing for two rounds.",
+    "ability_desc": "Deal 245% ATK damage to selected enemy, ignoring 25% of DEF.",
     "lore": "He was the youngest of five brothers. The eldest four are the flames that follow him now.",
     "image_url": "/api/static/champions/shade_prince.png",
     "id": "shade_prince",
@@ -1126,20 +1117,11 @@
     "source_image": "/api/static/champions/shade_prince.png",
     "portrait": "assets/champions/shade_prince.webp",
     "kit": {
-      "a2": [
-        [
-          "dec_spd",
-          3
-        ]
-      ],
+      "a2": [],
       "a3": [
         [
-          "block_buffs",
-          2
-        ],
-        [
-          "ignore_def",
-          0
+          "mana_block",
+          1
         ]
       ]
     },
@@ -1731,15 +1713,15 @@
     "template_id": "chem_tank_brax",
     "name": "Chem-Tank Brax",
     "title": "Hazmat Heart, Iron Lung",
-    "rarity": "legendary",
+    "rarity": "rare",
     "faction": "ironclad",
     "role": "defense",
-    "hp": 2471,
-    "atk": 235,
-    "def": 246,
+    "hp": 1230,
+    "atk": 530,
+    "def": 705,
     "spd": 101,
     "ability_name": "Chemical Fortress",
-    "ability_desc": "Seals the chemical fortress — shields settle over the whole warband while the struck foe can attack nothing but Brax for two rounds.",
+    "ability_desc": "Deal 150% ATK damage to selected enemy.",
     "lore": "Brax is less a soldier than a walking spill. The plating is the only thing that keeps the spill polite.",
     "image_url": "/api/static/champions/hero-33.png",
     "id": "chem_tank_brax",
@@ -1747,20 +1729,15 @@
     "source_image": "/api/static/champions/hero-33.png",
     "portrait": "assets/champions/chem_tank_brax.webp",
     "kit": {
-      "a2": [
-        [
-          "inc_def",
-          1
-        ]
-      ],
+      "a2": [],
       "a3": [
+        [
+          "guard",
+          2
+        ],
         [
           "shield",
           1
-        ],
-        [
-          "taunt",
-          2
         ]
       ]
     },
@@ -2732,15 +2709,15 @@
     "template_id": "dragon_samurai_kenshin",
     "name": "Dragon Samurai Kenshin",
     "title": "Blood of the Scale, Edge of the Wind",
-    "rarity": "legendary",
+    "rarity": "rare",
     "faction": "dragondynasty",
     "role": "attack",
-    "hp": 2169,
-    "atk": 319,
-    "def": 188,
+    "hp": 1020,
+    "atk": 690,
+    "def": 555,
     "spd": 130,
     "ability_name": "Thousand Cuts",
-    "ability_desc": "Blazing cuts across the entire line, and Kenshin answers the next two blows he takes.",
+    "ability_desc": "Deal 140% ATK damage to all living enemies.",
     "lore": "Kenshin's blade is faster than apology. His dragon blood has never learned patience.",
     "image_url": "/api/static/champions/hero-37.png",
     "id": "dragon_samurai_kenshin",
@@ -2748,20 +2725,11 @@
     "source_image": "/api/static/champions/hero-37.png",
     "portrait": "assets/champions/dragon_samurai_kenshin.webp",
     "kit": {
-      "a2": [
+      "a2": [],
+      "a3": [
         [
           "burn",
           1
-        ]
-      ],
-      "a3": [
-        [
-          "aoe",
-          0
-        ],
-        [
-          "counterattack",
-          2
         ]
       ]
     },
