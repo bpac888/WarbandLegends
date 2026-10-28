@@ -10,6 +10,7 @@
 - [Roadmap](ROADMAP.md) — implementation milestones and planned work.
 - [189-champion roster coverage](ROSTER_AUDIT.md) — rarity, color, faction, type and speed counts.
 - [Character balance review](CHARACTER_BALANCE_REVIEW.md) — all 189 individual reviews, speed and rarity comparisons, and proposed additions; [filterable CSV](CHARACTER_BALANCE_REVIEW.csv).
+- [Citadel visual refresh](CITADEL_VISUAL_REFRESH.md) — menu design, fonts, motion and preservation of the battle presentation.
 
 ## Game systems
 

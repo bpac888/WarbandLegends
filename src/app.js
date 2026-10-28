@@ -1,3 +1,4 @@
+import './menu-atmosphere.js';
 import {factionTeamHTML,factionUnitHTML} from './faction-ui.js';
 import {refreshEnergy,energyStatus} from './keeper.js';
 import {applyAutoAction} from './auto-battle.js';
@@ -271,7 +272,7 @@ function renderRoute(){
   window.scrollTo({top:0,behavior:'instant'});
 }
 function openGuide(topic){openModal('The Guide',guideHTML(topic,byId.get(app.querySelector('.champion-page')?.dataset.championId)),'page-guide');}
-function shellFrame(page,body){const active=page==='campaign'||page==='dungeons'||Shell.MODES[page]?'world':page==='champion'?'roster':page;app.innerHTML=`${header(false,active,page)}<main class="game-page page-${page}">${body}</main>`;}
+function shellFrame(page,body){const active=['shop','daily'].includes(page)?'home':page==='campaign'||page==='dungeons'||Shell.MODES[page]?'world':page==='champion'?'roster':page;app.innerHTML=`${header(false,active,page)}<main class="game-page page-${page}">${body}</main>`;}
 function renderShell(page,center=true){screen=page;const body=page==='world'?Shell.world():page==='campaign'?Shell.campaign(profile,{difficulty:campaignDifficulty}):page==='dungeons'?Shell.dungeons(profile,{difficulty:dungeonDifficulty}):page==='arena'?Shell.arena(profile,roster):page==='events'?Shell.events(profile,{selected:selectedEvent}):page==='shop'?Shell.exchangePage(profile,{tab:shopTab}):page==='summon'?Shell.portal(profile,roster,{charging:summoning,reveal:portalReveal}):page==='quests'?Shell.quests(profile,{limit:questLimit||(innerWidth<600?6:12),state:questState}):page==='inventory'?Shell.inventory(profile):page==='settings'?Shell.settings(profile)+profileExtras(profile,roster):page==='daily'?dailyPage(profile):Shell.foundation(page);shellFrame(page,body);if(page==='campaign'&&center){const viewport=document.querySelector('.campaign-map-viewport'),node=viewport?.querySelector('[data-current="true"]');if(node){viewport.scrollLeft=node.offsetLeft-viewport.clientWidth/2;viewport.scrollTop=node.offsetTop-viewport.clientHeight/2;}}}
 function renderCollectionPage(){screen='roster';shellFrame('roster',warbandPanel()+Shell.collection(profile,roster,collectionFilters));if(collectionFilters.tab!=='teams')renderLibrary();}
 function renderLibrary(){const results=Shell.collectionResults(profile,roster,collectionFilters);document.querySelector('#library-grid').innerHTML=results.html;document.querySelector('#library-count').textContent=`${results.count} of ${collectionFilters.tab==='all'?roster.length:Object.keys(profile.collection).length} Champions · ${collectionFilters.tab==='all'?'Codex':'Collection'}`;}

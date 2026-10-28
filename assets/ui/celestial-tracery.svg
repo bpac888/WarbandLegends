@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" fill="none">
+ <g stroke="#d7bf89" stroke-width=".65" opacity=".26">
+  <circle cx="400" cy="400" r="316"/><circle cx="400" cy="400" r="300" stroke-dasharray="1 16"/>
+  <circle cx="400" cy="400" r="238"/><path d="m400 84 274 474H126Z"/><path d="M400 716 126 242h548Z"/>
+  <path d="M84 400h632M400 84v632" opacity=".45"/><circle cx="400" cy="400" r="72"/>
+  <path d="m400 300 100 100-100 100-100-100Z"/><path d="m400 68 8 16-8 16-8-16Zm0 632 8 16-8 16-8-16ZM68 400l16-8 16 8-16 8Zm632 0 16-8 16 8-16 8Z"/>
+ </g>
+ <g fill="#e9d5a6" opacity=".6"><circle cx="126" cy="242" r="3"/><circle cx="674" cy="242" r="3"/><circle cx="126" cy="558" r="3"/><circle cx="674" cy="558" r="3"/><circle cx="400" cy="84" r="3"/><circle cx="400" cy="716" r="3"/></g>
+</svg>

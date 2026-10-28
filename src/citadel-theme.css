@@ -1,0 +1,398 @@
+/* Enchanted citadel presentation. Every game-facing rule is scoped to menus.
+   Battle typography, colors, artwork, geometry and controls retain their existing CSS. */
+@font-face{font-family:'Citadel UI';src:url('../assets/fonts/manrope.woff') format('woff');font-style:normal;font-weight:200 800;font-display:swap}
+@font-face{font-family:'Citadel Display';src:url('../assets/fonts/cormorant-garamond.woff') format('woff');font-style:normal;font-weight:300 700;font-display:swap}
+body.menu-theme{
+ --ui-gold:#ebcd91;--ui-ivory:#f3ecdb;--ui-copy:#dce7e2;--ui-muted:#a6bcb9;
+ --ui-edge:#b9d2c333;--ui-accent:#87d9c6;--ui-accent-rgb:135,217,198;
+ --ui-panel:linear-gradient(145deg,#203b40ee,#142b32f5 65%,#20323df5);
+ --ui-shadow:0 14px 36px #05141a47,0 2px 5px #03131730;
+ color:var(--ui-copy);background:radial-gradient(ellipse at 0 0,#497b6345,transparent 48%),radial-gradient(ellipse at 100% 45%,#694b8152,transparent 55%),linear-gradient(135deg,#183d40,#1b303d 52%,#302c49);
+ background-attachment:scroll;min-height:100svh;isolation:isolate;color-scheme:dark;
+}
+body.menu-theme,body.menu-theme *{font-family:'Citadel UI',sans-serif!important}
+body.menu-theme :is(h1,h2,h3,h4,.library-name,.citadel-destination strong,.altar-actions>button>span){font-family:'Citadel Display',serif!important;font-weight:600;letter-spacing:.005em;color:var(--ui-ivory)}
+body.menu-theme :is(button,input,select,textarea){font-family:'Citadel UI',sans-serif!important}
+body.menu-theme :is(p,small,label){line-height:1.55}
+.menu-theme::before,.menu-theme::after{display:none}
+.menu-theme #app{position:relative;z-index:1}
+.menu-theme .safe-area-cap{background:#112a30;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.menu-theme[data-menu-scene=summon]{--ui-accent:#c4b0f2;--ui-accent-rgb:196,176,242}
+.menu-theme[data-menu-scene=shop],.menu-theme[data-menu-scene=daily],.menu-theme[data-menu-scene=quests]{--ui-accent:#e5c887;--ui-accent-rgb:229,200,135}
+.menu-theme[data-menu-scene=inventory]{--ui-accent:#e2b58a;--ui-accent-rgb:226,181,138}
+.menu-theme[data-menu-scene=roster],.menu-theme[data-menu-scene=champion]{--ui-accent:#a5c9ed;--ui-accent-rgb:165,201,237}
+.menu-theme[data-menu-scene=events]{--ui-accent:#c9b0ec;--ui-accent-rgb:201,176,236}
+.menu-theme[data-menu-scene=arena]{--ui-accent:#edc08a;--ui-accent-rgb:237,192,138}
+
+/* A quiet living sky behind the interface, never an overlay on the paintings. */
+.realm-atmosphere{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;contain:strict}
+.realm-atmosphere[hidden]{display:none}
+.aether-light{position:absolute;display:block;width:720px;height:720px;border-radius:50%;opacity:.7;will-change:transform}
+.aether-jade{left:-300px;top:-200px;background:radial-gradient(circle,#62ceb02b,transparent 68%);animation:aether-drift 28s ease-in-out infinite alternate}
+.aether-violet{right:-320px;top:20%;background:radial-gradient(circle,#b38de635,transparent 68%);animation:aether-drift 34s ease-in-out -9s infinite alternate-reverse}
+.aether-gold{left:18%;bottom:-450px;background:radial-gradient(circle,#ebc9811f,transparent 68%);animation:aether-drift 32s ease-in-out -15s infinite alternate}
+.aether-stars{position:absolute;inset:0;opacity:.45;background-image:radial-gradient(circle at 12% 18%,#e8dfc7 0 1px,transparent 1.8px),radial-gradient(circle at 74% 41%,#b1e0d5 0 .7px,transparent 1.6px),radial-gradient(circle at 41% 76%,#ded4f3 0 .7px,transparent 1.5px);background-size:327px 389px,487px 431px,589px 347px;animation:aether-twinkle 12s ease-in-out infinite alternate}
+.aether-tracery{position:absolute;display:block;right:-390px;top:20vh;width:800px;height:800px;background:url('../assets/ui/celestial-tracery.svg') center/contain no-repeat;opacity:.32;animation:aether-orbit 240s linear infinite;will-change:transform}
+@keyframes aether-drift{to{transform:translate3d(65px,45px,0) scale(1.12)}}
+@keyframes aether-twinkle{to{opacity:.17}}
+@keyframes aether-orbit{to{transform:rotate(360deg)}}
+
+/* Compact jeweled navigation, with an opaque surface to keep scrolling crisp. */
+.menu-theme .topbar.with-nav{position:relative;top:auto;max-width:1480px;margin:8px auto 0;background:linear-gradient(110deg,#18383bf5,#1b303bf5 55%,#2e3045f5);border:0;border-radius:18px;box-shadow:0 8px 25px #061a2024;backdrop-filter:none;-webkit-backdrop-filter:none}
+.menu-theme .topbar.with-nav :is(.nav-shortcut,.icon-button){position:relative;border:1px solid #bbd4cb30;background:linear-gradient(155deg,#38525880,#172b35ba);box-shadow:inset 0 1px #e3eee214,0 3px 8px #07182025;transition:background .2s,border-color .2s,box-shadow .2s,transform .2s;border-radius:12px}
+.menu-theme .topbar.with-nav :is(.nav-shortcut.active,.icon-button[aria-current=page]),.menu-theme:has(.page-inventory) .inventory-button,.menu-theme:has(.page-settings) .topbar [data-page=settings]{background:linear-gradient(155deg,#71674799,#294b4899);border-color:#ecd09899;box-shadow:inset 0 1px #fff0c529,0 0 20px #e6c48314}
+.menu-theme .game-nav .nav-shortcut.active::after{content:'';position:absolute;width:4px;height:4px;border-radius:50%;background:#f4d99f;bottom:3px;left:calc(50% - 2px);box-shadow:0 0 7px #ffe3a6}
+.menu-theme .topbar.with-nav .game-wallet>span{border-color:#d7d8bb2e;background:#0e252e80;border-radius:9px;box-shadow:inset 0 1px #d5e9df0c}
+.menu-theme .topbar.with-nav .game-wallet b{font-size:12px;font-weight:650;letter-spacing:-.015em;color:#f3e8cf}
+.menu-theme .topbar.with-nav :is(.navigation-art,.bag-nav-art,.guide-nav-art,.settings-gear){filter:drop-shadow(0 2px 3px #04141b66)}
+.menu-theme .brand-sigil{filter:drop-shadow(0 0 8px #e3c16e26)}
+
+/* Clear typographic hierarchy replaces the old large heading boxes. */
+.menu-theme :is(.game-page,.home-shell){max-width:1360px;width:100%;padding:20px 24px 12px;margin-inline:auto}
+.menu-theme .page-heading{position:relative;isolation:isolate;min-height:0;margin:0 0 18px;padding:8px 2px 16px;border:0;border-radius:0;background:none;box-shadow:none;gap:18px;overflow:visible}
+.menu-theme .page-heading h1{font-size:clamp(34px,4vw,48px);line-height:1.05;margin:0 0 8px;text-shadow:0 2px 12px #06171940}
+.menu-theme .page-heading p{font-size:13px;max-width:65ch;margin:0;color:var(--ui-muted)}
+.menu-theme .page-heading::after{display:block;content:'✦';position:absolute;right:5px;top:-7px;z-index:-1;color:var(--ui-accent);font-size:76px;line-height:1;opacity:.12;background:none;width:auto;height:auto;inset:auto 5px 0 auto;transform:none}
+.menu-theme .eyebrow{color:var(--ui-accent);font-size:9px;letter-spacing:.14em;font-weight:650;line-height:1.5}
+.menu-theme .eyebrow:empty{display:none}
+.menu-theme .section-heading h2,.menu-theme .materials-section>h2{font-size:clamp(27px,2.5vw,34px);line-height:1.1;margin:5px 0 12px}
+.menu-theme .section-heading p{font-size:13px;color:var(--ui-muted)}
+.menu-theme .game-page :is(.materials-section,.hero-development){margin-top:18px;margin-bottom:18px}
+.menu-theme .page-shop .materials-section,.menu-theme .page-inventory .materials-section{padding:0;background:none;border:0;box-shadow:none;border-radius:0}
+
+/* Warm metal primary actions and understated, clearly actionable secondary controls. */
+.menu-theme :is(.button,.text-button){text-transform:none;letter-spacing:.005em;font-weight:650}
+.menu-theme .button{min-height:44px;padding:11px 17px;border-radius:11px;font-size:12px;line-height:1.4;transition:box-shadow .2s,border-color .2s,background .2s,transform .2s}
+.menu-theme .button.gold{color:#302b21;background:linear-gradient(125deg,#f4dfb0,#d9b77b 56%,#ead09a);border:1px solid #f4deb0;box-shadow:inset 0 1px #fff8d6a6,inset 0 -2px #aa834d40,0 5px 14px #071a234d}
+.menu-theme .button.outline{color:#e0e8df;background:linear-gradient(140deg,#304b5070,#19343caa);border:1px solid #adcdbd57;box-shadow:inset 0 1px #f2eacd0c}
+.menu-theme .text-button{color:#cae3d8;font-size:12px;text-underline-offset:4px}
+.menu-theme .button:disabled{opacity:.48;box-shadow:none;cursor:not-allowed}
+.menu-theme :is(button,input,select,textarea,summary):focus-visible{outline:2px solid var(--ui-gold);outline-offset:3px}
+.menu-theme :is(input:not([type=checkbox]),select,textarea){background:#102a34!important;color:var(--ui-ivory)!important;border:1px solid #a6c5bd66!important;border-radius:10px;padding:11px 12px;font-size:13px;box-shadow:inset 0 2px 5px #041a2226}
+.menu-theme option{background:#142e37;color:var(--ui-ivory)}
+.menu-theme input[type=checkbox]{appearance:none;-webkit-appearance:none;width:44px;height:25px;flex:0 0 44px;border:1px solid #aec5bc66;border-radius:20px;background:#0f2530;position:relative;cursor:pointer}
+.menu-theme input[type=checkbox]::before{content:'';position:absolute;left:4px;top:4px;width:15px;height:15px;border-radius:50%;background:#a3b6b6;transition:transform .2s,background .2s}
+.menu-theme input[type=checkbox]:checked{background:#36756a;border-color:#a6d9bf}
+.menu-theme input[type=checkbox]:checked::before{transform:translateX(18px);background:#eff0c7}
+
+/* Tabs read as one control, rather than unrelated rectangular boxes. */
+.menu-theme :is(.shop-tabs,.collection-tabs,.realm-tabs,.quest-status,.dossier-sections,.guide-layout>nav,.codex-tabs){gap:5px;padding:5px;border:1px solid #bdd4c125;background:#1028329c;border-radius:13px;box-shadow:inset 0 1px #dbe4cd09;margin-block:12px 18px}
+.menu-theme :is(.shop-tabs,.collection-tabs,.realm-tabs,.quest-status,.dossier-sections,.guide-layout>nav,.codex-tabs)>button{min-height:40px;padding:10px 13px;border:1px solid transparent;background:none;border-radius:9px;color:#b7cdc5;font-size:11px;font-weight:650;letter-spacing:0;box-shadow:none;transition:background .2s,color .2s,border-color .2s}
+.menu-theme :is(.shop-tabs,.collection-tabs,.realm-tabs,.quest-status,.dossier-sections,.guide-layout>nav,.codex-tabs)>button.active{color:#f7e7c5;background:linear-gradient(135deg,#5a62524d,#46776c40);border-color:#d4c08c70;box-shadow:inset 0 1px #fff1c31a,0 3px 8px #04191f33}
+.menu-theme :is(.collection-tabs,.quest-status)>button>b{border:0;background:#0a202859;color:#d8e3cf;font-size:10px;padding:2px 6px;border-radius:6px}
+
+/* Shared faceted surfaces. No layers or filters are added over character artwork. */
+.menu-theme .game-page :is(.settings-panel,.inventory-card,.material-tile,.material-offer,.gem-offer,.exchange-offers>article,.exchange-balances>span,.premium-offers>article,.special-level,.daily-objectives,.chronicle-card,.saved-warbands .team-slots>article,.ascension-panel,.hero-development,.passive-info,.faction-team-bonuses,.faction-team-empty){border:1px solid var(--ui-edge);background:var(--ui-panel);box-shadow:inset 0 1px #ebeed016,var(--ui-shadow);border-radius:16px}
+.menu-theme .game-page :is(.material-offer,.gem-offer,.premium-offers>article,.exchange-offers>article,.chronicle-card,.dungeon-card,.arena-rival){transition:border-color .25s,box-shadow .25s,transform .25s}
+.menu-theme :is(.quest-progress,.keeper-xp,.hero-xp-bar,.milestone-track){background:#071d28;border:1px solid #8eada736;box-shadow:inset 0 1px 4px #04121c55;border-radius:20px;overflow:hidden}
+.menu-theme :is(.quest-progress,.keeper-xp,.hero-xp-bar,.milestone-track)>i{background:linear-gradient(90deg,#559c93,#a5d9ba 72%,#ebd49a);box-shadow:0 0 10px #a1d7b957;border-radius:20px}
+.menu-theme :is(.quest-reward-marks>span,.reward-line,.energy-cost){color:#e6e6cd;font-size:11px}
+.menu-theme .quest-reward-marks>span{border-color:#bad3bb30;background:#0c252d6e;border-radius:8px;padding:5px 8px}
+
+/* Tavern: full, bright paintings in substantial frames, with carved-style nameplates. */
+.menu-theme .home-shell{padding-top:16px;max-width:1240px}
+.menu-theme .keeper-panel{background:linear-gradient(120deg,#28494ae6,#1a3540ed 58%,#3a3d45de);border:1px solid #d9c49342;box-shadow:inset 0 1px #ece5c01c,0 8px 24px #071a2226;border-radius:15px;padding:12px 15px;margin-bottom:16px}
+.menu-theme .home-shell .keeper-panel h2{font-size:27px;line-height:1.05}
+.menu-theme .keeper-panel h2 small{font-family:'Citadel UI',sans-serif!important;font-size:11px;color:var(--ui-muted);font-weight:400}
+.menu-theme .keeper-panel>img{border:1px solid #e7c588b3;box-shadow:0 0 0 3px #18363b,0 0 0 4px #ccb78038;border-radius:50%}
+.menu-theme .home-shell .citadel-destinations{gap:16px}
+.menu-theme .citadel-destination{border:1px solid #d4bd8866;border-radius:15px;background:#142e35;box-shadow:0 7px 24px #061b2659;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.menu-theme .home-shell .citadel-destination>span{position:relative;display:flex;justify-content:center;align-items:center;min-height:48px;padding:10px 12px;background:linear-gradient(110deg,#203f43,#243643 70%,#35394c);border-top:1px solid #cdb58042;text-align:center}
+.menu-theme .citadel-destination strong{font-size:26px;letter-spacing:.025em}
+.menu-theme .citadel-destination>span::before,.menu-theme .citadel-destination>span::after{content:'◆';color:#d2b77688;font-size:5px;position:absolute;top:calc(50% - 3px)}
+.menu-theme .citadel-destination>span::before{left:13px}.menu-theme .citadel-destination>span::after{right:13px}
+
+/* Shop: illustrated treasure displays, readable descriptions and consistent prices. */
+.menu-theme .page-shop .shop-wallet{width:fit-content;margin:0 0 14px;padding:8px 12px;border:1px solid #c9d2b32b;background:#102a3166;border-radius:10px;gap:8px;font-size:12px;color:#dfd2ac;box-shadow:none}
+.menu-theme .page-shop .shop-wallet>span{margin-left:12px;gap:6px}
+.menu-theme .page-shop .shop-tabs{margin-top:12px}
+.menu-theme .page-shop :is(.material-grid,.gem-offers,.premium-offers,.exchange-offers){gap:16px}
+.menu-theme .page-shop :is(.material-offer,.gem-offer,.premium-offers>article,.exchange-offers>article){position:relative;isolation:isolate;padding:20px 16px 16px;gap:10px;overflow:hidden;background:radial-gradient(ellipse at 50% 5%,#638e8240,transparent 48%),linear-gradient(155deg,#25434a,#172f39 65%,#263642)}
+.menu-theme .page-shop :is(.material-offer,.gem-offer,.premium-offers>article,.exchange-offers>article)::before{content:'';position:absolute;left:20%;right:20%;height:1px;top:0;background:linear-gradient(90deg,transparent,#e8d7ab9c,transparent);pointer-events:none}
+.menu-theme .page-shop :is(.material-offer,.gem-offer,.premium-offers>article)>img{width:132px;height:132px;margin:0 auto 4px;object-fit:contain;border-radius:14px;mix-blend-mode:lighten;position:relative;z-index:1}
+.menu-theme .page-shop :is(.material-offer,.gem-offer)>h3{font-size:27px;line-height:1.05;margin:3px 0 2px;color:#f4e6c8}
+.menu-theme .page-shop :is(.material-offer,.gem-offer)>p{font-size:12px;line-height:1.55;color:#b9cdc7;min-height:38px;margin:0;max-width:28ch}
+.menu-theme .page-shop .material-offer>small{font-size:10px;color:#9fb9b5;border-top:1px solid #b0cbbf1c;padding-top:10px;margin:3px 0 0;width:100%}
+.menu-theme .page-shop :is(.material-offer,.gem-offer)>.button{font-size:11px;min-height:42px;border-radius:10px;gap:5px}
+.menu-theme .page-shop .material-offer .button .gem-amount{font-size:11px;gap:3px}
+.menu-theme .page-shop .button .gem-amount small{font-size:10px}
+.menu-theme .page-shop .premium-banner{padding:18px 24px;margin-bottom:18px;border:1px solid #dfc79266;border-radius:17px;background:radial-gradient(ellipse at 18% 0,#827c494d,transparent 60%),linear-gradient(120deg,#29444a,#34344e);box-shadow:var(--ui-shadow)}
+.menu-theme .premium-banner>img{mix-blend-mode:lighten;animation:treasury-float 7s ease-in-out infinite}
+.menu-theme .premium-banner h2{font-size:36px;margin:4px 0 7px}
+.menu-theme .premium-banner p{font-size:12px;color:#c5d0c9}
+.menu-theme .page-shop .premium-offers>article{opacity:1}
+.menu-theme .premium-offers>article>h3{font-size:28px;line-height:1.1}
+.menu-theme .premium-amount{font-size:15px;font-weight:700;color:#f0d8a2}
+.menu-theme .premium-offers>article>p{font-size:12px;color:#bbcec8}
+.menu-theme .premium-offers>article>.eyebrow{font-size:8px;letter-spacing:.13em;color:#a9c8bd}
+.menu-theme .premium-bonus{background:#69c2a717;border-color:#8bc6a44d;color:#b6e2be;font-size:11px}
+.menu-theme .premium-offers>article>.premium-total{font-size:11px;border-color:#c9d4b22e;padding-top:10px;color:#d5c7a8}
+.menu-theme .premium-offers>article>.button:disabled{color:#a3b8b5;background:#102a315c;border-color:#a5bcac40;opacity:.8;letter-spacing:.03em}
+.menu-theme .page-shop .premium-offers>.vip-offer{background:radial-gradient(ellipse at 50% 0,#586ab44d,transparent 65%),linear-gradient(145deg,#254655,#252d4a);border-color:#a3bdd16b}
+.menu-theme .page-shop .premium-offers>.vip-month{background:radial-gradient(ellipse at 50% 0,#ad82c545,transparent 65%),linear-gradient(145deg,#3a3b59,#302b48);border-color:#e0c48980}
+.menu-theme .kit-color{font-size:11px;color:#c4d4c9;gap:4px}
+.menu-theme .kit-color>select{font-size:12px;min-height:40px}
+.menu-theme .exchange-balances>span{gap:7px;border-radius:14px;padding:12px}
+.menu-theme .exchange-balances .exchange-currency-art{filter:drop-shadow(0 4px 8px #0b152b55)}
+.menu-theme .exchange-offers>article>span{background:#0e29335c;border:1px solid #b8d3bf29;border-radius:50%;padding:10px}
+
+/* Bag: quantities lead, with compact illustrated material rows. */
+.menu-theme .page-inventory .inventory-grid{gap:16px;margin-top:0}
+.menu-theme .page-inventory .inventory-card{min-height:148px;padding:20px;gap:18px;background:radial-gradient(ellipse at 0 50%,#9a895b2b,transparent 60%),var(--ui-panel)}
+.menu-theme .inventory-card .treasure-art{mix-blend-mode:lighten}
+.menu-theme .inventory-card h2{font-family:'Citadel UI',sans-serif!important;font-size:34px!important;font-weight:600;letter-spacing:-.045em;color:#f3dfb0}
+.menu-theme .inventory-card .eyebrow{font-size:10px;color:#c4d1bc}
+.menu-theme .page-inventory .material-grid{gap:10px}
+.menu-theme .page-inventory .material-tile{padding:12px 16px;background:linear-gradient(110deg,#28464b,#19343e);gap:15px}
+.menu-theme .page-inventory .material-tile>img{mix-blend-mode:lighten;width:68px;height:68px}
+.menu-theme .material-tile b{font-size:12px;color:#dce7de;font-weight:600}
+.menu-theme .material-tile strong{font-size:23px;color:var(--ui-gold);font-weight:650;letter-spacing:-.025em}
+
+/* Adventure and progression pages retain their bright paintings. */
+.menu-theme :is(.adventure-vista,.world-card,.event-challenge,.arena-vista,.daily-vista,.campaign-map-viewport,.dungeon-card){border:1px solid #bcd0bd55;border-radius:17px;box-shadow:var(--ui-shadow);overflow:hidden}
+.menu-theme .campaign-map-viewport{overflow:auto}
+.menu-theme .world-card h2{font-size:32px;text-shadow:0 3px 10px #05151ce6}
+.menu-theme .adventure-vista h2{font-size:clamp(36px,4vw,52px)}
+.menu-theme .adventure-vista>div{background:linear-gradient(125deg,#21454b,#223645);border-color:#b5c9b638}
+.menu-theme .world-card h2{background:linear-gradient(110deg,#1d3a3ee8,#263747e8);border-color:#d1bc8542}
+.menu-theme .realm-heading.campaign-realm-heading{background:radial-gradient(ellipse at right,#739e7b22,transparent 65%),linear-gradient(110deg,#24474a,#20333f);border:1px solid #a3cbb647;border-radius:14px;padding:20px 22px;box-shadow:inset 0 1px #eff1d512}
+.menu-theme .realm-heading h2{font-size:33px;margin:4px 0 6px}
+.menu-theme .realm-heading p{font-size:12px;color:#b7cdc4}
+.menu-theme .realm-count{color:#c5d7c8;border-color:#b4cba639}
+.menu-theme .realm-count>b{font-size:36px;color:#f3dfb3}
+.menu-theme .campaign-progress-note{background:#102e376e;border-color:#b8d2bd3b;border-radius:12px;font-size:12px}
+.menu-theme .map-travel-hint{font-size:11px;color:#b5c9c1}
+.menu-theme .dungeon-copy{background:linear-gradient(155deg,#29464b,#19343e);border-color:#bed2be35;padding:20px}
+.menu-theme .dungeon-copy h2{font-size:30px;line-height:1.08}
+.menu-theme .dungeon-copy p{font-size:12px;color:#b8cdc5;line-height:1.6}
+.menu-theme .dungeon-copy .eyebrow{font-size:8px}
+.menu-theme .recommended-level{color:#c9d9c8;font-size:11px}
+.menu-theme .arena-rival{background:var(--ui-panel);border-color:var(--ui-edge);border-radius:14px;box-shadow:var(--ui-shadow)}
+.menu-theme .arena-score{background:linear-gradient(135deg,#54736c,#3e405b);border-color:#dec99d69;box-shadow:inset 0 1px #f2e4bf17}
+.menu-theme .event-calendar{gap:9px;margin-bottom:16px}
+.menu-theme .event-calendar>button{background:var(--ui-panel);border:1px solid #b2cabf45;border-radius:12px;box-shadow:inset 0 1px #eff0ce10;padding:13px 12px}
+.menu-theme .event-calendar>button.active{background:linear-gradient(145deg,#66577c99,#294d565e);border-color:#cebbef9e}
+.menu-theme .event-calendar b{font-size:12px;color:#eee3d7}
+.menu-theme .event-calendar small{font-size:8px;letter-spacing:.1em;color:#b9d8b6}
+.menu-theme .event-copy{background:linear-gradient(140deg,#253f4cf5,#2c3049ee);border:1px solid #c9b6d15c;border-radius:14px;box-shadow:0 8px 30px #0c15394d}
+.menu-theme .event-copy h2{font-size:40px;line-height:1.05}
+.menu-theme .event-copy p{font-size:12px;color:#c0d1cc}
+.menu-theme .event-attempts{border-color:#d1c4e73b;background:#122c3866;border-radius:10px;padding:10px 14px}
+.menu-theme .event-attempts strong{color:#f4dfb3}
+.menu-theme .event-attempts span{font-size:11px}
+.menu-theme .game-page .event-copy{background:linear-gradient(140deg,#253f4cf5,#2c3049f5);border-color:#c9b6d15c}
+.menu-theme .page-world .world-card.scene-destination>h2{background:linear-gradient(110deg,#1d3a3e,#263747);font-size:26px;border-top:1px solid #d1bc8542}
+.menu-theme .game-page :is(.adventure-vista>div,.arena-vista>div,.daily-vista>div,.quest-banner>div){background:linear-gradient(125deg,#24434a,#223342);color:#e6e7d7}
+.menu-theme .daily-road{background:var(--ui-panel);border:1px solid #b7c7b143;border-radius:13px;padding:0 15px;margin-top:16px;box-shadow:inset 0 1px #ecead511}
+.menu-theme .daily-road>summary{min-height:46px;padding:13px 0;color:#d9d4b9;font-size:12px}
+
+/* Quest rewards and the daily journey get a visible hierarchy and quiet ready states. */
+.menu-theme .quest-banner{border:1px solid #c3d1b44d;border-radius:16px;box-shadow:var(--ui-shadow)}
+.menu-theme .quest-banner h2{font-size:36px;line-height:1.1}
+.menu-theme .quest-banner p{font-size:12px;color:#cad8ca}
+.menu-theme .chronicle-card{padding:0!important;overflow:hidden}
+.menu-theme .chronicle-card.ready{border-color:#e3ca8b99;box-shadow:inset 0 1px #f4dbad26,0 0 25px #dabd6624,var(--ui-shadow)}
+.menu-theme .chronicle-art{border-radius:0;overflow:hidden}
+.menu-theme .chronicle-art>b{background:#172e33e6;border:1px solid #e5cc8680;border-radius:7px;color:#f1ddab;font-size:9px;letter-spacing:.05em}
+.menu-theme .chronicle-copy{padding:17px}
+.menu-theme .chronicle-copy h2{font-size:28px;line-height:1.1;margin:0 0 7px}
+.menu-theme .chronicle-copy>p{font-size:12px;line-height:1.55;color:#c0d1c8}
+.menu-theme .chronicle-actions{gap:10px;margin-top:14px}
+.menu-theme .chronicle-actions .button{min-height:40px}
+.menu-theme .daily-vista h2{font-size:58px;line-height:1.1}
+.menu-theme .daily-vista .quest-reward-marks{margin:14px 0}
+.menu-theme .daily-objectives{padding:22px}
+.menu-theme .daily-objectives>h2{font-size:33px;margin:4px 0 16px}
+.menu-theme .path-objectives>article{background:#11303980;border:1px solid #b2c9b432;border-radius:11px;padding:13px 14px;gap:10px}
+.menu-theme .path-objectives>article>span{color:#c5d59a}
+.menu-theme .path-objectives b{font-size:12px;font-weight:600}
+.menu-theme .path-objectives strong{color:#f0dba5;font-size:13px}
+.menu-theme .daily-preview>article{border:1px solid #c3d2b237;border-radius:12px;background:var(--ui-panel);padding:14px 12px}
+.menu-theme .daily-preview>article>b{font-size:12px;color:#ead9b2}
+
+/* Codex chrome and hero information surfaces; existing portraits/cards stay intact. */
+.menu-theme .warband-actions h2{font-size:33px}
+.menu-theme .collection-toolbar{border:0;background:none;box-shadow:none}
+.menu-theme .collection-filters{background:#12303a77;border-color:#afcdbf3d;border-radius:11px;padding:0 14px}
+.menu-theme .collection-filters>summary{font-size:12px;color:#cee0d5;min-height:42px;display:flex;align-items:center;justify-content:space-between}
+.menu-theme .library-count{font-size:11px;color:#b1c9bf}
+.menu-theme .library-label,.menu-theme .page-roster .team-caption{background:linear-gradient(135deg,#203d45,#1d2e3d);color:#ecdfc7}
+.menu-theme .library-name{font-size:22px;line-height:1.12}
+.menu-theme .faction-team-bonuses,.menu-theme .faction-team-empty{border-color:#a3c6bc46;font-size:12px;background:#1c3943b3}
+.menu-theme .saved-warbands>h2{font-size:33px}
+.menu-theme .saved-warbands .team-slots>article{padding:18px}
+.menu-theme .saved-warbands h3{font-size:27px}
+.menu-theme .champion-biography>h1{font-size:clamp(36px,4vw,48px);line-height:1.05}
+.menu-theme .champion-title{font-size:13px;color:#b9cbbb}
+.menu-theme .champion-biography .detail-element{color:#d9e8d5;font-size:12px}
+.menu-theme .special-level{padding:16px}
+.menu-theme .special-level>header{border-color:#bad0ba38;padding-bottom:11px;margin-bottom:12px}
+.menu-theme .special-level>header>b{color:#c2d9ca;font-size:12px}
+.menu-theme .special-level>header>span{font-size:11px;border:1px solid #b7cdb846;border-radius:7px;color:#f1ddb4;background:#244b4f88}
+.menu-theme :is(.numbered-step,.ability-effects li){background:#102e383d;border-color:#a4c6ba29;border-radius:10px;padding:11px}
+.menu-theme .numbered-step :is(p,small){font-size:12px;color:#b9cfc5}
+.menu-theme .ascension-panel>summary{padding:4px 0;gap:12px}
+.menu-theme .ascension-panel>summary>h2{font-size:29px}
+.menu-theme .ascension-panel>summary>span{font-size:11px;color:#d9d7bb}
+.menu-theme .ascension-road li{border-color:#aec4b63b;border-radius:9px;background:#102c356e}
+.menu-theme .ascension-road li.unlocked{border-color:#d9c68c7a;background:linear-gradient(145deg,#5a634145,#34574c73)}
+.menu-theme .hero-development>p,.menu-theme .advancement-content>p{font-size:12px;color:#bfd0c3}
+.menu-theme .passive-info{padding:18px}
+.menu-theme .passive-info h2{font-size:30px;margin:5px 0 8px}
+.menu-theme .passive-info p{font-size:13px;color:#c4d6ca}
+
+/* Altar: the portal remains bright and unobscured; the frame carries the magic. */
+.menu-theme .game-page.page-summon{padding:16px 16px 12px}
+.menu-theme .page-summon .altar-page{background:linear-gradient(145deg,#2d3651f0,#1a3341f2 70%,#32304af5);border:1px solid #c3b4e661;box-shadow:0 0 45px #8a63c626,var(--ui-shadow);border-radius:19px;padding:15px}
+.menu-theme .altar-heading h1{font-size:38px!important;color:#efe4d5}
+.menu-theme .altar-portal.summon-sanctum{border-color:#bba5ec80;box-shadow:0 0 24px #9f8bdf26;border-radius:13px}
+.menu-theme .altar-actions{gap:12px}
+.menu-theme .altar-actions>button{background:radial-gradient(ellipse at top,#8d79b440,transparent 80%),linear-gradient(140deg,#414463,#2c3a54);border:1px solid #c9b3ed85;border-radius:12px;box-shadow:inset 0 1px #f1d9ff29,0 5px 15px #071e3133;padding:13px 10px}
+.menu-theme .altar-actions>button>span{font-size:28px!important;color:#f7e7cf}
+.menu-theme .altar-actions>button>small{font-size:10px;letter-spacing:.06em;color:#c0c7de}
+.menu-theme .altar-actions>button>strong{font-size:12px;color:#f1dca6}
+.menu-theme .altar-actions>button:disabled{opacity:.6;box-shadow:none}
+.menu-theme .altar-actions .gem-shortage{font-size:10px;color:#c9c9d2}
+
+/* Settings and Guide are information, not walls of identical dark text boxes. */
+.menu-theme .page-settings{max-width:1040px}
+.menu-theme .settings-heading h1{font-size:38px!important;margin-bottom:15px}
+.menu-theme .page-settings .settings-panel{padding:20px;background:radial-gradient(ellipse at 100% 0,#769d7a1a,transparent 65%),var(--ui-panel)}
+.menu-theme .settings-panel>h2{font-size:29px;margin:0 0 16px}
+.menu-theme .settings-name-row label{font-size:11px;color:#c0d3c5}
+.menu-theme .setting-row{border-color:#bbccb633;padding-top:16px;margin-top:16px}
+.menu-theme .setting-row h3{font-family:'Citadel UI',sans-serif!important;font-size:13px;color:#e6e8d6}
+.menu-theme .setting-row p{font-size:12px!important;color:#a9c2b9}
+.menu-theme .settings-tools{border-color:#b9d0b62e}
+.menu-theme .settings-restart{border:1px solid #bd898c6b;border-radius:9px;padding:10px 14px;color:#e8b8af;background:#88595114;font-size:11px}
+.menu-theme .profile-extras>h2{font-size:30px!important;margin:16px 0 14px}
+.menu-theme .avatar-options>button{opacity:1;border-color:#b9ceb947;border-radius:12px;padding:4px;background:#15323e;box-shadow:0 3px 8px #0a1f2e4d}
+.menu-theme .avatar-options>button.active{border-color:#ecd28ec7;box-shadow:0 0 0 2px #c1b07926,0 0 20px #edcf741f}
+.menu-theme #modal{background:radial-gradient(ellipse at 100% 0,#5f53863d,transparent 65%),linear-gradient(145deg,#28474c,#18343e 65%,#28344a);border:1px solid #dcc79b80;border-radius:19px;box-shadow:0 28px 100px #020e16b3,inset 0 1px #fae8b926;color:#e1e9db}
+.menu-theme #modal::backdrop{background:#04151ed6;backdrop-filter:none;-webkit-backdrop-filter:none}
+.menu-theme .modal-header{background:linear-gradient(110deg,#2a4a4ef2,#303a4ef2);border-color:#b9c7b32e;padding:20px 24px}
+.menu-theme .modal-header h2{font-size:35px;line-height:1.1}
+.menu-theme .modal-header .icon-button{background:#132f3a80;border:1px solid #b7cbbf55;border-radius:10px;color:#e4dfc6}
+.menu-theme .modal-body{padding:20px 24px;font-size:13px;line-height:1.6}
+.menu-theme .modal-body>p{font-size:13px;color:#c6d8cd}
+.menu-theme :is(.material-confirm,.gem-confirm){display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;margin:0 auto 20px;max-width:420px}
+.menu-theme :is(.material-confirm,.gem-confirm)>img{display:block;width:116px;height:116px;object-fit:contain;mix-blend-mode:lighten;margin:0 auto 2px;float:none}
+.menu-theme :is(.material-confirm,.gem-confirm)>h3{font-size:31px;line-height:1.1;margin:0 0 2px}
+.menu-theme :is(.material-confirm,.gem-confirm)>p{font-size:12px;line-height:1.65;color:#c6d8cd;margin:0}
+.menu-theme .modal-actions{gap:10px;border-color:#c1c9aa26}
+.menu-theme .guide-layout>section>article{padding:15px 0;border-color:#a6c8bb33;background:none;border-radius:0;box-shadow:none}
+.menu-theme .guide-layout>section>article h3{font-size:28px;margin:0 0 8px}
+.menu-theme .guide-layout p{font-size:12px;color:#c0d2c9;line-height:1.65}
+.menu-theme .guide-layout>nav{margin:0 0 16px}
+.menu-theme .faction-guide-list>details{background:#10303d6e;border:1px solid #b7c6b23d;border-radius:10px;overflow:hidden}
+.menu-theme .faction-guide-list summary{padding:12px 13px;font-size:12px;color:#e7dbb8}
+.menu-theme .faction-guide-list details[open]{border-color:#d9c28b70;background:#21434c9c}
+.menu-theme .faction-guide-list dd{font-size:12px;line-height:1.6;color:#c9d9cf}
+.menu-theme .faction-guide-list dt{font-size:10px;color:#b1c7b6}
+.menu-theme .codex-card{background:#17343e8c;border-color:#aac5b43d;border-radius:12px;padding:15px;box-shadow:inset 0 1px #e3e9cf0a}
+.menu-theme .codex-card h3{font-size:27px;margin:3px 0 6px}
+.menu-theme .codex-card p{font-size:12px;color:#c3d3c8}
+.menu-theme .codex-icon{background:#244853;border:1px solid #bbd0ba4d;border-radius:12px;padding:9px;color:#d8d6ab}
+.menu-theme .stacking-note{background:#1e414787;border-color:#b4c6b53d;border-radius:12px;padding:16px}
+.menu-theme #notice{background:linear-gradient(135deg,#385d59,#263c4e);border:1px solid #e0cd93a6;border-radius:12px;color:#f7eacb;box-shadow:0 9px 30px #061b2880;font-size:12px}
+
+/* Motion is decorative, unhurried, and never changes page geometry. */
+@keyframes treasury-float{50%{transform:translateY(-4px)}}
+@keyframes citadel-shimmer{0%,65%{transform:translateX(-230%) rotate(20deg)}90%,100%{transform:translateX(430%) rotate(20deg)}}
+.menu-theme .splash-enter{position:relative;overflow:hidden}
+.menu-theme .splash-enter::after{content:'';position:absolute;inset:-60% auto -60% 0;width:35%;background:linear-gradient(90deg,transparent,#fff6d349,transparent);transform:translateX(-230%) rotate(20deg);animation:citadel-shimmer 10s ease-in-out infinite;pointer-events:none}
+@media(hover:hover) and (pointer:fine){
+ .menu-theme .topbar.with-nav :is(.nav-shortcut,.icon-button):hover{transform:translateY(-2px);border-color:#e2d2a78c;background:linear-gradient(150deg,#56736a8a,#2e40568c);box-shadow:0 4px 15px #0c1c3540}
+ .menu-theme .button.gold:hover:not(:disabled){transform:translateY(-1px);box-shadow:inset 0 1px #fff7d8,0 6px 20px #d2b77f26,0 4px 12px #051b2b4d}
+ .menu-theme .button.outline:hover:not(:disabled){border-color:#d0dcc19c;background:#3c645b66}
+ .menu-theme .citadel-destination:hover{transform:translateY(-3px);border-color:#efd398a6;box-shadow:0 12px 32px #061b2666,0 0 22px #efd59817}
+ .menu-theme .page-shop :is(.material-offer,.gem-offer,.premium-offers>article):hover{transform:translateY(-3px);border-color:#d6ce9a8c;box-shadow:inset 0 1px #e9e4c022,0 12px 30px #051b2a66,0 0 24px #adc7b312}
+ .menu-theme .chronicle-card:hover{border-color:#c1d6b97a;box-shadow:0 12px 26px #061b2c59}
+}
+.menu-theme :is(.button,.text-button,.nav-shortcut,.topbar .icon-button,.citadel-destination):active:not(:disabled){transform:translateY(1px)}
+.menu-motion-paused .realm-atmosphere *{animation-play-state:paused!important}
+
+@media(min-width:1481px){.menu-theme .topbar.with-nav{margin-inline:calc((100% - 1480px)/2)}}
+@media(max-width:899px){.menu-theme .topbar.with-nav{margin:0;border-radius:0;box-shadow:none}}
+@media(max-width:760px){
+ .menu-theme .topbar.with-nav{padding-top:7px;padding-bottom:8px}
+ .menu-theme .topbar.with-nav :is(.nav-shortcut,.icon-button){border-radius:10px}
+ .menu-theme .topbar.with-nav .game-wallet b{font-size:10px;letter-spacing:-.03em}
+ .menu-theme .game-page,.menu-theme .home-shell{padding:16px 12px 12px}
+ .menu-theme .page-heading{margin-bottom:12px;padding:5px 0 12px;gap:10px}
+ .menu-theme .page-heading h1{font-size:36px;margin-bottom:6px}
+ .menu-theme .page-heading p{font-size:12px;max-width:42ch}
+ .menu-theme .page-heading>.button{font-size:10px;padding:9px 10px;min-height:40px;white-space:normal;max-width:110px}
+ .menu-theme .home-shell .keeper-panel{padding:11px;gap:10px;margin-bottom:12px}
+ .menu-theme .home-shell .keeper-panel h2{font-size:25px}
+ .menu-theme .home-shell .keeper-panel>.button{font-size:10px;min-height:42px}
+ .menu-theme .home-shell .citadel-destinations{gap:12px}
+ .menu-theme .home-shell .citadel-destination>span{min-height:45px;padding:8px}
+ .menu-theme .citadel-destination strong{font-size:25px}
+ .menu-theme .citadel-destination>span::before{left:8px}.menu-theme .citadel-destination>span::after{right:8px}
+ .menu-theme :is(.shop-tabs,.collection-tabs,.realm-tabs,.quest-status,.dossier-sections,.guide-layout>nav,.codex-tabs){gap:4px;padding:4px;border-radius:11px;margin-bottom:14px}
+ .menu-theme :is(.shop-tabs,.collection-tabs,.realm-tabs,.quest-status,.guide-layout>nav,.codex-tabs)>button{font-size:10px;min-height:38px;padding:9px 7px}
+ .menu-theme .shop-tabs>button{min-width:calc(50% - 4px)}
+ .menu-theme .page-shop :is(.material-grid,.gem-offers,.premium-offers,.exchange-offers){gap:11px}
+ .menu-theme .page-shop :is(.material-offer,.gem-offer,.premium-offers>article){padding:16px 11px 12px;gap:9px;border-radius:14px}
+ .menu-theme .page-shop :is(.material-offer,.gem-offer,.premium-offers>article)>img{width:108px;height:108px}
+ .menu-theme .page-shop :is(.material-offer,.gem-offer)>h3{font-size:25px}
+ .menu-theme .page-shop :is(.material-offer,.gem-offer)>p{font-size:11px;min-height:50px;line-height:1.6}
+ .menu-theme .page-shop :is(.material-offer,.gem-offer)>.button{font-size:10px;min-height:42px;padding:9px 5px;gap:3px}
+ .menu-theme .page-shop .material-offer .button .card-glyph{width:17px;height:17px}
+ .menu-theme .page-shop .material-offer .button .gem-amount{font-size:10px}
+ .menu-theme .page-shop .material-offer .button .gem-amount small{font-size:9px}
+ .menu-theme .page-shop .premium-banner{padding:15px;gap:14px}
+ .menu-theme .premium-banner h2{font-size:31px}
+ .menu-theme .premium-offers>article>h3{font-size:26px}
+ .menu-theme .premium-offers>article>.eyebrow{font-size:7px;letter-spacing:.1em}
+ .menu-theme .premium-amount{font-size:12px;line-height:1.6}
+ .menu-theme .premium-offers>article>p{font-size:11px}
+ .menu-theme .page-inventory .inventory-card{padding:16px;min-height:124px;grid-template-columns:76px minmax(0,1fr);gap:14px}
+ .menu-theme .inventory-card h2{font-size:31px!important}
+ .menu-theme .page-inventory .material-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .menu-theme .page-inventory .material-tile{flex-direction:column;align-items:center;text-align:center;padding:12px 8px;gap:7px}
+ .menu-theme .page-inventory .material-tile>img{width:68px;height:68px}
+ .menu-theme .material-tile b{font-size:11px;line-height:1.4}
+ .menu-theme .material-tile strong{font-size:22px;margin-top:4px}
+ .menu-theme .realm-heading.campaign-realm-heading{padding:15px 17px}
+ .menu-theme .realm-heading h2{font-size:29px}
+ .menu-theme .realm-heading p{font-size:11px}
+ .menu-theme .world-card h2{font-size:29px}
+ .menu-theme .dungeon-copy{padding:17px}
+ .menu-theme .event-calendar>button{padding:11px 7px}
+ .menu-theme .event-calendar b{font-size:10px}
+ .menu-theme .event-copy h2{font-size:34px}
+ .menu-theme .chronicle-copy{padding:15px}
+ .menu-theme .chronicle-copy h2{font-size:28px}
+ .menu-theme .game-page.page-summon{padding:12px 10px}
+ .menu-theme .page-summon .altar-page{padding:12px}
+ .menu-theme .altar-heading h1{font-size:34px!important}
+ .menu-theme .altar-actions{gap:9px}
+ .menu-theme .altar-actions>button{padding:10px 6px}
+ .menu-theme .altar-actions>button>span{font-size:25px!important}
+ .menu-theme .page-settings .settings-panel{padding:17px}
+ .menu-theme .settings-heading h1{font-size:35px!important}
+ .menu-theme .modal-header{padding:17px 18px}
+ .menu-theme .modal-header h2{font-size:32px}
+ .menu-theme .modal-body{padding:17px 18px}
+ .menu-theme .guide-layout>nav>button{font-size:9px;padding:9px 6px}
+ .menu-theme .special-level{padding:14px}
+ .menu-theme .library-name{font-size:20px}
+ .menu-theme .aether-tracery{width:600px;height:600px;right:-400px;opacity:.27}
+}
+@media(max-width:359px){
+ .menu-theme .topbar.with-nav .game-wallet b{font-size:10px}
+ .menu-theme .game-page,.menu-theme .home-shell{padding-inline:10px}
+ .menu-theme .page-shop :is(.material-offer,.gem-offer)>h3{font-size:23px}
+ .menu-theme .page-shop :is(.material-offer,.gem-offer)>p{font-size:10px}
+ .menu-theme .premium-offers>article>h3{font-size:23px}
+ .menu-theme .premium-amount{font-size:11px}
+ .menu-theme .citadel-destination strong{font-size:22px}
+ .menu-theme .guide-layout>nav{gap:2px;padding:3px}
+ .menu-theme .guide-layout>nav>button{padding-inline:5px}
+}
+@media(prefers-reduced-motion:reduce){
+ .realm-atmosphere *{animation:none!important;will-change:auto}
+ .menu-theme *,.menu-theme *::before,.menu-theme *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
