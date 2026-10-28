@@ -1,20 +1,20 @@
 {
   "version": 3,
-  "champions": 162,
+  "champions": 174,
   "colorCounts": {
-    "red": 33,
-    "blue": 32,
-    "green": 32,
-    "yellow": 32,
-    "purple": 33
+    "red": 35,
+    "blue": 35,
+    "green": 35,
+    "yellow": 35,
+    "purple": 34
   },
   "manaCounts": {
     "very_fast": 9,
-    "fast": 32,
-    "average": 75,
-    "slow": 26,
+    "fast": 37,
+    "average": 78,
+    "slow": 27,
     "very_slow": 3,
-    "charging": 17
+    "charging": 20
   },
   "chargingChampions": [
     {
@@ -143,6 +143,28 @@
         10,
         15
       ]
+    },
+    {
+      "id": "pyrrhon_soulfire_verdict",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "kozhak_glacier_prowler",
+      "tiles": [
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "id": "thyssara_eclipse_blade",
+      "tiles": [
+        8,
+        10
+      ]
     }
   ],
   "rarities": {
@@ -167,7 +189,7 @@
       }
     },
     "rare": {
-      "count": 60,
+      "count": 63,
       "stats": {
         "atk": {
           "min": 515,
@@ -187,7 +209,7 @@
       }
     },
     "legendary": {
-      "count": 67,
+      "count": 76,
       "stats": {
         "atk": {
           "min": 600,

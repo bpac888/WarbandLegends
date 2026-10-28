@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-162 champions. All prior 150 records and portraits are preserved. The newest expansion adds 9 Legendaries and 3 Rares, following the roster audit. Stats below are maximum-level baselines; each owned copy develops independently.
+174 champions. The newest expansion adds 9 Legendaries and 3 Rares. Existing gameplay records and portraits are preserved; audited display names and their lore references are updated. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -10,13 +10,13 @@
 | Ashrim, Quicksilver Saboteur | legendary | blue | attack | 811 | 661 | 1318 | Fast 8 |
 | Yorkine, Voltaic Priest | legendary | yellow | support | 711 | 734 | 1479 | Slow 12 |
 | The Bronze Juggernaut | legendary | red | defense | 670 | 801 | 1555 | Slow 12 |
-| Fen, the Spore Adept | rare | green | support | 579 | 616 | 1075 | Charging 8 / 10 |
+| Chispa, the Spore Adept | rare | green | support | 579 | 616 | 1075 | Charging 8 / 10 |
 | Auroline, Transmuter Prime | legendary | yellow | attack | 828 | 679 | 1308 | Charging 5 / 10 / 15 |
 | The Oracle | legendary | green | support | 717 | 746 | 1410 | Average 10 |
 | Vex, the Elixir Apotheon | mythical | green | attack | 916 | 759 | 1460 | Charging 5 / 10 / 15 |
 | Drekka the Scavenger | common | purple | attack | 509 | 412 | 779 | Fast 8 |
 | The Hooded Thrall | rare | purple | support | 586 | 590 | 1093 | Average 10 |
-| Brakkar the Pit Grunt | rare | red | defense | 549 | 692 | 1199 | Average 10 |
+| Murgash the Pit Grunt | rare | red | defense | 549 | 692 | 1199 | Average 10 |
 | Acolyte Iyr | common | red | support | 382 | 489 | 853 | Average 10 |
 | Vethra Witchblade | legendary | red | attack | 826 | 678 | 1325 | Average 10 |
 | Dragon Mage | legendary | red | attack | 832 | 677 | 1310 | Charging 8 / 10 |
@@ -34,14 +34,14 @@
 | The Shade Prince | legendary | blue | attack | 839 | 688 | 1293 | Average 10 |
 | Vharos, Crimson Praetor | legendary | red | attack | 832 | 694 | 1318 | Average 10 |
 | Ithreya, Umbral Hierarch | legendary | purple | support | 704 | 749 | 1439 | Slow 12 |
-| Vhessa, Brimstone Witch | legendary | red | attack | 828 | 674 | 1311 | Average 10 |
+| Hexandra, Brimstone Witch | legendary | red | attack | 828 | 674 | 1311 | Average 10 |
 | Neve the Veil Dancer | legendary | purple | attack | 826 | 699 | 1304 | Fast 8 |
 | Crimson Castellan | legendary | red | attack | 843 | 674 | 1291 | Average 10 |
 | Rhagz, Pit Scout | common | green | attack | 507 | 426 | 749 | Very Fast 6.5 |
 | Archangel Lucifer | legendary | yellow | defense | 680 | 792 | 1524 | Charging 8 / 10 |
 | Paladin of Dusk | rare | yellow | defense | 541 | 685 | 1215 | Average 10 |
 | Sister Seraphel | rare | yellow | support | 575 | 599 | 1145 | Average 10 |
-| Justiciar Vael | common | yellow | attack | 509 | 441 | 751 | Fast 8 |
+| Justiciar Gethren | common | yellow | attack | 509 | 441 | 751 | Fast 8 |
 | Solar Scribe | common | yellow | attack | 517 | 408 | 703 | Average 10 |
 | Executor Model Z | legendary | red | attack | 829 | 694 | 1327 | Slow 12 |
 | Aegis Construct MK4 | common | blue | defense | 351 | 560 | 980 | Average 10 |
@@ -59,13 +59,13 @@
 | Thornweaver Seraph | legendary | yellow | attack | 815 | 689 | 1293 | Slow 12 |
 | Barkskin Bruiser | rare | green | attack | 683 | 562 | 1019 | Average 10 |
 | Vinestrider | common | blue | attack | 495 | 426 | 730 | Average 10 |
-| Mosswitch Lira | common | blue | support | 394 | 482 | 877 | Average 10 |
+| Mosswitch Brynna | common | blue | support | 394 | 482 | 877 | Average 10 |
 | Beastmaster Gharn | rare | green | attack | 685 | 547 | 1044 | Average 10 |
 | Jarl Bjorn Ironhide | legendary | blue | attack | 823 | 676 | 1331 | Average 10 |
 | Shieldmaiden Runa | rare | blue | defense | 543 | 683 | 1236 | Average 10 |
 | Ice-Shaman Sigrid | rare | blue | attack | 698 | 568 | 1029 | Average 10 |
 | Berserker Loki | legendary | red | attack | 827 | 685 | 1308 | Average 10 |
-| Wolf-Handler Torv | common | blue | support | 384 | 473 | 886 | Average 10 |
+| Wolf-Handler Stellan | common | blue | support | 384 | 473 | 886 | Average 10 |
 | Vlad the Soul-Eater | rare | purple | attack | 702 | 552 | 1002 | Fast 8 |
 | Cult Zealot | rare | purple | attack | 704 | 565 | 1046 | Average 10 |
 | Succubus Lilth | rare | purple | attack | 681 | 534 | 955 | Average 10 |
@@ -73,7 +73,7 @@
 | Dune-Queen Zaya | legendary | yellow | support | 710 | 723 | 1403 | Slow 12 |
 | Desert Assassin | rare | purple | attack | 705 | 547 | 982 | Fast 8 |
 | Camel-Rider Rashid | rare | yellow | attack | 703 | 549 | 1050 | Average 10 |
-| Dune Mage Sorra | legendary | yellow | attack | 811 | 680 | 1332 | Charging 8 / 10 |
+| Dune Mage Juhara | legendary | yellow | attack | 811 | 680 | 1332 | Charging 8 / 10 |
 | Scavenger Jax | common | red | attack | 495 | 439 | 772 | Fast 8 |
 | Plague Doctor Mors | rare | green | attack | 678 | 558 | 1035 | Average 10 |
 | The Abyss Mutant | common | green | attack | 487 | 420 | 765 | Average 10 |
@@ -93,44 +93,44 @@
 | Sister Carmine | rare | red | support | 580 | 608 | 1087 | Average 10 |
 | Commander Jarek | rare | blue | defense | 547 | 691 | 1213 | Average 10 |
 | Sora, The Plasma Ronin | legendary | blue | attack | 839 | 664 | 1360 | Fast 8 |
-| Matrix Matriarch Lyra | legendary | blue | support | 740 | 734 | 1386 | Slow 12 |
+| Matrix Matriarch Octavia | legendary | blue | support | 740 | 734 | 1386 | Slow 12 |
 | Baron Viktor, The Cybergod | legendary | blue | defense | 650 | 811 | 1494 | Slow 12 |
 | Zero, The Singularity | mythical | purple | attack | 917 | 727 | 1505 | Charging 5 / 10 / 15 |
 | The Alley Shade | common | purple | support | 389 | 481 | 849 | Average 10 |
 | Fjordwatch Hald | rare | blue | defense | 515 | 669 | 1151 | Average 10 |
 | Shellback Brukk | common | green | defense | 352 | 560 | 974 | Average 10 |
 | Oakenhart, the First Warden | mythical | green | defense | 755 | 877 | 1640 | Slow 12 |
-| Oasis-Keeper Nahlia | rare | green | support | 595 | 617 | 1116 | Average 10 |
+| Oasis-Keeper Safiya | rare | green | support | 595 | 617 | 1116 | Average 10 |
 | Kassem, the Sunwall | legendary | yellow | defense | 660 | 825 | 1526 | Slow 12 |
-| Cinder-Mender Vessa | rare | red | support | 602 | 606 | 1098 | Average 10 |
-| Veyr, the Hollow Gate | rare | purple | defense | 546 | 675 | 1230 | Average 10 |
-| Aurelia, the Last Foundry | mythical | yellow | support | 775 | 809 | 1588 | Charging 5 / 10 / 15 |
-| Jade-Mender Lian | rare | green | support | 604 | 591 | 1133 | Average 10 |
+| Cinder-Mender Caldris | rare | red | support | 602 | 606 | 1098 | Average 10 |
+| Theskar, the Hollow Gate | rare | purple | defense | 546 | 675 | 1230 | Average 10 |
+| Isolde, the Last Foundry | mythical | yellow | support | 775 | 809 | 1588 | Charging 5 / 10 / 15 |
+| Jade-Mender Baozhen | rare | green | support | 604 | 591 | 1133 | Average 10 |
 | Carapace Warden Korr | rare | yellow | defense | 531 | 689 | 1250 | Average 10 |
 | Redknife Tavin | rare | red | attack | 692 | 546 | 961 | Fast 8 |
 | Vitriol Stalker Syth | rare | green | attack | 704 | 556 | 999 | Fast 8 |
 | Rivet-Mender Orsa | rare | blue | support | 576 | 624 | 1158 | Average 10 |
 | Eira, the Hearthwarden | legendary | yellow | support | 710 | 734 | 1468 | Average 10 |
 | Shen, the Bronze Horizon | legendary | yellow | defense | 658 | 837 | 1575 | Slow 12 |
-| Vorrek, the Walking Siege | mythical | red | attack | 916 | 764 | 1482 | Average 10 |
+| Hadrian, the Walking Siege | mythical | red | attack | 916 | 764 | 1482 | Average 10 |
 | Rimebow Tessa | rare | blue | attack | 680 | 542 | 988 | Very Fast 6.5 |
 | Caravan Warden Samira | rare | yellow | defense | 543 | 679 | 1245 | Average 10 |
 | Arcmaw Rhex | rare | yellow | attack | 714 | 568 | 991 | Average 10 |
 | Gallows Marksman Oren | rare | yellow | attack | 682 | 546 | 966 | Fast 8 |
-| Nerez, the Veil Bastion | legendary | purple | defense | 654 | 831 | 1547 | Slow 12 |
+| Ulbrecht, the Veil Bastion | legendary | purple | defense | 654 | 831 | 1547 | Slow 12 |
 | Kesh Duststep | rare | yellow | attack | 674 | 556 | 946 | Very Fast 6.5 |
-| Mavra Dusktrail | rare | purple | attack | 670 | 554 | 1001 | Average 10 |
+| Phaedra Dusktrail | rare | purple | attack | 670 | 554 | 1001 | Average 10 |
 | Nima Dewthread | rare | blue | support | 562 | 579 | 1040 | Average 10 |
 | Sahri Sunspoke | rare | yellow | attack | 716 | 560 | 988 | Average 10 |
-| Ilyra Snowglass | rare | blue | attack | 709 | 558 | 1012 | Fast 8 |
-| Toruun Basalt-Mane | rare | green | defense | 540 | 701 | 1239 | Average 10 |
+| Iridessa Snowglass | rare | blue | attack | 709 | 558 | 1012 | Fast 8 |
+| Gromund Basalt-Mane | rare | green | defense | 540 | 701 | 1239 | Average 10 |
 | Rhazek Cinderstripe | legendary | red | attack | 821 | 678 | 1307 | Average 10 |
 | Vaelka, the Obsidian Watch | legendary | purple | defense | 668 | 825 | 1559 | Slow 12 |
-| Oruun, the Prism-Seer | legendary | yellow | support | 722 | 732 | 1431 | Charging 8 / 10 |
+| Anzuko, the Prism-Seer | legendary | yellow | support | 722 | 732 | 1431 | Charging 8 / 10 |
 | Azhar, the Rosetted Sun | mythical | yellow | attack | 918 | 755 | 1425 | Very Fast 6.5 |
 | Sivren, the Stillgrass Knife | legendary | green | attack | 838 | 664 | 1287 | Fast 8 |
 | Nera, the Red Ledger | rare | red | attack | 703 | 566 | 1007 | Fast 8 |
-| Tovin Glassheart | rare | blue | support | 576 | 586 | 1036 | Average 10 |
+| Belsorin Glassheart | rare | blue | support | 576 | 586 | 1036 | Average 10 |
 | Suyin, Bell of the Monsoon | legendary | blue | support | 719 | 725 | 1423 | Average 10 |
 | Tariq, the Glass Dervish | legendary | purple | attack | 821 | 669 | 1321 | Average 10 |
 | Hrolda, the Avalanche Door | legendary | blue | defense | 653 | 807 | 1586 | Slow 12 |
@@ -138,17 +138,17 @@
 | Tali, Scrapshot | rare | yellow | attack | 682 | 530 | 978 | Fast 8 |
 | Edrik Mournwall | rare | blue | defense | 535 | 657 | 1189 | Average 10 |
 | Venn Sablethread | rare | purple | attack | 683 | 550 | 983 | Fast 8 |
-| Renn Briarhook | rare | green | attack | 711 | 568 | 1023 | Fast 8 |
+| Oswin Briarhook | rare | green | attack | 711 | 568 | 1023 | Fast 8 |
 | Varya, the Stormbound Circuit | legendary | red | attack | 822 | 680 | 1305 | Charging 8 / 10 |
 | Iona, Signal Keeper | rare | yellow | support | 570 | 650 | 1169 | Average 10 |
 | Morthane, the Last Lantern | legendary | green | attack | 790 | 715 | 1360 | Slow 12 |
 | Vorga, Ashen Oath | legendary | yellow | defense | 665 | 810 | 1515 | Slow 12 |
 | Velis, Moonroot Reaver | legendary | purple | attack | 810 | 705 | 1330 | Average 10 |
-| Sera, Emberleaf Tender | legendary | red | support | 740 | 696 | 1398 | Average 10 |
+| Rosamund, Emberleaf Tender | legendary | red | support | 740 | 696 | 1398 | Average 10 |
 | Nayara, Keeper of the Deep Well | mythical | blue | support | 835 | 800 | 1540 | Fast 8 |
 | Qadir, Glassveil Warden | legendary | purple | defense | 690 | 790 | 1500 | Fast 8 |
 | Thalen, Mossveil Hunter | legendary | green | attack | 835 | 663 | 1300 | Fast 8 |
-| Elyra, Candle of the Lost | legendary | yellow | defense | 640 | 820 | 1540 | Average 10 |
+| Sabine, Candle of the Lost | legendary | yellow | defense | 640 | 820 | 1540 | Average 10 |
 | Zareen, Ember-Pride Huntress | rare | red | attack | 660 | 580 | 1040 | Fast 8 |
 | Kharuun, Rimeclaw Bastion | legendary | blue | defense | 700 | 780 | 1490 | Slow 12 |
 | Valcera, Briar Magistrate | legendary | green | attack | 818 | 687 | 1335 | Average 10 |
@@ -157,15 +157,27 @@
 | Torvek, the Void Battery | legendary | purple | attack | 760 | 725 | 1370 | Fast 8 |
 | Kaitha, Caldera Fury | legendary | red | attack | 800 | 710 | 1360 | Slow 12 |
 | Lysandre, Winter Vein | legendary | blue | attack | 790 | 725 | 1380 | Charging 8 / 10 |
-| Velka, Ashen Veil | legendary | red | attack | 790 | 715 | 1330 | Average 10 |
+| Cressida, Ashen Veil | legendary | red | attack | 790 | 715 | 1330 | Average 10 |
 | Zhenya, Sun-Dragon Lancer | legendary | yellow | attack | 740 | 735 | 1390 | Very Fast 6.5 |
-| Sahir, Emerald Talon | legendary | green | attack | 780 | 720 | 1380 | Fast 8 |
+| Yaqut, Emerald Talon | legendary | green | attack | 780 | 720 | 1380 | Fast 8 |
 | Nix, Biosteel Hunter | legendary | green | attack | 800 | 704 | 1335 | Charging 5 / 10 / 15 |
 | Draeven, Gravefrost Headsman | legendary | blue | attack | 780 | 720 | 1392 | Average 10 |
 | Melia, Dawn-Pollen Mender | rare | yellow | support | 660 | 540 | 1000 | Fast 8 |
 | Nyrali, Moon-Pride Keeper | legendary | purple | support | 600 | 780 | 1600 | Fast 8 |
 | Haska, Hearth Guard | rare | red | defense | 600 | 640 | 1120 | Average 10 |
 | Orrix, Amethyst Bulwark | rare | purple | defense | 618 | 620 | 1129 | Slow 12 |
+| Othrel, Riverstone Aegis | legendary | blue | defense | 670 | 810 | 1530 | Fast 8 |
+| Domitrix, the Gilded Vigil | legendary | yellow | defense | 650 | 820 | 1540 | Average 10 |
+| Beatrice, Verdigris Mender | legendary | green | support | 730 | 737 | 1420 | Fast 8 |
+| Ephoros, Pale Ferryman | legendary | blue | support | 730 | 737 | 1427 | Fast 8 |
+| Cassio, Gravity Knife | legendary | purple | attack | 820 | 680 | 1310 | Fast 8 |
+| Pyrrhon, the Soulfire Verdict | legendary | yellow | attack | 800 | 690 | 1330 | Charging 8 / 10 |
+| Inko, Plasma Skirmisher | rare | red | attack | 650 | 580 | 1040 | Fast 8 |
+| Hester, Emberthorn Hunter | rare | red | attack | 626 | 600 | 1080 | Average 10 |
+| Kozhak, Glacier Prowler | legendary | blue | attack | 815 | 680 | 1320 | Charging 5 / 10 / 15 |
+| Ushala, Quillgrass Tracker | rare | green | attack | 602 | 620 | 1129 | Average 10 |
+| Qingluo, Jade Tempest | legendary | green | attack | 810 | 700 | 1340 | Slow 12 |
+| Thyssara, Eclipse Blade | legendary | yellow | attack | 815 | 680 | 1320 | Charging 8 / 10 |
 
 ## Specials
 
@@ -197,7 +209,7 @@ Passive: **Cold of the Pit** — Immune to Burn.
 
 - 12 tiles: Deal 176% ATK damage to selected enemy. Damage Ward (Caster, 1 turns); Barrier (All living allies, 1 turns); Taunt (Caster, 1 turns).
 
-### Fen, the Spore Adept — Colony Bloom
+### Chispa, the Spore Adept — Colony Bloom
 
 - Charge 1 · 8 tiles: Restore 22% max HP to all living allies. Ailment Ward (All living allies, 1 turns).
 - Charge 2 · 10 tiles: Restore 32% max HP to all living allies. Deal 103% ATK damage to lowest-hp living enemy. Ailment Ward (All living allies, 2 turns); Poison (Lowest-HP living enemy, 2 turns).
@@ -228,7 +240,7 @@ Passive: **Perfected Blood** — Immune to Poison.
 
 - 10 tiles: Restore 32% max HP to all living allies. Defense Up (All living allies, 1 turns); Regeneration (All living allies, 3 turns).
 
-### Brakkar the Pit Grunt — Cleaver Charge
+### Murgash the Pit Grunt — Cleaver Charge
 
 - 10 tiles: Deal 150% ATK damage to selected enemy. Riposte (Caster, 3 turns); Attack Down (Selected enemy, 1 turns).
 
@@ -311,7 +323,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 - 12 tiles: Restore 32% max HP to all living allies. Cleanse (All living allies); Defense Up (All living allies, 2 turns); Death Ward (All living allies, 2 turns).
 
-### Vhessa, Brimstone Witch — Ember Sigil
+### Hexandra, Brimstone Witch — Ember Sigil
 
 - 10 tiles: Deal 280% ATK damage to selected enemy. Attack Down (Selected enemy, 2 turns); Burn (Selected enemy, 2 turns); Ember Defense Down (Selected enemy, 3 turns).
 
@@ -340,7 +352,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 - 10 tiles: Restore 32% max HP to all living allies. Regeneration (All living allies, 2 turns); Damage Ward (All living allies, 2 turns).
 
-### Justiciar Vael — Divine Verdict
+### Justiciar Gethren — Divine Verdict
 
 - 8 tiles: Deal 217% ATK damage to selected enemy, ignoring 25% of DEF. .
 
@@ -413,7 +425,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 - 10 tiles: Deal 241% ATK damage to selected enemy. Poison (Selected enemy, 3 turns).
 
-### Mosswitch Lira — Verdant Blessing
+### Mosswitch Brynna — Verdant Blessing
 
 - 10 tiles: Restore 32% max HP to one living ally. Regeneration (Selected ally, 1 turns).
 
@@ -437,7 +449,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 - 10 tiles: Deal 280% ATK damage to selected enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 2 turns); Attack Down (Selected enemy, 3 turns).
 
-### Wolf-Handler Torv — Winter Hunt
+### Wolf-Handler Stellan — Winter Hunt
 
 - 10 tiles: Restore 32% max HP to one living ally. Damage Ward (Selected ally, 3 turns).
 
@@ -469,7 +481,7 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 - 10 tiles: Deal 263% ATK damage to selected enemy, ignoring 25% of DEF. Mana Slow (Selected enemy, 1 turns).
 
-### Dune Mage Sorra — Desert Vortex
+### Dune Mage Juhara — Desert Vortex
 
 - Charge 1 · 8 tiles: Deal 190% ATK damage to selected enemy, ignoring 25% of DEF. Burn (Selected enemy, 1 turns).
 - Charge 2 · 10 tiles: Deal 165% ATK damage to all living enemies, ignoring 25% of DEF. Burn (All living enemies, 2 turns).
@@ -557,7 +569,7 @@ Passive: **Dragonskin** — Immune to Burn and Poison.
 
 - 8 tiles: Deal 252% ATK damage to selected enemy. Dispel (Selected enemy); Mana Slow (Selected enemy, 1 turns); Vulnerability (Selected enemy, 2 turns).
 
-### Matrix Matriarch Lyra — System Override
+### Matrix Matriarch Octavia — System Override
 
 - 12 tiles: Restore 32% max HP to all living allies. Cleanse (All living allies); Mana Flow (All living allies, 2 turns); Death Ward (All living allies, 2 turns); Mana Gift (Other living allies).
 
@@ -591,7 +603,7 @@ Passive: **Entropy Bloom** — Heals 5% of max HP every turn.
 
 Passive: **Heartwood Renewal** — Heals 5% of his own max HP at the start of each of his turns, up to full health.
 
-### Oasis-Keeper Nahlia — Waters of the Hidden Spring
+### Oasis-Keeper Safiya — Waters of the Hidden Spring
 
 - 10 tiles: Restore 32% max HP to all living allies. Defense Up (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
 
@@ -599,23 +611,23 @@ Passive: **Heartwood Renewal** — Heals 5% of his own max HP at the start of ea
 
 - 12 tiles: Deal 176% ATK damage to selected enemy. Damage Ward (Caster, 2 turns); Barrier (All living allies, 2 turns); Attack Down (Selected enemy, 2 turns).
 
-### Cinder-Mender Vessa — Ashes Unbound
+### Cinder-Mender Caldris — Ashes Unbound
 
 - 10 tiles: Restore 32% max HP to all living allies. Damage Ward (All living allies, 1 turns); Ailment Ward (All living allies, 2 turns).
 
-### Veyr, the Hollow Gate — None Shall Follow
+### Theskar, the Hollow Gate — None Shall Follow
 
 - 10 tiles: Deal 150% ATK damage to selected enemy. Defense Up (Caster, 1 turns); Taunt (Caster, 1 turns).
 
-### Aurelia, the Last Foundry — Reforge the Fallen Line
+### Isolde, the Last Foundry — Reforge the Fallen Line
 
 - Charge 1 · 5 tiles: Restore 11% max HP to all living allies. Defense Up (All living allies, 1 turns); Damage Ward (All living allies, 1 turns).
 - Charge 2 · 10 tiles: Restore 20% max HP to all living allies. Cleanse (All living allies); Defense Up (All living allies, 1 turns); Damage Ward (All living allies, 1 turns).
 - Charge 3 · 15 tiles: Restore 32% max HP to all living allies. Cleanse (All living allies); Defense Up (All living allies, 2 turns); Damage Ward (All living allies, 2 turns); Barrier (All living allies, 2 turns).
 
-Passive: **Tempered Resolve** — Immune to Decrease DEF. This permanent protection affects only Aurelia.
+Passive: **Tempered Resolve** — Immune to Decrease DEF. This permanent protection affects only Isolde.
 
-### Jade-Mender Lian — Breath of the Jade Spring
+### Jade-Mender Baozhen — Breath of the Jade Spring
 
 - 10 tiles: Restore 32% max HP to all living allies. Tile Boost (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
 
@@ -643,11 +655,11 @@ Passive: **Tempered Resolve** — Immune to Decrease DEF. This permanent protect
 
 - 12 tiles: Deal 176% ATK damage to selected enemy. Defense Up (Caster, 2 turns); Barrier (All living allies, 2 turns); Mana Slow (Selected enemy, 2 turns).
 
-### Vorrek, the Walking Siege — Break the Unbroken
+### Hadrian, the Walking Siege — Break the Unbroken
 
 - 10 tiles: Deal 170% ATK damage to all living enemies. Attack Up (Caster, 2 turns); Buff Seal (All living enemies, 1 turns); Defense Down (All living enemies, 2 turns).
 
-Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent protection affects only him.
+Passive: **Unbroken Advance** — Hadrian is immune to Weaken. This permanent protection affects only him.
 
 ### Rimebow Tessa — Winterward Shot
 
@@ -665,7 +677,7 @@ Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent pro
 
 - 8 tiles: Deal 237% ATK damage to selected enemy. Vulnerability (Selected enemy, 1 turns).
 
-### Nerez, the Veil Bastion — Oath of the Closing Veil
+### Ulbrecht, the Veil Bastion — Oath of the Closing Veil
 
 - 12 tiles: Deal 176% ATK damage to selected enemy. Riposte (Caster, 1 turns); Damage Ward (Caster, 2 turns); Taunt (Caster, 2 turns).
 
@@ -673,7 +685,7 @@ Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent pro
 
 - 6.5 tiles: Deal 211% ATK damage to selected enemy, ignoring 25% of DEF. .
 
-### Mavra Dusktrail — Break the Pursuit
+### Phaedra Dusktrail — Break the Pursuit
 
 - 10 tiles: Deal 263% ATK damage to selected enemy. Attack Down (Selected enemy, 1 turns).
 
@@ -685,11 +697,11 @@ Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent pro
 
 - 10 tiles: Deal 237% ATK damage to selected enemy. Mana Flow (Caster, 1 turns); Tile Boost (Caster, 2 turns); Vulnerability (Selected enemy, 2 turns).
 
-### Ilyra Snowglass — The Glacier's Edge
+### Iridessa Snowglass — The Glacier's Edge
 
 - 8 tiles: Deal 237% ATK damage to selected enemy, ignoring 25% of DEF. Frost Defense Down (Selected enemy, 1 turns).
 
-### Toruun Basalt-Mane — Answer to the Gate
+### Gromund Basalt-Mane — Answer to the Gate
 
 - 10 tiles: Deal 150% ATK damage to selected enemy. Defense Up (Caster, 1 turns); Taunt (Caster, 2 turns).
 
@@ -701,7 +713,7 @@ Passive: **Unbroken Advance** — Vorrek is immune to Weaken. This permanent pro
 
 - 12 tiles: Deal 176% ATK damage to selected enemy. Riposte (Caster, 1 turns); Barrier (All living allies, 2 turns); Attack Down (Selected enemy, 2 turns).
 
-### Oruun, the Prism-Seer — Gather the Scattered Light
+### Anzuko, the Prism-Seer — Gather the Scattered Light
 
 - Charge 1 · 8 tiles: Restore 20% max HP to all living allies. Cleanse (All living allies); Ailment Ward (All living allies, 1 turns).
 - Charge 2 · 10 tiles: Restore 29% max HP to all living allies. Cleanse (All living allies); Ailment Ward (All living allies, 1 turns); Regeneration (All living allies, 2 turns).
@@ -720,7 +732,7 @@ Passive: **Sunscar Oath** — Azhar is permanently immune to Weaken. This protec
 
 - 8 tiles: Deal 213% ATK damage to selected enemy, ignoring 25% of DEF. Buff Seal (Selected enemy, 2 turns); Bleed (Selected enemy, 2 turns).
 
-### Tovin Glassheart — Hold Together
+### Belsorin Glassheart — Hold Together
 
 - 10 tiles: Restore 32% max HP to all living allies. Defense Up (All living allies, 1 turns).
 
@@ -752,7 +764,7 @@ Passive: **Sunscar Oath** — Azhar is permanently immune to Weaken. This protec
 
 - 8 tiles: Deal 237% ATK damage to selected enemy. Mana Slow (Selected enemy, 1 turns).
 
-### Renn Briarhook — Leave the Wound Open
+### Oswin Briarhook — Leave the Wound Open
 
 - 8 tiles: Deal 237% ATK damage to selected enemy. Poison (Selected enemy, 1 turns); Vulnerability (Selected enemy, 2 turns).
 
@@ -783,7 +795,7 @@ Passive: **Emberbound** — Immune to Burn.
 
 - 10 tiles: Deal 250% ATK damage to selected enemy. Umbral Defense Down (Selected enemy, 2 turns); Buff Seal (Selected enemy, 1 turns).
 
-### Sera, Emberleaf Tender — A Hearth for Every Root
+### Rosamund, Emberleaf Tender — A Hearth for Every Root
 
 - 10 tiles: Restore 28% max HP to all living allies. Cleanse (All living allies); Regeneration (All living allies, 1 turns).
 
@@ -803,7 +815,7 @@ Passive: **Heart of the Deep Well** — Restore 3% of Nayara's maximum HP at the
 
 - 8 tiles: Deal 225% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy); Poison (Selected enemy, 1 turns).
 
-### Elyra, Candle of the Lost — Stand Within the Light
+### Sabine, Candle of the Lost — Stand Within the Light
 
 - 10 tiles: Empower your warband with the effects below. Barrier (All living allies, 2 turns); Ailment Ward (All living allies, 1 turns); Taunt (Caster, 1 turns).
 
@@ -846,7 +858,7 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 - Charge 1 · 8 tiles: Deal 165% ATK damage to selected enemy. Frostbite (Selected enemy, 1 turns).
 - Charge 2 · 10 tiles: Deal 255% ATK damage to selected enemy. Dispel (Selected enemy); Frostbite (Selected enemy, 2 turns).
 
-### Velka, Ashen Veil — Ember in the Dark
+### Cressida, Ashen Veil — Ember in the Dark
 
 - 10 tiles: Deal 250% ATK damage to selected enemy. Buff Seal (Selected enemy, 2 turns); Burn (Selected enemy, 1 turns).
 
@@ -854,7 +866,7 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 - 6.5 tiles: Deal 165% ATK damage to selected enemy. Defense Down (Selected enemy, 1 turns).
 
-### Sahir, Emerald Talon — Venom on the Wind
+### Yaqut, Emerald Talon — Venom on the Wind
 
 - 8 tiles: Deal 220% ATK damage to selected enemy. Poison (Selected enemy, 2 turns).
 
@@ -883,4 +895,56 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 ### Orrix, Amethyst Bulwark — Living Bastion
 
 - 12 tiles: Deal 125% ATK damage to selected enemy. Barrier (All living allies, 2 turns); Riposte (Caster, 1 turns).
+
+### Othrel, Riverstone Aegis — Riverstone Covenant
+
+- 8 tiles: Deal 110% ATK damage to selected enemy. Barrier (All living allies, 2 turns); Damage Ward (Caster, 1 turns).
+
+### Domitrix, the Gilded Vigil — Unmake the False Crown
+
+- 10 tiles: Deal 130% ATK damage to selected enemy. Dispel (Selected enemy); Taunt (Caster, 1 turns); Damage Ward (Caster, 2 turns).
+
+### Beatrice, Verdigris Mender — Mend the Living Line
+
+- 8 tiles: Restore 24% max HP to all living allies. Cleanse (All living allies).
+
+### Ephoros, Pale Ferryman — Safe Passage
+
+- 8 tiles: Restore 22% max HP to all living allies. Ailment Ward (All living allies, 1 turns).
+
+### Cassio, Gravity Knife — Fold the Distance
+
+- 8 tiles: Deal 230% ATK damage to selected enemy. Vulnerability (Selected enemy, 1 turns).
+
+### Pyrrhon, the Soulfire Verdict — Judgment of the Bound Sun
+
+- Charge 1 · 8 tiles: Deal 160% ATK damage to selected enemy. Burn (Selected enemy, 1 turns).
+- Charge 2 · 10 tiles: Deal 245% ATK damage to selected enemy. Dispel (Selected enemy); Burn (Selected enemy, 2 turns).
+
+### Inko, Plasma Skirmisher — Redline Cut
+
+- 8 tiles: Deal 215% ATK damage to selected enemy. Attack Down (Selected enemy, 1 turns).
+
+### Hester, Emberthorn Hunter — Seeds of the Cinderbriar
+
+- 10 tiles: Deal 225% ATK damage to selected enemy. Burn (Selected enemy, 2 turns).
+
+### Kozhak, Glacier Prowler — Whiteout Pursuit
+
+- Charge 1 · 5 tiles: Deal 85% ATK damage to selected enemy. .
+- Charge 2 · 10 tiles: Deal 175% ATK damage to selected enemy. Frostbite (Selected enemy, 1 turns).
+- Charge 3 · 15 tiles: Deal 260% ATK damage to selected enemy. Frostbite (Selected enemy, 2 turns); Frost Defense Down (Selected enemy, 1 turns).
+
+### Ushala, Quillgrass Tracker — Barbs in the Tall Grass
+
+- 10 tiles: Deal 225% ATK damage to selected enemy. Poison (Selected enemy, 2 turns).
+
+### Qingluo, Jade Tempest — Dragon Through the Bamboo
+
+- 12 tiles: Deal 165% ATK damage to all living enemies. Defense Down (All living enemies, 1 turns).
+
+### Thyssara, Eclipse Blade — Light Stolen from the Veil
+
+- Charge 1 · 8 tiles: Deal 170% ATK damage to selected enemy. Dispel (Selected enemy).
+- Charge 2 · 10 tiles: Deal 250% ATK damage to selected enemy. Dispel (Selected enemy); Buff Seal (Selected enemy, 1 turns).
 

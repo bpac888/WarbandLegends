@@ -336,7 +336,7 @@
   },
   {
     "template_id": "spore_engineer",
-    "name": "Fen, the Spore Adept",
+    "name": "Chispa, the Spore Adept",
     "title": "Bloom-Weaver of the Green Vats",
     "rarity": "rare",
     "faction": "chymera",
@@ -345,7 +345,7 @@
     "atk": 579,
     "def": 616,
     "ability_name": "Colony Bloom",
-    "lore": "Fen no longer eats. The colony behind the glass is very grateful — and very hungry for someone else.",
+    "lore": "Chispa no longer eats. The colony behind the glass is very grateful — and very hungry for someone else.",
     "image_url": "/api/static/champions/spore_engineer.png",
     "id": "spore_engineer",
     "color": "green",
@@ -739,7 +739,7 @@
   },
   {
     "template_id": "pit_grunt",
-    "name": "Brakkar the Pit Grunt",
+    "name": "Murgash the Pit Grunt",
     "title": "Of the Seventh Pit",
     "rarity": "rare",
     "faction": "nether",
@@ -748,7 +748,7 @@
     "atk": 549,
     "def": 692,
     "ability_name": "Cleaver Charge",
-    "lore": "Brakkar lost an eye, two horns, and the lower half of his pride to a recruiter. He has not stopped fighting since.",
+    "lore": "Murgash lost an eye, two horns, and the lower half of his pride to a recruiter. He has not stopped fighting since.",
     "image_url": "/api/static/champions/pit_grunt.png",
     "id": "pit_grunt",
     "color": "red",
@@ -1720,7 +1720,7 @@
   },
   {
     "template_id": "brimstone_witch",
-    "name": "Vhessa, Brimstone Witch",
+    "name": "Hexandra, Brimstone Witch",
     "title": "Ash-Marked Adept",
     "rarity": "legendary",
     "faction": "nether",
@@ -1729,7 +1729,7 @@
     "atk": 828,
     "def": 674,
     "ability_name": "Ember Sigil",
-    "lore": "Vhessa's tattoos were carved not by hand but by conversation. She has had many long conversations.",
+    "lore": "Hexandra's tattoos were carved not by hand but by conversation. She has had many long conversations.",
     "image_url": "/api/static/champions/brimstone_witch.png",
     "id": "brimstone_witch",
     "color": "red",
@@ -2103,7 +2103,7 @@
   },
   {
     "template_id": "justiciar_vael",
-    "name": "Justiciar Vael",
+    "name": "Justiciar Gethren",
     "title": "Steel Mercy, Golden Sentence",
     "rarity": "common",
     "faction": "ironclad",
@@ -2112,7 +2112,7 @@
     "atk": 509,
     "def": 441,
     "ability_name": "Divine Verdict",
-    "lore": "Vael judges with one hand and pardons with the other. Both hands hold a blade.",
+    "lore": "Gethren judges with one hand and pardons with the other. Both hands hold a blade.",
     "image_url": "/api/static/champions/hero-4.png",
     "id": "justiciar_vael",
     "color": "yellow",
@@ -2989,7 +2989,7 @@
   },
   {
     "template_id": "mosswitch_lira",
-    "name": "Mosswitch Lira",
+    "name": "Mosswitch Brynna",
     "title": "Barefoot Through the Thorns",
     "rarity": "common",
     "faction": "wildgrove",
@@ -3289,7 +3289,7 @@
   },
   {
     "template_id": "wolf_handler_torv",
-    "name": "Wolf-Handler Torv",
+    "name": "Wolf-Handler Stellan",
     "title": "Whistle of the White Pack",
     "rarity": "common",
     "faction": "frost",
@@ -3298,7 +3298,7 @@
     "atk": 384,
     "def": 473,
     "ability_name": "Winter Hunt",
-    "lore": "Torv's wolves do not love him. They respect the same hunger, and that is enough.",
+    "lore": "Stellan's wolves do not love him. They respect the same hunger, and that is enough.",
     "image_url": "/api/static/champions/hero-30.png",
     "id": "wolf_handler_torv",
     "color": "blue",
@@ -3668,7 +3668,7 @@
   },
   {
     "template_id": "dune_mage_sorra",
-    "name": "Dune Mage Sorra",
+    "name": "Dune Mage Juhara",
     "title": "Weaver of Heat and Lie",
     "rarity": "legendary",
     "faction": "duneriders",
@@ -3677,7 +3677,7 @@
     "atk": 811,
     "def": 680,
     "ability_name": "Desert Vortex",
-    "lore": "Sorra's illusions do not hide the oasis. They hide the knives beside it.",
+    "lore": "Juhara's illusions do not hide the oasis. They hide the knives beside it.",
     "image_url": "/api/static/champions/hero-24.png",
     "id": "dune_mage_sorra",
     "color": "yellow",
@@ -4764,7 +4764,7 @@
   },
   {
     "template_id": "neon_hacker_empress",
-    "name": "Matrix Matriarch Lyra",
+    "name": "Matrix Matriarch Octavia",
     "title": "She Who Watches Through the Wires",
     "rarity": "legendary",
     "faction": "neon_syndicate",
@@ -4773,7 +4773,7 @@
     "atk": 740,
     "def": 734,
     "ability_name": "System Override",
-    "lore": "Lyra controls the black-market networks from her high dacha fortress. No one speaks in the Syndicate without her permission.",
+    "lore": "Octavia controls the black-market networks from her high dacha fortress. No one speaks in the Syndicate without her permission.",
     "image_url": "/api/static/champions/neon_hackerempress.png",
     "id": "neon_hacker_empress",
     "color": "blue",
@@ -5192,7 +5192,7 @@
   },
   {
     "template_id": "oasis_keeper_nahlia",
-    "name": "Oasis-Keeper Nahlia",
+    "name": "Oasis-Keeper Safiya",
     "title": "The Last Drop Shared",
     "rarity": "rare",
     "faction": "duneriders",
@@ -5201,7 +5201,7 @@
     "atk": 595,
     "def": 617,
     "ability_name": "Waters of the Hidden Spring",
-    "lore": "Nahlia knows the buried springs that never appear on caravan maps. She has crossed the salt wastes with a single waterskin, and never once kept its last drop for herself.",
+    "lore": "Safiya knows the buried springs that never appear on caravan maps. She has crossed the salt wastes with a single waterskin, and never once kept its last drop for herself.",
     "image_url": "/api/static/champions/oasis_keeper_nahlia.png",
     "id": "oasis_keeper_nahlia",
     "color": "green",
@@ -5297,7 +5297,7 @@
   },
   {
     "template_id": "cinder_mender_vessa",
-    "name": "Cinder-Mender Vessa",
+    "name": "Cinder-Mender Caldris",
     "title": "The Ember Kept for Others",
     "rarity": "rare",
     "faction": "nether",
@@ -5306,7 +5306,7 @@
     "atk": 602,
     "def": 606,
     "ability_name": "Ashes Unbound",
-    "lore": "Vessa once tended the furnaces beneath the Seventh Pit, where mercy was counted as wasted fuel. When a broken legion crawled home, she stole a coal from the punishment fires and taught it to close wounds instead. Now her lantern burns for anyone still breathing, and the pitmasters follow its light with chains.",
+    "lore": "Caldris once tended the furnaces beneath the Seventh Pit, where mercy was counted as wasted fuel. When a broken legion crawled home, she stole a coal from the punishment fires and taught it to close wounds instead. Now her lantern burns for anyone still breathing, and the pitmasters follow its light with chains.",
     "image_url": "/api/static/champions/cinder_mender_vessa.png",
     "id": "cinder_mender_vessa",
     "color": "red",
@@ -5347,7 +5347,7 @@
   },
   {
     "template_id": "veyr_hollow_gate",
-    "name": "Veyr, the Hollow Gate",
+    "name": "Theskar, the Hollow Gate",
     "title": "Last Watch of the Nameless Quarter",
     "rarity": "rare",
     "faction": "umbra",
@@ -5356,7 +5356,7 @@
     "atk": 546,
     "def": 675,
     "ability_name": "None Shall Follow",
-    "lore": "When the Nameless Quarter slipped into shadow, its watchman held the evacuation gate until the last lantern crossed. Dawn found only his armor, still standing. Veyr no longer remembers the people he saved, but whenever footsteps flee through the dark, he turns his shield toward whatever follows.",
+    "lore": "When the Nameless Quarter slipped into shadow, its watchman held the evacuation gate until the last lantern crossed. Dawn found only his armor, still standing. Theskar no longer remembers the people he saved, but whenever footsteps flee through the dark, he turns his shield toward whatever follows.",
     "image_url": "/api/static/champions/veyr_hollow_gate.png",
     "id": "veyr_hollow_gate",
     "color": "purple",
@@ -5397,7 +5397,7 @@
   },
   {
     "template_id": "aurelia_last_foundry",
-    "name": "Aurelia, the Last Foundry",
+    "name": "Isolde, the Last Foundry",
     "title": "Keeper of the Unquenched Heart",
     "rarity": "mythical",
     "faction": "ironclad",
@@ -5406,7 +5406,7 @@
     "atk": 775,
     "def": 809,
     "ability_name": "Reforge the Fallen Line",
-    "lore": "When Valdur's furnaces went cold, Aurelia carried their last living coal inside her own iron heart. She has crossed a century of battlefields rebuilding soldiers that kings had already written off. Her forge asks neither banner nor birthplace, only whether there is still someone inside the armor worth bringing home.",
+    "lore": "When Valdur's furnaces went cold, Isolde carried their last living coal inside her own iron heart. She has crossed a century of battlefields rebuilding soldiers that kings had already written off. Her forge asks neither banner nor birthplace, only whether there is still someone inside the armor worth bringing home.",
     "image_url": "/api/static/champions/aurelia_last_foundry.png",
     "id": "aurelia_last_foundry",
     "color": "yellow",
@@ -5419,7 +5419,7 @@
       "immune": [
         "dec_def"
       ],
-      "desc": "Immune to Decrease DEF. This permanent protection affects only Aurelia."
+      "desc": "Immune to Decrease DEF. This permanent protection affects only Isolde."
     },
     "manaSpeed": "charging",
     "special": {
@@ -5516,7 +5516,7 @@
   },
   {
     "template_id": "jade_mender_lian",
-    "name": "Jade-Mender Lian",
+    "name": "Jade-Mender Baozhen",
     "title": "Physician of the Rainward Steps",
     "rarity": "rare",
     "faction": "dragondynasty",
@@ -5525,7 +5525,7 @@
     "atk": 604,
     "def": 591,
     "ability_name": "Breath of the Jade Spring",
-    "lore": "Lian left the imperial physicians after learning that medicine was reserved for officers. With a cracked jade bowl and a satchel of mountain herbs, he now walks the rainward steps between villages. The little dragon in his bowl was once offered a throne; it chose to help him carry water instead.",
+    "lore": "Baozhen left the imperial physicians after learning that medicine was reserved for officers. With a cracked jade bowl and a satchel of mountain herbs, he now walks the rainward steps between villages. The little dragon in his bowl was once offered a throne; it chose to help him carry water instead.",
     "image_url": "/api/static/champions/jade_mender_lian.png",
     "id": "jade_mender_lian",
     "color": "green",
@@ -5871,7 +5871,7 @@
   },
   {
     "template_id": "vorrek_walking_siege",
-    "name": "Vorrek, the Walking Siege",
+    "name": "Hadrian, the Walking Siege",
     "title": "The Breach That Walks",
     "rarity": "mythical",
     "faction": "ironclad",
@@ -5879,7 +5879,7 @@
     "hp": 1482,
     "atk": 916,
     "ability_name": "Break the Unbroken",
-    "lore": "Vorrek held the eastern siege line until the generals spent his last soldier. Rather than accept a replacement army, he ordered the surviving engineers to build the breach around him. His furnace still burns with the names of those who never came home, and no fortress has yet persuaded him to turn aside.",
+    "lore": "Hadrian held the eastern siege line until the generals spent his last soldier. Rather than accept a replacement army, he ordered the surviving engineers to build the breach around him. His furnace still burns with the names of those who never came home, and no fortress has yet persuaded him to turn aside.",
     "image_url": "/api/static/champions/vorrek_walking_siege.png",
     "def": 764,
     "id": "vorrek_walking_siege",
@@ -5893,7 +5893,7 @@
       "immune": [
         "weaken"
       ],
-      "desc": "Vorrek is immune to Weaken. This permanent protection affects only him."
+      "desc": "Hadrian is immune to Weaken. This permanent protection affects only him."
     },
     "manaSpeed": "average",
     "special": {
@@ -6124,7 +6124,7 @@
   },
   {
     "template_id": "nerez_veil_bastion",
-    "name": "Nerez, the Veil Bastion",
+    "name": "Ulbrecht, the Veil Bastion",
     "title": "The Watch Beneath the Eclipse",
     "rarity": "legendary",
     "faction": "umbra",
@@ -6132,7 +6132,7 @@
     "hp": 1547,
     "atk": 654,
     "ability_name": "Oath of the Closing Veil",
-    "lore": "The old city paid its night watch in promises that the dawn would come. When an eclipse swallowed the final sunrise, Nerez kept his post anyway. Travelers now follow the scrape of his shield through streets that maps refuse to remember, knowing the thing behind them will have to answer his challenge first.",
+    "lore": "The old city paid its night watch in promises that the dawn would come. When an eclipse swallowed the final sunrise, Ulbrecht kept his post anyway. Travelers now follow the scrape of his shield through streets that maps refuse to remember, knowing the thing behind them will have to answer his challenge first.",
     "image_url": "/api/static/champions/nerez_veil_bastion.png",
     "def": 831,
     "id": "nerez_veil_bastion",
@@ -6218,7 +6218,7 @@
   },
   {
     "template_id": "mavra_dusktrail",
-    "name": "Mavra Dusktrail",
+    "name": "Phaedra Dusktrail",
     "title": "The Path the Hunters Fear",
     "rarity": "rare",
     "faction": "veldtborn",
@@ -6227,7 +6227,7 @@
     "atk": 670,
     "def": 554,
     "ability_name": "Break the Pursuit",
-    "lore": "The smoky markings across Mavra's puma shoulders look like the canyon shadows in which she grew up. She once guided trophy hunters to the high passes, until she discovered what they carried in their covered wagons. Now her arrows guide the prisoners home, and the hunters learn how far a scream travels in the dusk.",
+    "lore": "The smoky markings across Phaedra's puma shoulders look like the canyon shadows in which she grew up. She once guided trophy hunters to the high passes, until she discovered what they carried in their covered wagons. Now her arrows guide the prisoners home, and the hunters learn how far a scream travels in the dusk.",
     "image_url": "/api/static/champions/mavra_dusktrail.png",
     "id": "mavra_dusktrail",
     "color": "purple",
@@ -6363,7 +6363,7 @@
   },
   {
     "template_id": "ilyra_snowglass",
-    "name": "Ilyra Snowglass",
+    "name": "Iridessa Snowglass",
     "title": "Knife of the High White Pass",
     "rarity": "rare",
     "faction": "veldtborn",
@@ -6372,7 +6372,7 @@
     "atk": 709,
     "def": 558,
     "ability_name": "The Glacier's Edge",
-    "lore": "Blue threads run between the charcoal rosettes of Ilyra's snow-leopard coat, as though the mountain sky were caught beneath her fur. She guards the abandoned monastery road with daggers cut from its last unbroken window. The valley calls her an assassin; the children crossing the pass call her the lantern in the snow.",
+    "lore": "Blue threads run between the charcoal rosettes of Iridessa's snow-leopard coat, as though the mountain sky were caught beneath her fur. She guards the abandoned monastery road with daggers cut from its last unbroken window. The valley calls her an assassin; the children crossing the pass call her the lantern in the snow.",
     "image_url": "/api/static/champions/ilyra_snowglass.png",
     "id": "ilyra_snowglass",
     "color": "blue",
@@ -6408,7 +6408,7 @@
   },
   {
     "template_id": "toruun_basalt_mane",
-    "name": "Toruun Basalt-Mane",
+    "name": "Gromund Basalt-Mane",
     "title": "The Gate with a Living Heart",
     "rarity": "rare",
     "faction": "veldtborn",
@@ -6417,7 +6417,7 @@
     "atk": 540,
     "def": 701,
     "ability_name": "Answer to the Gate",
-    "lore": "Toruun braided the bronze gate-rings of his ruined city into his black lion's mane. When the survivors asked where they should build their next wall, he set down his shield and told them to begin behind him. The road is crowded now, and he has not moved.",
+    "lore": "Gromund braided the bronze gate-rings of his ruined city into his black lion's mane. When the survivors asked where they should build their next wall, he set down his shield and told them to begin behind him. The road is crowded now, and he has not moved.",
     "image_url": "/api/static/champions/toruun_basalt_mane.png",
     "id": "toruun_basalt_mane",
     "color": "green",
@@ -6563,7 +6563,7 @@
   },
   {
     "template_id": "oruun_prism_seer",
-    "name": "Oruun, the Prism-Seer",
+    "name": "Anzuko, the Prism-Seer",
     "title": "Reader of the Shattered Day",
     "rarity": "legendary",
     "faction": "veldtborn",
@@ -6572,7 +6572,7 @@
     "atk": 722,
     "def": 732,
     "ability_name": "Gather the Scattered Light",
-    "lore": "Oruun's long lynx ear-tufts are threaded with tiny prisms, and his violet-gray fur bears pale geometric bands no scholar can explain. When the sun-prides shattered, he collected a fragment from every broken oath-stone. He studies their light for a future in which none of the prides must stand alone.",
+    "lore": "Anzuko's long lynx ear-tufts are threaded with tiny prisms, and his violet-gray fur bears pale geometric bands no scholar can explain. When the sun-prides shattered, he collected a fragment from every broken oath-stone. He studies their light for a future in which none of the prides must stand alone.",
     "image_url": "/api/static/champions/oruun_prism_seer.png",
     "id": "oruun_prism_seer",
     "color": "yellow",
@@ -6804,7 +6804,7 @@
   },
   {
     "template_id": "tovin_glassheart",
-    "name": "Tovin Glassheart",
+    "name": "Belsorin Glassheart",
     "title": "Physician of the Unfinished",
     "rarity": "rare",
     "faction": "chymera",
@@ -6813,7 +6813,7 @@
     "atk": 576,
     "def": 586,
     "ability_name": "Hold Together",
-    "lore": "Tovin survived the procedure because another patient held the glass over his artificial heart until the seal set. He has spent every day since returning that favor. His conservatory clinic admits any creature that can find the door, and his charts begin with a name instead of a specimen number.",
+    "lore": "Belsorin survived the procedure because another patient held the glass over his artificial heart until the seal set. He has spent every day since returning that favor. His conservatory clinic admits any creature that can find the door, and his charts begin with a name instead of a specimen number.",
     "image_url": "/api/static/champions/tovin_glassheart.png",
     "id": "tovin_glassheart",
     "color": "blue",
@@ -7194,7 +7194,7 @@
   },
   {
     "template_id": "renn_briarhook",
-    "name": "Renn Briarhook",
+    "name": "Oswin Briarhook",
     "title": "The Thorn at the Timber Road",
     "rarity": "rare",
     "faction": "wildgrove",
@@ -7203,7 +7203,7 @@
     "atk": 711,
     "def": 568,
     "ability_name": "Leave the Wound Open",
-    "lore": "Renn once marked trees for the royal timber road until he heard voices beneath the bark. His hook now tears the axle pins from the logging wagons, and the abandoned road grows narrower every spring. He keeps the last survey stake on his belt to remember how easily a straight line becomes a wound.",
+    "lore": "Oswin once marked trees for the royal timber road until he heard voices beneath the bark. His hook now tears the axle pins from the logging wagons, and the abandoned road grows narrower every spring. He keeps the last survey stake on his belt to remember how easily a straight line becomes a wound.",
     "image_url": "/api/static/champions/renn_briarhook.png",
     "id": "renn_briarhook",
     "color": "green",
@@ -7533,7 +7533,7 @@
   },
   {
     "template_id": "sera_emberleaf_tender",
-    "name": "Sera, Emberleaf Tender",
+    "name": "Rosamund, Emberleaf Tender",
     "title": "Healer of the Returning Grove",
     "rarity": "legendary",
     "faction": "wildgrove",
@@ -7542,7 +7542,7 @@
     "atk": 740,
     "def": 696,
     "ability_name": "A Hearth for Every Root",
-    "lore": "Sera returned to a grove reduced to charcoal and found one red leaf still warm in the ashes. She sheltered it in a copper bowl until roots began to grow through the burn. Her healing fire carries that first leaf from camp to camp, leaving green shoots where the wounded rested.",
+    "lore": "Rosamund returned to a grove reduced to charcoal and found one red leaf still warm in the ashes. She sheltered it in a copper bowl until roots began to grow through the burn. Her healing fire carries that first leaf from camp to camp, leaving green shoots where the wounded rested.",
     "image_url": "/assets/champions/sera_emberleaf_tender.webp",
     "id": "sera_emberleaf_tender",
     "color": "red",
@@ -7751,7 +7751,7 @@
   },
   {
     "template_id": "elyra_candle_lost",
-    "name": "Elyra, Candle of the Lost",
+    "name": "Sabine, Candle of the Lost",
     "title": "Warden of the Borrowed Dawn",
     "rarity": "legendary",
     "faction": "umbra",
@@ -7760,7 +7760,7 @@
     "atk": 640,
     "def": 820,
     "ability_name": "Stand Within the Light",
-    "lore": "Elyra lights a candle for every traveler who disappears beneath the veil. She carries their flames through the ruined streets, forming a doorway no pursuing shade may cross. When her own light falters, the candles she once sheltered gather to lift it again.",
+    "lore": "Sabine lights a candle for every traveler who disappears beneath the veil. She carries their flames through the ruined streets, forming a doorway no pursuing shade may cross. When her own light falters, the candles she once sheltered gather to lift it again.",
     "image_url": "/assets/champions/elyra_candle_lost.webp",
     "id": "elyra_candle_lost",
     "color": "yellow",
@@ -8258,7 +8258,7 @@
   },
   {
     "template_id": "velka_ashen_veil",
-    "name": "Velka, Ashen Veil",
+    "name": "Cressida, Ashen Veil",
     "title": "Knife Beneath the Embers",
     "rarity": "legendary",
     "faction": "umbra",
@@ -8267,7 +8267,7 @@
     "atk": 790,
     "def": 715,
     "ability_name": "Ember in the Dark",
-    "lore": "Velka was sent through an Umbra gate that opened inside a burning shrine. She returned with embers trapped in her shadow and no reflection in firelight. The veil now carries her between dying flames, where her knives leave wounds that no fresh blessing can close.",
+    "lore": "Cressida was sent through an Umbra gate that opened inside a burning shrine. She returned with embers trapped in her shadow and no reflection in firelight. The veil now carries her between dying flames, where her knives leave wounds that no fresh blessing can close.",
     "image_url": "/assets/champions/velka_ashen_veil.webp",
     "id": "velka_ashen_veil",
     "color": "red",
@@ -8353,7 +8353,7 @@
   },
   {
     "template_id": "sahir_emerald_talon",
-    "name": "Sahir, Emerald Talon",
+    "name": "Yaqut, Emerald Talon",
     "title": "Hunter of the Venom Dunes",
     "rarity": "legendary",
     "faction": "duneriders",
@@ -8362,7 +8362,7 @@
     "atk": 780,
     "def": 720,
     "ability_name": "Venom on the Wind",
-    "lore": "Sahir follows the green-winged falcons that nest above the Dune Riders’ hidden wells. Their venom is harmless to those who know its remedy, a secret he shares with every caravan under his protection. Raiders learn a different lesson when an emerald feather falls across their path.",
+    "lore": "Yaqut follows the green-winged falcons that nest above the Dune Riders’ hidden wells. Their venom is harmless to those who know its remedy, a secret he shares with every caravan under his protection. Raiders learn a different lesson when an emerald feather falls across their path.",
     "image_url": "/assets/champions/sahir_emerald_talon.webp",
     "id": "sahir_emerald_talon",
     "color": "green",
@@ -8720,5 +8720,641 @@
       ]
     },
     "ability_desc": "Deal 125% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "othrel_riverstone_aegis",
+    "name": "Othrel, Riverstone Aegis",
+    "title": "Warden of the Unbroken Current",
+    "rarity": "legendary",
+    "faction": "wildgrove",
+    "role": "defense",
+    "hp": 1530,
+    "atk": 670,
+    "def": 810,
+    "ability_name": "Riverstone Covenant",
+    "lore": "Othrel slept beneath Wildgrove’s oldest river until poisoned water reached the roots above his cairn. Now the river walks in stone, carrying its clear current between villages threatened by fire and blight. Every shield he raises remembers the shape of a sheltered shore.",
+    "image_url": "/assets/champions/othrel_riverstone_aegis.webp",
+    "id": "othrel_riverstone_aegis",
+    "color": "blue",
+    "source_image": "assets/champions/othrel_riverstone_aegis.webp",
+    "portrait": "assets/champions/othrel_riverstone_aegis.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Riverstone Covenant",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 1.1,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 110% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "domitrix_gilded_vigil",
+    "name": "Domitrix, the Gilded Vigil",
+    "title": "Keeper of the Bloodcourt Oath",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "defense",
+    "hp": 1540,
+    "atk": 650,
+    "def": 820,
+    "ability_name": "Unmake the False Crown",
+    "lore": "The Bloodcourt entrusted Domitrix with its treasury and discovered that she guarded its oaths more fiercely than its gold. Her gilded shield breaks borrowed enchantments, exposing the mortal weakness beneath a rival’s finery. Even the court’s eldest nobles lower their voices when her watch begins.",
+    "image_url": "/assets/champions/domitrix_gilded_vigil.webp",
+    "id": "domitrix_gilded_vigil",
+    "color": "yellow",
+    "source_image": "assets/champions/domitrix_gilded_vigil.webp",
+    "portrait": "assets/champions/domitrix_gilded_vigil.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Unmake the False Crown",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 1.3,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 130% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "beatrice_verdigris_mender",
+    "name": "Beatrice, Verdigris Mender",
+    "title": "Hands Behind the Iron Line",
+    "rarity": "legendary",
+    "faction": "ironclad",
+    "role": "support",
+    "hp": 1420,
+    "atk": 730,
+    "def": 737,
+    "ability_name": "Mend the Living Line",
+    "lore": "Beatrice learned that an Ironclad warband could survive a shattered engine but not a crew left behind. Her verdigris tinctures seal wounds as readily as cracked armor, while her clockwork assistants carry clean bandages through the smoke. She measures every invention by how many soldiers return home.",
+    "image_url": "/assets/champions/beatrice_verdigris_mender.webp",
+    "id": "beatrice_verdigris_mender",
+    "color": "green",
+    "source_image": "assets/champions/beatrice_verdigris_mender.webp",
+    "portrait": "assets/champions/beatrice_verdigris_mender.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Mend the Living Line",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 0,
+          "healing": 0.24,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 24% max HP to all living allies."
+  },
+  {
+    "template_id": "ephoros_pale_ferryman",
+    "name": "Ephoros, Pale Ferryman",
+    "title": "Lantern of the Drowned Roads",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "support",
+    "hp": 1427,
+    "atk": 730,
+    "def": 737,
+    "ability_name": "Safe Passage",
+    "lore": "Across the Nether’s drowned roads, Ephoros ferries souls who still remember their living names. His lantern guides the wounded away from the grasping dead, and his pale wake keeps curses from crossing behind them. He asks no coin, only that those he saves carry another traveler when their strength returns.",
+    "image_url": "/assets/champions/ephoros_pale_ferryman.webp",
+    "id": "ephoros_pale_ferryman",
+    "color": "blue",
+    "source_image": "assets/champions/ephoros_pale_ferryman.webp",
+    "portrait": "assets/champions/ephoros_pale_ferryman.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Safe Passage",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 0,
+          "healing": 0.22,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 22% max HP to all living allies."
+  },
+  {
+    "template_id": "cassio_gravity_knife",
+    "name": "Cassio, Gravity Knife",
+    "title": "The Distance Thief",
+    "rarity": "legendary",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 1310,
+    "atk": 820,
+    "def": 680,
+    "ability_name": "Fold the Distance",
+    "lore": "Cassio stole a gravity lens from a Neon Syndicate vault and fitted it into the hilt of a knife. Since then, locked doors and long distances have become matters of opinion. He strikes where a target’s armor pulls hardest, leaving syndicate enforcers arguing over which shadow moved first.",
+    "image_url": "/assets/champions/cassio_gravity_knife.webp",
+    "id": "cassio_gravity_knife",
+    "color": "purple",
+    "source_image": "assets/champions/cassio_gravity_knife.webp",
+    "portrait": "assets/champions/cassio_gravity_knife.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Fold the Distance",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.3,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "weaken",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 230% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "pyrrhon_soulfire_verdict",
+    "name": "Pyrrhon, the Soulfire Verdict",
+    "title": "Bearer of the Prison Sun",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "attack",
+    "hp": 1330,
+    "atk": 800,
+    "def": 690,
+    "ability_name": "Judgment of the Bound Sun",
+    "lore": "A dead sun burns inside the prison bell that Pyrrhon carries through the Nether. Each sentence he speaks draws one captive flame into his blade. He reserves the brightest fire for tyrants who have hidden behind stolen blessings, returning their borrowed power to the silent dead.",
+    "image_url": "/assets/champions/pyrrhon_soulfire_verdict.webp",
+    "id": "pyrrhon_soulfire_verdict",
+    "color": "yellow",
+    "source_image": "assets/champions/pyrrhon_soulfire_verdict.webp",
+    "portrait": "assets/champions/pyrrhon_soulfire_verdict.webp",
+    "passive": null,
+    "manaSpeed": "charging",
+    "special": {
+      "name": "Judgment of the Bound Sun",
+      "charging": true,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 1.6,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.45,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 245% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "inko_plasma_skirmisher",
+    "name": "Inko, Plasma Skirmisher",
+    "title": "Runner Beyond the Barricades",
+    "rarity": "rare",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 1040,
+    "atk": 650,
+    "def": 580,
+    "ability_name": "Redline Cut",
+    "lore": "Inko ran messages through the Neon Syndicate’s barricades before learning what those orders cost the people outside. Now her plasma sabers cut supply locks and disable patrol armor. The red trail she leaves across the snow has become a promise that another route will open.",
+    "image_url": "/assets/champions/inko_plasma_skirmisher.webp",
+    "id": "inko_plasma_skirmisher",
+    "color": "red",
+    "source_image": "assets/champions/inko_plasma_skirmisher.webp",
+    "portrait": "assets/champions/inko_plasma_skirmisher.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Redline Cut",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.15,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 215% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "hester_emberthorn_hunter",
+    "name": "Hester, Emberthorn Hunter",
+    "title": "Keeper of the Sleeping Fire",
+    "rarity": "rare",
+    "faction": "wildgrove",
+    "role": "attack",
+    "hp": 1080,
+    "atk": 626,
+    "def": 600,
+    "ability_name": "Seeds of the Cinderbriar",
+    "lore": "Hester tends the emberthorn groves where Wildgrove’s old fires sleep beneath living bark. She gathers their glowing seeds into arrowheads, using their heat to drive invasive blight from the forest’s borders. No flame she kindles is allowed to burn longer than the grove can bear.",
+    "image_url": "/assets/champions/hester_emberthorn_hunter.webp",
+    "id": "hester_emberthorn_hunter",
+    "color": "red",
+    "source_image": "assets/champions/hester_emberthorn_hunter.webp",
+    "portrait": "assets/champions/hester_emberthorn_hunter.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Seeds of the Cinderbriar",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.25,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 225% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "kozhak_glacier_prowler",
+    "name": "Kozhak, Glacier Prowler",
+    "title": "Hunter Beneath the Whiteout",
+    "rarity": "legendary",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 1320,
+    "atk": 815,
+    "def": 680,
+    "ability_name": "Whiteout Pursuit",
+    "lore": "Kozhak follows the glacier herds along the Veldtborn’s highest migration paths. He waits through storms that bury entire hunting parties, trusting the tremor of the ice to betray a hidden enemy. When he finally moves, the whiteout itself seems to spring forward with his blades.",
+    "image_url": "/assets/champions/kozhak_glacier_prowler.webp",
+    "id": "kozhak_glacier_prowler",
+    "color": "blue",
+    "source_image": "assets/champions/kozhak_glacier_prowler.webp",
+    "portrait": "assets/champions/kozhak_glacier_prowler.webp",
+    "passive": null,
+    "manaSpeed": "charging",
+    "special": {
+      "name": "Whiteout Pursuit",
+      "charging": true,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "charge_1",
+          "tiles": 5,
+          "damage": 0.85,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        },
+        {
+          "level": 2,
+          "speed": "charge_2",
+          "tiles": 10,
+          "damage": 1.75,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "frostbite",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "speed": "charge_3",
+          "tiles": 15,
+          "damage": 2.6,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "frostbite",
+              "turns": 2,
+              "scope": "enemy"
+            },
+            {
+              "id": "vulnerable_blue",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 260% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "ushala_quillgrass_tracker",
+    "name": "Ushala, Quillgrass Tracker",
+    "title": "Guide of the Thorn Paths",
+    "rarity": "rare",
+    "faction": "veldtborn",
+    "role": "attack",
+    "hp": 1129,
+    "atk": 602,
+    "def": 620,
+    "ability_name": "Barbs in the Tall Grass",
+    "lore": "Ushala reads the grasslands by the quills left in their thorny seed heads. Her people once mistook that patient craft for timidity, until she guided a scattered pride through an army without losing a traveler. Now her barbed darts mark the paths no pursuer should follow.",
+    "image_url": "/assets/champions/ushala_quillgrass_tracker.webp",
+    "id": "ushala_quillgrass_tracker",
+    "color": "green",
+    "source_image": "assets/champions/ushala_quillgrass_tracker.webp",
+    "portrait": "assets/champions/ushala_quillgrass_tracker.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Barbs in the Tall Grass",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.25,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 225% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "qingluo_jade_tempest",
+    "name": "Qingluo, Jade Tempest",
+    "title": "Storm of the Bamboo Sea",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 1340,
+    "atk": 810,
+    "def": 700,
+    "ability_name": "Dragon Through the Bamboo",
+    "lore": "Qingluo trained where the Dragon Dynasty’s jade mountains rise above an endless bamboo sea. He learned to turn a single sweeping strike into the rhythm of a storm, breaking an enemy line without taking a backward step. The imperial banners call him a weapon; his mountain village remembers the boy who defended its bridge.",
+    "image_url": "/assets/champions/qingluo_jade_tempest.webp",
+    "id": "qingluo_jade_tempest",
+    "color": "green",
+    "source_image": "assets/champions/qingluo_jade_tempest.webp",
+    "portrait": "assets/champions/qingluo_jade_tempest.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Dragon Through the Bamboo",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "damage": 1.65,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 1,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 165% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "thyssara_eclipse_blade",
+    "name": "Thyssara, Eclipse Blade",
+    "title": "The Veil’s Stolen Dawn",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 1320,
+    "atk": 815,
+    "def": 680,
+    "ability_name": "Light Stolen from the Veil",
+    "lore": "Thyssara stole a strand of sunlight from a failing Umbra gate and wound it along her sword. The veil has hunted her ever since, unable to decide whether that captured light is a wound or a key. She uses it to cut the enchantments binding others to the dark, then disappears before anyone can call her a savior.",
+    "image_url": "/assets/champions/thyssara_eclipse_blade.webp",
+    "id": "thyssara_eclipse_blade",
+    "color": "yellow",
+    "source_image": "assets/champions/thyssara_eclipse_blade.webp",
+    "portrait": "assets/champions/thyssara_eclipse_blade.webp",
+    "passive": null,
+    "manaSpeed": "charging",
+    "special": {
+      "name": "Light Stolen from the Veil",
+      "charging": true,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 1.7,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.5,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "block_buffs",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 250% ATK damage to selected enemy."
   }
 ]

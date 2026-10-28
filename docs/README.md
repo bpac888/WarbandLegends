@@ -8,7 +8,7 @@
 - [Game rules](RULES.md) — board, elements, mana and combat.
 - [QA and validation](QA.md) — verification procedures and prior results.
 - [Roadmap](ROADMAP.md) — implementation milestones and planned work.
-- [162-champion roster audit](ROSTER_AUDIT.md) — rarity, color, faction, type and speed coverage, with all 12 prior suggestions implemented.
+- [174-champion roster audit](ROSTER_AUDIT.md) — rarity, color, faction, type and speed coverage, with all 12 prior suggestions implemented.
 
 ## Game systems
 
@@ -34,3 +34,5 @@ These notes describe checkpoints from their respective sessions; they are not a 
 - [Ascension checkpoint](ASCENSION-CHECKPOINT.md)
 - [Prior next-session handoff](NEXT-SESSION.md)
 - [Archived release review status](history/REVIEW-STATUS-2026-10.md)
+
+- [Roster name audit](NAME_AUDIT.md) — the 25 name changes and preservation rules.

@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {historicalRecords} from '../src/roster-identity.js';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
@@ -8,12 +9,13 @@ import {defaultProfile,summon,normalizeProfile,validateProfile,SUMMON_ODDS} from
 import {REFERENCE_TEAM} from './reference-team.mjs';
 import {EFFECTS} from '../src/effects.js';
 const read=async file=>JSON.parse(await readFile(new URL('../'+file,import.meta.url)));
-const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion-2.json'),added=roster.slice(manifest.originalCount);
-const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion-2.json'),added=roster.slice(manifest.originalCount,162);
+const nameAudit=await read('data/roster-name-audit.json');
+const hash=value=>createHash('sha256').update(JSON.stringify(historicalRecords(value,nameAudit,{source:!value[0]?.special}))).digest('hex');
 const count=key=>Object.fromEntries([...new Set(added.map(c=>c[key]))].sort().map(k=>[k,added.filter(c=>c[key]===k).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0}};e.passive=null;e.shield=0;}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.4);h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};h.passive=null;}return b;}
 test('all 150 previous records and source identities are preserved exactly',async()=>{
- assert.equal(hash(roster.slice(0,150)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,150)),manifest.originalSourceRecordsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,162);
+ assert.equal(hash(roster.slice(0,150)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,150)),manifest.originalSourceRecordsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,174);
 });
 test('the 12 additions match the approved rarity, role, color and speed mix',()=>{
  assert.deepEqual(count('rarity'),{legendary:9,rare:3});assert.deepEqual(count('role'),{attack:8,defense:2,support:2});assert.deepEqual(count('color'),{blue:2,green:2,purple:3,red:3,yellow:2});assert.deepEqual(count('manaSpeed'),{average:3,charging:2,fast:4,slow:2,very_fast:1});
@@ -46,7 +48,7 @@ test('Auto considers every new ready kit and produces legal actions without muta
  for(const c of added){const b=fixture(c);b.heroes[0].mana=b.heroes[0].manaMax;const before=structuredClone(b),action=chooseAutoAction(b);assert.ok(action,c.id);const result=applyAutoAction(b,action);assert.ok(!result.error,c.id);assert.ok(validateSave(result.state,roster),c.id);assert.deepEqual(b,before);}
 });
 test('current audit reflects every implemented recommendation and full five-element faction coverage',async()=>{
- const audit=await read('data/roster-audit.json');assert.equal(audit.after.total,162);assert.equal(audit.implementedRecommendations.length,12);assert.equal(audit.recommendations.length,0);for(const c of ['red','blue','green','yellow','purple'])assert.equal(audit.after.color[c],['red','purple'].includes(c)?33:32);for(const f of Object.values(audit.byFaction)){assert.ok(f.total>=14&&f.total<=16);assert.ok(Object.values(f.color).every(n=>n>0));}
+ const audit=await read('docs/history/roster-audit-162.json');assert.equal(audit.after.total,162);assert.equal(audit.implementedRecommendations.length,12);assert.equal(audit.recommendations.length,0);for(const c of ['red','blue','green','yellow','purple'])assert.equal(audit.after.color[c],['red','purple'].includes(c)?33:32);for(const f of Object.values(audit.byFaction)){assert.ok(f.total>=14&&f.total<=16);assert.ok(Object.values(f.color).every(n=>n>0));}
 });
 test('three new warband combinations complete real Auto encounters without illegal actions or stalls',()=>{
  const groups=[added.slice(0,5),added.slice(4,9),added.slice(7,12)];

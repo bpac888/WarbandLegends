@@ -1601,6 +1601,453 @@
         "atk": 618,
         "def": 620
       }
+    },
+    "othrel_riverstone_aegis": {
+      "color": "blue",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 1.1,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1530,
+        "atk": 670,
+        "def": 810
+      }
+    },
+    "domitrix_gilded_vigil": {
+      "color": "yellow",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 1.3,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1540,
+        "atk": 650,
+        "def": 820
+      }
+    },
+    "beatrice_verdigris_mender": {
+      "color": "green",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 0,
+          "healing": 0.24,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1420,
+        "atk": 730,
+        "def": 737
+      }
+    },
+    "ephoros_pale_ferryman": {
+      "color": "blue",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 0,
+          "healing": 0.22,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1427,
+        "atk": 730,
+        "def": 737
+      }
+    },
+    "cassio_gravity_knife": {
+      "color": "purple",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.3,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "weaken",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1310,
+        "atk": 820,
+        "def": 680
+      }
+    },
+    "pyrrhon_soulfire_verdict": {
+      "color": "yellow",
+      "manaSpeed": "charging",
+      "chargeLevels": 2,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 1.6,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.45,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1330,
+        "atk": 800,
+        "def": 690
+      }
+    },
+    "inko_plasma_skirmisher": {
+      "color": "red",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.15,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1040,
+        "atk": 650,
+        "def": 580
+      }
+    },
+    "hester_emberthorn_hunter": {
+      "color": "red",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.25,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1080,
+        "atk": 626,
+        "def": 600
+      }
+    },
+    "kozhak_glacier_prowler": {
+      "color": "blue",
+      "manaSpeed": "charging",
+      "chargeLevels": 3,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "charge_1",
+          "tiles": 5,
+          "damage": 0.85,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        },
+        {
+          "level": 2,
+          "speed": "charge_2",
+          "tiles": 10,
+          "damage": 1.75,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "frostbite",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "speed": "charge_3",
+          "tiles": 15,
+          "damage": 2.6,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "frostbite",
+              "turns": 2,
+              "scope": "enemy"
+            },
+            {
+              "id": "vulnerable_blue",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1320,
+        "atk": 815,
+        "def": 680
+      }
+    },
+    "ushala_quillgrass_tracker": {
+      "color": "green",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.25,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1129,
+        "atk": 602,
+        "def": 620
+      }
+    },
+    "qingluo_jade_tempest": {
+      "color": "green",
+      "manaSpeed": "slow",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "damage": 1.65,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 1,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1340,
+        "atk": 810,
+        "def": 700
+      }
+    },
+    "thyssara_eclipse_blade": {
+      "color": "yellow",
+      "manaSpeed": "charging",
+      "chargeLevels": 2,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 1.7,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.5,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "block_buffs",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1320,
+        "atk": 815,
+        "def": 680
+      }
     }
   }
 }

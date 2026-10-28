@@ -1,0 +1,628 @@
+{
+  "version": 1,
+  "scope": "Display names and literal lore references only; stable IDs, portraits, stats, abilities and progress are unchanged.",
+  "renames": [
+    {
+      "id": "aurelia_last_foundry",
+      "oldPersonalName": "Aurelia",
+      "newPersonalName": "Isolde",
+      "championBefore": {
+        "name": "Aurelia, the Last Foundry",
+        "lore": "When Valdur's furnaces went cold, Aurelia carried their last living coal inside her own iron heart. She has crossed a century of battlefields rebuilding soldiers that kings had already written off. Her forge asks neither banner nor birthplace, only whether there is still someone inside the armor worth bringing home.",
+        "passive": {
+          "id": "tempered_resolve",
+          "name": "Tempered Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_def"
+          ],
+          "desc": "Immune to Decrease DEF. This permanent protection affects only Aurelia."
+        }
+      },
+      "sourceBefore": {
+        "name": "Aurelia, the Last Foundry",
+        "lore": "When Valdur's furnaces went cold, Aurelia carried their last living coal inside her own iron heart. She has crossed a century of battlefields rebuilding soldiers that kings had already written off. Her forge asks neither banner nor birthplace, only whether there is still someone inside the armor worth bringing home.",
+        "passive": {
+          "id": "tempered_resolve",
+          "name": "Tempered Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_def"
+          ],
+          "desc": "Immune to Decrease DEF. This permanent protection affects only Aurelia."
+        }
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Isolde, the Last Foundry",
+        "lore": "When Valdur's furnaces went cold, Isolde carried their last living coal inside her own iron heart. She has crossed a century of battlefields rebuilding soldiers that kings had already written off. Her forge asks neither banner nor birthplace, only whether there is still someone inside the armor worth bringing home.",
+        "passive": {
+          "id": "tempered_resolve",
+          "name": "Tempered Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_def"
+          ],
+          "desc": "Immune to Decrease DEF. This permanent protection affects only Isolde."
+        }
+      },
+      "sourceAfter": {
+        "name": "Isolde, the Last Foundry",
+        "lore": "When Valdur's furnaces went cold, Isolde carried their last living coal inside her own iron heart. She has crossed a century of battlefields rebuilding soldiers that kings had already written off. Her forge asks neither banner nor birthplace, only whether there is still someone inside the armor worth bringing home.",
+        "passive": {
+          "id": "tempered_resolve",
+          "name": "Tempered Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_def"
+          ],
+          "desc": "Immune to Decrease DEF. This permanent protection affects only Isolde."
+        }
+      }
+    },
+    {
+      "id": "neon_hacker_empress",
+      "oldPersonalName": "Lyra",
+      "newPersonalName": "Octavia",
+      "championBefore": {
+        "name": "Matrix Matriarch Lyra",
+        "lore": "Lyra controls the black-market networks from her high dacha fortress. No one speaks in the Syndicate without her permission."
+      },
+      "sourceBefore": {
+        "name": "Matrix Matriarch Lyra",
+        "lore": "Lyra controls the black-market networks from her high dacha fortress. No one speaks in the Syndicate without her permission."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Matrix Matriarch Octavia",
+        "lore": "Octavia controls the black-market networks from her high dacha fortress. No one speaks in the Syndicate without her permission."
+      },
+      "sourceAfter": {
+        "name": "Matrix Matriarch Octavia",
+        "lore": "Octavia controls the black-market networks from her high dacha fortress. No one speaks in the Syndicate without her permission."
+      }
+    },
+    {
+      "id": "mosswitch_lira",
+      "oldPersonalName": "Lira",
+      "newPersonalName": "Brynna",
+      "championBefore": {
+        "name": "Mosswitch Lira",
+        "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth."
+      },
+      "sourceBefore": {
+        "name": "Mosswitch Lira",
+        "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Mosswitch Brynna",
+        "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth."
+      },
+      "sourceAfter": {
+        "name": "Mosswitch Brynna",
+        "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth."
+      }
+    },
+    {
+      "id": "ilyra_snowglass",
+      "oldPersonalName": "Ilyra",
+      "newPersonalName": "Iridessa",
+      "championBefore": {
+        "name": "Ilyra Snowglass",
+        "lore": "Blue threads run between the charcoal rosettes of Ilyra's snow-leopard coat, as though the mountain sky were caught beneath her fur. She guards the abandoned monastery road with daggers cut from its last unbroken window. The valley calls her an assassin; the children crossing the pass call her the lantern in the snow."
+      },
+      "sourceBefore": {
+        "name": "Ilyra Snowglass",
+        "lore": "Blue threads run between the charcoal rosettes of Ilyra's snow-leopard coat, as though the mountain sky were caught beneath her fur. She guards the abandoned monastery road with daggers cut from its last unbroken window. The valley calls her an assassin; the children crossing the pass call her the lantern in the snow."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Iridessa Snowglass",
+        "lore": "Blue threads run between the charcoal rosettes of Iridessa's snow-leopard coat, as though the mountain sky were caught beneath her fur. She guards the abandoned monastery road with daggers cut from its last unbroken window. The valley calls her an assassin; the children crossing the pass call her the lantern in the snow."
+      },
+      "sourceAfter": {
+        "name": "Iridessa Snowglass",
+        "lore": "Blue threads run between the charcoal rosettes of Iridessa's snow-leopard coat, as though the mountain sky were caught beneath her fur. She guards the abandoned monastery road with daggers cut from its last unbroken window. The valley calls her an assassin; the children crossing the pass call her the lantern in the snow."
+      }
+    },
+    {
+      "id": "elyra_candle_lost",
+      "oldPersonalName": "Elyra",
+      "newPersonalName": "Sabine",
+      "championBefore": {
+        "name": "Elyra, Candle of the Lost",
+        "lore": "Elyra lights a candle for every traveler who disappears beneath the veil. She carries their flames through the ruined streets, forming a doorway no pursuing shade may cross. When her own light falters, the candles she once sheltered gather to lift it again."
+      },
+      "sourceBefore": {
+        "name": "Elyra, Candle of the Lost",
+        "lore": "Elyra lights a candle for every traveler who disappears beneath the veil. She carries their flames through the ruined streets, forming a doorway no pursuing shade may cross. When her own light falters, the candles she once sheltered gather to lift it again."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Sabine, Candle of the Lost",
+        "lore": "Sabine lights a candle for every traveler who disappears beneath the veil. She carries their flames through the ruined streets, forming a doorway no pursuing shade may cross. When her own light falters, the candles she once sheltered gather to lift it again."
+      },
+      "sourceAfter": {
+        "name": "Sabine, Candle of the Lost",
+        "lore": "Sabine lights a candle for every traveler who disappears beneath the veil. She carries their flames through the ruined streets, forming a doorway no pursuing shade may cross. When her own light falters, the candles she once sheltered gather to lift it again."
+      }
+    },
+    {
+      "id": "velka_ashen_veil",
+      "oldPersonalName": "Velka",
+      "newPersonalName": "Cressida",
+      "championBefore": {
+        "name": "Velka, Ashen Veil",
+        "lore": "Velka was sent through an Umbra gate that opened inside a burning shrine. She returned with embers trapped in her shadow and no reflection in firelight. The veil now carries her between dying flames, where her knives leave wounds that no fresh blessing can close."
+      },
+      "sourceBefore": {
+        "name": "Velka, Ashen Veil",
+        "lore": "Velka was sent through an Umbra gate that opened inside a burning shrine. She returned with embers trapped in her shadow and no reflection in firelight. The veil now carries her between dying flames, where her knives leave wounds that no fresh blessing can close."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Cressida, Ashen Veil",
+        "lore": "Cressida was sent through an Umbra gate that opened inside a burning shrine. She returned with embers trapped in her shadow and no reflection in firelight. The veil now carries her between dying flames, where her knives leave wounds that no fresh blessing can close."
+      },
+      "sourceAfter": {
+        "name": "Cressida, Ashen Veil",
+        "lore": "Cressida was sent through an Umbra gate that opened inside a burning shrine. She returned with embers trapped in her shadow and no reflection in firelight. The veil now carries her between dying flames, where her knives leave wounds that no fresh blessing can close."
+      }
+    },
+    {
+      "id": "brimstone_witch",
+      "oldPersonalName": "Vhessa",
+      "newPersonalName": "Hexandra",
+      "championBefore": {
+        "name": "Vhessa, Brimstone Witch",
+        "lore": "Vhessa's tattoos were carved not by hand but by conversation. She has had many long conversations."
+      },
+      "sourceBefore": {
+        "name": "Vhessa, Brimstone Witch",
+        "lore": "Vhessa's tattoos were carved not by hand but by conversation. She has had many long conversations."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Hexandra, Brimstone Witch",
+        "lore": "Hexandra's tattoos were carved not by hand but by conversation. She has had many long conversations."
+      },
+      "sourceAfter": {
+        "name": "Hexandra, Brimstone Witch",
+        "lore": "Hexandra's tattoos were carved not by hand but by conversation. She has had many long conversations."
+      }
+    },
+    {
+      "id": "cinder_mender_vessa",
+      "oldPersonalName": "Vessa",
+      "newPersonalName": "Caldris",
+      "championBefore": {
+        "name": "Cinder-Mender Vessa",
+        "lore": "Vessa once tended the furnaces beneath the Seventh Pit, where mercy was counted as wasted fuel. When a broken legion crawled home, she stole a coal from the punishment fires and taught it to close wounds instead. Now her lantern burns for anyone still breathing, and the pitmasters follow its light with chains."
+      },
+      "sourceBefore": {
+        "name": "Cinder-Mender Vessa",
+        "lore": "Vessa once tended the furnaces beneath the Seventh Pit, where mercy was counted as wasted fuel. When a broken legion crawled home, she stole a coal from the punishment fires and taught it to close wounds instead. Now her lantern burns for anyone still breathing, and the pitmasters follow its light with chains."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Cinder-Mender Caldris",
+        "lore": "Caldris once tended the furnaces beneath the Seventh Pit, where mercy was counted as wasted fuel. When a broken legion crawled home, she stole a coal from the punishment fires and taught it to close wounds instead. Now her lantern burns for anyone still breathing, and the pitmasters follow its light with chains."
+      },
+      "sourceAfter": {
+        "name": "Cinder-Mender Caldris",
+        "lore": "Caldris once tended the furnaces beneath the Seventh Pit, where mercy was counted as wasted fuel. When a broken legion crawled home, she stole a coal from the punishment fires and taught it to close wounds instead. Now her lantern burns for anyone still breathing, and the pitmasters follow its light with chains."
+      }
+    },
+    {
+      "id": "wolf_handler_torv",
+      "oldPersonalName": "Torv",
+      "newPersonalName": "Stellan",
+      "championBefore": {
+        "name": "Wolf-Handler Torv",
+        "lore": "Torv's wolves do not love him. They respect the same hunger, and that is enough."
+      },
+      "sourceBefore": {
+        "name": "Wolf-Handler Torv",
+        "lore": "Torv's wolves do not love him. They respect the same hunger, and that is enough."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Wolf-Handler Stellan",
+        "lore": "Stellan's wolves do not love him. They respect the same hunger, and that is enough."
+      },
+      "sourceAfter": {
+        "name": "Wolf-Handler Stellan",
+        "lore": "Stellan's wolves do not love him. They respect the same hunger, and that is enough."
+      }
+    },
+    {
+      "id": "toruun_basalt_mane",
+      "oldPersonalName": "Toruun",
+      "newPersonalName": "Gromund",
+      "championBefore": {
+        "name": "Toruun Basalt-Mane",
+        "lore": "Toruun braided the bronze gate-rings of his ruined city into his black lion's mane. When the survivors asked where they should build their next wall, he set down his shield and told them to begin behind him. The road is crowded now, and he has not moved."
+      },
+      "sourceBefore": {
+        "name": "Toruun Basalt-Mane",
+        "lore": "Toruun braided the bronze gate-rings of his ruined city into his black lion's mane. When the survivors asked where they should build their next wall, he set down his shield and told them to begin behind him. The road is crowded now, and he has not moved."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Gromund Basalt-Mane",
+        "lore": "Gromund braided the bronze gate-rings of his ruined city into his black lion's mane. When the survivors asked where they should build their next wall, he set down his shield and told them to begin behind him. The road is crowded now, and he has not moved."
+      },
+      "sourceAfter": {
+        "name": "Gromund Basalt-Mane",
+        "lore": "Gromund braided the bronze gate-rings of his ruined city into his black lion's mane. When the survivors asked where they should build their next wall, he set down his shield and told them to begin behind him. The road is crowded now, and he has not moved."
+      }
+    },
+    {
+      "id": "oruun_prism_seer",
+      "oldPersonalName": "Oruun",
+      "newPersonalName": "Anzuko",
+      "championBefore": {
+        "name": "Oruun, the Prism-Seer",
+        "lore": "Oruun's long lynx ear-tufts are threaded with tiny prisms, and his violet-gray fur bears pale geometric bands no scholar can explain. When the sun-prides shattered, he collected a fragment from every broken oath-stone. He studies their light for a future in which none of the prides must stand alone."
+      },
+      "sourceBefore": {
+        "name": "Oruun, the Prism-Seer",
+        "lore": "Oruun's long lynx ear-tufts are threaded with tiny prisms, and his violet-gray fur bears pale geometric bands no scholar can explain. When the sun-prides shattered, he collected a fragment from every broken oath-stone. He studies their light for a future in which none of the prides must stand alone."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Anzuko, the Prism-Seer",
+        "lore": "Anzuko's long lynx ear-tufts are threaded with tiny prisms, and his violet-gray fur bears pale geometric bands no scholar can explain. When the sun-prides shattered, he collected a fragment from every broken oath-stone. He studies their light for a future in which none of the prides must stand alone."
+      },
+      "sourceAfter": {
+        "name": "Anzuko, the Prism-Seer",
+        "lore": "Anzuko's long lynx ear-tufts are threaded with tiny prisms, and his violet-gray fur bears pale geometric bands no scholar can explain. When the sun-prides shattered, he collected a fragment from every broken oath-stone. He studies their light for a future in which none of the prides must stand alone."
+      }
+    },
+    {
+      "id": "vorrek_walking_siege",
+      "oldPersonalName": "Vorrek",
+      "newPersonalName": "Hadrian",
+      "championBefore": {
+        "name": "Vorrek, the Walking Siege",
+        "lore": "Vorrek held the eastern siege line until the generals spent his last soldier. Rather than accept a replacement army, he ordered the surviving engineers to build the breach around him. His furnace still burns with the names of those who never came home, and no fortress has yet persuaded him to turn aside.",
+        "passive": {
+          "id": "unbroken_advance",
+          "name": "Unbroken Advance",
+          "kind": "immune_effect",
+          "immune": [
+            "weaken"
+          ],
+          "desc": "Vorrek is immune to Weaken. This permanent protection affects only him."
+        }
+      },
+      "sourceBefore": {
+        "name": "Vorrek, the Walking Siege",
+        "lore": "Vorrek held the eastern siege line until the generals spent his last soldier. Rather than accept a replacement army, he ordered the surviving engineers to build the breach around him. His furnace still burns with the names of those who never came home, and no fortress has yet persuaded him to turn aside.",
+        "passive": {
+          "id": "unbroken_advance",
+          "name": "Unbroken Advance",
+          "kind": "immune_effect",
+          "immune": [
+            "weaken"
+          ],
+          "desc": "Vorrek is immune to Weaken. This permanent protection affects only him."
+        }
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Hadrian, the Walking Siege",
+        "lore": "Hadrian held the eastern siege line until the generals spent his last soldier. Rather than accept a replacement army, he ordered the surviving engineers to build the breach around him. His furnace still burns with the names of those who never came home, and no fortress has yet persuaded him to turn aside.",
+        "passive": {
+          "id": "unbroken_advance",
+          "name": "Unbroken Advance",
+          "kind": "immune_effect",
+          "immune": [
+            "weaken"
+          ],
+          "desc": "Hadrian is immune to Weaken. This permanent protection affects only him."
+        }
+      },
+      "sourceAfter": {
+        "name": "Hadrian, the Walking Siege",
+        "lore": "Hadrian held the eastern siege line until the generals spent his last soldier. Rather than accept a replacement army, he ordered the surviving engineers to build the breach around him. His furnace still burns with the names of those who never came home, and no fortress has yet persuaded him to turn aside.",
+        "passive": {
+          "id": "unbroken_advance",
+          "name": "Unbroken Advance",
+          "kind": "immune_effect",
+          "immune": [
+            "weaken"
+          ],
+          "desc": "Hadrian is immune to Weaken. This permanent protection affects only him."
+        }
+      }
+    },
+    {
+      "id": "veyr_hollow_gate",
+      "oldPersonalName": "Veyr",
+      "newPersonalName": "Theskar",
+      "championBefore": {
+        "name": "Veyr, the Hollow Gate",
+        "lore": "When the Nameless Quarter slipped into shadow, its watchman held the evacuation gate until the last lantern crossed. Dawn found only his armor, still standing. Veyr no longer remembers the people he saved, but whenever footsteps flee through the dark, he turns his shield toward whatever follows."
+      },
+      "sourceBefore": {
+        "name": "Veyr, the Hollow Gate",
+        "lore": "When the Nameless Quarter slipped into shadow, its watchman held the evacuation gate until the last lantern crossed. Dawn found only his armor, still standing. Veyr no longer remembers the people he saved, but whenever footsteps flee through the dark, he turns his shield toward whatever follows."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Theskar, the Hollow Gate",
+        "lore": "When the Nameless Quarter slipped into shadow, its watchman held the evacuation gate until the last lantern crossed. Dawn found only his armor, still standing. Theskar no longer remembers the people he saved, but whenever footsteps flee through the dark, he turns his shield toward whatever follows."
+      },
+      "sourceAfter": {
+        "name": "Theskar, the Hollow Gate",
+        "lore": "When the Nameless Quarter slipped into shadow, its watchman held the evacuation gate until the last lantern crossed. Dawn found only his armor, still standing. Theskar no longer remembers the people he saved, but whenever footsteps flee through the dark, he turns his shield toward whatever follows."
+      }
+    },
+    {
+      "id": "renn_briarhook",
+      "oldPersonalName": "Renn",
+      "newPersonalName": "Oswin",
+      "championBefore": {
+        "name": "Renn Briarhook",
+        "lore": "Renn once marked trees for the royal timber road until he heard voices beneath the bark. His hook now tears the axle pins from the logging wagons, and the abandoned road grows narrower every spring. He keeps the last survey stake on his belt to remember how easily a straight line becomes a wound."
+      },
+      "sourceBefore": {
+        "name": "Renn Briarhook",
+        "lore": "Renn once marked trees for the royal timber road until he heard voices beneath the bark. His hook now tears the axle pins from the logging wagons, and the abandoned road grows narrower every spring. He keeps the last survey stake on his belt to remember how easily a straight line becomes a wound."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Oswin Briarhook",
+        "lore": "Oswin once marked trees for the royal timber road until he heard voices beneath the bark. His hook now tears the axle pins from the logging wagons, and the abandoned road grows narrower every spring. He keeps the last survey stake on his belt to remember how easily a straight line becomes a wound."
+      },
+      "sourceAfter": {
+        "name": "Oswin Briarhook",
+        "lore": "Oswin once marked trees for the royal timber road until he heard voices beneath the bark. His hook now tears the axle pins from the logging wagons, and the abandoned road grows narrower every spring. He keeps the last survey stake on his belt to remember how easily a straight line becomes a wound."
+      }
+    },
+    {
+      "id": "nerez_veil_bastion",
+      "oldPersonalName": "Nerez",
+      "newPersonalName": "Ulbrecht",
+      "championBefore": {
+        "name": "Nerez, the Veil Bastion",
+        "lore": "The old city paid its night watch in promises that the dawn would come. When an eclipse swallowed the final sunrise, Nerez kept his post anyway. Travelers now follow the scrape of his shield through streets that maps refuse to remember, knowing the thing behind them will have to answer his challenge first."
+      },
+      "sourceBefore": {
+        "name": "Nerez, the Veil Bastion",
+        "lore": "The old city paid its night watch in promises that the dawn would come. When an eclipse swallowed the final sunrise, Nerez kept his post anyway. Travelers now follow the scrape of his shield through streets that maps refuse to remember, knowing the thing behind them will have to answer his challenge first."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Ulbrecht, the Veil Bastion",
+        "lore": "The old city paid its night watch in promises that the dawn would come. When an eclipse swallowed the final sunrise, Ulbrecht kept his post anyway. Travelers now follow the scrape of his shield through streets that maps refuse to remember, knowing the thing behind them will have to answer his challenge first."
+      },
+      "sourceAfter": {
+        "name": "Ulbrecht, the Veil Bastion",
+        "lore": "The old city paid its night watch in promises that the dawn would come. When an eclipse swallowed the final sunrise, Ulbrecht kept his post anyway. Travelers now follow the scrape of his shield through streets that maps refuse to remember, knowing the thing behind them will have to answer his challenge first."
+      }
+    },
+    {
+      "id": "mavra_dusktrail",
+      "oldPersonalName": "Mavra",
+      "newPersonalName": "Phaedra",
+      "championBefore": {
+        "name": "Mavra Dusktrail",
+        "lore": "The smoky markings across Mavra's puma shoulders look like the canyon shadows in which she grew up. She once guided trophy hunters to the high passes, until she discovered what they carried in their covered wagons. Now her arrows guide the prisoners home, and the hunters learn how far a scream travels in the dusk."
+      },
+      "sourceBefore": {
+        "name": "Mavra Dusktrail",
+        "lore": "The smoky markings across Mavra's puma shoulders look like the canyon shadows in which she grew up. She once guided trophy hunters to the high passes, until she discovered what they carried in their covered wagons. Now her arrows guide the prisoners home, and the hunters learn how far a scream travels in the dusk."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Phaedra Dusktrail",
+        "lore": "The smoky markings across Phaedra's puma shoulders look like the canyon shadows in which she grew up. She once guided trophy hunters to the high passes, until she discovered what they carried in their covered wagons. Now her arrows guide the prisoners home, and the hunters learn how far a scream travels in the dusk."
+      },
+      "sourceAfter": {
+        "name": "Phaedra Dusktrail",
+        "lore": "The smoky markings across Phaedra's puma shoulders look like the canyon shadows in which she grew up. She once guided trophy hunters to the high passes, until she discovered what they carried in their covered wagons. Now her arrows guide the prisoners home, and the hunters learn how far a scream travels in the dusk."
+      }
+    },
+    {
+      "id": "sahir_emerald_talon",
+      "oldPersonalName": "Sahir",
+      "newPersonalName": "Yaqut",
+      "championBefore": {
+        "name": "Sahir, Emerald Talon",
+        "lore": "Sahir follows the green-winged falcons that nest above the Dune Riders’ hidden wells. Their venom is harmless to those who know its remedy, a secret he shares with every caravan under his protection. Raiders learn a different lesson when an emerald feather falls across their path."
+      },
+      "sourceBefore": {
+        "name": "Sahir, Emerald Talon",
+        "lore": "Sahir follows the green-winged falcons that nest above the Dune Riders’ hidden wells. Their venom is harmless to those who know its remedy, a secret he shares with every caravan under his protection. Raiders learn a different lesson when an emerald feather falls across their path."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Yaqut, Emerald Talon",
+        "lore": "Yaqut follows the green-winged falcons that nest above the Dune Riders’ hidden wells. Their venom is harmless to those who know its remedy, a secret he shares with every caravan under his protection. Raiders learn a different lesson when an emerald feather falls across their path."
+      },
+      "sourceAfter": {
+        "name": "Yaqut, Emerald Talon",
+        "lore": "Yaqut follows the green-winged falcons that nest above the Dune Riders’ hidden wells. Their venom is harmless to those who know its remedy, a secret he shares with every caravan under his protection. Raiders learn a different lesson when an emerald feather falls across their path."
+      }
+    },
+    {
+      "id": "jade_mender_lian",
+      "oldPersonalName": "Lian",
+      "newPersonalName": "Baozhen",
+      "championBefore": {
+        "name": "Jade-Mender Lian",
+        "lore": "Lian left the imperial physicians after learning that medicine was reserved for officers. With a cracked jade bowl and a satchel of mountain herbs, he now walks the rainward steps between villages. The little dragon in his bowl was once offered a throne; it chose to help him carry water instead."
+      },
+      "sourceBefore": {
+        "name": "Jade-Mender Lian",
+        "lore": "Lian left the imperial physicians after learning that medicine was reserved for officers. With a cracked jade bowl and a satchel of mountain herbs, he now walks the rainward steps between villages. The little dragon in his bowl was once offered a throne; it chose to help him carry water instead."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Jade-Mender Baozhen",
+        "lore": "Baozhen left the imperial physicians after learning that medicine was reserved for officers. With a cracked jade bowl and a satchel of mountain herbs, he now walks the rainward steps between villages. The little dragon in his bowl was once offered a throne; it chose to help him carry water instead."
+      },
+      "sourceAfter": {
+        "name": "Jade-Mender Baozhen",
+        "lore": "Baozhen left the imperial physicians after learning that medicine was reserved for officers. With a cracked jade bowl and a satchel of mountain herbs, he now walks the rainward steps between villages. The little dragon in his bowl was once offered a throne; it chose to help him carry water instead."
+      }
+    },
+    {
+      "id": "dune_mage_sorra",
+      "oldPersonalName": "Sorra",
+      "newPersonalName": "Juhara",
+      "championBefore": {
+        "name": "Dune Mage Sorra",
+        "lore": "Sorra's illusions do not hide the oasis. They hide the knives beside it."
+      },
+      "sourceBefore": {
+        "name": "Dune Mage Sorra",
+        "lore": "Sorra's illusions do not hide the oasis. They hide the knives beside it."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Dune Mage Juhara",
+        "lore": "Juhara's illusions do not hide the oasis. They hide the knives beside it."
+      },
+      "sourceAfter": {
+        "name": "Dune Mage Juhara",
+        "lore": "Juhara's illusions do not hide the oasis. They hide the knives beside it."
+      }
+    },
+    {
+      "id": "oasis_keeper_nahlia",
+      "oldPersonalName": "Nahlia",
+      "newPersonalName": "Safiya",
+      "championBefore": {
+        "name": "Oasis-Keeper Nahlia",
+        "lore": "Nahlia knows the buried springs that never appear on caravan maps. She has crossed the salt wastes with a single waterskin, and never once kept its last drop for herself."
+      },
+      "sourceBefore": {
+        "name": "Oasis-Keeper Nahlia",
+        "lore": "Nahlia knows the buried springs that never appear on caravan maps. She has crossed the salt wastes with a single waterskin, and never once kept its last drop for herself."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Oasis-Keeper Safiya",
+        "lore": "Safiya knows the buried springs that never appear on caravan maps. She has crossed the salt wastes with a single waterskin, and never once kept its last drop for herself."
+      },
+      "sourceAfter": {
+        "name": "Oasis-Keeper Safiya",
+        "lore": "Safiya knows the buried springs that never appear on caravan maps. She has crossed the salt wastes with a single waterskin, and never once kept its last drop for herself."
+      }
+    },
+    {
+      "id": "justiciar_vael",
+      "oldPersonalName": "Vael",
+      "newPersonalName": "Gethren",
+      "championBefore": {
+        "name": "Justiciar Vael",
+        "lore": "Vael judges with one hand and pardons with the other. Both hands hold a blade."
+      },
+      "sourceBefore": {
+        "name": "Justiciar Vael",
+        "lore": "Vael judges with one hand and pardons with the other. Both hands hold a blade."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Justiciar Gethren",
+        "lore": "Gethren judges with one hand and pardons with the other. Both hands hold a blade."
+      },
+      "sourceAfter": {
+        "name": "Justiciar Gethren",
+        "lore": "Gethren judges with one hand and pardons with the other. Both hands hold a blade."
+      }
+    },
+    {
+      "id": "spore_engineer",
+      "oldPersonalName": "Fen",
+      "newPersonalName": "Chispa",
+      "championBefore": {
+        "name": "Fen, the Spore Adept",
+        "lore": "Fen no longer eats. The colony behind the glass is very grateful — and very hungry for someone else."
+      },
+      "sourceBefore": {
+        "name": "Fen, the Spore Adept",
+        "lore": "Fen no longer eats. The colony behind the glass is very grateful — and very hungry for someone else."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Chispa, the Spore Adept",
+        "lore": "Chispa no longer eats. The colony behind the glass is very grateful — and very hungry for someone else."
+      },
+      "sourceAfter": {
+        "name": "Chispa, the Spore Adept",
+        "lore": "Chispa no longer eats. The colony behind the glass is very grateful — and very hungry for someone else."
+      }
+    },
+    {
+      "id": "tovin_glassheart",
+      "oldPersonalName": "Tovin",
+      "newPersonalName": "Belsorin",
+      "championBefore": {
+        "name": "Tovin Glassheart",
+        "lore": "Tovin survived the procedure because another patient held the glass over his artificial heart until the seal set. He has spent every day since returning that favor. His conservatory clinic admits any creature that can find the door, and his charts begin with a name instead of a specimen number."
+      },
+      "sourceBefore": {
+        "name": "Tovin Glassheart",
+        "lore": "Tovin survived the procedure because another patient held the glass over his artificial heart until the seal set. He has spent every day since returning that favor. His conservatory clinic admits any creature that can find the door, and his charts begin with a name instead of a specimen number."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Belsorin Glassheart",
+        "lore": "Belsorin survived the procedure because another patient held the glass over his artificial heart until the seal set. He has spent every day since returning that favor. His conservatory clinic admits any creature that can find the door, and his charts begin with a name instead of a specimen number."
+      },
+      "sourceAfter": {
+        "name": "Belsorin Glassheart",
+        "lore": "Belsorin survived the procedure because another patient held the glass over his artificial heart until the seal set. He has spent every day since returning that favor. His conservatory clinic admits any creature that can find the door, and his charts begin with a name instead of a specimen number."
+      }
+    },
+    {
+      "id": "sera_emberleaf_tender",
+      "oldPersonalName": "Sera",
+      "newPersonalName": "Rosamund",
+      "championBefore": {
+        "name": "Sera, Emberleaf Tender",
+        "lore": "Sera returned to a grove reduced to charcoal and found one red leaf still warm in the ashes. She sheltered it in a copper bowl until roots began to grow through the burn. Her healing fire carries that first leaf from camp to camp, leaving green shoots where the wounded rested."
+      },
+      "sourceBefore": {
+        "name": "Sera, Emberleaf Tender",
+        "lore": "Sera returned to a grove reduced to charcoal and found one red leaf still warm in the ashes. She sheltered it in a copper bowl until roots began to grow through the burn. Her healing fire carries that first leaf from camp to camp, leaving green shoots where the wounded rested."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Rosamund, Emberleaf Tender",
+        "lore": "Rosamund returned to a grove reduced to charcoal and found one red leaf still warm in the ashes. She sheltered it in a copper bowl until roots began to grow through the burn. Her healing fire carries that first leaf from camp to camp, leaving green shoots where the wounded rested."
+      },
+      "sourceAfter": {
+        "name": "Rosamund, Emberleaf Tender",
+        "lore": "Rosamund returned to a grove reduced to charcoal and found one red leaf still warm in the ashes. She sheltered it in a copper bowl until roots began to grow through the burn. Her healing fire carries that first leaf from camp to camp, leaving green shoots where the wounded rested."
+      }
+    },
+    {
+      "id": "pit_grunt",
+      "oldPersonalName": "Brakkar",
+      "newPersonalName": "Murgash",
+      "championBefore": {
+        "name": "Brakkar the Pit Grunt",
+        "lore": "Brakkar lost an eye, two horns, and the lower half of his pride to a recruiter. He has not stopped fighting since."
+      },
+      "sourceBefore": {
+        "name": "Brakkar the Pit Grunt",
+        "lore": "Brakkar lost an eye, two horns, and the lower half of his pride to a recruiter. He has not stopped fighting since."
+      },
+      "reason": "Distinct name for an existing phonetic or spelling similarity cluster.",
+      "championAfter": {
+        "name": "Murgash the Pit Grunt",
+        "lore": "Murgash lost an eye, two horns, and the lower half of his pride to a recruiter. He has not stopped fighting since."
+      },
+      "sourceAfter": {
+        "name": "Murgash the Pit Grunt",
+        "lore": "Murgash lost an eye, two horns, and the lower half of his pride to a recruiter. He has not stopped fighting since."
+      }
+    }
+  ]
+}

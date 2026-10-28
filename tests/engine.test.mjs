@@ -12,9 +12,9 @@ const quiet=state=>{state.enemies.forEach(e=>{e.hp=e.maxHp=100000;e.countdown=99
 const board=()=>Array.from({length:35},(_,i)=>({id:i+1,color:COLORS[(i%7+Math.floor(i/7)*2)%5],special:null}));
 function setupRun(length){const s=quiet(make());s.board=board();s.board[7].color='red';for(let i=1;i<length;i++)s.board[i].color='red';s.board[0].color='blue';s.nextTile=100;return s;}
 const memory=()=>{const map=new Map();return {getItem:k=>map.get(k)??null,setItem:(k,v)=>map.set(k,v)};};
-test('imports all 162 champions with unique original IDs and complete local artwork',async()=>{
+test('imports all 174 champions with unique original IDs and complete local artwork',async()=>{
  assert.equal(createHash('sha256').update(roster.slice(0,135).map(c=>c.id).sort().join('\n')).digest('hex'),'5ceb67b54c3745ee5e92d7b39321f016d5990afaf719c49e2e3e5e27a741869a');
- assert.equal(roster.length,162);assert.equal(new Set(roster.map(c=>c.id)).size,162);
+ assert.equal(roster.length,174);assert.equal(new Set(roster.map(c=>c.id)).size,174);
  for(const c of roster){assert.ok(c.name&&c.lore&&c.special, c.id);assert.ok(COLORS.includes(c.color));assert.ok((await stat(new URL('../'+c.portrait,import.meta.url))).size>1000);}
 });
 test('each encounter references existing reusable champions',()=>{for(const s of STAGES)for(const id of s.enemyIds)assert.ok(roster.find(c=>c.id===id),id);});
@@ -50,7 +50,7 @@ test('standard mana speeds use the requested exact fractional tile thresholds',(
  for(const [c,before,after] of [[veryFast,6,7],[slowest,13,14]]){const u={...structuredClone(c),hp:c.hp,mana:before};assert.equal(readyLevel(u),0);u.mana=after;assert.equal(readyLevel(u),1);}
 });
 test('charging Specials use cumulative 8/10 or 5/10/15 gates, not repeated costs',()=>{
- const charging=roster.filter(c=>c.special.charging);assert.equal(charging.length,17);
+ const charging=roster.filter(c=>c.special.charging);assert.equal(charging.length,20);
  assert.ok(charging.some(c=>c.special.levels.length===2));assert.ok(charging.some(c=>c.special.levels.length===3));
  for(const c of charging){const gates=c.special.levels.map(l=>l.tiles);assert.deepEqual(gates,c.special.levels.length===2?[8,10]:[5,10,15]);const u={...structuredClone(c),hp:c.hp,mana:0};for(let i=0;i<gates.length;i++){u.mana=gates[i]-.01;assert.equal(readyLevel(u),i);u.mana=gates[i];assert.equal(readyLevel(u),i+1);}}
 });
@@ -72,7 +72,7 @@ test('tile clears grant one charge each, preserve fractional gains, and cap at e
 });
 test('new roster has one Special, no SPD stat, balanced colors, and all original passives',async()=>{
  const source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url)));
- for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,['red','purple'].includes(color)?33:32);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
+ for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,color==='purple'?34:35);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
  for(const c of roster){assert.equal('spd' in c,false);assert.equal('kit' in c,false);assert.equal('a2' in c,false);assert.equal('a3' in c,false);assert.ok(c.special.name);assert.equal(c.passive?.id,source.find(o=>o.id===c.id).passive?.id);assert.equal(c.passive?.name,source.find(o=>o.id===c.id).passive?.name);assert.equal(c.rarity,source.find(o=>o.id===c.id).rarity);}
 });
 test('full Specials retain merged source effects except deliberate match-3 revisions',async()=>{

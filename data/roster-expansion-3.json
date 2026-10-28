@@ -1,0 +1,172 @@
+{
+  "version": 3,
+  "originalCount": 162,
+  "totalCount": 174,
+  "originalRecordsSha256": "2521aa977e7cdebf9d0c18ac3696f8f60e1ba3ada3b4869a57febeb683a2e90f",
+  "originalSourceRecordsSha256": "5b11b18773b08882beced9b80ffc511747d4948a6acc1ada5b610af3237414e1",
+  "addedChampionIds": [
+    "othrel_riverstone_aegis",
+    "domitrix_gilded_vigil",
+    "beatrice_verdigris_mender",
+    "ephoros_pale_ferryman",
+    "cassio_gravity_knife",
+    "pyrrhon_soulfire_verdict",
+    "inko_plasma_skirmisher",
+    "hester_emberthorn_hunter",
+    "kozhak_glacier_prowler",
+    "ushala_quillgrass_tracker",
+    "qingluo_jade_tempest",
+    "thyssara_eclipse_blade"
+  ],
+  "newRarities": {
+    "legendary": 9,
+    "rare": 3
+  },
+  "newRoles": {
+    "attack": 8,
+    "defense": 2,
+    "support": 2
+  },
+  "newColorCounts": {
+    "red": 2,
+    "blue": 3,
+    "green": 3,
+    "yellow": 3,
+    "purple": 1
+  },
+  "implementedRecommendations": [
+    {
+      "priority": 1,
+      "championId": "othrel_riverstone_aegis",
+      "name": "Othrel, Riverstone Aegis",
+      "faction": "wildgrove",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    },
+    {
+      "priority": 2,
+      "championId": "domitrix_gilded_vigil",
+      "name": "Domitrix, the Gilded Vigil",
+      "faction": "bloodcourt",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 3,
+      "championId": "beatrice_verdigris_mender",
+      "name": "Beatrice, Verdigris Mender",
+      "faction": "ironclad",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    },
+    {
+      "priority": 4,
+      "championId": "ephoros_pale_ferryman",
+      "name": "Ephoros, Pale Ferryman",
+      "faction": "nether",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    },
+    {
+      "priority": 5,
+      "championId": "cassio_gravity_knife",
+      "name": "Cassio, Gravity Knife",
+      "faction": "neon_syndicate",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    },
+    {
+      "priority": 6,
+      "championId": "pyrrhon_soulfire_verdict",
+      "name": "Pyrrhon, the Soulfire Verdict",
+      "faction": "nether",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "charging",
+      "status": "implemented"
+    },
+    {
+      "priority": 7,
+      "championId": "inko_plasma_skirmisher",
+      "name": "Inko, Plasma Skirmisher",
+      "faction": "neon_syndicate",
+      "color": "red",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    },
+    {
+      "priority": 8,
+      "championId": "hester_emberthorn_hunter",
+      "name": "Hester, Emberthorn Hunter",
+      "faction": "wildgrove",
+      "color": "red",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 9,
+      "championId": "kozhak_glacier_prowler",
+      "name": "Kozhak, Glacier Prowler",
+      "faction": "veldtborn",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "charging",
+      "status": "implemented"
+    },
+    {
+      "priority": 10,
+      "championId": "ushala_quillgrass_tracker",
+      "name": "Ushala, Quillgrass Tracker",
+      "faction": "veldtborn",
+      "color": "green",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 11,
+      "championId": "qingluo_jade_tempest",
+      "name": "Qingluo, Jade Tempest",
+      "faction": "dragondynasty",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "status": "implemented"
+    },
+    {
+      "priority": 12,
+      "championId": "thyssara_eclipse_blade",
+      "name": "Thyssara, Eclipse Blade",
+      "faction": "umbra",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "charging",
+      "status": "implemented"
+    }
+  ],
+  "artwork": "12 original high-resolution portraits in the established painterly fantasy style. Existing portraits retained."
+}
