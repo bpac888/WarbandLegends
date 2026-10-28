@@ -3892,6 +3892,318 @@ export const RARITY_REVISION=[
       },
       "passive": null
     }
+  },
+  {
+    "id": "mosswitch_lira",
+    "batch": 4,
+    "kind": "element_or_faction",
+    "name": "Mosswitch Brynna",
+    "before": {
+      "template_id": "mosswitch_lira",
+      "name": "Mosswitch Brynna",
+      "title": "Barefoot Through the Thorns",
+      "rarity": "common",
+      "faction": "wildgrove",
+      "role": "support",
+      "hp": 877,
+      "atk": 394,
+      "def": 482,
+      "ability_name": "Verdant Blessing",
+      "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth.",
+      "image_url": "/api/static/champions/hero-45.png",
+      "id": "mosswitch_lira",
+      "color": "blue",
+      "source_image": "/api/static/champions/hero-45.png",
+      "portrait": "assets/champions/mosswitch_lira.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Verdant Blessing",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "ally",
+            "damage": 0,
+            "healing": 0.32,
+            "healScope": "ally",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "heal",
+                "turns": 1,
+                "scope": "ally"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Restore 32% max HP to one living ally."
+    },
+    "sourceBefore": {
+      "template_id": "mosswitch_lira",
+      "name": "Mosswitch Brynna",
+      "title": "Barefoot Through the Thorns",
+      "rarity": "common",
+      "faction": "wildgrove",
+      "role": "support",
+      "hp": 790,
+      "atk": 85,
+      "def": 72,
+      "spd": 108,
+      "ability_name": "Verdant Blessing",
+      "ability_desc": "A verdant blessing — the whole warband mends under her moss-song.",
+      "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth.",
+      "image_url": "/api/static/champions/hero-45.png",
+      "id": "mosswitch_lira",
+      "color": "green",
+      "source_image": "/api/static/champions/hero-45.png",
+      "portrait": "assets/champions/mosswitch_lira.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "heal",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    },
+    "after": {
+      "template_id": "mosswitch_lira",
+      "name": "Mosswitch Brynna",
+      "title": "Barefoot Through the Thorns",
+      "rarity": "common",
+      "faction": "wildgrove",
+      "role": "support",
+      "hp": 877,
+      "atk": 394,
+      "def": 482,
+      "ability_name": "Verdant Blessing",
+      "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth.",
+      "image_url": "/api/static/champions/hero-45.png",
+      "id": "mosswitch_lira",
+      "color": "green",
+      "source_image": "/api/static/champions/hero-45.png",
+      "portrait": "assets/champions/mosswitch_lira.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Verdant Blessing",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "ally",
+            "damage": 0,
+            "healing": 0.32,
+            "healScope": "ally",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "heal",
+                "turns": 1,
+                "scope": "ally"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Restore 32% max HP to one living ally."
+    },
+    "sourceAfter": {
+      "template_id": "mosswitch_lira",
+      "name": "Mosswitch Brynna",
+      "title": "Barefoot Through the Thorns",
+      "rarity": "common",
+      "faction": "wildgrove",
+      "role": "support",
+      "hp": 790,
+      "atk": 85,
+      "def": 72,
+      "spd": 108,
+      "ability_name": "Verdant Blessing",
+      "ability_desc": "A verdant blessing — the whole warband mends under her moss-song.",
+      "lore": "The Blood Cult burned her village. The moss grew over the burns. Now she feels only the pulse of the earth.",
+      "image_url": "/api/static/champions/hero-45.png",
+      "id": "mosswitch_lira",
+      "color": "green",
+      "source_image": "/api/static/champions/hero-45.png",
+      "portrait": "assets/champions/mosswitch_lira.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "heal",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    }
+  },
+  {
+    "id": "solar_scribe",
+    "batch": 4,
+    "kind": "element_or_faction",
+    "name": "Solar Scribe",
+    "before": {
+      "template_id": "solar_scribe",
+      "name": "Solar Scribe",
+      "title": "Whose Quill Writes in Daylight",
+      "rarity": "common",
+      "faction": "duneriders",
+      "role": "attack",
+      "hp": 703,
+      "atk": 517,
+      "def": 408,
+      "ability_name": "Chronicle of Doom",
+      "lore": "He does not predict the battle. He edits it — golden strokes that the world is too polite to refuse.",
+      "image_url": "/api/static/champions/hero-5.png",
+      "id": "solar_scribe",
+      "color": "yellow",
+      "source_image": "/api/static/champions/hero-5.png",
+      "portrait": "assets/champions/solar_scribe.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Chronicle of Doom",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 2.41,
+            "healing": 0,
+            "healScope": "ally",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "mana_slow",
+                "turns": 1,
+                "scope": "enemy"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 241% ATK damage to selected enemy."
+    },
+    "sourceBefore": {
+      "template_id": "solar_scribe",
+      "name": "Solar Scribe",
+      "title": "Whose Quill Writes in Daylight",
+      "rarity": "common",
+      "faction": "duneriders",
+      "role": "attack",
+      "hp": 720,
+      "atk": 135,
+      "def": 55,
+      "spd": 108,
+      "ability_name": "Chronicle of Doom",
+      "ability_desc": "Inscribes a foe into the chronicle of doom — the ink drags at them, a step slower for a round.",
+      "lore": "He does not predict the battle. He edits it — golden strokes that the world is too polite to refuse.",
+      "image_url": "/api/static/champions/hero-5.png",
+      "id": "solar_scribe",
+      "color": "yellow",
+      "source_image": "/api/static/champions/hero-5.png",
+      "portrait": "assets/champions/solar_scribe.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "dec_spd",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    },
+    "after": {
+      "template_id": "solar_scribe",
+      "name": "Solar Scribe",
+      "title": "Whose Quill Writes in Daylight",
+      "rarity": "common",
+      "faction": "nether",
+      "role": "attack",
+      "hp": 703,
+      "atk": 517,
+      "def": 408,
+      "ability_name": "Chronicle of Doom",
+      "lore": "In the Nether, the Solar Scribe records the last light of dying suns. His golden ink preserves the names of souls the dark would erase. When war reaches the silent archives, he writes a different ending for those who threaten their keeping.",
+      "image_url": "/api/static/champions/hero-5.png",
+      "id": "solar_scribe",
+      "color": "yellow",
+      "source_image": "/api/static/champions/hero-5.png",
+      "portrait": "assets/champions/solar_scribe.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Chronicle of Doom",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 2.41,
+            "healing": 0,
+            "healScope": "ally",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "mana_slow",
+                "turns": 1,
+                "scope": "enemy"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 241% ATK damage to selected enemy."
+    },
+    "sourceAfter": {
+      "template_id": "solar_scribe",
+      "name": "Solar Scribe",
+      "title": "Whose Quill Writes in Daylight",
+      "rarity": "common",
+      "faction": "nether",
+      "role": "attack",
+      "hp": 720,
+      "atk": 135,
+      "def": 55,
+      "spd": 108,
+      "ability_name": "Chronicle of Doom",
+      "ability_desc": "Inscribes a foe into the chronicle of doom — the ink drags at them, a step slower for a round.",
+      "lore": "In the Nether, the Solar Scribe records the last light of dying suns. His golden ink preserves the names of souls the dark would erase. When war reaches the silent archives, he writes a different ending for those who threaten their keeping.",
+      "image_url": "/api/static/champions/hero-5.png",
+      "id": "solar_scribe",
+      "color": "yellow",
+      "source_image": "/api/static/champions/hero-5.png",
+      "portrait": "assets/champions/solar_scribe.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "dec_spd",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    }
   }
 ];
 export function beforeRarityRevision(records,{source=false}={}){const m=new Map(RARITY_REVISION.map(x=>[x.id,x]));return records.map(c=>{const x=m.get(c.id);if(!x)return c;const expected=source?x.sourceAfter:x.after;if(JSON.stringify(c)!==JSON.stringify(expected))throw Error("Unexpected rarity revision: "+c.id);return structuredClone(source?x.sourceBefore:x.before);});}

@@ -59,7 +59,7 @@
 | Thornweaver Seraph | legendary | yellow | attack | 815 | 689 | 1293 | Slow 12 |
 | Barkskin Bruiser | rare | green | attack | 683 | 562 | 1019 | Average 10 |
 | Vinestrider | rare | blue | attack | 678 | 546 | 1028 | Average 10 |
-| Mosswitch Brynna | common | blue | support | 394 | 482 | 877 | Average 10 |
+| Mosswitch Brynna | common | green | support | 394 | 482 | 877 | Average 10 |
 | Beastmaster Gharn | common | green | attack | 522 | 413 | 733 | Average 10 |
 | Jarl Bjorn Ironhide | legendary | blue | attack | 823 | 676 | 1331 | Average 10 |
 | Shieldmaiden Runa | rare | blue | defense | 543 | 683 | 1236 | Average 10 |
