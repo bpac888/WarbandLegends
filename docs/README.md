@@ -38,3 +38,5 @@ These notes describe checkpoints from their respective sessions; they are not a 
 - [Roster name audit](NAME_AUDIT.md) — the 25 name changes and preservation rules.
 
 - [Astral Concord](ASTRAL_CONCORD.md): the new fifteen-character faction and its balance.
+
+- [Faction Bonuses](FACTION_BONUSES.md): all twelve faction tiers, timing and the two Astral Mythical passives.

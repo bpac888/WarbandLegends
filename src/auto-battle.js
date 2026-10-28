@@ -20,13 +20,13 @@ export function autoPositionValue(state){
   for(const [id,e] of Object.entries(h.effects)){
    const sign=EFFECTS[id]?.cat==='buff'?1:-1;
    const weight=['poison','burn','bleed','frostbite'].includes(id)?20:id==='heal'?24:id==='mana_block'?24:16;
-   score+=sign*weight*Math.min(e.turns,3);
+   score+=sign*weight*Math.min(e.turns,4);
   }
  }
  for(const e of state.enemies){if(e.hp<=0)continue;
   const urgent=1/Math.max(1,e.countdown);
   score-=420+240*e.hp/e.maxHp+50*Math.min(e.shield/e.maxHp,.6)+45*urgent+35*e.mana/e.manaMax;
-  for(const [id,v] of Object.entries(e.effects))score+=(EFFECTS[id]?.cat==='debuff'?1:-1)*(['poison','burn','bleed','frostbite'].includes(id)?22:16)*Math.min(v.turns,3);
+  for(const [id,v] of Object.entries(e.effects))score+=(EFFECTS[id]?.cat==='debuff'?1:-1)*(['poison','burn','bleed','frostbite'].includes(id)?22:16)*Math.min(v.turns,4);
  }
  // A bounded victory bonus avoids chasing a single lucky sampled cascade.
  return score+(state.phase==='victory'?1200:0);

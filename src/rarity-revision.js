@@ -4204,6 +4204,482 @@ export const RARITY_REVISION=[
       },
       "passive": null
     }
+  },
+  {
+    "id": "blood_paladin",
+    "batch": 5,
+    "kind": "element_and_lore",
+    "name": "Sir Aurel, the Crimson Paladin",
+    "before": {
+      "template_id": "blood_paladin",
+      "name": "Sir Aurel, the Crimson Paladin",
+      "title": "Whose Halo Was Cracked",
+      "rarity": "mythical",
+      "faction": "bloodcourt",
+      "role": "defense",
+      "hp": 1653,
+      "atk": 748,
+      "def": 875,
+      "ability_name": "Weeping Sanctuary",
+      "lore": "Sir Aurel was promised paradise. Sir Aurel was lied to. Sir Aurel still keeps the vow anyway.",
+      "image_url": "/api/static/champions/blood_paladin.png",
+      "id": "blood_paladin",
+      "color": "red",
+      "source_image": "/api/static/champions/blood_paladin.png",
+      "portrait": "assets/champions/blood_paladin.webp",
+      "passive": {
+        "id": "oath_unbroken",
+        "name": "Oath Unbroken",
+        "kind": "revive_once",
+        "value": 0.35,
+        "desc": "Revives once per battle."
+      },
+      "manaSpeed": "slow",
+      "special": {
+        "name": "Weeping Sanctuary",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "target": "enemy",
+            "damage": 1.81,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "dec_atk",
+                "turns": 3,
+                "scope": "enemy"
+              },
+              {
+                "id": "block_debuffs",
+                "turns": 1,
+                "scope": "self"
+              },
+              {
+                "id": "guard",
+                "turns": 3,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 181% ATK damage to selected enemy."
+    },
+    "sourceBefore": {
+      "template_id": "blood_paladin",
+      "name": "Sir Aurel, the Crimson Paladin",
+      "title": "Whose Halo Was Cracked",
+      "rarity": "mythical",
+      "faction": "bloodcourt",
+      "role": "defense",
+      "hp": 3366,
+      "atk": 310,
+      "def": 357,
+      "spd": 116,
+      "ability_name": "Weeping Sanctuary",
+      "ability_desc": "Raises a bleeding halo — foes can strike nothing but Aurel for three rounds, and a crimson shield settles over the whole warband.",
+      "lore": "Sir Aurel was promised paradise. Sir Aurel was lied to. Sir Aurel still keeps the vow anyway.",
+      "image_url": "/api/static/champions/blood_paladin.png",
+      "id": "blood_paladin",
+      "color": "red",
+      "source_image": "/api/static/champions/blood_paladin.png",
+      "portrait": "assets/champions/blood_paladin.webp",
+      "kit": {
+        "a2": [
+          [
+            "dec_atk",
+            3
+          ],
+          [
+            "block_debuffs",
+            1
+          ]
+        ],
+        "a3": [
+          [
+            "taunt",
+            3
+          ],
+          [
+            "shield",
+            1
+          ]
+        ]
+      },
+      "passive": {
+        "id": "oath_unbroken",
+        "name": "Oath Unbroken",
+        "kind": "revive_once",
+        "value": 0.35,
+        "desc": "Revives once per battle."
+      }
+    },
+    "after": {
+      "template_id": "blood_paladin",
+      "name": "Sir Aurel, the Crimson Paladin",
+      "title": "Whose Halo Was Cracked",
+      "rarity": "mythical",
+      "faction": "bloodcourt",
+      "role": "defense",
+      "hp": 1653,
+      "atk": 748,
+      "def": 875,
+      "ability_name": "Weeping Sanctuary",
+      "lore": "Sir Aurel swore to guard the Bloodcourt’s dawn gates, where the first light once struck down an entire noble house. He bound that light to his shield with an oath written in his own blood. Now its golden radiance shelters those under his protection, and even death must wait until his watch is ended.",
+      "image_url": "/api/static/champions/blood_paladin.png",
+      "id": "blood_paladin",
+      "color": "yellow",
+      "source_image": "/api/static/champions/blood_paladin.png",
+      "portrait": "assets/champions/blood_paladin.webp",
+      "passive": {
+        "id": "oath_unbroken",
+        "name": "Oath Unbroken",
+        "kind": "revive_once",
+        "value": 0.35,
+        "desc": "Revives once per battle."
+      },
+      "manaSpeed": "slow",
+      "special": {
+        "name": "Weeping Sanctuary",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "target": "enemy",
+            "damage": 1.81,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "dec_atk",
+                "turns": 3,
+                "scope": "enemy"
+              },
+              {
+                "id": "block_debuffs",
+                "turns": 1,
+                "scope": "self"
+              },
+              {
+                "id": "guard",
+                "turns": 3,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 181% ATK damage to selected enemy."
+    },
+    "sourceAfter": {
+      "template_id": "blood_paladin",
+      "name": "Sir Aurel, the Crimson Paladin",
+      "title": "Whose Halo Was Cracked",
+      "rarity": "mythical",
+      "faction": "bloodcourt",
+      "role": "defense",
+      "hp": 3366,
+      "atk": 310,
+      "def": 357,
+      "spd": 116,
+      "ability_name": "Weeping Sanctuary",
+      "ability_desc": "Raises a bleeding halo — foes can strike nothing but Aurel for three rounds, and a crimson shield settles over the whole warband.",
+      "lore": "Sir Aurel swore to guard the Bloodcourt’s dawn gates, where the first light once struck down an entire noble house. He bound that light to his shield with an oath written in his own blood. Now its golden radiance shelters those under his protection, and even death must wait until his watch is ended.",
+      "image_url": "/api/static/champions/blood_paladin.png",
+      "id": "blood_paladin",
+      "color": "yellow",
+      "source_image": "/api/static/champions/blood_paladin.png",
+      "portrait": "assets/champions/blood_paladin.webp",
+      "kit": {
+        "a2": [
+          [
+            "dec_atk",
+            3
+          ],
+          [
+            "block_debuffs",
+            1
+          ]
+        ],
+        "a3": [
+          [
+            "taunt",
+            3
+          ],
+          [
+            "shield",
+            1
+          ]
+        ]
+      },
+      "passive": {
+        "id": "oath_unbroken",
+        "name": "Oath Unbroken",
+        "kind": "revive_once",
+        "value": 0.35,
+        "desc": "Revives once per battle."
+      }
+    }
+  },
+  {
+    "id": "archangel_lucifer",
+    "batch": 6,
+    "kind": "element",
+    "name": "Archangel Lucifer",
+    "before": {
+      "template_id": "archangel_lucifer",
+      "name": "Archangel Lucifer",
+      "title": "Fallen Blade of the First Choir",
+      "rarity": "legendary",
+      "faction": "ironclad",
+      "role": "defense",
+      "hp": 1524,
+      "atk": 680,
+      "def": 792,
+      "ability_name": "Apocalyptic Wrath",
+      "lore": "Cast from the vault, Lucifer chose neither heaven nor hell — only the battlefield between, and the vow he would not break.",
+      "image_url": "/api/static/champions/hero-1.png",
+      "id": "archangel_lucifer",
+      "color": "yellow",
+      "source_image": "/api/static/champions/hero-1.png",
+      "portrait": "assets/champions/archangel_lucifer.webp",
+      "passive": null,
+      "manaSpeed": "charging",
+      "special": {
+        "name": "Apocalyptic Wrath",
+        "charging": true,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "fast",
+            "tiles": 8,
+            "target": "enemy",
+            "damage": 1.09,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "inc_def",
+                "turns": 2,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 2,
+                "scope": "allies"
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 1.6,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "inc_def",
+                "turns": 3,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 3,
+                "scope": "allies"
+              },
+              {
+                "id": "counterattack",
+                "turns": 1,
+                "scope": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 160% ATK damage to selected enemy."
+    },
+    "sourceBefore": {
+      "template_id": "archangel_lucifer",
+      "name": "Archangel Lucifer",
+      "title": "Fallen Blade of the First Choir",
+      "rarity": "legendary",
+      "faction": "ironclad",
+      "role": "defense",
+      "hp": 2375,
+      "atk": 300,
+      "def": 230,
+      "spd": 112,
+      "ability_name": "Apocalyptic Wrath",
+      "ability_desc": "Scours the field with fallen light — heavy shields settle over the whole warband, and Lucifer answers the next blow he takes.",
+      "lore": "Cast from the vault, Lucifer chose neither heaven nor hell — only the battlefield between, and the vow he would not break.",
+      "image_url": "/api/static/champions/hero-1.png",
+      "id": "archangel_lucifer",
+      "color": "blue",
+      "source_image": "/api/static/champions/hero-1.png",
+      "portrait": "assets/champions/archangel_lucifer.webp",
+      "kit": {
+        "a2": [
+          [
+            "inc_def",
+            3
+          ]
+        ],
+        "a3": [
+          [
+            "shield",
+            3
+          ],
+          [
+            "counterattack",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    },
+    "after": {
+      "template_id": "archangel_lucifer",
+      "name": "Archangel Lucifer",
+      "title": "Fallen Blade of the First Choir",
+      "rarity": "legendary",
+      "faction": "ironclad",
+      "role": "defense",
+      "hp": 1524,
+      "atk": 680,
+      "def": 792,
+      "ability_name": "Apocalyptic Wrath",
+      "lore": "Cast from the vault, Lucifer chose neither heaven nor hell — only the battlefield between, and the vow he would not break.",
+      "image_url": "/api/static/champions/hero-1.png",
+      "id": "archangel_lucifer",
+      "color": "red",
+      "source_image": "/api/static/champions/hero-1.png",
+      "portrait": "assets/champions/archangel_lucifer.webp",
+      "passive": null,
+      "manaSpeed": "charging",
+      "special": {
+        "name": "Apocalyptic Wrath",
+        "charging": true,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "fast",
+            "tiles": 8,
+            "target": "enemy",
+            "damage": 1.09,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "inc_def",
+                "turns": 2,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 2,
+                "scope": "allies"
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 1.6,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "inc_def",
+                "turns": 3,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 3,
+                "scope": "allies"
+              },
+              {
+                "id": "counterattack",
+                "turns": 1,
+                "scope": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 160% ATK damage to selected enemy."
+    },
+    "sourceAfter": {
+      "template_id": "archangel_lucifer",
+      "name": "Archangel Lucifer",
+      "title": "Fallen Blade of the First Choir",
+      "rarity": "legendary",
+      "faction": "ironclad",
+      "role": "defense",
+      "hp": 2375,
+      "atk": 300,
+      "def": 230,
+      "spd": 112,
+      "ability_name": "Apocalyptic Wrath",
+      "ability_desc": "Scours the field with fallen light — heavy shields settle over the whole warband, and Lucifer answers the next blow he takes.",
+      "lore": "Cast from the vault, Lucifer chose neither heaven nor hell — only the battlefield between, and the vow he would not break.",
+      "image_url": "/api/static/champions/hero-1.png",
+      "id": "archangel_lucifer",
+      "color": "red",
+      "source_image": "/api/static/champions/hero-1.png",
+      "portrait": "assets/champions/archangel_lucifer.webp",
+      "kit": {
+        "a2": [
+          [
+            "inc_def",
+            3
+          ]
+        ],
+        "a3": [
+          [
+            "shield",
+            3
+          ],
+          [
+            "counterattack",
+            1
+          ]
+        ]
+      },
+      "passive": null
+    }
   }
 ];
 export function beforeRarityRevision(records,{source=false}={}){const m=new Map(RARITY_REVISION.map(x=>[x.id,x]));return records.map(c=>{const x=m.get(c.id);if(!x)return c;const expected=source?x.sourceAfter:x.after;if(JSON.stringify(c)!==JSON.stringify(expected))throw Error("Unexpected rarity revision: "+c.id);return structuredClone(source?x.sourceBefore:x.before);});}

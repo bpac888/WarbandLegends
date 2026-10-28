@@ -33,7 +33,7 @@ test('every new charge tier damages, heals, cleanses, dispels and applies effect
   for(const e of level.effects)for(const u of recipients(e.scope)){
    if(e.id==='remove_debuffs')assert.ok(!u.effects.poison,c.id+' cleanse');
    else if(e.id==='dispel')assert.ok(!u.effects.inc_atk,c.id+' dispel');
-   else {assert.equal(u.effects[e.id]?.turns,e.turns,c.id+' '+e.id);if(e.id==='shield')assert.ok(u.shield>0,c.id+' barrier pool');}
+   else {assert.equal(u.effects[e.id]?.turns,e.turns+(u.effects[e.id]?.factionExtended?1:0),c.id+' '+e.id);if(e.id==='shield')assert.ok(u.shield>0,c.id+' barrier pool');}
   }
  }
 });

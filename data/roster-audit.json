@@ -2,7 +2,7 @@
   "version": 4,
   "scope": "Current roster coverage after Astral Concord and the approved roster revisions. Not a measured PvP win-rate study.",
   "historicalBaselineVerified": true,
-  "approvedRosterRevisionCount": 26,
+  "approvedRosterRevisionCount": 28,
   "before": {
     "total": 174,
     "rarity": {
@@ -142,10 +142,10 @@
         "common": 1
       },
       "color": {
-        "red": 9,
+        "red": 8,
         "blue": 1,
         "green": 1,
-        "yellow": 2,
+        "yellow": 3,
         "purple": 3
       },
       "type": {
@@ -170,7 +170,7 @@
         },
         {
           "name": "Sir Aurel, the Crimson Paladin",
-          "color": "red",
+          "color": "yellow",
           "manaSpeed": "slow"
         }
       ]
@@ -342,10 +342,10 @@
         "common": 6
       },
       "color": {
-        "red": 5,
+        "red": 6,
         "blue": 3,
         "green": 2,
-        "yellow": 5,
+        "yellow": 4,
         "purple": 1
       },
       "type": {
@@ -571,10 +571,10 @@
         "common": 0
       },
       "color": {
-        "red": 5,
+        "red": 4,
         "blue": 4,
         "green": 2,
-        "yellow": 3,
+        "yellow": 4,
         "purple": 3
       },
       "type": {
@@ -600,10 +600,10 @@
         "common": 0
       },
       "color": {
-        "red": 15,
+        "red": 16,
         "blue": 16,
         "green": 14,
-        "yellow": 17,
+        "yellow": 16,
         "purple": 17
       },
       "type": {
@@ -683,8 +683,8 @@
     "red": {
       "total": 40,
       "rarity": {
-        "mythical": 5,
-        "legendary": 15,
+        "mythical": 4,
+        "legendary": 16,
         "rare": 15,
         "common": 5
       },
@@ -704,9 +704,9 @@
         "very_fast": 1,
         "fast": 8,
         "average": 22,
-        "slow": 6,
+        "slow": 5,
         "very_slow": 0,
-        "charging": 3
+        "charging": 4
       }
     },
     "blue": {
@@ -770,8 +770,8 @@
     "yellow": {
       "total": 38,
       "rarity": {
-        "mythical": 3,
-        "legendary": 17,
+        "mythical": 4,
+        "legendary": 16,
         "rare": 12,
         "common": 6
       },
@@ -791,9 +791,9 @@
         "very_fast": 4,
         "fast": 5,
         "average": 15,
-        "slow": 6,
+        "slow": 7,
         "very_slow": 0,
-        "charging": 8
+        "charging": 7
       }
     },
     "purple": {

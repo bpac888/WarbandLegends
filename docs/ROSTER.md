@@ -28,7 +28,7 @@
 | Sable, Pale Matriarch | mythical | purple | support | 801 | 806 | 1553 | Fast 8 |
 | Frost King | mythical | blue | support | 774 | 796 | 1604 | Fast 8 |
 | Frost Sage | mythical | blue | support | 797 | 818 | 1601 | Fast 8 |
-| Sir Aurel, the Crimson Paladin | mythical | red | defense | 748 | 875 | 1653 | Slow 12 |
+| Sir Aurel, the Crimson Paladin | mythical | yellow | defense | 748 | 875 | 1653 | Slow 12 |
 | Lady Death | legendary | purple | attack | 846 | 690 | 1301 | Average 10 |
 | The Sin Archon | legendary | purple | support | 731 | 718 | 1368 | Slow 12 |
 | The Shade Prince | rare | blue | attack | 710 | 550 | 1010 | Average 10 |
@@ -38,7 +38,7 @@
 | Neve the Veil Dancer | legendary | purple | attack | 826 | 699 | 1304 | Fast 8 |
 | Crimson Castellan | legendary | red | attack | 843 | 674 | 1291 | Average 10 |
 | Rhagz, Pit Scout | rare | green | attack | 678 | 546 | 1029 | Very Fast 6.5 |
-| Archangel Lucifer | legendary | yellow | defense | 680 | 792 | 1524 | Charging 8 / 10 |
+| Archangel Lucifer | legendary | red | defense | 680 | 792 | 1524 | Charging 8 / 10 |
 | Paladin of Dusk | common | yellow | defense | 382 | 537 | 933 | Average 10 |
 | Sister Seraphel | common | yellow | support | 412 | 472 | 833 | Average 10 |
 | Justiciar Gethren | common | yellow | attack | 509 | 441 | 751 | Fast 8 |
@@ -965,6 +965,8 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 - 12 tiles: Deal 190% ATK damage to all living enemies. Burn (All living enemies, 2 turns).
 
+Passive: **Titan’s Resolve** — Alkyron is permanently immune to Attack Down and Burn. This protection affects only him.
+
 ### Ruxil, Cinder Newt — Comet Spit
 
 - 8 tiles: Deal 220% ATK damage to selected enemy. Burn (Selected enemy, 2 turns).
@@ -976,6 +978,8 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 ### Asterox, Labyrinth Moon — Walls Between Worlds
 
 - 10 tiles: Deal 135% ATK damage to selected enemy. Taunt (Caster, 1 turns); Damage Ward (Caster, 2 turns); Barrier (All living allies, 1 turns).
+
+Passive: **Moonforged Aegis** — Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies.
 
 ### Nerephon, Tide Singer — Song of Returning Tides
 

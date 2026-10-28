@@ -983,10 +983,10 @@
     "spd": 116,
     "ability_name": "Weeping Sanctuary",
     "ability_desc": "Raises a bleeding halo — foes can strike nothing but Aurel for three rounds, and a crimson shield settles over the whole warband.",
-    "lore": "Sir Aurel was promised paradise. Sir Aurel was lied to. Sir Aurel still keeps the vow anyway.",
+    "lore": "Sir Aurel swore to guard the Bloodcourt’s dawn gates, where the first light once struck down an entire noble house. He bound that light to his shield with an oath written in his own blood. Now its golden radiance shelters those under his protection, and even death must wait until his watch is ended.",
     "image_url": "/api/static/champions/blood_paladin.png",
     "id": "blood_paladin",
-    "color": "red",
+    "color": "yellow",
     "source_image": "/api/static/champions/blood_paladin.png",
     "portrait": "assets/champions/blood_paladin.webp",
     "kit": {
@@ -1368,7 +1368,7 @@
     "lore": "Cast from the vault, Lucifer chose neither heaven nor hell — only the battlefield between, and the vow he would not break.",
     "image_url": "/api/static/champions/hero-1.png",
     "id": "archangel_lucifer",
-    "color": "blue",
+    "color": "red",
     "source_image": "/api/static/champions/hero-1.png",
     "portrait": "assets/champions/archangel_lucifer.webp",
     "kit": {
@@ -6208,7 +6208,16 @@
     "color": "red",
     "source_image": "assets/champions/alkyron_starbreaker.webp",
     "portrait": "assets/champions/alkyron_starbreaker.webp",
-    "passive": null,
+    "passive": {
+      "id": "titans_resolve",
+      "name": "Titan’s Resolve",
+      "kind": "immune_effect",
+      "immune": [
+        "dec_atk",
+        "burn"
+      ],
+      "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
+    },
     "ability_desc": "Deal 190% ATK damage to all living enemies.",
     "spd": 100,
     "kit": {
@@ -6298,7 +6307,13 @@
     "color": "blue",
     "source_image": "assets/champions/asterox_labyrinth_moon.webp",
     "portrait": "assets/champions/asterox_labyrinth_moon.webp",
-    "passive": null,
+    "passive": {
+      "id": "moonforged_aegis",
+      "name": "Moonforged Aegis",
+      "kind": "shield_boost",
+      "value": 0.5,
+      "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
+    },
     "ability_desc": "Deal 135% ATK damage to selected enemy.",
     "spd": 100,
     "kit": {

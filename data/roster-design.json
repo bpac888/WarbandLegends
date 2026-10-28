@@ -198,7 +198,7 @@
       }
     },
     "blood_paladin": {
-      "color": "red",
+      "color": "yellow",
       "manaSpeed": "slow"
     },
     "lady_death": {
@@ -290,7 +290,7 @@
       }
     },
     "archangel_lucifer": {
-      "color": "yellow",
+      "color": "red",
       "manaSpeed": "charging",
       "chargeLevels": 2
     },
@@ -2689,6 +2689,16 @@
         "hp": 1500,
         "atk": 890,
         "def": 770
+      },
+      "passiveOverride": {
+        "id": "titans_resolve",
+        "name": "Titan’s Resolve",
+        "kind": "immune_effect",
+        "immune": [
+          "dec_atk",
+          "burn"
+        ],
+        "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
       }
     },
     "ruxil_cinder_newt": {
@@ -2786,6 +2796,13 @@
         "hp": 1580,
         "atk": 780,
         "def": 830
+      },
+      "passiveOverride": {
+        "id": "moonforged_aegis",
+        "name": "Moonforged Aegis",
+        "kind": "shield_boost",
+        "value": 0.5,
+        "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
       }
     },
     "nerephon_tide_singer": {

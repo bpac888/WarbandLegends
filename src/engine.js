@@ -1,3 +1,4 @@
+import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js';
 import {awakenedStats,normalLevelCap,ASCENSION_CAPS} from './ascension.js';
 import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js';
 import {SCENARIOS,validScenario} from './chapter.js';
@@ -22,7 +23,7 @@ export function manaLevels(unit){return unit.special?.levels||[];}
 export function readyLevel(unit){if(unit.hp<=0)return 0;return manaLevels(unit).filter(l=>unit.mana>=l.tiles).at(-1)?.level||0;}
 export function manaLabel(unit){return unit.special?.charging?'Charging':MANA_SPEEDS[unit.manaSpeed]?.label||'Average';}
 export function chargeText(amount){return Number(Number(amount).toFixed(2)).toString();}
-function gainMana(unit,amount,{flat=false}={}){if(has(unit,'mana_block'))return 0;const rate=flat?1:(has(unit,'mana_surge')?1.2:1)*(has(unit,'mana_slow')?.85:1);const before=unit.mana;unit.mana=Math.min(unit.manaMax,Math.round((unit.mana+amount*rate)*100)/100);return Math.round((unit.mana-before)*100)/100;}
+function gainMana(unit,amount,{flat=false,matching=false}={}){if(has(unit,'mana_block'))return 0;const rate=flat?1:(has(unit,'mana_surge')?1.2:1)*(has(unit,'mana_slow')?.85:1)*(matching?1+(factionRule(unit).tileMana||0):1);const before=unit.mana;unit.mana=Math.min(unit.manaMax,Math.round((unit.mana+amount*rate)*1000000)/1000000);return Math.round((unit.mana-before)*100)/100;}
 
 export const STAGES=CAMPAIGN_STAGES;
 export const living = units => units.filter(u=>u.hp>0);
@@ -102,6 +103,7 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
     const power={attack:'inc_atk',defense:'inc_def',support:'mana_surge'}[hero.role];
     if(power)applyEffect(state,hero,hero,power,2);
   }
+  initializeFactionBonuses(state,{roll:()=>roll(state),log:(...args)=>message(state,...args),gainMana});
   return state;
 }
 function effective(unit,stat) {
@@ -130,17 +132,21 @@ function hit(state,attacker,target,power,{color=attacker?.color,pierce=false,cou
   if(counter&&attacker?.hp>0&&target.hp>0&&has(target,'counterattack'))hit(state,target,attacker,effective(target,'atk')*.5,{counter:false,label:'Counterattack'});
 }
 function removeEffect(unit,id){delete unit.effects[id];if(id==='shield')unit.shield=0;}
-function applyEffect(state,source,target,id,duration) {
+function applyEffect(state,source,target,id,duration,{special=false}={}) {
   if(target.hp<=0||!EFFECTS[id]?.timed)return;
-  const buff=BUFFS.has(id),immune=target.passive?.immune?.includes(id);
-  if(immune||(buff&&has(target,'block_buffs')&&target.passive?.kind!=='unblockable_buffs')||(!buff&&has(target,'block_debuffs'))){message(state,`${target.name}: ${effectName(id)} blocked${immune?' by passive immunity':''}.`,'blocked',target.uid);return;}
+  const buff=BUFFS.has(id),factionImmune=factionRule(target).immune?.includes(id),immune=target.passive?.immune?.includes(id)||factionImmune;
+  if(immune||(buff&&has(target,'block_buffs')&&target.passive?.kind!=='unblockable_buffs')||(!buff&&has(target,'block_debuffs'))){message(state,`${target.name}: ${effectName(id)} blocked${factionImmune?' by Frost faction immunity':immune?' by passive immunity':''}.`,'blocked',target.uid);return;}
   const previous=has(target,id),opposite=OPPOSITES[id];if(opposite&&has(target,opposite)){removeEffect(target,opposite);message(state,`${target.name}: ${effectName(opposite)} replaced by ${effectName(id)}.`,'neutral',target.uid);}
-  target.effects[id]={turns:Math.max(1,Math.min(3,duration||1)),source:source.uid,appliedMove:state.moves};
+  let turns=Math.max(1,Math.min(3,duration||1));
+  const chance=special&&source.side==='hero'&&target.side==='enemy'&&DEBUFFS.has(id)?factionRule(source).extendChance:0;
+  const extended=!!chance&&(chance===1||roll(state)<chance);if(extended)turns++;
+  target.effects[id]={turns,source:source.uid,appliedMove:state.moves,...(extended?{factionExtended:true}:{})};
   if(id==='shield')target.shield=Math.round(target.maxHp*.2*(target.passive?.kind==='shield_boost'?1+(target.passive.value||.5):1));
   message(state,`${target.name}: ${effectName(id)}${previous?' refreshed':''} · ${target.effects[id].turns} board move${target.effects[id].turns===1?'':'s'}`,buff?'buff':'debuff',target.uid);
 }
 function startTurn(state,unit) {
   if(unit.hp<=0)return;
+  factionUpkeep(state,unit,{roll:()=>roll(state),heal:(...args)=>heal(state,...args),log:(...args)=>message(state,...args)});
   if(has(unit,'heal'))heal(state,unit,unit.maxHp*.1,'Regeneration');
   if(unit.passive?.kind==='regen')heal(state,unit,unit.maxHp*(unit.passive.value||.05),unit.passive.name);
   for(const id of DOTS)if(unit.hp>0&&has(unit,id)){const amount=Math.max(1,Math.round(unit.maxHp*EFFECTS[id].value));unit.hp=Math.max(0,unit.hp-amount);message(state,`${unit.name}: −${amount} · ${effectName(id)}`,'damage',unit.uid);revive(state,unit);}
@@ -184,7 +190,7 @@ function resolveSkill(state,actor,selectedTarget,level) {
       for(const id of removed)removeEffect(target,id);
       if(removed.length)message(state,`${target.name}: ${step.kind==='cleanse'?'cleansed':'dispelled'} ${removed.map(effectName).join(', ')}.`,step.kind==='cleanse'?'heal':'dispel',target.uid);
     }
-    else if(step.kind==='buff'||step.kind==='debuff')for(const target of recipients(effect.scope))applyEffect(state,actor,target,effect.id,effect.turns);
+    else if(step.kind==='buff'||step.kind==='debuff')for(const target of recipients(effect.scope))applyEffect(state,actor,target,effect.id,effect.turns,{special:true});
     else if(step.kind==='heal')for(const target of recipients(step.scope))heal(state,target,target.maxHp*step.amount,actor.special.name);
     else if(step.kind==='mana')for(const target of recipients(effect.scope)){
       const gained=gainMana(target,1.5,{flat:true});message(state,`${target.name}: ${gained?'+'+chargeText(gained)+' tile charge':'Mana Gift blocked or already full'}.`,'mana',target.uid);
@@ -259,7 +265,7 @@ function resolveBoard(state,frames,initialGroups,preferred,activation=null) {
       const attackers=living(state.heroes).filter(u=>u.color===t.color);
       const target=living(state.enemies).find(e=>e.lanes.includes(index%COLS));
       if(attackers.length){
-        for(const hero of attackers)gainMana(hero,target?1:2);
+        for(const hero of attackers)gainMana(hero,target?1:2,{matching:true});
         if(target){const power=attackers.reduce((n,u)=>n+effective(u,'atk')*(u.role==='attack'?1.1:1)*(has(u,'tile_boost')?1.35:1),0)*.24*(1+(combo-1)*.2);hit(state,null,target,power,{color:t.color,counter:false,label:`${ELEMENTS[t.color].name} rune${combo>1?` · ${combo}× combo`:''}`});}
         else message(state,`${ELEMENTS[t.color].name}: empty lane · double mana.`,'mana');
       }
@@ -332,8 +338,9 @@ export function validateSave(value,roster) {
   const units=[...value.heroes,...value.enemies];
   if(units.some(u=>!u||!ids.has(u.id)||!COLORS.includes(u.color)||!u.effects||Array.isArray(u.effects)||typeof u.effects!=='object'||!['attack','defense','support'].includes(u.role)||!Number.isFinite(u.hp)||!Number.isFinite(u.maxHp)||u.maxHp<=0||u.hp<0||u.hp>u.maxHp||!Number.isFinite(u.atk)||u.atk<0||!Number.isFinite(u.def)||u.def<0||!Number.isFinite(u.mana)||u.mana<0||u.mana>u.manaMax||u.manaMax!==manaLevels(roster.find(c=>c.id===u.id)).at(-1)?.tiles||!Number.isFinite(u.shield)||u.shield<0||!integer(u.actions)))return false;
   if(units.some(u=>JSON.stringify(u.special)!==JSON.stringify(roster.find(c=>c.id===u.id).special)))return false;
-  if(units.some(u=>Object.entries(u.effects).some(([id,e])=>!BUFFS.has(id)&&!DEBUFFS.has(id)||!e||!integer(e.turns,1)||e.turns>3||!integer(e.appliedMove)||e.appliedMove>value.moves||!units.some(t=>t.uid===e.source))))return false;
+  if(units.some(u=>Object.entries(u.effects).some(([id,e])=>!BUFFS.has(id)&&!DEBUFFS.has(id)||!e||!integer(e.turns,1)||e.turns>4||e.turns>3&&!e.factionExtended||e.factionExtended!==undefined&&(e.factionExtended!==true||!DEBUFFS.has(id)||u.side!=='enemy'||!units.some(t=>t.uid===e.source&&t.side==='hero'&&factionRule(t).extendChance))||!integer(e.appliedMove)||e.appliedMove>value.moves||!units.some(t=>t.uid===e.source))))return false;
   if(value.heroes.some((u,i)=>u.uid!==`hero-${i}`||u.side!=='hero')||value.enemies.some((u,i)=>u.uid!==`enemy-${i}`||u.side!=='enemy'||!integer(u.countdown)||!integer(u.baseCountdown,1)||!Array.isArray(u.lanes)||JSON.stringify(u.lanes)!==JSON.stringify(enemyLanes(i,value.enemies.length))))return false;
+  if(!validFactionState(value,roster))return false;
   const heroesAlive=living(value.heroes).length>0,enemiesAlive=living(value.enemies).length>0;
   return value.phase==='victory'?!enemiesAlive:value.phase==='defeat'?!heroesAlive&&enemiesAlive:heroesAlive&&enemiesAlive;
 }

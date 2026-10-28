@@ -1,3 +1,4 @@
+import {factionGuideHTML} from './faction-ui.js';
 import {SUMMON_ODDS} from './progression.js';
 import {heroInsight} from './tactics-ui.js';
 export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
@@ -12,12 +13,13 @@ const topics=[
   ['Ascension','Tiers restart at level 1, retain earned power and add 2% stats. Each copy develops separately.'],
   ['Limit Break','Rare and higher: two breaks after full ascension. Each adds 5 levels and 3% stats. The second grants a 2-move role buff.'],
  ]],
+ ['factions','Factions',[['Faction Bonuses',factionGuideHTML()]]],
  ['summon','Summoning',[
   ['Summoning Odds',SUMMON_ODDS.map(o=>`${o.rarity==='double_common'?'Two Commons':o.rarity[0].toUpperCase()+o.rarity.slice(1)}: ${o.chance}%`).join(' · ')],
   ['Ten Calls','At least one Rare or better is guaranteed. Two-Common results can still occur.'],
  ]],
 ];
-const content=body=>body.startsWith('<img')?body:`<p>${body}</p>`;
+const content=body=>body.startsWith('<')?body:`<p>${body}</p>`;
 export function guideHTML(id='overview',champion=null){
  const key=id==='heroes'?'growth':id==='overview'?'battles':id;
  const selected=topics.find(t=>t[0]===key)||topics[0];

@@ -75,3 +75,7 @@ Actions save before visual playback. Local saves are single-player browser data,
 ## Hero levels (v0.7)
 
 The table above describes maximum-level baselines. Collected champions start at level 1 and gain XP from victories, quests, or feeding spare Common and Rare copies. Rare donors grant 3× Common XP; a Rare copy of the same character grants 5× its normal Rare XP. Feeding costs 25 Gold per donor and preserves team-assigned copies. XP stops at the current level cap. Mana thresholds and kits do not change with levels. See [current progression rules](ASCENSION.md) for feeding, ascension and Limit Break details.
+
+## Faction Bonuses
+
+Every faction has distinct 2-member and 3-member bonuses. Only matching player-team members benefit; three or more use only the highest tier. See [Faction Bonuses](FACTION_BONUSES.md) and the in-game Guide. Alkyron now has Titan’s Resolve (Attack Down/Burn immunity); Asterox has Moonforged Aegis (his own Barriers are 50% larger).

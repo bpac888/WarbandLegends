@@ -88,3 +88,5 @@ See the [game blueprint](GAME-BLUEPRINT.md), [rules](RULES.md), [roadmap](ROADMA
 ## Updating your local copy
 
 Stop the local server with Control + C, then run `git pull origin main` and `npm start` here. The owner approved a fresh start for v0.15's Gem economy: five collected level-1 heroes, 500 gold and 500 Gems. New profile/battle namespaces ignore prior test progress without deleting old browser keys. Current v0.15 saves migrate to separately tracked hero copies; progress is retained. Export/import remains available. [Gem economy and quests](GEMS-QUESTS.md) explain the rules. Original Warband Legends remains unchanged.
+
+Faction bonuses are shared between combat, the Warband selector and Guide through `src/faction-bonuses.js`. See [rules and timing](FACTION_BONUSES.md).

@@ -1,6 +1,6 @@
 # Astral Concord
 
-Fifteen star-born travelers united to protect the living worlds between distant suns. Blue and violet skin, alien horns, celestial armor and myth-inspired silhouettes distinguish them from the existing factions. They have no additional faction-wide combat bonus.
+Fifteen star-born travelers united to protect the living worlds between distant suns. Blue and violet skin, alien horns, celestial armor and myth-inspired silhouettes distinguish them from the existing factions. Two Astral Concord teammates gain +15% mana from matching runes; three or more gain +25%. Only Astral Concord members benefit.
 
 **6 Rare · 7 Legendary · 2 Mythical. 8 ATK · 3 DEF · 4 SUP. Three per element.**
 

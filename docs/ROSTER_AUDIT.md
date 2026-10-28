@@ -1,6 +1,6 @@
 # Warband Legends Roster Audit — 189 Champions
 
-Astral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. The subsequent owner-requested rarity revision includes the approved changes to 26 character records. Character identities and artwork are preserved; current counts below include the revision.
+Astral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. The subsequent owner-requested rarity revision includes the approved changes to 28 character records. Character identities and artwork are preserved; current counts below include the revision.
 
 ## Before and After
 
@@ -47,12 +47,12 @@ Attackers remain the majority: **100/189 (52.9%)**. The faction has three champi
 | Faction | Before → After | Red / Blue / Green / Yellow / Purple | Mythicals (Element) |
 | --- | --- | --- | --- |
 | Astral Concord | 0 → 15 | 3 / 3 / 3 / 3 / 3 | Alkyron, Starbreaker (Red); Asterox, Labyrinth Moon (Blue) |
-| Bloodcourt | 16 → 16 | 9 / 1 / 1 / 2 / 3 | Sable, Pale Matriarch (Purple); Sir Aurel, the Crimson Paladin (Red) |
+| Bloodcourt | 16 → 16 | 8 / 1 / 1 / 3 / 3 | Sable, Pale Matriarch (Purple); Sir Aurel, the Crimson Paladin (Yellow) |
 | Chymera | 16 → 16 | 1 / 2 / 7 / 4 / 2 | Vex, the Elixir Apotheon (Green) |
 | Dragon Dynasty | 15 → 15 | 4 / 3 / 5 / 2 / 1 | Dragon Empress (Red) |
 | Dune Riders | 14 → 14 | 2 / 1 / 2 / 6 / 3 | Ashwind Warden (Yellow); Nayara, Keeper of the Deep Well (Blue) |
 | Frost | 15 → 15 | 2 / 9 / 1 / 2 / 1 | Frost King (Blue); Frost Sage (Blue) |
-| Ironclad | 16 → 16 | 5 / 3 / 2 / 5 / 1 | Isolde, the Last Foundry (Yellow); Hadrian, the Walking Siege (Red) |
+| Ironclad | 16 → 16 | 6 / 3 / 2 / 4 / 1 | Isolde, the Last Foundry (Yellow); Hadrian, the Walking Siege (Red) |
 | Neon Syndicate | 16 → 16 | 3 / 5 / 2 / 3 / 3 | Zero, The Singularity (Purple) |
 | Nether | 18 → 18 | 4 / 4 / 4 / 3 / 3 | Malzhur, the Abyss Lord (Red) |
 | Umbra | 16 → 16 | 2 / 2 / 1 / 2 / 9 | Yshmir, the Worldwound (Purple) |
@@ -72,7 +72,7 @@ Every faction has all five elements. Astral Concord begins with 15 champions, co
 | Very Slow | 1 | 1 | 0 | 0 | 2 |
 | Charging | 4 | 14 | 1 | 0 | 19 |
 
-Yshmir remains the only Very Slow Mythical. New designs use existing supported effects and charge tiers; no new faction-wide combat bonus is applied.
+Yshmir remains the only Very Slow Mythical. New designs use existing supported effects and charge tiers; the twelve faction bonuses are documented in the Guide and docs/FACTION_BONUSES.md.
 
 ## Validation and Limits
 
