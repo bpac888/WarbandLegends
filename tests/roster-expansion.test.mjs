@@ -8,7 +8,7 @@ import {defaultProfile,summon,normalizeProfile,validateProfile,SUMMON_ODDS} from
 import {REFERENCE_TEAM} from './reference-team.mjs';
 import {EFFECTS} from '../src/effects.js';
 const read=async file=>JSON.parse(await readFile(new URL('../'+file,import.meta.url)));
-const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion.json'),added=roster.slice(manifest.originalCount);
+const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion.json'),added=roster.slice(manifest.originalCount,150);
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const count=key=>Object.fromEntries([...new Set(added.map(c=>c[key]))].sort().map(k=>[k,added.filter(c=>c[key]===k).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0}};e.passive=null;e.shield=0;}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.4);h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};h.passive=null;}return b;}
@@ -16,7 +16,7 @@ test('all original records, source identities and original ID set remain exactly
  assert.equal(hash(roster.slice(0,135)),manifest.originalRecordsSha256);
  assert.equal(hash((await read('data/source-champions.json')).slice(0,135)),manifest.originalSourceRecordsSha256);
  assert.equal(createHash('sha256').update(roster.slice(0,135).map(c=>c.id).sort().join('\n')).digest('hex'),manifest.originalIdsSha256);
- assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,150);
+ assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,162);
 });
 test('new champions retain the approved rarity, color and ATK-majority mix without another Very Slow Mythical',()=>{
  assert.deepEqual(count('rarity'),{legendary:11,mythical:1,rare:3});assert.deepEqual(count('role'),{attack:8,defense:4,support:3});
@@ -50,8 +50,8 @@ test('Auto considers every new ready kit and produces legal actions without muta
  for(const c of added){const b=fixture(c);b.heroes[0].mana=b.heroes[0].manaMax;const before=structuredClone(b),action=chooseAutoAction(b);assert.ok(action,c.id);const result=applyAutoAction(b,action);assert.ok(!result.error,c.id);assert.ok(validateSave(result.state,roster),c.id);assert.deepEqual(b,before);}
 });
 test('post-expansion audit is current and every future recommendation fills an empty faction/color/type slot',async()=>{
- const audit=await read('data/roster-audit.json');assert.equal(audit.after.total,150);assert.equal(audit.recommendations.length,12);
+ const audit=await read('docs/history/roster-audit-150.json');assert.equal(audit.after.total,150);assert.equal(audit.recommendations.length,12);
  for(const color of ['red','blue','green','yellow','purple'])assert.equal(audit.after.color[color],30);
  for(const f of Object.values(audit.byFaction))assert.ok(f.total>=13&&f.total<=14);
- for(const x of audit.recommendations)assert.ok(!roster.some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role));
+ for(const x of audit.recommendations)assert.ok(!roster.slice(0,150).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role));
 });

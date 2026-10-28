@@ -38,7 +38,7 @@ node tools/serve.mjs --dist  # preview the production build
 - Illustrated Adventure and Campaign pages, image-led destination cards, and new world-map artwork.
 - Compact character cards with speed names, rarity/role symbols and icon-based stats; tile costs stay inside detailed ability explanations.
 - A 7-column × 5-row rune board, valid swaps, gravity, cascades, automatic dead-board recovery, and chained special runes.
-- Five-champion teams, **150 champions** including all **135 original champion IDs** preserved, with locally bundled optimized portraits, lore, stats, one merged Special each, and existing passives.
+- Five-champion teams, **162 champions** including all **135 original champion IDs** preserved, with locally bundled optimized portraits, lore, stats, one merged Special each, and existing passives.
 - Five elements, column-based attacks, color stacking, empty-lane mana, tile-based mana and multi-level charging Specials, status effects, and enemy attack countdowns.
 - Four-match Blast Runes and five-or-more-match Prismatic Runes.
 - A second authored chapter at stages 6–10, including an escort-triggered Last Light guardian and clear counterplay.

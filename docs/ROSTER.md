@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-150 champions. All original 135 records and portraits are preserved. The expansion adds 1 Mythical, 11 Legendaries and 3 Rares. Stats below are maximum-level baselines; each owned copy develops independently.
+162 champions. All prior 150 records and portraits are preserved. The newest expansion adds 9 Legendaries and 3 Rares, following the roster audit. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -154,6 +154,18 @@
 | Valcera, Briar Magistrate | legendary | green | attack | 818 | 687 | 1335 | Average 10 |
 | Skeldra, the Night Aurora | legendary | purple | attack | 850 | 640 | 1250 | Charging 5 / 10 / 15 |
 | Hanrui, River-Scale Spear | rare | blue | attack | 648 | 570 | 1040 | Average 10 |
+| Torvek, the Void Battery | legendary | purple | attack | 760 | 725 | 1370 | Fast 8 |
+| Kaitha, Caldera Fury | legendary | red | attack | 800 | 710 | 1360 | Slow 12 |
+| Lysandre, Winter Vein | legendary | blue | attack | 790 | 725 | 1380 | Charging 8 / 10 |
+| Velka, Ashen Veil | legendary | red | attack | 790 | 715 | 1330 | Average 10 |
+| Zhenya, Sun-Dragon Lancer | legendary | yellow | attack | 740 | 735 | 1390 | Very Fast 6.5 |
+| Sahir, Emerald Talon | legendary | green | attack | 780 | 720 | 1380 | Fast 8 |
+| Nix, Biosteel Hunter | legendary | green | attack | 800 | 704 | 1335 | Charging 5 / 10 / 15 |
+| Draeven, Gravefrost Headsman | legendary | blue | attack | 780 | 720 | 1392 | Average 10 |
+| Melia, Dawn-Pollen Mender | rare | yellow | support | 660 | 540 | 1000 | Fast 8 |
+| Nyrali, Moon-Pride Keeper | legendary | purple | support | 600 | 780 | 1600 | Fast 8 |
+| Haska, Hearth Guard | rare | red | defense | 600 | 640 | 1120 | Average 10 |
+| Orrix, Amethyst Bulwark | rare | purple | defense | 618 | 620 | 1129 | Slow 12 |
 
 ## Specials
 
@@ -820,4 +832,55 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 ### Hanrui, River-Scale Spear — Part the River
 
 - 10 tiles: Deal 250% ATK damage to selected enemy. Defense Down (Selected enemy, 2 turns).
+
+### Torvek, the Void Battery — Nullfire Salvo
+
+- 8 tiles: Deal 220% ATK damage to selected enemy, ignoring 25% of DEF. Umbral Defense Down (Selected enemy, 1 turns).
+
+### Kaitha, Caldera Fury — Crucible Eruption
+
+- 12 tiles: Deal 160% ATK damage to all living enemies. Burn (All living enemies, 2 turns); Attack Down (All living enemies, 1 turns).
+
+### Lysandre, Winter Vein — Cold Blood Reckoning
+
+- Charge 1 · 8 tiles: Deal 165% ATK damage to selected enemy. Frostbite (Selected enemy, 1 turns).
+- Charge 2 · 10 tiles: Deal 255% ATK damage to selected enemy. Dispel (Selected enemy); Frostbite (Selected enemy, 2 turns).
+
+### Velka, Ashen Veil — Ember in the Dark
+
+- 10 tiles: Deal 250% ATK damage to selected enemy. Buff Seal (Selected enemy, 2 turns); Burn (Selected enemy, 1 turns).
+
+### Zhenya, Sun-Dragon Lancer — First Light Thrust
+
+- 6.5 tiles: Deal 165% ATK damage to selected enemy. Defense Down (Selected enemy, 1 turns).
+
+### Sahir, Emerald Talon — Venom on the Wind
+
+- 8 tiles: Deal 220% ATK damage to selected enemy. Poison (Selected enemy, 2 turns).
+
+### Nix, Biosteel Hunter — Overgrow the Grid
+
+- Charge 1 · 5 tiles: Deal 90% ATK damage to selected enemy, ignoring 25% of DEF. .
+- Charge 2 · 10 tiles: Deal 180% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy).
+- Charge 3 · 15 tiles: Deal 270% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy); Buff Seal (Selected enemy, 2 turns).
+
+### Draeven, Gravefrost Headsman — Sentence of Winter
+
+- 10 tiles: Deal 265% ATK damage to selected enemy. Frostbite (Selected enemy, 2 turns); Attack Down (Selected enemy, 1 turns).
+
+### Melia, Dawn-Pollen Mender — Morning Bloom
+
+- 8 tiles: Restore 24% max HP to all living allies. Cleanse (All living allies).
+
+### Nyrali, Moon-Pride Keeper — Ancestors Walk Beside Us
+
+- 8 tiles: Restore 25% max HP to all living allies. Barrier (All living allies, 1 turns).
+
+### Haska, Hearth Guard — Hold the Hearth
+
+- 10 tiles: Deal 130% ATK damage to selected enemy. Taunt (Caster, 1 turns); Damage Ward (Caster, 2 turns); Barrier (All living allies, 1 turns).
+
+### Orrix, Amethyst Bulwark — Living Bastion
+
+- 12 tiles: Deal 125% ATK damage to selected enemy. Barrier (All living allies, 2 turns); Riposte (Caster, 1 turns).
 

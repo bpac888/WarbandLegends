@@ -5512,5 +5512,397 @@
         ]
       ]
     }
+  },
+  {
+    "template_id": "torvek_void_battery",
+    "name": "Torvek, the Void Battery",
+    "title": "Gunner of the Silent Foundry",
+    "rarity": "legendary",
+    "faction": "ironclad",
+    "role": "attack",
+    "hp": 1370,
+    "atk": 760,
+    "def": 725,
+    "ability_name": "Nullfire Salvo",
+    "lore": "A breach in an Ironclad furnace left Torvek deaf to cannon fire and able to hear the void between heartbeats. He sealed the breach inside his siege cannon. Now he marches at the head of the foundry columns, firing silent shells that strip the strength from enchanted armor.",
+    "image_url": "/assets/champions/torvek_void_battery.webp",
+    "id": "torvek_void_battery",
+    "color": "purple",
+    "source_image": "assets/champions/torvek_void_battery.webp",
+    "portrait": "assets/champions/torvek_void_battery.webp",
+    "passive": null,
+    "ability_desc": "Deal 220% ATK damage to selected enemy, ignoring 25% of DEF.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "vulnerable_purple",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "kaitha_caldera_fury",
+    "name": "Kaitha, Caldera Fury",
+    "title": "The Crucible Unbound",
+    "rarity": "legendary",
+    "faction": "chymera",
+    "role": "attack",
+    "hp": 1360,
+    "atk": 800,
+    "def": 710,
+    "ability_name": "Crucible Eruption",
+    "lore": "The Chymera called the living crucible a failed experiment until Kaitha climbed from it carrying its shattered chains. Obsidian scales now protect her skin, and molten light runs through her altered arms. She hunts the architects of the experiment, turning their fortresses into the furnaces they once built for her.",
+    "image_url": "/assets/champions/kaitha_caldera_fury.webp",
+    "id": "kaitha_caldera_fury",
+    "color": "red",
+    "source_image": "assets/champions/kaitha_caldera_fury.webp",
+    "portrait": "assets/champions/kaitha_caldera_fury.webp",
+    "passive": null,
+    "ability_desc": "Deal 160% ATK damage to all living enemies.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "burn",
+          2
+        ],
+        [
+          "dec_atk",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "lysandre_winter_vein",
+    "name": "Lysandre, Winter Vein",
+    "title": "Duelist of the Frozen Court",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 1380,
+    "atk": 790,
+    "def": 725,
+    "ability_name": "Cold Blood Reckoning",
+    "lore": "While the Bloodcourt feasted through a winter siege, Lysandre kept watch beside its frozen gates. He learned to draw heat from spilled blood and set it like blue crystal along his rapier. Courtiers still mistake his patience for mercy. In a duel, each measured step closes another path of escape.",
+    "image_url": "/assets/champions/lysandre_winter_vein.webp",
+    "id": "lysandre_winter_vein",
+    "color": "blue",
+    "source_image": "assets/champions/lysandre_winter_vein.webp",
+    "portrait": "assets/champions/lysandre_winter_vein.webp",
+    "passive": null,
+    "ability_desc": "Deal 255% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dispel",
+          0
+        ],
+        [
+          "frostbite",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "velka_ashen_veil",
+    "name": "Velka, Ashen Veil",
+    "title": "Knife Beneath the Embers",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 1330,
+    "atk": 790,
+    "def": 715,
+    "ability_name": "Ember in the Dark",
+    "lore": "Velka was sent through an Umbra gate that opened inside a burning shrine. She returned with embers trapped in her shadow and no reflection in firelight. The veil now carries her between dying flames, where her knives leave wounds that no fresh blessing can close.",
+    "image_url": "/assets/champions/velka_ashen_veil.webp",
+    "id": "velka_ashen_veil",
+    "color": "red",
+    "source_image": "assets/champions/velka_ashen_veil.webp",
+    "portrait": "assets/champions/velka_ashen_veil.webp",
+    "passive": null,
+    "ability_desc": "Deal 250% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "block_buffs",
+          2
+        ],
+        [
+          "burn",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "zhenya_sun_dragon",
+    "name": "Zhenya, Sun-Dragon Lancer",
+    "title": "Spear of the First Dawn",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "hp": 1390,
+    "atk": 740,
+    "def": 735,
+    "ability_name": "First Light Thrust",
+    "lore": "Before the eastern bells announce dawn, Zhenya is already riding the high causeways of the Dragon Dynasty. Her sun-forged spear carries the oath of the first imperial guard: strike before darkness gathers its strength. She serves no throne blindly, judging every ruler by the people sheltered beneath it.",
+    "image_url": "/assets/champions/zhenya_sun_dragon.webp",
+    "id": "zhenya_sun_dragon",
+    "color": "yellow",
+    "source_image": "assets/champions/zhenya_sun_dragon.webp",
+    "portrait": "assets/champions/zhenya_sun_dragon.webp",
+    "passive": null,
+    "ability_desc": "Deal 165% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_def",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "sahir_emerald_talon",
+    "name": "Sahir, Emerald Talon",
+    "title": "Hunter of the Venom Dunes",
+    "rarity": "legendary",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 1380,
+    "atk": 780,
+    "def": 720,
+    "ability_name": "Venom on the Wind",
+    "lore": "Sahir follows the green-winged falcons that nest above the Dune Riders’ hidden wells. Their venom is harmless to those who know its remedy, a secret he shares with every caravan under his protection. Raiders learn a different lesson when an emerald feather falls across their path.",
+    "image_url": "/assets/champions/sahir_emerald_talon.webp",
+    "id": "sahir_emerald_talon",
+    "color": "green",
+    "source_image": "assets/champions/sahir_emerald_talon.webp",
+    "portrait": "assets/champions/sahir_emerald_talon.webp",
+    "passive": null,
+    "ability_desc": "Deal 220% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "poison",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "nix_biosteel_hunter",
+    "name": "Nix, Biosteel Hunter",
+    "title": "Blade of the Living Circuit",
+    "rarity": "legendary",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "hp": 1335,
+    "atk": 800,
+    "def": 704,
+    "ability_name": "Overgrow the Grid",
+    "lore": "When a Neon Syndicate weapons program grew a nervous system of its own, Nix cut herself free from its command lattice. Living filaments now repair her railblade between strikes. She stalks the syndicate towers as both hunter and evidence, carrying every stolen memory the program tried to erase.",
+    "image_url": "/assets/champions/nix_biosteel_hunter.webp",
+    "id": "nix_biosteel_hunter",
+    "color": "green",
+    "source_image": "assets/champions/nix_biosteel_hunter.webp",
+    "portrait": "assets/champions/nix_biosteel_hunter.webp",
+    "passive": null,
+    "ability_desc": "Deal 270% ATK damage to selected enemy, ignoring 25% of DEF.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dispel",
+          0
+        ],
+        [
+          "block_buffs",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "draeven_gravefrost",
+    "name": "Draeven, Gravefrost Headsman",
+    "title": "The Last Sentence",
+    "rarity": "legendary",
+    "faction": "nether",
+    "role": "attack",
+    "hp": 1392,
+    "atk": 780,
+    "def": 720,
+    "ability_name": "Sentence of Winter",
+    "lore": "Draeven once kept the names of the Nether’s condemned carved into his axe. When the dead began whispering those names back, he bound their voices beneath gravefrost. He now walks the necropolis roads, delivering the sentences that even its abyssal lords hoped time would forget.",
+    "image_url": "/assets/champions/draeven_gravefrost.webp",
+    "id": "draeven_gravefrost",
+    "color": "blue",
+    "source_image": "assets/champions/draeven_gravefrost.webp",
+    "portrait": "assets/champions/draeven_gravefrost.webp",
+    "passive": null,
+    "ability_desc": "Deal 265% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "frostbite",
+          2
+        ],
+        [
+          "dec_atk",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "melia_dawn_pollen",
+    "name": "Melia, Dawn-Pollen Mender",
+    "title": "Keeper of the Waking Blooms",
+    "rarity": "rare",
+    "faction": "wildgrove",
+    "role": "support",
+    "hp": 1000,
+    "atk": 660,
+    "def": 540,
+    "ability_name": "Morning Bloom",
+    "lore": "Melia gathers the first pollen to rise from Wildgrove’s golden flowers each morning. Carried in her woven lantern, it clears the fever of thorn wounds and wakes exhausted travelers. She has never held a royal title, yet every path through the grove bears a small shrine to her kindness.",
+    "image_url": "/assets/champions/melia_dawn_pollen.webp",
+    "id": "melia_dawn_pollen",
+    "color": "yellow",
+    "source_image": "assets/champions/melia_dawn_pollen.webp",
+    "portrait": "assets/champions/melia_dawn_pollen.webp",
+    "passive": null,
+    "ability_desc": "Restore 24% max HP to all living allies.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "nyrali_moon_pride",
+    "name": "Nyrali, Moon-Pride Keeper",
+    "title": "Voice of the Night Ancestors",
+    "rarity": "legendary",
+    "faction": "veldtborn",
+    "role": "support",
+    "hp": 1600,
+    "atk": 600,
+    "def": 780,
+    "ability_name": "Ancestors Walk Beside Us",
+    "lore": "Nyrali keeps the names of the Veldtborn ancestors braided into silver rings along her mane. Beneath the purple moons, their spirits answer her song and walk beside the living. She leads scattered prides across the night grasslands, making every camp a place where the lost can finally rest.",
+    "image_url": "/assets/champions/nyrali_moon_pride.webp",
+    "id": "nyrali_moon_pride",
+    "color": "purple",
+    "source_image": "assets/champions/nyrali_moon_pride.webp",
+    "portrait": "assets/champions/nyrali_moon_pride.webp",
+    "passive": null,
+    "ability_desc": "Restore 25% max HP to all living allies.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "shield",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "haska_hearth_guard",
+    "name": "Haska, Hearth Guard",
+    "title": "Shield of the Last Fire",
+    "rarity": "rare",
+    "faction": "frost",
+    "role": "defense",
+    "hp": 1120,
+    "atk": 600,
+    "def": 640,
+    "ability_name": "Hold the Hearth",
+    "lore": "When winter swallowed her village, Haska carried its final hearth-coal inside her iron shield. Every settlement she defended added another ember to the flame. Frost raiders call her a walking bonfire; the families behind her shield simply call her home.",
+    "image_url": "/assets/champions/haska_hearth_guard.webp",
+    "id": "haska_hearth_guard",
+    "color": "red",
+    "source_image": "assets/champions/haska_hearth_guard.webp",
+    "portrait": "assets/champions/haska_hearth_guard.webp",
+    "passive": null,
+    "ability_desc": "Deal 130% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "guard",
+          1
+        ],
+        [
+          "strengthen",
+          2
+        ],
+        [
+          "shield",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "orrix_amethyst_bulwark",
+    "name": "Orrix, Amethyst Bulwark",
+    "title": "The Patient Mutation",
+    "rarity": "rare",
+    "faction": "chymera",
+    "role": "defense",
+    "hp": 1129,
+    "atk": 618,
+    "def": 620,
+    "ability_name": "Living Bastion",
+    "lore": "The Chymera bred Orrix to survive the pressure beneath their crystal mines. Amethyst plates grew across his back, but the miners discovered a patient guardian beneath the experiment. When the tunnels collapsed, he held the ceiling until the last worker escaped. He has guarded their refuge ever since.",
+    "image_url": "/assets/champions/orrix_amethyst_bulwark.webp",
+    "id": "orrix_amethyst_bulwark",
+    "color": "purple",
+    "source_image": "assets/champions/orrix_amethyst_bulwark.webp",
+    "portrait": "assets/champions/orrix_amethyst_bulwark.webp",
+    "passive": null,
+    "ability_desc": "Deal 125% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "shield",
+          2
+        ],
+        [
+          "counterattack",
+          1
+        ]
+      ]
+    }
   }
 ]
