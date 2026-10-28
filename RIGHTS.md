@@ -27,3 +27,5 @@ The audit-following expansion adds twelve more original image-generated portrait
 The third expansion adds twelve original character portraits and faction-specific kits and lore in the established painterly fantasy style. The existing 162 portraits and gameplay records remain unchanged. Twenty-five display names and literal descriptive references are revised under the owner’s direction; unchanged IDs retain their original provenance. `data/roster-expansion-3.json` and `data/roster-name-audit.json` record the additions and text-only identity edits.
 
 The Astral Concord expansion adds fifteen original image-generated portraits and one original faction emblem. Its alien designs loosely evoke public-domain mythical archetypes, with original names, lore and kits. No third-party character art is copied. All 174 prior characters are unchanged; `data/roster-expansion-4.json` fingerprints that baseline.
+
+Artwork-quality restoration re-encodes 131 existing original-source portraits at native resolution and WebP quality 92. Their compositions and provenance are unchanged; no replacement artwork is generated. See `docs/ARTWORK_QUALITY.md`.

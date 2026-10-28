@@ -1,0 +1,2594 @@
+{
+  "total": 189,
+  "restored": 131,
+  "portraits": [
+    {
+      "id": "yshmir_worldwound",
+      "name": "Yshmir, the Worldwound",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "94fad497910cca53275d8e1a4c02e58d2871c93718d2d957dd1a8488c2acf429"
+    },
+    {
+      "id": "necropolis_titan",
+      "name": "Ossir, Necropolis Titan",
+      "before": [
+        477,
+        640
+      ],
+      "after": [
+        895,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "8286801825ef14b1e02019e9c4ba8d004032326636ea8ac363800a117eb31aa8"
+    },
+    {
+      "id": "abyss_lord",
+      "name": "Malzhur, the Abyss Lord",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "f4be49fa116498c457ddf8c4e888c04b90ac8e579aaa6b04f621af9119215df3"
+    },
+    {
+      "id": "mercuric_saboteur",
+      "name": "Ashrim, Quicksilver Saboteur",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "357870bda7fc0b0d4ef646c4abc075f65cc7a2ae2fc901e0a11be360160353a8"
+    },
+    {
+      "id": "voltaic_priest",
+      "name": "Yorkine, Voltaic Priest",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "d551df0ae79b9ec48dc06861938b763a288b58314bc19ff0d00d58d2b4f2eef1"
+    },
+    {
+      "id": "bronze_juggernaut",
+      "name": "The Bronze Juggernaut",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "d3fec06a450913189e97ab8292533f0e53855ba0a91ff27a3d0f52710c32f82c"
+    },
+    {
+      "id": "spore_engineer",
+      "name": "Chispa, the Spore Adept",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "f3a47e4b815b5ac678d4f3e42738f7cb6366c8fbb142cf30ee206d830e958d9b"
+    },
+    {
+      "id": "transmuter_prime",
+      "name": "Auroline, Transmuter Prime",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        1084,
+        1451
+      ],
+      "restored": true,
+      "sourceSha256": "329cce79c18f76d3add3d246fb673ff917a0449f50571d90acc011e40ec6243f"
+    },
+    {
+      "id": "steel_oracle",
+      "name": "The Oracle",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        1084,
+        1451
+      ],
+      "restored": true,
+      "sourceSha256": "55ad8d8b191e7111b134d36e0ad094553749cb3c70bac2c26f0c0906cf7ac5ca"
+    },
+    {
+      "id": "elixir_apotheon",
+      "name": "Vex, the Elixir Apotheon",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "0fc45d721dd7ca8d76ed31e80a659bf9cc00c629b18dfc84e96a691638a0a598"
+    },
+    {
+      "id": "ghoul_scavenger",
+      "name": "Drekka the Scavenger",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "3e93743bf10482937ea03865f7b86ef69a24dfaa0719dbb6d88482ba5452ed70"
+    },
+    {
+      "id": "shadow_thrall",
+      "name": "The Hooded Thrall",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "a78f58429697012efac503b7709d974c8d165d156683ac9a07a235c806f64695"
+    },
+    {
+      "id": "pit_grunt",
+      "name": "Murgash the Pit Grunt",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "89a8ecb3a2b728c207e1f64eb96c89af8f2635640aad6a043409073786f7128e"
+    },
+    {
+      "id": "cursed_acolyte",
+      "name": "Acolyte Iyr",
+      "before": [
+        477,
+        640
+      ],
+      "after": [
+        895,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "54fe3de91402058ae649cd1bbd1f4c9f433998a6672095a9e288fd5d22d99cca"
+    },
+    {
+      "id": "demon_witchblade",
+      "name": "Vethra Witchblade",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "f6594f0ee6adf947c74ba9f92e8900924b854936dc24559c75ebeb523db634f9"
+    },
+    {
+      "id": "dragonmage",
+      "name": "Dragon Mage",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "374e57e1adfcfc4e479d06f74a3a8941c4368fe28cc1a0a5f7d8c0d598157e8b"
+    },
+    {
+      "id": "plague_doctor",
+      "name": "Quill, the Plague Sovereign",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "92393b52cc1b0e4e1045570993df9c87c694e9c39d3dfb69d137874a716ab912"
+    },
+    {
+      "id": "dragonslayer",
+      "name": "Dragon Slayer",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "1a00c16b4a7bfb4e77273814e1deb45b757164553b3c6ba955c6325115ffdaa8"
+    },
+    {
+      "id": "wraith_archer",
+      "name": "Selka the Wraith",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "06c77a07bb9ad5fe57af1f1dc212a1cec620720d93ee631fbc8c84972aa6ac4b"
+    },
+    {
+      "id": "Ashwind Warden",
+      "name": "Ashwind Warden",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "648d7e2280b1fbf1560db533e153451a3fdcc5c7fd888bb3e48ce38437c61556"
+    },
+    {
+      "id": "iron_revenant",
+      "name": "Karthos, The Revenant",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "2bc4e7d86331453ab4f38f13325f68121c368201027d900a346b19669e0ce39f"
+    },
+    {
+      "id": "pale_matriarch",
+      "name": "Sable, Pale Matriarch",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "8a27f8c96966af197c28a6879b07610a94be85dc8ba44973f2ca3466d0bff4a4"
+    },
+    {
+      "id": "frost_king",
+      "name": "Frost King",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "0e0f92159b397d532d0248e8230e81fbe754447d56a71afd892c3b9a2d4ebc11"
+    },
+    {
+      "id": "frost_sage",
+      "name": "Frost Sage",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "b92c6ec1e69603eda4ad19eba3c9d23ff69b5752bccd148fba3a616bce269bd6"
+    },
+    {
+      "id": "blood_paladin",
+      "name": "Sir Aurel, the Crimson Paladin",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "668d1cb6f19dc14996509e09ee5d12c85034d75918204013cb75f9f4ceed549b"
+    },
+    {
+      "id": "lady_death",
+      "name": "Lady Death",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "4c2ff327a6bd8a22428c2a36d344ff8b3c78109bb7ce95a32a5c8550cac2d67a"
+    },
+    {
+      "id": "sin_archon",
+      "name": "The Sin Archon",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "02a5f7a46a29633f5c1f78f343b13c15a22cc93b39c403a75c05a8e74a2850d0"
+    },
+    {
+      "id": "shade_prince",
+      "name": "The Shade Prince",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "b4a85fee48ae093d7da3f0ed1b8f078a3059e7766eeba81f5e50808b8e114d77"
+    },
+    {
+      "id": "crimson_praetor",
+      "name": "Vharos, Crimson Praetor",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        1084,
+        1451
+      ],
+      "restored": true,
+      "sourceSha256": "78f567ba58668fb50b78a79004f7e04b0dd38801a463d8c320da51b1e307c9c4"
+    },
+    {
+      "id": "umbral_hierarch",
+      "name": "Ithreya, Umbral Hierarch",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "d7ce7fbd6c08f2204e4821e62c6bbed8d001ef5610ea3ee8c18d97c2af826965"
+    },
+    {
+      "id": "brimstone_witch",
+      "name": "Hexandra, Brimstone Witch",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "d57185b580575ba0234d5f10e3b869361ca32a7a3a517a9a97e79aa053de856d"
+    },
+    {
+      "id": "veil_dancer",
+      "name": "Neve the Veil Dancer",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "ac52e85968655b3fe334ea9f4aff49da88bd18e6270c66b3b6538b646ff4799f"
+    },
+    {
+      "id": "crimson_castellan",
+      "name": "Crimson Castellan",
+      "before": [
+        1086,
+        1448
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": false
+    },
+    {
+      "id": "pit_scout",
+      "name": "Rhagz, Pit Scout",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "bc9e648ae5aa63b37cdb61ba66355e1d44c806b16f2b24b7060492f300dff4e1"
+    },
+    {
+      "id": "archangel_lucifer",
+      "name": "Archangel Lucifer",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "e7e8fdeaed533bafe3d09ada14df48ce85214d7813057fcfe72b97fb218c1500"
+    },
+    {
+      "id": "paladin_of_dusk",
+      "name": "Paladin of Dusk",
+      "before": [
+        448,
+        640
+      ],
+      "after": [
+        864,
+        1234
+      ],
+      "restored": true,
+      "sourceSha256": "c6882f5e31f98f02cb5c55c9530a9431ea990bd5918631ddd26ce07892530bbd"
+    },
+    {
+      "id": "sister_seraphel",
+      "name": "Sister Seraphel",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "533dafaf6abc05b8f49303c2459489de389458c1bd6c1a5a7a6fdb6e4df7b8fd"
+    },
+    {
+      "id": "justiciar_vael",
+      "name": "Justiciar Gethren",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "3bfdaf031ae33d6b2a7fcfcd4c1e4576ab1c94e24a37aed2ff1d9dd9ec56aa9b"
+    },
+    {
+      "id": "solar_scribe",
+      "name": "Solar Scribe",
+      "before": [
+        448,
+        640
+      ],
+      "after": [
+        864,
+        1234
+      ],
+      "restored": true,
+      "sourceSha256": "c7b3c14c20b3c9ce561eda791e19bade095fa4b06811084fe14918a089f738a1"
+    },
+    {
+      "id": "executor_model_z",
+      "name": "Executor Model Z",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "83158940da8c67a2a54fbb5f74c502e7f24ef1c857c3b301f38c28f34ecc369f"
+    },
+    {
+      "id": "shield_bot_mk4",
+      "name": "Aegis Construct MK4",
+      "before": [
+        448,
+        640
+      ],
+      "after": [
+        864,
+        1234
+      ],
+      "restored": true,
+      "sourceSha256": "d12243c50240c2d2cfe297f4bc89832712e3d76b3ad0efdebc15782ca79b4be1"
+    },
+    {
+      "id": "the_saboteur",
+      "name": "The Saboteur",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "e8c66d77573d2d419b3dc7689f48ff3a16609629168670824b3217ea2ae83616"
+    },
+    {
+      "id": "grease_monkey",
+      "name": "Grease Monkey",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "9bdedda19137ceb95fe78ae64be90ee9be665313152b472a545f5f30a9f391e0"
+    },
+    {
+      "id": "ironwall_sniper",
+      "name": "Ironwall Sniper",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "df0cdf2635d3e85904319529696bbb5c538f22da48fbfb014ac1fdfc0038a376"
+    },
+    {
+      "id": "professor_vile",
+      "name": "Professor Vile",
+      "before": [
+        448,
+        640
+      ],
+      "after": [
+        1049,
+        1500
+      ],
+      "restored": true,
+      "sourceSha256": "1b8fbde882fe76cf7a4cbdc733f5b70bf80718dae669ff940c2e69cdd531c092"
+    },
+    {
+      "id": "chem_tank_brax",
+      "name": "Chem-Tank Brax",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "42d75e314d411766396ab37c16f7542624be4fcfafae7019beeb88fc6b87e501"
+    },
+    {
+      "id": "potion_tosser_quinn",
+      "name": "Potion-Tosser Quinn",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "02f7fe138a01f3b99808fe0f37e9a04e723e3d9cbb8e84d45da49adf17b0a49b"
+    },
+    {
+      "id": "elder_rootmother",
+      "name": "Elder Rootmother",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "b09503349ce76f9069719da86985043ef69219040df807313d922650d2e40c08"
+    },
+    {
+      "id": "grove_druid",
+      "name": "Grove Druid",
+      "before": [
+        480,
+        624
+      ],
+      "after": [
+        864,
+        1124
+      ],
+      "restored": true,
+      "sourceSha256": "cfed42f477ef4a3e6d3dac6328b00d57788c9c525c87efc46fb1b47232746000"
+    },
+    {
+      "id": "satyr_archer_kell",
+      "name": "Satyr Archer Kell",
+      "before": [
+        480,
+        619
+      ],
+      "after": [
+        864,
+        1114
+      ],
+      "restored": true,
+      "sourceSha256": "4dfc791a90a878b4d2e47c06f82882f6ee24ae76865d96033531683b50477df9"
+    },
+    {
+      "id": "thornveil_dryad",
+      "name": "Thornveil Dryad",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "41f671b322a9a510f9cf29135be54f9ece224d0d608636619aab558db88c00e1"
+    },
+    {
+      "id": "the_verdant_king",
+      "name": "The Verdant King",
+      "before": [
+        1086,
+        1448
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": false
+    },
+    {
+      "id": "thornweaver_seraph",
+      "name": "Thornweaver Seraph",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "02b6d08fedd2f3c42efbbefe5d980c3ce19309f2a0cb39df7a80eb1ed83079d4"
+    },
+    {
+      "id": "barkskin_bruiser",
+      "name": "Barkskin Bruiser",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "1df1d349877e88630fdbdcb2e12232a637ab4c887643804d00df2bb9b030b6c7"
+    },
+    {
+      "id": "vinestrider",
+      "name": "Vinestrider",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "185028491496d73d4a0352ccf24dddb3bd4ad62f8a1572084fcb6685e20bb242"
+    },
+    {
+      "id": "mosswitch_lira",
+      "name": "Mosswitch Brynna",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "f9236196655228167cf1517c0256bc0cea561609fa313a7119c2afbd4ed42795"
+    },
+    {
+      "id": "beastmaster_gharn",
+      "name": "Beastmaster Gharn",
+      "before": [
+        448,
+        640
+      ],
+      "after": [
+        864,
+        1234
+      ],
+      "restored": true,
+      "sourceSha256": "460364f0ed14ece9d52f80a36a1cc01c8d9f127d642128489496a80fc9329322"
+    },
+    {
+      "id": "jarl_bjorn_ironhide",
+      "name": "Jarl Bjorn Ironhide",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "0ce295b0070b176cc16adb1080f24fe53530a0f94465a8a10b41e6eeac6a517e"
+    },
+    {
+      "id": "shieldmaiden_runa",
+      "name": "Shieldmaiden Runa",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "0b10f7ba7a582cf17dd582c11c97eaa0275cb290a3aa844af0f7500b62ac64a1"
+    },
+    {
+      "id": "ice_shaman_sigrid",
+      "name": "Ice-Shaman Sigrid",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "fc1d47d395605317219d3ad480cd103d4e897f13732797aa373a0b538f12b33b"
+    },
+    {
+      "id": "berserker_ulf",
+      "name": "Berserker Loki",
+      "before": [
+        448,
+        640
+      ],
+      "after": [
+        896,
+        1280
+      ],
+      "restored": true,
+      "sourceSha256": "1644748cd33c4448dad4663e4db4f486f798ae620ca1f8406e152a9f1bf9e3b8"
+    },
+    {
+      "id": "wolf_handler_torv",
+      "name": "Wolf-Handler Stellan",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "53597b7160ac046b2617d05df73099382e8eb9189b23a688542034fe015e7a12"
+    },
+    {
+      "id": "vlad_the_soul_eater",
+      "name": "Vlad the Soul-Eater",
+      "before": [
+        480,
+        636
+      ],
+      "after": [
+        864,
+        1145
+      ],
+      "restored": true,
+      "sourceSha256": "67107442f00d1354682863f6c10a243cf78192ca4c0c5ee488060fd6614bffad"
+    },
+    {
+      "id": "cult_zealot",
+      "name": "Cult Zealot",
+      "before": [
+        480,
+        617
+      ],
+      "after": [
+        864,
+        1111
+      ],
+      "restored": true,
+      "sourceSha256": "16a3154d21de0858045fee84fc9520610e7d06ca0f1a29e423521f15628969cc"
+    },
+    {
+      "id": "succubus_lilth",
+      "name": "Succubus Lilth",
+      "before": [
+        480,
+        631
+      ],
+      "after": [
+        864,
+        1136
+      ],
+      "restored": true,
+      "sourceSha256": "8a13f79f2e86f151fd0c58f09c671a1649c0705f83da85b40125b2b2ab4a0aef"
+    },
+    {
+      "id": "shadow_stalker",
+      "name": "Dune Stalker",
+      "before": [
+        480,
+        600
+      ],
+      "after": [
+        864,
+        1080
+      ],
+      "restored": true,
+      "sourceSha256": "8552b59028dad4810355c6aeba0767dc4b12608a3c18c1afaa395a009ce20e85"
+    },
+    {
+      "id": "dune_queen_zaya",
+      "name": "Dune-Queen Zaya",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "ecc04fa375c47c7d9f4de888bc9355d456c051f9fd54ef85922cb5e92d9ef146"
+    },
+    {
+      "id": "desert_assassin",
+      "name": "Desert Assassin",
+      "before": [
+        480,
+        636
+      ],
+      "after": [
+        864,
+        1145
+      ],
+      "restored": true,
+      "sourceSha256": "d0176c252114b6d414089d0e41848a5638075898f5261c9beb6429f29976cf53"
+    },
+    {
+      "id": "camel_rider_rashid",
+      "name": "Camel-Rider Rashid",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "1a66b2c343edde6f0ece730aa8d47742a284d00cf8d4cbdc1f6e53976f8f28cd"
+    },
+    {
+      "id": "dune_mage_sorra",
+      "name": "Dune Mage Juhara",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "1e577aff53deb5f0a59bf308f6feced55e6013408abebc835f8dede146a0183e"
+    },
+    {
+      "id": "scavenger_jax",
+      "name": "Scavenger Jax",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "086ba196eceb8801b63156c7cecbc1d47ef7afdab2e00742315b9309f88b7153"
+    },
+    {
+      "id": "plague_doctor_mors",
+      "name": "Plague Doctor Mors",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        864,
+        1152
+      ],
+      "restored": true,
+      "sourceSha256": "c0cd856e1b7cef6a0d7ec934580c913c6a4751b6e39d0338620cc35b404f44ab"
+    },
+    {
+      "id": "the_mutant",
+      "name": "The Abyss Mutant",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "564b5bd8cda94cce267cbf54da4466bd1fa752098d2329c22db7a049bd66715c"
+    },
+    {
+      "id": "void_herald_mara",
+      "name": "Void-Herald Mara",
+      "before": [
+        480,
+        638
+      ],
+      "after": [
+        864,
+        1148
+      ],
+      "restored": true,
+      "sourceSha256": "54dce9f7c0aa9ce8d5d8ced5bc4e766e75fbcb9db59731efb577e25c99ad06b1"
+    },
+    {
+      "id": "azure_sovereign",
+      "name": "Azure Sovereign",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "2f8130dc802f6cbbf9dd2dc11ac6f91ecb9a333d3bf6b22417789ff0a11bd822"
+    },
+    {
+      "id": "dragon_samurai_kenshin",
+      "name": "Dragon Samurai Kenshin",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "19fa9767a2b990b18530deda5dbdf6b9415a494df4a7133b4eb95a8bbd371707"
+    },
+    {
+      "id": "jade_monk_xuan",
+      "name": "Jade Monk Xuan",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "b1c925dd0e5a13ef6ad3f367e28561e0f4751c58297e4386f74354ad9f719fe3"
+    },
+    {
+      "id": "spirit_fox_mei",
+      "name": "Spirit-Fox Mei",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "d9d7521f353e79424f5ffd023c3e83c8fbbf641dd186c2e14501b14fa6fcbcc4"
+    },
+    {
+      "id": "jade_archer_linh",
+      "name": "Jade Archer Linh",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "041ab181cdc5b90aa45b231fa960554d1d9e2514a1c464b73ac8b009cc41d98b"
+    },
+    {
+      "id": "neon_wire runner",
+      "name": "Kaelen, the Grid Runner",
+      "before": [
+        1086,
+        1448
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": false
+    },
+    {
+      "id": "neon_scrap_enforcer",
+      "name": "Boran, Chrome Fist",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "097cae828872f0bf1be73d07b97a1876086fca52e6820d814a316ac6338dcdd3"
+    },
+    {
+      "id": "neon_glitch_weaver",
+      "name": "Nadia, the Patchwork Witch",
+      "before": [
+        480,
+        598
+      ],
+      "after": [
+        896,
+        1116
+      ],
+      "restored": true,
+      "sourceSha256": "ed947c88220beac56c77260b957e7853a7a5f1a9db834828064def3cff9188a2"
+    },
+    {
+      "id": "neon_hologram_assassin",
+      "name": "Vesper, Neon Phantom",
+      "before": [
+        480,
+        546
+      ],
+      "after": [
+        896,
+        1020
+      ],
+      "restored": true,
+      "sourceSha256": "aa578043ca1c676ef50c41ac48036764195a5deb4ddaccad3c1067ac2f8c13e2"
+    },
+    {
+      "id": "neon_biochem_doc",
+      "name": "Dr. Aris, Cyber-Stitcher",
+      "before": [
+        1086,
+        1448
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": false
+    },
+    {
+      "id": "dragon_empress",
+      "name": "Dragon Empress",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "73496426dce8b98bb59bd40e7b8f4d40a349baa3f59e84d328b549472bf72153"
+    },
+    {
+      "id": "ravel",
+      "name": "Ravel, the Guard",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "a3bdd305c1f8550e5d0bef7cbca9b1328601a6642232dabeb9d78ca98d7c519f"
+    },
+    {
+      "id": "carmine_veinreader",
+      "name": "Sister Carmine",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "e15184aafda11e9eab94eab90c4c42ea7242a165cea5844acb40f54ed5684eed"
+    },
+    {
+      "id": "neon_volt_guardian",
+      "name": "Commander Jarek",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "d906174023e1019738ee46d52459c33de1ef48404a358eb2ea3afea63ca90712"
+    },
+    {
+      "id": "neon_laser_blade",
+      "name": "Sora, The Plasma Ronin",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "5beccd04a6336a8fb680b06565972b6f833ec0b318c2d66fc8211e54eec9e5d2"
+    },
+    {
+      "id": "neon_hacker_empress",
+      "name": "Matrix Matriarch Octavia",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "8563f1fd76a787cefb3d2762e2baddd146fc21d548c0a85a8087b0786a2eb891"
+    },
+    {
+      "id": "neon_god_overlord",
+      "name": "Baron Viktor, The Cybergod",
+      "before": [
+        478,
+        640
+      ],
+      "after": [
+        896,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "d987a1f5dbfed7f9e84176b945f466c93f2f64c9b632d3a0d1f46d33d50f8800"
+    },
+    {
+      "id": "neon_singularity_reaper",
+      "name": "Zero, The Singularity",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "2af8c7dda0e6cc6dece61ac291a71c14c42ba86223a5ffe239d91eed3806f75d"
+    },
+    {
+      "id": "alley_shade",
+      "name": "The Alley Shade",
+      "before": [
+        477,
+        640
+      ],
+      "after": [
+        895,
+        1200
+      ],
+      "restored": true,
+      "sourceSha256": "629f302022b9dfbbe0e14181d841e126a2b3daddde9397fd9e718c2778ae12c6"
+    },
+    {
+      "id": "fjordwatch_hald",
+      "name": "Fjordwatch Hald",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "a5c07aced4b3c79d18718777c6374fdf105f9a1b553c940e6cc05a0654d38d7a"
+    },
+    {
+      "id": "shellback_brukk",
+      "name": "Shellback Brukk",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "dfd335498e45e2eaa91a01c5f06462343a2bbac45d0930f72e2c15aba1bdab40"
+    },
+    {
+      "id": "oakenhart_first_warden",
+      "name": "Oakenhart, the First Warden",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "1e9474432b828c03768448ef6636faa6ee25c861e0091a90c8c0555f52c573ad"
+    },
+    {
+      "id": "oasis_keeper_nahlia",
+      "name": "Oasis-Keeper Safiya",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "3792ac2af072c897798e9ef7a127cdc23c31659fa3ed0c7798dec6d57cc0682f"
+    },
+    {
+      "id": "kassem_sunwall",
+      "name": "Kassem, the Sunwall",
+      "before": [
+        480,
+        640
+      ],
+      "after": [
+        1086,
+        1448
+      ],
+      "restored": true,
+      "sourceSha256": "72ae7a08d517f73c489cbd1c3cfda9621842358c4ef8395a29640ca91299cda8"
+    },
+    {
+      "id": "cinder_mender_vessa",
+      "name": "Cinder-Mender Caldris",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "c00a31a43f88f22f2f99fef764c71d7dab6ad6476f14cc17e501c9f7f412f36c"
+    },
+    {
+      "id": "veyr_hollow_gate",
+      "name": "Theskar, the Hollow Gate",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "cd24c466c15504af5be164b698bd6193f8a6d61820be0b87f021762a3a20d412"
+    },
+    {
+      "id": "aurelia_last_foundry",
+      "name": "Isolde, the Last Foundry",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "083cdfbfb6ad2468cf0a989d2d8107bedc852ec84b431c476246a11241d251a9"
+    },
+    {
+      "id": "jade_mender_lian",
+      "name": "Jade-Mender Baozhen",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "b7d18dc55c4277715714e4df7e946c8694426f9971928cb834bce66fbd8b448d"
+    },
+    {
+      "id": "carapace_warden_korr",
+      "name": "Carapace Warden Korr",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "cb481fe72b81567ba7ec2abf717631d01aa846440acd35b18d32f4f4f6b1399a"
+    },
+    {
+      "id": "redknife_tavin",
+      "name": "Redknife Tavin",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "953be977f5b8995ef357ce80581987d80e21b1dcdd0b325b23a0161dc8e6acef"
+    },
+    {
+      "id": "vitriol_stalker_syth",
+      "name": "Vitriol Stalker Syth",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "b0f078e080a22fddcc48ded469aed56218a57e5e45f6c93ab4e644ec66a99162"
+    },
+    {
+      "id": "rivet_mender_orsa",
+      "name": "Rivet-Mender Orsa",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "ca31b42a24da580a7f789e47ae22767058864fd148aa8374c9e4e173fcea21ce"
+    },
+    {
+      "id": "eira_hearthwarden",
+      "name": "Eira, the Hearthwarden",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "27e5736a4ccaf3985d58ccebf56efb02b523aa635ca7385e05ede0143bd94f7f"
+    },
+    {
+      "id": "shen_bronze_horizon",
+      "name": "Shen, the Bronze Horizon",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "b1e57c708d29b1154c410a66757434f047cd94707d157fa23bfda0aae64b1ec9"
+    },
+    {
+      "id": "vorrek_walking_siege",
+      "name": "Hadrian, the Walking Siege",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "b9540ccb755a830d2bfe3999ccd0df6d4b20d6a694e02fb23de0ea1a593046c1"
+    },
+    {
+      "id": "rimebow_tessa",
+      "name": "Rimebow Tessa",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "e4accef1b96170f359ffe56cdd812d1b840e5c114f609017b3a3d03aab6a7979"
+    },
+    {
+      "id": "caravan_warden_samira",
+      "name": "Caravan Warden Samira",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "415af35fb1fc059135ec4564b77c99804010675c4901364c3733e174cf343d8b"
+    },
+    {
+      "id": "arcmaw_rhex",
+      "name": "Arcmaw Rhex",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "739c6f3f345b02fdc8f43a5c49ea141e85c9cc7920b84d2b520e4951e44c444b"
+    },
+    {
+      "id": "gallows_marksman_oren",
+      "name": "Gallows Marksman Oren",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "3a513fc24c3980ed182a5fb0a3eb299769f849a71a0be3297cef6ae21c9550c4"
+    },
+    {
+      "id": "nerez_veil_bastion",
+      "name": "Ulbrecht, the Veil Bastion",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "cda561d95d4073c71935a34d4972b6e98fb6c434d42ffd17b2805a27f09f3375"
+    },
+    {
+      "id": "kesh_duststep",
+      "name": "Kesh Duststep",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "64c3e77643aef5c3a55f96ec7931e73c8b8287eaf7cc14a3df909fd61ff80a5f"
+    },
+    {
+      "id": "mavra_dusktrail",
+      "name": "Phaedra Dusktrail",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "ffdb1a2edea4ffd5c4b859df1b7f0747f9002e8bbc47e2dbf3ca8cf7871016e0"
+    },
+    {
+      "id": "nima_dewthread",
+      "name": "Nima Dewthread",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "aae55633e6caad9c485e4bcc2b45bd12b1e7bf2ee09bd213faba59e15cbc44a0"
+    },
+    {
+      "id": "sahri_sunspoke",
+      "name": "Sahri Sunspoke",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "422f836afe7438283f6e8c3f6734caa4c0435157a90b8aa14c04571b92e8272c"
+    },
+    {
+      "id": "ilyra_snowglass",
+      "name": "Iridessa Snowglass",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "152fd666ee86790ef561b2bfa55f58f9209a1178faff22eb678d59417b284bd7"
+    },
+    {
+      "id": "toruun_basalt_mane",
+      "name": "Gromund Basalt-Mane",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "b70231c84b702a3922e1e34931da3ebd7fd17cc9c100306ec725e49467326893"
+    },
+    {
+      "id": "rhazek_cinderstripe",
+      "name": "Rhazek Cinderstripe",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "a15e4e8cdd1727fdf8f34017592f368fb94eeb32c3191aae6ef6adc9948bd67e"
+    },
+    {
+      "id": "vaelka_obsidian_watch",
+      "name": "Vaelka, the Obsidian Watch",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "4c0967dab66d156a7ae94a03d9aa2d7d4c56a7f9ccc3f8eabc893a7774adae2b"
+    },
+    {
+      "id": "oruun_prism_seer",
+      "name": "Anzuko, the Prism-Seer",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "249adda388ed01f944e8cfa1a6fb9c9f479e640291d3d79c1574103e254e089b"
+    },
+    {
+      "id": "azhar_rosetted_sun",
+      "name": "Azhar, the Rosetted Sun",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "71d898c960ad675f63429b5aa759232d4a555bb19873db4556268e6f5b92f112"
+    },
+    {
+      "id": "sivren_stillgrass",
+      "name": "Sivren, the Stillgrass Knife",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "c0f91700b5148cffcb019613bd1db466dcb7ee1982aa408fc11bc066c7601fce"
+    },
+    {
+      "id": "nera_red_ledger",
+      "name": "Nera, the Red Ledger",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "b5d356ac76af77a6bac394887bc80d20fcf08ac4e30ae4c83a64f34734e8007d"
+    },
+    {
+      "id": "tovin_glassheart",
+      "name": "Belsorin Glassheart",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "2c0472733c21e55a65e66eb4a02ab7127f24973daed5c1cedb051f6cbf7310a7"
+    },
+    {
+      "id": "suyin_monsoon_bell",
+      "name": "Suyin, Bell of the Monsoon",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "3c316e9425e3c2e53f1e76a63305bcf6938ca4b50b17bb5aa946313a7d81dd9c"
+    },
+    {
+      "id": "tariq_glass_dervish",
+      "name": "Tariq, the Glass Dervish",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "3932531b02e35c0512e78453fab93344518215d54e12b913098588506d2541ac"
+    },
+    {
+      "id": "hrolda_avalanche_door",
+      "name": "Hrolda, the Avalanche Door",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "b481e2b13c3d3dcac671dc8a5306608622519304ed987f9a146028bfb38701e5"
+    },
+    {
+      "id": "dagan_rivetstorm",
+      "name": "Dagan Rivetstorm",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "91ab4a1092b42d7f838bcd2fa2d084a17574f9f52982efd3bfc12b710214c684"
+    },
+    {
+      "id": "tali_scrapshot",
+      "name": "Tali, Scrapshot",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "13c1ed1704010b0069892b3400d12ad45f6b4f3a9cb3c6a34904cc73208b8761"
+    },
+    {
+      "id": "edrik_mournwall",
+      "name": "Edrik Mournwall",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "f60ecaf2e986da3637cc9556fd951ed5428be8dfad2fafa62ab928d49e439f4d"
+    },
+    {
+      "id": "venn_sablethread",
+      "name": "Venn Sablethread",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "bcbbc6c8c1b6fa6a73a8bb6fff710c66b5a5d0a9a442c75f3b2130b1ea9cfd60"
+    },
+    {
+      "id": "renn_briarhook",
+      "name": "Oswin Briarhook",
+      "before": [
+        427,
+        640
+      ],
+      "after": [
+        1024,
+        1536
+      ],
+      "restored": true,
+      "sourceSha256": "31b09620c5a45be13061ae16597997bad1b9637950d85f0feec57d33bd1bb760"
+    },
+    {
+      "id": "varya_stormbound_circuit",
+      "name": "Varya, the Stormbound Circuit",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "iona_signal_keeper",
+      "name": "Iona, Signal Keeper",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "morthane_last_lantern",
+      "name": "Morthane, the Last Lantern",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "vorga_ashen_oath",
+      "name": "Vorga, Ashen Oath",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "velis_moonroot_reaver",
+      "name": "Velis, Moonroot Reaver",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "sera_emberleaf_tender",
+      "name": "Rosamund, Emberleaf Tender",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "nayara_deep_well",
+      "name": "Nayara, Keeper of the Deep Well",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "qadir_glassveil_warden",
+      "name": "Qadir, Glassveil Warden",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "thalen_mossveil_hunter",
+      "name": "Thalen, Mossveil Hunter",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "elyra_candle_lost",
+      "name": "Sabine, Candle of the Lost",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "zareen_ember_pride",
+      "name": "Zareen, Ember-Pride Huntress",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "kharuun_rimeclaw_bastion",
+      "name": "Kharuun, Rimeclaw Bastion",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "valcera_briar_magistrate",
+      "name": "Valcera, Briar Magistrate",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "skeldra_night_aurora",
+      "name": "Skeldra, the Night Aurora",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "hanrui_river_scale",
+      "name": "Hanrui, River-Scale Spear",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "torvek_void_battery",
+      "name": "Torvek, the Void Battery",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "kaitha_caldera_fury",
+      "name": "Kaitha, Caldera Fury",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "lysandre_winter_vein",
+      "name": "Lysandre, Winter Vein",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "velka_ashen_veil",
+      "name": "Cressida, Ashen Veil",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "zhenya_sun_dragon",
+      "name": "Zhenya, Sun-Dragon Lancer",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "sahir_emerald_talon",
+      "name": "Yaqut, Emerald Talon",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "nix_biosteel_hunter",
+      "name": "Nix, Biosteel Hunter",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "draeven_gravefrost",
+      "name": "Draeven, Gravefrost Headsman",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "melia_dawn_pollen",
+      "name": "Melia, Dawn-Pollen Mender",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "nyrali_moon_pride",
+      "name": "Nyrali, Moon-Pride Keeper",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "haska_hearth_guard",
+      "name": "Haska, Hearth Guard",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "orrix_amethyst_bulwark",
+      "name": "Orrix, Amethyst Bulwark",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "othrel_riverstone_aegis",
+      "name": "Othrel, Riverstone Aegis",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "domitrix_gilded_vigil",
+      "name": "Domitrix, the Gilded Vigil",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "beatrice_verdigris_mender",
+      "name": "Beatrice, Verdigris Mender",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "ephoros_pale_ferryman",
+      "name": "Ephoros, Pale Ferryman",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "cassio_gravity_knife",
+      "name": "Cassio, Gravity Knife",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "pyrrhon_soulfire_verdict",
+      "name": "Pyrrhon, the Soulfire Verdict",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "inko_plasma_skirmisher",
+      "name": "Inko, Plasma Skirmisher",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "hester_emberthorn_hunter",
+      "name": "Hester, Emberthorn Hunter",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "kozhak_glacier_prowler",
+      "name": "Kozhak, Glacier Prowler",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "ushala_quillgrass_tracker",
+      "name": "Ushala, Quillgrass Tracker",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "qingluo_jade_tempest",
+      "name": "Qingluo, Jade Tempest",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "thyssara_eclipse_blade",
+      "name": "Thyssara, Eclipse Blade",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "alkyron_starbreaker",
+      "name": "Alkyron, Starbreaker",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "ruxil_cinder_newt",
+      "name": "Ruxil, Cinder Newt",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "eudoma_nova_keeper",
+      "name": "Eudoma, Nova Keeper",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "asterox_labyrinth_moon",
+      "name": "Asterox, Labyrinth Moon",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "nerephon_tide_singer",
+      "name": "Nerephon, Tide Singer",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "thalassor_orbit_spear",
+      "name": "Thalassor, Orbit Spear",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "kelydras_worldbearer",
+      "name": "Kelydras, Worldbearer",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "xiphae_comet_huntress",
+      "name": "Xiphae, Comet Huntress",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "ophira_seed_of_worlds",
+      "name": "Ophira, Seed of Worlds",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "ixanth_solar_wing",
+      "name": "Ixanth, Solar Wing",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "qamuret_riddle_guard",
+      "name": "Qamuret, Riddle Guard",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "phozia_star_oracle",
+      "name": "Phozia, Star Oracle",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "gorgythe_prism_gaze",
+      "name": "Gorgythe, Prism Gaze",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "zazikul_silk_weaver",
+      "name": "Zazikul, Silk Weaver",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    },
+    {
+      "id": "kheiraxis_void_gallop",
+      "name": "Kheiraxis, Void Gallop",
+      "before": [
+        768,
+        1152
+      ],
+      "after": [
+        768,
+        1152
+      ],
+      "restored": false
+    }
+  ]
+}

@@ -26,7 +26,7 @@ def main(source):
                'portrait':f'assets/champions/{cid}.webp','kit':fx.kit_for(cid),'passive':fx.passive_for(cid)}
         rows.append(row)
         if original.exists():
-            subprocess.run(['magick',str(original),'-resize','480x640>','-strip','-quality','79',str(ROOT/row['portrait'])],check=True)
+            subprocess.run(['magick',str(original),'-resize','1536x1536>','-strip','-quality','92',str(ROOT/row['portrait'])],check=True)
         elif not (ROOT/row['portrait']).exists(): missing.append({'id':cid,'source':champion['image_url']})
     (ROOT/'data/source-champions.json').write_text(json.dumps(rows,indent=2)+'\n')
     (ROOT/'data/source-effects.json').write_text(json.dumps(fx.EFFECTS,indent=2)+'\n')
