@@ -17,10 +17,6 @@ body:has(.battle-shell) .battle-dock{grid-row:2;display:flex;align-items:center;
 .battle-dock .icon-button,.battle-dock .auto-battle-toggle{display:flex;align-items:center;justify-content:center;height:30px;min-height:30px;min-width:36px;padding:3px 8px;font-size:12px;border-radius:9px}
 .battle-dock .battle-exit{font-size:21px}
 .battle-dock .auto-battle-toggle{min-width:68px}
-.battle-guide-split{display:flex;align-items:center;border:1px solid #eed9b075;border-radius:9px;overflow:hidden;background:#19242b9c}
-.battle-guide-split .icon-button{border:0;border-radius:0;background:none;width:36px;padding:2px;min-height:28px;height:28px}
-.battle-guide-split .icon-button+button{border-left:1px solid #eed9b075}
-.battle-dock .effect-guide-button .card-glyph{width:21px;height:21px}
 @media(orientation:landscape) and (max-height:600px){
  body:has(.battle-shell) .battle-center{width:min(100%,1000px);grid-template-columns:minmax(0,1fr) 160px;grid-template-rows:72px minmax(0,1fr) 16px;column-gap:6px}
  .battle-center .battle-sky{grid-column:1;grid-row:1;grid-template-rows:minmax(0,1fr) 8px}
@@ -38,7 +34,6 @@ body:has(.battle-shell) .battle-dock{grid-row:2;display:flex;align-items:center;
 }
 
 .battle-shell .hero-unit:has(.statuses:empty) .hero-main{height:100%}
-.battle-dock .guide-nav-art{width:22px;height:22px}
 
 /* Empty feedback should give its space to the portraits. Keep controls clear of the home indicator without reserving a full extra strip. */
 .battle-center .battle-feedback:empty{height:0;min-height:0;padding:0}
@@ -60,9 +55,6 @@ body:has(.battle-shell) .battle-dock{min-height:24px;padding-top:1px;padding-bot
 .battle-dock .icon-button,.battle-dock .auto-battle-toggle{height:22px;min-height:22px;padding:1px 6px;font-size:11px;border-radius:6px}
 .battle-dock .battle-exit{font-size:17px}
 .battle-dock .auto-battle-toggle{min-width:60px}
-.battle-guide-split{border-radius:6px}
-.battle-guide-split .icon-button{height:20px;min-height:20px;width:32px;border-radius:0;padding:1px}
-.battle-dock .guide-nav-art,.battle-dock .effect-guide-button .card-glyph{width:16px;height:16px}
 @media(orientation:portrait),(min-height:601px){
  .battle-shell .hero-shade{background:linear-gradient(0deg,#0b1028f2 0,#0b1028eb 36px,transparent 58px)}
 }

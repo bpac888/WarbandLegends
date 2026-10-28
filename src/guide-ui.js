@@ -1,4 +1,6 @@
 import {factionGuideHTML} from './faction-ui.js';
+import {EFFECTS} from './effects.js';
+import {effectIcon} from './icons.js';
 import {SUMMON_ODDS} from './progression.js';
 import {heroInsight} from './tactics-ui.js';
 export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
@@ -14,15 +16,25 @@ const topics=[
   ['Limit Break','Rare and higher: two breaks after full ascension. Each adds 5 levels and 3% stats. The second grants a 2-move role buff.'],
  ]],
  ['factions','Factions',[['Faction Bonuses',factionGuideHTML()]]],
+ ['effects','Effects',[]],
  ['summon','Summoning',[
   ['Summoning Odds',SUMMON_ODDS.map(o=>`${o.rarity==='double_common'?'Two Commons':o.rarity[0].toUpperCase()+o.rarity.slice(1)}: ${o.chance}%`).join(' · ')],
   ['Ten Calls','At least one Rare or better is guaranteed. Two-Common results can still occur.'],
  ]],
 ];
 const content=body=>body.startsWith('<')?body:`<p>${body}</p>`;
-export function guideHTML(id='overview',champion=null){
+const effectKinds=[['buff','Buffs'],['debuff','Ailments'],['action','Instant Actions']];
+export function effectCard(id,detail=''){
+ const e=EFFECTS[id],safeDetail=detail.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ return `<article class="codex-card ${e.cat==='debuff'?'ailment':'blessing'}"><div class="codex-icon ${id.startsWith('vulnerable_')?id.slice(11):''}">${effectIcon(id)}</div><div><small>${e.timed?e.cat==='debuff'?'AILMENT':'BUFF':'INSTANT ACTION'}${detail?' · '+safeDetail:''}</small><h3>${e.name}</h3><p>${e.desc}</p></div></article>`;
+}
+function effectsGuideHTML(kind){
+ const selected=effectKinds.some(([key])=>key===kind)?kind:'buff';
+ const cards=Object.keys(EFFECTS).filter(id=>selected==='action'?!EFFECTS[id].timed:EFFECTS[id].timed&&EFFECTS[id].cat===selected);
+ return `<article><h3>Effects Guide</h3><p>Durations count completed board moves. Identical effects refresh; opposing stat effects replace each other. Different bonuses multiply and different damage-over-time effects can coexist.</p><p><strong>Cleanse</strong> removes allied ailments; <strong>Dispel</strong> removes enemy buffs. Neither removes passives.</p></article><div class="codex-tabs" role="group" aria-label="Effect categories">${effectKinds.map(([key,label])=>`<button class="${key===selected?'active':''}" aria-pressed="${key===selected}" data-action="guide-effects" data-kind="${key}">${label}</button>`).join('')}</div><div class="effect-codex">${cards.map(id=>effectCard(id)).join('')}</div>`;
+}
+export function guideHTML(id='overview',champion=null,effectKind='buff'){
  const key=id==='heroes'?'growth':id==='overview'?'battles':id;
  const selected=topics.find(t=>t[0]===key)||topics[0];
- return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}${champion&&selected[0]==='growth'?heroInsight(champion):''}</section></div>`;
+ return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}${champion&&selected[0]==='growth'?heroInsight(champion):''}</section></div>`;
 }
-export function battleHelpHTML(){return `<div class="help-grid">${battleRules.map(([title,body])=>`<section><b>${title}</b>${content(body)}</section>`).join('')}</div>`;}

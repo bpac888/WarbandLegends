@@ -284,6 +284,7 @@ body.menu-theme :is(p,small,label){line-height:1.55}
 .menu-theme .guide-layout>section>article h3{font-size:28px;margin:0 0 8px}
 .menu-theme .guide-layout p{font-size:12px;color:#c0d2c9;line-height:1.65}
 .menu-theme .guide-layout>nav{margin:0 0 16px}
+.menu-theme .guide-layout .effect-codex{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
 .menu-theme .faction-guide-list>details{background:#10303d6e;border:1px solid #b7c6b23d;border-radius:10px;overflow:hidden}
 .menu-theme .faction-guide-list summary{padding:12px 13px;font-size:12px;color:#e7dbb8}
 .menu-theme .faction-guide-list details[open]{border-color:#d9c28b70;background:#21434c9c}

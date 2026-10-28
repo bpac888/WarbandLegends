@@ -7,6 +7,7 @@ import {battleFixtureResponse} from './battle-fixture.mjs';
 import {defaultProfile} from '../src/progression.js';
 import {PROFILE_KEY,BATTLE_KEY} from '../src/storage.js';
 import {createBattle} from '../src/engine.js';
+import {EFFECTS} from '../src/effects.js';
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json','utf8'));
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox']});
@@ -51,13 +52,24 @@ try{
     for(const tab of ['gems','tokens','premium','supplies']){await page.locator(`[data-action="shop-tab"][data-tab="${tab}"]`).click();await fits(page,width+' shop '+tab);}
    }
   }
+  await page.getByRole('button',{name:'Guide',exact:true}).click();
+  await page.getByRole('button',{name:'Effects',exact:true}).click();
+  for(const [kind,label] of [['buff','Buffs'],['debuff','Ailments'],['action','Instant Actions']]){
+   await page.getByRole('button',{name:label,exact:true}).click();await fits(page,width+' effects '+kind);
+   assert.equal(await page.getByRole('button',{name:label,exact:true}).getAttribute('aria-pressed'),'true');
+   const expected=Object.values(EFFECTS).filter(e=>kind==='action'?!e.timed:e.timed&&e.cat===kind).map(e=>e.name);
+   assert.deepEqual(await page.locator('.effect-codex h3').allTextContents(),expected);
+  }
+  if([320,390,1440].includes(width))await page.screenshot({path:root+`artifacts/menu-effects-${width}.png`});
+  await page.getByRole('button',{name:'Factions',exact:true}).click();assert.equal(await page.locator('.faction-guide-list>details').count(),12);
+  await page.getByRole('button',{name:'Close dialog',exact:true}).click();
  }
  assert.equal(await page.evaluate(()=>document.fonts.check('600 20px "Citadel UI"')),true);assert.equal(await page.evaluate(()=>document.fonts.check('600 32px "Citadel Display"')),true);
  await page.setViewportSize({width:390,height:844});
  await go('shop');await page.locator('[data-action="material-preview"][data-id="star-thread"]').click();await fits(page,'purchase dialog');await page.screenshot({path:root+'artifacts/citadel-purchase-phone.png'});await page.locator('#modal [data-action="close"]').first().click();
  await page.locator('[data-action="shop-tab"][data-tab="premium"]').click();assert.equal(await page.locator('.premium-offers>article').count(),8);assert.ok(await page.locator('.premium-offers .button').evaluateAll(a=>a.every(b=>b.disabled)));await page.screenshot({path:root+'artifacts/citadel-premium-phone.png'});
  await go('roster');await page.locator('.collection-filters>summary').click();await page.locator('#collection-rarity').selectOption('rare');await fits(page,'filters');await page.locator('[data-action="collection-tab"][data-tab="teams"]').click();await fits(page,'saved teams');await page.screenshot({path:root+'artifacts/citadel-teams-phone.png'});
- await page.locator('[data-action="help"]').first().click();for(const topic of ['battles','growth','factions','summon']){await page.locator(`[data-action="guide-topic"][data-topic="${topic}"]`).click();await fits(page,'guide '+topic);}await page.screenshot({path:root+'artifacts/citadel-guide-phone.png'});await page.locator('#modal [data-action="close"]').first().click();
+ await page.locator('[data-action="help"]').first().click();for(const topic of ['battles','growth','factions','effects','summon']){await page.locator(`[data-action="guide-topic"][data-topic="${topic}"]`).click();await fits(page,'guide '+topic);}await page.screenshot({path:root+'artifacts/citadel-guide-phone.png'});await page.locator('#modal [data-action="close"]').first().click();
  await go('events');for(const button of await page.locator('[data-action="event-select"]').all()){await button.click();await fits(page,'event selection');}
  await go('settings');await page.locator('#player-name').fill('Celestial Keeper');await page.locator('[data-action="save-name"]').click();assert.equal(await page.locator('#player-name').inputValue(),'Celestial Keeper');assert.equal(await page.locator('.avatar-options>button').count(),6);assert.equal(await page.locator('.avatar-options').evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(' ').length),2);
  await go('daily');await page.locator('[data-action="daily-claim"]').click();assert.ok(await page.locator('[data-action="daily-claim"]').isDisabled());
@@ -65,6 +77,11 @@ try{
  assert.ok(await page.locator('.realm-atmosphere').evaluate(e=>[...e.children].every(n=>getComputedStyle(n).animationName==='none')),'reduced motion must disable decorative animations');
  await page.emulateMedia({reducedMotion:'no-preference'});await go('home');assert.equal(await page.locator('.aether-tracery').evaluate(e=>getComputedStyle(e).animationName),'aether-orbit');
  await page.setViewportSize({width:1440,height:1000});await go('shop');await page.locator('[data-action="shop-tab"][data-tab="premium"]').click();await page.screenshot({path:root+'artifacts/citadel-premium-desktop.png'});
+ await go('home');await page.evaluate(k=>{const p=JSON.parse(localStorage.getItem(k));p.helpSeen=false;localStorage.setItem(k,JSON.stringify(p));},PROFILE_KEY);
+ await go('campaign');await page.locator('.campaign-node[data-stage="ashen-gate"]').click();await page.locator('#modal [data-action="start"]').click();await page.locator('.board').waitFor();
+ assert.equal(await page.locator('#modal[open]').count(),0,'new battles must not open a guide');
+ assert.equal(await page.locator('.battle-dock button').count(),3);
+ assert.equal(await page.locator('.battle-dock [data-action="help"],.battle-dock [data-action="effects-guide"]').count(),0);
  await context.close();
  // Exact visual regression check: the new menu styles/module must leave battles intact.
  for(const width of [390,1440]){
