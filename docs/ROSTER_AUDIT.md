@@ -1,6 +1,6 @@
 # Warband Legends Roster Audit — 189 Champions
 
-Astral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. The subsequent owner-requested rarity revision changes twenty-three rarity records. Character identities and artwork are preserved; current counts below include the revision.
+Astral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. The subsequent owner-requested rarity revision changes twenty-four approved character records. Character identities and artwork are preserved; current counts below include the revision.
 
 ## Before and After
 
@@ -11,16 +11,16 @@ Astral Concord adds fifteen original star-born champions inspired by mythical he
 | Legendary | 72 | 7 | 79 |
 | Rare | 60 | 6 | 66 |
 | Common | 27 | 0 | 27 |
-| Attack | 93 | 8 | 101 |
+| Attack | 92 | 8 | 100 |
 | Defense | 38 | 3 | 41 |
-| Support | 43 | 4 | 47 |
+| Support | 44 | 4 | 48 |
 | Red | 37 | 3 | 40 |
 | Blue | 37 | 3 | 40 |
 | Green | 35 | 3 | 38 |
 | Yellow | 35 | 3 | 38 |
 | Purple | 30 | 3 | 33 |
 
-Attackers remain the majority: **101/189 (53.4%)**. The faction has three champions per element and more attackers than either other role. Rarity tiers provide early accessible choices alongside seven Legendaries and two Mythicals.
+Attackers remain the majority: **100/189 (52.9%)**. The faction has three champions per element and more attackers than either other role. Rarity tiers provide early accessible choices alongside seven Legendaries and two Mythicals.
 
 ## Astral Concord
 
@@ -49,12 +49,12 @@ Attackers remain the majority: **101/189 (53.4%)**. The faction has three champi
 | Astral Concord | 0 → 15 | 3 / 3 / 3 / 3 / 3 | Alkyron, Starbreaker (Red); Asterox, Labyrinth Moon (Blue) |
 | Bloodcourt | 16 → 16 | 9 / 1 / 1 / 2 / 3 | Sable, Pale Matriarch (Purple); Sir Aurel, the Crimson Paladin (Red) |
 | Chymera | 16 → 16 | 1 / 2 / 7 / 4 / 2 | Vex, the Elixir Apotheon (Green) |
-| Dragon Dynasty | 16 → 16 | 4 / 3 / 5 / 2 / 2 | Dragon Empress (Red) |
+| Dragon Dynasty | 15 → 15 | 4 / 3 / 5 / 2 / 1 | Dragon Empress (Red) |
 | Dune Riders | 15 → 15 | 2 / 1 / 2 / 7 / 3 | Ashwind Warden (Yellow); Nayara, Keeper of the Deep Well (Blue) |
 | Frost | 15 → 15 | 2 / 9 / 1 / 2 / 1 | Frost King (Blue); Frost Sage (Blue) |
 | Ironclad | 16 → 16 | 5 / 3 / 2 / 5 / 1 | Isolde, the Last Foundry (Yellow); Hadrian, the Walking Siege (Red) |
 | Neon Syndicate | 16 → 16 | 3 / 5 / 2 / 3 / 3 | Zero, The Singularity (Purple) |
-| Nether | 16 → 16 | 4 / 4 / 4 / 2 / 2 | Malzhur, the Abyss Lord (Red) |
+| Nether | 17 → 17 | 4 / 4 / 4 / 2 / 3 | Malzhur, the Abyss Lord (Red) |
 | Umbra | 16 → 16 | 2 / 2 / 1 / 2 / 9 | Yshmir, the Worldwound (Purple) |
 | Veldtborn | 16 → 16 | 2 / 4 / 3 / 4 / 3 | Azhar, the Rosetted Sun (Yellow) |
 | Wildgrove | 16 → 16 | 3 / 3 / 7 / 2 / 1 | Oakenhart, the First Warden (Green) |
@@ -76,4 +76,4 @@ Yshmir remains the only Very Slow Mythical. New designs use existing supported e
 
 ## Validation and Limits
 
-Summon rarity odds and the ten-call guarantee are unchanged; new champions join their matching rarity pools. Build and audit checks fingerprint original records after verifying and reversing only the explicitly approved twenty-three-record rarity revision. New-character checks cover balanced coverage, unique names, Specials, summon eligibility, save compatibility, Auto actions and portrait quality. This is a coverage audit, not a measured matchup win-rate study. Previous reports remain available for [174](history/ROSTER-AUDIT-174.md), [162](history/ROSTER-AUDIT-162.md) and [150](history/ROSTER-AUDIT-150.md) champions.
+Summon rarity odds and the ten-call guarantee are unchanged; new champions join their matching rarity pools. Build and audit checks fingerprint original records after verifying and reversing only the explicitly approved twenty-four-record roster revision. New-character checks cover balanced coverage, unique names, Specials, summon eligibility, save compatibility, Auto actions and portrait quality. This is a coverage audit, not a measured matchup win-rate study. Previous reports remain available for [174](history/ROSTER-AUDIT-174.md), [162](history/ROSTER-AUDIT-162.md) and [150](history/ROSTER-AUDIT-150.md) champions.

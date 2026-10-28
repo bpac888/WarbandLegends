@@ -3771,15 +3771,15 @@
   {
     "template_id": "void_herald_mara",
     "name": "Void-Herald Mara",
-    "title": "Envoy of the Starless Between",
+    "title": "Keeper of the Last Passage",
     "rarity": "common",
-    "faction": "dragondynasty",
-    "role": "attack",
-    "hp": 732,
-    "atk": 511,
-    "def": 403,
-    "ability_name": "Oblivion",
-    "lore": "Mara serves the Dragon Dynasty as its envoy to the starless reaches beyond the sky. Bearing a pact sealed with ancient dragonfire, she returns from the void with warnings for the throne and ruin for its enemies.",
+    "faction": "nether",
+    "role": "support",
+    "hp": 850,
+    "atk": 400,
+    "def": 475,
+    "ability_name": "Graveward",
+    "lore": "Mara walks the silent roads of the Nether, carrying a violet lantern for souls who have lost their way. Its cold light shelters the living from the grasping dead. Those she guides remember a gentle voice in the dark, asking them to hold on until dawn.",
     "image_url": "/api/static/champions/hero-18.png",
     "id": "void_herald_mara",
     "color": "purple",
@@ -3788,30 +3788,30 @@
     "passive": null,
     "manaSpeed": "average",
     "special": {
-      "name": "Oblivion",
+      "name": "Graveward",
       "charging": false,
       "levels": [
         {
           "level": 1,
           "speed": "average",
           "tiles": 10,
-          "target": "enemy",
-          "damage": 2.41,
-          "healing": 0,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.28,
           "healScope": "ally",
           "aoe": false,
           "pierce": false,
           "effects": [
             {
-              "id": "inc_atk",
-              "turns": 2,
-              "scope": "self"
+              "id": "shield",
+              "turns": 1,
+              "scope": "ally"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 241% ATK damage to selected enemy."
+    "ability_desc": "Restore 28% max HP to one living ally."
   },
   {
     "template_id": "azure_sovereign",

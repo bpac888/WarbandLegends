@@ -774,7 +774,32 @@
     },
     "void_herald_mara": {
       "color": "purple",
-      "manaSpeed": "average"
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.28,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "ally"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 850,
+        "atk": 400,
+        "def": 475
+      }
     },
     "azure_sovereign": {
       "color": "blue",

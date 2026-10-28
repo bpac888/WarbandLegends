@@ -2639,17 +2639,17 @@
   {
     "template_id": "void_herald_mara",
     "name": "Void-Herald Mara",
-    "title": "Envoy of the Starless Between",
+    "title": "Keeper of the Last Passage",
     "rarity": "common",
-    "faction": "dragondynasty",
-    "role": "attack",
-    "hp": 797,
-    "atk": 104,
-    "def": 58,
+    "faction": "nether",
+    "role": "support",
+    "hp": 850,
+    "atk": 400,
+    "def": 475,
     "spd": 117,
-    "ability_name": "Oblivion",
-    "ability_desc": "Voids the field around herself — Mara's own attack surges a quarter higher for two rounds.",
-    "lore": "Mara serves the Dragon Dynasty as its envoy to the starless reaches beyond the sky. Bearing a pact sealed with ancient dragonfire, she returns from the void with warnings for the throne and ruin for its enemies.",
+    "ability_name": "Graveward",
+    "ability_desc": "Restore 28% max HP to one living ally.",
+    "lore": "Mara walks the silent roads of the Nether, carrying a violet lantern for souls who have lost their way. Its cold light shelters the living from the grasping dead. Those she guides remember a gentle voice in the dark, asking them to hold on until dawn.",
     "image_url": "/api/static/champions/hero-18.png",
     "id": "void_herald_mara",
     "color": "red",
@@ -2659,8 +2659,8 @@
       "a2": [],
       "a3": [
         [
-          "inc_atk",
-          2
+          "shield",
+          1
         ]
       ]
     },

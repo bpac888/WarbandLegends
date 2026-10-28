@@ -77,7 +77,7 @@
 | Scavenger Jax | rare | red | attack | 678 | 546 | 1028 | Fast 8 |
 | Plague Doctor Mors | rare | green | attack | 678 | 558 | 1035 | Average 10 |
 | The Abyss Mutant | rare | green | attack | 678 | 546 | 1028 | Average 10 |
-| Void-Herald Mara | common | purple | attack | 511 | 403 | 732 | Average 10 |
+| Void-Herald Mara | common | purple | support | 400 | 475 | 850 | Average 10 |
 | Azure Sovereign | legendary | blue | attack | 822 | 691 | 1288 | Charging 5 / 10 / 15 |
 | Dragon Samurai Kenshin | rare | red | attack | 690 | 555 | 1020 | Average 10 |
 | Jade Monk Xuan | common | green | defense | 382 | 538 | 934 | Average 10 |
@@ -512,9 +512,9 @@ Passive: **Oath Unbroken** — Revives once per battle.
 
 - 10 tiles: Deal 263% ATK damage to selected enemy. Defense Down (Selected enemy, 2 turns).
 
-### Void-Herald Mara — Oblivion
+### Void-Herald Mara — Graveward
 
-- 10 tiles: Deal 241% ATK damage to selected enemy. Attack Up (Caster, 2 turns).
+- 10 tiles: Restore 28% max HP to one living ally. Barrier (Selected ally, 1 turns).
 
 ### Azure Sovereign — Meteor of Heaven
 

@@ -1,4 +1,4 @@
-// Explicitly approved rarity changes; snapshots preserve historical audit contracts.
+// Explicitly approved roster changes; snapshots preserve historical audit contracts.
 export const RARITY_REVISION=[
   {
     "id": "neon_wire runner",
@@ -3731,6 +3731,162 @@ export const RARITY_REVISION=[
           [
             "remove_debuffs",
             0
+          ]
+        ]
+      },
+      "passive": null
+    }
+  },
+  {
+    "id": "void_herald_mara",
+    "batch": 3,
+    "kind": "faction_and_role",
+    "name": "Void-Herald Mara",
+    "before": {
+      "template_id": "void_herald_mara",
+      "name": "Void-Herald Mara",
+      "title": "Envoy of the Starless Between",
+      "rarity": "common",
+      "faction": "dragondynasty",
+      "role": "attack",
+      "hp": 732,
+      "atk": 511,
+      "def": 403,
+      "ability_name": "Oblivion",
+      "lore": "Mara serves the Dragon Dynasty as its envoy to the starless reaches beyond the sky. Bearing a pact sealed with ancient dragonfire, she returns from the void with warnings for the throne and ruin for its enemies.",
+      "image_url": "/api/static/champions/hero-18.png",
+      "id": "void_herald_mara",
+      "color": "purple",
+      "source_image": "/api/static/champions/hero-18.png",
+      "portrait": "assets/champions/void_herald_mara.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Oblivion",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 2.41,
+            "healing": 0,
+            "healScope": "ally",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "inc_atk",
+                "turns": 2,
+                "scope": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Deal 241% ATK damage to selected enemy."
+    },
+    "sourceBefore": {
+      "template_id": "void_herald_mara",
+      "name": "Void-Herald Mara",
+      "title": "Envoy of the Starless Between",
+      "rarity": "common",
+      "faction": "dragondynasty",
+      "role": "attack",
+      "hp": 797,
+      "atk": 104,
+      "def": 58,
+      "spd": 117,
+      "ability_name": "Oblivion",
+      "ability_desc": "Voids the field around herself — Mara's own attack surges a quarter higher for two rounds.",
+      "lore": "Mara serves the Dragon Dynasty as its envoy to the starless reaches beyond the sky. Bearing a pact sealed with ancient dragonfire, she returns from the void with warnings for the throne and ruin for its enemies.",
+      "image_url": "/api/static/champions/hero-18.png",
+      "id": "void_herald_mara",
+      "color": "red",
+      "source_image": "/api/static/champions/hero-18.png",
+      "portrait": "assets/champions/void_herald_mara.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "inc_atk",
+            2
+          ]
+        ]
+      },
+      "passive": null
+    },
+    "after": {
+      "template_id": "void_herald_mara",
+      "name": "Void-Herald Mara",
+      "title": "Keeper of the Last Passage",
+      "rarity": "common",
+      "faction": "nether",
+      "role": "support",
+      "hp": 850,
+      "atk": 400,
+      "def": 475,
+      "ability_name": "Graveward",
+      "lore": "Mara walks the silent roads of the Nether, carrying a violet lantern for souls who have lost their way. Its cold light shelters the living from the grasping dead. Those she guides remember a gentle voice in the dark, asking them to hold on until dawn.",
+      "image_url": "/api/static/champions/hero-18.png",
+      "id": "void_herald_mara",
+      "color": "purple",
+      "source_image": "/api/static/champions/hero-18.png",
+      "portrait": "assets/champions/void_herald_mara.webp",
+      "passive": null,
+      "manaSpeed": "average",
+      "special": {
+        "name": "Graveward",
+        "charging": false,
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "target": "ally",
+            "damage": 0,
+            "healing": 0.28,
+            "healScope": "ally",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "shield",
+                "turns": 1,
+                "scope": "ally"
+              }
+            ]
+          }
+        ]
+      },
+      "ability_desc": "Restore 28% max HP to one living ally."
+    },
+    "sourceAfter": {
+      "template_id": "void_herald_mara",
+      "name": "Void-Herald Mara",
+      "title": "Keeper of the Last Passage",
+      "rarity": "common",
+      "faction": "nether",
+      "role": "support",
+      "hp": 850,
+      "atk": 400,
+      "def": 475,
+      "spd": 117,
+      "ability_name": "Graveward",
+      "ability_desc": "Restore 28% max HP to one living ally.",
+      "lore": "Mara walks the silent roads of the Nether, carrying a violet lantern for souls who have lost their way. Its cold light shelters the living from the grasping dead. Those she guides remember a gentle voice in the dark, asking them to hold on until dawn.",
+      "image_url": "/api/static/champions/hero-18.png",
+      "id": "void_herald_mara",
+      "color": "red",
+      "source_image": "/api/static/champions/hero-18.png",
+      "portrait": "assets/champions/void_herald_mara.webp",
+      "kit": {
+        "a2": [],
+        "a3": [
+          [
+            "shield",
+            1
           ]
         ]
       },

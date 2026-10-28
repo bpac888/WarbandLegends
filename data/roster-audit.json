@@ -1,8 +1,8 @@
 {
   "version": 4,
-  "scope": "Current roster coverage after Astral Concord and the approved rarity revisions. Not a measured PvP win-rate study.",
+  "scope": "Current roster coverage after Astral Concord and the approved roster revisions. Not a measured PvP win-rate study.",
   "historicalBaselineVerified": true,
-  "approvedRarityRevisionCount": 23,
+  "approvedRosterRevisionCount": 24,
   "before": {
     "total": 174,
     "rarity": {
@@ -19,9 +19,9 @@
       "purple": 30
     },
     "type": {
-      "attack": 93,
+      "attack": 92,
       "defense": 38,
-      "support": 43
+      "support": 44
     },
     "speed": {
       "very_fast": 9,
@@ -77,9 +77,9 @@
       "purple": 33
     },
     "type": {
-      "attack": 101,
+      "attack": 100,
       "defense": 41,
-      "support": 47
+      "support": 48
     },
     "speed": {
       "very_fast": 9,
@@ -213,34 +213,34 @@
       ]
     },
     "dragondynasty": {
-      "total": 16,
+      "total": 15,
       "rarity": {
         "mythical": 1,
         "legendary": 8,
         "rare": 3,
-        "common": 4
+        "common": 3
       },
       "color": {
         "red": 4,
         "blue": 3,
         "green": 5,
         "yellow": 2,
-        "purple": 2
+        "purple": 1
       },
       "type": {
-        "attack": 11,
+        "attack": 10,
         "defense": 2,
         "support": 3
       },
       "speed": {
         "very_fast": 1,
         "fast": 2,
-        "average": 8,
+        "average": 7,
         "slow": 2,
         "very_slow": 0,
         "charging": 3
       },
-      "before": 16,
+      "before": 15,
       "mythicals": [
         {
           "name": "Dragon Empress",
@@ -413,34 +413,34 @@
       ]
     },
     "nether": {
-      "total": 16,
+      "total": 17,
       "rarity": {
         "mythical": 1,
         "legendary": 8,
         "rare": 6,
-        "common": 1
+        "common": 2
       },
       "color": {
         "red": 4,
         "blue": 4,
         "green": 4,
         "yellow": 2,
-        "purple": 2
+        "purple": 3
       },
       "type": {
         "attack": 8,
         "defense": 5,
-        "support": 3
+        "support": 4
       },
       "speed": {
         "very_fast": 1,
         "fast": 2,
-        "average": 7,
+        "average": 8,
         "slow": 5,
         "very_slow": 0,
         "charging": 1
       },
-      "before": 16,
+      "before": 17,
       "mythicals": [
         {
           "name": "Malzhur, the Abyss Lord",
@@ -665,9 +665,9 @@
         "purple": 5
       },
       "type": {
-        "attack": 15,
+        "attack": 14,
         "defense": 3,
-        "support": 9
+        "support": 10
       },
       "speed": {
         "very_fast": 2,
@@ -812,9 +812,9 @@
         "purple": 33
       },
       "type": {
-        "attack": 21,
+        "attack": 20,
         "defense": 6,
-        "support": 6
+        "support": 7
       },
       "speed": {
         "very_fast": 2,
@@ -828,29 +828,29 @@
   },
   "byType": {
     "attack": {
-      "total": 101,
+      "total": 100,
       "rarity": {
         "mythical": 7,
         "legendary": 45,
         "rare": 34,
-        "common": 15
+        "common": 14
       },
       "color": {
         "red": 28,
         "blue": 15,
         "green": 20,
         "yellow": 17,
-        "purple": 21
+        "purple": 20
       },
       "type": {
-        "attack": 101,
+        "attack": 100,
         "defense": 0,
         "support": 0
       },
       "speed": {
         "very_fast": 9,
         "fast": 29,
-        "average": 40,
+        "average": 39,
         "slow": 8,
         "very_slow": 1,
         "charging": 14
@@ -886,29 +886,29 @@
       }
     },
     "support": {
-      "total": 47,
+      "total": 48,
       "rarity": {
         "mythical": 6,
         "legendary": 17,
         "rare": 15,
-        "common": 9
+        "common": 10
       },
       "color": {
         "red": 6,
         "blue": 14,
         "green": 11,
         "yellow": 10,
-        "purple": 6
+        "purple": 7
       },
       "type": {
         "attack": 0,
         "defense": 0,
-        "support": 47
+        "support": 48
       },
       "speed": {
         "very_fast": 0,
         "fast": 9,
-        "average": 28,
+        "average": 29,
         "slow": 5,
         "very_slow": 1,
         "charging": 4
