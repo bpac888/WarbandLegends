@@ -73,7 +73,7 @@ test('tile clears grant one charge each, preserve fractional gains, and cap at e
 });
 test('new roster has one Special, no SPD stat, balanced colors, and all original passives',async()=>{
  const source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url)));
- for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,({red:40,blue:39,green:39,yellow:38,purple:33})[color]);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
+ for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,({red:40,blue:38,green:38,yellow:38,purple:35})[color]);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
  for(const c of roster){assert.equal('spd' in c,false);assert.equal('kit' in c,false);assert.equal('a2' in c,false);assert.equal('a3' in c,false);assert.ok(c.special.name);assert.equal(c.passive?.id,source.find(o=>o.id===c.id).passive?.id);assert.equal(c.passive?.name,source.find(o=>o.id===c.id).passive?.name);assert.equal(c.rarity,source.find(o=>o.id===c.id).rarity);}
 });
 test('full Specials retain merged source effects except deliberate match-3 revisions',async()=>{

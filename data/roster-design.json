@@ -210,7 +210,7 @@
       "manaSpeed": "slow"
     },
     "shade_prince": {
-      "color": "blue",
+      "color": "purple",
       "manaSpeed": "average",
       "chargeLevels": 1,
       "levelOverrides": [
@@ -260,7 +260,7 @@
       "manaSpeed": "average"
     },
     "pit_scout": {
-      "color": "green",
+      "color": "purple",
       "manaSpeed": "very_fast",
       "chargeLevels": 1,
       "levelOverrides": [

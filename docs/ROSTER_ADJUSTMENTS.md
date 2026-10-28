@@ -8,3 +8,5 @@ Common elements now total 5 Red, 5 Blue, 6 Green, 6 Yellow and 5 Purple. Stable 
 Sir Aurel, the Crimson Paladin changes from Red to Yellow. His new lore describes a Bloodcourt guardian who bound dawn’s golden light to his shield through a blood oath. His stats, Special, revival passive and artwork are unchanged.
 
 Archangel Lucifer changes from Yellow to Red. His stats, Special, passive and artwork are unchanged.
+
+Rhagz, Pit Scout changes from Green to Purple, and The Shade Prince changes from Blue to Purple. Both remain Rare; their stats, Specials, factions and artwork are unchanged. Rune charging, elemental interactions, feeding bonuses and sigil requirements follow Purple.

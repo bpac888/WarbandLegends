@@ -246,7 +246,7 @@ export const RARITY_REVISION=[
       "lore": "Rhagz has never won a duel — he has never stayed long enough for one to begin.",
       "image_url": "/api/static/champions/pit_scout.png",
       "id": "pit_scout",
-      "color": "green",
+      "color": "purple",
       "source_image": "/api/static/champions/pit_scout.png",
       "portrait": "assets/champions/pit_scout.webp",
       "passive": null,
@@ -293,7 +293,7 @@ export const RARITY_REVISION=[
       "lore": "Rhagz has never won a duel — he has never stayed long enough for one to begin.",
       "image_url": "/api/static/champions/pit_scout.png",
       "id": "pit_scout",
-      "color": "green",
+      "color": "purple",
       "source_image": "/api/static/champions/pit_scout.png",
       "portrait": "assets/champions/pit_scout.webp",
       "kit": {
@@ -306,6 +306,10 @@ export const RARITY_REVISION=[
         ]
       },
       "passive": null
+    },
+    "elementRevision": {
+      "from": "green",
+      "to": "purple"
     }
   },
   {
@@ -3318,7 +3322,7 @@ export const RARITY_REVISION=[
       "lore": "He was the youngest of five brothers. The eldest four are the flames that follow him now.",
       "image_url": "/api/static/champions/shade_prince.png",
       "id": "shade_prince",
-      "color": "blue",
+      "color": "purple",
       "source_image": "/api/static/champions/shade_prince.png",
       "portrait": "assets/champions/shade_prince.webp",
       "passive": null,
@@ -3378,6 +3382,10 @@ export const RARITY_REVISION=[
         ]
       },
       "passive": null
+    },
+    "elementRevision": {
+      "from": "blue",
+      "to": "purple"
     }
   },
   {

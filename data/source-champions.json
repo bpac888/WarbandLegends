@@ -1338,7 +1338,7 @@
     "lore": "Rhagz has never won a duel — he has never stayed long enough for one to begin.",
     "image_url": "/api/static/champions/pit_scout.png",
     "id": "pit_scout",
-    "color": "green",
+    "color": "purple",
     "source_image": "/api/static/champions/pit_scout.png",
     "portrait": "assets/champions/pit_scout.webp",
     "kit": {

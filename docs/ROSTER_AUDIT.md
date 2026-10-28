@@ -15,10 +15,10 @@ Astral Concord adds fifteen original star-born champions inspired by mythical he
 | Defense | 38 | 3 | 41 |
 | Support | 44 | 4 | 48 |
 | Red | 37 | 3 | 40 |
-| Blue | 36 | 3 | 39 |
-| Green | 36 | 3 | 39 |
+| Blue | 35 | 3 | 38 |
+| Green | 35 | 3 | 38 |
 | Yellow | 35 | 3 | 38 |
-| Purple | 30 | 3 | 33 |
+| Purple | 32 | 3 | 35 |
 
 Attackers remain the majority: **100/189 (52.9%)**. The faction has three champions per element and more attackers than either other role. Rarity tiers provide early accessible choices alongside seven Legendaries and two Mythicals.
 
@@ -54,8 +54,8 @@ Attackers remain the majority: **100/189 (52.9%)**. The faction has three champi
 | Frost | 15 → 15 | 2 / 9 / 1 / 2 / 1 | Frost King (Blue); Frost Sage (Blue) |
 | Ironclad | 16 → 16 | 6 / 3 / 2 / 4 / 1 | Isolde, the Last Foundry (Yellow); Hadrian, the Walking Siege (Red) |
 | Neon Syndicate | 16 → 16 | 3 / 5 / 2 / 3 / 3 | Zero, The Singularity (Purple) |
-| Nether | 18 → 18 | 4 / 4 / 4 / 3 / 3 | Malzhur, the Abyss Lord (Red) |
-| Umbra | 16 → 16 | 2 / 2 / 1 / 2 / 9 | Yshmir, the Worldwound (Purple) |
+| Nether | 18 → 18 | 4 / 4 / 3 / 3 / 4 | Malzhur, the Abyss Lord (Red) |
+| Umbra | 16 → 16 | 2 / 1 / 1 / 2 / 10 | Yshmir, the Worldwound (Purple) |
 | Veldtborn | 16 → 16 | 2 / 4 / 3 / 4 / 3 | Azhar, the Rosetted Sun (Yellow) |
 | Wildgrove | 16 → 16 | 3 / 2 / 8 / 2 / 1 | Oakenhart, the First Warden (Green) |
 

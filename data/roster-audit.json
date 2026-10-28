@@ -13,10 +13,10 @@
     },
     "color": {
       "red": 37,
-      "blue": 36,
-      "green": 36,
+      "blue": 35,
+      "green": 35,
       "yellow": 35,
-      "purple": 30
+      "purple": 32
     },
     "type": {
       "attack": 92,
@@ -71,10 +71,10 @@
     },
     "color": {
       "red": 40,
-      "blue": 39,
-      "green": 39,
+      "blue": 38,
+      "green": 38,
       "yellow": 38,
-      "purple": 33
+      "purple": 35
     },
     "type": {
       "attack": 100,
@@ -423,9 +423,9 @@
       "color": {
         "red": 4,
         "blue": 4,
-        "green": 4,
+        "green": 3,
         "yellow": 3,
-        "purple": 3
+        "purple": 4
       },
       "type": {
         "attack": 9,
@@ -459,10 +459,10 @@
       },
       "color": {
         "red": 2,
-        "blue": 2,
+        "blue": 1,
         "green": 1,
         "yellow": 2,
-        "purple": 9
+        "purple": 10
       },
       "type": {
         "attack": 10,
@@ -630,10 +630,10 @@
       },
       "color": {
         "red": 15,
-        "blue": 14,
-        "green": 17,
+        "blue": 13,
+        "green": 16,
         "yellow": 12,
-        "purple": 8
+        "purple": 10
       },
       "type": {
         "attack": 34,
@@ -710,56 +710,56 @@
       }
     },
     "blue": {
-      "total": 39,
+      "total": 38,
       "rarity": {
         "mythical": 4,
         "legendary": 16,
-        "rare": 14,
+        "rare": 13,
         "common": 5
       },
       "color": {
         "red": 0,
-        "blue": 39,
+        "blue": 38,
         "green": 0,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 15,
+        "attack": 14,
         "defense": 11,
         "support": 13
       },
       "speed": {
         "very_fast": 1,
         "fast": 10,
-        "average": 20,
+        "average": 19,
         "slow": 5,
         "very_slow": 0,
         "charging": 3
       }
     },
     "green": {
-      "total": 39,
+      "total": 38,
       "rarity": {
         "mythical": 2,
         "legendary": 14,
-        "rare": 17,
+        "rare": 16,
         "common": 6
       },
       "color": {
         "red": 0,
         "blue": 0,
-        "green": 39,
+        "green": 38,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 20,
+        "attack": 19,
         "defense": 7,
         "support": 12
       },
       "speed": {
-        "very_fast": 1,
+        "very_fast": 0,
         "fast": 8,
         "average": 21,
         "slow": 5,
@@ -797,11 +797,11 @@
       }
     },
     "purple": {
-      "total": 33,
+      "total": 35,
       "rarity": {
         "mythical": 3,
         "legendary": 17,
-        "rare": 8,
+        "rare": 10,
         "common": 5
       },
       "color": {
@@ -809,17 +809,17 @@
         "blue": 0,
         "green": 0,
         "yellow": 0,
-        "purple": 33
+        "purple": 35
       },
       "type": {
-        "attack": 20,
+        "attack": 22,
         "defense": 6,
         "support": 7
       },
       "speed": {
-        "very_fast": 2,
+        "very_fast": 3,
         "fast": 10,
-        "average": 12,
+        "average": 13,
         "slow": 6,
         "very_slow": 1,
         "charging": 2
@@ -837,10 +837,10 @@
       },
       "color": {
         "red": 28,
-        "blue": 15,
-        "green": 20,
+        "blue": 14,
+        "green": 19,
         "yellow": 17,
-        "purple": 20
+        "purple": 22
       },
       "type": {
         "attack": 100,
