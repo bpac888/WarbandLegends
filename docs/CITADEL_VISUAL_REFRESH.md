@@ -28,3 +28,7 @@ Run `npm run test:menus` with Playwright and Chromium available for browser vali
 ## Fonts and Artwork
 
 Both menu font families use the SIL Open Font License. Local license copies are in `assets/fonts/Manrope-OFL.txt` and `assets/fonts/CormorantGaramond-OFL.txt`. The WOFF packaging preserves the downloaded variable font data. Celestial tracery is original vector interface artwork; all existing game paintings, character art, logos and item assets retain their provenance.
+
+## Battle Follow-up — v0.24.1
+
+The Special-ready instruction no longer creates a row beneath the champions. Readiness stays visible on the glowing champion card; the short target-selection/Cancel prompt overlays the board without changing its geometry. Existing dragon-head Blast artwork and jeweled Prism artwork are restored for all five elements, while regular runes retain their distinct elemental silhouettes. `npm run art:build` now rejects reused paintings between normal, Blast and Prism variants. `tests/battle-steady-browser.mjs` checks readiness/targeting geometry and real match-4/match-5 creation on phone, landscape and desktop layouts.

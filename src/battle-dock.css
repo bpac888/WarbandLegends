@@ -93,3 +93,13 @@ body:has(.battle-shell) .battle-dock{min-height:24px;padding-top:1px;padding-bot
  .battle-shell .battle-center .hero-unit .statuses{left:60px;right:3px;bottom:22px;max-height:20px;justify-content:flex-start;flex-wrap:nowrap}
  .battle-shell .battle-center .enemy-unit .statuses{max-height:16px;bottom:23px;flex-wrap:nowrap}
 }
+
+/* Targeting is a compact overlay on the board, never another layout row.
+   Ready champions already announce themselves through their card and mana glow. */
+.battle-shell .battle-center .battle-feedback{grid-column:1;grid-row:2;align-self:end;justify-self:center;position:relative;inset:auto;z-index:8;display:flex;align-items:center;justify-content:center;gap:12px;width:max-content;max-width:calc(100% - 12px);height:auto;min-height:0;margin:0 6px 6px;padding:6px 12px;font-size:11px;line-height:1.3;background:#132b3bef;border:1px solid #e6c9919c;border-radius:8px;box-shadow:0 3px 12px #07121b88;text-wrap:normal}
+.battle-shell .battle-center .battle-feedback:empty{display:none;height:0;min-height:0;margin:0;padding:0;border:0}
+.battle-shell .battle-center .battle-feedback>button{font-size:11px;color:#ffe3a6;min-height:24px;padding:1px 3px;text-underline-offset:3px}
+
+/* Special runes use separate dragon/crystal paintings, with a clear cell rim. */
+.battle-shell .tile.special::after{inset:3%;background:none;border:1px solid #edce8eb3;border-radius:8px;box-shadow:0 0 7px #edcb8640;pointer-events:none}
+.battle-shell .tile.prism::after{border:2px solid #e7ceffc2;box-shadow:0 0 9px #dbc6ff70,inset 0 0 8px #e2ccff14}
