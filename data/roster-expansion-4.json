@@ -1,0 +1,209 @@
+{
+  "version": 4,
+  "originalCount": 174,
+  "totalCount": 189,
+  "originalRecordsSha256": "63405850eba088ef34332735ea8677493fe1102a97705e22101ce9c117e6085c",
+  "originalSourceRecordsSha256": "610a0718ab1b7b0b619406a45f2f6d86636893210babd411b760c2b7972f0b3b",
+  "addedChampionIds": [
+    "alkyron_starbreaker",
+    "ruxil_cinder_newt",
+    "eudoma_nova_keeper",
+    "asterox_labyrinth_moon",
+    "nerephon_tide_singer",
+    "thalassor_orbit_spear",
+    "kelydras_worldbearer",
+    "xiphae_comet_huntress",
+    "ophira_seed_of_worlds",
+    "ixanth_solar_wing",
+    "qamuret_riddle_guard",
+    "phozia_star_oracle",
+    "gorgythe_prism_gaze",
+    "zazikul_silk_weaver",
+    "kheiraxis_void_gallop"
+  ],
+  "newRarities": {
+    "legendary": 7,
+    "rare": 6,
+    "mythical": 2
+  },
+  "newRoles": {
+    "attack": 8,
+    "defense": 3,
+    "support": 4
+  },
+  "newColorCounts": {
+    "red": 3,
+    "blue": 3,
+    "green": 3,
+    "yellow": 3,
+    "purple": 3
+  },
+  "implementedRecommendations": [
+    {
+      "priority": 1,
+      "championId": "alkyron_starbreaker",
+      "name": "Alkyron, Starbreaker",
+      "faction": "astral_concord",
+      "color": "red",
+      "rarity": "mythical",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "status": "implemented"
+    },
+    {
+      "priority": 2,
+      "championId": "ruxil_cinder_newt",
+      "name": "Ruxil, Cinder Newt",
+      "faction": "astral_concord",
+      "color": "red",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    },
+    {
+      "priority": 3,
+      "championId": "eudoma_nova_keeper",
+      "name": "Eudoma, Nova Keeper",
+      "faction": "astral_concord",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 4,
+      "championId": "asterox_labyrinth_moon",
+      "name": "Asterox, Labyrinth Moon",
+      "faction": "astral_concord",
+      "color": "blue",
+      "rarity": "mythical",
+      "role": "defense",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 5,
+      "championId": "nerephon_tide_singer",
+      "name": "Nerephon, Tide Singer",
+      "faction": "astral_concord",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    },
+    {
+      "priority": 6,
+      "championId": "thalassor_orbit_spear",
+      "name": "Thalassor, Orbit Spear",
+      "faction": "astral_concord",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    },
+    {
+      "priority": 7,
+      "championId": "kelydras_worldbearer",
+      "name": "Kelydras, Worldbearer",
+      "faction": "astral_concord",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "slow",
+      "status": "implemented"
+    },
+    {
+      "priority": 8,
+      "championId": "xiphae_comet_huntress",
+      "name": "Xiphae, Comet Huntress",
+      "faction": "astral_concord",
+      "color": "green",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 9,
+      "championId": "ophira_seed_of_worlds",
+      "name": "Ophira, Seed of Worlds",
+      "faction": "astral_concord",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 10,
+      "championId": "ixanth_solar_wing",
+      "name": "Ixanth, Solar Wing",
+      "faction": "astral_concord",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "charging",
+      "status": "implemented"
+    },
+    {
+      "priority": 11,
+      "championId": "qamuret_riddle_guard",
+      "name": "Qamuret, Riddle Guard",
+      "faction": "astral_concord",
+      "color": "yellow",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 12,
+      "championId": "phozia_star_oracle",
+      "name": "Phozia, Star Oracle",
+      "faction": "astral_concord",
+      "color": "yellow",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 13,
+      "championId": "gorgythe_prism_gaze",
+      "name": "Gorgythe, Prism Gaze",
+      "faction": "astral_concord",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 14,
+      "championId": "zazikul_silk_weaver",
+      "name": "Zazikul, Silk Weaver",
+      "faction": "astral_concord",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "status": "implemented"
+    },
+    {
+      "priority": 15,
+      "championId": "kheiraxis_void_gallop",
+      "name": "Kheiraxis, Void Gallop",
+      "faction": "astral_concord",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "status": "implemented"
+    }
+  ],
+  "artwork": "15 original high-resolution portraits in the established painterly fantasy style. Existing portraits retained."
+}

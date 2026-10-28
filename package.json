@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's draft1 roster.",
@@ -33,6 +33,7 @@
     "test:roster-expansion": "node tests/roster-expansion-browser.mjs",
     "test:auto-calm": "node tests/auto-calm-browser.mjs",
     "test:audit-additions": "node tests/audit-additions-browser.mjs",
+    "test:astral-concord": "node tests/astral-concord-browser.mjs",
     "test:next-additions": "node tests/next-additions-browser.mjs"
   },
   "engines": {

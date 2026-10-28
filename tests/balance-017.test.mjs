@@ -15,8 +15,8 @@ test('fourteen named Commons become viable Rares and the remaining 20 Commons di
  for(const id of ['tovin_glassheart','nima_dewthread','neon_glitch_weaver'])assert.ok(roster.find(c=>c.id===id).special.levels[0].healing>=.3,id);
  for(const id of ['fjordwatch_hald','edrik_mournwall','neon_scrap_enforcer'])assert.ok(roster.find(c=>c.id===id).special.levels[0].effects.some(e=>e.id==='shield'&&e.scope==='allies'),id);
  const commons=roster.filter(c=>c.rarity==='common');assert.equal(commons.length,20);
- for(const color of ['red','blue','green','yellow','purple']){assert.equal(commons.filter(c=>c.color===color).length,4,color);assert.equal(roster.filter(c=>c.color===color).length,color==='purple'?34:35,color);}
- assert.equal(roster.length,174);assert.equal(new Set(roster.map(c=>c.id)).size,174);
+ for(const color of ['red','blue','green','yellow','purple']){assert.equal(commons.filter(c=>c.color===color).length,4,color);assert.equal(roster.filter(c=>c.color===color).length,color==='purple'?37:38,color);}
+ assert.equal(roster.length,189);assert.equal(new Set(roster.map(c=>c.id)).size,189);
 });
 test('three Mythicals become Fast with eight-tile Specials',()=>{for(const id of ['Ashwind Warden','frost_sage','pale_matriarch']){const c=roster.find(h=>h.id===id);assert.equal(c.rarity,'mythical');assert.equal(c.manaSpeed,'fast');assert.equal(c.special.levels[0].tiles,8);}});
 test('twin-Common outcome gives two independent heroes for one 100-Gem call',()=>{

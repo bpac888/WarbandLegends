@@ -2048,6 +2048,479 @@
         "atk": 815,
         "def": 680
       }
+    },
+    "alkyron_starbreaker": {
+      "color": "red",
+      "manaSpeed": "slow",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "damage": 1.9,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1500,
+        "atk": 890,
+        "def": 770
+      }
+    },
+    "ruxil_cinder_newt": {
+      "color": "red",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.2,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1030,
+        "atk": 696,
+        "def": 570
+      }
+    },
+    "eudoma_nova_keeper": {
+      "color": "red",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 0,
+          "healing": 0.26,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1440,
+        "atk": 710,
+        "def": 745
+      }
+    },
+    "asterox_labyrinth_moon": {
+      "color": "blue",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 1.35,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1580,
+        "atk": 780,
+        "def": 830
+      }
+    },
+    "nerephon_tide_singer": {
+      "color": "blue",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 0,
+          "healing": 0.21,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1100,
+        "atk": 585,
+        "def": 610
+      }
+    },
+    "thalassor_orbit_spear": {
+      "color": "blue",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.3,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1320,
+        "atk": 815,
+        "def": 680
+      }
+    },
+    "kelydras_worldbearer": {
+      "color": "green",
+      "manaSpeed": "slow",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "damage": 0,
+          "healing": 0,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1571,
+        "atk": 650,
+        "def": 837
+      }
+    },
+    "xiphae_comet_huntress": {
+      "color": "green",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.25,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1060,
+        "atk": 666,
+        "def": 590
+      }
+    },
+    "ophira_seed_of_worlds": {
+      "color": "green",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 0,
+          "healing": 0.26,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1440,
+        "atk": 700,
+        "def": 755
+      }
+    },
+    "ixanth_solar_wing": {
+      "color": "yellow",
+      "manaSpeed": "charging",
+      "chargeLevels": 2,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 1.6,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.5,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1310,
+        "atk": 820,
+        "def": 680
+      }
+    },
+    "qamuret_riddle_guard": {
+      "color": "yellow",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 1.15,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1150,
+        "atk": 528,
+        "def": 650
+      }
+    },
+    "phozia_star_oracle": {
+      "color": "yellow",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 0,
+          "healing": 0.22,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1110,
+        "atk": 595,
+        "def": 610
+      }
+    },
+    "gorgythe_prism_gaze": {
+      "color": "purple",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.4,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "weaken",
+              "turns": 1,
+              "scope": "enemy"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1340,
+        "atk": 810,
+        "def": 705
+      }
+    },
+    "zazikul_silk_weaver": {
+      "color": "purple",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.2,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1048,
+        "atk": 686,
+        "def": 570
+      }
+    },
+    "kheiraxis_void_gallop": {
+      "color": "purple",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.25,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "hp": 1330,
+        "atk": 815,
+        "def": 680
+      }
     }
   }
 }

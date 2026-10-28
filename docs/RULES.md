@@ -2,7 +2,7 @@
 
 ## The roster
 
-The four rarities remain **Common, Rare, Legendary and Mythical**. The roster has 174 champions. The newest group adds 9 Legendaries and 3 Rares. Existing gameplay records and portraits are preserved; 25 names and their literal text references are made more distinct. Colors are now assigned individually rather than inherited from faction: **35 red, 35 blue, 35 green, 35 yellow, 34 purple**. Every color has all four rarities and all three roles. Themes take priority within each pool: frost/water is blue, fire/blood is red, jade/nature/alchemy is green, sunlight/lightning is yellow, and shadow/void/death is purple. There are intentional theme-based exceptions, such as the Shade Prince's cold blue flames and green corrosive undead.
+The four rarities remain **Common, Rare, Legendary and Mythical**. The roster has 189 champions across twelve factions. The newest faction, Astral Concord, adds 6 Rares, 7 Legendaries and 2 Mythicals. Its fifteen characters include 8 ATK, 3 DEF and 4 SUP, with three per element. All 174 prior character records and portraits are preserved. Colors are now assigned individually rather than inherited from faction: **38 red, 38 blue, 38 green, 38 yellow, 37 purple**. Every color has all four rarities and all three roles. Themes take priority within each pool: frost/water is blue, fire/blood is red, jade/nature/alchemy is green, sunlight/lightning is yellow, and shadow/void/death is purple. There are intentional theme-based exceptions, such as the Shade Prince's cold blue flames and green corrosive undead.
 
 The new ATK/DEF/HP numbers are the game's **max-level balance baseline**, used directly in the current unlocked-roster prototype. Leveling is not implemented yet. Rarity averages:
 

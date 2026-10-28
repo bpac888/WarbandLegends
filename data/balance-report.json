@@ -1,20 +1,20 @@
 {
   "version": 3,
-  "champions": 174,
+  "champions": 189,
   "colorCounts": {
-    "red": 35,
-    "blue": 35,
-    "green": 35,
-    "yellow": 35,
-    "purple": 34
+    "red": 38,
+    "blue": 38,
+    "green": 38,
+    "yellow": 38,
+    "purple": 37
   },
   "manaCounts": {
     "very_fast": 9,
-    "fast": 37,
-    "average": 78,
-    "slow": 27,
+    "fast": 41,
+    "average": 86,
+    "slow": 29,
     "very_slow": 3,
-    "charging": 20
+    "charging": 21
   },
   "chargingChampions": [
     {
@@ -165,6 +165,13 @@
         8,
         10
       ]
+    },
+    {
+      "id": "ixanth_solar_wing",
+      "tiles": [
+        8,
+        10
+      ]
     }
   ],
   "rarities": {
@@ -189,7 +196,7 @@
       }
     },
     "rare": {
-      "count": 63,
+      "count": 69,
       "stats": {
         "atk": {
           "min": 515,
@@ -209,7 +216,7 @@
       }
     },
     "legendary": {
-      "count": 76,
+      "count": 83,
       "stats": {
         "atk": {
           "min": 600,
@@ -229,7 +236,7 @@
       }
     },
     "mythical": {
-      "count": 15,
+      "count": 17,
       "stats": {
         "atk": {
           "min": 748,

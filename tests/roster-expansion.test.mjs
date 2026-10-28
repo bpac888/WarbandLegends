@@ -18,7 +18,7 @@ test('all original records, source identities and original ID set remain exactly
  assert.equal(hash(roster.slice(0,135)),manifest.originalRecordsSha256);
  assert.equal(hash((await read('data/source-champions.json')).slice(0,135)),manifest.originalSourceRecordsSha256);
  assert.equal(createHash('sha256').update(roster.slice(0,135).map(c=>c.id).sort().join('\n')).digest('hex'),manifest.originalIdsSha256);
- assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,174);
+ assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,189);
 });
 test('new champions retain the approved rarity, color and ATK-majority mix without another Very Slow Mythical',()=>{
  assert.deepEqual(count('rarity'),{legendary:11,mythical:1,rare:3});assert.deepEqual(count('role'),{attack:8,defense:4,support:3});

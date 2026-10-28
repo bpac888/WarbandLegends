@@ -1,77 +1,79 @@
-# Warband Legends Roster Audit — 174 Champions
+# Warband Legends Roster Audit — 189 Champions
 
-The latest group implements the twelve recommended additions: **9 Legendary, 3 Rare; 8 ATK, 2 DEF and 2 SUP**. No Mythicals or Commons were added. A separate [name audit](NAME_AUDIT.md) makes 25 existing display names more distinct and updates literal text references. Stable IDs, portraits, stats, Specials, passive mechanics and progress are unchanged.
+Astral Concord adds fifteen original star-born champions inspired by mythical heroes and creatures. Its theme does not determine rarity: the faction contains Rare, Legendary and Mythical characters; no new Commons were added. All 174 prior champions retain their complete records, names, portraits, abilities and stats.
 
 ## Before and After
 
 | Category | Before | Added | After |
 | --- | --- | --- | --- |
-| Total | 162 | 12 | 174 |
-| Mythical | 15 | 0 | 15 |
-| Legendary | 67 | 9 | 76 |
-| Rare | 60 | 3 | 63 |
+| Total | 174 | 15 | 189 |
+| Mythical | 15 | 2 | 17 |
+| Legendary | 76 | 7 | 83 |
+| Rare | 63 | 6 | 69 |
 | Common | 20 | 0 | 20 |
-| Attack | 85 | 8 | 93 |
-| Defense | 36 | 2 | 38 |
-| Support | 41 | 2 | 43 |
-| Red | 33 | 2 | 35 |
-| Blue | 32 | 3 | 35 |
-| Green | 32 | 3 | 35 |
-| Yellow | 32 | 3 | 35 |
-| Purple | 33 | 1 | 34 |
+| Attack | 93 | 8 | 101 |
+| Defense | 38 | 3 | 41 |
+| Support | 43 | 4 | 47 |
+| Red | 35 | 3 | 38 |
+| Blue | 35 | 3 | 38 |
+| Green | 35 | 3 | 38 |
+| Yellow | 35 | 3 | 38 |
+| Purple | 34 | 3 | 37 |
 
-Attackers remain the majority: **93/174 (53.4%)**, with 38 DEF and 43 SUP. Red, blue, green and yellow each have 35 champions; purple has 34. Mythicals remain at 15. Rarity-wide average maximum HP, ATK and DEF are unchanged.
+Attackers remain the majority: **101/189 (53.4%)**. The faction has three champions per element and more attackers than either other role. Rarity tiers provide early accessible choices alongside seven Legendaries and two Mythicals.
 
-## The Twelve Additions
+## Astral Concord
 
-| Champion | Faction | Element | Rarity | Type | Speed |
-| --- | --- | --- | --- | --- | --- |
-| Othrel, Riverstone Aegis | Wildgrove | Blue | Legendary | DEF | Fast |
-| Domitrix, the Gilded Vigil | Bloodcourt | Yellow | Legendary | DEF | Average |
-| Beatrice, Verdigris Mender | Ironclad | Green | Legendary | SUP | Fast |
-| Ephoros, Pale Ferryman | Nether | Blue | Legendary | SUP | Fast |
-| Cassio, Gravity Knife | Neon Syndicate | Purple | Legendary | ATK | Fast |
-| Pyrrhon, the Soulfire Verdict | Nether | Yellow | Legendary | ATK | Charging |
-| Inko, Plasma Skirmisher | Neon Syndicate | Red | Rare | ATK | Fast |
-| Hester, Emberthorn Hunter | Wildgrove | Red | Rare | ATK | Average |
-| Kozhak, Glacier Prowler | Veldtborn | Blue | Legendary | ATK | Charging |
-| Ushala, Quillgrass Tracker | Veldtborn | Green | Rare | ATK | Average |
-| Qingluo, Jade Tempest | Dragon Dynasty | Green | Legendary | ATK | Slow |
-| Thyssara, Eclipse Blade | Umbra | Yellow | Legendary | ATK | Charging |
-
-Wildgrove gains a blue Legendary defender and a red Rare attacker; Bloodcourt gains a yellow Legendary defender. Ironclad gains its first Legendary support. Nether gains a fast blue support and a Charging yellow attacker. Neon, Veldtborn, Dragon Dynasty and Umbra gain missing element/rarity/type options. These priorities add team choices while retaining an ATK majority.
+| Champion | Element | Rarity | Type | Speed |
+| --- | --- | --- | --- | --- |
+| Alkyron, Starbreaker | Red | Mythical | ATK | Slow |
+| Ruxil, Cinder Newt | Red | Rare | ATK | Fast |
+| Eudoma, Nova Keeper | Red | Legendary | SUP | Average |
+| Asterox, Labyrinth Moon | Blue | Mythical | DEF | Average |
+| Nerephon, Tide Singer | Blue | Rare | SUP | Fast |
+| Thalassor, Orbit Spear | Blue | Legendary | ATK | Fast |
+| Kelydras, Worldbearer | Green | Legendary | DEF | Slow |
+| Xiphae, Comet Huntress | Green | Rare | ATK | Average |
+| Ophira, Seed of Worlds | Green | Legendary | SUP | Average |
+| Ixanth, Solar Wing | Yellow | Legendary | ATK | Charging |
+| Qamuret, Riddle Guard | Yellow | Rare | DEF | Average |
+| Phozia, Star Oracle | Yellow | Rare | SUP | Average |
+| Gorgythe, Prism Gaze | Purple | Legendary | ATK | Average |
+| Zazikul, Silk Weaver | Purple | Rare | ATK | Average |
+| Kheiraxis, Void Gallop | Purple | Legendary | ATK | Fast |
 
 ## Factions and Mythicals
 
 | Faction | Before → After | Red / Blue / Green / Yellow / Purple | Mythicals (Element) |
 | --- | --- | --- | --- |
-| Bloodcourt | 15 → 16 | 9 / 1 / 1 / 2 / 3 | Sable, Pale Matriarch (Purple); Sir Aurel, the Crimson Paladin (Red) |
+| Astral Concord | 0 → 15 | 3 / 3 / 3 / 3 / 3 | Alkyron, Starbreaker (Red); Asterox, Labyrinth Moon (Blue) |
+| Bloodcourt | 16 → 16 | 9 / 1 / 1 / 2 / 3 | Sable, Pale Matriarch (Purple); Sir Aurel, the Crimson Paladin (Red) |
 | Chymera | 16 → 16 | 1 / 2 / 7 / 4 / 2 | Vex, the Elixir Apotheon (Green) |
-| Dragon Dynasty | 15 → 16 | 4 / 3 / 5 / 2 / 2 | Dragon Empress (Red) |
+| Dragon Dynasty | 16 → 16 | 4 / 3 / 5 / 2 / 2 | Dragon Empress (Red) |
 | Dune Riders | 15 → 15 | 1 / 1 / 2 / 7 / 4 | Ashwind Warden (Yellow); Nayara, Keeper of the Deep Well (Blue) |
 | Frost | 15 → 15 | 2 / 9 / 1 / 2 / 1 | Frost King (Blue); Frost Sage (Blue) |
-| Ironclad | 15 → 16 | 5 / 3 / 2 / 5 / 1 | Isolde, the Last Foundry (Yellow); Hadrian, the Walking Siege (Red) |
-| Neon Syndicate | 14 → 16 | 3 / 4 / 2 / 3 / 4 | Zero, The Singularity (Purple) |
-| Nether | 14 → 16 | 4 / 4 / 4 / 2 / 2 | Malzhur, the Abyss Lord (Red) |
-| Umbra | 15 → 16 | 1 / 1 / 1 / 2 / 11 | Yshmir, the Worldwound (Purple) |
-| Veldtborn | 14 → 16 | 2 / 4 / 3 / 4 / 3 | Azhar, the Rosetted Sun (Yellow) |
-| Wildgrove | 14 → 16 | 3 / 3 / 7 / 2 / 1 | Oakenhart, the First Warden (Green) |
+| Ironclad | 16 → 16 | 5 / 3 / 2 / 5 / 1 | Isolde, the Last Foundry (Yellow); Hadrian, the Walking Siege (Red) |
+| Neon Syndicate | 16 → 16 | 3 / 4 / 2 / 3 / 4 | Zero, The Singularity (Purple) |
+| Nether | 16 → 16 | 4 / 4 / 4 / 2 / 2 | Malzhur, the Abyss Lord (Red) |
+| Umbra | 16 → 16 | 1 / 1 / 1 / 2 / 11 | Yshmir, the Worldwound (Purple) |
+| Veldtborn | 16 → 16 | 2 / 4 / 3 / 4 / 3 | Azhar, the Rosetted Sun (Yellow) |
+| Wildgrove | 16 → 16 | 3 / 3 / 7 / 2 / 1 | Oakenhart, the First Warden (Green) |
 
-Every faction has all five elements and 15–16 champions. Mythical element counts remain 4 red, 3 blue, 2 green, 3 yellow and 3 purple. No extra Mythicals are needed merely to equalize counts.
+Every faction has all five elements. Astral Concord begins with 15 champions, comparable to the existing factions’ 15–16. Its two Mythicals are a limited capstone rather than the majority of its roster.
 
 ## Speed Coverage
 
 | Speed | Mythical | Legendary | Rare | Common | Total |
 | --- | --- | --- | --- | --- | --- |
 | Very Fast | 1 | 2 | 2 | 4 | 9 |
-| Fast | 5 | 13 | 14 | 5 | 37 |
-| Average | 1 | 23 | 43 | 11 | 78 |
-| Slow | 3 | 23 | 1 | 0 | 27 |
+| Fast | 5 | 15 | 16 | 5 | 41 |
+| Average | 2 | 26 | 47 | 11 | 86 |
+| Slow | 4 | 24 | 1 | 0 | 29 |
 | Very Slow | 1 | 2 | 0 | 0 | 3 |
-| Charging | 4 | 13 | 3 | 0 | 20 |
+| Charging | 4 | 14 | 3 | 0 | 21 |
 
-The new group adds five Fast, three Average, one Slow and three Charging champions. Charging uses cumulative 8/10 or 5/10/15 gates. Yshmir remains the only Very Slow Mythical.
+Yshmir remains the only Very Slow Mythical. New designs use existing supported effects and charge tiers; no new faction-wide combat bonus is applied.
 
 ## Validation and Limits
 
-Summon outcome odds and the ten-call guarantee are unchanged. Tests fingerprint historical records after reversing only approved display-name/lore-reference edits, exercise every new Special tier, summon eligibility, save compatibility and Auto actions, and check all artwork and mobile dossiers. This is a coverage audit, not a measured matchup win-rate study. The [162-champion report](history/ROSTER-AUDIT-162.md) and [150-champion report](history/ROSTER-AUDIT-150.md) are retained as history.
+Summon rarity odds and the ten-call guarantee are unchanged; new champions join their matching rarity pools. Build and audit checks fingerprint all 174 original records directly, alongside source records. New-character checks cover balanced coverage, unique names, Specials, summon eligibility, save compatibility, Auto actions and portrait quality. This is a coverage audit, not a measured matchup win-rate study. Previous reports remain available for [174](history/ROSTER-AUDIT-174.md), [162](history/ROSTER-AUDIT-162.md) and [150](history/ROSTER-AUDIT-150.md) champions.

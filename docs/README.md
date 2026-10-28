@@ -36,3 +36,5 @@ These notes describe checkpoints from their respective sessions; they are not a 
 - [Archived release review status](history/REVIEW-STATUS-2026-10.md)
 
 - [Roster name audit](NAME_AUDIT.md) — the 25 name changes and preservation rules.
+
+- [Astral Concord](ASTRAL_CONCORD.md): the new fifteen-character faction and its balance.

@@ -1,13 +1,15 @@
-import {historicalRecords} from '../src/roster-identity.js';
 import {AVATARS} from '../src/keeper.js';
 import {MATERIALS} from '../src/ascension.js';
 import {ENCOUNTERS,DIFFICULTIES,DUNGEONS} from '../src/encounters.js';
 import {readFile,writeFile,cp,mkdir,rm,stat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const roster=JSON.parse(await readFile('data/champions.json','utf8'));
-const expansion=JSON.parse(await readFile('data/roster-expansion-3.json','utf8'));
-if(createHash('sha256').update(JSON.stringify(historicalRecords(roster.slice(0,expansion.originalCount),JSON.parse(await readFile('data/roster-name-audit.json','utf8'))))).digest('hex')!==expansion.originalRecordsSha256)throw Error('Existing champion records changed');
+const expansion=JSON.parse(await readFile('data/roster-expansion-4.json','utf8'));
+if(createHash('sha256').update(JSON.stringify(roster.slice(0,expansion.originalCount))).digest('hex')!==expansion.originalRecordsSha256)throw Error('Existing champion records changed');
+const sourceRoster=JSON.parse(await readFile('data/source-champions.json','utf8'));
+if(createHash('sha256').update(JSON.stringify(sourceRoster.slice(0,expansion.originalCount))).digest('hex')!==expansion.originalSourceRecordsSha256)throw Error('Existing source records changed');
 if(roster.length!==expansion.totalCount||new Set(roster.map(c=>c.id)).size!==expansion.totalCount)throw Error('Roster identity check failed');
+if((await stat('assets/factions/astral_concord.webp')).size<1000)throw Error('Missing Astral Concord emblem');
 for(const c of roster){if(!/^assets\/champions\/[a-zA-Z0-9_ -]+\.webp$/.test(c.portrait)||(await stat(c.portrait)).size<1000)throw Error(`Missing portrait: ${c.id}`);}
 for(const color of ['red','blue','green','yellow','purple'])for(const suffix of ['','-blast','-prism'])if((await stat(`assets/runes/${color}${suffix}.svg`)).size<10000)throw Error('Missing rune artwork: '+color+suffix);
 for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/world-map.svg','assets/brand/warband-crest.webp','assets/brand/warband-favicon.png','assets/brand/warband-touch.png','assets/brand/warband-wordmark.png','assets/guide/element-advantages.webp'])if((await stat(path)).size<500)throw Error('Missing brand artwork');

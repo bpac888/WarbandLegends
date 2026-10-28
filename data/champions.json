@@ -9356,5 +9356,717 @@
       ]
     },
     "ability_desc": "Deal 250% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "alkyron_starbreaker",
+    "name": "Alkyron, Starbreaker",
+    "title": "Starbreaker",
+    "rarity": "mythical",
+    "faction": "astral_concord",
+    "role": "attack",
+    "hp": 1500,
+    "atk": 890,
+    "def": 770,
+    "ability_name": "Twelve Falling Suns",
+    "lore": "The Astral Concord remembers Alkyron’s twelve labors as twelve dead worlds pulled back into orbit. He wears their shattered moons as a belt and carries a lion-shaped nebula across his shoulders. When another sun threatens to fall, he meets it with his bare hands.",
+    "image_url": "/assets/champions/alkyron_starbreaker.webp",
+    "id": "alkyron_starbreaker",
+    "color": "red",
+    "source_image": "assets/champions/alkyron_starbreaker.webp",
+    "portrait": "assets/champions/alkyron_starbreaker.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Twelve Falling Suns",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "damage": 1.9,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 190% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "ruxil_cinder_newt",
+    "name": "Ruxil, Cinder Newt",
+    "title": "Cinder Newt",
+    "rarity": "rare",
+    "faction": "astral_concord",
+    "role": "attack",
+    "hp": 1030,
+    "atk": 696,
+    "def": 570,
+    "ability_name": "Comet Spit",
+    "lore": "Ruxil hatched in the cooling shell of a wandering meteor. The Concord found him stealing sparks from its engines and offered him a place beside its navigators. He now guards the fleet’s wake, scorching anything that follows too closely.",
+    "image_url": "/assets/champions/ruxil_cinder_newt.webp",
+    "id": "ruxil_cinder_newt",
+    "color": "red",
+    "source_image": "assets/champions/ruxil_cinder_newt.webp",
+    "portrait": "assets/champions/ruxil_cinder_newt.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Comet Spit",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.2,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 220% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "eudoma_nova_keeper",
+    "name": "Eudoma, Nova Keeper",
+    "title": "Nova Keeper",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "support",
+    "hp": 1440,
+    "atk": 710,
+    "def": 745,
+    "ability_name": "Hearth of the Wanderers",
+    "lore": "Eudoma tends the small captive star at the heart of the Concord’s oldest ark. Its warmth has sustained generations born between worlds, and she carries a fragment into every battle. Those who stand beside her remember that even the longest journey can lead home.",
+    "image_url": "/assets/champions/eudoma_nova_keeper.webp",
+    "id": "eudoma_nova_keeper",
+    "color": "red",
+    "source_image": "assets/champions/eudoma_nova_keeper.webp",
+    "portrait": "assets/champions/eudoma_nova_keeper.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Hearth of the Wanderers",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 0,
+          "healing": 0.26,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 26% max HP to all living allies."
+  },
+  {
+    "template_id": "asterox_labyrinth_moon",
+    "name": "Asterox, Labyrinth Moon",
+    "title": "Labyrinth Moon",
+    "rarity": "mythical",
+    "faction": "astral_concord",
+    "role": "defense",
+    "hp": 1580,
+    "atk": 780,
+    "def": 830,
+    "ability_name": "Walls Between Worlds",
+    "lore": "Asterox was bred to hunt prisoners through a moon-sized labyrinth. He broke its central gate instead, guiding its captives into the Concord’s waiting ships. He still carries that gate as a shield, refusing to let another maze close around the helpless.",
+    "image_url": "/assets/champions/asterox_labyrinth_moon.webp",
+    "id": "asterox_labyrinth_moon",
+    "color": "blue",
+    "source_image": "assets/champions/asterox_labyrinth_moon.webp",
+    "portrait": "assets/champions/asterox_labyrinth_moon.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Walls Between Worlds",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 1.35,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 135% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "nerephon_tide_singer",
+    "name": "Nerephon, Tide Singer",
+    "title": "Tide Singer",
+    "rarity": "rare",
+    "faction": "astral_concord",
+    "role": "support",
+    "hp": 1100,
+    "atk": 585,
+    "def": 610,
+    "ability_name": "Song of Returning Tides",
+    "lore": "Nerephon charts the invisible tides that flow between planets. His songs guide damaged vessels through those currents, easing pain and scattering the sickness carried by cold starlight. Concord pilots say they can hear him even through a broken helm.",
+    "image_url": "/assets/champions/nerephon_tide_singer.webp",
+    "id": "nerephon_tide_singer",
+    "color": "blue",
+    "source_image": "assets/champions/nerephon_tide_singer.webp",
+    "portrait": "assets/champions/nerephon_tide_singer.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Song of Returning Tides",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 0,
+          "healing": 0.21,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 21% max HP to all living allies."
+  },
+  {
+    "template_id": "thalassor_orbit_spear",
+    "name": "Thalassor, Orbit Spear",
+    "title": "Orbit Spear",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "attack",
+    "hp": 1320,
+    "atk": 815,
+    "def": 680,
+    "ability_name": "Trident of the Deep Sky",
+    "lore": "Thalassor once ruled the storm oceans of a world whose sun had vanished. He joined the Concord when its arks brought light back to his people. His trident now bends the deep sky into currents strong enough to tear a warship from its course.",
+    "image_url": "/assets/champions/thalassor_orbit_spear.webp",
+    "id": "thalassor_orbit_spear",
+    "color": "blue",
+    "source_image": "assets/champions/thalassor_orbit_spear.webp",
+    "portrait": "assets/champions/thalassor_orbit_spear.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Trident of the Deep Sky",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.3,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 230% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "kelydras_worldbearer",
+    "name": "Kelydras, Worldbearer",
+    "title": "Worldbearer",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "defense",
+    "hp": 1571,
+    "atk": 650,
+    "def": 837,
+    "ability_name": "Carry the Living World",
+    "lore": "An entire orchard grows across the shell of Kelydras, preserved from the world he could not save. He carries its last seeds between the Concord’s arks, planting wherever life can take root. In battle, he shelters his companions as carefully as that fragile forest.",
+    "image_url": "/assets/champions/kelydras_worldbearer.webp",
+    "id": "kelydras_worldbearer",
+    "color": "green",
+    "source_image": "assets/champions/kelydras_worldbearer.webp",
+    "portrait": "assets/champions/kelydras_worldbearer.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Carry the Living World",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "damage": 0,
+          "healing": 0,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Empower your warband with the effects below."
+  },
+  {
+    "template_id": "xiphae_comet_huntress",
+    "name": "Xiphae, Comet Huntress",
+    "title": "Comet Huntress",
+    "rarity": "rare",
+    "faction": "astral_concord",
+    "role": "attack",
+    "hp": 1060,
+    "atk": 666,
+    "def": 590,
+    "ability_name": "Arrow Beyond the Horizon",
+    "lore": "Xiphae tracks the silent predators that drift behind the Concord’s harvest ships. She marks their paths with arrows grown from living comet stone. Her quarry rarely sees the huntress, only the green trail that turns suddenly toward it.",
+    "image_url": "/assets/champions/xiphae_comet_huntress.webp",
+    "id": "xiphae_comet_huntress",
+    "color": "green",
+    "source_image": "assets/champions/xiphae_comet_huntress.webp",
+    "portrait": "assets/champions/xiphae_comet_huntress.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Arrow Beyond the Horizon",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.25,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 225% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "ophira_seed_of_worlds",
+    "name": "Ophira, Seed of Worlds",
+    "title": "Seed of Worlds",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "support",
+    "hp": 1440,
+    "atk": 700,
+    "def": 755,
+    "ability_name": "Spring Beyond the Stars",
+    "lore": "Ophira carries a seed that flowers only beneath an unfamiliar sky. From its roots she draws the strength to sustain settlers through barren seasons and strange plagues. The Concord follows her blooms from world to world, leaving gardens where there had been only dust.",
+    "image_url": "/assets/champions/ophira_seed_of_worlds.webp",
+    "id": "ophira_seed_of_worlds",
+    "color": "green",
+    "source_image": "assets/champions/ophira_seed_of_worlds.webp",
+    "portrait": "assets/champions/ophira_seed_of_worlds.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Spring Beyond the Stars",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 0,
+          "healing": 0.26,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 26% max HP to all living allies."
+  },
+  {
+    "template_id": "ixanth_solar_wing",
+    "name": "Ixanth, Solar Wing",
+    "title": "Solar Wing",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "attack",
+    "hp": 1310,
+    "atk": 820,
+    "def": 680,
+    "ability_name": "Flight Through the Sun",
+    "lore": "Ixanth built his wings from the wreckage of the Concord’s first solar sail. Where his teachers saw a reckless ascent, he saw a route through the enemy’s siege. His wings have burned a hundred times; each return teaches him how to fly closer to the light.",
+    "image_url": "/assets/champions/ixanth_solar_wing.webp",
+    "id": "ixanth_solar_wing",
+    "color": "yellow",
+    "source_image": "assets/champions/ixanth_solar_wing.webp",
+    "portrait": "assets/champions/ixanth_solar_wing.webp",
+    "passive": null,
+    "manaSpeed": "charging",
+    "special": {
+      "name": "Flight Through the Sun",
+      "charging": true,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 1.6,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.5,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 250% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "qamuret_riddle_guard",
+    "name": "Qamuret, Riddle Guard",
+    "title": "Riddle Guard",
+    "rarity": "rare",
+    "faction": "astral_concord",
+    "role": "defense",
+    "hp": 1150,
+    "atk": 528,
+    "def": 650,
+    "ability_name": "Answer in Stone",
+    "lore": "Qamuret guards the Concord’s oldest archive, asking every visitor what they intend to leave behind. Her riddles test kindness rather than cleverness. Against those who answer with violence, she becomes as immovable as the golden doors at her back.",
+    "image_url": "/assets/champions/qamuret_riddle_guard.webp",
+    "id": "qamuret_riddle_guard",
+    "color": "yellow",
+    "source_image": "assets/champions/qamuret_riddle_guard.webp",
+    "portrait": "assets/champions/qamuret_riddle_guard.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Answer in Stone",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 1.15,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 115% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "phozia_star_oracle",
+    "name": "Phozia, Star Oracle",
+    "title": "Star Oracle",
+    "rarity": "rare",
+    "faction": "astral_concord",
+    "role": "support",
+    "hp": 1110,
+    "atk": 595,
+    "def": 610,
+    "ability_name": "Tomorrow’s Shelter",
+    "lore": "Phozia reads possible futures in the dust caught inside her halo. She cannot promise victory, but she can find the instant when a shield will matter most. The Concord trusts her because she speaks plainly about what even the stars cannot know.",
+    "image_url": "/assets/champions/phozia_star_oracle.webp",
+    "id": "phozia_star_oracle",
+    "color": "yellow",
+    "source_image": "assets/champions/phozia_star_oracle.webp",
+    "portrait": "assets/champions/phozia_star_oracle.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Tomorrow’s Shelter",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 0,
+          "healing": 0.22,
+          "target": "self",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 22% max HP to all living allies."
+  },
+  {
+    "template_id": "gorgythe_prism_gaze",
+    "name": "Gorgythe, Prism Gaze",
+    "title": "Prism Gaze",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "attack",
+    "hp": 1340,
+    "atk": 810,
+    "def": 705,
+    "ability_name": "The Unblinking Horizon",
+    "lore": "Gorgythe’s living crown sees the fractures hidden inside armor and stone. Once feared as a monster, she now scouts shattered worlds for the Concord, finding survivors beneath impossible ruins. Her enemies learn that a single glance can expose what brute force never could.",
+    "image_url": "/assets/champions/gorgythe_prism_gaze.webp",
+    "id": "gorgythe_prism_gaze",
+    "color": "purple",
+    "source_image": "assets/champions/gorgythe_prism_gaze.webp",
+    "portrait": "assets/champions/gorgythe_prism_gaze.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "The Unblinking Horizon",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.4,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "weaken",
+              "turns": 1,
+              "scope": "enemy"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 240% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "zazikul_silk_weaver",
+    "name": "Zazikul, Silk Weaver",
+    "title": "Silk Weaver",
+    "rarity": "rare",
+    "faction": "astral_concord",
+    "role": "attack",
+    "hp": 1048,
+    "atk": 686,
+    "def": 570,
+    "ability_name": "Threads Across the Void",
+    "lore": "Zazikul spins silk strong enough to anchor a ship to an asteroid. When raiders threatened the Concord’s nursery ark, he stitched their engines into a single helpless knot. His quiet work has held the fleet together ever since.",
+    "image_url": "/assets/champions/zazikul_silk_weaver.webp",
+    "id": "zazikul_silk_weaver",
+    "color": "purple",
+    "source_image": "assets/champions/zazikul_silk_weaver.webp",
+    "portrait": "assets/champions/zazikul_silk_weaver.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Threads Across the Void",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.2,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 220% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "kheiraxis_void_gallop",
+    "name": "Kheiraxis, Void Gallop",
+    "title": "Void Gallop",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "attack",
+    "hp": 1330,
+    "atk": 815,
+    "def": 680,
+    "ability_name": "Hooves on the Eventide",
+    "lore": "Kheiraxis races along the thin paths between collapsing portals. He carries messages that no ship can deliver, reaching isolated Concord outposts before their last lights fail. His spear closes the false gates that lure travelers into the dark.",
+    "image_url": "/assets/champions/kheiraxis_void_gallop.webp",
+    "id": "kheiraxis_void_gallop",
+    "color": "purple",
+    "source_image": "assets/champions/kheiraxis_void_gallop.webp",
+    "portrait": "assets/champions/kheiraxis_void_gallop.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Hooves on the Eventide",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "damage": 2.25,
+          "healing": 0,
+          "target": "enemy",
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 225% ATK damage to selected enemy."
   }
 ]

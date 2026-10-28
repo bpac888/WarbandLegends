@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-174 champions. The newest expansion adds 9 Legendaries and 3 Rares. Existing gameplay records and portraits are preserved; audited display names and their lore references are updated. Stats below are maximum-level baselines; each owned copy develops independently.
+189 champions. The newest expansion adds the 15-character Astral Concord faction. Existing gameplay records, display names and portraits are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -178,6 +178,21 @@
 | Ushala, Quillgrass Tracker | rare | green | attack | 602 | 620 | 1129 | Average 10 |
 | Qingluo, Jade Tempest | legendary | green | attack | 810 | 700 | 1340 | Slow 12 |
 | Thyssara, Eclipse Blade | legendary | yellow | attack | 815 | 680 | 1320 | Charging 8 / 10 |
+| Alkyron, Starbreaker | mythical | red | attack | 890 | 770 | 1500 | Slow 12 |
+| Ruxil, Cinder Newt | rare | red | attack | 696 | 570 | 1030 | Fast 8 |
+| Eudoma, Nova Keeper | legendary | red | support | 710 | 745 | 1440 | Average 10 |
+| Asterox, Labyrinth Moon | mythical | blue | defense | 780 | 830 | 1580 | Average 10 |
+| Nerephon, Tide Singer | rare | blue | support | 585 | 610 | 1100 | Fast 8 |
+| Thalassor, Orbit Spear | legendary | blue | attack | 815 | 680 | 1320 | Fast 8 |
+| Kelydras, Worldbearer | legendary | green | defense | 650 | 837 | 1571 | Slow 12 |
+| Xiphae, Comet Huntress | rare | green | attack | 666 | 590 | 1060 | Average 10 |
+| Ophira, Seed of Worlds | legendary | green | support | 700 | 755 | 1440 | Average 10 |
+| Ixanth, Solar Wing | legendary | yellow | attack | 820 | 680 | 1310 | Charging 8 / 10 |
+| Qamuret, Riddle Guard | rare | yellow | defense | 528 | 650 | 1150 | Average 10 |
+| Phozia, Star Oracle | rare | yellow | support | 595 | 610 | 1110 | Average 10 |
+| Gorgythe, Prism Gaze | legendary | purple | attack | 810 | 705 | 1340 | Average 10 |
+| Zazikul, Silk Weaver | rare | purple | attack | 686 | 570 | 1048 | Average 10 |
+| Kheiraxis, Void Gallop | legendary | purple | attack | 815 | 680 | 1330 | Fast 8 |
 
 ## Specials
 
@@ -947,4 +962,65 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 - Charge 1 · 8 tiles: Deal 170% ATK damage to selected enemy. Dispel (Selected enemy).
 - Charge 2 · 10 tiles: Deal 250% ATK damage to selected enemy. Dispel (Selected enemy); Buff Seal (Selected enemy, 1 turns).
+
+### Alkyron, Starbreaker — Twelve Falling Suns
+
+- 12 tiles: Deal 190% ATK damage to all living enemies. Burn (All living enemies, 2 turns).
+
+### Ruxil, Cinder Newt — Comet Spit
+
+- 8 tiles: Deal 220% ATK damage to selected enemy. Burn (Selected enemy, 2 turns).
+
+### Eudoma, Nova Keeper — Hearth of the Wanderers
+
+- 10 tiles: Restore 26% max HP to all living allies. Attack Up (All living allies, 1 turns).
+
+### Asterox, Labyrinth Moon — Walls Between Worlds
+
+- 10 tiles: Deal 135% ATK damage to selected enemy. Taunt (Caster, 1 turns); Damage Ward (Caster, 2 turns); Barrier (All living allies, 1 turns).
+
+### Nerephon, Tide Singer — Song of Returning Tides
+
+- 8 tiles: Restore 21% max HP to all living allies. Cleanse (All living allies).
+
+### Thalassor, Orbit Spear — Trident of the Deep Sky
+
+- 8 tiles: Deal 230% ATK damage to selected enemy. Defense Down (Selected enemy, 1 turns).
+
+### Kelydras, Worldbearer — Carry the Living World
+
+- 12 tiles: Empower your warband with the effects below. Barrier (All living allies, 2 turns); Damage Ward (All living allies, 1 turns).
+
+### Xiphae, Comet Huntress — Arrow Beyond the Horizon
+
+- 10 tiles: Deal 225% ATK damage to selected enemy. Poison (Selected enemy, 2 turns).
+
+### Ophira, Seed of Worlds — Spring Beyond the Stars
+
+- 10 tiles: Restore 26% max HP to all living allies. Ailment Ward (All living allies, 1 turns).
+
+### Ixanth, Solar Wing — Flight Through the Sun
+
+- Charge 1 · 8 tiles: Deal 160% ATK damage to selected enemy. .
+- Charge 2 · 10 tiles: Deal 250% ATK damage to selected enemy. Dispel (Selected enemy).
+
+### Qamuret, Riddle Guard — Answer in Stone
+
+- 10 tiles: Deal 115% ATK damage to selected enemy. Taunt (Caster, 1 turns); Damage Ward (Caster, 2 turns).
+
+### Phozia, Star Oracle — Tomorrow’s Shelter
+
+- 10 tiles: Restore 22% max HP to all living allies. Barrier (All living allies, 1 turns).
+
+### Gorgythe, Prism Gaze — The Unblinking Horizon
+
+- 10 tiles: Deal 240% ATK damage to selected enemy. Vulnerability (Selected enemy, 1 turns); Attack Down (Selected enemy, 1 turns).
+
+### Zazikul, Silk Weaver — Threads Across the Void
+
+- 10 tiles: Deal 220% ATK damage to selected enemy. Defense Down (Selected enemy, 2 turns).
+
+### Kheiraxis, Void Gallop — Hooves on the Eventide
+
+- 8 tiles: Deal 225% ATK damage to selected enemy. Buff Seal (Selected enemy, 1 turns).
 
