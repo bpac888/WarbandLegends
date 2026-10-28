@@ -9261,22 +9261,27 @@
       ],
       "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
     },
-    "manaSpeed": "slow",
+    "manaSpeed": "average",
     "special": {
       "name": "Twelve Falling Suns",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "slow",
-          "tiles": 12,
-          "damage": 1.9,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.1,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
           "aoe": true,
           "pierce": false,
           "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            },
             {
               "id": "burn",
               "turns": 2,
@@ -9286,7 +9291,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 190% ATK damage to all living enemies."
+    "ability_desc": "Deal 210% ATK damage to all living enemies."
   },
   {
     "template_id": "ruxil_cinder_newt",
@@ -9402,15 +9407,15 @@
       "value": 0.5,
       "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
     },
-    "manaSpeed": "average",
+    "manaSpeed": "fast",
     "special": {
       "name": "Walls Between Worlds",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "average",
-          "tiles": 10,
+          "speed": "fast",
+          "tiles": 8,
           "damage": 1.35,
           "healing": 0,
           "target": "enemy",
@@ -9420,17 +9425,17 @@
           "effects": [
             {
               "id": "guard",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             },
             {
               "id": "strengthen",
               "turns": 2,
-              "scope": "self"
+              "scope": "allies"
             },
             {
               "id": "shield",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]

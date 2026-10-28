@@ -26,10 +26,10 @@ Attackers remain the majority: **100/189 (52.9%)**. The faction has three champi
 
 | Champion | Element | Rarity | Type | Speed |
 | --- | --- | --- | --- | --- |
-| Alkyron, Starbreaker | Red | Mythical | ATK | Slow |
+| Alkyron, Starbreaker | Red | Mythical | ATK | Average |
 | Ruxil, Cinder Newt | Red | Rare | ATK | Fast |
 | Eudoma, Nova Keeper | Red | Legendary | SUP | Average |
-| Asterox, Labyrinth Moon | Blue | Mythical | DEF | Average |
+| Asterox, Labyrinth Moon | Blue | Mythical | DEF | Fast |
 | Nerephon, Tide Singer | Blue | Rare | SUP | Fast |
 | Thalassor, Orbit Spear | Blue | Legendary | ATK | Fast |
 | Kelydras, Worldbearer | Green | Legendary | DEF | Slow |
@@ -66,9 +66,9 @@ Every faction has all five elements. Astral Concord begins with 15 champions, co
 | Speed | Mythical | Legendary | Rare | Common | Total |
 | --- | --- | --- | --- | --- | --- |
 | Very Fast | 1 | 2 | 4 | 2 | 9 |
-| Fast | 5 | 15 | 15 | 6 | 41 |
+| Fast | 6 | 15 | 15 | 6 | 42 |
 | Average | 2 | 24 | 45 | 19 | 90 |
-| Slow | 4 | 23 | 1 | 0 | 28 |
+| Slow | 3 | 23 | 1 | 0 | 27 |
 | Very Slow | 1 | 1 | 0 | 0 | 2 |
 | Charging | 4 | 14 | 1 | 0 | 19 |
 

@@ -9,7 +9,7 @@ A standalone match-3 RPG with a five-champion warband, campaign, dungeons, Arena
 | Game | Repository | Purpose |
 | --- | --- | --- |
 | **Warband Legends** | **This repository** | Match-3 RPG; runs as a static website with saves stored in your browser. |
-| **draft1** | [bpac888/warband-legends](https://github.com/bpac888/warband-legends) | Original prototype, retained as draft1; development continues in this repository. |
+| **draft1** | [bpac888/draft1](https://github.com/bpac888/draft1) | Original prototype, retained as draft1; development continues in this repository. |
 
 Each game has its own code, hosting and saves. Warband Legends bundles its own copies of the owner's artwork and champion designs; running it does not require the draft1 server.
 

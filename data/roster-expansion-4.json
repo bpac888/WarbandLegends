@@ -47,7 +47,7 @@
       "color": "red",
       "rarity": "mythical",
       "role": "attack",
-      "manaSpeed": "slow",
+      "manaSpeed": "average",
       "status": "implemented"
     },
     {
@@ -80,7 +80,7 @@
       "color": "blue",
       "rarity": "mythical",
       "role": "defense",
-      "manaSpeed": "average",
+      "manaSpeed": "fast",
       "status": "implemented"
     },
     {

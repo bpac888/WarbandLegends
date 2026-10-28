@@ -178,10 +178,10 @@
 | Ushala, Quillgrass Tracker | rare | green | attack | 602 | 620 | 1129 | Average 10 |
 | Qingluo, Jade Tempest | legendary | green | attack | 810 | 700 | 1340 | Slow 12 |
 | Thyssara, Eclipse Blade | legendary | yellow | attack | 815 | 680 | 1320 | Charging 8 / 10 |
-| Alkyron, Starbreaker | mythical | red | attack | 890 | 770 | 1500 | Slow 12 |
+| Alkyron, Starbreaker | mythical | red | attack | 890 | 770 | 1500 | Average 10 |
 | Ruxil, Cinder Newt | rare | red | attack | 696 | 570 | 1030 | Fast 8 |
 | Eudoma, Nova Keeper | legendary | red | support | 710 | 745 | 1440 | Average 10 |
-| Asterox, Labyrinth Moon | mythical | blue | defense | 780 | 830 | 1580 | Average 10 |
+| Asterox, Labyrinth Moon | mythical | blue | defense | 780 | 830 | 1580 | Fast 8 |
 | Nerephon, Tide Singer | rare | blue | support | 585 | 610 | 1100 | Fast 8 |
 | Thalassor, Orbit Spear | legendary | blue | attack | 815 | 680 | 1320 | Fast 8 |
 | Kelydras, Worldbearer | legendary | green | defense | 650 | 837 | 1571 | Slow 12 |
@@ -963,7 +963,7 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 ### Alkyron, Starbreaker — Twelve Falling Suns
 
-- 12 tiles: Deal 190% ATK damage to all living enemies. Burn (All living enemies, 2 turns).
+- 10 tiles: Deal 210% ATK damage to all living enemies. Dispel (All living enemies); Burn (All living enemies, 2 turns).
 
 Passive: **Titan’s Resolve** — Alkyron is permanently immune to Attack Down and Burn. This protection affects only him.
 
@@ -977,7 +977,7 @@ Passive: **Titan’s Resolve** — Alkyron is permanently immune to Attack Down 
 
 ### Asterox, Labyrinth Moon — Walls Between Worlds
 
-- 10 tiles: Deal 135% ATK damage to selected enemy. Taunt (Caster, 1 turns); Damage Ward (Caster, 2 turns); Barrier (All living allies, 1 turns).
+- 8 tiles: Deal 135% ATK damage to selected enemy. Taunt (Caster, 2 turns); Damage Ward (All living allies, 2 turns); Barrier (All living allies, 2 turns).
 
 Passive: **Moonforged Aegis** — Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies.
 

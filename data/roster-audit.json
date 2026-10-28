@@ -54,9 +54,9 @@
     },
     "speed": {
       "very_fast": 0,
-      "fast": 4,
+      "fast": 5,
       "average": 8,
-      "slow": 2,
+      "slow": 1,
       "very_slow": 0,
       "charging": 1
     }
@@ -83,9 +83,9 @@
     },
     "speed": {
       "very_fast": 9,
-      "fast": 41,
+      "fast": 42,
       "average": 90,
-      "slow": 28,
+      "slow": 27,
       "very_slow": 2,
       "charging": 19
     }
@@ -113,9 +113,9 @@
       },
       "speed": {
         "very_fast": 0,
-        "fast": 4,
+        "fast": 5,
         "average": 8,
-        "slow": 2,
+        "slow": 1,
         "very_slow": 0,
         "charging": 1
       },
@@ -124,12 +124,12 @@
         {
           "name": "Alkyron, Starbreaker",
           "color": "red",
-          "manaSpeed": "slow"
+          "manaSpeed": "average"
         },
         {
           "name": "Asterox, Labyrinth Moon",
           "color": "blue",
-          "manaSpeed": "average"
+          "manaSpeed": "fast"
         }
       ]
     },
@@ -584,9 +584,9 @@
       },
       "speed": {
         "very_fast": 1,
-        "fast": 5,
+        "fast": 6,
         "average": 2,
-        "slow": 4,
+        "slow": 3,
         "very_slow": 1,
         "charging": 4
       }
@@ -703,8 +703,8 @@
       "speed": {
         "very_fast": 1,
         "fast": 8,
-        "average": 22,
-        "slow": 5,
+        "average": 23,
+        "slow": 4,
         "very_slow": 0,
         "charging": 4
       }
@@ -731,8 +731,8 @@
       },
       "speed": {
         "very_fast": 1,
-        "fast": 10,
-        "average": 19,
+        "fast": 11,
+        "average": 18,
         "slow": 5,
         "very_slow": 0,
         "charging": 3
@@ -850,8 +850,8 @@
       "speed": {
         "very_fast": 9,
         "fast": 29,
-        "average": 39,
-        "slow": 8,
+        "average": 40,
+        "slow": 7,
         "very_slow": 1,
         "charging": 14
       }
@@ -878,8 +878,8 @@
       },
       "speed": {
         "very_fast": 0,
-        "fast": 3,
-        "average": 22,
+        "fast": 4,
+        "average": 21,
         "slow": 15,
         "very_slow": 0,
         "charging": 1
@@ -924,7 +924,7 @@
       "color": "red",
       "rarity": "mythical",
       "role": "attack",
-      "manaSpeed": "slow",
+      "manaSpeed": "average",
       "status": "implemented"
     },
     {
@@ -957,7 +957,7 @@
       "color": "blue",
       "rarity": "mythical",
       "role": "defense",
-      "manaSpeed": "average",
+      "manaSpeed": "fast",
       "status": "implemented"
     },
     {

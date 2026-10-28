@@ -1,0 +1,629 @@
+{
+  "date": "2026-10-28",
+  "reason": "Owner requested improvements to both Astral Mythicals after a speed- and rarity-focused balance review.",
+  "previousRosterSha256": "071d2e140ac9a92f7e5fb2b1df793347291dca0aa1182a5bc280905f56d3dceb",
+  "characters": [
+    {
+      "id": "alkyron_starbreaker",
+      "before": {
+        "template_id": "alkyron_starbreaker",
+        "name": "Alkyron, Starbreaker",
+        "title": "Starbreaker",
+        "rarity": "mythical",
+        "faction": "astral_concord",
+        "role": "attack",
+        "hp": 1500,
+        "atk": 890,
+        "def": 770,
+        "ability_name": "Twelve Falling Suns",
+        "lore": "The Astral Concord remembers Alkyron’s twelve labors as twelve dead worlds pulled back into orbit. He wears their shattered moons as a belt and carries a lion-shaped nebula across his shoulders. When another sun threatens to fall, he meets it with his bare hands.",
+        "image_url": "/assets/champions/alkyron_starbreaker.webp",
+        "id": "alkyron_starbreaker",
+        "color": "red",
+        "source_image": "assets/champions/alkyron_starbreaker.webp",
+        "portrait": "assets/champions/alkyron_starbreaker.webp",
+        "passive": {
+          "id": "titans_resolve",
+          "name": "Titan’s Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_atk",
+            "burn"
+          ],
+          "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
+        },
+        "manaSpeed": "slow",
+        "special": {
+          "name": "Twelve Falling Suns",
+          "charging": false,
+          "levels": [
+            {
+              "level": 1,
+              "speed": "slow",
+              "tiles": 12,
+              "damage": 1.9,
+              "healing": 0,
+              "target": "enemy",
+              "healScope": "allies",
+              "aoe": true,
+              "pierce": false,
+              "effects": [
+                {
+                  "id": "burn",
+                  "turns": 2,
+                  "scope": "enemies"
+                }
+              ]
+            }
+          ]
+        },
+        "ability_desc": "Deal 190% ATK damage to all living enemies."
+      },
+      "sourceBefore": {
+        "template_id": "alkyron_starbreaker",
+        "name": "Alkyron, Starbreaker",
+        "title": "Starbreaker",
+        "rarity": "mythical",
+        "faction": "astral_concord",
+        "role": "attack",
+        "hp": 1500,
+        "atk": 890,
+        "def": 770,
+        "ability_name": "Twelve Falling Suns",
+        "lore": "The Astral Concord remembers Alkyron’s twelve labors as twelve dead worlds pulled back into orbit. He wears their shattered moons as a belt and carries a lion-shaped nebula across his shoulders. When another sun threatens to fall, he meets it with his bare hands.",
+        "image_url": "/assets/champions/alkyron_starbreaker.webp",
+        "id": "alkyron_starbreaker",
+        "color": "red",
+        "source_image": "assets/champions/alkyron_starbreaker.webp",
+        "portrait": "assets/champions/alkyron_starbreaker.webp",
+        "passive": {
+          "id": "titans_resolve",
+          "name": "Titan’s Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_atk",
+            "burn"
+          ],
+          "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
+        },
+        "ability_desc": "Deal 190% ATK damage to all living enemies.",
+        "spd": 100,
+        "kit": {
+          "a2": [],
+          "a3": [
+            [
+              "burn",
+              2
+            ]
+          ]
+        }
+      },
+      "designBefore": {
+        "color": "red",
+        "manaSpeed": "slow",
+        "levelOverrides": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "damage": 1.9,
+            "healing": 0,
+            "target": "enemy",
+            "healScope": "allies",
+            "aoe": true,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "burn",
+                "turns": 2,
+                "scope": "enemies"
+              }
+            ]
+          }
+        ],
+        "statsOverride": {
+          "hp": 1500,
+          "atk": 890,
+          "def": 770
+        },
+        "passiveOverride": {
+          "id": "titans_resolve",
+          "name": "Titan’s Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_atk",
+            "burn"
+          ],
+          "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
+        }
+      },
+      "beforeMeasurements": [
+        {
+          "level": 1,
+          "tiles": 12,
+          "singleEnemyDamage": 676,
+          "threeEnemyDamage": 2028,
+          "fourEnemyDamage": 2704,
+          "singleDamagePerTile": 56.33,
+          "threeEnemyDamagePerTile": 169,
+          "teamInstantHealCapacity": 0,
+          "teamRegenerationCapacity": 0,
+          "teamBarrierCapacity": 0,
+          "threeEnemyDotCapacity": 384,
+          "teamManaGift": 0,
+          "effectiveRepeatTileCostAtThree": 9.6,
+          "openingTileCostAtThree": 9.6
+        }
+      ],
+      "after": {
+        "template_id": "alkyron_starbreaker",
+        "name": "Alkyron, Starbreaker",
+        "title": "Starbreaker",
+        "rarity": "mythical",
+        "faction": "astral_concord",
+        "role": "attack",
+        "hp": 1500,
+        "atk": 890,
+        "def": 770,
+        "ability_name": "Twelve Falling Suns",
+        "lore": "The Astral Concord remembers Alkyron’s twelve labors as twelve dead worlds pulled back into orbit. He wears their shattered moons as a belt and carries a lion-shaped nebula across his shoulders. When another sun threatens to fall, he meets it with his bare hands.",
+        "image_url": "/assets/champions/alkyron_starbreaker.webp",
+        "id": "alkyron_starbreaker",
+        "color": "red",
+        "source_image": "assets/champions/alkyron_starbreaker.webp",
+        "portrait": "assets/champions/alkyron_starbreaker.webp",
+        "passive": {
+          "id": "titans_resolve",
+          "name": "Titan’s Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_atk",
+            "burn"
+          ],
+          "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
+        },
+        "manaSpeed": "average",
+        "special": {
+          "name": "Twelve Falling Suns",
+          "charging": false,
+          "levels": [
+            {
+              "level": 1,
+              "speed": "average",
+              "tiles": 10,
+              "damage": 2.1,
+              "healing": 0,
+              "target": "enemy",
+              "healScope": "allies",
+              "aoe": true,
+              "pierce": false,
+              "effects": [
+                {
+                  "id": "dispel",
+                  "turns": 0,
+                  "scope": "enemies"
+                },
+                {
+                  "id": "burn",
+                  "turns": 2,
+                  "scope": "enemies"
+                }
+              ]
+            }
+          ]
+        },
+        "ability_desc": "Deal 210% ATK damage to all living enemies."
+      },
+      "sourceAfter": {
+        "template_id": "alkyron_starbreaker",
+        "name": "Alkyron, Starbreaker",
+        "title": "Starbreaker",
+        "rarity": "mythical",
+        "faction": "astral_concord",
+        "role": "attack",
+        "hp": 1500,
+        "atk": 890,
+        "def": 770,
+        "ability_name": "Twelve Falling Suns",
+        "lore": "The Astral Concord remembers Alkyron’s twelve labors as twelve dead worlds pulled back into orbit. He wears their shattered moons as a belt and carries a lion-shaped nebula across his shoulders. When another sun threatens to fall, he meets it with his bare hands.",
+        "image_url": "/assets/champions/alkyron_starbreaker.webp",
+        "id": "alkyron_starbreaker",
+        "color": "red",
+        "source_image": "assets/champions/alkyron_starbreaker.webp",
+        "portrait": "assets/champions/alkyron_starbreaker.webp",
+        "passive": {
+          "id": "titans_resolve",
+          "name": "Titan’s Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_atk",
+            "burn"
+          ],
+          "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
+        },
+        "ability_desc": "Deal 210% ATK damage to all living enemies.",
+        "spd": 100,
+        "kit": {
+          "a2": [],
+          "a3": [
+            [
+              "dispel",
+              0
+            ],
+            [
+              "burn",
+              2
+            ]
+          ]
+        }
+      },
+      "designAfter": {
+        "color": "red",
+        "manaSpeed": "average",
+        "levelOverrides": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "damage": 2.1,
+            "healing": 0,
+            "target": "enemy",
+            "healScope": "allies",
+            "aoe": true,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "dispel",
+                "turns": 0,
+                "scope": "enemies"
+              },
+              {
+                "id": "burn",
+                "turns": 2,
+                "scope": "enemies"
+              }
+            ]
+          }
+        ],
+        "statsOverride": {
+          "hp": 1500,
+          "atk": 890,
+          "def": 770
+        },
+        "passiveOverride": {
+          "id": "titans_resolve",
+          "name": "Titan’s Resolve",
+          "kind": "immune_effect",
+          "immune": [
+            "dec_atk",
+            "burn"
+          ],
+          "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
+        }
+      }
+    },
+    {
+      "id": "asterox_labyrinth_moon",
+      "before": {
+        "template_id": "asterox_labyrinth_moon",
+        "name": "Asterox, Labyrinth Moon",
+        "title": "Labyrinth Moon",
+        "rarity": "mythical",
+        "faction": "astral_concord",
+        "role": "defense",
+        "hp": 1580,
+        "atk": 780,
+        "def": 830,
+        "ability_name": "Walls Between Worlds",
+        "lore": "Asterox was bred to hunt prisoners through a moon-sized labyrinth. He broke its central gate instead, guiding its captives into the Concord’s waiting ships. He still carries that gate as a shield, refusing to let another maze close around the helpless.",
+        "image_url": "/assets/champions/asterox_labyrinth_moon.webp",
+        "id": "asterox_labyrinth_moon",
+        "color": "blue",
+        "source_image": "assets/champions/asterox_labyrinth_moon.webp",
+        "portrait": "assets/champions/asterox_labyrinth_moon.webp",
+        "passive": {
+          "id": "moonforged_aegis",
+          "name": "Moonforged Aegis",
+          "kind": "shield_boost",
+          "value": 0.5,
+          "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
+        },
+        "manaSpeed": "average",
+        "special": {
+          "name": "Walls Between Worlds",
+          "charging": false,
+          "levels": [
+            {
+              "level": 1,
+              "speed": "average",
+              "tiles": 10,
+              "damage": 1.35,
+              "healing": 0,
+              "target": "enemy",
+              "healScope": "allies",
+              "aoe": false,
+              "pierce": false,
+              "effects": [
+                {
+                  "id": "guard",
+                  "turns": 1,
+                  "scope": "self"
+                },
+                {
+                  "id": "strengthen",
+                  "turns": 2,
+                  "scope": "self"
+                },
+                {
+                  "id": "shield",
+                  "turns": 1,
+                  "scope": "allies"
+                }
+              ]
+            }
+          ]
+        },
+        "ability_desc": "Deal 135% ATK damage to selected enemy."
+      },
+      "sourceBefore": {
+        "template_id": "asterox_labyrinth_moon",
+        "name": "Asterox, Labyrinth Moon",
+        "title": "Labyrinth Moon",
+        "rarity": "mythical",
+        "faction": "astral_concord",
+        "role": "defense",
+        "hp": 1580,
+        "atk": 780,
+        "def": 830,
+        "ability_name": "Walls Between Worlds",
+        "lore": "Asterox was bred to hunt prisoners through a moon-sized labyrinth. He broke its central gate instead, guiding its captives into the Concord’s waiting ships. He still carries that gate as a shield, refusing to let another maze close around the helpless.",
+        "image_url": "/assets/champions/asterox_labyrinth_moon.webp",
+        "id": "asterox_labyrinth_moon",
+        "color": "blue",
+        "source_image": "assets/champions/asterox_labyrinth_moon.webp",
+        "portrait": "assets/champions/asterox_labyrinth_moon.webp",
+        "passive": {
+          "id": "moonforged_aegis",
+          "name": "Moonforged Aegis",
+          "kind": "shield_boost",
+          "value": 0.5,
+          "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
+        },
+        "ability_desc": "Deal 135% ATK damage to selected enemy.",
+        "spd": 100,
+        "kit": {
+          "a2": [],
+          "a3": [
+            [
+              "guard",
+              1
+            ],
+            [
+              "strengthen",
+              2
+            ],
+            [
+              "shield",
+              1
+            ]
+          ]
+        }
+      },
+      "designBefore": {
+        "color": "blue",
+        "manaSpeed": "average",
+        "levelOverrides": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "damage": 1.35,
+            "healing": 0,
+            "target": "enemy",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "guard",
+                "turns": 1,
+                "scope": "self"
+              },
+              {
+                "id": "strengthen",
+                "turns": 2,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ],
+        "statsOverride": {
+          "hp": 1580,
+          "atk": 780,
+          "def": 830
+        },
+        "passiveOverride": {
+          "id": "moonforged_aegis",
+          "name": "Moonforged Aegis",
+          "kind": "shield_boost",
+          "value": 0.5,
+          "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
+        }
+      },
+      "beforeMeasurements": [
+        {
+          "level": 1,
+          "tiles": 10,
+          "singleEnemyDamage": 421,
+          "threeEnemyDamage": 421,
+          "fourEnemyDamage": 421,
+          "singleDamagePerTile": 42.1,
+          "threeEnemyDamagePerTile": 42.1,
+          "teamInstantHealCapacity": 0,
+          "teamRegenerationCapacity": 0,
+          "teamBarrierCapacity": 1760,
+          "threeEnemyDotCapacity": 0,
+          "teamManaGift": 0,
+          "effectiveRepeatTileCostAtThree": 8,
+          "openingTileCostAtThree": 8
+        }
+      ],
+      "after": {
+        "template_id": "asterox_labyrinth_moon",
+        "name": "Asterox, Labyrinth Moon",
+        "title": "Labyrinth Moon",
+        "rarity": "mythical",
+        "faction": "astral_concord",
+        "role": "defense",
+        "hp": 1580,
+        "atk": 780,
+        "def": 830,
+        "ability_name": "Walls Between Worlds",
+        "lore": "Asterox was bred to hunt prisoners through a moon-sized labyrinth. He broke its central gate instead, guiding its captives into the Concord’s waiting ships. He still carries that gate as a shield, refusing to let another maze close around the helpless.",
+        "image_url": "/assets/champions/asterox_labyrinth_moon.webp",
+        "id": "asterox_labyrinth_moon",
+        "color": "blue",
+        "source_image": "assets/champions/asterox_labyrinth_moon.webp",
+        "portrait": "assets/champions/asterox_labyrinth_moon.webp",
+        "passive": {
+          "id": "moonforged_aegis",
+          "name": "Moonforged Aegis",
+          "kind": "shield_boost",
+          "value": 0.5,
+          "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
+        },
+        "manaSpeed": "fast",
+        "special": {
+          "name": "Walls Between Worlds",
+          "charging": false,
+          "levels": [
+            {
+              "level": 1,
+              "speed": "fast",
+              "tiles": 8,
+              "damage": 1.35,
+              "healing": 0,
+              "target": "enemy",
+              "healScope": "allies",
+              "aoe": false,
+              "pierce": false,
+              "effects": [
+                {
+                  "id": "guard",
+                  "turns": 2,
+                  "scope": "self"
+                },
+                {
+                  "id": "strengthen",
+                  "turns": 2,
+                  "scope": "allies"
+                },
+                {
+                  "id": "shield",
+                  "turns": 2,
+                  "scope": "allies"
+                }
+              ]
+            }
+          ]
+        },
+        "ability_desc": "Deal 135% ATK damage to selected enemy."
+      },
+      "sourceAfter": {
+        "template_id": "asterox_labyrinth_moon",
+        "name": "Asterox, Labyrinth Moon",
+        "title": "Labyrinth Moon",
+        "rarity": "mythical",
+        "faction": "astral_concord",
+        "role": "defense",
+        "hp": 1580,
+        "atk": 780,
+        "def": 830,
+        "ability_name": "Walls Between Worlds",
+        "lore": "Asterox was bred to hunt prisoners through a moon-sized labyrinth. He broke its central gate instead, guiding its captives into the Concord’s waiting ships. He still carries that gate as a shield, refusing to let another maze close around the helpless.",
+        "image_url": "/assets/champions/asterox_labyrinth_moon.webp",
+        "id": "asterox_labyrinth_moon",
+        "color": "blue",
+        "source_image": "assets/champions/asterox_labyrinth_moon.webp",
+        "portrait": "assets/champions/asterox_labyrinth_moon.webp",
+        "passive": {
+          "id": "moonforged_aegis",
+          "name": "Moonforged Aegis",
+          "kind": "shield_boost",
+          "value": 0.5,
+          "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
+        },
+        "ability_desc": "Deal 135% ATK damage to selected enemy.",
+        "spd": 100,
+        "kit": {
+          "a2": [],
+          "a3": [
+            [
+              "guard",
+              2
+            ],
+            [
+              "strengthen",
+              2
+            ],
+            [
+              "shield",
+              2
+            ]
+          ]
+        }
+      },
+      "designAfter": {
+        "color": "blue",
+        "manaSpeed": "fast",
+        "levelOverrides": [
+          {
+            "level": 1,
+            "speed": "fast",
+            "tiles": 8,
+            "damage": 1.35,
+            "healing": 0,
+            "target": "enemy",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "guard",
+                "turns": 2,
+                "scope": "self"
+              },
+              {
+                "id": "strengthen",
+                "turns": 2,
+                "scope": "allies"
+              },
+              {
+                "id": "shield",
+                "turns": 2,
+                "scope": "allies"
+              }
+            ]
+          }
+        ],
+        "statsOverride": {
+          "hp": 1580,
+          "atk": 780,
+          "def": 830
+        },
+        "passiveOverride": {
+          "id": "moonforged_aegis",
+          "name": "Moonforged Aegis",
+          "kind": "shield_boost",
+          "value": 0.5,
+          "desc": "Barriers received by Asterox have 50% larger shield pools. This does not strengthen Barriers on his allies."
+        }
+      }
+    }
+  ]
+}

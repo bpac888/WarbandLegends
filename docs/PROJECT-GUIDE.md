@@ -64,7 +64,7 @@ The current phone version is hosted on [ChatGPT Sites](https://legends-runes-bor
 
 ### Optional Vercel hosting
 
-Create a **new Vercel project** importing `bpac888/Legends`. Leave the existing Warband Legends Vercel project connected to its existing repository.
+Create a **new Vercel project** importing `bpac888/WarbandLegends`. The old prototype is the separate `bpac888/draft1` repository.
 
 | Setting | Value |
 | --- | --- |

@@ -22,4 +22,11 @@ Fifteen star-born travelers united to protect the living worlds between distant 
 | Zazikul, Silk Weaver | Purple | Rare | ATK | Threads Across the Void |
 | Kheiraxis, Void Gallop | Purple | Legendary | ATK | Hooves on the Eventide |
 
-The two Mythicals are red attacker Alkyron and blue defender Asterox. All fifteen join their existing rarity summon pools; summon odds and the ten-call guarantee are unchanged. All 174 prior character records, IDs, artwork, stats and abilities remain unchanged. Existing saves require no migration.
+The two Mythicals are red attacker Alkyron and blue defender Asterox. All fifteen join their existing rarity summon pools; summon odds and the ten-call guarantee are unchanged. The initial expansion preserved all 174 prior records. Later owner-requested revisions are recorded separately; existing saves require no migration.
+
+## Mythical Balance Update
+
+- **Alkyron:** Average speed, 10 tiles; 210% ATK to all enemies, Dispel on all enemies, and Burn for 2 turns. Titan’s Resolve is unchanged.
+- **Asterox:** Fast speed, 8 tiles; 135% ATK to one enemy, Taunt for 2 turns, and team Damage Ward and Barriers for 2 turns. Moonforged Aegis is unchanged.
+
+Only these two kits changed in this pass. Stats and artwork are unchanged. See the [full character balance review](CHARACTER_BALANCE_REVIEW.md).

@@ -6218,11 +6218,15 @@
       ],
       "desc": "Alkyron is permanently immune to Attack Down and Burn. This protection affects only him."
     },
-    "ability_desc": "Deal 190% ATK damage to all living enemies.",
+    "ability_desc": "Deal 210% ATK damage to all living enemies.",
     "spd": 100,
     "kit": {
       "a2": [],
       "a3": [
+        [
+          "dispel",
+          0
+        ],
         [
           "burn",
           2
@@ -6321,7 +6325,7 @@
       "a3": [
         [
           "guard",
-          1
+          2
         ],
         [
           "strengthen",
@@ -6329,7 +6333,7 @@
         ],
         [
           "shield",
-          1
+          2
         ]
       ]
     }

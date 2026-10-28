@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's draft1 roster.",
@@ -29,6 +29,7 @@
     "test:feeding": "node tests/feeding-browser.mjs",
     "test:auto": "node tests/auto-battle-browser.mjs",
     "test:energy": "node tests/energy-browser.mjs",
+    "roster:review": "node tools/review-character-balance.mjs",
     "roster:audit": "node tools/audit-roster.mjs",
     "test:roster-expansion": "node tests/roster-expansion-browser.mjs",
     "test:auto-calm": "node tests/auto-calm-browser.mjs",

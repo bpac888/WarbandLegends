@@ -2664,19 +2664,24 @@
     },
     "alkyron_starbreaker": {
       "color": "red",
-      "manaSpeed": "slow",
+      "manaSpeed": "average",
       "levelOverrides": [
         {
           "level": 1,
-          "speed": "slow",
-          "tiles": 12,
-          "damage": 1.9,
+          "speed": "average",
+          "tiles": 10,
+          "damage": 2.1,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
           "aoe": true,
           "pierce": false,
           "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            },
             {
               "id": "burn",
               "turns": 2,
@@ -2761,12 +2766,12 @@
     },
     "asterox_labyrinth_moon": {
       "color": "blue",
-      "manaSpeed": "average",
+      "manaSpeed": "fast",
       "levelOverrides": [
         {
           "level": 1,
-          "speed": "average",
-          "tiles": 10,
+          "speed": "fast",
+          "tiles": 8,
           "damage": 1.35,
           "healing": 0,
           "target": "enemy",
@@ -2776,17 +2781,17 @@
           "effects": [
             {
               "id": "guard",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             },
             {
               "id": "strengthen",
               "turns": 2,
-              "scope": "self"
+              "scope": "allies"
             },
             {
               "id": "shield",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]

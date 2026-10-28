@@ -17,7 +17,7 @@ test('all 174 previous records and source identities are preserved exactly',asyn
  assert.equal(hash(roster.slice(0,174)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,174)),manifest.originalSourceRecordsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,189);
 });
 test('the 15 additions match the approved rarity, role, color and speed mix',()=>{
- assert.deepEqual(count('rarity'),{legendary:7,mythical:2,rare:6});assert.deepEqual(count('role'),{attack:8,defense:3,support:4});assert.deepEqual(count('color'),{blue:3,green:3,purple:3,red:3,yellow:3});assert.deepEqual(count('faction'),{astral_concord:15});assert.deepEqual(count('manaSpeed'),{average:8,charging:1,fast:4,slow:2});
+ assert.deepEqual(count('rarity'),{legendary:7,mythical:2,rare:6});assert.deepEqual(count('role'),{attack:8,defense:3,support:4});assert.deepEqual(count('color'),{blue:3,green:3,purple:3,red:3,yellow:3});assert.deepEqual(count('faction'),{astral_concord:15});assert.deepEqual(count('manaSpeed'),{average:8,charging:1,fast:5,slow:1});
  for(const x of manifest.implementedRecommendations){const c=added.find(c=>c.id===x.championId);for(const k of ['faction','color','rarity','role','manaSpeed'])assert.equal(c[k],x[k]);assert.equal(c.faction,'astral_concord');assert.ok(!roster.slice(0,174).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role&&c.rarity===x.rarity));}
  for(const c of added)for(const l of c.special.levels)for(const e of l.effects){assert.ok(EFFECTS[e.id]);assert.ok(Number.isInteger(e.turns)&&e.turns>=0&&e.turns<=3);}
 });

@@ -8,7 +8,8 @@
 - [Game rules](RULES.md) — board, elements, mana and combat.
 - [QA and validation](QA.md) — verification procedures and prior results.
 - [Roadmap](ROADMAP.md) — implementation milestones and planned work.
-- [174-champion roster audit](ROSTER_AUDIT.md) — rarity, color, faction, type and speed coverage, with all 12 prior suggestions implemented.
+- [189-champion roster coverage](ROSTER_AUDIT.md) — rarity, color, faction, type and speed counts.
+- [Character balance review](CHARACTER_BALANCE_REVIEW.md) — all 189 individual reviews, speed and rarity comparisons, and proposed additions; [filterable CSV](CHARACTER_BALANCE_REVIEW.csv).
 
 ## Game systems
 
