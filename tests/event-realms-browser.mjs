@@ -25,14 +25,14 @@ try{
   const text=await page.locator('.page-events').innerText();assert.ok(!/When the World|Three monthly|Between Windows|Edit Warband|Returns on days|Visit Shop/i.test(text));
   for(const id of ['crimson_eclipse','frostwake_siege','veil_of_umbra']){
    const target=page.locator('[data-event="'+id+'"]');assert.ok(await target.isEnabled());await target.click();
-   const play=page.locator('.event-play');await play.waitFor();assert.ok(await play.isDisabled());assert.match(await play.innerText(),/Open Days/);
+   const play=page.locator('.event-play');await play.waitFor();assert.equal(await page.locator('#modal .modal-body img,#modal .modal-body h3,#modal .event-attempts').count(),0);assert.ok((await page.locator('#modal').boundingBox()).height<180);assert.ok(await play.isDisabled());assert.match(await play.innerText(),/Open Days/);
    await page.locator('[data-action="close"]').first().click();
   }
   await page.screenshot({path:root+`artifacts/event-map-${width}.png`,fullPage:true});
  }
  for(const [day,id] of [[5,'crimson_eclipse'],[12,'frostwake_siege'],[20,'veil_of_umbra']]){
   await page.evaluate(d=>localStorage.setItem('event-test-date',d),`2026-10-${String(day).padStart(2,'0')}T19:00:00Z`);
-  await go('events');await page.locator('[data-event="'+id+'"]').click();assert.ok(await page.locator('.event-play').isEnabled());assert.match(await page.locator('.event-play').innerText(),/Play/);await page.locator('.event-play').click();await page.getByRole('button',{name:'Begin battle',exact:true}).waitFor();assert.ok(await page.getByRole('button',{name:'Begin battle',exact:true}).isEnabled());await page.locator('[data-action="close"]').first().click();
+  await go('events');await page.locator('[data-event="'+id+'"]').click();assert.ok(await page.locator('.event-play').isEnabled());assert.match(await page.locator('.event-play').innerText(),/Fight/);await page.locator('.event-play').click();await page.getByRole('button',{name:'Begin battle',exact:true}).waitFor();assert.ok(await page.getByRole('button',{name:'Begin battle',exact:true}).isEnabled());await page.locator('[data-action="close"]').first().click();
  }
  assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,viewports:[320,390,760,1440],checks:['three bright accessible regions, including closed windows','compact area panels with schedule on disabled battle buttons','active battles reach confirmation in all three monthly windows','no removed copy, overflow, missing assets or browser errors']},null,2));
 }finally{await browser.close();}

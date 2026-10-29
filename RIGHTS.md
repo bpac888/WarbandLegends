@@ -49,3 +49,7 @@ The eleven portraits listed in [ROSTER_200.md](docs/ROSTER_200.md) were generate
 ## Special Events Map
 
 The phone and desktop Special Events landscape paintings were generated for Warband Legends using OpenAI image generation in October 2026. Native 1024 × 1536 and 1536 × 1024 compositions are encoded as quality-95 WebP without cropping.
+
+## Arena Floor Redesign
+
+Two native-resolution colosseum compositions and nine transparent full-body rival avatars were generated for this game using OpenAI image generation in October 2026. The environment references the existing Arena scenery. These are player-rival avatars; existing champion artwork and rival team presets are preserved. Images ship as native-resolution quality-95 WebP with transparency retained for the rival layers.

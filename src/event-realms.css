@@ -20,3 +20,12 @@
 .event-play span{font-size:12px}.event-area-detail .event-play:disabled{background:linear-gradient(135deg,#354c58,#353c59);color:#f2e3c6;border-color:#c4b28a;opacity:1;filter:none;cursor:default}
 @media(max-width:700px){.menu-theme .page-events{padding:6px 9px 8px}.event-map{aspect-ratio:2/3;border-radius:14px}.event-map .event-landmark{width:56%;height:28%;padding:8px}.event-map .landmark-crimson_eclipse{left:1%;top:0%}.event-map .landmark-frostwake_siege{left:43%;top:23%}.event-map .landmark-veil_of_umbra{left:8%;top:63%}.event-landmark strong{font-size:14px;padding:7px 10px}.event-map-sparks i:nth-child(2){left:76%;top:40%}.event-map-sparks i:nth-child(3){left:36%;top:76%}}
 @media(prefers-reduced-motion:reduce){.event-map-sparks i{animation:none}.event-landmark{transition:none}}
+/* A visit to an event needs only its fight / opening-date button. */
+#modal[data-view="event-area"]{width:min(350px,calc(100vw - 28px));max-width:350px;padding:16px;border-radius:14px}
+#modal[data-view="event-area"] .modal-header{border:0;margin:0 0 8px;padding:0;display:flex;justify-content:flex-end;min-height:0}
+#modal[data-view="event-area"] .modal-header>div{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#modal[data-view="event-area"] .modal-header .icon-button{width:32px;min-width:32px;height:32px;min-height:32px;padding:0;font-size:22px}
+#modal[data-view="event-area"] .modal-body{padding:0;margin:0}
+#modal[data-view="event-area"] .event-actions{margin:0}
+#modal[data-view="event-area"] .event-play{display:flex;flex-direction:column;gap:6px;width:100%;min-height:66px;padding:12px;border:1px solid #e9ca8d;opacity:1;filter:none}
+#modal[data-view="event-area"] .event-play:disabled{background:linear-gradient(135deg,#354c58,#353c59);color:#f2e3c6;border-color:#c4b28a;opacity:1;filter:none}
