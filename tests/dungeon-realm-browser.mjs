@@ -2,6 +2,7 @@ import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {defaultProfile} from '../src/progression.js';
 import {PROFILE_KEY,BATTLE_KEY} from '../src/storage.js';
 import {DUNGEONS,DIFFICULTIES} from '../src/encounters.js';
@@ -21,6 +22,7 @@ try{
  for(const [width,height] of [[320,568],[360,800],[390,844],[700,1000],[844,390],[1440,1000]]){
   await page.setViewportSize({width,height});await go(page,'dungeons');await page.locator('.dungeon-realm-painting img').evaluate(i=>i.decode());
   await page.locator('[data-action="dungeon-difficulty"][data-difficulty="normal"]').click();
+  if(width<=700)await page.locator('.dungeon-phone-dragon img').evaluate(i=>i.decode());
   assert.equal(await page.locator('.dungeon-guardian').count(),7);assert.equal(await page.locator('.dungeon-guardian:disabled').count(),0);
   assert.equal(await page.locator('.dungeon-card,.recommended-level,.reward-line,.material-loot,.page-dungeons [data-action="roster"]').count(),0);
   assert.doesNotMatch(await page.locator('.page-dungeons').innerText(),/Beneath|chambers|Energy|Suggested|Gold|Gems/i);
@@ -33,6 +35,12 @@ try{
   for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++){const a=boxes[i],b=boxes[j];assert.ok(Math.min(a.r,b.r)-Math.max(a.l,b.l)<1||Math.min(a.b,b.b)-Math.max(a.t,b.t)<1,'overlap '+width);}
   assert.ok(await page.locator('.dungeon-art-effects i').evaluateAll(a=>a.every(n=>getComputedStyle(n).animationName==='none')));
   if([320,390,1440].includes(width)){await page.mouse.move(0,0);await page.screenshot({path:root+`artifacts/dungeon-realm-${width}.png`,fullPage:true});}
+  if(width===390){
+   const r=await page.locator('.dungeon-realm').boundingBox(),clip={x:r.x,y:r.y,width:r.width,height:r.height*.665};
+   const before=await page.screenshot({clip});await page.locator('.dungeon-phone-dragon').evaluate(n=>n.style.display='none');const original=await page.screenshot({clip});await page.locator('.dungeon-phone-dragon').evaluate(n=>n.style.removeProperty('display'));
+   assert.equal(createHash('sha256').update(before).digest('hex'),createHash('sha256').update(original).digest('hex'),'the six guardian faces and upper painting must remain pixel-identical');
+   await page.mouse.click(r.x+r.width*.38,r.y+r.height*.77);assert.equal(await page.locator('#modal-title').innerText(),'Magmaheart Wyrm · Normal');await page.getByRole('button',{name:'Close dialog',exact:true}).click();
+  }
   for(const d of DUNGEONS){
    await page.locator(`[data-dungeon="${d.id}"]`).click();assert.equal(await page.locator('#modal-title').innerText(),d.boss+' · Normal');
    assert.equal(await page.locator('#modal .modal-body').innerText(),'Confirm');assert.equal(await page.locator('#modal .modal-body img,#modal .energy-cost').count(),0);

@@ -54,3 +54,7 @@ Dungeons uses a continuous guardian realm in place of seven information cards. S
 Slow magical auras, an alchemy orbit, waterfall glints and sparse embers animate locally without moving the painting or changing layout. System reduced motion disables them; hidden tabs pause them. The new styles are scoped to Dungeons.
 
 `npm run test:dungeon-realm` checks the seven painted hit areas at six viewport sizes, simple confirmations, all difficulty locks, reduced motion and hidden-tab pausing. It launches every one of the 21 real dungeon encounters, checks the existing 1/2/3 Energy costs and verifies that abandonment does not grant rewards or progress. It also checks zero-Energy entry rejection.
+
+## Phone Dragon Follow-up — v0.26.1
+
+The bottom guardian now has a clear reptilian profile, arched neck, foreclaws and distinct wings with detailed obsidian scales and molten cracks. A clipped phone-only layer preserves the existing surrounding guardian artwork. Its tap region includes the raised head, while the adjacent guardians remain separately selectable. The desktop painting and battle art remain unchanged.

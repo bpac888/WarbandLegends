@@ -72,3 +72,13 @@
  .page-dungeons .dungeon-soul-aura{opacity:.3}
  .page-dungeons .dungeon-embers i{opacity:.2}
 }
+
+/* Local phone-only dragon replacement: the original painting still supplies the six other guardians. */
+.page-dungeons .dungeon-phone-dragon{display:none;pointer-events:none}
+@media(max-width:700px){
+ .page-dungeons .dungeon-phone-dragon{display:block;position:absolute;inset:0;clip-path:polygon(0 73%,10% 74%,20% 77%,27% 78%,30% 76%,30% 72%,37% 70%,45% 67%,53% 69%,55% 69%,62% 70.5%,68% 75%,75% 78%,84% 75%,100% 73%,100% 100%,0 100%)}
+ .page-dungeons .dungeon-phone-dragon>img{display:block;width:100%;height:100%;object-fit:contain;opacity:1;filter:none;mask-image:none}
+ .page-dungeons .guardian-hellgate_forge{--y:63.5%;--h:21%}
+ .page-dungeons .guardian-prismatic_vat{--y:64%;--h:22%}
+ .page-dungeons .guardian-magmaheart_crucible{--y:87.5%;--h:24%}
+}
