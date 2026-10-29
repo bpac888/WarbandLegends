@@ -48,8 +48,8 @@ try{
    if(route!=='splash')assert.equal(await page.locator('.realm-atmosphere').evaluate(e=>e.hidden),false);
    if(width===390&&['home','world','shop','inventory','quests','daily','settings','events','roster','champion/alkyron_starbreaker'].includes(route))await page.screenshot({path:root+`artifacts/citadel-${route.replaceAll('/','-')}-phone.png`});
    if(route==='shop'){
-    assert.equal(await page.locator('.game-nav [data-page="home"]').getAttribute('aria-current'),'page');
-    for(const tab of ['gems','tokens','premium','supplies']){await page.locator(`[data-action="shop-tab"][data-tab="${tab}"]`).click();await fits(page,width+' shop '+tab);}
+    assert.deepEqual(await page.locator('.topbar button.active').evaluateAll(ns=>ns.map(n=>n.dataset.page)),['shop']);
+    for(const tab of ['supplies','tokens','premium']){await page.locator(`[data-action="shop-tab"][data-tab="${tab}"]`).click();await fits(page,width+' shop '+tab);}
    }
   }
   await page.getByRole('button',{name:'Guide',exact:true}).click();

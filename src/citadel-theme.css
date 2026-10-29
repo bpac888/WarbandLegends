@@ -105,7 +105,8 @@ body.menu-theme :is(p,small,label){line-height:1.55}
 /* Shop: illustrated treasure displays, readable descriptions and consistent prices. */
 .menu-theme .page-shop .shop-wallet{width:fit-content;margin:0 0 14px;padding:8px 12px;border:1px solid #c9d2b32b;background:#102a3166;border-radius:10px;gap:8px;font-size:12px;color:#dfd2ac;box-shadow:none}
 .menu-theme .page-shop .shop-wallet>span{margin-left:12px;gap:6px}
-.menu-theme .page-shop .shop-tabs{margin-top:12px}
+.menu-theme .page-shop .shop-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:12px}
+.menu-theme .page-shop .shop-tabs>button{min-width:0}
 .menu-theme .page-shop :is(.material-grid,.gem-offers,.premium-offers,.exchange-offers){gap:16px}
 .menu-theme .page-shop :is(.material-offer,.gem-offer,.premium-offers>article,.exchange-offers>article){position:relative;isolation:isolate;padding:20px 16px 16px;gap:10px;overflow:hidden;background:radial-gradient(ellipse at 50% 5%,#638e8240,transparent 48%),linear-gradient(155deg,#25434a,#172f39 65%,#263642)}
 .menu-theme .page-shop :is(.material-offer,.gem-offer,.premium-offers>article,.exchange-offers>article)::before{content:'';position:absolute;left:20%;right:20%;height:1px;top:0;background:linear-gradient(90deg,transparent,#e8d7ab9c,transparent);pointer-events:none}
