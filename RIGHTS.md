@@ -53,3 +53,9 @@ The phone and desktop Special Events landscape paintings were generated for Warb
 ## Arena Floor Redesign
 
 Two native-resolution colosseum compositions and nine transparent full-body rival avatars were generated for this game using OpenAI image generation in October 2026. The environment references the existing Arena scenery. These are player-rival avatars; existing champion artwork and rival team presets are preserved. Images ship as native-resolution quality-95 WebP with transparency retained for the rival layers.
+
+## Shop Navigation Icon
+
+The transparent merchant-stall navigation icon was generated for Warband Legends using OpenAI image generation in October 2026. The native-resolution asset is encoded as high-quality WebP with transparency preserved.
+
+The Codex/Teams navigation icon was refined from its existing three-figure design with OpenAI image generation in October 2026, retaining transparency at native high resolution.

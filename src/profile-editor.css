@@ -1,0 +1,24 @@
+.home-shell .keeper-panel>.keeper-portrait{width:48px;height:48px;min-width:44px;min-height:44px;padding:0;border:1px solid #e7c588b3;border-radius:50%;overflow:hidden;background:#173940;box-shadow:0 0 0 3px #18363b,0 0 0 4px #ccb78038}
+.keeper-portrait>img{display:block;width:100%;height:100%;object-fit:cover}
+.home-shell .keeper-name{display:block;max-width:100%;padding:0;margin:0;border:0;background:none;box-shadow:none;font-size:11px;line-height:1.3;color:#e7d59e;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:0}
+.keeper-name:focus-visible,.keeper-portrait:focus-visible{outline:2px solid #ffe4a6;outline-offset:3px}
+.shop-nav-art{width:34px;height:34px;object-fit:contain;filter:none;opacity:1}.shop-nav.active{border-color:#e5ca8a;background:#394d4b}
+#modal[data-view="profile-editor"]{width:min(340px,calc(100vw - 28px));max-width:340px;padding:16px;border-radius:16px}
+#modal[data-view="profile-editor"] .modal-header{padding:0 0 10px;border:0;margin:0;align-items:center}
+#modal[data-view="profile-editor"] .modal-header .eyebrow{display:none}
+#modal[data-view="profile-editor"] .modal-header h2{font-size:26px;margin:0}
+#modal[data-view="profile-editor"] .modal-header .icon-button{min-width:32px;min-height:32px;width:32px;height:32px;padding:0}
+#modal[data-view="profile-editor"] .modal-body{padding:0;margin:0}
+.profile-portrait-picker{display:grid;grid-template-columns:34px minmax(0,1fr) 34px;gap:10px;align-items:center;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.profile-portrait-picker>button{height:44px;min-height:44px;padding:0;font:34px/1 Georgia,serif;border:1px solid #c7b88866;border-radius:8px;background:#254147;color:#f6deac}
+.equipped-portrait{position:relative;aspect-ratio:1;max-width:190px;justify-self:center;width:100%;border:1px solid #dac18c;border-radius:14px;overflow:hidden}
+.equipped-portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:none;opacity:1;pointer-events:none}
+.portrait-selected{position:absolute;right:7px;bottom:7px;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;border:1px solid #d9ce98;background:#24493ee8;color:#d9f5ba;font-size:14px}
+.profile-name-form{margin-top:14px}.profile-name-form label{display:block;font-size:11px;color:#d5d5c5;margin-bottom:5px}.profile-name-form>div{display:flex;gap:7px;align-items:center}
+.profile-name-form input{width:100%;min-width:0;min-height:42px;font-size:14px;padding:8px 10px;border:1px solid #9cabbc70;border-radius:8px;background:#172e38;color:#f5e9cd}
+.profile-name-check{flex:none;width:34px;height:36px;min-height:36px;padding:0;border:1px solid #c9c49099;border-radius:8px;background:#284c43;color:#e0efb8;font-size:20px}
+.profile-name-check[data-saved="false"]{color:#c8d4cf}.profile-name-status{display:block;min-height:14px;margin-top:4px;font-size:10px;color:#c0dfbd}
+.guide-tools{display:grid;gap:18px}.guide-playtesting{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:14px;border:1px solid #b9bea361;border-radius:11px;background:#1b39416e}.guide-playtesting b{font-size:16px;color:#f5e4c1}.guide-playtesting small{display:block;max-width:270px;margin-top:5px;font-size:12px;line-height:1.5;color:#becdcc}.guide-playtesting input{flex:none;width:21px;height:21px;accent-color:#ddc28c}.guide-restart{justify-self:start;min-height:44px}
+@media(max-width:600px){.home-shell .keeper-panel>.keeper-portrait{width:44px;height:44px}.home-shell .keeper-name{font-size:10px}.shop-nav-art{width:32px;height:32px}}
+
+.topbar-nav [data-page="roster"] .navigation-art{transform:scale(1.08);transform-origin:center}

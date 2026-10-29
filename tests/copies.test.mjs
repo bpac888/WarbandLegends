@@ -13,7 +13,7 @@ test('duplicate copies have independent XP, can fight together, and survive a sa
  assert.notEqual(a.copyId,b.copyId);assert.equal(uniqueHeroCount(p),6);assert.equal(ownedHeroes(p,roster).length,7);
  const original=heroForId(roster,a.copyId),duplicate=heroForId(roster,b.copyId);p=addHeroXp({...p},original,1000);
  assert.ok(developedChampion(original,p).level>1);assert.equal(developedChampion(duplicate,p).level,1);
- p.team=[a.copyId,b.copyId,...p.team.slice(0,3)];assert.ok(validateProfile(p,roster));
+ p.team=[a.copyId,b.copyId,...p.team.slice(0,3)];p.teamSlots[0]=[...p.team];assert.ok(validateProfile(p,roster));
  const available=battleRoster(p,roster),fight=createBattle(available,p.team,'ashen-gate',43,{progression:true,levels:Object.fromEntries(p.team.map(id=>[id,development(heroForId(roster,id),p.heroXp[id]).level]))});
  assert.equal(fight.heroes[0].id,a.copyId);assert.equal(fight.heroes[1].id,b.copyId);assert.ok(fight.heroes[0].atk>fight.heroes[1].atk);assert.ok(validateSave(fight,available));
  assert.deepEqual(parseBackup(JSON.stringify(makeBackup(p,fight)),roster),{profile:p,battle:fight});

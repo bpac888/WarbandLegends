@@ -8,6 +8,8 @@
 - [Game rules](RULES.md) — board, elements, mana and combat.
 - [QA and validation](QA.md) — verification procedures and prior results.
 - [Roadmap](ROADMAP.md) — implementation milestones and planned work.
+- Profile controls are on the Tavern portrait/name; Playtesting and Restart are in Guide → Tools.
+- [Teams](TEAMS.md) — saved lineups, the active warband and Codex sorting.
 - [Road to 200](ROSTER_200.md) — eleven audit-led additions, with their roles and purpose.
 - [200-champion roster coverage](ROSTER_AUDIT.md) — rarity, color, faction, type and speed counts.
 - [Character balance review](CHARACTER_BALANCE_REVIEW.md) — all 200 individual reviews, speed and rarity comparisons, and implemented audit additions; [filterable CSV](CHARACTER_BALANCE_REVIEW.csv).

@@ -1,0 +1,14 @@
+.page-roster .collection-toolbar{margin-bottom:14px}
+.active-team-mark{display:inline-flex;align-items:center;gap:5px;padding:4px 8px;border:1px solid #ceb77c8c;border-radius:20px;background:#244c407a;color:#f0d99f;font:600 11px/1.2 'Citadel UI',sans-serif;vertical-align:middle;white-space:nowrap}
+.active-team-mark::before{content:'✓';color:#a8e8b9}
+.saved-warbands .team-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.saved-warbands .team-slot{min-width:0;padding:16px;border:1px solid #a9b4c354;border-radius:14px;background:linear-gradient(140deg,#1c4144b8,#2e2b49a3)}
+.saved-warbands .team-slot.is-active{border-color:#d5bd7ea3;box-shadow:inset 0 0 24px #dbb45b0b}
+.team-slot>header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}.team-slot h3{margin:0;font-size:25px}
+.saved-warbands .slot-portraits{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;min-height:90px;margin:0 0 12px}
+.saved-warbands .slot-portraits img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:center top;border:1px solid #d4c39566;border-radius:7px;filter:none;opacity:1}
+.saved-warbands .slot-portraits>span{grid-column:1/-1;align-self:center;text-align:center;color:#bcc8c7}
+.team-slot-actions{width:100%;display:flex;gap:8px;align-items:center}.team-slot-actions .button{flex:1;min-width:0;padding:9px 12px;min-height:44px;font-size:12px}.team-slot-actions .button:disabled{opacity:1;color:#d7d1ad;background:#2a4c4680;border-color:#c1ad7666}
+.page-roster .library-filters{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:850px){.page-roster .library-filters{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.saved-warbands .team-slots{grid-template-columns:minmax(0,1fr);gap:11px}.saved-warbands .team-slot{padding:12px}.saved-warbands .slot-portraits img{max-height:110px}.page-roster .library-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.warband-section .section-heading h2{font-size:25px}.active-team-mark{font-size:10px}}
