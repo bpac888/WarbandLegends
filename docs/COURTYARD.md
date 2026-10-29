@@ -1,0 +1,11 @@
+# Tavern Courtyard
+
+The Tavern is a small first-person courtyard. Drag to look around, use the movement arrows (or WASD) to take short steps, and use the curved arrows (or left/right arrow keys) to turn. Home or the Courtyard button returns to the starting position.
+
+Four short paths lead to Adventure, the Altar, Codex and Shop. A distant marker approaches the path; a nearby gold marker opens its page. Turning around reveals the Tavern door. Its wanted poster shows the saved name, portrait, profile level and XP and opens the existing profile editor. Enter Tavern resets the courtyard rather than opening an interior. The dropped leather pouch opens the existing Daily Gift / Today’s Path page; reward eligibility and once-per-day saves are unchanged. Quests, Bag and Guide remain in the top navigation.
+
+The local Three.js viewer combines a bounded ground plane, painted environment vistas, a detailed transparent Tavern facade and projected interaction targets. It adds a flowing stream, occasional windblown leaves, birds and two animated townsperson sprites. Motion pauses while dialogs are open or the tab is hidden and respects the device’s reduced-motion preference. A flat illustrated fallback keeps interactions usable when WebGL is unavailable.
+
+Movement is temporary presentation state. It does not spend Energy, change battle teams or write progress. Profile edits update the poster without rebuilding the viewer or moving the camera. Route changes dispose the renderer, textures, geometries, observers and input listeners. The renderer runs at approximately 30 frames per second with bounded pixel density and no real-time shadows or remote dependencies.
+
+Validation: `npm run check`, `npm run test:courtyard` and `npm run test:profile-tools`. Browser coverage includes real touch dragging, walking/turning, all destinations, profile persistence, once-only daily rewards, six viewport sizes including phone landscape, ambient motion, and the WebGL fallback. Existing roster and artwork fingerprints remain part of the production build.

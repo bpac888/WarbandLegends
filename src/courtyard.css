@@ -1,0 +1,52 @@
+/* A small first-person world, with the game navigation kept outside the viewport. */
+.menu-theme .home-shell.courtyard-home{max-width:1800px;width:100%;margin:8px auto 0;padding:0 10px 8px}
+body:has(.courtyard-home) #app{padding-bottom:0}
+.courtyard-scene{position:relative;isolation:isolate;overflow:hidden;min-height:270px;height:calc(100svh - 112px);border:1px solid #d3b57959;border-radius:17px;background:#6c8277;touch-action:none;outline:none;user-select:none;-webkit-user-select:none;contain:layout paint}
+.courtyard-scene:focus-visible{outline:2px solid #edd59a;outline-offset:2px}
+.courtyard-backdrop,.courtyard-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;transition:opacity .3s}
+.courtyard-backdrop{background:url('../assets/courtyard/panorama.webp') 0% center/auto 100% no-repeat}
+.courtyard-canvas{opacity:0;touch-action:none}.has-world .courtyard-canvas{opacity:1}.has-world .courtyard-backdrop{opacity:0}
+.courtyard-sun{position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 90% 0,#ffe7b30d,transparent 42%)}
+.courtyard-heading{position:absolute;z-index:3;left:16px;right:16px;top:15px;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+.courtyard-place{color:#fff6da;font-size:clamp(16px,2vw,21px);font-family:'Citadel Display',serif!important;text-shadow:0 1px 4px #24180d,0 2px 12px #1a190e;background:#172b2c75;backdrop-filter:blur(4px);padding:6px 13px;border:1px solid #e2c58e40;border-radius:22px;min-width:0}
+.courtyard-compass{width:35px;height:35px;position:relative;border:1px solid #ead5ab8a;border-radius:50%;background:#152e2bb3;display:grid;place-items:center;color:#f7e8c3;font-size:8px;box-shadow:0 2px 12px #0003}
+.courtyard-compass b{position:absolute;top:-8px;text-shadow:0 1px 3px #000}.courtyard-compass i{width:10px;height:21px;background:linear-gradient(#eacb8c 50%,#799b9666 50%);clip-path:polygon(50% 0,100% 100%,50% 73%,0 100%)}
+.courtyard-loading{position:absolute;z-index:5;left:50%;top:45%;transform:translate(-50%,-50%);padding:12px 18px;border:1px solid #e6c99273;border-radius:12px;background:#163136d9;color:#f8e8c6;font-size:12px;text-align:center;white-space:nowrap;box-shadow:0 10px 35px #11221e55;pointer-events:none}
+.courtyard-loading span{display:block;height:2px;width:70px;margin:11px auto 0;background:linear-gradient(90deg,transparent,#f7d597,transparent);animation:courtyard-shimmer 1.6s ease-in-out infinite}
+.courtyard-hotspots{position:absolute;inset:0;z-index:4;pointer-events:none}
+.courtyard-scene .courtyard-target{position:absolute;left:50%;top:50%;margin:0;transform:translate(-50%,-50%) scale(var(--object-scale,1));pointer-events:auto;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:filter .2s,box-shadow .2s}
+.courtyard-target[hidden]{display:none!important}
+.courtyard-scene .courtyard-destination{display:flex;align-items:center;gap:7px;padding:7px 13px 7px 7px;min-height:44px;max-width:180px;border:1px solid #ffdda679;border-radius:30px;background:linear-gradient(110deg,#172e2bc9,#1d3027bf);color:#fff3d1;font-size:13px;font-weight:650;box-shadow:0 3px 16px #172a2a77;white-space:nowrap}
+.courtyard-pin{display:grid;place-items:center;width:27px;height:27px;flex-shrink:0;border-radius:50%;border:1px solid #edd49a80;background:#c6a45d19;color:#ffdd96}
+.courtyard-pin svg{width:16px;height:16px}.courtyard-target-label{font-size:12px;line-height:1.2;text-shadow:0 1px 3px #0007}
+.courtyard-scene .courtyard-destination.is-near{border-color:#fff2bd;background:linear-gradient(110deg,#76582be8,#334a35e8);box-shadow:0 0 0 3px #ffd88a1a,0 4px 20px #30271177}
+.courtyard-destination.is-near .courtyard-pin{background:#f3d28b;color:#34291b;border-color:#fff0bf}
+.courtyard-scene .wanted-poster.keeper-portrait{display:flex;flex-direction:column;align-items:center;gap:3px;width:126px;height:auto;max-height:none;padding:12px 10px 9px;border:1px solid #b18c4f;border-radius:2px 4px 3px 2px;background:radial-gradient(ellipse at 40% 40%,#f3e1b2,#d8bc82 90%);box-shadow:2px 4px 7px #1d160f80,inset 0 0 12px #936a3538;color:#402a18;clip-path:polygon(2% 0,31% 1%,61% 0,98% 2%,100% 28%,99% 62%,100% 99%,72% 98%,33% 100%,0 98%,1% 58%,0 27%);overflow:visible}
+.courtyard-scene .wanted-poster .wanted-heading{font-family:'Citadel Display',serif!important;font-size:22px;letter-spacing:.11em;line-height:1.1;color:#493019;text-shadow:none}
+.courtyard-scene .wanted-poster>img{position:static;display:block;width:83px;height:83px;aspect-ratio:1;object-fit:cover;border:1px solid #77573f;border-radius:2px;margin:3px 0;box-shadow:none;filter:none}
+.courtyard-scene .wanted-poster .keeper-name{font-size:12px;line-height:1.15;max-width:100%;overflow-wrap:anywhere;color:#432818;text-shadow:none}
+.courtyard-scene .wanted-poster .poster-level{font-size:10px;font-weight:750}.courtyard-scene .wanted-poster>small{font-size:8px;line-height:1.2;color:#553b22}
+.poster-nail{position:absolute;width:5px;height:5px;left:calc(50% - 2px);top:4px;background:#5d5041;border-radius:50%;box-shadow:0 1px 2px #2b1d14}
+.poster-xp{display:block;width:88%;height:4px;margin:3px 0;background:#95713c42;border:1px solid #9f7938;border-radius:2px;overflow:hidden}.poster-xp i{display:block;height:100%;background:#5e7250}
+.courtyard-scene .wanted-poster.is-near{filter:drop-shadow(0 0 5px #ffda85b3)}
+.courtyard-scene .courtyard-pouch{display:flex;flex-direction:column;align-items:center;gap:0;width:120px;padding:0;border:0;border-radius:50%;background:none;box-shadow:none}
+.courtyard-pouch>img{width:120px;height:80px;object-fit:contain;filter:drop-shadow(0 3px 3px #251c10a6);pointer-events:none}
+.courtyard-pouch .courtyard-target-label{display:block;border:1px solid #ebcf8c66;border-radius:14px;background:#203528d9;padding:4px 9px;color:#fff1c8;white-space:nowrap;font-size:10px}
+.courtyard-pouch.gift-ready::before{content:'';position:absolute;z-index:-1;left:12px;right:12px;top:19px;height:38px;border:1px solid #ffdd8299;border-radius:50%;box-shadow:0 0 13px #ffe09150;animation:courtyard-gift 2.8s ease-in-out infinite;transform:rotate(-10deg)}
+.courtyard-pouch.is-near>img{filter:drop-shadow(0 3px 4px #251c1088) drop-shadow(0 0 4px #ffe39c66)}
+.courtyard-target:focus-visible{outline:2px solid #fff4bb;outline-offset:4px}
+.courtyard-look-hint{position:absolute;z-index:3;bottom:123px;left:50%;transform:translateX(-50%);margin:0;padding:6px 13px;border-radius:18px;background:#152923b3;font-size:11px;line-height:1.3;color:#fff1d0;white-space:nowrap;pointer-events:none;transition:opacity .4s;text-shadow:0 1px 3px #15251e}
+.has-looked .courtyard-look-hint{opacity:0}
+.courtyard-controls{position:absolute;z-index:6;bottom:max(14px,env(safe-area-inset-bottom,0px));left:16px;right:16px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;pointer-events:none}
+.courtyard-controls button{display:grid;place-items:center;width:43px;height:43px;min-height:43px;padding:10px;border:1px solid #e8c99478;border-radius:13px;background:linear-gradient(135deg,#1f3733d9,#192d2de8);box-shadow:inset 0 1px #fff6d31a,0 2px 9px #182b2466;color:#fff0c5;cursor:pointer;pointer-events:auto;touch-action:none;-webkit-tap-highlight-color:transparent;transition:background .15s,border-color .15s}
+.courtyard-controls button svg{width:23px;height:23px}.courtyard-controls button:active{background:#806c40e6;border-color:#ffe3a1}.courtyard-controls button:focus-visible{outline:2px solid #ffe4a7;outline-offset:2px}
+.courtyard-walk{display:grid;grid-template-columns:repeat(3,43px);grid-template-rows:repeat(2,43px);gap:4px}.courtyard-walk button:first-child{grid-column:2}.courtyard-walk button:nth-child(2){grid-column:1;grid-row:2}.courtyard-walk button:nth-child(3){grid-column:2;grid-row:2}.courtyard-walk button:nth-child(4){grid-column:3;grid-row:2}
+.courtyard-turn{display:flex;gap:5px;align-self:flex-end}.courtyard-controls .courtyard-reset{background:#18342b94;border-color:#d2c5914d;width:46px;height:43px;padding:7px;align-self:flex-end;position:relative}.courtyard-reset>span{display:none}
+.courtyard-scene.is-returning .courtyard-canvas,.courtyard-scene.is-returning .courtyard-hotspots{opacity:.6}
+@keyframes courtyard-shimmer{50%{opacity:.35;transform:scaleX(.6)}}@keyframes courtyard-gift{50%{box-shadow:0 0 21px #ffe09170;border-color:#fff2c8;opacity:.6}}
+@media(min-width:900px){.courtyard-controls{left:30px;right:30px;bottom:25px}.courtyard-controls .courtyard-reset{display:flex;justify-content:center;gap:8px;width:auto;padding:10px 16px}.courtyard-reset>span{display:block;font-size:11px}.courtyard-heading{left:25px;right:25px;top:22px}}
+@media(max-width:600px){.menu-theme .home-shell.courtyard-home{padding:0 5px 4px;margin-top:5px}.courtyard-scene{border-radius:12px}.courtyard-heading{left:10px;right:10px;top:10px}.courtyard-controls{left:10px;right:10px;gap:6px}.courtyard-place{font-size:15px;padding:5px 10px}.courtyard-target-label{font-size:11px}.courtyard-scene .courtyard-destination{padding:6px 10px 6px 5px;gap:5px;max-width:145px}.courtyard-pin{width:25px;height:25px}}
+@media(max-width:350px){.courtyard-controls{left:8px;right:8px;gap:4px}.courtyard-controls button{width:40px;height:40px;min-height:40px;padding:9px}.courtyard-walk{grid-template-columns:repeat(3,40px);grid-template-rows:repeat(2,40px)}.courtyard-turn{gap:3px}.courtyard-controls .courtyard-reset{width:38px;height:40px}}
+@media(prefers-reduced-motion:reduce){.courtyard-scene *{animation:none!important;transition:none!important}}
+
+.courtyard-live.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

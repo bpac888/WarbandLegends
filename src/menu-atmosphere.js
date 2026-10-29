@@ -14,7 +14,7 @@ function syncScene(){
  document.body.classList.toggle('menu-theme',!combat);
  document.body.dataset.menuScene=scene;atmosphere.hidden=combat||scene==='splash';
  if(meta)meta.content=combat?originalTheme:'#112a30';
- if(scene!==lastScene&&!combat&&!reduced.matches){
+ if(scene!==lastScene&&!combat&&!reduced.matches&&!app.querySelector('.courtyard-scene')){
   const content=page||app.querySelector('.home-shell');
   content?.animate([{transform:'translateY(7px)'},{transform:'translateY(0)'}],{duration:320,easing:'cubic-bezier(.2,.8,.2,1)'});
  }

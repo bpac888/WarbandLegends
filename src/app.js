@@ -1,3 +1,5 @@
+import {courtyardHTML} from './courtyard-ui.js';
+import {mountCourtyard} from './courtyard-view.js';
 import {profileEditorHTML,mountProfileEditor} from './profile-editor.js';
 import {saveTeam} from './teams.js';
 import {mountArenaScene} from './arena-scene.js';
@@ -9,7 +11,7 @@ import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js';
 import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js';
 import {guideHTML,guideTopics,effectCard} from './guide-ui.js';
 import {claimDaily,claimPath,teamSlot} from './keeper.js';
-import {keeperPanel,dailyPage} from './keeper-ui.js';
+import {dailyPage} from './keeper-ui.js';
 import {buyWithGems} from './economy.js';
 import {gemConfirmation} from './gem-ui.js';
 import {awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js';
@@ -66,6 +68,7 @@ function scheduleAuto(){
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseAuto();else scheduleAuto();});
 modal.addEventListener('close',scheduleAuto);
 let campaignDifficulty='normal',dungeonDifficulty='normal',selectedEvent=null,selectedArena=0;
+let courtyardView=null;
 let roster=[],effects={},byId=new Map(),profile,battle=null,screen='splash',busy=false,selectedRune=null,pendingCaster=null,pendingLevel=1,selectedEnemy=null,animationToken=0,noticeTimer,storage,storageWarned=false;
 try{storage=window.localStorage;}catch{storage={getItem:()=>null,setItem:()=>{throw Error('unavailable');}};}
 const persist=(key,value)=>{if(key===PROFILE_KEY&&roster.length)byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));if(!save(storage,key,value)&&!storageWarned){storageWarned=true;toast('Browser storage is unavailable. You can play, but this session cannot be saved.');}};
@@ -76,9 +79,9 @@ function header(page='home',guidePage=page){return `<header class="topbar with-n
 function elementLegend(){return `<div class="element-guide"><span class="element red">${rune('red')} Ember</span><b>›</b><span class="element green">${rune('green')} Verdant</span><b>›</b><span class="element blue">${rune('blue')} Frost</span><b>›</b><span class="element red small">${rune('red')}</span><span class="guide-divider"></span><span class="element yellow">${rune('yellow')}</span><b>⇄</b><span class="element purple">${rune('purple')}</span></div>`;}
 function renderHome(){
   clearBattleEffects();screen='home';busy=false;pendingCaster=null;selectedRune=null;animationToken++;
-  app.innerHTML=`${header()}<main class="home-shell">
-  ${keeperPanel(profile)}${Shell.tavernDestinations()}
-  </main>`;
+  courtyardView?.destroy();
+  app.innerHTML=header()+courtyardHTML(profile);
+  courtyardView=mountCourtyard(app.querySelector('.courtyard-scene'),{profile,onNavigate:id=>{if(id==='roster')collectionFilters.tab='all';go(id);},onProfile:()=>openPlayerProfile(),isPaused:()=>modal.open});
 }
 function warbandPanel(){return `<section class="warband-section"><div class="section-heading"><div><h2>Team ${profile.activeTeamSlot+1} <span class="active-team-mark">Active Warband</span></h2></div><div class="warband-actions"><button class="text-button" data-action="roster">Change Champions ${Shell.uiIcon('arrow')}</button></div></div><div class="warband-grid library-grid">${profile.team.map(id=>Shell.championCard(developedChampion(byId.get(id),profile),profile,{ownedTab:true})).join('')}</div><div class="team-footnote">${teamComposition(profile.team)}</div>${factionTeamHTML(profile.team.map(id=>byId.get(id)))}</section>`;}
 function teamComposition(ids){const counts=Object.fromEntries(COLORS.map(c=>[c,0]));ids.forEach(id=>counts[byId.get(id).color]++);return `<span class="composition">${COLORS.map(c=>`<span class="color-pip ${c}" title="${ELEMENTS[c].name}: ${counts[c]} champions">${counts[c]}</span>`).join('')}<b>${Object.values(counts).every(n=>n===1)?'Rainbow warband':Object.values(counts).filter(Boolean).sort((a,b)=>b-a).join(' / ')+' formation'}</b></span>`;}
@@ -158,6 +161,7 @@ function renderRoster(){
   modalContent.querySelectorAll('[data-action="filter"]').forEach(b=>b.classList.toggle('active',b.dataset.color===rosterFilter));
 }
 function tapTile(index){if(busy||screen!=='battle'||pendingCaster)return;if(selectedRune===index){if(battle.board[index].special)play(activate(battle,index));else{selectedRune=null;renderBattle();}return;}if(selectedRune!==null){const a=selectedRune;selectedRune=null;play(swap(battle,a,index));if(!busy)renderBattle();}else{selectedRune=index;renderBattle();}}
+function openPlayerProfile(){openModal('Your Profile',profileEditorHTML(profile),'profile-editor');mountProfileEditor(modalContent,{avatar:profile.avatar,onAvatar:avatar=>{profile={...profile,avatar};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);},onName:name=>{profile={...profile,name};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);}});}
 function closeModal(){if(modal.open)modal.close();modal.dataset.view='';scheduleAuto();}
 document.addEventListener('click',event=>{
   const button=event.target.closest('[data-action]');if(!button||button.disabled)return;const {action,id,uid,stage,color,index}=button.dataset;
@@ -185,7 +189,7 @@ document.addEventListener('click',event=>{
   if(action==='collection-tab'){collectionFilters.tab=button.dataset.tab;renderCollectionPage();return;}
   if(action==='summon'){openPortal();return;}
   if(action==='daily-claim'||action==='path-claim'){const r=(action==='daily-claim'?claimDaily:claimPath)(profile);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);renderShell('daily');toast('Daily rewards saved.');return;}
-  if(action==='edit-profile'){openModal('Your Profile',profileEditorHTML(profile),'profile-editor');mountProfileEditor(modalContent,{avatar:profile.avatar,onAvatar:avatar=>{profile={...profile,avatar};persist(PROFILE_KEY,profile);if(screen==='home')renderHome();},onName:name=>{profile={...profile,name};persist(PROFILE_KEY,profile);if(screen==='home')renderHome();}});return;}
+  if(action==='edit-profile'){openPlayerProfile();return;}
   if(action==='team-edit'){openRoster(false,Number(button.dataset.slot));return;}
   if(action==='team-load'){const slot=Number(button.dataset.slot),r=teamSlot(profile,slot,'load');if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);collectionFilters.tab='teams';go('roster');toast('Team '+(slot+1)+' is active for all battles.');return;}
   if(action==='quest-status'){questState=button.dataset.state;questLimit=0;renderShell('quests');return;}
@@ -249,7 +253,7 @@ function abandonBattle(){
   clearBattleSave(storage);
   if(profile?.eventEntry){profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);}
 }
-window.addEventListener('pagehide',abandonBattle);
+window.addEventListener('pagehide',()=>{abandonBattle();courtyardView?.destroy();courtyardView=null;});
 window.addEventListener('pageshow',event=>{if(event.persisted)renderRoute();});
 function go(path){const hash='#/'+path;if(location.hash!==hash)history.pushState(null,'',hash);renderRoute();}
 function renderRoute(){
@@ -257,6 +261,7 @@ function renderRoute(){
   syncEnergy();
   document.body.classList.toggle('reduce-animation',reducedAnimation());
   const raw=location.hash.replace(/^#\/?/,'')||'splash',parts=raw.split('/'),page=parts[0];
+  if(page!=='home'&&courtyardView){courtyardView.destroy();courtyardView=null;}
   if(page!=='battle'&&battle)abandonBattle();
   pauseAuto();animationToken++;busy=false;pendingCaster=null;selectedRune=null;closeModal();clearBattleEffects();
   if(page!=='summon'){summonToken++;summoning=false;portalReveal=null;}

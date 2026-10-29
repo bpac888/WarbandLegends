@@ -59,3 +59,5 @@ Two native-resolution colosseum compositions and nine transparent full-body riva
 The transparent merchant-stall navigation icon was generated for Warband Legends using OpenAI image generation in October 2026. The native-resolution asset is encoded as high-quality WebP with transparency preserved.
 
 The Codex/Teams navigation icon was refined from its existing three-figure design with OpenAI image generation in October 2026, retaining transparency at native high resolution.
+
+The v0.32 first-person Tavern courtyard uses nine new original image-generated assets: a courtyard panorama, transparent tavern facade, transparent leather coin pouch, cobblestone texture, three path vistas, and two four-frame townsperson walk cycles. Their local WebP versions preserve native resolution. Profile portraits and existing destination artwork are presented unchanged within the scene. Three.js r170 is bundled locally under its MIT license in `src/vendor/three-LICENSE.txt`; no external script, CDN, tracking or game service is used at runtime.
