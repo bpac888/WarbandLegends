@@ -1,0 +1,138 @@
+/* A bright, textured portal fills the scene; its architecture never rotates or dims. */
+.portal-surface{--opening-x:39.5%;--opening-y:28%;--opening-w:21%;--opening-h:44%;position:relative;isolation:isolate;overflow:hidden;aspect-ratio:3/2;background:#091929;border-radius:15px;border:1px solid #dbc89475;box-shadow:0 12px 45px #06112555,0 0 25px #a38ad51a}
+.portal-surface .portal-architecture,.portal-surface .portal-architecture>img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:1;filter:none;mask-image:none;pointer-events:none}
+.portal-surface .portal-opening{position:absolute;left:var(--opening-x);top:var(--opening-y);width:var(--opening-w);height:var(--opening-h);overflow:hidden;border-radius:48% 48% 8% 8%;mask-image:radial-gradient(ellipse,#000 39%,#000b 60%,transparent 76%);pointer-events:none}
+.portal-surface .portal-energy{position:absolute;left:-40%;top:-40%;width:180%;height:180%;max-width:none;object-fit:cover;opacity:.43;filter:none;mix-blend-mode:screen;transform-origin:center;animation:altar-aether-turn 42s linear infinite}
+.portal-surface .portal-energy-counter{opacity:.15;animation-duration:66s;animation-direction:reverse}
+.portal-surface .portal-depth-light{position:absolute;inset:24% 10%;background:radial-gradient(ellipse,#d4baff12,#8de9ff13 40%,transparent 70%);mix-blend-mode:screen;animation:altar-core-breathe 8s ease-in-out infinite}
+.portal-surface .portal-conduit{position:absolute;left:var(--opening-x);top:calc(var(--opening-y) - 1%);width:var(--opening-w);height:calc(var(--opening-h) + 2%);overflow:visible;mix-blend-mode:screen;pointer-events:none}
+.portal-surface .portal-conduit path{fill:none;stroke:#d9c4ffaa;stroke-width:.8;stroke-linecap:round;stroke-dasharray:3 13 28 20;animation:altar-arch-flow 18s linear infinite}
+.portal-surface .portal-conduit path+path{stroke:#acffff88;stroke-width:.55;animation-direction:reverse;animation-duration:23s}
+.portal-surface .portal-floor-ward{position:absolute;left:50%;top:87%;width:46%;height:13%;transform:translate(-50%,-50%);pointer-events:none;mix-blend-mode:screen;opacity:.48}
+.portal-surface .portal-floor-ward svg{display:block;width:100%;height:100%;fill:none;stroke:#e6d39bcc;stroke-width:.9}
+.portal-surface .portal-floor-ward .portal-ward-turn{transform-origin:150px 150px;animation:altar-aether-turn 55s linear infinite}
+.portal-surface .portal-floor-ward .ward-dashed{stroke-dasharray:1.2 5}
+.portal-surface .portal-motes,.portal-surface .portal-crystal-glints{position:absolute;inset:0;pointer-events:none}
+.portal-surface .portal-motes>i{position:absolute;left:var(--mx);top:var(--my);width:2px;height:2px;border-radius:50%;background:#ddd2ff;box-shadow:0 0 7px #9ff5ff;opacity:0;animation:altar-mote-rise 11s ease-in-out infinite;animation-delay:calc(var(--mote)*-1.3s)}
+.portal-surface .portal-glint{position:absolute;width:8px;height:8px;transform:translate(-50%,-50%);background:linear-gradient(transparent 41%,#e4ffff 48%,#e4ffff 52%,transparent 59%),linear-gradient(90deg,transparent 41%,#e4ffff 48%,#e4ffff 52%,transparent 59%);opacity:.3;animation:altar-crystal-glint 8s ease-in-out infinite}
+.portal-surface .glint-0{left:12%;top:32%}
+.portal-surface .glint-1{left:81%;top:10%;animation-delay:-2s}
+.portal-surface .glint-2{left:18%;top:50%;animation-delay:-5s}
+.portal-surface .glint-3{left:88%;top:56%;animation-delay:-6.5s}
+/* Compact controls give the artwork almost all the available height. */
+body.menu-theme:has(.page-summon) #app{height:100svh;min-height:0;display:flex;flex-direction:column}
+body.menu-theme:has(.page-summon) .topbar.with-nav{flex-shrink:0;width:100%}
+body.menu-theme .game-page.page-summon{display:flex;flex:1;min-height:0;width:100%;padding:7px 12px 8px}
+body.menu-theme .page-summon .altar-page{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:7px;flex:1;width:100%;min-height:0;max-width:1400px;margin:0 auto;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+body.menu-theme .page-summon .altar-header{display:flex;justify-content:center;width:100%;max-width:none;margin:0;min-height:0;padding:0}
+body.menu-theme .page-summon .altar-heading h1{font-size:30px!important;line-height:1.05;margin:0}
+.page-summon .altar-art-space{overflow:hidden;border-radius:14px;display:grid;place-items:center;position:relative;min-width:0;min-height:0;container-type:size}
+body.menu-theme .page-summon .altar-portal.portal-surface{width:min(100%,150cqh);height:auto;aspect-ratio:3/2;max-width:none;min-height:0;max-height:100%;margin:0;flex:none;border-radius:14px;border-color:#dbc89485;box-shadow:0 8px 32px #06112555}
+.page-summon .altar-portal.portal-surface::before,.page-summon .altar-portal.portal-surface::after{display:none}
+body.menu-theme .page-summon .altar-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;max-width:520px;margin:0 auto;flex-shrink:0}
+body.menu-theme .page-summon .altar-actions>button{display:grid;grid-template-columns:auto auto;align-content:center;align-items:center;justify-content:center;column-gap:9px;row-gap:3px;min-width:0;min-height:56px;padding:6px 10px;border:1px solid #d9bd8199;border-radius:10px;background:radial-gradient(ellipse at 50% 0,#aa7bdc28,transparent 85%),linear-gradient(145deg,#27384b,#1e2c3a);box-shadow:inset 0 1px #f6e5b12e,0 3px 10px #05142340}
+body.menu-theme .page-summon .altar-actions>button>span{font-size:20px!important;line-height:1.05;color:#fff0d2;white-space:nowrap}
+body.menu-theme .page-summon .altar-actions>button>small{font-size:10px;line-height:1.1;letter-spacing:0;color:#c9d4df;white-space:nowrap}
+body.menu-theme .page-summon .altar-actions>button>strong{grid-column:1/3;display:flex;align-items:center;justify-content:center;gap:5px;font-size:12px;line-height:1.1;margin:0;color:#f0d494}
+body.menu-theme .page-summon .altar-actions .card-glyph{width:17px;height:17px}
+body.menu-theme .page-summon .altar-actions>button:hover:not(:disabled){border-color:#ffe6ac;box-shadow:inset 0 1px #ffe8b44d,0 0 15px #c6a9ef26}
+.page-summon .awakening *{animation-play-state:paused!important}
+/* Full-screen ritual: reuse the same high-density painting and textured currents. */
+#modal[data-view=ritual] .summon-ritual{display:grid;grid-template-rows:minmax(0,1fr) auto auto;justify-content:stretch;align-items:center;gap:8px;width:100%;height:100%;min-height:0;padding:max(9px,env(safe-area-inset-top)) max(9px,env(safe-area-inset-right)) max(9px,env(safe-area-inset-bottom)) max(9px,env(safe-area-inset-left));overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#263455,#101623 58%,#07131c)}
+.summon-ritual .ritual-art-space{overflow:hidden;border-radius:14px;position:relative;display:grid;place-items:center;min-width:0;min-height:0;width:100%;height:100%;container-type:size}
+.summon-ritual .summon-ritual-scene.portal-surface{width:min(100%,150cqh);height:auto;aspect-ratio:3/2;max-height:100%;min-height:0;margin:0;border-color:#dfd0a080;perspective:850px;flex-shrink:1;box-shadow:0 15px 80px #0005}
+.portal-surface.is-activating .portal-energy{animation:altar-gate-charge var(--ritual-activation,1800ms) cubic-bezier(.55,.04,.88,.55) both}
+.portal-surface.is-activating .portal-energy-counter{animation-name:altar-gate-charge-counter}
+.portal-surface.is-activating .portal-conduit path{animation-duration:1.5s;stroke-width:1.3}
+.portal-surface.is-activating .portal-floor-ward{opacity:.9}
+.portal-surface.is-activating .portal-floor-ward .portal-ward-turn{animation-duration:5s}
+.portal-surface.is-arriving .portal-energy{animation:altar-gate-release var(--ritual-arrival,2800ms) ease-out both}
+.portal-surface.is-arriving .portal-energy-counter{animation-direction:reverse;opacity:.3}
+.portal-surface.is-arriving .portal-floor-ward{opacity:.85}
+.portal-surface.is-arriving .portal-floor-ward .portal-ward-turn{animation-duration:12s}
+.summon-ritual .ritual-sigil-rays{position:absolute;left:50%;top:49%;width:0;height:0;pointer-events:none}
+.summon-ritual .ritual-sigil-rays i{position:absolute;left:0;top:0;width:1px;height:clamp(24px,12cqw,150px);background:linear-gradient(transparent,var(--ritual-accent),transparent);transform-origin:50% 0;transform:rotate(calc(var(--ray)*30deg));opacity:0;animation:altar-ray-gather var(--ritual-activation,1800ms) ease-in both;animation-delay:calc(var(--ray)*-35ms)}
+.summon-ritual .is-arriving .ritual-sigil-rays i{animation:altar-ray-release 1400ms ease-out both;animation-delay:calc(var(--ray)*18ms)}
+.summon-ritual .ritual-shockwaves{position:absolute;left:50%;top:49%;width:24%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.summon-ritual .ritual-shockwaves i{position:absolute;inset:0;border:1px solid var(--ritual-accent);border-radius:50%;opacity:0;box-shadow:0 0 8px #d9b4ff3b}
+.summon-ritual .is-arriving .ritual-shockwaves i{animation:altar-shockwave 1500ms ease-out both}
+.summon-ritual .is-arriving .ritual-shockwaves i:nth-child(2){animation-delay:180ms}
+.summon-ritual .is-arriving .ritual-shockwaves i:nth-child(3){animation-delay:380ms}
+.summon-ritual .summon-ritual-traveler{position:absolute;left:50%;top:26%;width:25%;height:auto;aspect-ratio:2/3;max-height:66%;transform-origin:50% 85%;animation:altar-champion-emerge 1400ms cubic-bezier(.16,.65,.24,1) both;z-index:3;filter:none}
+.summon-ritual .summon-ritual-traveler>img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;mask-image:none;-webkit-mask-image:none;filter:none;border-radius:9px}
+.summon-ritual .ritual-champion-halo{position:absolute;inset:-9%;z-index:-1;border-radius:35%;background:radial-gradient(ellipse,#d4a9ff33,transparent 68%);box-shadow:0 0 25px #f1d6a522;animation:altar-halo-bloom 1800ms ease-out both}
+.summon-ritual .ritual-champion-frame{position:absolute;inset:-2px;border:1px solid var(--ritual-accent);border-radius:11px;box-shadow:0 0 18px #e5c9ff44,inset 0 0 0 2px #ffebc514;pointer-events:none}
+.summon-ritual .ritual-threshold-bloom{position:absolute;left:50%;top:49%;width:40%;height:55%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,#fff2d14d,#bda2ff2e 35%,transparent 70%);opacity:0;pointer-events:none;mix-blend-mode:screen;z-index:4}
+.summon-ritual .is-arriving .ritual-threshold-bloom{animation:altar-threshold-bloom 1200ms ease-out both}
+.summon-ritual .summon-ritual-caption{position:relative;margin:0;padding:0 8px;min-height:64px;text-align:center;z-index:5}
+.summon-ritual .summon-ritual-caption p{font-size:10px;line-height:1.2;letter-spacing:.14em;margin:0 0 5px;color:#cdc0e8}
+.summon-ritual .summon-ritual-caption h2{font-size:clamp(24px,3.5vw,38px);line-height:1.05;margin:0 0 4px;color:#ffefce}
+.summon-ritual .summon-ritual-caption span{font-size:10px;color:var(--ritual-accent);letter-spacing:.08em}
+.summon-ritual .summon-ritual-skip{justify-self:center;align-self:center;min-height:44px;margin:0;padding:8px 20px;border-color:#d7c18b99;background:#182b3de8;font-size:12px;z-index:5}
+/* Results retain all owned copies and existing champion artwork. */
+#modal[data-view=summon-results] .summon-summary{font-size:12px;color:#c7d3cf;margin:0 0 14px}
+#modal[data-view=summon-results] .summon-result-grid:has(.summon-result-card:only-child){grid-template-columns:minmax(0,280px);justify-content:center}
+#modal[data-view=summon-results] .summon-result-card{border:1px solid #aec8bd70;border-radius:12px;overflow:hidden;background:#142d38;box-shadow:0 6px 20px #04141e44;animation:altar-result-arrive .5s ease-out both;animation-delay:calc(var(--arrival)*55ms)}
+#modal[data-view=summon-results] .result-rare{border-color:#8bdec99c}
+#modal[data-view=summon-results] .result-legendary{border-color:#e5c17d;box-shadow:0 0 18px #d7af5530}
+#modal[data-view=summon-results] .result-mythical{border-color:#d6b2ff;box-shadow:0 0 22px #b389e73b}
+#modal[data-view=summon-results] .summon-result-card>img{filter:none;opacity:1}
+@keyframes altar-aether-turn{to{transform:rotate(360deg)}}
+@keyframes altar-core-breathe{0%,100%{opacity:.3}50%{opacity:.8}}
+@keyframes altar-arch-flow{to{stroke-dashoffset:-256}}
+@keyframes altar-mote-rise{0%,100%{opacity:0;transform:translateY(8px)}25%{opacity:.7}80%{opacity:.15;transform:translateY(-25px)}}
+@keyframes altar-crystal-glint{0%,100%{opacity:.15}50%{opacity:.9;translate:0 -4px}}
+@keyframes altar-gate-charge{0%{transform:rotate(0) scale(.78);opacity:.2}60%{opacity:.65}100%{transform:rotate(260deg) scale(1.1);opacity:.9}}
+@keyframes altar-gate-charge-counter{0%{transform:rotate(0) scale(.8);opacity:.1}100%{transform:rotate(-220deg) scale(1.08);opacity:.35}}
+@keyframes altar-gate-release{0%{transform:rotate(0) scale(1.08);opacity:.85}100%{transform:rotate(100deg) scale(.96);opacity:.3}}
+@keyframes altar-ray-gather{0%{opacity:0;scale:1.3}70%{opacity:.5}100%{opacity:.1;scale:.45}}
+@keyframes altar-ray-release{0%{opacity:.6;scale:.3}100%{opacity:0;scale:1.8}}
+@keyframes altar-shockwave{0%{opacity:.65;transform:scale(.4)}100%{opacity:0;transform:scale(2.5)}}
+@keyframes altar-champion-emerge{0%{opacity:0;transform:translate(-50%,18px)}40%{opacity:1}100%{opacity:1;transform:translate(-50%,0)}}
+@keyframes altar-halo-bloom{0%{opacity:0;scale:.7}100%{opacity:1;scale:1}}
+@keyframes altar-threshold-bloom{0%{opacity:0}25%{opacity:.9}100%{opacity:0}}
+@keyframes altar-result-arrive{from{opacity:0;transform:translateY(6px) scale(.98)}to{opacity:1;transform:none}}
+@media(max-width:700px) and (orientation:portrait){
+ .portal-surface{--opening-x:34%;--opening-y:29%;--opening-w:32%;--opening-h:41%;aspect-ratio:2/3}
+ body.menu-theme .page-summon .altar-portal.portal-surface,.summon-ritual .summon-ritual-scene.portal-surface{aspect-ratio:2/3;width:66.667cqh;height:100%}
+ .portal-surface .portal-floor-ward{top:86%;width:66%;height:13%}
+ .portal-surface .glint-0{left:17%;top:17%}
+ .portal-surface .glint-1{left:88%;top:7%}
+ .portal-surface .glint-2{left:18%;top:31%}
+ .portal-surface .glint-3{left:89%;top:54%}
+ .summon-ritual .summon-ritual-traveler{top:28%;width:51%;max-height:none}
+ .summon-ritual .ritual-shockwaves{width:44%}
+}
+@media(max-width:600px){
+ body.menu-theme .game-page.page-summon{padding:6px 7px 7px}
+ body.menu-theme .page-summon .altar-heading h1{font-size:28px!important}
+ body.menu-theme .page-summon .altar-actions>button{min-height:54px;padding:5px 6px;column-gap:6px}
+ body.menu-theme .page-summon .altar-actions>button>span{font-size:18px!important}
+ body.menu-theme .page-summon .altar-actions>button>small{font-size:9px}
+}
+@media(orientation:landscape) and (max-height:600px){
+ body.menu-theme .page-summon .altar-page{grid-template-columns:minmax(0,1fr) 180px;grid-template-rows:auto minmax(0,1fr);gap:6px 10px}
+ .page-summon .altar-art-space{grid-column:1;grid-row:1/3}
+ body.menu-theme .page-summon .altar-header{grid-column:2;grid-row:1;padding:4px 0}
+ body.menu-theme .page-summon .altar-actions{grid-column:2;grid-row:2;grid-template-columns:minmax(0,1fr);align-self:start}
+ body.menu-theme .page-summon .altar-actions>button{column-gap:6px;padding-inline:7px}
+ body.menu-theme .page-summon .altar-actions>button>span{font-size:18px!important}
+ #modal[data-view=ritual] .summon-ritual{grid-template-columns:minmax(0,1fr) 170px;grid-template-rows:minmax(0,1fr) auto;gap:8px}
+ .summon-ritual .ritual-art-space{grid-column:1;grid-row:1/3}
+ .summon-ritual .summon-ritual-caption{grid-column:2;grid-row:1;align-self:end;min-height:0;padding-bottom:5px}
+ .summon-ritual .summon-ritual-skip{grid-column:2;grid-row:2;align-self:start}
+ .summon-ritual .summon-ritual-caption h2{font-size:24px}
+}
+.menu-motion-paused :is(.portal-surface,.summon-ritual) *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){
+ .portal-surface *,.summon-ritual *,.summon-ritual *::before,.summon-ritual *::after{animation:none!important;transition:none!important}
+ .portal-surface .portal-energy{transform:none;opacity:.35}
+ .portal-surface .portal-energy-counter{opacity:.1}
+ .summon-ritual .summon-ritual-traveler{opacity:1;transform:translateX(-50%);filter:none}
+ .summon-ritual :is(.ritual-sigil-rays,.ritual-shockwaves,.ritual-threshold-bloom){display:none}
+ #modal[data-view=summon-results] .summon-result-card{animation:none!important}
+}
+/* Center the full image plane before clipping narrow screens. */
+.page-summon .altar-art-space>.portal-surface,.summon-ritual .ritual-art-space>.portal-surface{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.summon-ritual .summon-ritual-caption{min-height:88px}
+@media(orientation:landscape) and (max-height:600px){.summon-ritual .summon-ritual-caption{min-height:0}}

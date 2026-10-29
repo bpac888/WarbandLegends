@@ -58,3 +58,11 @@ Slow magical auras, an alchemy orbit, waterfall glints and sparse embers animate
 ## Phone Dragon Follow-up — v0.26.1
 
 The bottom guardian now has a clear reptilian profile, arched neck, foreclaws and distinct wings with detailed obsidian scales and molten cracks. A clipped phone-only layer preserves the existing surrounding guardian artwork. Its tap region includes the raised head, while the adjacent guardians remain separately selectable. The desktop painting and battle art remain unchanged.
+
+## Celestial Altar — v0.27
+
+The Altar receives separate detailed wide and phone portal paintings, with obsidian/gold dragon carvings, five elemental jewels and a rich cosmic opening. A shared scene component supplies both the menu and full-screen ritual. Its transparent high-resolution vortex textures counter-rotate inside the opening; fine arch conduits, floor glyphs, crystal glints and sparse motes animate without moving or dimming the architecture. Compact two-row summon controls occupy only 54–56 pixels and give most of the viewport to the portal. Short landscape screens put these controls beside the painting.
+
+The ritual has an accelerating 1.8-second charge, traced glyphs and gathered rays, then a 2.8-second release with textured currents, soft shockwaves, rarity light and a clear champion reveal. Results retain all real copies and the existing champion portraits. Skip, Escape, navigation and reduced motion retain the existing save-before-playback behavior. Costs, odds, twins and the guaranteed Rare in ten calls are unchanged. Hidden-tab motion pauses; OS reduced motion disables decoration and goes straight to results.
+
+`npm run test:altar` covers phone/tablet/desktop/landscape layouts and compact controls; static architecture with animated textured currents; reduced motion; exact one-/ten-call payments and copy grants; Mythical arrival; twin Commons and the guaranteed Rare; skip, Escape, navigation/reload persistence and insufficient-Gem handling. Champion art starts preloading during the buildup, and keyboard focus stays on Show results during the ritual.
