@@ -15,7 +15,7 @@ try{
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  const p={...defaultProfile(),helpSeen:true};await context.addInitScript(({p,key})=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(p));},{p,key:PROFILE_KEY});
  const go=async route=>{await page.goto('http://legends.local/#/'+route);await page.locator('.topbar').waitFor();};
- await go('roster');await page.locator('[data-tab="all"]').click();assert.equal(await page.locator('#library-grid .library-card').count(),189);
+ await go('roster');await page.locator('[data-tab="all"]').click();assert.equal(await page.locator('#library-grid .library-card').count(),roster.length);
  await page.locator('.library-art>img').evaluateAll(imgs=>imgs.forEach(i=>i.loading='eager'));
  await page.waitForFunction(()=>[...document.querySelectorAll('.library-art>img')].every(i=>i.complete&&i.naturalWidth>0));
  for(const c of added){const image=page.locator(`#library-grid [data-id="${c.id}"] .library-art>img`);assert.ok(await image.evaluate(i=>i.naturalWidth>=768&&i.naturalHeight>=1000&&getComputedStyle(i).filter==='none'&&getComputedStyle(i).opacity==='1'),c.id);}

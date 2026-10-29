@@ -1,17 +1,17 @@
 {
   "version": 3,
-  "champions": 189,
+  "champions": 200,
   "colorCounts": {
-    "red": 40,
-    "blue": 38,
-    "green": 38,
-    "yellow": 38,
-    "purple": 35
+    "red": 41,
+    "blue": 41,
+    "green": 40,
+    "yellow": 40,
+    "purple": 38
   },
   "manaCounts": {
     "very_fast": 9,
-    "fast": 42,
-    "average": 90,
+    "fast": 49,
+    "average": 94,
     "slow": 27,
     "very_slow": 2,
     "charging": 19
@@ -182,41 +182,41 @@
       }
     },
     "rare": {
-      "count": 66,
+      "count": 68,
       "stats": {
         "atk": {
           "min": 515,
-          "average": 626,
+          "average": 624.25,
           "max": 716
         },
         "def": {
           "min": 530,
-          "average": 600,
+          "average": 601.8676470588235,
           "max": 705
         },
         "hp": {
           "min": 946,
-          "average": 1083,
+          "average": 1085.3382352941176,
           "max": 1250
         }
       }
     },
     "legendary": {
-      "count": 79,
+      "count": 88,
       "stats": {
         "atk": {
           "min": 600,
-          "average": 760.1518987341772,
+          "average": 763.7159090909091,
           "max": 850
         },
         "def": {
           "min": 640,
-          "average": 725.6455696202531,
+          "average": 723.875,
           "max": 837
         },
         "hp": {
           "min": 1250,
-          "average": 1394.0759493670887,
+          "average": 1392.3522727272727,
           "max": 1600
         }
       }

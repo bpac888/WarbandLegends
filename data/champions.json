@@ -9965,5 +9965,508 @@
       ]
     },
     "ability_desc": "Deal 225% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "odravic_frostblood_duelist",
+    "name": "Odravic, Frostblood Duelist",
+    "title": "The Winter Challenge",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "attack",
+    "hp": 1330,
+    "atk": 825,
+    "def": 690,
+    "ability_name": "Rimeglass Challenge",
+    "lore": "Odravic keeps the Bloodcourt’s winter dueling ground, where every oath is spoken over a frozen rose. His frostglass rapier parts enchanted defenses as neatly as silk. He offers every challenger one courtesy: the chance to surrender before the ice reaches their heart.",
+    "image_url": "/assets/champions/odravic_frostblood_duelist.webp",
+    "id": "odravic_frostblood_duelist",
+    "color": "blue",
+    "source_image": "assets/champions/odravic_frostblood_duelist.webp",
+    "portrait": "assets/champions/odravic_frostblood_duelist.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Rimeglass Challenge",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.75,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 275% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "svanhild_aurora_thorn",
+    "name": "Svanhild, Aurora Thorn",
+    "title": "Keeper of the Winterbriar",
+    "rarity": "legendary",
+    "faction": "frost",
+    "role": "attack",
+    "hp": 1335,
+    "atk": 810,
+    "def": 700,
+    "ability_name": "Winterbriar Strike",
+    "lore": "Svanhild guards the living pines beyond Frost’s last watchtower. She learned to bind the green aurora into winter thorns after raiders burned the forest’s oldest shrine. Her glaive leaves a cold, branching wound through which no fresh enchantment can take root.",
+    "image_url": "/assets/champions/svanhild_aurora_thorn.webp",
+    "id": "svanhild_aurora_thorn",
+    "color": "green",
+    "source_image": "assets/champions/svanhild_aurora_thorn.webp",
+    "portrait": "assets/champions/svanhild_aurora_thorn.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Winterbriar Strike",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.65,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 265% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "zephyrax_eclipse_hunter",
+    "name": "Zephyrax, Eclipse Hunter",
+    "title": "The Moonless Pursuit",
+    "rarity": "legendary",
+    "faction": "umbra",
+    "role": "attack",
+    "hp": 1310,
+    "atk": 840,
+    "def": 680,
+    "ability_name": "Eclipse Fang",
+    "lore": "Zephyrax hunts the creatures that slip between Umbra’s ruined observatories during an eclipse. He tempers his spear in the lightless frost beyond the stars, where armor remembers that it was once dust. Those who hear his footsteps have already lost the trail home.",
+    "image_url": "/assets/champions/zephyrax_eclipse_hunter.webp",
+    "id": "zephyrax_eclipse_hunter",
+    "color": "blue",
+    "source_image": "assets/champions/zephyrax_eclipse_hunter.webp",
+    "portrait": "assets/champions/zephyrax_eclipse_hunter.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Eclipse Fang",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ]
+    },
+    "ability_desc": "Deal 260% ATK damage to selected enemy, ignoring 25% of DEF."
+  },
+  {
+    "template_id": "phelune_duskpetal_keeper",
+    "name": "Phelune, Duskpetal Keeper",
+    "title": "Lantern of the Violet Grove",
+    "rarity": "rare",
+    "faction": "wildgrove",
+    "role": "support",
+    "hp": 1135,
+    "atk": 585,
+    "def": 625,
+    "ability_name": "Duskpetal Benediction",
+    "lore": "Phelune tends the violet flowers that open only when Wildgrove’s oldest trees begin to dream. Their pollen draws poison and curses from wounded travelers, leaving a faint silver glow along the scars. She asks for no payment beyond a seed planted on the road ahead.",
+    "image_url": "/assets/champions/phelune_duskpetal_keeper.webp",
+    "id": "phelune_duskpetal_keeper",
+    "color": "purple",
+    "source_image": "assets/champions/phelune_duskpetal_keeper.webp",
+    "portrait": "assets/champions/phelune_duskpetal_keeper.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Duskpetal Benediction",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.18,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 18% max HP to all living allies."
+  },
+  {
+    "template_id": "zhaoren_amethyst_sentinel",
+    "name": "Zhaoren, Amethyst Sentinel",
+    "title": "Watch of the Western Gate",
+    "rarity": "rare",
+    "faction": "dragondynasty",
+    "role": "defense",
+    "hp": 1190,
+    "atk": 548,
+    "def": 702,
+    "ability_name": "Watch of the Amethyst Gate",
+    "lore": "Zhaoren stands watch where the Dragon Dynasty’s western gate opens onto a valley of amethyst. He carries a shield cut from its first guardian stone, polished smooth by generations of patient hands. When the alarm sounds, he steps forward so that everyone behind him has time to breathe.",
+    "image_url": "/assets/champions/zhaoren_amethyst_sentinel.webp",
+    "id": "zhaoren_amethyst_sentinel",
+    "color": "purple",
+    "source_image": "assets/champions/zhaoren_amethyst_sentinel.webp",
+    "portrait": "assets/champions/zhaoren_amethyst_sentinel.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Watch of the Amethyst Gate",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 145% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "marzahin_mirage_tide",
+    "name": "Marzahin, the Mirage Tide",
+    "title": "Blade of the Hidden Wells",
+    "rarity": "legendary",
+    "faction": "duneriders",
+    "role": "attack",
+    "hp": 1335,
+    "atk": 820,
+    "def": 700,
+    "ability_name": "Undertow Ambush",
+    "lore": "Marzahin guides the Dune Riders between wells that appear on no map. The water he carries remembers the sea that once covered the desert, and answers his blade with a sudden, crushing undertow. He leaves his enemies chasing reflections while the caravan passes safely beyond the dunes.",
+    "image_url": "/assets/champions/marzahin_mirage_tide.webp",
+    "id": "marzahin_mirage_tide",
+    "color": "blue",
+    "source_image": "assets/champions/marzahin_mirage_tide.webp",
+    "portrait": "assets/champions/marzahin_mirage_tide.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Undertow Ambush",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.65,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 265% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "kryzzik_cinderclaw",
+    "name": "Kryzzik, the Cinderclaw",
+    "title": "The Furnace-Bred Hunter",
+    "rarity": "legendary",
+    "faction": "chymera",
+    "role": "attack",
+    "hp": 1360,
+    "atk": 825,
+    "def": 675,
+    "ability_name": "Cinderclaw Pounce",
+    "lore": "Kryzzik escaped the Chymera’s furnace vats with molten blood and a hunter’s perfect patience. Its ember-lined claws strike once before it vanishes into the heat shimmer. The alchemists still debate whether the creature was their finest experiment or the first thing they should have feared.",
+    "image_url": "/assets/champions/kryzzik_cinderclaw.webp",
+    "id": "kryzzik_cinderclaw",
+    "color": "red",
+    "source_image": "assets/champions/kryzzik_cinderclaw.webp",
+    "portrait": "assets/champions/kryzzik_cinderclaw.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Cinderclaw Pounce",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.65,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 265% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "gavrox_void_foundry",
+    "name": "Gavrox, the Void Foundry",
+    "title": "Master of the Null Crucible",
+    "rarity": "legendary",
+    "faction": "ironclad",
+    "role": "attack",
+    "hp": 1370,
+    "atk": 830,
+    "def": 675,
+    "ability_name": "Null-Forge Barrage",
+    "lore": "Gavrox built the Ironclad’s first crucible capable of forging metal in a vacuum. The silence trapped inside its shells follows every impact, smothering the rhythm of enemy spellwork. He considers each battlefield a difficult workshop and every surviving ally proof that the design can be improved.",
+    "image_url": "/assets/champions/gavrox_void_foundry.webp",
+    "id": "gavrox_void_foundry",
+    "color": "purple",
+    "source_image": "assets/champions/gavrox_void_foundry.webp",
+    "portrait": "assets/champions/gavrox_void_foundry.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Null-Forge Barrage",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.75,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 1,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 175% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "iskavelle_verdigris_oath",
+    "name": "Iskavelle, Verdigris Oath",
+    "title": "The Briar-Gate Vow",
+    "rarity": "legendary",
+    "faction": "bloodcourt",
+    "role": "defense",
+    "hp": 1540,
+    "atk": 680,
+    "def": 815,
+    "ability_name": "Verdigris Covenant",
+    "lore": "Iskavelle swore to keep the Bloodcourt’s briar gate after its living guardians withered. Green veins now run through her bronze shield, carrying the old grove’s promise into every battle. She shelters her companions beneath its woven wards, then dares their enemies to face her alone.",
+    "image_url": "/assets/champions/iskavelle_verdigris_oath.webp",
+    "id": "iskavelle_verdigris_oath",
+    "color": "green",
+    "source_image": "assets/champions/iskavelle_verdigris_oath.webp",
+    "portrait": "assets/champions/iskavelle_verdigris_oath.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Verdigris Covenant",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.5,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "yrsa_sunfrost_spear",
+    "name": "Yrsa, the Sunfrost Spear",
+    "title": "First Light on the Glacier",
+    "rarity": "legendary",
+    "faction": "frost",
+    "role": "attack",
+    "hp": 1350,
+    "atk": 815,
+    "def": 695,
+    "ability_name": "Sunfrost Javelin",
+    "lore": "Yrsa climbs the eastern glacier before dawn to catch the first sunlight in the ice of her spear. Frost’s scouts follow that golden point through storms that swallow every other beacon. When she casts it, a winter’s worth of gathered light reaches the enemy in a single stroke.",
+    "image_url": "/assets/champions/yrsa_sunfrost_spear.webp",
+    "id": "yrsa_sunfrost_spear",
+    "color": "yellow",
+    "source_image": "assets/champions/yrsa_sunfrost_spear.webp",
+    "portrait": "assets/champions/yrsa_sunfrost_spear.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Sunfrost Javelin",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        }
+      ]
+    },
+    "ability_desc": "Deal 300% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "huying_lantern_clear_skies",
+    "name": "Huying, Lantern of Clear Skies",
+    "title": "The Unclouded Covenant",
+    "rarity": "legendary",
+    "faction": "dragondynasty",
+    "role": "support",
+    "hp": 1465,
+    "atk": 710,
+    "def": 745,
+    "ability_name": "Lanterns of Clear Skies",
+    "lore": "Huying carries the Dragon Dynasty’s lanterns through battlefields thick with hostile enchantments. Each flame burns with a promise made beneath a clear sky, washing curses from her companions and restoring the rhythm of their spellwork. When the lanterns rise together, even the shadows between them become a shelter.",
+    "image_url": "/assets/champions/huying_lantern_clear_skies.webp",
+    "id": "huying_lantern_clear_skies",
+    "color": "yellow",
+    "source_image": "assets/champions/huying_lantern_clear_skies.webp",
+    "portrait": "assets/champions/huying_lantern_clear_skies.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Lanterns of Clear Skies",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "shield",
+              "turns": 1,
+              "scope": "allies"
+            },
+            {
+              "id": "mana_surge",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Empower your warband with the effects below."
   }
 ]

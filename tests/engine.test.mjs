@@ -13,9 +13,9 @@ const quiet=state=>{state.enemies.forEach(e=>{e.hp=e.maxHp=100000;e.countdown=99
 const board=()=>Array.from({length:35},(_,i)=>({id:i+1,color:COLORS[(i%7+Math.floor(i/7)*2)%5],special:null}));
 function setupRun(length){const s=quiet(make());s.board=board();s.board[7].color='red';for(let i=1;i<length;i++)s.board[i].color='red';s.board[0].color='blue';s.nextTile=100;return s;}
 const memory=()=>{const map=new Map();return {getItem:k=>map.get(k)??null,setItem:(k,v)=>map.set(k,v)};};
-test('imports all 189 champions with unique original IDs and complete local artwork',async()=>{
+test('imports all 200 champions with unique original IDs and complete local artwork',async()=>{
  assert.equal(createHash('sha256').update(roster.slice(0,135).map(c=>c.id).sort().join('\n')).digest('hex'),'5ceb67b54c3745ee5e92d7b39321f016d5990afaf719c49e2e3e5e27a741869a');
- assert.equal(roster.length,189);assert.equal(new Set(roster.map(c=>c.id)).size,189);
+ assert.equal(roster.length,200);assert.equal(new Set(roster.map(c=>c.id)).size,200);
  for(const c of roster){assert.ok(c.name&&c.lore&&c.special, c.id);assert.ok(COLORS.includes(c.color));assert.ok((await stat(new URL('../'+c.portrait,import.meta.url))).size>1000);}
 });
 test('each encounter references existing reusable champions',()=>{for(const s of STAGES)for(const id of s.enemyIds)assert.ok(roster.find(c=>c.id===id),id);});
@@ -73,7 +73,7 @@ test('tile clears grant one charge each, preserve fractional gains, and cap at e
 });
 test('new roster has one Special, no SPD stat, balanced colors, and all original passives',async()=>{
  const source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url)));
- for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,({red:40,blue:38,green:38,yellow:38,purple:35})[color]);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
+ for(const color of COLORS){const g=roster.filter(c=>c.color===color);assert.equal(g.length,({red:41,blue:41,green:40,yellow:40,purple:38})[color]);for(const role of ['attack','defense','support'])assert.ok(g.some(c=>c.role===role));for(const rarity of ['common','rare','legendary','mythical'])assert.ok(g.some(c=>c.rarity===rarity));}
  for(const c of roster){assert.equal('spd' in c,false);assert.equal('kit' in c,false);assert.equal('a2' in c,false);assert.equal('a3' in c,false);assert.ok(c.special.name);assert.equal(c.passive?.id,source.find(o=>o.id===c.id).passive?.id);assert.equal(c.passive?.name,source.find(o=>o.id===c.id).passive?.name);assert.equal(c.rarity,source.find(o=>o.id===c.id).rarity);}
 });
 test('full Specials retain merged source effects except deliberate match-3 revisions',async()=>{
@@ -85,8 +85,8 @@ test('full Specials retain merged source effects except deliberate match-3 revis
   if(changed[c.id])continue;const full=c.special.levels.at(-1);assert.equal(full.aoe,expected.has('aoe'),c.id);assert.equal(full.pierce,expected.has('ignore_def'),c.id);expected.delete('aoe');expected.delete('ignore_def');assert.deepEqual(new Map(full.effects.map(e=>[e.id,e.turns])),expected,c.id);assert.equal(new Set(full.effects.map(e=>e.id)).size,full.effects.length);
  }
 });
-test('Legendary and Rare stat means match the supplied max-level reference',()=>{
- for(const [rarity,means,bounds]of [['legendary',{atk:760,def:726,hp:1393},{atk:[596,854],def:[598,850],hp:[1226,1645]}],['rare',{atk:626,def:600,hp:1083},{atk:[501,776],def:[440,752],hp:[835,1330]}]]){const group=(rarity==='legendary'?beforeRarityRevision(roster):roster).filter(c=>c.rarity===rarity);for(const stat of ['atk','def','hp']){assert.equal(group.reduce((n,c)=>n+c[stat],0)/group.length,means[stat]);for(const c of group)assert.ok(Number.isInteger(c[stat])&&c[stat]>=bounds[stat][0]&&c[stat]<=bounds[stat][1],`${c.id} ${stat}`);}}
+test('original Legendary and Rare stat means retain the supplied max-level reference',()=>{
+ for(const [rarity,means,bounds]of [['legendary',{atk:760,def:726,hp:1393},{atk:[596,854],def:[598,850],hp:[1226,1645]}],['rare',{atk:626,def:600,hp:1083},{atk:[501,776],def:[440,752],hp:[835,1330]}]]){const group=(rarity==='legendary'?beforeRarityRevision(roster.slice(0,189)):roster.slice(0,189)).filter(c=>c.rarity===rarity);for(const stat of ['atk','def','hp']){assert.equal(group.reduce((n,c)=>n+c[stat],0)/group.length,means[stat]);for(const c of group)assert.ok(Number.isInteger(c[stat])&&c[stat]>=bounds[stat][0]&&c[stat]<=bounds[stat][1],`${c.id} ${stat}`);}}
 });
 test('every champion can cast each level with valid targeting and finite results',()=>{
  for(const c of roster)for(const level of c.special.levels){const ids=[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)];const s=make(123,ids),actor=s.heroes[0];actor.mana=level.tiles;const target=level.target==='enemy'?s.enemies[0]:level.target==='self'?actor:s.heroes[1];s.heroes[1].hp=Math.floor(s.heroes[1].maxHp*.5);const r=cast(s,actor.uid,target.uid,level.level);assert.ok(!r.error,`${c.id} level ${level.level}`);assert.ok(validateSave(r.state,roster),`${c.id} produced invalid state`);assert.equal(r.state.heroes[0].mana,0);assert.ok(r.state.log.some(l=>l.text.includes(c.special.name)));}

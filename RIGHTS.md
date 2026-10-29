@@ -41,3 +41,7 @@ The v0.26 Dungeon menu adds two original image-generated guardian realm painting
 The v0.26.1 phone dragon is an image-generated localized redesign using the current guardian mural and original Magmaheart Wyrm as references. A clipped display layer uses only its dragon area; the existing painting continues to supply the other six guardians. The wide painting, all roster portraits and combat artwork are unchanged.
 
 The v0.27 Altar uses new original image-generated phone and wide portal paintings inspired by the owner’s existing Altar and crest, plus a transparent high-resolution energy texture. Local WebP packaging preserves native resolution and the texture’s alpha channel. Decorative runic geometry is original SVG. Existing Tavern, roster and battle artwork remain unchanged.
+
+## Road to 200 Artwork
+
+The eleven portraits listed in [ROSTER_200.md](docs/ROSTER_200.md) were generated individually for this game using OpenAI image generation in October 2026. Each ships at its native 1024 × 1536 resolution, encoded as high-quality WebP without cropping or resizing. Existing portraits were preserved byte for byte.

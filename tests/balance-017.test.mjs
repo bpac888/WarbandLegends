@@ -9,7 +9,7 @@ import {developedChampion,addHeroXp,heroDevelopment,trainChampion,development} f
 import {consumeHeroes,feedingQuote} from '../src/feeding.js';
 import {QUESTS} from '../src/quests.js';
 import {summonResults} from '../src/summoning-ui.js';
-const roster=beforeRarityRevision(JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url))));
+const roster=beforeRarityRevision(JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url))).slice(0,189));
 const promoted=['venn_sablethread','tali_scrapshot','tovin_glassheart','nima_dewthread','redknife_tavin','rimebow_tessa','mavra_dusktrail','kesh_duststep','gallows_marksman_oren','fjordwatch_hald','edrik_mournwall','neon_glitch_weaver','succubus_lilth','neon_scrap_enforcer'];
 test('fourteen named Commons become viable Rares and the remaining 20 Commons divide evenly among five elements',()=>{
  for(const id of promoted){const c=roster.find(h=>h.id===id);assert.equal(c.rarity,'rare',id);assert.ok(c.atk>=501&&c.def>=440&&c.hp>=835,id);assert.ok(c.special.levels[0].damage>0||c.special.levels[0].healing>0||c.special.levels[0].effects.length>0,id);}

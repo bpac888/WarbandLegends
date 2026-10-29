@@ -1,0 +1,160 @@
+{
+  "version": 5,
+  "originalCount": 189,
+  "totalCount": 200,
+  "originalRecordsSha256": "0090be4050635f45fb9e10a7e1ed6e5ab52a2140b588dd6aeb1b724d8e96c7c3",
+  "originalSourceRecordsSha256": "193804f17f7e2764b00842b731e0c566b71681b1c93ef821eef3cb9939b74143",
+  "originalPortraitsSha256": "3d8af9736c8a4cc25c0378ebb5eabbf2c0fe1503dfde08a36bcc7b60c299d4fe",
+  "addedChampionIds": [
+    "odravic_frostblood_duelist",
+    "svanhild_aurora_thorn",
+    "zephyrax_eclipse_hunter",
+    "phelune_duskpetal_keeper",
+    "zhaoren_amethyst_sentinel",
+    "marzahin_mirage_tide",
+    "kryzzik_cinderclaw",
+    "gavrox_void_foundry",
+    "iskavelle_verdigris_oath",
+    "yrsa_sunfrost_spear",
+    "huying_lantern_clear_skies"
+  ],
+  "implementedRecommendations": [
+    {
+      "championId": "odravic_frostblood_duelist",
+      "name": "Odravic, Frostblood Duelist",
+      "faction": "bloodcourt",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Bloodcourt Blue previously had only the charging Legendary Lysandre; adds a Fast focused Dispel striker.",
+      "status": "implemented"
+    },
+    {
+      "championId": "svanhild_aurora_thorn",
+      "name": "Svanhild, Aurora Thorn",
+      "faction": "frost",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Frost Green previously had only Common Beastmaster Gharn; adds a Fast Legendary attacker with a brief Buff Seal.",
+      "status": "implemented"
+    },
+    {
+      "championId": "zephyrax_eclipse_hunter",
+      "name": "Zephyrax, Eclipse Hunter",
+      "faction": "umbra",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Umbra Blue previously had only Common Hooded Thrall; adds a focused Fast Legendary Pierce attacker.",
+      "status": "implemented"
+    },
+    {
+      "championId": "phelune_duskpetal_keeper",
+      "name": "Phelune, Duskpetal Keeper",
+      "faction": "wildgrove",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "fast",
+      "gap": "Adds a second Purple Wildgrove choice and a scarce Purple Rare Support: modest Fast team healing and Cleanse.",
+      "status": "implemented"
+    },
+    {
+      "championId": "zhaoren_amethyst_sentinel",
+      "name": "Zhaoren, Amethyst Sentinel",
+      "faction": "dragondynasty",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Dragon Dynasty had only two defenders, three Rares and one Purple member; adds an accessible Average tank.",
+      "status": "implemented"
+    },
+    {
+      "championId": "marzahin_mirage_tide",
+      "name": "Marzahin, the Mirage Tide",
+      "faction": "duneriders",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Dune Riders Blue previously required Mythical Nayara; adds an accessible Legendary Fast attacker.",
+      "status": "implemented"
+    },
+    {
+      "championId": "kryzzik_cinderclaw",
+      "name": "Kryzzik, the Cinderclaw",
+      "faction": "chymera",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Chymera Red previously had only Slow Legendary Kaitha; one-turn Burn is budgeted for the faction extension.",
+      "status": "implemented"
+    },
+    {
+      "championId": "gavrox_void_foundry",
+      "name": "Gavrox, the Void Foundry",
+      "faction": "ironclad",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Ironclad Purple previously had only Torvek; adds an Average area attacker with limited one-turn control.",
+      "status": "implemented"
+    },
+    {
+      "championId": "iskavelle_verdigris_oath",
+      "name": "Iskavelle, Verdigris Oath",
+      "faction": "bloodcourt",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Bloodcourt Green previously had only Valcera; adds scarce Green Legendary defense and team protection without revival.",
+      "status": "implemented"
+    },
+    {
+      "championId": "yrsa_sunfrost_spear",
+      "name": "Yrsa, the Sunfrost Spear",
+      "faction": "frost",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Frost had no Yellow attacker; adds a straightforward Fast burst option without overlapping Eira’s support role.",
+      "status": "implemented"
+    },
+    {
+      "championId": "huying_lantern_clear_skies",
+      "name": "Huying, Lantern of Clear Skies",
+      "faction": "dragondynasty",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Adds the first Yellow Dragon Dynasty support, emphasizing purification, a brief Barrier and matching-mana flow instead of another team healer.",
+      "status": "implemented"
+    }
+  ],
+  "newRarities": {
+    "legendary": 9,
+    "rare": 2
+  },
+  "newRoles": {
+    "attack": 7,
+    "defense": 2,
+    "support": 2
+  },
+  "newElements": {
+    "red": 1,
+    "blue": 3,
+    "green": 2,
+    "yellow": 2,
+    "purple": 3
+  }
+}

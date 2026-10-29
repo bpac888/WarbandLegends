@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-189 champions. The newest expansion adds the 15-character Astral Concord faction. The owner-requested Common/Rare revision is included; artwork and character identities are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
+200 champions. The newest expansion adds eleven audit-led champions: nine Legendaries and two Rares. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -193,6 +193,17 @@
 | Gorgythe, Prism Gaze | legendary | purple | attack | 810 | 705 | 1340 | Average 10 |
 | Zazikul, Silk Weaver | rare | purple | attack | 686 | 570 | 1048 | Average 10 |
 | Kheiraxis, Void Gallop | legendary | purple | attack | 815 | 680 | 1330 | Fast 8 |
+| Odravic, Frostblood Duelist | legendary | blue | attack | 825 | 690 | 1330 | Fast 8 |
+| Svanhild, Aurora Thorn | legendary | green | attack | 810 | 700 | 1335 | Fast 8 |
+| Zephyrax, Eclipse Hunter | legendary | blue | attack | 840 | 680 | 1310 | Fast 8 |
+| Phelune, Duskpetal Keeper | rare | purple | support | 585 | 625 | 1135 | Fast 8 |
+| Zhaoren, Amethyst Sentinel | rare | purple | defense | 548 | 702 | 1190 | Average 10 |
+| Marzahin, the Mirage Tide | legendary | blue | attack | 820 | 700 | 1335 | Fast 8 |
+| Kryzzik, the Cinderclaw | legendary | red | attack | 825 | 675 | 1360 | Fast 8 |
+| Gavrox, the Void Foundry | legendary | purple | attack | 830 | 675 | 1370 | Average 10 |
+| Iskavelle, Verdigris Oath | legendary | green | defense | 680 | 815 | 1540 | Average 10 |
+| Yrsa, the Sunfrost Spear | legendary | yellow | attack | 815 | 695 | 1350 | Fast 8 |
+| Huying, Lantern of Clear Skies | legendary | yellow | support | 710 | 745 | 1465 | Average 10 |
 
 ## Specials
 
@@ -1025,4 +1036,48 @@ Passive: **Moonforged Aegis** — Barriers received by Asterox have 50% larger s
 ### Kheiraxis, Void Gallop — Hooves on the Eventide
 
 - 8 tiles: Deal 225% ATK damage to selected enemy. Buff Seal (Selected enemy, 1 turns).
+
+### Odravic, Frostblood Duelist — Rimeglass Challenge
+
+- 8 tiles: Deal 275% ATK damage to selected enemy. Dispel (Selected enemy).
+
+### Svanhild, Aurora Thorn — Winterbriar Strike
+
+- 8 tiles: Deal 265% ATK damage to selected enemy. Buff Seal (Selected enemy, 1 turns).
+
+### Zephyrax, Eclipse Hunter — Eclipse Fang
+
+- 8 tiles: Deal 260% ATK damage to selected enemy, ignoring 25% of DEF. .
+
+### Phelune, Duskpetal Keeper — Duskpetal Benediction
+
+- 8 tiles: Restore 18% max HP to all living allies. Cleanse (All living allies).
+
+### Zhaoren, Amethyst Sentinel — Watch of the Amethyst Gate
+
+- 10 tiles: Deal 145% ATK damage to selected enemy. Taunt (Caster, 1 turns); Damage Ward (Caster, 2 turns).
+
+### Marzahin, the Mirage Tide — Undertow Ambush
+
+- 8 tiles: Deal 265% ATK damage to selected enemy. Mana Slow (Selected enemy, 2 turns).
+
+### Kryzzik, the Cinderclaw — Cinderclaw Pounce
+
+- 8 tiles: Deal 265% ATK damage to selected enemy. Burn (Selected enemy, 1 turns).
+
+### Gavrox, the Void Foundry — Null-Forge Barrage
+
+- 10 tiles: Deal 175% ATK damage to all living enemies. Mana Slow (All living enemies, 1 turns).
+
+### Iskavelle, Verdigris Oath — Verdigris Covenant
+
+- 10 tiles: Deal 150% ATK damage to selected enemy. Taunt (Caster, 2 turns); Barrier (All living allies, 2 turns).
+
+### Yrsa, the Sunfrost Spear — Sunfrost Javelin
+
+- 8 tiles: Deal 300% ATK damage to selected enemy. .
+
+### Huying, Lantern of Clear Skies — Lanterns of Clear Skies
+
+- 10 tiles: Empower your warband with the effects below. Cleanse (All living allies); Barrier (All living allies, 1 turns); Mana Flow (All living allies, 2 turns).
 
