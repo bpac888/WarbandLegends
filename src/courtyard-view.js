@@ -1,4 +1,4 @@
-import {createCourtyardScenery,COURTYARD_SCENERY} from './courtyard-scenery.js';
+import {createCourtyardScenery,createCourtyardGround,createCourtyardSky,COURTYARD_SCENERY} from './courtyard-scenery.js';
 import {courtyardLife} from './courtyard-life.js';
 import {COURTYARD_START,COURTYARD_PLACES,EYE_HEIGHT,pointOnPath,wrapAngle,stepCourtyard,approachPlace,distanceTo,projectCourtyardPoint} from './courtyard.js';
 import {wantedPoster} from './courtyard-ui.js';
@@ -63,12 +63,9 @@ async function buildGraphics(canvas){
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(70,1,.1,90),textures=[],loader=new THREE.TextureLoader();camera.rotation.order='YXZ';
  const load=async url=>{const t=await loader.loadAsync(url);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());textures.push(t);return t;};
  try{
- const [stone,tavern]=await Promise.all(['cobblestones.webp','tavern.webp'].map(name=>load(artUrl(name))));
- const skyMaterial=new THREE.ShaderMaterial({vertexShader:'varying float skyHeight;void main(){skyHeight=normalize(position).y;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',fragmentShader:'varying float skyHeight;void main(){float t=smoothstep(-.12,.65,skyHeight);vec3 c=mix(vec3(.73,.77,.77),vec3(.28,.55,.78),t);gl_FragColor=vec4(c,1.0);}'});const sphere=new THREE.Mesh(new THREE.SphereGeometry(39,64,32).scale(-1,1,1),skyMaterial);sphere.position.y=EYE_HEIGHT;scene.add(sphere);
- scene.add(await createCourtyardScenery(THREE,load));canvas.dataset.scenery='continuous';
- stone.wrapS=stone.wrapT=THREE.RepeatWrapping;stone.repeat.set(16,16);
+ const [stone,tavern]=await Promise.all(['limestone-paving.webp','tavern.webp'].map(name=>load(artUrl(name))));
+ const scenery=await createCourtyardScenery(THREE,load,stone);scene.add(scenery,createCourtyardGround(THREE,scenery,stone),createCourtyardSky(THREE,scenery.material.uniforms));canvas.dataset.scenery='continuous';canvas.dataset.ground='projected-paving';
  const radial=(size,stops)=>{const c=document.createElement('canvas');c.width=c.height=size;const g=c.getContext('2d'),gradient=g.createRadialGradient(size/2,size/2,0,size/2,size/2,size/2);for(const [p,color]of stops)gradient.addColorStop(p,color);g.fillStyle=gradient;g.fillRect(0,0,size,size);const t=new THREE.CanvasTexture(c);textures.push(t);return t;};
- const ground=new THREE.Mesh(new THREE.CircleGeometry(36,96),new THREE.MeshBasicMaterial({map:stone,toneMapped:false}));ground.rotation.x=-Math.PI/2;ground.position.y=-.03;scene.add(ground);
  const facade=new THREE.Mesh(new THREE.PlaneGeometry(18,12),new THREE.MeshBasicMaterial({map:tavern,transparent:true,alphaTest:.08,toneMapped:false}));facade.position.set(0,5.85,9.05);facade.rotation.y=Math.PI;scene.add(facade);
  scene.add(new THREE.HemisphereLight(0xfff5dc,0x564b37,2.4));const sun=new THREE.DirectionalLight(0xffe1a8,2);sun.position.set(-7,12,-6);scene.add(sun);
  const life=await courtyardLife(THREE,scene,load);canvas.dataset.ambient='wind leaves birds townspeople';let animationTime=0,previousFrame=null;
@@ -76,6 +73,6 @@ async function buildGraphics(canvas){
  const points=new Float32Array(72);for(let i=0;i<24;i++){points[i*3]=Math.sin(i*7.3)*7;points[i*3+1]=.7+(i%7)*.43;points[i*3+2]=Math.cos(i*3.9)*7;}
  const dustGeometry=new THREE.BufferGeometry();dustGeometry.setAttribute('position',new THREE.BufferAttribute(points,3));const dust=new THREE.Points(dustGeometry,new THREE.PointsMaterial({map:sparkle,size:.065,transparent:true,depthWrite:false,opacity:.65,color:0xffe3a0}));scene.add(dust);
  let dead=false,lost=false,lastPose='';canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();lost=true;canvas.closest('.courtyard-scene')?.classList.remove('has-world');});
- return {get lost(){return lost;},resize(w,h,fov){if(dead)return;lastPose='';camera.aspect=w/h;camera.fov=fov;camera.updateProjectionMatrix();renderer.setSize(w,h,false);},render(s,now,reduced){if(dead||lost)return;const pose=[s.x,s.z,s.pitch,s.yaw].join(',');if(reduced&&pose===lastPose)return;lastPose=pose;camera.position.set(s.x,EYE_HEIGHT,s.z);camera.rotation.set(s.pitch,s.yaw,0,'YXZ');animationTime+=previousFrame===null?0:Math.min((now-previousFrame)/1000,.06);previousFrame=now;if(!reduced){dust.position.y=Math.sin(animationTime*.22)*.13;}life.animate(s,animationTime,reduced);renderer.render(scene,camera);},destroy(){if(dead)return;dead=true;life.dispose();scene.traverse(o=>{o.geometry?.dispose();for(const material of Array.isArray(o.material)?o.material:o.material?[o.material]:[])material.dispose();});textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss();}};
+ return {get lost(){return lost;},resize(w,h,fov){if(dead)return;lastPose='';camera.aspect=w/h;camera.fov=fov;camera.updateProjectionMatrix();renderer.setSize(w,h,false);},render(s,now,reduced){if(dead||lost)return;const pose=[s.x,s.z,s.pitch,s.yaw].join(',');if(reduced&&pose===lastPose)return;lastPose=pose;camera.position.set(s.x,EYE_HEIGHT,s.z);camera.rotation.set(s.pitch,s.yaw,0,'YXZ');animationTime+=previousFrame===null?0:Math.min((now-previousFrame)/1000,.06);previousFrame=now;if(!reduced){dust.position.y=Math.sin(animationTime*.22)*.13;}scenery.material.uniforms.atmosphereTime.value=reduced?0:animationTime;life.animate(s,animationTime,reduced);renderer.render(scene,camera);},destroy(){if(dead)return;dead=true;life.dispose();scene.traverse(o=>{o.geometry?.dispose();for(const material of Array.isArray(o.material)?o.material:o.material?[o.material]:[])material.dispose();});textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss();}};
  }catch(error){textures.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss();throw error;}
 }
