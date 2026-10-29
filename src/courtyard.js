@@ -6,7 +6,7 @@ export const wrapAngle=a=>Math.atan2(Math.sin(a),Math.cos(a));
 export const pointOnPath=(u,r=9)=>({x:Math.sin(u*tau)*r,z:-Math.cos(u*tau)*r});
 export const COURTYARD_PLACES=Object.freeze([
  {id:'world',name:'Adventure',...pointOnPath(0),y:1.7,range:5,art:'./assets/courtyard/adventure-path.webp',color:0xe4c48a,u:0},
- {id:'summon',name:'The Altar',...pointOnPath(.16),y:1.7,range:4.8,art:'./assets/altar/portal-wide.webp',color:0xbb8aef,u:.16},
+ {id:'summon',name:'The Altar',...pointOnPath(.16),y:1.7,range:4.8,art:'./assets/courtyard/altar-path.webp',color:0xbb8aef,u:.16},
  {id:'roster',name:'Codex',...pointOnPath(.28),y:1.7,range:4.8,art:'./assets/courtyard/muster-path.webp',color:0x93c8a8,u:.28},
  {id:'shop',name:'Shop',...pointOnPath(.72),y:1.7,range:4.8,art:'./assets/courtyard/market-path.webp',color:0xedba72,u:.72},
  {id:'profile',name:'Wanted Poster',x:.42,z:8.65,y:2.15,range:4.3},
@@ -14,7 +14,7 @@ export const COURTYARD_PLACES=Object.freeze([
  {id:'daily',name:'Daily Gift',x:-3.1,z:.2,y:.48,range:2.5},
 ]);
 export const distanceTo=(state,place)=>Math.hypot(state.x-place.x,state.z-place.z);
-export function constrainPosition(x,z){const r=Math.hypot(x,z);if(r>COURTYARD_RADIUS){x*=COURTYARD_RADIUS/r;z*=COURTYARD_RADIUS/r;}if(x>5.7&&z<1.5)x=5.7;return {x,z:Math.min(z,6.1)};}
+export function constrainPosition(x,z){const r=Math.hypot(x,z);if(r>COURTYARD_RADIUS){x*=COURTYARD_RADIUS/r;z*=COURTYARD_RADIUS/r;}return {x,z:Math.min(z,6.1)};}
 export function stepCourtyard(state,direction,amount=STEP_LENGTH){const vectors={forward:[0,-1],back:[0,1],left:[-1,0],right:[1,0]},v=vectors[direction];if(!v)return {...state};const [dx,dz]=v,c=Math.cos(state.yaw),s=Math.sin(state.yaw);return {...state,...constrainPosition(state.x+(dx*c+dz*s)*amount,state.z+(-dx*s+dz*c)*amount)};}
 export function approachPlace(state,place){const dx=place.x-state.x,dz=place.z-state.z,d=Math.hypot(dx,dz),walk=Math.max(0,d-place.range+.45);return {...state,...constrainPosition(state.x+dx/(d||1)*walk,state.z+dz/(d||1)*walk),yaw:Math.atan2(-dx,-dz),pitch:place.id==='daily'?-.22:place.id==='profile'?.18:0};}
 export function projectCourtyardPoint(point,state,width,height,fov=70){
