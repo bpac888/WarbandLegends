@@ -2,17 +2,18 @@
 export const SCENERY_RADIUS=17.55;
 export const SCENERY_BOTTOM=-1.5335,SCENERY_HEIGHT=16.667;
 export const COURTYARD_SCENERY=Object.freeze([
- {id:'market-approach',u:.86,halfWidth:.11,art:'./assets/courtyard/market-approach.webp'},
- {id:'world',u:0,halfWidth:.10,art:'./assets/courtyard/adventure-path.webp'},
- {id:'shop',u:.72,halfWidth:.10,art:'./assets/courtyard/market-path.webp'},
- {id:'summon',u:.16,halfWidth:.10,art:'./assets/courtyard/altar-path.webp'},
- {id:'roster',u:.28,halfWidth:.10,art:'./assets/courtyard/muster-path.webp'},
+ {id:'market-approach',u:.86,halfWidth:.11,art:'./assets/courtyard/market-approach-skyline.webp'},
+ {id:'world',u:0,halfWidth:.10,art:'./assets/courtyard/adventure-skyline.webp'},
+ {id:'shop',u:.72,halfWidth:.10,leftWidth:.16,art:'./assets/courtyard/market-skyline.webp'},
+ {id:'summon',u:.16,halfWidth:.10,art:'./assets/courtyard/altar-skyline.webp'},
+ {id:'roster',u:.28,halfWidth:.10,rightWidth:.16,art:'./assets/courtyard/muster-skyline.webp'},
 ]);
 const tau=Math.PI*2;
 export function sceneryPoint(u,y=1.65){return {x:Math.sin(u*tau)*SCENERY_RADIUS,y,z:-Math.cos(u*tau)*SCENERY_RADIUS};}
-export function sceneryWeight(u,layer){const d=Math.atan2(Math.sin((u-layer.u)*tau),Math.cos((u-layer.u)*tau))/tau,x=d/(layer.halfWidth*2)+.5;const smooth=t=>{t=Math.max(0,Math.min(1,t));return t*t*(3-2*t);};return smooth(x/.14)*smooth((1-x)/.14);}
+export function sceneryWeight(u,layer){const d=Math.atan2(Math.sin((u-layer.u)*tau),Math.cos((u-layer.u)*tau))/tau,x=d/((d<0?(layer.leftWidth||layer.halfWidth):(layer.rightWidth||layer.halfWidth))*2)+.5;const smooth=t=>{t=Math.max(0,Math.min(1,t));return t*t*(3-2*t);};return smooth(x/.09)*smooth((1-x)/.09);}
 
-// Used by both the sky dome and the upper scenery, eliminating a sky-colored strip.
+// Complete crowns stay opaque. The upper transition follows sky colors rather
+// than fading a horizontal band through both sky and foliage.
 const atmosphere=`
  uniform float atmosphereTime;
  uniform sampler2D skyMap;
@@ -28,7 +29,7 @@ const vertex='varying vec3 worldPoint;varying float circumference;void main(){ve
 
 export async function createCourtyardScenery(THREE,load,stone=null){
  const sky=await load(new URL('../assets/courtyard/afternoon-sky.webp',import.meta.url).href);sky.wrapS=THREE.RepeatWrapping;
- const uniforms={skyMap:{value:sky},paving:{value:stone},atmosphereTime:{value:0},village:{value:await load(new URL('../assets/courtyard/panorama.webp',import.meta.url).href)}};
+ const uniforms={skyMap:{value:sky},paving:{value:stone},atmosphereTime:{value:0},village:{value:await load(new URL('../assets/courtyard/garden-perimeter.webp',import.meta.url).href)}};
  const layouts=[];
  for(let i=0;i<COURTYARD_SCENERY.length;i++){
   const texture=await load(new URL(COURTYARD_SCENERY[i].art,document.baseURI).href);uniforms['painting'+i]={value:texture};
@@ -45,22 +46,30 @@ export async function createCourtyardScenery(THREE,load,stone=null){
   float canopy=smoothstep(.52,.78,softNoise(p*.68+vec2(sin(atmosphereTime*.16)*.07,0.0)));
   return stone*(1.0-canopy*smoothstep(2.0,8.0,abs(p.x))*.16);
  }
- vec3 paintView(vec3 below,sampler2D painting,float angle,float y,float center,float halfWidth,float bottom,float height){
+ float skyMask(vec3 ink){
+  float blue=smoothstep(.04,.14,ink.b-max(ink.r,ink.g*.88));
+  float high=min(ink.r,min(ink.g,ink.b)),chroma=max(ink.r,max(ink.g,ink.b))-high;
+  return max(blue,smoothstep(.5,.85,high)*(1.0-smoothstep(.08,.3,chroma)));
+ }
+ vec3 paintView(vec3 below,sampler2D painting,float angle,float y,float center,float leftWidth,float rightWidth,float bottom,float height){
   float delta=angle-center;
   if(delta>3.14159265359)delta-=TAU;
   if(delta< -3.14159265359)delta+=TAU;
-  vec2 uv=vec2(delta/(halfWidth*2.0)+0.5,(y-bottom)/height);
+  vec2 uv=vec2(delta/((delta<0.0?leftWidth:rightWidth)*2.0)+0.5,(y-bottom)/height);
   if(uv.x<=0.0||uv.x>=1.0||uv.y<=0.0||uv.y>=1.0)return below;
-  float feather=smoothstep(0.0,0.14,uv.x)*smoothstep(0.0,0.14,1.0-uv.x);
-  feather*=smoothstep(-.5,1.2,y)*smoothstep(0.0,.025,uv.y)*smoothstep(0.0,.12,1.0-uv.y);
-  return mix(below,texture2D(painting,uv).rgb,feather);
+  float feather=smoothstep(0.0,0.09,uv.x)*smoothstep(0.0,0.09,1.0-uv.x);
+  vec3 ink=texture2D(painting,uv).rgb;
+  float skyEdge=mix(smoothstep(0.0,.007,1.0-uv.y),smoothstep(0.0,.18,1.0-uv.y),skyMask(ink));
+  feather*=smoothstep(-.5,1.2,y)*smoothstep(0.0,.025,uv.y)*skyEdge;
+  return mix(below,ink,feather);
  }
  vec3 courtyardPainting(float angle,float y,vec3 floorColor){
   vec2 villageUV=vec2(fract(angle/TAU+1.0),clamp((y+9.0)/20.0,.006,.994));
   if(y<=-.5)return floorColor;
-  vec3 color=mix(floorColor,texture2D(village,villageUV).rgb,smoothstep(-.5,1.2,y));
-  if(y>6.0){vec3 sky=courtyardSky(vec3(sin(angle)*17.55,y,-cos(angle)*17.55)-cameraPosition);color=mix(color,sky,smoothstep(6.0,11.0,y));}
-  ${COURTYARD_SCENERY.map((p,i)=>`color=paintView(color,painting${i},angle,y,${(p.u*tau).toFixed(8)},${(p.halfWidth*tau).toFixed(8)},${layouts[i].bottom.toFixed(7)},${layouts[i].height.toFixed(7)});`).join('\n')}
+  vec3 garden=texture2D(village,villageUV).rgb;
+  vec3 color=mix(floorColor,garden,smoothstep(-.5,1.2,y));
+  if(y>6.0){vec3 sky=courtyardSky(vec3(sin(angle)*17.55,y,-cos(angle)*17.55)-cameraPosition);float skyBlend=max(smoothstep(10.3,11.0,y),smoothstep(6.0,10.5,y)*skyMask(garden));color=mix(color,sky,skyBlend);}
+  ${COURTYARD_SCENERY.map((p,i)=>`color=paintView(color,painting${i},angle,y,${(p.u*tau).toFixed(8)},${((p.leftWidth||p.halfWidth)*tau).toFixed(8)},${((p.rightWidth||p.halfWidth)*tau).toFixed(8)},${layouts[i].bottom.toFixed(7)},${layouts[i].height.toFixed(7)});`).join('\n')}
   return color;
  }
  `;

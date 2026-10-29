@@ -43,14 +43,14 @@ export function mountCourtyard(root,{profile,onNavigate,onProfile,isPaused=()=>f
    const visible=!!p&&p.x>12&&p.x<width-12&&p.y>30&&p.y<height-105&&(place.id!=='daily'||distance<7);
    button.hidden=!visible;button.classList.toggle('is-near',near);button.dataset.near=String(near);if(!visible)continue;
    button.style.left=p.x+'px';button.style.top=p.y+'px';
-   let scale=1;if(place.id==='profile')scale=clamp(p.focal/(p.depth*110),.62,width<600?1.28:1.55);else if(place.id==='daily')scale=clamp(p.focal/(p.depth*120),.65,1.5);button.style.setProperty('--object-scale',scale);
+   let scale=1;if(place.id==='daily')scale=clamp(p.focal/(p.depth*120),.65,1.5);button.style.setProperty('--object-scale',scale);
    if(place.id!=='profile')button.setAttribute('aria-label',(near?(place.id==='tavern'?'Enter Tavern':place.id==='daily'?'Open Daily Gift':'Open '+place.name):'Approach '+place.name));
    const angle=Math.abs(wrapAngle(Math.atan2(-(place.x-state.x),-(place.z-state.z))-state.yaw));if(angle<nearestAngle){nearestAngle=angle;nearest=place;}
   }
   placeName.textContent=nearest&&distanceTo(state,nearest)<7?(nearest.id==='profile'||nearest.id==='tavern'?'The Tavern':nearest.id==='daily'?'The Courtyard':nearest.name+' Path'):'The Courtyard';
  }
  const markReady=()=>{if(!alive)return;root.classList.add('scene-ready');root.querySelector('.courtyard-loading').hidden=true;};
- const image=new Image();image.onload=()=>{if(!graphics)markReady();};image.onerror=markReady;image.src=artUrl('panorama.webp');
+ const image=new Image();image.onload=()=>{if(!graphics)markReady();};image.onerror=markReady;image.src=artUrl('garden-perimeter.webp');
  buildGraphics(canvas).then(view=>{if(!alive){view?.destroy();return;}graphics=view;if(view){root.classList.add('has-world');view.resize(width,height,fov);}else root.classList.add('courtyard-flat');markReady();}).catch(()=>{root.classList.add('courtyard-flat');markReady();});
  frame=requestAnimationFrame(render);
  return {getState:()=>({...state}),updateProfile,reset,destroy(){if(!alive)return;alive=false;abort.abort();observer.disconnect();stopHold();clearTimeout(returnTimer);cancelAnimationFrame(frame);graphics?.destroy();image.onload=image.onerror=null;}};

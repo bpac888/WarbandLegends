@@ -15,5 +15,15 @@ test('scenery blends continuously across the wrap between Shop and Adventure',()
  assert.ok(sceneryWeight(.995,COURTYARD_SCENERY.find(p=>p.id==='world'))>.9);assert.ok(sceneryWeight(.005,COURTYARD_SCENERY.find(p=>p.id==='world'))>.9);
 });
 test('only the courtyard Altar uses the new distant painting; destinations remain reachable',()=>{
- const altar=COURTYARD_PLACES.find(p=>p.id==='summon');assert.equal(altar.art,'./assets/courtyard/altar-path.webp');assert.ok(SCENERY_RADIUS>Math.hypot(altar.x,altar.z));assert.equal(COURTYARD_PLACES.find(p=>p.id==='world').art,'./assets/courtyard/adventure-path.webp');
+ const altar=COURTYARD_PLACES.find(p=>p.id==='summon');assert.equal(altar.art,'./assets/courtyard/altar-skyline.webp');assert.ok(SCENERY_RADIUS>Math.hypot(altar.x,altar.z));assert.equal(COURTYARD_PLACES.find(p=>p.id==='world').art,'./assets/courtyard/adventure-skyline.webp');
+});
+test('the fading outer edges of Shop and Codex sit behind the foreground Tavern',()=>{
+ const facade=new THREE.Mesh(new THREE.PlaneGeometry(18,12),new THREE.MeshBasicMaterial());facade.position.set(0,5.85,9.05);facade.rotation.y=Math.PI;facade.updateMatrixWorld();
+ for(const id of ['shop','roster']){const p=COURTYARD_SCENERY.find(p=>p.id===id),left=id==='shop',span=left?p.leftWidth:p.rightWidth;
+  for(const [x,z]of [[0,1.2],[6.5,-2],[-6.5,-2],[0,-7],[0,6.1]])for(const f of [.01,.04,.08]){
+   const u=p.u+(left?-1:1)*span*(1-f*2),target=sceneryPoint(u,1.65),origin=new THREE.Vector3(x,1.65,z),point=new THREE.Vector3(target.x,target.y,target.z),hits=new THREE.Raycaster(origin,point.clone().sub(origin).normalize()).intersectObject(facade);
+   assert.ok(hits.length&&hits[0].distance<origin.distanceTo(point),`${id} backdrop join is hidden at ${x},${z}`);
+  }
+ }
+ facade.geometry.dispose();facade.material.dispose();
 });

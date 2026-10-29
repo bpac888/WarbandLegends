@@ -5,10 +5,10 @@ const tau=Math.PI*2;
 export const wrapAngle=a=>Math.atan2(Math.sin(a),Math.cos(a));
 export const pointOnPath=(u,r=9)=>({x:Math.sin(u*tau)*r,z:-Math.cos(u*tau)*r});
 export const COURTYARD_PLACES=Object.freeze([
- {id:'world',name:'Adventure',...pointOnPath(0),y:1.7,range:5,art:'./assets/courtyard/adventure-path.webp',color:0xe4c48a,u:0},
- {id:'summon',name:'The Altar',...pointOnPath(.16),y:1.7,range:4.8,art:'./assets/courtyard/altar-path.webp',color:0xbb8aef,u:.16},
- {id:'roster',name:'Codex',...pointOnPath(.28),y:1.7,range:4.8,art:'./assets/courtyard/muster-path.webp',color:0x93c8a8,u:.28},
- {id:'shop',name:'Shop',...pointOnPath(.72),y:1.7,range:4.8,art:'./assets/courtyard/market-path.webp',color:0xedba72,u:.72},
+ {id:'world',name:'Adventure',...pointOnPath(0),y:1.7,range:5,art:'./assets/courtyard/adventure-skyline.webp',color:0xe4c48a,u:0},
+ {id:'summon',name:'The Altar',...pointOnPath(.16),y:1.7,range:4.8,art:'./assets/courtyard/altar-skyline.webp',color:0xbb8aef,u:.16},
+ {id:'roster',name:'Codex',...pointOnPath(.28),y:1.7,range:4.8,art:'./assets/courtyard/muster-skyline.webp',color:0x93c8a8,u:.28},
+ {id:'shop',name:'Shop',...pointOnPath(.72),y:1.7,range:4.8,art:'./assets/courtyard/market-skyline.webp',color:0xedba72,u:.72},
  {id:'profile',name:'Wanted Poster',x:.42,z:8.65,y:2.15,range:4.3},
  {id:'tavern',name:'Enter Tavern',x:0,z:8.65,y:.65,range:4.7},
  {id:'daily',name:'Daily Gift',x:-3.1,z:.2,y:.48,range:2.5},

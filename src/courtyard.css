@@ -4,7 +4,7 @@ body:has(.courtyard-home) #app{padding-bottom:0}
 .courtyard-scene{position:relative;isolation:isolate;overflow:hidden;min-height:270px;height:calc(100svh - 112px);border:1px solid #d3b57959;border-radius:17px;background:#6c8277;touch-action:none;outline:none;user-select:none;-webkit-user-select:none;contain:layout paint}
 .courtyard-scene:focus-visible{outline:2px solid #edd59a;outline-offset:2px}
 .courtyard-backdrop,.courtyard-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;transition:opacity .3s}
-.courtyard-backdrop{background:url('../assets/courtyard/panorama.webp') 0% center/auto 100% no-repeat}
+.courtyard-backdrop{background:url('../assets/courtyard/garden-perimeter.webp') 0% center/auto 100% no-repeat}
 .courtyard-canvas{opacity:0;touch-action:none}.has-world .courtyard-canvas{opacity:1}.has-world .courtyard-backdrop{opacity:0}
 .courtyard-sun{position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 90% 0,#ffe7b30d,transparent 42%)}
 .courtyard-heading{position:absolute;z-index:3;left:16px;right:16px;top:15px;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
@@ -21,11 +21,11 @@ body:has(.courtyard-home) #app{padding-bottom:0}
 .courtyard-pin svg{width:16px;height:16px}.courtyard-target-label{font-size:12px;line-height:1.2;text-shadow:0 1px 3px #0007}
 .courtyard-scene .courtyard-destination.is-near{border-color:#fff2bd;background:linear-gradient(110deg,#76582be8,#334a35e8);box-shadow:0 0 0 3px #ffd88a1a,0 4px 20px #30271177}
 .courtyard-destination.is-near .courtyard-pin{background:#f3d28b;color:#34291b;border-color:#fff0bf}
-.courtyard-scene .wanted-poster.keeper-portrait{display:flex;flex-direction:column;align-items:center;gap:3px;width:126px;height:auto;max-height:none;padding:12px 10px 9px;border:1px solid #b18c4f;border-radius:2px 4px 3px 2px;background:radial-gradient(ellipse at 40% 40%,#f3e1b2,#d8bc82 90%);box-shadow:2px 4px 7px #1d160f80,inset 0 0 12px #936a3538;color:#402a18;clip-path:polygon(2% 0,31% 1%,61% 0,98% 2%,100% 28%,99% 62%,100% 99%,72% 98%,33% 100%,0 98%,1% 58%,0 27%);overflow:visible}
-.courtyard-scene .wanted-poster .wanted-heading{font-family:'Citadel Display',serif!important;font-size:22px;letter-spacing:.11em;line-height:1.1;color:#493019;text-shadow:none}
-.courtyard-scene .wanted-poster>img{position:static;display:block;width:83px;height:83px;aspect-ratio:1;object-fit:cover;border:1px solid #77573f;border-radius:2px;margin:3px 0;box-shadow:none;filter:none}
-.courtyard-scene .wanted-poster .keeper-name{font-size:12px;line-height:1.15;max-width:100%;overflow-wrap:anywhere;color:#432818;text-shadow:none}
-.courtyard-scene .wanted-poster .poster-level{font-size:10px;font-weight:750}.courtyard-scene .wanted-poster>small{font-size:8px;line-height:1.2;color:#553b22}
+.courtyard-scene .wanted-poster.keeper-portrait{display:flex;flex-direction:column;align-items:center;gap:2px;width:92px;min-width:0;height:auto;max-height:none;padding:9px 7px 7px;transform:translate(-50%,-50%);border:1px solid #b18c4f;border-radius:2px 4px 3px 2px;background:radial-gradient(ellipse at 40% 40%,#f3e1b2,#d8bc82 90%);box-shadow:2px 4px 7px #1d160f80,inset 0 0 12px #936a3538;color:#402a18;clip-path:polygon(2% 0,31% 1%,61% 0,98% 2%,100% 28%,99% 62%,100% 99%,72% 98%,33% 100%,0 98%,1% 58%,0 27%);overflow:visible}
+.courtyard-scene .wanted-poster .wanted-heading{font-family:'Citadel Display',serif!important;font-size:16px;letter-spacing:.09em;line-height:1.1;color:#493019;text-shadow:none}
+.courtyard-scene .wanted-poster>img{position:static;display:block;width:60px;height:60px;aspect-ratio:1;object-fit:cover;border:1px solid #77573f;border-radius:2px;margin:2px 0;box-shadow:none;filter:none}
+.courtyard-scene .wanted-poster .keeper-name{font-size:10px;line-height:1.15;max-width:100%;overflow-wrap:anywhere;color:#432818;text-shadow:none}
+.courtyard-scene .wanted-poster .poster-level{font-size:9px;font-weight:750}.courtyard-scene .wanted-poster>small{font-size:8px;line-height:1.2;color:#553b22}
 .poster-nail{position:absolute;width:5px;height:5px;left:calc(50% - 2px);top:4px;background:#5d5041;border-radius:50%;box-shadow:0 1px 2px #2b1d14}
 .poster-xp{display:block;width:88%;height:4px;margin:3px 0;background:#95713c42;border:1px solid #9f7938;border-radius:2px;overflow:hidden}.poster-xp i{display:block;height:100%;background:#5e7250}
 .courtyard-scene .wanted-poster.is-near{filter:drop-shadow(0 0 5px #ffda85b3)}
