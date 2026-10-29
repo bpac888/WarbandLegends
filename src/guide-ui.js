@@ -11,7 +11,6 @@ const battleRules=[
 const topics=[
  ['battles','Battles',[...battleRules,['Energy','Campaign / Dungeons: 1/2/3 Energy (Normal/Hard/Nightmare). Arena: 1. Capacity: 50 + profile level. Full refill at midnight PST and on level-up. Entry costs are not refunded. Events use attempts.']]],
  ['growth','Heroes',[
-  ['Teams','Codex → Teams sets your active warband for all battles. Team 1 is the default.'],
   ['Feeding','Common / Rare copies cost 25 Gold to feed. Rare: 3× Common XP; matching Rare hero: another 5×. Same element: +25%. Saved teams are protected.'],
   ['Ascension','Each tier adds 2% stats and restarts at level 1 without losing power. Copies develop separately.'],
   ['Limit Break','Rare or higher: two breaks after full ascension, each adding 5 levels and 3% stats. The second adds a 2-move role buff.'],
