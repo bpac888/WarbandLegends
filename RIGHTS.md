@@ -45,3 +45,7 @@ The v0.27 Altar uses new original image-generated phone and wide portal painting
 ## Road to 200 Artwork
 
 The eleven portraits listed in [ROSTER_200.md](docs/ROSTER_200.md) were generated individually for this game using OpenAI image generation in October 2026. Each ships at its native 1024 × 1536 resolution, encoded as high-quality WebP without cropping or resizing. Existing portraits were preserved byte for byte.
+
+## Special Events Map
+
+The phone and desktop Special Events landscape paintings were generated for Warband Legends using OpenAI image generation in October 2026. Native 1024 × 1536 and 1536 × 1024 compositions are encoded as quality-95 WebP without cropping.

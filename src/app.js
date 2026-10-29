@@ -168,7 +168,7 @@ document.addEventListener('click',event=>{
   if(['ascend-preview','awaken-preview'].includes(action)){const c=byId.get(id);if(!c)return;const kind=action.split('-')[0];openModal(kind==='ascend'?'Ascend your champion':'Awaken your champion',advancementConfirmation(c,profile,kind),'advancement');return;}
   if(['ascend-confirm','awaken-confirm'].includes(action)){const c=byId.get(id);if(!c)return;const r=(action==='ascend-confirm'?ascendChampion:awakenChampion)(profile,c,Number(button.dataset.tier));if(r.error){closeModal();renderChampionPage(id);toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderChampionPage(id);document.querySelector(action==='ascend-confirm'?'#hero-ascension':'#hero-awakening')?.scrollIntoView({block:'center',behavior:'instant'});toast(action==='ascend-confirm'?'Ascended! Level '+r.cap+' is now unlocked.':'Limit Break '+r.rank+' reached! Five more levels unlocked.');return;}
   if(action==='open-codex'){collectionFilters.tab='all';go('roster');return;}
-  if(action==='event-select'){selectedEvent=button.dataset.event;renderShell('events');return;}
+  if(action==='event-select'){selectedEvent=button.dataset.event;openModal('Special Event',Shell.eventArea(profile,selectedEvent),'event-area');return;}
   if(action==='exchange-preview'){openModal('Exchange your spoils',Shell.exchangeConfirmation(profile,id),'exchange');return;}
   if(action==='exchange-confirm'){const r=exchange(profile,id);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderShell('shop');toast('Exchange complete. Your rewards are saved.');return;}
   if(action==='skip-ritual'){finishRitual();return;}
