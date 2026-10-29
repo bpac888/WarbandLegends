@@ -23,3 +23,27 @@
 @media(max-height:520px) and (orientation:landscape){.arena-scene{height:calc(100svh - 90px);min-height:270px}.arena-fighter{height:80%;bottom:30px;width:40%;left:14%}.arena-challenge-dock{left:auto;right:14px;bottom:12px;transform:none;width:240px;max-width:40%;padding:8px;gap:6px}.arena-rival-identity h2{font-size:17px}.arena-scene .arena-challenge{padding:8px;font-size:11px}.arena-rival-shadow{bottom:34px}.arena-scene-heading h1{font-size:26px}}
 .menu-motion-paused .arena-scene-dust i{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.arena-scene-dust i{animation:none}}
+
+/* Slow breathing and a slight weight shift keep the rival grounded on the sand. */
+.arena-fighter>img{transform-origin:50% 96%;animation:arena-rival-idle 6.4s ease-in-out infinite}
+@keyframes arena-rival-idle{0%,100%{transform:rotate(-.12deg) scale(1,1)}50%{transform:rotate(.12deg) scale(1.004,1.008)}}
+.arena-environment-life{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.arena-brazier-glow{position:absolute;top:48%;width:4%;height:7%;border-radius:50%;background:radial-gradient(ellipse,#ffdc9280,transparent 70%);mix-blend-mode:screen;transform-origin:center bottom;animation:arena-firelight 3.7s ease-in-out infinite}
+.glow-left{left:6%}.glow-right{right:6%;animation-delay:-1.6s}
+@keyframes arena-firelight{0%,100%{opacity:.2;transform:scale(.9)}35%{opacity:.55;transform:scale(1.12)}65%{opacity:.3;transform:scale(.97)}}
+.arena-sand-drift{position:absolute;left:-18%;width:30%;height:2px;border-radius:50%;background:linear-gradient(90deg,transparent,#ffe9c250,transparent);box-shadow:0 0 8px 2px #ffe4b21a;animation:arena-sand-breeze 17s linear infinite;opacity:0}
+.drift-near{top:88%}.drift-far{top:77%;animation-delay:-8s;animation-duration:22s;width:22%}
+@keyframes arena-sand-breeze{8%{opacity:.3}30%{opacity:.5}65%{opacity:.25}90%{opacity:0}100%{translate:130cqw -4px}}
+#modal[data-view="arena-stage"]{width:min(360px,calc(100vw - 28px));max-width:360px;padding:18px;border-radius:14px}
+#modal[data-view="arena-stage"] .modal-header{padding:0 0 12px;margin:0;border:0;gap:10px}
+#modal[data-view="arena-stage"] .modal-header .eyebrow{display:none}
+#modal[data-view="arena-stage"] .modal-header h2{font-size:25px;line-height:1.15;margin:0;overflow-wrap:anywhere}
+#modal[data-view="arena-stage"] .modal-header .icon-button{width:32px;min-width:32px;height:32px;min-height:32px;padding:0;font-size:22px}
+#modal[data-view="arena-stage"] .modal-body{padding:0;margin:0}
+#modal[data-view="arena-stage"] .arena-confirm-actions{margin:0;padding:0;display:flex;align-items:center;justify-content:space-between;gap:14px}
+#modal[data-view="arena-stage"] .energy-cost{margin:0;font-size:12px}
+#modal[data-view="arena-stage"] .button{min-height:44px;padding:9px 22px;border:1px solid #f5d99f}
+.menu-motion-paused .arena-fighter>img,.menu-motion-paused .arena-environment-life i,
+body:has(#modal[open]) .arena-fighter>img,body:has(#modal[open]) .arena-environment-life i,body:has(#modal[open]) .arena-scene-dust i{animation-play-state:paused}
+@media(max-width:700px){.arena-brazier-glow{top:43%;width:6%;height:5%}.glow-left{left:3%}.glow-right{right:3%}}
+@media(prefers-reduced-motion:reduce){.arena-fighter>img,.arena-environment-life i{animation:none}}
