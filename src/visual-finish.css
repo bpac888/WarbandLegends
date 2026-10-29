@@ -185,3 +185,12 @@
  .hero-main>.hero-rank-track{top:29px}
 }
 @media(orientation:landscape) and (max-height:600px){.hero-main>.hero-rank-track{top:22px}}
+
+/* Consistent portrait corners across collection, Codex and team selection. */
+.library-art>.card-role,.roster-card>.card-role{top:7px;left:7px;right:auto;bottom:auto}
+.library-art>.library-affinity{top:7px;right:7px;left:auto}
+.library-art>.hero-level-mark{top:auto;right:auto;bottom:7px;left:7px}
+.library-art>.hero-rank-track,.roster-card>.hero-rank-track,.team-portrait>.hero-rank-track,.summon-result-card>.hero-rank-track,.victory-portrait>.hero-rank-track{top:auto;bottom:7px;right:7px;left:auto;transform:none}
+.roster-card>.roster-color{top:7px;right:7px;left:auto;bottom:auto}
+.roster-card>.pick-number{left:50%;right:auto;transform:translateX(-50%)}
+.team-caption>.card-role{top:6px;left:6px;right:auto;bottom:auto}
