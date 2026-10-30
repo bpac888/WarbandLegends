@@ -60,7 +60,16 @@ export async function createCourtyardScenery(THREE,load,stone=null){
   float feather=smoothstep(0.0,0.09,uv.x)*smoothstep(0.0,0.09,1.0-uv.x);
   vec3 ink=texture2D(painting,uv).rgb;
   float skyEdge=mix(smoothstep(0.0,.007,1.0-uv.y),smoothstep(0.0,.18,1.0-uv.y),skyMask(ink));
-  feather*=smoothstep(-.5,1.2,y)*smoothstep(0.0,.025,uv.y)*skyEdge;
+  // Sky replaces sky directly, so underlying trees cannot bleed through a crown.
+  vec3 clearSky=courtyardSky(vec3(sin(angle)*17.55,y,-cos(angle)*17.55)-cameraPosition);
+  ink=mix(clearSky,ink,skyEdge);
+  // A narrow, foliage-shaped seam keeps solid branches solid. Broad crossfades
+  // made two unrelated trees visible at once, creating translucent half-trees.
+  float foliage=1.0-skyMask(ink);
+  float contour=(softNoise(vec2(angle*60.0,y*.8))-.5)*.35;
+  float solidEdge=smoothstep(.12,.88,feather+contour);
+  feather=mix(feather,solidEdge,foliage);
+  feather*=smoothstep(-.5,1.2,y)*smoothstep(0.0,.025,uv.y);
   return mix(below,ink,feather);
  }
  vec3 courtyardPainting(float angle,float y,vec3 floorColor){

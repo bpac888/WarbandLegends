@@ -32,3 +32,15 @@ test('ground projections align with the scenery from the center and every walkab
   const a=new THREE.Vector3(ground.x-x,-1.65,ground.z-z).normalize(),b=new THREE.Vector3(extension.x-x,extension.y-1.65,extension.z-z).normalize();assert.ok(a.distanceTo(b)<1e-9);
  }
 });
+
+test('swallows face their travel with matched wing strokes and rest between passes',async()=>{
+ const {createCourtyardBird,animateCourtyardBird}=await import('../src/courtyard-birds.js');
+ const model=createCourtyardBird(THREE);animateCourtyardBird(model,4);const p=model.bird.position.clone();
+ animateCourtyardBird(model,4.05);assert.ok(model.bird.position.x>p.x);
+ const forward=new THREE.Vector3(0,0,-1).applyQuaternion(model.bird.quaternion);assert.ok(forward.x>.98);
+ assert.equal(model.left.rotation.z,-model.right.rotation.z);
+ assert.ok(model.bird.children.length>7,'body, belly, head, beak, eyes, wings and forked tail');
+ animateCourtyardBird(model,22);assert.equal(model.bird.visible,false);
+ animateCourtyardBird(model,43);assert.equal(model.bird.visible,true);
+ model.bird.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});
+});
