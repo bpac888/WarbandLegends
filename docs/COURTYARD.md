@@ -21,3 +21,5 @@ The v0.35 repair makes the Wanted Poster a fixed 92 px wide control, independent
 The v0.35.1 touch-up uses narrow foliage-aware joins to prevent double-exposed trees. Each vista blends its sky directly with the shared sky rather than revealing unrelated background crowns. The two passing birds are articulated swallows with modeled bodies, beaks, eyes, forked tails, layered feathers and alternating flaps/glides; they remain paused or hidden for reduced motion.
 
 The v0.35.2 repair keeps the Adventure vista above its adjacent paintings so their edge fades do not bisect its trees and buildings. The cylinder upper rim samples the same sky viewing ray as the sky dome, avoiding a segmented skyline seam. Phone and desktop checks cover the starting view, both Adventure joins and upward views.
+
+Version 0.36 replaces the three overlapping Shop, garden and Adventure paintings with a single continuous panorama. The two internal joins no longer exist; destination positions and navigation stay the same.

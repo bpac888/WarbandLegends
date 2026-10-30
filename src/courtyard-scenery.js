@@ -2,11 +2,9 @@
 export const SCENERY_RADIUS=17.55;
 export const SCENERY_BOTTOM=-1.5335,SCENERY_HEIGHT=16.667;
 export const COURTYARD_SCENERY=Object.freeze([
- {id:'market-approach',u:.86,halfWidth:.11,art:'./assets/courtyard/market-approach-skyline.webp'},
- {id:'shop',u:.72,halfWidth:.10,leftWidth:.16,art:'./assets/courtyard/market-skyline.webp'},
  {id:'summon',u:.16,halfWidth:.10,art:'./assets/courtyard/altar-skyline.webp'},
  {id:'roster',u:.28,halfWidth:.10,rightWidth:.16,art:'./assets/courtyard/muster-skyline.webp'},
- {id:'world',u:0,halfWidth:.10,art:'./assets/courtyard/adventure-skyline.webp'},
+ {id:'market-adventure',u:.86,halfWidth:.25,height:16.667,art:'./assets/courtyard/market-adventure-panorama.webp'},
 ]);
 const tau=Math.PI*2;
 export function sceneryPoint(u,y=1.65){return {x:Math.sin(u*tau)*SCENERY_RADIUS,y,z:-Math.cos(u*tau)*SCENERY_RADIUS};}
@@ -33,7 +31,7 @@ export async function createCourtyardScenery(THREE,load,stone=null){
  const layouts=[];
  for(let i=0;i<COURTYARD_SCENERY.length;i++){
   const texture=await load(new URL(COURTYARD_SCENERY[i].art,document.baseURI).href);uniforms['painting'+i]={value:texture};
-  const aspect=texture.image?.width&&texture.image?.height?texture.image.width/texture.image.height:1.5,height=25/aspect;layouts.push({height,bottom:6.8-height/2});
+  const aspect=texture.image?.width&&texture.image?.height?texture.image.width/texture.image.height:1.5,height=COURTYARD_SCENERY[i].height||25/aspect;layouts.push({height,bottom:6.8-height/2});
  }
  const paintingShader=`
  uniform sampler2D village;

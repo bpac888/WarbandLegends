@@ -69,3 +69,5 @@ The v0.34 courtyard refinement adds original image-generated limestone paving an
 The v0.35 courtyard repair adds six original image-generated environment refinements: five destination views with completed tree crowns and a garden-only perimeter. These are native-resolution WebP variants in `assets/courtyard/*-skyline.webp` and `garden-perimeter.webp`. The original paintings, foreground Tavern and champion portraits remain archived unchanged. Runtime compositing preserves the foliage silhouette while blending the sky.
 
 The courtyard muster skyline received a generated edge cleanup in v0.35.1, removing the partial tall flowering bush at the left border. Champion portraits are unchanged. The articulated courtyard swallows are original procedural geometry.
+
+The unified market-to-Adventure courtyard panorama is generated from the existing courtyard artwork, replacing overlapping vista joins in v0.36.0.

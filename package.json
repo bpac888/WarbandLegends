@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.35.2",
+  "version": "0.36.0",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's draft1 roster.",
