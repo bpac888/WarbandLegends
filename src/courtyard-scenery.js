@@ -3,10 +3,10 @@ export const SCENERY_RADIUS=17.55;
 export const SCENERY_BOTTOM=-1.5335,SCENERY_HEIGHT=16.667;
 export const COURTYARD_SCENERY=Object.freeze([
  {id:'market-approach',u:.86,halfWidth:.11,art:'./assets/courtyard/market-approach-skyline.webp'},
- {id:'world',u:0,halfWidth:.10,art:'./assets/courtyard/adventure-skyline.webp'},
  {id:'shop',u:.72,halfWidth:.10,leftWidth:.16,art:'./assets/courtyard/market-skyline.webp'},
  {id:'summon',u:.16,halfWidth:.10,art:'./assets/courtyard/altar-skyline.webp'},
  {id:'roster',u:.28,halfWidth:.10,rightWidth:.16,art:'./assets/courtyard/muster-skyline.webp'},
+ {id:'world',u:0,halfWidth:.10,art:'./assets/courtyard/adventure-skyline.webp'},
 ]);
 const tau=Math.PI*2;
 export function sceneryPoint(u,y=1.65){return {x:Math.sin(u*tau)*SCENERY_RADIUS,y,z:-Math.cos(u*tau)*SCENERY_RADIUS};}
@@ -59,7 +59,7 @@ export async function createCourtyardScenery(THREE,load,stone=null){
   if(uv.x<=0.0||uv.x>=1.0||uv.y<=0.0||uv.y>=1.0)return below;
   float feather=smoothstep(0.0,0.09,uv.x)*smoothstep(0.0,0.09,1.0-uv.x);
   vec3 ink=texture2D(painting,uv).rgb;
-  float skyEdge=mix(smoothstep(0.0,.007,1.0-uv.y),smoothstep(0.0,.18,1.0-uv.y),skyMask(ink));
+  float skyEdge=mix(smoothstep(0.0,.065,1.0-uv.y),smoothstep(0.0,.18,1.0-uv.y),skyMask(ink));
   // Sky replaces sky directly, so underlying trees cannot bleed through a crown.
   vec3 clearSky=courtyardSky(vec3(sin(angle)*17.55,y,-cos(angle)*17.55)-cameraPosition);
   ink=mix(clearSky,ink,skyEdge);
@@ -90,6 +90,8 @@ export async function createCourtyardScenery(THREE,load,stone=null){
   float groundDistance=-cameraPosition.y/min(ray.y,-.001);
   vec3 floorColor=pavingColor(cameraPosition.xz+ray.xz*groundDistance);
   vec3 color=courtyardPainting(angle,worldPoint.y,floorColor);
+  // At the upper rim sample the same viewing ray as the sky dome.
+  color=mix(color,courtyardSky(worldPoint-cameraPosition),smoothstep(15.2,17.2,worldPoint.y));
   gl_FragColor=vec4(color,1.0);
   #include <colorspace_fragment>
  }`;
