@@ -1,20 +1,20 @@
 {
   "version": 3,
-  "champions": 200,
+  "champions": 215,
   "colorCounts": {
-    "red": 41,
-    "blue": 41,
-    "green": 40,
-    "yellow": 40,
-    "purple": 38
+    "red": 43,
+    "blue": 43,
+    "green": 44,
+    "yellow": 42,
+    "purple": 43
   },
   "manaCounts": {
     "very_fast": 9,
-    "fast": 49,
-    "average": 94,
-    "slow": 27,
+    "fast": 53,
+    "average": 100,
+    "slow": 30,
     "very_slow": 2,
-    "charging": 19
+    "charging": 21
   },
   "chargingChampions": [
     {
@@ -158,6 +158,20 @@
         8,
         10
       ]
+    },
+    {
+      "id": "brannik_verdigris_sapper",
+      "tiles": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "nyxel_nullwall_marshal",
+      "tiles": [
+        8,
+        10
+      ]
     }
   ],
   "rarities": {
@@ -182,41 +196,41 @@
       }
     },
     "rare": {
-      "count": 68,
+      "count": 76,
       "stats": {
         "atk": {
           "min": 515,
-          "average": 624.25,
+          "average": 623.6842105263158,
           "max": 716
         },
         "def": {
           "min": 530,
-          "average": 601.8676470588235,
+          "average": 601.1447368421053,
           "max": 705
         },
         "hp": {
           "min": 946,
-          "average": 1085.3382352941176,
+          "average": 1085.5657894736842,
           "max": 1250
         }
       }
     },
     "legendary": {
-      "count": 88,
+      "count": 95,
       "stats": {
         "atk": {
           "min": 600,
-          "average": 763.7159090909091,
+          "average": 763.1263157894737,
           "max": 850
         },
         "def": {
           "min": 640,
-          "average": 723.875,
+          "average": 725.3263157894737,
           "max": 837
         },
         "hp": {
           "min": 1250,
-          "average": 1392.3522727272727,
+          "average": 1393.0210526315789,
           "max": 1600
         }
       }

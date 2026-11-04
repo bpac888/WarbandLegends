@@ -9,7 +9,7 @@ import {defaultProfile,summon,normalizeProfile,validateProfile,SUMMON_ODDS} from
 import {REFERENCE_TEAM} from './reference-team.mjs';
 import {EFFECTS} from '../src/effects.js';
 const read=async file=>JSON.parse(await readFile(new URL('../'+file,import.meta.url)));
-const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion-5.json'),added=roster.slice(manifest.originalCount,manifest.totalCount);
+const roster=(await read('data/champions.json')).slice(0,200),manifest=await read('data/roster-expansion-5.json'),added=roster.slice(manifest.originalCount,manifest.totalCount);
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const count=key=>Object.fromEntries([...new Set(added.map(c=>c[key]))].sort().map(k=>[k,added.filter(c=>c[key]===k).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0}};e.passive=null;e.shield=0;}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.4);h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};h.passive=null;}return b;}
@@ -51,8 +51,8 @@ test('all 11 additions can be summoned through their unchanged rarity pools and 
 test('Auto considers every new ready kit and produces legal actions without mutating the position',()=>{
  for(const c of added){const b=fixture(c);b.heroes[0].mana=b.heroes[0].manaMax;const before=structuredClone(b),action=chooseAutoAction(b);assert.ok(action,c.id);const result=applyAutoAction(b,action);assert.ok(!result.error,c.id);assert.ok(validateSave(result.state,roster),c.id);assert.deepEqual(b,before);}
 });
-test('current audit reflects 200 characters and all eleven implemented additions',async()=>{
- const audit=await read('data/roster-audit.json');assert.equal(audit.after.total,200);assert.equal(audit.before.total,189);assert.equal(audit.implementedRecommendations.length,11);assert.equal(audit.recommendations.length,0);for(const f of Object.values(audit.byFaction))assert.ok(Object.values(f.color).every(n=>n>0));
+test('archived audit reflects 200 characters and all eleven implemented additions',async()=>{
+ const audit=await read('docs/history/roster-audit-200.json');assert.equal(audit.after.total,200);assert.equal(audit.before.total,189);assert.equal(audit.implementedRecommendations.length,11);assert.equal(audit.recommendations.length,0);for(const f of Object.values(audit.byFaction))assert.ok(Object.values(f.color).every(n=>n>0));
 });
 test('all original portraits are retained byte for byte',async()=>{
  const portraits=[];for(const c of roster.slice(0,189))portraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(new URL('../'+c.portrait,import.meta.url))).digest('hex')});assert.equal(hash(portraits),manifest.originalPortraitsSha256);

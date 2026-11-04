@@ -7024,5 +7024,487 @@
         ]
       ]
     }
+  },
+  {
+    "template_id": "hjolven_violet_rime",
+    "name": "Hjolven, the Violet Rime",
+    "title": "the Violet Rime",
+    "rarity": "rare",
+    "faction": "frost",
+    "role": "attack",
+    "atk": 704,
+    "def": 560,
+    "hp": 1020,
+    "ability_name": "Rimewatch Arrow",
+    "lore": "A veteran fjord tracker reads the violet aurora to find threats before they reach the hearths.",
+    "image_url": "/assets/champions/hjolven_violet_rime.webp",
+    "id": "hjolven_violet_rime",
+    "color": "purple",
+    "source_image": "assets/champions/hjolven_violet_rime.webp",
+    "portrait": "assets/champions/hjolven_violet_rime.webp",
+    "passive": null,
+    "ability_desc": "Deal 205% ATK damage to selected enemy.",
+    "spd": 112,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dec_atk",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "maerith_mosslight_exile",
+    "name": "Maerith, Mosslight Exile",
+    "title": "Mosslight Exile",
+    "rarity": "rare",
+    "faction": "umbra",
+    "role": "support",
+    "atk": 535,
+    "def": 610,
+    "hp": 1150,
+    "ability_name": "Lantern of Return",
+    "lore": "Exiled from the veiled courts, Maerith tends the wounded beneath trees that remember forgotten names.",
+    "image_url": "/assets/champions/maerith_mosslight_exile.webp",
+    "id": "maerith_mosslight_exile",
+    "color": "green",
+    "source_image": "assets/champions/maerith_mosslight_exile.webp",
+    "portrait": "assets/champions/maerith_mosslight_exile.webp",
+    "passive": null,
+    "ability_desc": "Restore 38% max HP to one living ally.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "brannik_verdigris_sapper",
+    "name": "Brannik, Verdigris Sapper",
+    "title": "Verdigris Sapper",
+    "rarity": "rare",
+    "faction": "ironclad",
+    "role": "attack",
+    "atk": 704,
+    "def": 560,
+    "hp": 1020,
+    "ability_name": "Breach Protocol",
+    "lore": "Brannik turns discarded siege hydraulics into precise emerald charges that open a path for his warband.",
+    "image_url": "/assets/champions/brannik_verdigris_sapper.webp",
+    "id": "brannik_verdigris_sapper",
+    "color": "green",
+    "source_image": "assets/champions/brannik_verdigris_sapper.webp",
+    "portrait": "assets/champions/brannik_verdigris_sapper.webp",
+    "passive": null,
+    "ability_desc": "Deal 205% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "vulnerable_green",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "xuelan_amethyst_fang",
+    "name": "Xuelan, Amethyst Fang",
+    "title": "Amethyst Fang",
+    "rarity": "rare",
+    "faction": "dragondynasty",
+    "role": "attack",
+    "atk": 704,
+    "def": 560,
+    "hp": 1020,
+    "ability_name": "Amethyst Thrust",
+    "lore": "Xuelan guards the moon gardens with one perfectly measured thrust, wasting neither motion nor mercy.",
+    "image_url": "/assets/champions/xuelan_amethyst_fang.webp",
+    "id": "xuelan_amethyst_fang",
+    "color": "purple",
+    "source_image": "assets/champions/xuelan_amethyst_fang.webp",
+    "portrait": "assets/champions/xuelan_amethyst_fang.webp",
+    "passive": null,
+    "ability_desc": "Deal 215% ATK damage to selected enemy, ignoring 25% of DEF.",
+    "spd": 112,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "calveris_azure_retort",
+    "name": "Calveris, the Azure Retort",
+    "title": "the Azure Retort",
+    "rarity": "legendary",
+    "faction": "chymera",
+    "role": "defense",
+    "atk": 650,
+    "def": 835,
+    "hp": 1530,
+    "ability_name": "Aegis Distillate",
+    "lore": "An alchemical master of Chymera, Calveris circulates azure distillate through brass retorts to temper incoming force and exhaust hostile strength.",
+    "image_url": "/assets/champions/calveris_azure_retort.webp",
+    "id": "calveris_azure_retort",
+    "color": "blue",
+    "source_image": "assets/champions/calveris_azure_retort.webp",
+    "portrait": "assets/champions/calveris_azure_retort.webp",
+    "passive": null,
+    "ability_desc": "Empower your warband with the effects below.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "strengthen",
+          2
+        ],
+        [
+          "dec_atk",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "nyxel_nullwall_marshal",
+    "name": "Nyxel, Nullwall Marshal",
+    "title": "Nullwall Marshal",
+    "rarity": "legendary",
+    "faction": "neon_syndicate",
+    "role": "defense",
+    "atk": 650,
+    "def": 835,
+    "hp": 1530,
+    "ability_name": "Nullwall Directive",
+    "lore": "Nyxel holds the evacuation line while violet suppression fields turn lethal barrages into harmless light.",
+    "image_url": "/assets/champions/nyxel_nullwall_marshal.webp",
+    "id": "nyxel_nullwall_marshal",
+    "color": "purple",
+    "source_image": "assets/champions/nyxel_nullwall_marshal.webp",
+    "portrait": "assets/champions/nyxel_nullwall_marshal.webp",
+    "passive": null,
+    "ability_desc": "Empower your warband with the effects below.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "guard",
+          2
+        ],
+        [
+          "strengthen",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "solvex_gridbreaker",
+    "name": "Solvex, Gridbreaker",
+    "title": "Gridbreaker",
+    "rarity": "legendary",
+    "faction": "neon_syndicate",
+    "role": "attack",
+    "atk": 835,
+    "def": 675,
+    "hp": 1305,
+    "ability_name": "Grid Collapse",
+    "lore": "Solvex breaks hostile power grids with a siege hammer calibrated to collapse their shielding before impact.",
+    "image_url": "/assets/champions/solvex_gridbreaker.webp",
+    "id": "solvex_gridbreaker",
+    "color": "yellow",
+    "source_image": "assets/champions/solvex_gridbreaker.webp",
+    "portrait": "assets/champions/solvex_gridbreaker.webp",
+    "passive": null,
+    "ability_desc": "Deal 230% ATK damage to all living enemies.",
+    "spd": 88,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dispel",
+          0
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "rukora_emberhide_sentinel",
+    "name": "Rukora, Emberhide Sentinel",
+    "title": "Emberhide Sentinel",
+    "rarity": "legendary",
+    "faction": "veldtborn",
+    "role": "defense",
+    "atk": 650,
+    "def": 835,
+    "hp": 1530,
+    "ability_name": "Emberhide Rampart",
+    "lore": "The lioness Rukora stands between the burning grass and her pride, her jasper shield reflecting the last red sun.",
+    "image_url": "/assets/champions/rukora_emberhide_sentinel.webp",
+    "id": "rukora_emberhide_sentinel",
+    "color": "red",
+    "source_image": "assets/champions/rukora_emberhide_sentinel.webp",
+    "portrait": "assets/champions/rukora_emberhide_sentinel.webp",
+    "passive": null,
+    "ability_desc": "Empower your warband with the effects below.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "shield",
+          2
+        ],
+        [
+          "dec_atk",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "mavren_dusk_horn_hunter",
+    "name": "Mavren, Dusk-Horn Hunter",
+    "title": "Dusk-Horn Hunter",
+    "rarity": "rare",
+    "faction": "veldtborn",
+    "role": "attack",
+    "atk": 704,
+    "def": 560,
+    "hp": 1020,
+    "ability_name": "Twilight Impaler",
+    "lore": "Mavren waits motionless among the dusk grasses until one obsidian arrow can decide the hunt.",
+    "image_url": "/assets/champions/mavren_dusk_horn_hunter.webp",
+    "id": "mavren_dusk_horn_hunter",
+    "color": "purple",
+    "source_image": "assets/champions/mavren_dusk_horn_hunter.webp",
+    "portrait": "assets/champions/mavren_dusk_horn_hunter.webp",
+    "passive": null,
+    "ability_desc": "Deal 360% ATK damage to selected enemy, ignoring 25% of DEF.",
+    "spd": 88,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "nesira_keeper_rain_jars",
+    "name": "Nesira, Keeper of Rain Jars",
+    "title": "Keeper of Rain Jars",
+    "rarity": "rare",
+    "faction": "duneriders",
+    "role": "support",
+    "atk": 535,
+    "def": 610,
+    "hp": 1150,
+    "ability_name": "Rain Remembered",
+    "lore": "Nesira carries the memory of distant rain in sealed blue jars, opening them only for those the desert would claim.",
+    "image_url": "/assets/champions/nesira_keeper_rain_jars.webp",
+    "id": "nesira_keeper_rain_jars",
+    "color": "blue",
+    "source_image": "assets/champions/nesira_keeper_rain_jars.webp",
+    "portrait": "assets/champions/nesira_keeper_rain_jars.webp",
+    "passive": null,
+    "ability_desc": "Restore 40% max HP to one living ally.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "harvek_caravan_shield",
+    "name": "Harvek, the Caravan Shield",
+    "title": "the Caravan Shield",
+    "rarity": "rare",
+    "faction": "duneriders",
+    "role": "defense",
+    "atk": 530,
+    "def": 690,
+    "hp": 1170,
+    "ability_name": "Caravan Intercept",
+    "lore": "Harvek rides the exposed flank of every caravan, turning his shield toward danger before the alarm is sounded.",
+    "image_url": "/assets/champions/harvek_caravan_shield.webp",
+    "id": "harvek_caravan_shield",
+    "color": "red",
+    "source_image": "assets/champions/harvek_caravan_shield.webp",
+    "portrait": "assets/champions/harvek_caravan_shield.webp",
+    "passive": null,
+    "ability_desc": "Empower your warband with the effects below.",
+    "spd": 112,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "guard",
+          1
+        ],
+        [
+          "strengthen",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "zamrukh_thornstorm_rider",
+    "name": "Zamrukh, Thornstorm Rider",
+    "title": "Thornstorm Rider",
+    "rarity": "legendary",
+    "faction": "duneriders",
+    "role": "attack",
+    "atk": 835,
+    "def": 675,
+    "hp": 1305,
+    "ability_name": "Thornstorm Sweep",
+    "lore": "Zamrukh follows the green thornstorms across the wastes, his barbed glaive cutting through armor like dried reeds.",
+    "image_url": "/assets/champions/zamrukh_thornstorm_rider.webp",
+    "id": "zamrukh_thornstorm_rider",
+    "color": "green",
+    "source_image": "assets/champions/zamrukh_thornstorm_rider.webp",
+    "portrait": "assets/champions/zamrukh_thornstorm_rider.webp",
+    "passive": null,
+    "ability_desc": "Deal 225% ATK damage to all living enemies, ignoring 25% of DEF.",
+    "spd": 88,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "aoe",
+          0
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "elythra_eclipse_cantor",
+    "name": "Elythra, Eclipse Cantor",
+    "title": "Eclipse Cantor",
+    "rarity": "rare",
+    "faction": "astral_concord",
+    "role": "support",
+    "atk": 535,
+    "def": 610,
+    "hp": 1150,
+    "ability_name": "Eclipse Benediction",
+    "lore": "Elythra sings the silent interval between sun and moon, clearing affliction before the next shadow falls.",
+    "image_url": "/assets/champions/elythra_eclipse_cantor.webp",
+    "id": "elythra_eclipse_cantor",
+    "color": "purple",
+    "source_image": "assets/champions/elythra_eclipse_cantor.webp",
+    "portrait": "assets/champions/elythra_eclipse_cantor.webp",
+    "passive": null,
+    "ability_desc": "Empower your warband with the effects below.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ],
+        [
+          "block_debuffs",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "vaedros_comet_shear",
+    "name": "Vaedros, Comet Shear",
+    "title": "Comet Shear",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "attack",
+    "atk": 835,
+    "def": 675,
+    "hp": 1305,
+    "ability_name": "Comet Severance",
+    "lore": "Vaedros trims the tails of dying comets into blades that sever a false blessing before striking its bearer.",
+    "image_url": "/assets/champions/vaedros_comet_shear.webp",
+    "id": "vaedros_comet_shear",
+    "color": "green",
+    "source_image": "assets/champions/vaedros_comet_shear.webp",
+    "portrait": "assets/champions/vaedros_comet_shear.webp",
+    "passive": null,
+    "ability_desc": "Deal 245% ATK damage to selected enemy.",
+    "spd": 112,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dispel",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "orastel_sunwake_herald",
+    "name": "Orastel, Sunwake Herald",
+    "title": "Sunwake Herald",
+    "rarity": "legendary",
+    "faction": "astral_concord",
+    "role": "attack",
+    "atk": 835,
+    "def": 675,
+    "hp": 1305,
+    "ability_name": "Sunwake Procession",
+    "lore": "Orastel raises her solar standard over abandoned star-temples, calling their scattered guardians into the dawn.",
+    "image_url": "/assets/champions/orastel_sunwake_herald.webp",
+    "id": "orastel_sunwake_herald",
+    "color": "yellow",
+    "source_image": "assets/champions/orastel_sunwake_herald.webp",
+    "portrait": "assets/champions/orastel_sunwake_herald.webp",
+    "passive": null,
+    "ability_desc": "Deal 190% ATK damage to all living enemies.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "burn",
+          1
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    }
   }
 ]

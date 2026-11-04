@@ -14,7 +14,7 @@ const hash=value=>createHash('sha256').update(JSON.stringify(beforeRarityRevisio
 const count=key=>Object.fromEntries([...new Set(added.map(c=>c[key]))].sort().map(k=>[k,added.filter(c=>c[key]===k).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0}};e.passive=null;e.shield=0;}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.4);h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};h.passive=null;}return b;}
 test('all 174 previous records and source identities are preserved exactly',async()=>{
- assert.equal(hash(roster.slice(0,174)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,174)),manifest.originalSourceRecordsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,200);
+ assert.equal(hash(roster.slice(0,174)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,174)),manifest.originalSourceRecordsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,roster.length);
 });
 test('the 15 additions match the approved rarity, role, color and speed mix',()=>{
  assert.deepEqual(count('rarity'),{legendary:7,mythical:2,rare:6});assert.deepEqual(count('role'),{attack:8,defense:3,support:4});assert.deepEqual(count('color'),{blue:3,green:3,purple:3,red:3,yellow:3});assert.deepEqual(count('faction'),{astral_concord:15});assert.deepEqual(count('manaSpeed'),{average:8,charging:1,fast:5,slow:1});

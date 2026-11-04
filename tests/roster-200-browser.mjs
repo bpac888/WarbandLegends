@@ -6,7 +6,7 @@ import {defaultProfile} from '../src/progression.js';
 import {PROFILE_KEY} from '../src/storage.js';
 import {factionLabel} from '../src/collection.js';
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
-const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json')),added=roster.slice(189);
+const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json')),added=roster.slice(189,200);
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
 try{
  const context=await browser.newContext({viewport:{width:390,height:844}}),errors=[];
@@ -16,14 +16,14 @@ try{
  await context.addInitScript(({p,key})=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(p));},{p:profile,key:PROFILE_KEY});
  const settle=async()=>{await page.evaluate(()=>Promise.all(document.getAnimations().filter(a=>a.effect?.getTiming().iterations!==Infinity).map(a=>a.finished.catch(()=>{}))));};
  const go=async route=>{await page.goto('http://legends.local/#/'+route);await page.locator('.topbar').waitFor();await settle();};
- await go('roster');await page.locator('[data-tab="all"]').click();assert.equal(await page.locator('#library-grid .library-card').count(),200);
+ await go('roster');await page.locator('[data-tab="all"]').click();assert.equal(await page.locator('#library-grid .library-card').count(),roster.length);
  await page.locator('#library-grid .library-art>img').evaluateAll(imgs=>imgs.forEach(i=>i.loading='eager'));
  await page.waitForFunction(()=>[...document.querySelectorAll('#library-grid .library-art>img')].every(i=>i.complete&&i.naturalWidth>0));
  for(const c of added){const card=page.locator(`#library-grid [data-id="${c.id}"]`),image=card.locator('.library-art>img');assert.ok(await image.evaluate(i=>i.naturalWidth===1024&&i.naturalHeight===1536&&getComputedStyle(i).filter==='none'&&getComputedStyle(i).opacity==='1'),c.id);assert.ok((await card.getAttribute('aria-label')).includes(c.rarity));assert.ok((await card.getAttribute('aria-label')).includes(c.role));}
  await page.locator('.collection-filters summary').click();
  for(const color of ['red','blue','green','yellow','purple']){await page.locator('#collection-color').selectOption(color);assert.equal(await page.locator('#library-grid .library-card').count(),roster.filter(c=>c.color===color).length);}
- await page.locator('#collection-color').selectOption('all');await page.locator('#collection-rarity').selectOption('legendary');assert.equal(await page.locator('#library-grid .library-card').count(),88);
- await page.locator('#collection-rarity').selectOption('rare');assert.equal(await page.locator('#library-grid .library-card').count(),68);
+ await page.locator('#collection-color').selectOption('all');await page.locator('#collection-rarity').selectOption('legendary');assert.equal(await page.locator('#library-grid .library-card').count(),roster.filter(c=>c.rarity==='legendary').length);
+ await page.locator('#collection-rarity').selectOption('rare');assert.equal(await page.locator('#library-grid .library-card').count(),roster.filter(c=>c.rarity==='rare').length);
  await page.locator('#collection-rarity').selectOption('all');await page.locator('#collection-sort').selectOption('element');
  const elements=await page.locator('#library-grid .library-card').evaluateAll(cards=>cards.map(c=>['red','blue','green','yellow','purple'].findIndex(v=>c.classList.contains(v))));assert.deepEqual(elements,[...elements].sort((a,b)=>a-b));
  await page.locator('[data-tab="owned"]').click();for(const c of added)assert.equal(await page.locator(`#library-grid [data-id="${c.id}"]`).count(),1);

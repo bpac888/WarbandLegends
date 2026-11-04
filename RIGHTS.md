@@ -67,3 +67,7 @@ The retained courtyard artwork was created for this game using OpenAI image gene
 Earlier courtyard paintings and cobblestone textures have been superseded and removed from the current tree; their provenance and original files remain in Git history. Champion artwork and profile portraits are unchanged. Runtime sky/ground blending and contact shadows are geometry/shader effects; the articulated swallows are original procedural geometry.
 
 Three.js r170 is bundled locally under its MIT license in `src/vendor/three-LICENSE.txt`. No external script, CDN, tracking or game service is used at runtime.
+
+## Fifteen-character expansion to 215
+
+Fifteen original character illustrations were generated for this expansion using OpenAI image generation in November 2026. Each is a standalone native 1024 × 1536 image encoded as quality-95 WebP without cropping or upscaling. Existing champion portraits are unchanged. New Chymera champion Calveris follows the faction's alchemical identity, with brass apparatus, glass retorts and luminous reagents.

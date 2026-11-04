@@ -2697,7 +2697,7 @@
       },
       "passiveOverride": {
         "id": "titans_resolve",
-        "name": "Titan’s Resolve",
+        "name": "Titan\u2019s Resolve",
         "kind": "immune_effect",
         "immune": [
           "dec_atk",
@@ -3483,6 +3483,498 @@
         "def": 745,
         "hp": 1465
       }
+    },
+    "hjolven_violet_rime": {
+      "color": "purple",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 704,
+        "def": 560,
+        "hp": 1020
+      },
+      "chargeLevels": 1
+    },
+    "maerith_mosslight_exile": {
+      "color": "green",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.38,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 535,
+        "def": 610,
+        "hp": 1150
+      },
+      "chargeLevels": 1
+    },
+    "brannik_verdigris_sapper": {
+      "color": "green",
+      "manaSpeed": "charging",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "vulnerable_green",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 704,
+        "def": 560,
+        "hp": 1020
+      },
+      "chargeLevels": 2
+    },
+    "xuelan_amethyst_fang": {
+      "color": "purple",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.15,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "atk": 704,
+        "def": 560,
+        "hp": 1020
+      },
+      "chargeLevels": 1
+    },
+    "calveris_azure_retort": {
+      "color": "blue",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 650,
+        "def": 835,
+        "hp": 1530
+      },
+      "chargeLevels": 1
+    },
+    "nyxel_nullwall_marshal": {
+      "color": "purple",
+      "manaSpeed": "charging",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 650,
+        "def": 835,
+        "hp": 1530
+      },
+      "chargeLevels": 2
+    },
+    "solvex_gridbreaker": {
+      "color": "yellow",
+      "manaSpeed": "slow",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 835,
+        "def": 675,
+        "hp": 1305
+      },
+      "chargeLevels": 1
+    },
+    "rukora_emberhide_sentinel": {
+      "color": "red",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 650,
+        "def": 835,
+        "hp": 1530
+      },
+      "chargeLevels": 1
+    },
+    "mavren_dusk_horn_hunter": {
+      "color": "purple",
+      "manaSpeed": "slow",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 3.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "atk": 704,
+        "def": 560,
+        "hp": 1020
+      },
+      "chargeLevels": 1
+    },
+    "nesira_keeper_rain_jars": {
+      "color": "blue",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.4,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 535,
+        "def": 610,
+        "hp": 1150
+      },
+      "chargeLevels": 1
+    },
+    "harvek_caravan_shield": {
+      "color": "red",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 530,
+        "def": 690,
+        "hp": 1170
+      },
+      "chargeLevels": 1
+    },
+    "zamrukh_thornstorm_rider": {
+      "color": "green",
+      "manaSpeed": "slow",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.25,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "atk": 835,
+        "def": 675,
+        "hp": 1305
+      },
+      "chargeLevels": 1
+    },
+    "elythra_eclipse_cantor": {
+      "color": "purple",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 535,
+        "def": 610,
+        "hp": 1150
+      },
+      "chargeLevels": 1
+    },
+    "vaedros_comet_shear": {
+      "color": "green",
+      "manaSpeed": "fast",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 835,
+        "def": 675,
+        "hp": 1305
+      },
+      "chargeLevels": 1
+    },
+    "orastel_sunwake_herald": {
+      "color": "yellow",
+      "manaSpeed": "average",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.9,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 1,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 835,
+        "def": 675,
+        "hp": 1305
+      },
+      "chargeLevels": 1
     }
   }
 }

@@ -1,0 +1,192 @@
+{
+  "version": 6,
+  "originalCount": 200,
+  "totalCount": 215,
+  "originalRecordsSha256": "8894c37ca5531912617462d24fa352d01cd64c9dfe67384611b9368cf967468f",
+  "originalSourceRecordsSha256": "ddcc36807eeb49bcdc381be7b679f715146900873486a042cee2bd7cb0a992cf",
+  "originalPortraitsSha256": "751a8d7d3939fdaaf9a1e796799050493b0485cca234b1d436d61c8c5c856ecc",
+  "addedChampionIds": [
+    "hjolven_violet_rime",
+    "maerith_mosslight_exile",
+    "brannik_verdigris_sapper",
+    "xuelan_amethyst_fang",
+    "calveris_azure_retort",
+    "nyxel_nullwall_marshal",
+    "solvex_gridbreaker",
+    "rukora_emberhide_sentinel",
+    "mavren_dusk_horn_hunter",
+    "nesira_keeper_rain_jars",
+    "harvek_caravan_shield",
+    "zamrukh_thornstorm_rider",
+    "elythra_eclipse_cantor",
+    "vaedros_comet_shear",
+    "orastel_sunwake_herald"
+  ],
+  "implementedRecommendations": [
+    {
+      "championId": "hjolven_violet_rime",
+      "name": "Hjolven, the Violet Rime",
+      "faction": "frost",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Accessible Purple Frost attacker; focused suppression rather than Skeldra’s charging control.",
+      "status": "implemented"
+    },
+    {
+      "championId": "maerith_mosslight_exile",
+      "name": "Maerith, Mosslight Exile",
+      "faction": "umbra",
+      "color": "green",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "First Green Umbra support; targeted rescue and team purification.",
+      "status": "implemented"
+    },
+    {
+      "championId": "brannik_verdigris_sapper",
+      "name": "Brannik, Verdigris Sapper",
+      "faction": "ironclad",
+      "color": "green",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "charging",
+      "gap": "First Green Ironclad attacker; accessible charging choice.",
+      "status": "implemented"
+    },
+    {
+      "championId": "xuelan_amethyst_fang",
+      "name": "Xuelan, Amethyst Fang",
+      "faction": "dragondynasty",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "First Purple Rare Dragon Dynasty attacker; direct Pierce without extra control.",
+      "status": "implemented"
+    },
+    {
+      "championId": "calveris_azure_retort",
+      "name": "Calveris, the Azure Retort",
+      "faction": "chymera",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "First Legendary Chymera defender; alchemical apparatus and protective reagents, not a marine creature.",
+      "status": "implemented"
+    },
+    {
+      "championId": "nyxel_nullwall_marshal",
+      "name": "Nyxel, Nullwall Marshal",
+      "faction": "neon_syndicate",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "charging",
+      "gap": "First Purple Neon defender; early interception or sustained team protection.",
+      "status": "implemented"
+    },
+    {
+      "championId": "solvex_gridbreaker",
+      "name": "Solvex, Gridbreaker",
+      "faction": "neon_syndicate",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "First Yellow Legendary Neon attacker; deliberate area Dispel before damage.",
+      "status": "implemented"
+    },
+    {
+      "championId": "rukora_emberhide_sentinel",
+      "name": "Rukora, Emberhide Sentinel",
+      "faction": "veldtborn",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "First Red Veldtborn defender; team Barrier without Riposte or healing.",
+      "status": "implemented"
+    },
+    {
+      "championId": "mavren_dusk_horn_hunter",
+      "name": "Mavren, Dusk-Horn Hunter",
+      "faction": "veldtborn",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Slow Rare burst alternative to Average Phaedra; no chained control.",
+      "status": "implemented"
+    },
+    {
+      "championId": "nesira_keeper_rain_jars",
+      "name": "Nesira, Keeper of Rain Jars",
+      "faction": "duneriders",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Accessible Blue Dune support below Mythical Nayara; single-ally rescue, not team healing or Ward.",
+      "status": "implemented"
+    },
+    {
+      "championId": "harvek_caravan_shield",
+      "name": "Harvek, the Caravan Shield",
+      "faction": "duneriders",
+      "color": "red",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "fast",
+      "gap": "First Red Dune defender; brief Fast interception rather than lasting team protection.",
+      "status": "implemented"
+    },
+    {
+      "championId": "zamrukh_thornstorm_rider",
+      "name": "Zamrukh, Thornstorm Rider",
+      "faction": "duneriders",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Slow area Pierce complements Yaqut’s Fast single-target poison.",
+      "status": "implemented"
+    },
+    {
+      "championId": "elythra_eclipse_cantor",
+      "name": "Elythra, Eclipse Cantor",
+      "faction": "astral_concord",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "First Purple Astral support; purification and brief prevention with no healing or mana gifts.",
+      "status": "implemented"
+    },
+    {
+      "championId": "vaedros_comet_shear",
+      "name": "Vaedros, Comet Shear",
+      "faction": "astral_concord",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "First Green Legendary Astral attacker; focused buff removal with restrained burst.",
+      "status": "implemented"
+    },
+    {
+      "championId": "orastel_sunwake_herald",
+      "name": "Orastel, Sunwake Herald",
+      "faction": "astral_concord",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Predictable Yellow area pressure alongside Ixanth’s charging single-target kit.",
+      "status": "implemented"
+    }
+  ]
+}

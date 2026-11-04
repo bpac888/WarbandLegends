@@ -1,6 +1,6 @@
 # Warband Legends — detailed project guide
 
-This repository contains the current standalone Warband Legends match-3 RPG, with 200 champions, campaign, dungeons, Arena, monthly Special Events, summoning and collection. The [Tavern courtyard](COURTYARD.md) documents the current home scene. Historical notes about the separate source game describe the original import, not another version to restore.
+This repository contains the current standalone Warband Legends match-3 RPG, with 215 champions, campaign, dungeons, Arena, monthly Special Events, summoning and collection. The [Tavern courtyard](COURTYARD.md) documents the current home scene. Historical notes about the separate source game describe the original import, not another version to restore.
 
 ## Play locally
 

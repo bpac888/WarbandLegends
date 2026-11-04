@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-200 champions. The newest expansion adds eleven audit-led champions: nine Legendaries and two Rares. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
+215 champions. The newest expansion adds eleven audit-led champions: nine Legendaries and two Rares. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -204,6 +204,21 @@
 | Iskavelle, Verdigris Oath | legendary | green | defense | 680 | 815 | 1540 | Average 10 |
 | Yrsa, the Sunfrost Spear | legendary | yellow | attack | 815 | 695 | 1350 | Fast 8 |
 | Huying, Lantern of Clear Skies | legendary | yellow | support | 710 | 745 | 1465 | Average 10 |
+| Hjolven, the Violet Rime | rare | purple | attack | 704 | 560 | 1020 | Fast 8 |
+| Maerith, Mosslight Exile | rare | green | support | 535 | 610 | 1150 | Average 10 |
+| Brannik, Verdigris Sapper | rare | green | attack | 704 | 560 | 1020 | Charging 8 / 10 |
+| Xuelan, Amethyst Fang | rare | purple | attack | 704 | 560 | 1020 | Fast 8 |
+| Calveris, the Azure Retort | legendary | blue | defense | 650 | 835 | 1530 | Average 10 |
+| Nyxel, Nullwall Marshal | legendary | purple | defense | 650 | 835 | 1530 | Charging 8 / 10 |
+| Solvex, Gridbreaker | legendary | yellow | attack | 835 | 675 | 1305 | Slow 12 |
+| Rukora, Emberhide Sentinel | legendary | red | defense | 650 | 835 | 1530 | Average 10 |
+| Mavren, Dusk-Horn Hunter | rare | purple | attack | 704 | 560 | 1020 | Slow 12 |
+| Nesira, Keeper of Rain Jars | rare | blue | support | 535 | 610 | 1150 | Average 10 |
+| Harvek, the Caravan Shield | rare | red | defense | 530 | 690 | 1170 | Fast 8 |
+| Zamrukh, Thornstorm Rider | legendary | green | attack | 835 | 675 | 1305 | Slow 12 |
+| Elythra, Eclipse Cantor | rare | purple | support | 535 | 610 | 1150 | Average 10 |
+| Vaedros, Comet Shear | legendary | green | attack | 835 | 675 | 1305 | Fast 8 |
+| Orastel, Sunwake Herald | legendary | yellow | attack | 835 | 675 | 1305 | Average 10 |
 
 ## Specials
 
@@ -1080,4 +1095,66 @@ Passive: **Moonforged Aegis** — Barriers received by Asterox have 50% larger s
 ### Huying, Lantern of Clear Skies — Lanterns of Clear Skies
 
 - 10 tiles: Empower your warband with the effects below. Cleanse (All living allies); Barrier (All living allies, 1 turns); Mana Flow (All living allies, 2 turns).
+
+### Hjolven, the Violet Rime — Rimewatch Arrow
+
+- 8 tiles: Deal 205% ATK damage to selected enemy. Attack Down (Selected enemy, 1 turns).
+
+### Maerith, Mosslight Exile — Lantern of Return
+
+- 10 tiles: Restore 38% max HP to one living ally. Cleanse (All living allies).
+
+### Brannik, Verdigris Sapper — Breach Protocol
+
+- Charge 1 · 8 tiles: Deal 205% ATK damage to selected enemy. .
+- Charge 2 · 10 tiles: Deal 245% ATK damage to selected enemy. Verdant Defense Down (Selected enemy, 1 turns).
+
+### Xuelan, Amethyst Fang — Amethyst Thrust
+
+- 8 tiles: Deal 215% ATK damage to selected enemy, ignoring 25% of DEF. .
+
+### Calveris, the Azure Retort — Aegis Distillate
+
+- 10 tiles: Empower your warband with the effects below. Damage Ward (All living allies, 2 turns); Attack Down (Selected enemy, 1 turns).
+
+### Nyxel, Nullwall Marshal — Nullwall Directive
+
+- Charge 1 · 8 tiles: Empower your warband with the effects below. Taunt (Caster, 1 turns); Damage Ward (Caster, 1 turns).
+- Charge 2 · 10 tiles: Empower your warband with the effects below. Taunt (Caster, 2 turns); Damage Ward (All living allies, 2 turns).
+
+### Solvex, Gridbreaker — Grid Collapse
+
+- 12 tiles: Deal 230% ATK damage to all living enemies. Dispel (All living enemies).
+
+### Rukora, Emberhide Sentinel — Emberhide Rampart
+
+- 10 tiles: Empower your warband with the effects below. Barrier (All living allies, 2 turns); Attack Down (Selected enemy, 1 turns).
+
+### Mavren, Dusk-Horn Hunter — Twilight Impaler
+
+- 12 tiles: Deal 360% ATK damage to selected enemy, ignoring 25% of DEF. .
+
+### Nesira, Keeper of Rain Jars — Rain Remembered
+
+- 10 tiles: Restore 40% max HP to one living ally. Cleanse (All living allies).
+
+### Harvek, the Caravan Shield — Caravan Intercept
+
+- 8 tiles: Empower your warband with the effects below. Taunt (Caster, 1 turns); Damage Ward (Caster, 1 turns).
+
+### Zamrukh, Thornstorm Rider — Thornstorm Sweep
+
+- 12 tiles: Deal 225% ATK damage to all living enemies, ignoring 25% of DEF. .
+
+### Elythra, Eclipse Cantor — Eclipse Benediction
+
+- 10 tiles: Empower your warband with the effects below. Cleanse (All living allies); Ailment Ward (All living allies, 1 turns).
+
+### Vaedros, Comet Shear — Comet Severance
+
+- 8 tiles: Deal 245% ATK damage to selected enemy. Dispel (Selected enemy).
+
+### Orastel, Sunwake Herald — Sunwake Procession
+
+- 10 tiles: Deal 190% ATK damage to all living enemies. Burn (All living enemies, 1 turns).
 

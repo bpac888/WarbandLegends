@@ -1,0 +1,620 @@
+{
+  "version": 6,
+  "originalCount": 200,
+  "totalCount": 215,
+  "brief": "Eight Rare, seven Legendary; eight Attack, four Defense, three Support. Existing 200 records and portraits unchanged.",
+  "champions": [
+    {
+      "id": "hjolven_violet_rime",
+      "name": "Hjolven, the Violet Rime",
+      "title": "the Violet Rime",
+      "faction": "frost",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "ability_name": "Rimewatch Arrow",
+      "stats": {
+        "atk": 704,
+        "def": 560,
+        "hp": 1020
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "A veteran fjord tracker reads the violet aurora to find threats before they reach the hearths.",
+      "gap": "Accessible Purple Frost attacker; focused suppression rather than Skeldra\u2019s charging control."
+    },
+    {
+      "id": "maerith_mosslight_exile",
+      "name": "Maerith, Mosslight Exile",
+      "title": "Mosslight Exile",
+      "faction": "umbra",
+      "color": "green",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "ability_name": "Lantern of Return",
+      "stats": {
+        "atk": 535,
+        "def": 610,
+        "hp": 1150
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.38,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "Exiled from the veiled courts, Maerith tends the wounded beneath trees that remember forgotten names.",
+      "gap": "First Green Umbra support; targeted rescue and team purification."
+    },
+    {
+      "id": "brannik_verdigris_sapper",
+      "name": "Brannik, Verdigris Sapper",
+      "title": "Verdigris Sapper",
+      "faction": "ironclad",
+      "color": "green",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "charging",
+      "ability_name": "Breach Protocol",
+      "stats": {
+        "atk": 704,
+        "def": 560,
+        "hp": 1020
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "vulnerable_green",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "Brannik turns discarded siege hydraulics into precise emerald charges that open a path for his warband.",
+      "gap": "First Green Ironclad attacker; accessible charging choice."
+    },
+    {
+      "id": "xuelan_amethyst_fang",
+      "name": "Xuelan, Amethyst Fang",
+      "title": "Amethyst Fang",
+      "faction": "dragondynasty",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "ability_name": "Amethyst Thrust",
+      "stats": {
+        "atk": 704,
+        "def": 560,
+        "hp": 1020
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.15,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "lore": "Xuelan guards the moon gardens with one perfectly measured thrust, wasting neither motion nor mercy.",
+      "gap": "First Purple Rare Dragon Dynasty attacker; direct Pierce without extra control."
+    },
+    {
+      "id": "calveris_azure_retort",
+      "name": "Calveris, the Azure Retort",
+      "title": "the Azure Retort",
+      "faction": "chymera",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "ability_name": "Aegis Distillate",
+      "stats": {
+        "atk": 650,
+        "def": 835,
+        "hp": 1530
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "An alchemical master of Chymera, Calveris circulates azure distillate through brass retorts to temper incoming force and exhaust hostile strength.",
+      "gap": "First Legendary Chymera defender; alchemical apparatus and protective reagents, not a marine creature."
+    },
+    {
+      "id": "nyxel_nullwall_marshal",
+      "name": "Nyxel, Nullwall Marshal",
+      "title": "Nullwall Marshal",
+      "faction": "neon_syndicate",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "charging",
+      "ability_name": "Nullwall Directive",
+      "stats": {
+        "atk": 650,
+        "def": 835,
+        "hp": 1530
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "Nyxel holds the evacuation line while violet suppression fields turn lethal barrages into harmless light.",
+      "gap": "First Purple Neon defender; early interception or sustained team protection."
+    },
+    {
+      "id": "solvex_gridbreaker",
+      "name": "Solvex, Gridbreaker",
+      "title": "Gridbreaker",
+      "faction": "neon_syndicate",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "ability_name": "Grid Collapse",
+      "stats": {
+        "atk": 835,
+        "def": 675,
+        "hp": 1305
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "lore": "Solvex breaks hostile power grids with a siege hammer calibrated to collapse their shielding before impact.",
+      "gap": "First Yellow Legendary Neon attacker; deliberate area Dispel before damage."
+    },
+    {
+      "id": "rukora_emberhide_sentinel",
+      "name": "Rukora, Emberhide Sentinel",
+      "title": "Emberhide Sentinel",
+      "faction": "veldtborn",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "ability_name": "Emberhide Rampart",
+      "stats": {
+        "atk": 650,
+        "def": 835,
+        "hp": 1530
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "The lioness Rukora stands between the burning grass and her pride, her jasper shield reflecting the last red sun.",
+      "gap": "First Red Veldtborn defender; team Barrier without Riposte or healing."
+    },
+    {
+      "id": "mavren_dusk_horn_hunter",
+      "name": "Mavren, Dusk-Horn Hunter",
+      "title": "Dusk-Horn Hunter",
+      "faction": "veldtborn",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "ability_name": "Twilight Impaler",
+      "stats": {
+        "atk": 704,
+        "def": 560,
+        "hp": 1020
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 3.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "lore": "Mavren waits motionless among the dusk grasses until one obsidian arrow can decide the hunt.",
+      "gap": "Slow Rare burst alternative to Average Phaedra; no chained control."
+    },
+    {
+      "id": "nesira_keeper_rain_jars",
+      "name": "Nesira, Keeper of Rain Jars",
+      "title": "Keeper of Rain Jars",
+      "faction": "duneriders",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "ability_name": "Rain Remembered",
+      "stats": {
+        "atk": 535,
+        "def": 610,
+        "hp": 1150
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.4,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "Nesira carries the memory of distant rain in sealed blue jars, opening them only for those the desert would claim.",
+      "gap": "Accessible Blue Dune support below Mythical Nayara; single-ally rescue, not team healing or Ward."
+    },
+    {
+      "id": "harvek_caravan_shield",
+      "name": "Harvek, the Caravan Shield",
+      "title": "the Caravan Shield",
+      "faction": "duneriders",
+      "color": "red",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "fast",
+      "ability_name": "Caravan Intercept",
+      "stats": {
+        "atk": 530,
+        "def": 690,
+        "hp": 1170
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "lore": "Harvek rides the exposed flank of every caravan, turning his shield toward danger before the alarm is sounded.",
+      "gap": "First Red Dune defender; brief Fast interception rather than lasting team protection."
+    },
+    {
+      "id": "zamrukh_thornstorm_rider",
+      "name": "Zamrukh, Thornstorm Rider",
+      "title": "Thornstorm Rider",
+      "faction": "duneriders",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "ability_name": "Thornstorm Sweep",
+      "stats": {
+        "atk": 835,
+        "def": 675,
+        "hp": 1305
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.25,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "lore": "Zamrukh follows the green thornstorms across the wastes, his barbed glaive cutting through armor like dried reeds.",
+      "gap": "Slow area Pierce complements Yaqut\u2019s Fast single-target poison."
+    },
+    {
+      "id": "elythra_eclipse_cantor",
+      "name": "Elythra, Eclipse Cantor",
+      "title": "Eclipse Cantor",
+      "faction": "astral_concord",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "ability_name": "Eclipse Benediction",
+      "stats": {
+        "atk": 535,
+        "def": 610,
+        "hp": 1150
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "Elythra sings the silent interval between sun and moon, clearing affliction before the next shadow falls.",
+      "gap": "First Purple Astral support; purification and brief prevention with no healing or mana gifts."
+    },
+    {
+      "id": "vaedros_comet_shear",
+      "name": "Vaedros, Comet Shear",
+      "title": "Comet Shear",
+      "faction": "astral_concord",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "ability_name": "Comet Severance",
+      "stats": {
+        "atk": 835,
+        "def": 675,
+        "hp": 1305
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "Vaedros trims the tails of dying comets into blades that sever a false blessing before striking its bearer.",
+      "gap": "First Green Legendary Astral attacker; focused buff removal with restrained burst."
+    },
+    {
+      "id": "orastel_sunwake_herald",
+      "name": "Orastel, Sunwake Herald",
+      "title": "Sunwake Herald",
+      "faction": "astral_concord",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "ability_name": "Sunwake Procession",
+      "stats": {
+        "atk": 835,
+        "def": 675,
+        "hp": 1305
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.9,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 1,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "lore": "Orastel raises her solar standard over abandoned star-temples, calling their scattered guardians into the dawn.",
+      "gap": "Predictable Yellow area pressure alongside Ixanth\u2019s charging single-target kit."
+    }
+  ]
+}

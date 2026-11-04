@@ -1,6 +1,6 @@
 # Warband Legends
 
-A standalone match-3 RPG with 200 collectible champions, a five-champion warband, campaign, dungeons, Arena and special events.
+A standalone match-3 RPG with 215 collectible champions, a five-champion warband, campaign, dungeons, Arena and special events.
 
 ·[Documentation](docs/README.md) · [Game rules](docs/RULES.md)
 

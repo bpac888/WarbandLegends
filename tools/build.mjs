@@ -12,9 +12,11 @@ const expansion=JSON.parse(await readFile('data/roster-expansion-4.json','utf8')
 if(createHash('sha256').update(JSON.stringify(beforeRarityRevision(roster.slice(0,expansion.originalCount)))).digest('hex')!==expansion.originalRecordsSha256)throw Error('Existing champion records changed');
 const sourceRoster=JSON.parse(await readFile('data/source-champions.json','utf8'));
 if(createHash('sha256').update(JSON.stringify(beforeRarityRevision(sourceRoster.slice(0,expansion.originalCount),{source:true}))).digest('hex')!==expansion.originalSourceRecordsSha256)throw Error('Existing source records changed');
-const latest=JSON.parse(await readFile('data/roster-expansion-5.json','utf8'));
+const milestone200=JSON.parse(await readFile('data/roster-expansion-5.json','utf8'));
+const latest=JSON.parse(await readFile('data/roster-expansion-6.json','utf8'));
 const sha=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
-if(sha(roster.slice(0,latest.originalCount))!==latest.originalRecordsSha256||sha(sourceRoster.slice(0,latest.originalCount))!==latest.originalSourceRecordsSha256)throw Error('The 189-character baseline changed');
+if(sha(roster.slice(0,milestone200.originalCount))!==milestone200.originalRecordsSha256||sha(sourceRoster.slice(0,milestone200.originalCount))!==milestone200.originalSourceRecordsSha256)throw Error('The 189-character baseline changed');
+if(sha(roster.slice(0,latest.originalCount))!==latest.originalRecordsSha256||sha(sourceRoster.slice(0,latest.originalCount))!==latest.originalSourceRecordsSha256)throw Error('The 200-character baseline changed');
 if(roster.length!==latest.totalCount||new Set(roster.map(c=>c.id)).size!==latest.totalCount||JSON.stringify(roster.slice(latest.originalCount).map(c=>c.id))!==JSON.stringify(latest.addedChampionIds))throw Error('Roster identity check failed');
 const originalPortraits=[];for(const c of roster.slice(0,latest.originalCount))originalPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(originalPortraits)!==latest.originalPortraitsSha256)throw Error('An existing portrait changed');
