@@ -1,3 +1,5 @@
+import {COURTYARD_SCENERY} from '../src/courtyard-scenery.js';
+import {COURTYARD_PLACES} from '../src/courtyard.js';
 import {ARENA_RIVALS} from '../src/modes.js';
 import {beforeRarityRevision} from '../src/rarity-revision.js';
 import {AVATARS} from '../src/keeper.js';
@@ -18,7 +20,12 @@ const originalPortraits=[];for(const c of roster.slice(0,latest.originalCount))o
 if(sha(originalPortraits)!==latest.originalPortraitsSha256)throw Error('An existing portrait changed');
 if((await stat('assets/factions/astral_concord.webp')).size<1000)throw Error('Missing Astral Concord emblem');
 for(const id of ['colosseum-phone','colosseum-wide',...ARENA_RIVALS.map(r=>r.preset_id)])if((await stat('assets/arena/'+id+'.webp')).size<100000)throw Error('Missing Arena artwork: '+id);
-for(const id of ['panorama','tavern','cobblestones','coin-pouch','adventure-path','market-path','muster-path','villager-man','villager-woman','market-approach','altar-path','limestone-paving','afternoon-sky','garden-perimeter','adventure-skyline','altar-skyline','market-approach-skyline','market-skyline','muster-skyline'])if((await stat('assets/courtyard/'+id+'.webp')).size<10000)throw Error('Missing courtyard artwork: '+id);
+// Validate the current viewer and its non-WebGL fallback, including the unified panorama.
+const courtyardArt=new Set([
+ ...COURTYARD_SCENERY.map(p=>p.art),...COURTYARD_PLACES.map(p=>p.art).filter(Boolean),
+ ...['tavern','coin-pouch','villager-man','villager-woman','limestone-paving','afternoon-sky','garden-perimeter'].map(id=>'./assets/courtyard/'+id+'.webp'),
+]);
+for(const path of courtyardArt)if((await stat(path)).size<10000)throw Error('Missing courtyard artwork: '+path);
 for(const c of roster){if(!/^assets\/champions\/[a-zA-Z0-9_ -]+\.webp$/.test(c.portrait)||(await stat(c.portrait)).size<1000)throw Error(`Missing portrait: ${c.id}`);}
 for(const color of ['red','blue','green','yellow','purple'])for(const suffix of ['','-blast','-prism'])if((await stat(`assets/runes/${color}${suffix}.svg`)).size<10000)throw Error('Missing rune artwork: '+color+suffix);
 for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/world-map.svg','assets/scenes/adventure-realm-wide.webp','assets/scenes/adventure-realm-phone.webp','assets/dungeons/guardians-wide.webp','assets/dungeons/guardians-phone.webp','assets/dungeons/guardians-phone-dragon.webp','assets/events/realms-phone.webp','assets/events/realms-wide.webp','assets/altar/portal-phone.webp','assets/altar/portal-wide.webp','assets/altar/aether-vortex.webp','assets/brand/warband-crest.webp','assets/brand/warband-favicon.png','assets/brand/warband-touch.png','assets/brand/warband-wordmark.png','assets/guide/element-advantages.webp'])if((await stat(path)).size<500)throw Error('Missing brand artwork');

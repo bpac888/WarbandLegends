@@ -10,16 +10,17 @@ Movement is temporary presentation state. It does not spend Energy, change battl
 
 Validation: `npm run check`, `npm run test:courtyard`, `npm run test:courtyard-polish` and `npm run test:profile-tools`. Browser coverage includes real touch dragging, walking/turning, all destinations, profile persistence, once-only daily rewards, six viewport sizes including phone landscape, ambient motion, and the WebGL fallback. Existing roster and artwork fingerprints remain part of the production build.
 
-The v0.33 refinement replaces overlapping destination planes with one opaque cylindrical background. Paintings blend at fixed world angles in one shader, so looking between Altar and Codex cannot change transparent-object sorting or expose a back face. New paintings fill the Shop–Adventure approach and place the Altar down a distant garden path. The stream and its rock banks are removed; movement can use the former stream-side space. Adventure artwork, character artwork and saved progress are retained.
+## Current files
 
-The v0.34 environment refinement uses native-resolution limestone paving with subtle broad wear and foliage shadows. Beyond the walkable area, the ground projects the same distant paintings along the actual camera ray and gradually blends into them. This removes the straight floor/backdrop seam, including after lateral steps. The scenery and dome share a detailed afternoon cloud panorama with slow drift, avoiding a solid strip above the paintings. No full-screen tint or blur is applied.
+The current courtyard is the v0.36 scene with a unified market-to-Adventure panorama. This is the version to preserve when making future changes.
 
-Pedestrian art now faces its projected direction of travel from the viewer's position, rather than following camera yaw. Pedestrians use stable lanes, pause if the player blocks their path, and fade out at the ends of their route. Gait pauses with movement; contact shadows anchor their feet. Turning alone never reverses their facing. Native regression checks cover views from both sides, the full viewing circle, blocked walking and ground projection from the courtyard's movement limits.
+- `src/courtyard.js`: movement, destination positions and fallback artwork.
+- `src/courtyard-ui.js` and `src/courtyard.css`: markup and presentation.
+- `src/courtyard-view.js`: input, rendering and resource disposal.
+- `src/courtyard-scenery.js`: continuous background, shared sky and paving projection.
+- `src/courtyard-life.js` and `src/courtyard-birds.js`: pedestrians, leaves and articulated swallows.
+- `assets/courtyard/`: only the current scene and fallback images. The Adventure and Shop skyline images remain necessary for the non-WebGL fallback even though the WebGL scene uses the unified panorama.
 
-The v0.35 repair makes the Wanted Poster a fixed 92 px wide control, independent of walking distance. Refined vista artwork includes complete tree crowns; the upper blend distinguishes sky from foliage instead of erasing a horizontal band through trees. A garden-only perimeter replaces the old village background, removing duplicate buildings beside the single foreground Tavern. The outside edges of Shop and Codex extend behind that foreground building, keeping their transitions out of view across the walkable courtyard. Checks compare the poster's actual screen size before/after approaching and inspect both Tavern flanks, upward views and destination transitions.
+The wanted poster stays 92 CSS pixels wide while walking. Limestone paving blends into the distant scenery, and the background shares the sky dome's viewing ray. The garden perimeter avoids duplicate buildings beside the foreground Tavern. Pedestrians face their direction of travel, pause when blocked, and fade at route ends. Reduced motion pauses or hides ambient animation.
 
-The v0.35.1 touch-up uses narrow foliage-aware joins to prevent double-exposed trees. Each vista blends its sky directly with the shared sky rather than revealing unrelated background crowns. The two passing birds are articulated swallows with modeled bodies, beaks, eyes, forked tails, layered feathers and alternating flaps/glides; they remain paused or hidden for reduced motion.
-
-The v0.35.2 repair keeps the Adventure vista above its adjacent paintings so their edge fades do not bisect its trees and buildings. The cylinder upper rim samples the same sky viewing ray as the sky dome, avoiding a segmented skyline seam. Phone and desktop checks cover the starting view, both Adventure joins and upward views.
-
-Version 0.36 replaces the three overlapping Shop, garden and Adventure paintings with a single continuous panorama. The two internal joins no longer exist; destination positions and navigation stay the same.
+Superseded courtyard paintings and paving were removed from the current tree during repository cleanup; earlier versions remain available in Git history. The production build validates the artwork referenced by both the current scenery and destination definitions.

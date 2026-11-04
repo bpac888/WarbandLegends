@@ -60,14 +60,10 @@ The transparent merchant-stall navigation icon was generated for Warband Legends
 
 The Codex/Teams navigation icon was refined from its existing three-figure design with OpenAI image generation in October 2026, retaining transparency at native high resolution.
 
-The v0.32 first-person Tavern courtyard uses nine new original image-generated assets: a courtyard panorama, transparent tavern facade, transparent leather coin pouch, cobblestone texture, three path vistas, and two four-frame townsperson walk cycles. Their local WebP versions preserve native resolution. Profile portraits and existing destination artwork are presented unchanged within the scene. Three.js r170 is bundled locally under its MIT license in `src/vendor/three-LICENSE.txt`; no external script, CDN, tracking or game service is used at runtime.
+## Tavern Courtyard
 
-The v0.33 courtyard polish adds two original image-generated environment paintings: the garden approach between Shop and Adventure and the distant Altar garden path. Native-resolution WebP copies are bundled separately; existing Adventure and champion images are unchanged. The painted views are composited by the runtime scenery shader on one continuous curved background.
+The retained courtyard artwork was created for this game using OpenAI image generation in October 2026 and encoded as native-resolution WebP. It includes the transparent Tavern facade and leather coin pouch, two four-frame townsperson walk cycles, limestone paving, an afternoon cloud panorama, a garden perimeter, and Altar, Codex, Adventure and Shop skyline paintings. The unified market-to-Adventure panorama was generated from the existing courtyard artwork for v0.36. Adventure and Shop skyline paintings remain in use by the non-WebGL fallback.
 
-The v0.34 courtyard refinement adds original image-generated limestone paving and afternoon cloud panorama textures in `assets/courtyard/limestone-paving.webp` and `assets/courtyard/afternoon-sky.webp`, encoded at native resolution. Existing painted destinations, pedestrian art and champion artwork are retained. Shared sky, contact shadows and ground blending are runtime geometry/shader effects, not edits to those images.
+Earlier courtyard paintings and cobblestone textures have been superseded and removed from the current tree; their provenance and original files remain in Git history. Champion artwork and profile portraits are unchanged. Runtime sky/ground blending and contact shadows are geometry/shader effects; the articulated swallows are original procedural geometry.
 
-The v0.35 courtyard repair adds six original image-generated environment refinements: five destination views with completed tree crowns and a garden-only perimeter. These are native-resolution WebP variants in `assets/courtyard/*-skyline.webp` and `garden-perimeter.webp`. The original paintings, foreground Tavern and champion portraits remain archived unchanged. Runtime compositing preserves the foliage silhouette while blending the sky.
-
-The courtyard muster skyline received a generated edge cleanup in v0.35.1, removing the partial tall flowering bush at the left border. Champion portraits are unchanged. The articulated courtyard swallows are original procedural geometry.
-
-The unified market-to-Adventure courtyard panorama is generated from the existing courtyard artwork, replacing overlapping vista joins in v0.36.0.
+Three.js r170 is bundled locally under its MIT license in `src/vendor/three-LICENSE.txt`. No external script, CDN, tracking or game service is used at runtime.

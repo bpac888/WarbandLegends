@@ -1,6 +1,6 @@
-# Legends · Runes of War — detailed project guide
+# Warband Legends — detailed project guide
 
-A new, independent match-3 RPG using the owner's Warband Legends champions and artwork. This repository does **not** modify, launch, or connect to Warband Legends. The current foundation includes playable campaign, dungeons, Arena, monthly Special Events, summoning, collection, and a connected game shell.
+This repository contains the current standalone Warband Legends match-3 RPG, with 200 champions, campaign, dungeons, Arena, monthly Special Events, summoning and collection. The [Tavern courtyard](COURTYARD.md) documents the current home scene. Historical notes about the separate source game describe the original import, not another version to restore.
 
 ## Play locally
 
