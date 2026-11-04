@@ -53,3 +53,24 @@
 .page-champion .advancement-pair,.page-champion .passive-info{max-width:1100px;margin-inline:auto}
 .page-champion .champion-story{padding:10px 12px;border:1px solid #c2aa823d;border-radius:8px;background:#232a2b99}
 .page-champion .champion-story>summary{color:#e6d1aa;font-size:12px;line-height:1.5;cursor:pointer}
+
+/* One readable affinity/speed line and a compact, clearly named Special. */
+.page-champion .champion-page .champion-biography .detail-element{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:600;line-height:1.4;text-transform:capitalize;margin:12px 0 16px;color:var(--rune)}
+.page-champion .detail-element .detail-affinity{width:44px;height:44px;flex-shrink:0;object-fit:contain;filter:none}
+.page-champion .detail-separator{padding:0 5px;color:#cbbda9}
+.page-champion .champion-story{margin-top:0;padding-top:12px}
+.page-champion .champion-special{padding:16px;margin-top:16px}
+.page-champion .champion-special .special-name-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 14px;margin:0 0 14px}
+.page-champion .champion-special .special-name-row h2{flex:1;min-width:0;margin:0;font-size:clamp(25px,3vw,31px);line-height:1.15;overflow-wrap:anywhere}
+.page-champion .special-tile-cost{display:inline-flex;align-items:center;flex-shrink:0;white-space:nowrap;padding:6px 10px;border:1px solid #bca78266;border-radius:8px;background:#142a30;color:#ead9b8;font-size:13px;line-height:1.3;font-variant-numeric:tabular-nums}
+.page-champion .champion-special .special-levels{margin:0;gap:12px}
+.page-champion .champion-special .special-levels:not(.multi-charge)>.special-level{padding:0;border:0;background:none;box-shadow:none}
+.page-champion .champion-special .special-sequence{margin-top:8px}
+.page-champion .champion-title{margin:6px 0 10px}
+@media(max-width:600px){
+ .page-champion .champion-page{gap:16px;margin-top:12px}
+ .page-champion .champion-special{padding:14px}
+ .page-champion .champion-page .champion-biography .detail-element{font-size:18px;gap:10px}
+ .page-champion .detail-element .detail-affinity{width:42px;height:42px}
+ .page-champion .champion-special .special-name-row h2{font-size:25px}
+}
