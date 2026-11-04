@@ -71,3 +71,7 @@ Three.js r170 is bundled locally under its MIT license in `src/vendor/three-LICE
 ## Fifteen-character expansion to 215
 
 Fifteen original character illustrations were generated for this expansion using OpenAI image generation in November 2026. Each is a standalone native 1024 × 1536 image encoded as quality-95 WebP without cropping or upscaling. Existing champion portraits are unchanged. New Chymera champion Calveris follows the faction's alchemical identity, with brass apparatus, glass retorts and luminous reagents.
+
+## Quest category illustrations
+
+Nine original fantasy illustrations were generated as a single 3 × 3 square atlas using OpenAI image generation in November 2026. The atlas is encoded as WebP and shown as small category thumbnails; no existing champion artwork is changed.

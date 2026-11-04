@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.37.0",
+  "version": "0.38.0",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's draft1 roster.",
@@ -47,7 +47,8 @@
     "test:profile-tools": "node tests/profile-tools-browser.mjs",
     "test:courtyard": "node tests/courtyard-browser.mjs",
     "test:courtyard-polish": "node tests/courtyard-polish-browser.mjs",
-    "test:roster-215": "node tests/roster-215-browser.mjs"
+    "test:roster-215": "node tests/roster-215-browser.mjs",
+    "test:quests": "node tests/quests-browser.mjs"
   },
   "engines": {
     "node": ">=22"

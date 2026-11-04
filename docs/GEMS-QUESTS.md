@@ -16,7 +16,7 @@ A new profile starts with five collected level 1 champions, 500 gold and 500 Gem
 
 Valid battle payouts are settled once. Sandbox/abandoned/defeated fights do not award Gems or account XP. Daily/calendar/quest claims persist and do not pay twice on reload. The local game is not a server-secured competitive economy.
 
-## 43 milestone quests
+## 60 milestone quests
 
 Quests cover campaign difficulties, dungeon wins and unique vaults, Arena, monthly events, summons, unique collection, champion XP, ascensions, awakening and account levels 10–100. Active, Ready and Completed views plus categories keep the page manageable. Small batches load more on demand.
 
@@ -33,3 +33,11 @@ Today's Path needs two real wins, 150 Gems earned today and one summon. Its once
 Six source profile portraits, ten faction emblems and three owned-team slots are integrated. Saved teams change the next encounter only. No equipment, gear slots, forging, or set bonuses are added. See [the reuse audit](REUSE-AUDIT.md) for source mapping and exclusions.
 
 All 135 hero IDs and the 20 existing tactical guides are retained. No new tactical guides are created. Current ascension, awakening, battle rules, animation speed and viewport layout remain intact. Economy values are an initial balance pass to playtest and tune.
+
+## Quest page refresh · v0.38
+
+The 60-quest chronicle adds 17 one-time milestones: Hard stages 10/15; Nightmare stages 5/10/15; 25/75 campaign victories including replays; 60 dungeon wins; 50 Arena wins; 25 event wins; 200 summons; 120/160 distinct champions; 75,000 total champion XP; 15/30 ascensions; and five Limit Breaks. Existing lifetime progress drives these objectives, and all rewards can be claimed only once.
+
+Nine original category illustrations are shared across compact 58–68 px thumbnails: campaign, dungeons, Arena, events, collection, summoning, training, ascension and Limit Breaks. The atlas is a single cached WebP. Category filters combine with Active, Ready and Completed, with ready rewards sorted first and Show more for longer lists. The page has a compact summary and two columns on desktop, one on phones.
+
+Validation: `npm run check` and `CHROMIUM_PATH=/usr/bin/chromium npm run test:quests`. Native checks exercise every new milestone and repeat-claim rejection. Browser coverage includes claiming a new reward, reload persistence, category/status combinations, empty states, pagination, thumbnail and banner dimensions, and 320/390/760/1440 px layouts without overflow or missing assets.
