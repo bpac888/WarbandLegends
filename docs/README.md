@@ -28,6 +28,7 @@
 
 ## Design and reference
 
+- [Tomes of Power](TOMES.md) — Premium item previews and planned effects.
 - [Game blueprint](GAME-BLUEPRINT.md)
 - [Design direction](DESIGN-DIRECTION.md)
 - [Asset reuse audit](REUSE-AUDIT.md) and [artwork provenance](../RIGHTS.md)

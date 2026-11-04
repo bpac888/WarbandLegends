@@ -20,6 +20,7 @@ if(sha(roster.slice(0,latest.originalCount))!==latest.originalRecordsSha256||sha
 if(roster.length!==latest.totalCount||new Set(roster.map(c=>c.id)).size!==latest.totalCount||JSON.stringify(roster.slice(latest.originalCount).map(c=>c.id))!==JSON.stringify(latest.addedChampionIds))throw Error('Roster identity check failed');
 const originalPortraits=[];for(const c of roster.slice(0,latest.originalCount))originalPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(originalPortraits)!==latest.originalPortraitsSha256)throw Error('An existing portrait changed');
+if((await stat('assets/tomes/power.webp')).size<10000)throw Error('Missing Tome of Power artwork');
 if((await stat('assets/quests/categories.webp')).size<10000)throw Error('Missing quest category artwork');
 if((await stat('assets/factions/astral_concord.webp')).size<1000)throw Error('Missing Astral Concord emblem');
 for(const id of ['colosseum-phone','colosseum-wide',...ARENA_RIVALS.map(r=>r.preset_id)])if((await stat('assets/arena/'+id+'.webp')).size<100000)throw Error('Missing Arena artwork: '+id);

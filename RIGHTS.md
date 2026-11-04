@@ -75,3 +75,7 @@ Fifteen original character illustrations were generated for this expansion using
 ## Quest category illustrations
 
 Nine original fantasy illustrations were generated as a single 3 × 3 square atlas using OpenAI image generation in November 2026. The atlas is encoded as WebP and shown as small category thumbnails; no existing champion artwork is changed.
+
+## Tomes of Power
+
+Twelve original Tome of Power illustrations were created using OpenAI image generation in November 2026 as a three-column, four-row atlas. The native artwork is encoded as quality-94 WebP and displayed as small item thumbnails. It includes two universal experience tomes and Lesser/Greater variants for all five elements.
