@@ -62,6 +62,12 @@ Collected-only teams and level-1 heroes are the default. Enable open-roster play
 
 The current phone version is hosted on [ChatGPT Sites](https://legends-runes-boris.givingjoy7.chatgpt.site). GitHub and Sites have separate source repositories. Keep game changes in this repository and publish the matching update to the existing Site. A GitHub push alone does not update that Site. Browser-local saves belong to the browser and site address.
 
+### GitHub Pages test hosting
+
+The workflow `.github/workflows/pages.yml` tests and builds the game, uploads `dist/`, and deploys it on pushes to `main` or manual dispatch. In this repository's Settings → Pages, select **GitHub Actions** as the build source once. The deployment job reports the live URL after successful completion. Changes pushed to `main` then update the test site automatically.
+
+Game progress is stored in the browser for each site address. A GitHub Pages test site has separate saves from the existing ChatGPT Site; export a backup before transferring progress.
+
 ### Optional Vercel hosting
 
 Create a **new Vercel project** importing `bpac888/WarbandLegends`. The old prototype is the separate `bpac888/draft1` repository.
