@@ -133,3 +133,15 @@ body.menu-theme .game-page.page-shop .material-offer>h3{font-size:24px}
 
 body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>.eyebrow,
 body.menu-theme .game-page.page-shop .section-heading :is(.eyebrow,p){color:#241d27}
+
+/* Compact shop cards: content-sized descriptions rather than expanding tracks. */
+body.menu-theme .game-page.page-shop .material-offer{grid-template-rows:132px auto auto auto auto auto;align-content:start;gap:9px}
+body.menu-theme .game-page.page-shop .material-offer>h3{min-height:0}
+body.menu-theme .game-page.page-shop .material-offer>p{min-height:0;margin:0}
+body.menu-theme .game-page.page-shop .material-offer>small{margin:0;padding-top:7px}
+body.menu-theme .game-page.page-shop .material-grid{align-items:start}
+body.menu-theme .game-page.page-shop .gem-offer{gap:9px;align-self:start}
+body.menu-theme .game-page.page-shop .gem-offer>p{min-height:0;margin:0}
+body.menu-theme .game-page.page-shop .gem-offer>p+.button{margin-top:0}
+body.menu-theme .game-page.page-shop .gem-shop .section-heading{padding-bottom:10px;margin-bottom:12px}
+@media(max-width:600px){body.menu-theme .game-page.page-shop .material-offer{grid-template-rows:104px auto auto auto auto auto;gap:8px}}
