@@ -1,0 +1,759 @@
+{
+  "version": 7,
+  "originalCount": 215,
+  "totalCount": 233,
+  "brief": "Aerie Court founding roster; 2 Common, 7 Rare, 8 Legendary, 1 Mythical; 10 Attack, 4 Defense, 4 Support.",
+  "champions": [
+    {
+      "id": "aerie_finch",
+      "name": "Tivren, Gilded Scout",
+      "title": "Gilded Scout",
+      "faction": "aerie_court",
+      "species": "goldfinch",
+      "artKey": "finch",
+      "color": "yellow",
+      "rarity": "common",
+      "role": "attack",
+      "manaSpeed": "average",
+      "ability_name": "Sunseed Arrow",
+      "stats": {
+        "atk": 511,
+        "def": 406,
+        "hp": 719
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.85,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        }
+      ],
+      "lore": "A young goldfinch pathfinder carries the court\u2019s messages through thunderheads that swallow larger wings.",
+      "gap": "Founding goldfinch attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_pigeon",
+      "name": "Dovessa, Rampart Keeper",
+      "title": "Rampart Keeper",
+      "faction": "aerie_court",
+      "species": "rock pigeon",
+      "artKey": "pigeon",
+      "color": "blue",
+      "rarity": "common",
+      "role": "defense",
+      "manaSpeed": "average",
+      "ability_name": "Hearthwing Vigil",
+      "stats": {
+        "atk": 382,
+        "def": 538,
+        "hp": 934
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "lore": "A pigeon militia keeper whose iridescent collar is the only finery she permits on the city walls.",
+      "gap": "Founding rock pigeon defense; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_flamingo",
+      "name": "Rosavelle, Coral Cantor",
+      "title": "Coral Cantor",
+      "faction": "aerie_court",
+      "species": "flamingo",
+      "artKey": "flamingo",
+      "color": "red",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "ability_name": "Rosewater Refrain",
+      "stats": {
+        "atk": 587,
+        "def": 617,
+        "hp": 1131
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.3,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "A flamingo cantor gathers mountain spring water to cleanse the burns left by lightning on returning scouts.",
+      "gap": "Founding flamingo support; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_toucan",
+      "name": "Tocaren, Canopy Duelist",
+      "title": "Canopy Duelist",
+      "faction": "aerie_court",
+      "species": "toucan",
+      "artKey": "toucan",
+      "color": "green",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "ability_name": "Verdant Beakblade",
+      "stats": {
+        "atk": 676,
+        "def": 552,
+        "hp": 1005
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.25,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "A toucan duelist guards the hanging gardens, balancing his enormous bright bill with impossibly precise footwork.",
+      "gap": "Founding toucan attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_ibis",
+      "name": "Ibsareth, Floodscript Keeper",
+      "title": "Floodscript Keeper",
+      "faction": "aerie_court",
+      "species": "ibis",
+      "artKey": "ibis",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "fast",
+      "ability_name": "Ink of Renewal",
+      "stats": {
+        "atk": 579,
+        "def": 610,
+        "hp": 1116
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.32,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "ally"
+            }
+          ]
+        }
+      ],
+      "lore": "An ibis archivist writes protective floodscript in blue light, returning a wounded ally to the fight.",
+      "gap": "Founding ibis support; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_swift",
+      "name": "Cirrivel, Gale Courier",
+      "title": "Gale Courier",
+      "faction": "aerie_court",
+      "species": "swift",
+      "artKey": "swift",
+      "color": "yellow",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "very_fast",
+      "ability_name": "Crosswind Needle",
+      "stats": {
+        "atk": 692,
+        "def": 566,
+        "hp": 1035
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "very_fast",
+          "tiles": 6.5,
+          "target": "enemy",
+          "damage": 1.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        }
+      ],
+      "lore": "A swift courier turns dives into needle strikes; speed wins her battles, not brute force.",
+      "gap": "Founding swift attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_vulture",
+      "name": "Ossavik, Carrion Judge",
+      "title": "Carrion Judge",
+      "faction": "aerie_court",
+      "species": "bearded vulture",
+      "artKey": "vulture",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "ability_name": "Last Ration",
+      "stats": {
+        "atk": 676,
+        "def": 552,
+        "hp": 1005
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 3.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "A bearded vulture executioner grants no comfort to those who prey on the court\u2019s weakest roosts.",
+      "gap": "Founding bearded vulture attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_heron",
+      "name": "Ardoven, Stillwater Warden",
+      "title": "Stillwater Warden",
+      "faction": "aerie_court",
+      "species": "grey heron",
+      "artKey": "heron",
+      "color": "green",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "average",
+      "ability_name": "Reedwall Shelter",
+      "stats": {
+        "atk": 542,
+        "def": 689,
+        "hp": 1199
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "lore": "A heron warden stands motionless at the mountain reservoir until the exact instant his halberd must move.",
+      "gap": "Founding grey heron defense; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_raven",
+      "name": "Corveth, Bellshadow Huntress",
+      "title": "Bellshadow Huntress",
+      "faction": "aerie_court",
+      "species": "raven",
+      "artKey": "raven",
+      "color": "purple",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "ability_name": "Silent Bell",
+      "stats": {
+        "atk": 692,
+        "def": 566,
+        "hp": 1035
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "A raven huntress sounds no warning when she severs the charms protecting an intruder.",
+      "gap": "Founding raven attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_avaroc",
+      "name": "Avaroc, Sunspire Regent",
+      "title": "Sunspire Regent",
+      "faction": "aerie_court",
+      "species": "eagle",
+      "artKey": "avaroc",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "ability_name": "Sovereign Talon",
+      "stats": {
+        "atk": 812,
+        "def": 673,
+        "hp": 1305
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "An eagle regent bears the sunstone spear as a promise that the high nests will never rule the low by hunger.",
+      "gap": "Founding eagle attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_parrot",
+      "name": "Macalisse, Scarlet Herald",
+      "title": "Scarlet Herald",
+      "faction": "aerie_court",
+      "species": "scarlet macaw",
+      "artKey": "parrot",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "fast",
+      "ability_name": "Banner of Many Voices",
+      "stats": {
+        "atk": 714,
+        "def": 736,
+        "hp": 1425
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "A scarlet macaw herald carries every roost\u2019s voice to the high council, and every soldier\u2019s courage back to the field.",
+      "gap": "Founding scarlet macaw support; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_pterodactyl",
+      "name": "Pterovar, Ashcrest Ancestor",
+      "title": "Ashcrest Ancestor",
+      "faction": "aerie_court",
+      "species": "pterodactyl",
+      "artKey": "pterodactyl",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "ability_name": "Cinderwing Descent",
+      "stats": {
+        "atk": 828,
+        "def": 687,
+        "hp": 1335
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "lore": "The ancient pterosaur lord remembers a sky without towers and lends that terrible memory to the court\u2019s defense.",
+      "gap": "Founding pterodactyl attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_twin",
+      "name": "Duovrax, Divided Vigil",
+      "title": "Divided Vigil",
+      "faction": "aerie_court",
+      "species": "two-headed owl and raven",
+      "artKey": "twin",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "slow",
+      "ability_name": "Dusk and Dawn Watch",
+      "stats": {
+        "atk": 652,
+        "def": 813,
+        "hp": 1525
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "lore": "One owl head watches the gates while one raven head counts the living; neither has ever been caught asleep.",
+      "gap": "Founding two-headed owl and raven defense; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_owl",
+      "name": "Tyssara, Moonvault Oracle",
+      "title": "Moonvault Oracle",
+      "faction": "aerie_court",
+      "species": "barn owl",
+      "artKey": "owl",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "ability_name": "Lantern of Quiet Skies",
+      "stats": {
+        "atk": 714,
+        "def": 736,
+        "hp": 1425
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.36,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "heal",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "A barn owl oracle lights the moonvault for those too injured to fly, asking no offering beyond their return.",
+      "gap": "Founding barn owl support; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_kingfisher",
+      "name": "Rudavain, Torrent Lancer",
+      "title": "Torrent Lancer",
+      "faction": "aerie_court",
+      "species": "ruddy kingfisher",
+      "artKey": "kingfisher",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "ability_name": "Waterfall Impale",
+      "stats": {
+        "atk": 828,
+        "def": 687,
+        "hp": 1335
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "lore": "A ruddy kingfisher lancer drops through waterfall spray, finding the single weakness in a shield wall.",
+      "gap": "Founding ruddy kingfisher attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_hornbill",
+      "name": "Bucorath, Canopy Castellan",
+      "title": "Canopy Castellan",
+      "faction": "aerie_court",
+      "species": "great hornbill",
+      "artKey": "hornbill",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "ability_name": "Casque of the Citadel",
+      "stats": {
+        "atk": 652,
+        "def": 813,
+        "hp": 1525
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "A hornbill castellan wears the canopy\u2019s weight in bronze, sheltering every smaller bird beneath his shield.",
+      "gap": "Founding great hornbill defense; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_secretary",
+      "name": "Sagivra, Quillblade Marshal",
+      "title": "Quillblade Marshal",
+      "faction": "aerie_court",
+      "species": "secretarybird",
+      "artKey": "secretary",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "ability_name": "Seven-Quill Cut",
+      "stats": {
+        "atk": 820,
+        "def": 680,
+        "hp": 1320
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "A secretarybird marshal learned to fight the snakes beneath the sky bridges before she learned the court\u2019s ceremonies.",
+      "gap": "Founding secretarybird attack; role/rarity median stats with a bounded existing-effect kit."
+    },
+    {
+      "id": "aerie_hybrid",
+      "name": "Trivorath, Threefold Sovereign",
+      "title": "Threefold Sovereign",
+      "faction": "aerie_court",
+      "species": "three-headed eagle lion serpent hybrid",
+      "artKey": "hybrid",
+      "color": "purple",
+      "rarity": "mythical",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "ability_name": "Concord of Fang and Feather",
+      "stats": {
+        "atk": 924,
+        "def": 765,
+        "hp": 1475
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.15,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 2,
+              "scope": "enemies"
+            },
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "lore": "An eagle sees the storm, a lion commands its fury, and a serpent remembers its poison. Three wills share one sovereign body, bound by an oath to protect every roost.",
+      "gap": "Founding three-headed eagle lion serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
+      "passive": {
+        "id": "threefold_vigil",
+        "name": "Threefold Vigil",
+        "kind": "immune_effect",
+        "immune": [
+          "poison"
+        ],
+        "desc": "Immune to Poison."
+      }
+    }
+  ]
+}

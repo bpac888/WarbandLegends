@@ -11185,5 +11185,845 @@
       ]
     },
     "ability_desc": "Deal 190% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "aerie_finch",
+    "name": "Tivren, Gilded Scout",
+    "title": "Gilded Scout",
+    "rarity": "common",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 511,
+    "def": 406,
+    "hp": 719,
+    "ability_name": "Sunseed Arrow",
+    "lore": "A young goldfinch pathfinder carries the court’s messages through thunderheads that swallow larger wings.",
+    "image_url": "/assets/champions/aerie_finch.webp",
+    "id": "aerie_finch",
+    "color": "yellow",
+    "source_image": "assets/champions/aerie_finch.webp",
+    "portrait": "assets/champions/aerie_finch.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Sunseed Arrow",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.85,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        }
+      ]
+    },
+    "ability_desc": "Deal 185% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "aerie_pigeon",
+    "name": "Dovessa, Rampart Keeper",
+    "title": "Rampart Keeper",
+    "rarity": "common",
+    "faction": "aerie_court",
+    "role": "defense",
+    "atk": 382,
+    "def": 538,
+    "hp": 934,
+    "ability_name": "Hearthwing Vigil",
+    "lore": "A pigeon militia keeper whose iridescent collar is the only finery she permits on the city walls.",
+    "image_url": "/assets/champions/aerie_pigeon.webp",
+    "id": "aerie_pigeon",
+    "color": "blue",
+    "source_image": "assets/champions/aerie_pigeon.webp",
+    "portrait": "assets/champions/aerie_pigeon.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Hearthwing Vigil",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Empower your warband with the effects below."
+  },
+  {
+    "template_id": "aerie_flamingo",
+    "name": "Rosavelle, Coral Cantor",
+    "title": "Coral Cantor",
+    "rarity": "rare",
+    "faction": "aerie_court",
+    "role": "support",
+    "atk": 587,
+    "def": 617,
+    "hp": 1131,
+    "ability_name": "Rosewater Refrain",
+    "lore": "A flamingo cantor gathers mountain spring water to cleanse the burns left by lightning on returning scouts.",
+    "image_url": "/assets/champions/aerie_flamingo.webp",
+    "id": "aerie_flamingo",
+    "color": "red",
+    "source_image": "assets/champions/aerie_flamingo.webp",
+    "portrait": "assets/champions/aerie_flamingo.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Rosewater Refrain",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.3,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 30% max HP to all living allies."
+  },
+  {
+    "template_id": "aerie_toucan",
+    "name": "Tocaren, Canopy Duelist",
+    "title": "Canopy Duelist",
+    "rarity": "rare",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 676,
+    "def": 552,
+    "hp": 1005,
+    "ability_name": "Verdant Beakblade",
+    "lore": "A toucan duelist guards the hanging gardens, balancing his enormous bright bill with impossibly precise footwork.",
+    "image_url": "/assets/champions/aerie_toucan.webp",
+    "id": "aerie_toucan",
+    "color": "green",
+    "source_image": "assets/champions/aerie_toucan.webp",
+    "portrait": "assets/champions/aerie_toucan.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Verdant Beakblade",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.25,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 225% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "aerie_ibis",
+    "name": "Ibsareth, Floodscript Keeper",
+    "title": "Floodscript Keeper",
+    "rarity": "rare",
+    "faction": "aerie_court",
+    "role": "support",
+    "atk": 579,
+    "def": 610,
+    "hp": 1116,
+    "ability_name": "Ink of Renewal",
+    "lore": "An ibis archivist writes protective floodscript in blue light, returning a wounded ally to the fight.",
+    "image_url": "/assets/champions/aerie_ibis.webp",
+    "id": "aerie_ibis",
+    "color": "blue",
+    "source_image": "assets/champions/aerie_ibis.webp",
+    "portrait": "assets/champions/aerie_ibis.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Ink of Renewal",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.32,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "ally"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 32% max HP to one living ally."
+  },
+  {
+    "template_id": "aerie_swift",
+    "name": "Cirrivel, Gale Courier",
+    "title": "Gale Courier",
+    "rarity": "rare",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 692,
+    "def": 566,
+    "hp": 1035,
+    "ability_name": "Crosswind Needle",
+    "lore": "A swift courier turns dives into needle strikes; speed wins her battles, not brute force.",
+    "image_url": "/assets/champions/aerie_swift.webp",
+    "id": "aerie_swift",
+    "color": "yellow",
+    "source_image": "assets/champions/aerie_swift.webp",
+    "portrait": "assets/champions/aerie_swift.webp",
+    "passive": null,
+    "manaSpeed": "very_fast",
+    "special": {
+      "name": "Crosswind Needle",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "very_fast",
+          "tiles": 6.5,
+          "target": "enemy",
+          "damage": 1.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        }
+      ]
+    },
+    "ability_desc": "Deal 155% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "aerie_vulture",
+    "name": "Ossavik, Carrion Judge",
+    "title": "Carrion Judge",
+    "rarity": "rare",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 676,
+    "def": 552,
+    "hp": 1005,
+    "ability_name": "Last Ration",
+    "lore": "A bearded vulture executioner grants no comfort to those who prey on the court’s weakest roosts.",
+    "image_url": "/assets/champions/aerie_vulture.webp",
+    "id": "aerie_vulture",
+    "color": "purple",
+    "source_image": "assets/champions/aerie_vulture.webp",
+    "portrait": "assets/champions/aerie_vulture.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Last Ration",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 3.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 305% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "aerie_heron",
+    "name": "Ardoven, Stillwater Warden",
+    "title": "Stillwater Warden",
+    "rarity": "rare",
+    "faction": "aerie_court",
+    "role": "defense",
+    "atk": 542,
+    "def": 689,
+    "hp": 1199,
+    "ability_name": "Reedwall Shelter",
+    "lore": "A heron warden stands motionless at the mountain reservoir until the exact instant his halberd must move.",
+    "image_url": "/assets/champions/aerie_heron.webp",
+    "id": "aerie_heron",
+    "color": "green",
+    "source_image": "assets/champions/aerie_heron.webp",
+    "portrait": "assets/champions/aerie_heron.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Reedwall Shelter",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Empower your warband with the effects below."
+  },
+  {
+    "template_id": "aerie_raven",
+    "name": "Corveth, Bellshadow Huntress",
+    "title": "Bellshadow Huntress",
+    "rarity": "rare",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 692,
+    "def": 566,
+    "hp": 1035,
+    "ability_name": "Silent Bell",
+    "lore": "A raven huntress sounds no warning when she severs the charms protecting an intruder.",
+    "image_url": "/assets/champions/aerie_raven.webp",
+    "id": "aerie_raven",
+    "color": "purple",
+    "source_image": "assets/champions/aerie_raven.webp",
+    "portrait": "assets/champions/aerie_raven.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Silent Bell",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 210% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "aerie_avaroc",
+    "name": "Avaroc, Sunspire Regent",
+    "title": "Sunspire Regent",
+    "rarity": "legendary",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 812,
+    "def": 673,
+    "hp": 1305,
+    "ability_name": "Sovereign Talon",
+    "lore": "An eagle regent bears the sunstone spear as a promise that the high nests will never rule the low by hunger.",
+    "image_url": "/assets/champions/aerie_avaroc.webp",
+    "id": "aerie_avaroc",
+    "color": "yellow",
+    "source_image": "assets/champions/aerie_avaroc.webp",
+    "portrait": "assets/champions/aerie_avaroc.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Sovereign Talon",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 280% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "aerie_parrot",
+    "name": "Macalisse, Scarlet Herald",
+    "title": "Scarlet Herald",
+    "rarity": "legendary",
+    "faction": "aerie_court",
+    "role": "support",
+    "atk": 714,
+    "def": 736,
+    "hp": 1425,
+    "ability_name": "Banner of Many Voices",
+    "lore": "A scarlet macaw herald carries every roost’s voice to the high council, and every soldier’s courage back to the field.",
+    "image_url": "/assets/champions/aerie_parrot.webp",
+    "id": "aerie_parrot",
+    "color": "red",
+    "source_image": "assets/champions/aerie_parrot.webp",
+    "portrait": "assets/champions/aerie_parrot.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Banner of Many Voices",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Empower your warband with the effects below."
+  },
+  {
+    "template_id": "aerie_pterodactyl",
+    "name": "Pterovar, Ashcrest Ancestor",
+    "title": "Ashcrest Ancestor",
+    "rarity": "legendary",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 828,
+    "def": 687,
+    "hp": 1335,
+    "ability_name": "Cinderwing Descent",
+    "lore": "The ancient pterosaur lord remembers a sky without towers and lends that terrible memory to the court’s defense.",
+    "image_url": "/assets/champions/aerie_pterodactyl.webp",
+    "id": "aerie_pterodactyl",
+    "color": "red",
+    "source_image": "assets/champions/aerie_pterodactyl.webp",
+    "portrait": "assets/champions/aerie_pterodactyl.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Cinderwing Descent",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 205% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "aerie_twin",
+    "name": "Duovrax, Divided Vigil",
+    "title": "Divided Vigil",
+    "rarity": "legendary",
+    "faction": "aerie_court",
+    "role": "defense",
+    "atk": 652,
+    "def": 813,
+    "hp": 1525,
+    "ability_name": "Dusk and Dawn Watch",
+    "lore": "One owl head watches the gates while one raven head counts the living; neither has ever been caught asleep.",
+    "image_url": "/assets/champions/aerie_twin.webp",
+    "id": "aerie_twin",
+    "color": "purple",
+    "source_image": "assets/champions/aerie_twin.webp",
+    "portrait": "assets/champions/aerie_twin.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Dusk and Dawn Watch",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Empower your warband with the effects below."
+  },
+  {
+    "template_id": "aerie_owl",
+    "name": "Tyssara, Moonvault Oracle",
+    "title": "Moonvault Oracle",
+    "rarity": "legendary",
+    "faction": "aerie_court",
+    "role": "support",
+    "atk": 714,
+    "def": 736,
+    "hp": 1425,
+    "ability_name": "Lantern of Quiet Skies",
+    "lore": "A barn owl oracle lights the moonvault for those too injured to fly, asking no offering beyond their return.",
+    "image_url": "/assets/champions/aerie_owl.webp",
+    "id": "aerie_owl",
+    "color": "blue",
+    "source_image": "assets/champions/aerie_owl.webp",
+    "portrait": "assets/champions/aerie_owl.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Lantern of Quiet Skies",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.36,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "heal",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 36% max HP to all living allies."
+  },
+  {
+    "template_id": "aerie_kingfisher",
+    "name": "Rudavain, Torrent Lancer",
+    "title": "Torrent Lancer",
+    "rarity": "legendary",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 828,
+    "def": 687,
+    "hp": 1335,
+    "ability_name": "Waterfall Impale",
+    "lore": "A ruddy kingfisher lancer drops through waterfall spray, finding the single weakness in a shield wall.",
+    "image_url": "/assets/champions/aerie_kingfisher.webp",
+    "id": "aerie_kingfisher",
+    "color": "red",
+    "source_image": "assets/champions/aerie_kingfisher.webp",
+    "portrait": "assets/champions/aerie_kingfisher.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Waterfall Impale",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ]
+    },
+    "ability_desc": "Deal 255% ATK damage to selected enemy, ignoring 25% of DEF."
+  },
+  {
+    "template_id": "aerie_hornbill",
+    "name": "Bucorath, Canopy Castellan",
+    "title": "Canopy Castellan",
+    "rarity": "legendary",
+    "faction": "aerie_court",
+    "role": "defense",
+    "atk": 652,
+    "def": 813,
+    "hp": 1525,
+    "ability_name": "Casque of the Citadel",
+    "lore": "A hornbill castellan wears the canopy’s weight in bronze, sheltering every smaller bird beneath his shield.",
+    "image_url": "/assets/champions/aerie_hornbill.webp",
+    "id": "aerie_hornbill",
+    "color": "green",
+    "source_image": "assets/champions/aerie_hornbill.webp",
+    "portrait": "assets/champions/aerie_hornbill.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Casque of the Citadel",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Empower your warband with the effects below."
+  },
+  {
+    "template_id": "aerie_secretary",
+    "name": "Sagivra, Quillblade Marshal",
+    "title": "Quillblade Marshal",
+    "rarity": "legendary",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 820,
+    "def": 680,
+    "hp": 1320,
+    "ability_name": "Seven-Quill Cut",
+    "lore": "A secretarybird marshal learned to fight the snakes beneath the sky bridges before she learned the court’s ceremonies.",
+    "image_url": "/assets/champions/aerie_secretary.webp",
+    "id": "aerie_secretary",
+    "color": "yellow",
+    "source_image": "assets/champions/aerie_secretary.webp",
+    "portrait": "assets/champions/aerie_secretary.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Seven-Quill Cut",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 245% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "aerie_hybrid",
+    "name": "Trivorath, Threefold Sovereign",
+    "title": "Threefold Sovereign",
+    "rarity": "mythical",
+    "faction": "aerie_court",
+    "role": "attack",
+    "atk": 924,
+    "def": 765,
+    "hp": 1475,
+    "ability_name": "Concord of Fang and Feather",
+    "lore": "An eagle sees the storm, a lion commands its fury, and a serpent remembers its poison. Three wills share one sovereign body, bound by an oath to protect every roost.",
+    "image_url": "/assets/champions/aerie_hybrid.webp",
+    "id": "aerie_hybrid",
+    "color": "purple",
+    "source_image": "assets/champions/aerie_hybrid.webp",
+    "portrait": "assets/champions/aerie_hybrid.webp",
+    "passive": {
+      "id": "threefold_vigil",
+      "name": "Threefold Vigil",
+      "kind": "immune_effect",
+      "immune": [
+        "poison"
+      ],
+      "desc": "Immune to Poison."
+    },
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Concord of Fang and Feather",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.15,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 2,
+              "scope": "enemies"
+            },
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 215% ATK damage to all living enemies."
   }
 ]

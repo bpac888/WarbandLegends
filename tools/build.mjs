@@ -13,16 +13,17 @@ if(createHash('sha256').update(JSON.stringify(beforeRarityRevision(roster.slice(
 const sourceRoster=JSON.parse(await readFile('data/source-champions.json','utf8'));
 if(createHash('sha256').update(JSON.stringify(beforeRarityRevision(sourceRoster.slice(0,expansion.originalCount),{source:true}))).digest('hex')!==expansion.originalSourceRecordsSha256)throw Error('Existing source records changed');
 const milestone200=JSON.parse(await readFile('data/roster-expansion-5.json','utf8'));
-const latest=JSON.parse(await readFile('data/roster-expansion-6.json','utf8'));
+const latest=JSON.parse(await readFile('data/roster-expansion-7.json','utf8'));
 const sha=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 if(sha(roster.slice(0,milestone200.originalCount))!==milestone200.originalRecordsSha256||sha(sourceRoster.slice(0,milestone200.originalCount))!==milestone200.originalSourceRecordsSha256)throw Error('The 189-character baseline changed');
-if(sha(roster.slice(0,latest.originalCount))!==latest.originalRecordsSha256||sha(sourceRoster.slice(0,latest.originalCount))!==latest.originalSourceRecordsSha256)throw Error('The 200-character baseline changed');
+if(sha(roster.slice(0,latest.originalCount))!==latest.originalRecordsSha256||sha(sourceRoster.slice(0,latest.originalCount))!==latest.originalSourceRecordsSha256)throw Error('The 215-character baseline changed');
 if(roster.length!==latest.totalCount||new Set(roster.map(c=>c.id)).size!==latest.totalCount||JSON.stringify(roster.slice(latest.originalCount).map(c=>c.id))!==JSON.stringify(latest.addedChampionIds))throw Error('Roster identity check failed');
 const originalPortraits=[];for(const c of roster.slice(0,latest.originalCount))originalPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(originalPortraits)!==latest.originalPortraitsSha256)throw Error('An existing portrait changed');
 if((await stat('assets/items/loot-tickets.webp')).size<10000)throw Error('Missing Loot Ticket artwork');
 if((await stat('assets/tomes/power.webp')).size<10000)throw Error('Missing Tome of Power artwork');
 if((await stat('assets/quests/categories.webp')).size<10000)throw Error('Missing quest category artwork');
+if((await stat('assets/factions/aerie_court.svg')).size<500)throw Error('Missing Aerie Court emblem');
 if((await stat('assets/factions/astral_concord.webp')).size<1000)throw Error('Missing Astral Concord emblem');
 for(const id of ['colosseum-phone','colosseum-wide',...ARENA_RIVALS.map(r=>r.preset_id)])if((await stat('assets/arena/'+id+'.webp')).size<100000)throw Error('Missing Arena artwork: '+id);
 // Validate the current viewer and its non-WebGL fallback, including the unified panorama.

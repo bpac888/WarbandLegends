@@ -22,8 +22,8 @@ const setKit=(b,roster,index,special)=>{b.heroes[index].special=structuredClone(
 const ready=b=>{b.heroes[0].mana=b.heroes[0].manaMax;return b;};
 function enemyAilment(faction,count,ids){const {b,roster}=fixture(faction,count);b.enemies[0].special=kit(ids.map(id=>({id,turns:2,scope:'enemies'})),{aoe:true});roster.find(c=>c.id===b.enemies[0].id).special=structuredClone(b.enemies[0].special);b.enemies[0].manaMax=10;b.enemies[0].countdown=1;b.enemies[0].mana=b.enemies[0].manaMax-4;return {next:turn(b),roster};}
 
-test('all twelve factions select only the highest tier; 4/5 members cap at3 and two separate groups coexist',()=>{
- assert.equal(keys.length,12);
+test('all thirteen factions select only the highest tier; 4/5 members cap at3 and two separate groups coexist',()=>{
+ assert.equal(keys.length,13);
  for(const f of keys)for(const n of [1,2,3,4,5]){const {b,roster}=fixture(f,n);assert.deepEqual(b.heroes.map(h=>h.factionTier),Array.from({length:5},(_,i)=>i<n&&n>=2?Math.min(3,n):0));assert.ok(b.enemies.every(e=>e.factionTier===undefined));assert.ok(validateSave(b,roster),f+' '+n);}
  const {b,roster}=fixture('dragondynasty',3);for(let i=3;i<5;i++)roster.find(c=>c.id===b.heroes[i].id).faction='duneriders';const mixed=createBattle(roster,REFERENCE_TEAM,'ashen-gate',42);assert.deepEqual(mixed.heroes.map(h=>h.factionTier),[3,3,3,2,2]);assert.equal(mixed.heroes[0].atk,525);assert.equal(mixed.heroes[0].def,315);assert.equal(mixed.heroes[3].atk,500);assert.equal(mixed.heroes[3].def,315);
 });
@@ -84,7 +84,7 @@ test('new faction metadata and4-turn ailments round-trip; malformed faction stat
  const bad=fixture('frost',3);bad.b.heroes[0].effects.burn={turns:4,source:'enemy-0',appliedMove:0};assert.equal(validateSave(bad.b,bad.roster),false);
 });
 test('Guide and team summaries share all12 exact rules and display mixed active groups without applying both tiers',()=>{
- const {b}=fixture('astral_concord',3),html=factionTeamHTML(b.heroes);assert.match(html,/Astral Concord · 3\+/);assert.match(html,/25%/);assert.doesNotMatch(html,/15%/);const guide=factionGuideHTML();for(const f of Object.values(FACTION_BONUSES))assert.ok(guide.includes(f.name));assert.equal((guide.match(/<details>/g)||[]).length,12);assert.equal(factionGroups([]).length,0);
+ const {b}=fixture('astral_concord',3),html=factionTeamHTML(b.heroes);assert.match(html,/Astral Concord · 3\+/);assert.match(html,/25%/);assert.doesNotMatch(html,/15%/);const guide=factionGuideHTML();for(const f of Object.values(FACTION_BONUSES))assert.ok(guide.includes(f.name));assert.equal((guide.match(/<details>/g)||[]).length,13);assert.equal(factionGroups([]).length,0);
 });
 test('Auto uses the same faction-aware resolver and completes real battles with valid states',()=>{
  for(const f of ['astral_concord','chymera','umbra','nether']){const group=original.filter(c=>c.faction===f).slice(0,3).map(c=>c.id);const fillers=REFERENCE_TEAM.filter(id=>!group.includes(id)&&original.find(c=>c.id===id).faction!==f).slice(0,2);let b=createBattle(original,[...group,...fillers],'ashen-gate',117),steps=0;while(b.phase==='playing'&&steps++<140){const a=chooseAutoAction(b);assert.ok(a);const result=applyAutoAction(b,a);assert.ok(!result.error);b=result.state;assert.ok(validateSave(b,original),f);}assert.notEqual(b.phase,'playing',f+' stalled');}

@@ -1,93 +1,135 @@
-/* Brighter parchment, bronze and violet surfaces for the three utility pages. */
-body.menu-theme:is([data-menu-scene=quests],[data-menu-scene=inventory],[data-menu-scene=shop]){background:radial-gradient(ellipse at 0 0,#fff7d9 0,transparent 55%),radial-gradient(ellipse at 100% 35%,#e7ddf3 0,transparent 60%),linear-gradient(145deg,#f2e6d0,#eae4e8 65%,#e0e6ec);background-attachment:scroll;background-color:#eae4e8}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop){--page-ink:#392f40;--page-copy:#5c5260;--ui-ivory:#392f40;--ui-copy:#5c5260;--ui-muted:#746878;--ui-edge:#cdbda6;--ui-panel:linear-gradient(145deg,#fffdf6,#f5eddf);--ui-shadow:0 8px 22px #59443016,0 1px 3px #59443012;--legend-surface:linear-gradient(145deg,#fffdf6,#f5eddf);--legend-edge:#d5c4aa;color:var(--page-copy);color-scheme:light}
+/* Muted stone, aged parchment and bronze for the three utility pages. */
+body.menu-theme:is([data-menu-scene=quests],[data-menu-scene=inventory],[data-menu-scene=shop]){background:radial-gradient(ellipse at 0 0,#b49b7940,transparent 55%),radial-gradient(ellipse at 100% 35%,#a291b638,transparent 60%),linear-gradient(145deg,#8b8076,#7e7680 65%,#6e7180);background-attachment:scroll;background-color:#7e7680}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop){--page-ink:#2c2630;--page-copy:#39313b;--ui-ivory:#2c2630;--ui-copy:#39313b;--ui-muted:#504650;--ui-edge:#cdbda6;--ui-panel:linear-gradient(145deg,#bcb1a2,#aaa092);--ui-shadow:0 8px 22px #59443016,0 1px 3px #59443012;--legend-surface:linear-gradient(145deg,#bcb1a2,#aaa092);--legend-edge:#d5c4aa;color:var(--page-copy);color-scheme:light}
 body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :is(h1,h2,h3,h4){color:var(--page-ink);text-shadow:none}
 body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :is(p,small,label,.eyebrow){color:var(--page-copy);text-shadow:none}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .eyebrow{color:#8c6737}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :is(.materials-section,.material-tile,.material-offer,.gem-offer,.exchange-offers>article,.exchange-balances>span,.premium-offers>article,.inventory-card,.chronicle-card,.tome-offer){background:var(--legend-surface);border-color:#d3c1a6;box-shadow:var(--ui-shadow)}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button.outline{background:#fffcf5;border-color:#bca991;color:#604d43;box-shadow:0 2px 5px #63472f0a}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .eyebrow{color:#503518}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :where(.materials-section,.material-tile,.material-offer,.gem-offer,.exchange-offers>article,.exchange-balances>span,.premium-offers>article,.inventory-card,.chronicle-card,.tome-offer){background:var(--legend-surface);border-color:#d3c1a6;box-shadow:var(--ui-shadow)}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button.outline{background:#b1adb0;border-color:#bca991;color:#49372c;box-shadow:0 2px 5px #63472f0a}
 body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button.gold{background:linear-gradient(135deg,#9b6b2a,#765025);border-color:#885a24;color:#fff9e9;text-shadow:none;box-shadow:0 3px 8px #85612b26}
 body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button.gold .gem-amount{color:#fff9e9}
 body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button.gold .gem-amount small{color:#fff9e9}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button:disabled{opacity:1;background:#ece7e2;border-color:#d1c7c0;color:#756a72;box-shadow:none;text-shadow:none}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button:disabled .gem-amount,body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button:disabled .gem-amount small{color:#756a72}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .text-button{color:#76532e}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button:disabled{opacity:1;background:#a6a1a5;border-color:#d1c7c0;color:#5d515c;box-shadow:none;text-shadow:none}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button:disabled .gem-amount,body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .button:disabled .gem-amount small{color:#5d515c}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .text-button{color:#553b23}
 body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :is(button,select):focus-visible{outline:2px solid #78528c;outline-offset:3px}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) select{background:#fffaf1!important;border-color:#bfac94!important;color:#4e3e4e!important;opacity:1}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .gem-amount{color:#346589}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) select{background:#b1acad!important;border-color:#bfac94!important;color:#382b3b!important;opacity:1}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .gem-amount{color:#284c6a}
 /* Quest categories carry distinct accents rather than another large art panel. */
-body.menu-theme .game-page.page-quests .quest-banner{background:linear-gradient(115deg,#fff8e7,#f4e2c2 65%,#ecdce9);border-color:#c9a975;box-shadow:var(--ui-shadow)}
+body.menu-theme .game-page.page-quests .quest-banner{background:linear-gradient(115deg,#b1aba8,#aa9e92 65%,#a69aa9);border-color:#c9a975;box-shadow:var(--ui-shadow)}
 body.menu-theme .game-page.page-quests .quest-banner>div{background:none}
-body.menu-theme .game-page.page-quests .campaign-victory-bonus{background:#f1edf9;border-color:#cbc0d9;color:#5d4a72}
-body.menu-theme .game-page.page-quests .campaign-victory-bonus>b{color:#72502e}
-body.menu-theme .game-page.page-quests .quest-status{background:#e8dfed;border-color:#c9b9cf;box-shadow:none}
-body.menu-theme .game-page.page-quests .quest-status>button{color:#67576d}
+body.menu-theme .game-page.page-quests .campaign-victory-bonus{background:#a9a4b2;border-color:#cbc0d9;color:#493457}
+body.menu-theme .game-page.page-quests .campaign-victory-bonus>b{color:#583a22}
+body.menu-theme .game-page.page-quests .quest-status{background:#a49cab;border-color:#c9b9cf;box-shadow:none}
+body.menu-theme .game-page.page-quests .quest-status>button{color:#48394e}
 body.menu-theme .game-page.page-quests .quest-status>button.active{background:#74597e;border-color:#74597e;color:#fff7ed}
 body.menu-theme .game-page.page-quests .quest-status>button>b{background:#ffffff80;color:inherit}
 body.menu-theme .game-page.page-quests .quest-status>button.active>b{background:#ffffff24;color:#fff7ed}
-body.menu-theme .game-page.page-quests .quest-categories>button{background:#fffbf3;border-color:#cdbda8;color:#675241}
-body.menu-theme .game-page.page-quests .quest-categories>button.active{background:#ebd8b5;border-color:#a9804c;color:#5b3c24}
+body.menu-theme .game-page.page-quests .quest-categories>button{background:#b1acaf;border-color:#cdbda8;color:#493626}
+body.menu-theme .game-page.page-quests .quest-categories>button.active{background:#a5988b;border-color:#a9804c;color:#48301c}
 body.menu-theme .game-page.page-quests .chronicle-card{--quest-accent:#a88042;border-inline-start:4px solid var(--quest-accent)}
-body.menu-theme .game-page.page-quests .quest-category-campaign{--quest-accent:#b77744}
-body.menu-theme .game-page.page-quests .quest-category-dungeons{--quest-accent:#7f68a3}
-body.menu-theme .game-page.page-quests .quest-category-arena{--quest-accent:#5e7eae}
-body.menu-theme .game-page.page-quests .quest-category-events{--quest-accent:#ac607a}
-body.menu-theme .game-page.page-quests .quest-category-collection{--quest-accent:#ad8b37}
-body.menu-theme .game-page.page-quests .quest-category-growth{--quest-accent:#638c69}
-body.menu-theme .game-page.page-quests .chronicle-card.ready{background:linear-gradient(135deg,#fffdf3,#f9efd7);border-color:#c6a367;border-inline-start-color:var(--quest-accent);box-shadow:0 3px 16px #a87b2320}
+body.menu-theme .game-page.page-quests .quest-category-campaign{--quest-accent:#603b21}
+body.menu-theme .game-page.page-quests .quest-category-dungeons{--quest-accent:#513661}
+body.menu-theme .game-page.page-quests .quest-category-arena{--quest-accent:#304867}
+body.menu-theme .game-page.page-quests .quest-category-events{--quest-accent:#683047}
+body.menu-theme .game-page.page-quests .quest-category-collection{--quest-accent:#573e12}
+body.menu-theme .game-page.page-quests .quest-category-growth{--quest-accent:#304c34}
+body.menu-theme .game-page.page-quests .chronicle-card.ready{background:linear-gradient(135deg,#b1aeaf,#ada69e);border-color:#c6a367;border-inline-start-color:var(--quest-accent);box-shadow:0 3px 16px #a87b2320}
 body.menu-theme .game-page.page-quests .quest-meta>span{color:var(--quest-accent)}
-body.menu-theme .game-page.page-quests .quest-meta>b{color:#756476}
-body.menu-theme .game-page.page-quests .ready .quest-meta>b{color:#526d3e;background:#e8eedb;border:1px solid #b7c59e;padding:3px 6px;border-radius:6px}
-body.menu-theme .game-page.page-quests .claimed .quest-meta>b{color:#62715e}
+body.menu-theme .game-page.page-quests .quest-meta>b{color:#514253}
+body.menu-theme .game-page.page-quests .ready .quest-meta>b{color:#344e25;background:#a4a5a1;border:1px solid #b7c59e;padding:3px 6px;border-radius:6px}
+body.menu-theme .game-page.page-quests .claimed .quest-meta>b{color:#3c5035}
 body.menu-theme .game-page.page-quests .quest-thumbnail{border-color:#c6ad82;box-shadow:0 2px 5px #60452c19}
-body.menu-theme .game-page.page-quests .quest-progress{background:#e5ddd3;border-color:#d4c5af;box-shadow:inset 0 1px 2px #78613b15}
+body.menu-theme .game-page.page-quests .quest-progress{background:#a29b9c;border-color:#d4c5af;box-shadow:inset 0 1px 2px #78613b15}
 body.menu-theme .game-page.page-quests .quest-progress>i{background:linear-gradient(90deg,#a77a40,#d3ad67);box-shadow:none}
-body.menu-theme .game-page.page-quests .quest-reward-marks>span{background:#f4ece0;border-color:#dbccba;color:#68513c}
-body.menu-theme .game-page.page-quests .quest-reward-marks>.gem-amount{background:#e8eff7;border-color:#becfe2;color:#345d85}
-body.menu-theme .game-page.page-quests .quest-reward-marks .card-glyph{color:#8e714d}
+body.menu-theme .game-page.page-quests .quest-reward-marks>span{background:#aaa4a4;border-color:#dbccba;color:#493521}
+body.menu-theme .game-page.page-quests .quest-reward-marks>.gem-amount{background:#a4a6b1;border-color:#becfe2;color:#2c4b6b}
+body.menu-theme .game-page.page-quests .quest-reward-marks .card-glyph{color:#604628}
 /* Inventory resources have their own gentle color families. */
-body.menu-theme .game-page.page-inventory .inventory-card:nth-child(1){background:linear-gradient(135deg,#fff6d8,#f1dfad);border-color:#c6a461}
-body.menu-theme .game-page.page-inventory .inventory-card:nth-child(2){background:linear-gradient(135deg,#f1f7ff,#dce8f7);border-color:#aebfd4}
-body.menu-theme .game-page.page-inventory .inventory-card:nth-child(3){background:linear-gradient(135deg,#faf1ff,#e9dcf0);border-color:#bea6ce}
-body.menu-theme .game-page.page-inventory .inventory-card:nth-child(1) h2{color:#875f29}
-body.menu-theme .game-page.page-inventory .inventory-card:nth-child(2) h2{color:#40688f}
-body.menu-theme .game-page.page-inventory .inventory-card:nth-child(3) h2{color:#7a558c}
-body.menu-theme .game-page.page-inventory .material-tile{background:#fffdf8}
-body.menu-theme .game-page.page-inventory .material-tile b{color:#5d4b55}
-body.menu-theme .game-page.page-inventory .material-tile strong{color:#8b673c}
+body.menu-theme .game-page.page-inventory .inventory-card:nth-child(1){background:linear-gradient(135deg,#b1aa9f,#a99c86);border-color:#c6a461}
+body.menu-theme .game-page.page-inventory .inventory-card:nth-child(2){background:linear-gradient(135deg,#a9aab5,#9da1b1);border-color:#aebfd4}
+body.menu-theme .game-page.page-inventory .inventory-card:nth-child(3){background:linear-gradient(135deg,#aea7b5,#a49aad);border-color:#bea6ce}
+body.menu-theme .game-page.page-inventory .inventory-card:nth-child(1) h2{color:#624117}
+body.menu-theme .game-page.page-inventory .inventory-card:nth-child(2) h2{color:#34516f}
+body.menu-theme .game-page.page-inventory .inventory-card:nth-child(3) h2{color:#5b386d}
+body.menu-theme .game-page.page-inventory .material-tile{background:linear-gradient(145deg,#b8ad9d,#a89e91)}
+body.menu-theme .game-page.page-inventory .material-tile b{color:#40313b}
+body.menu-theme .game-page.page-inventory .material-tile strong{color:#62421e}
 /* Gold, token and Premium departments use different highlights. */
-body.menu-theme .game-page.page-shop .shop-tabs{background:#ebe2d4;border-color:#cbbb9e;box-shadow:inset 0 1px #fff9e7}
-body.menu-theme .game-page.page-shop .shop-tabs>button{color:#6e5948}
+body.menu-theme .game-page.page-shop .shop-tabs{background:#a59e9d;border-color:#cbbb9e;box-shadow:inset 0 1px #fff9e7}
+body.menu-theme .game-page.page-shop .shop-tabs>button{color:#493527}
 body.menu-theme .game-page.page-shop .shop-tabs>button.active{background:linear-gradient(135deg,#926e43,#785836);border-color:#926e43;color:#fff5e4;box-shadow:0 2px 5px #8c613c25}
-body.menu-theme .game-page.page-shop .materials-section{background:#f8f1e5;border-color:#d2bfa1}
-body.menu-theme .game-page.page-shop .material-offer{background:linear-gradient(145deg,#fffef9,#f2e8d6)}
-body.menu-theme .game-page.page-shop .material-offer:nth-child(3n+2){background:linear-gradient(145deg,#fffdfc,#eee6f2)}
-body.menu-theme .game-page.page-shop .material-offer:nth-child(3n){background:linear-gradient(145deg,#fcfdf9,#e9eedf)}
-body.menu-theme .game-page.page-shop .gem-offer{background:linear-gradient(140deg,#fff8e3,#f0dfb8);border-color:#c8aa71}
-body.menu-theme .game-page.page-shop .exchange-balances>span{background:#faf5ec;border-color:#d0bfa7}
-body.menu-theme .game-page.page-shop .exchange-balances b{color:#775936}
-body.menu-theme .game-page.page-shop .exchange-offers>article{background:linear-gradient(145deg,#fffdf5,#f3e8d4)}
-body.menu-theme .game-page.page-shop .exchange-offers>article:nth-child(2n){background:linear-gradient(145deg,#fffafd,#eee3f0);border-color:#cdb7d2}
-body.menu-theme .game-page.page-shop .exchange-offers .exchange-cost{color:#6f5673}
-body.menu-theme .game-page.page-shop .premium-banner{background:linear-gradient(115deg,#f5e6ff,#ead4ed 65%,#f3e2ba);border-color:#c4a5ca}
-body.menu-theme .game-page.page-shop .premium-banner h2{color:#65416e}
-body.menu-theme .game-page.page-shop .premium-offers>article{background:linear-gradient(145deg,#fffaff,#eddfef);border-color:#c9b2cf}
-body.menu-theme .game-page.page-shop .premium-offers .vip-offer{background:linear-gradient(135deg,#fff5df,#f1dfbe);border-color:#c6a369}
-body.menu-theme .game-page.page-shop .premium-amount{color:#795a31}
-body.menu-theme .game-page.page-shop .premium-bonus{background:#e5eddb;border-color:#b7c79e;color:#526f3c}
+body.menu-theme .game-page.page-shop .materials-section{background:#ada7a6;border-color:#d2bfa1}
+body.menu-theme .game-page.page-shop .material-offer{background:linear-gradient(145deg,#bcae9b,#ab9c8b)}
+body.menu-theme .game-page.page-shop .material-offer:nth-child(3n+2){background:linear-gradient(145deg,#b5a8b8,#a395a8)}
+body.menu-theme .game-page.page-shop .material-offer:nth-child(3n){background:linear-gradient(145deg,#afb29e,#9fa58f)}
+body.menu-theme .game-page.page-shop .gem-offer{background:linear-gradient(140deg,#b1aba5,#a89c8c);border-color:#c8aa71}
+body.menu-theme .game-page.page-shop .exchange-balances>span{background:#aea9aa;border-color:#d0bfa7}
+body.menu-theme .game-page.page-shop .exchange-balances b{color:#54391e}
+body.menu-theme .game-page.page-shop .exchange-offers>article{background:linear-gradient(145deg,#b1aeb0,#aaa19d)}
+body.menu-theme .game-page.page-shop .exchange-offers>article:nth-child(2n){background:linear-gradient(145deg,#b1acb4,#a79fad);border-color:#cdb7d2}
+body.menu-theme .game-page.page-shop .exchange-offers .exchange-cost{color:#503653}
+body.menu-theme .game-page.page-shop .premium-banner{background:linear-gradient(115deg,#aba0b5,#a596ab 65%,#aa9e8d);border-color:#c4a5ca}
+body.menu-theme .game-page.page-shop .premium-banner h2{color:#503056}
+body.menu-theme .game-page.page-shop .premium-offers>article{background:linear-gradient(145deg,#b1acb5,#a69cac);border-color:#c9b2cf}
+body.menu-theme .game-page.page-shop .premium-offers .vip-offer{background:linear-gradient(135deg,#b1a9a3,#a99c90);border-color:#c6a369}
+body.menu-theme .game-page.page-shop .premium-amount{color:#593b1e}
+body.menu-theme .game-page.page-shop .premium-bonus{background:#a2a4a1;border-color:#b7c79e;color:#344c24}
 body.menu-theme .game-page.page-shop .premium-total{border-color:#cfbca8}
 body.menu-theme .game-page.page-shop .tomes-preview{border-color:#cdb59b}
-body.menu-theme .game-page.page-shop .tome-offer{background:linear-gradient(145deg,#fffcf8,#efe4f1);border-color:#c4b3cc;border-top:3px solid #ad8cbb}
+body.menu-theme .game-page.page-shop .tome-offer{background:linear-gradient(145deg,#b1adb1,#a89fad);border-color:#c4b3cc;border-top:3px solid #ad8cbb}
 body.menu-theme .game-page.page-shop .tome-offer:not(.universal){border-top-color:rgba(var(--rgb),.65)}
-body.menu-theme .game-page.page-shop .tome-offer>strong{color:#896331}
-body.menu-theme .game-page.page-shop .tome-element{background:#fffcf5;border-color:#d7c6ad;color:#6c5872}
+body.menu-theme .game-page.page-shop .tome-offer>strong{color:#5f3f18}
+body.menu-theme .game-page.page-shop .tome-element{background:#b1adb0;border-color:#d7c6ad;color:#49344f}
 
-/* Keep the reward labels readable against paper, including the legacy XP rule. */
-body.menu-theme .game-page.page-quests .account-xp-reward{color:#4c6584!important}
+/* Reward labels retain contrast against the muted surfaces. */
+body.menu-theme .game-page.page-quests .account-xp-reward{color:#304a68!important}
 body.menu-theme .game-page.page-quests .chronicle-card{border-inline-start:4px solid var(--quest-accent)}
 
 /* Item art uses its original colors; light blending washes it out on parchment. */
 body.menu-theme .game-page:is(.page-inventory,.page-shop) img{mix-blend-mode:normal}
 body.menu-theme .game-page.page-inventory :is(.treasure-art,.material-tile>img){border-radius:12px}
 body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section{background:none;box-shadow:none}
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) option{background:#fffaf1;color:#4e3e4e}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) option{background:#b1acad;color:#382b3b}
+
+/* Restrained metalwork: inset corners and fine section rules, outside the copy. */
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop){--utility-rule:#68523a70}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :is(.quest-banner,.inventory-card,.premium-banner){position:relative;isolation:isolate}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :is(.quest-banner,.inventory-card,.premium-banner)::before{content:'';position:absolute;inset:7px;border:1px solid #6750373d;border-radius:10px;pointer-events:none;z-index:-1;background:linear-gradient(135deg,#80613d66 0 2px,transparent 2px) left top/14px 14px no-repeat,linear-gradient(315deg,#80613d66 0 2px,transparent 2px) right bottom/14px 14px no-repeat}
+body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section{background:transparent;box-shadow:none;border:0}
+body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2,
+body.menu-theme .game-page.page-shop .tomes-preview .section-heading{position:relative;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--utility-rule)}
+body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2::after,
+body.menu-theme .game-page.page-shop .tomes-preview .section-heading::after{content:'';position:absolute;left:0;bottom:-3px;width:5px;height:5px;background:#73542f;transform:rotate(45deg);box-shadow:0 0 0 3px #a79c8c}
+body.menu-theme .game-page.page-shop .gem-shop .section-heading{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--utility-rule)}
+body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>.eyebrow{display:block;margin:0 0 5px}
+body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2{margin-top:0;line-height:1.15}
+body.menu-theme .game-page.page-shop .section-heading h2{margin:4px 0 6px;line-height:1.15}
+body.menu-theme .game-page.page-shop .section-heading p{margin:0}
+/* Shared rows keep headings, amounts and purchase controls on the same baseline. */
+body.menu-theme .game-page.page-inventory .inventory-card>div{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px}
+body.menu-theme .game-page.page-inventory .inventory-card h2{margin:0;line-height:1.1}
+body.menu-theme .game-page.page-inventory .material-tile>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+body.menu-theme .game-page.page-inventory .material-tile b{line-height:1.35}
+body.menu-theme .game-page.page-shop .material-offer{display:grid;grid-template-rows:132px minmax(2.4em,auto) minmax(4.65em,1fr) auto auto auto;align-items:center;justify-items:center;align-content:start;gap:10px}
+body.menu-theme .game-page.page-shop .material-offer>img{margin:0}
+body.menu-theme .game-page.page-shop .material-offer>h3{align-self:start;line-height:1.2}
+body.menu-theme .game-page.page-shop .material-offer>p{align-self:start;min-height:0}
+body.menu-theme .game-page.page-shop .material-offer>.button{margin:0}
+body.menu-theme .game-page.page-shop .exchange-offers>article{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+body.menu-theme .game-page.page-shop .exchange-offers>article h2{margin:0;line-height:1.2}
+body.menu-theme .game-page.page-shop .exchange-offers .exchange-cost{margin:0;display:flex;align-items:center;justify-content:center;gap:6px;line-height:1.4}
+body.menu-theme .game-page.page-shop .exchange-offers>article>.button{margin-top:auto;width:100%}
+body.menu-theme .game-page.page-shop .tome-offer h3{min-height:2.4em;display:grid;place-items:center}
+body.menu-theme .game-page.page-quests .quest-card-heading{align-items:flex-start}
+body.menu-theme .game-page.page-quests .quest-heading-copy{padding-block:2px}
+body.menu-theme .game-page.page-quests .quest-meta{min-height:18px}
+body.menu-theme .game-page.page-quests .chronicle-card:hover{box-shadow:var(--ui-shadow);border-color:#816648}
+@media(min-width:1100px){body.menu-theme .game-page.page-inventory .inventory-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){body.menu-theme .game-page.page-shop .material-offer{grid-template-rows:104px minmax(2.4em,auto) minmax(4.5em,1fr) auto auto auto}body.menu-theme .game-page.page-shop .material-offer>img{height:104px;width:104px}body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2{font-size:26px}body.menu-theme .game-page.page-shop .tome-offer h3{min-height:0}}
+
+body.menu-theme .game-page.page-shop .material-offer>h3{font-size:24px}
+@media(max-width:600px){body.menu-theme .game-page.page-shop .material-offer>h3{font-size:21px}body.menu-theme .game-page.page-shop .material-offer>p{font-size:12px;line-height:1.5}}
+
+body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>.eyebrow,
+body.menu-theme .game-page.page-shop .section-heading :is(.eyebrow,p){color:#241d27}

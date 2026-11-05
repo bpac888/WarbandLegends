@@ -6,7 +6,7 @@ import {defaultProfile} from '../src/progression.js';
 import {PROFILE_KEY} from '../src/storage.js';
 import {factionLabel} from '../src/collection.js';
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
-const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json')),added=roster.slice(200);
+const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json')),added=roster.slice(200,215);
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
 try{
  const context=await browser.newContext({viewport:{width:390,height:844}}),errors=[];
@@ -42,5 +42,5 @@ try{
   await go('champion/'+added[width<700?0:10].id);await page.screenshot({path:root+`artifacts/roster215-dossier-${width}.png`,fullPage:true});
  }
  await page.setViewportSize({width:390,height:844});await go('roster');await page.locator('[data-tab="all"]').click();await page.screenshot({path:root+'artifacts/roster215-codex-phone.png',fullPage:true});
- assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,characters:roster.length,newPortraits:added.length,dossiers:added.length*4,viewports:[320,390,760,1440],checks:['all 215 Codex portraits load','native 1024x1536 art with no tint or filter','owned collection and all element/rarity filters','element sorting','names, faction labels and Specials','ascension and Limit Break menus','no overflow, missing assets, external calls or browser errors']},null,2));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,characters:roster.length,newPortraits:added.length,dossiers:added.length*4,viewports:[320,390,760,1440],checks:['all current Codex portraits load','native 1024x1536 art with no tint or filter','owned collection and all element/rarity filters','element sorting','names, faction labels and Specials','ascension and Limit Break menus','no overflow, missing assets, external calls or browser errors']},null,2));
 }finally{await browser.close();}

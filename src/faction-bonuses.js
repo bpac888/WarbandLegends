@@ -1,6 +1,7 @@
 // Shared faction rules for combat, team composition and the Guide.
 // Counts are locked from the five starting slots; fallen members do not remove a tier.
 export const FACTION_BONUSES={
+ aerie_court:{name:'Aerie Court',tiers:{2:{def:.04,tileMana:.05,text:'Tailwind Guard: +4% DEF and +5% mana from matching runes.'},3:{def:.06,tileMana:.10,text:'Tailwind Guard: +6% DEF and +10% mana from matching runes.'}}},
  astral_concord:{name:'Astral Concord',tiers:{2:{tileMana:.15,text:'+15% mana from matching runes.'},3:{tileMana:.25,text:'+25% mana from matching runes.'}}},
  bloodcourt:{name:'Bloodcourt',tiers:{2:{regen:.03,text:'Recover 3% max HP each turn.'},3:{regen:.06,text:'Recover 6% max HP each turn.'}}},
  chymera:{name:'Chymera',tiers:{2:{extendChance:.5,text:'50% chance for each Special ailment applied to an enemy to last 1 extra turn.'},3:{extendChance:1,text:'Special ailments applied to enemies last 1 extra turn.'}}},

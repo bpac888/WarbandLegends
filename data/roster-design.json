@@ -2697,7 +2697,7 @@
       },
       "passiveOverride": {
         "id": "titans_resolve",
-        "name": "Titan\u2019s Resolve",
+        "name": "Titan’s Resolve",
         "kind": "immune_effect",
         "immune": [
           "dec_atk",
@@ -3975,6 +3975,568 @@
         "hp": 1305
       },
       "chargeLevels": 1
+    },
+    "aerie_finch": {
+      "color": "yellow",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.85,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "atk": 511,
+        "def": 406,
+        "hp": 719
+      }
+    },
+    "aerie_pigeon": {
+      "color": "blue",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 1,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 382,
+        "def": 538,
+        "hp": 934
+      }
+    },
+    "aerie_flamingo": {
+      "color": "red",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.3,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 587,
+        "def": 617,
+        "hp": 1131
+      }
+    },
+    "aerie_toucan": {
+      "color": "green",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.25,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 676,
+        "def": 552,
+        "hp": 1005
+      }
+    },
+    "aerie_ibis": {
+      "color": "blue",
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "ally",
+          "damage": 0,
+          "healing": 0.32,
+          "healScope": "ally",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "ally"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 579,
+        "def": 610,
+        "hp": 1116
+      }
+    },
+    "aerie_swift": {
+      "color": "yellow",
+      "manaSpeed": "very_fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "very_fast",
+          "tiles": 6.5,
+          "target": "enemy",
+          "damage": 1.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "atk": 692,
+        "def": 566,
+        "hp": 1035
+      }
+    },
+    "aerie_vulture": {
+      "color": "purple",
+      "manaSpeed": "slow",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 3.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_buffs",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 676,
+        "def": 552,
+        "hp": 1005
+      }
+    },
+    "aerie_heron": {
+      "color": "green",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 542,
+        "def": 689,
+        "hp": 1199
+      }
+    },
+    "aerie_raven": {
+      "color": "purple",
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 692,
+        "def": 566,
+        "hp": 1035
+      }
+    },
+    "aerie_avaroc": {
+      "color": "yellow",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 812,
+        "def": 673,
+        "hp": 1305
+      }
+    },
+    "aerie_parrot": {
+      "color": "red",
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "block_debuffs",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 714,
+        "def": 736,
+        "hp": 1425
+      }
+    },
+    "aerie_pterodactyl": {
+      "color": "red",
+      "manaSpeed": "slow",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 828,
+        "def": 687,
+        "hp": 1335
+      }
+    },
+    "aerie_twin": {
+      "color": "purple",
+      "manaSpeed": "slow",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 652,
+        "def": 813,
+        "hp": 1525
+      }
+    },
+    "aerie_owl": {
+      "color": "blue",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.36,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "heal",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 714,
+        "def": 736,
+        "hp": 1425
+      }
+    },
+    "aerie_kingfisher": {
+      "color": "red",
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": []
+        }
+      ],
+      "statsOverride": {
+        "atk": 828,
+        "def": 687,
+        "hp": 1335
+      }
+    },
+    "aerie_hornbill": {
+      "color": "green",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 652,
+        "def": 813,
+        "hp": 1525
+      }
+    },
+    "aerie_secretary": {
+      "color": "yellow",
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 820,
+        "def": 680,
+        "hp": 1320
+      }
+    },
+    "aerie_hybrid": {
+      "color": "purple",
+      "manaSpeed": "slow",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.15,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_atk",
+              "turns": 2,
+              "scope": "enemies"
+            },
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 924,
+        "def": 765,
+        "hp": 1475
+      }
     }
   }
 }

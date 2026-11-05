@@ -7,7 +7,7 @@ import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';
 import {defaultProfile,summon,normalizeProfile,validateProfile,SUMMON_ODDS} from '../src/progression.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const read=async f=>JSON.parse(await readFile(new URL('../'+f,import.meta.url)));
-const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion-6.json'),added=roster.slice(200),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const roster=(await read('data/champions.json')).slice(0,215),manifest=await read('data/roster-expansion-6.json'),added=roster.slice(200),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 const counts=k=>Object.fromEntries([...new Set(added.map(c=>c[k]))].sort().map(v=>[v,added.filter(c=>c[k]===v).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.passive=null;e.shield=100;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0},shield:{turns:2,source:e.uid,appliedMove:0}};}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.3);h.passive=null;h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};}return b;}
 test('all 200 previous identities, kits, source records and portraits are unchanged',async()=>{
@@ -36,7 +36,7 @@ test('Auto can resolve every new ready kit and three mixed new teams finish real
  for(const c of added){const b=fixture(c);b.heroes[0].mana=b.heroes[0].manaMax;const before=structuredClone(b),r=applyAutoAction(b,chooseAutoAction(b));assert.ok(!r.error,c.id);assert.ok(validateSave(r.state,roster));assert.deepEqual(b,before);}
  for(const team of [added.slice(0,5),added.slice(5,10),added.slice(10,15)])for(const seed of [31,117]){let b=createBattle(roster,team.map(c=>c.id),'ashen-gate',seed),steps=0;while(b.phase==='playing'&&steps++<160){const r=applyAutoAction(b,chooseAutoAction(b));assert.ok(!r.error);b=r.state;assert.ok(validateSave(b,roster));}assert.equal(b.phase,'victory',team.map(c=>c.id).join(',')+' '+seed);}
 });
-test('current audit describes the 215 roster and all fifteen additions',async()=>{const a=await read('data/roster-audit.json');assert.equal(a.after.total,215);assert.equal(a.before.total,200);assert.equal(a.implementedRecommendations.length,15);assert.deepEqual(a.after.type,{attack:115,defense:47,support:53});});
+test('current audit describes the 215 roster and all fifteen additions',async()=>{const a=await read('docs/history/roster-audit-215.json');assert.equal(a.after.total,215);assert.equal(a.before.total,200);assert.equal(a.implementedRecommendations.length,15);assert.deepEqual(a.after.type,{attack:115,defense:47,support:53});});
 test('new charging defenders and attackers retain early-tier scope, thresholds and full-mana spending',()=>{
  for(const id of ['brannik_verdigris_sapper','nyxel_nullwall_marshal']){const c=added.find(c=>c.id===id),b=fixture(c),target=c.role==='attack'?'enemy-1':'hero-0';b.heroes[0].mana=7.99;assert.ok(cast(b,'hero-0',target,1).error);b.heroes[0].mana=10;const n=cast(b,'hero-0',target,1).state;assert.equal(n.heroes[0].mana,0);if(c.role==='attack')assert.equal(n.enemies[1].effects.vulnerable_green,undefined);else{assert.equal(n.heroes[0].effects.guard.turns,1);assert.ok(n.heroes.slice(1).every(h=>!h.effects.strengthen));}}
 });

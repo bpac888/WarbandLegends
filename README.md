@@ -1,6 +1,6 @@
 # Warband Legends
 
-A standalone match-3 RPG with 215 collectible champions, a five-champion warband, campaign, dungeons, Arena and special events.
+A standalone match-3 RPG with 233 collectible champions across 13 factions, a five-champion warband, campaign, dungeons, Arena and special events.
 
 ·[Documentation](docs/README.md) · [Game rules](docs/RULES.md)
 
@@ -30,3 +30,5 @@ Serve the game over HTTP; opening `index.html` directly cannot load the roster.
 
 
 See the [documentation index](docs/README.md) for the full feature list, development details. Artwork provenance is recorded in [RIGHTS.md](RIGHTS.md).
+
+Aerie Court adds eighteen bird-people champions with native 1024 × 1536 portraits and the Tailwind Guard faction bonus. See [the faction roster and balance notes](docs/AERIE_COURT.md).

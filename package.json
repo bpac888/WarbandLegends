@@ -52,7 +52,8 @@
     "test:tomes": "node tests/tomes-browser.mjs",
     "test:loot-tickets": "node tests/loot-tickets-browser.mjs",
     "test:team-editor": "node tests/team-editor-browser.mjs",
-    "test:battle-weight": "node tests/battle-weight-browser.mjs"
+    "test:battle-weight": "node tests/battle-weight-browser.mjs",
+    "test:aerie-court": "node tests/aerie-court-browser.mjs"
   },
   "engines": {
     "node": ">=22"
