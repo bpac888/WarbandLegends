@@ -9,3 +9,17 @@ body:has(.loading),body:has(.splash-screen),body.menu-theme[data-menu-scene=load
 
 /* Keep the existing type size; trim the button's surrounding space. */
 .menu-theme .splash-screen .button.splash-enter{width:max-content;max-width:100%;min-width:0;min-height:44px;padding:8px 14px;gap:10px;justify-content:center}
+
+/* Artwork composed separately for narrow phones; brand sits below the primary action. */
+body.menu-theme .splash-screen{height:100svh;min-height:100svh;align-items:flex-end;padding:0}
+body.menu-theme .splash-screen::after{display:none}
+body.menu-theme .splash-screen .splash-content{width:100%;padding:0 20px calc(38px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;gap:16px;filter:none;text-align:center}
+body.menu-theme .splash-screen .splash-brand{display:flex;align-items:center;justify-content:center;gap:8px;max-width:100%}
+body.menu-theme .splash-screen .splash-emblem{width:46px!important;height:54px!important;margin:0!important;flex-shrink:0}
+body.menu-theme .splash-screen .splash-brand h1{margin:0;width:min(64vw,350px);line-height:1}
+body.menu-theme .splash-screen .splash-caption{bottom:calc(10px + env(safe-area-inset-bottom,0px));left:12px;right:12px;justify-content:center;gap:0}
+body.menu-theme .splash-screen .splash-caption small{max-width:none;text-align:center;font-size:9px;line-height:1.4;color:#d3dce0}
+body.menu-theme .splash-screen .splash-landscape{background-position:center;background-size:cover}
+body.menu-theme .splash-screen .splash-landscape::after{content:'';position:absolute;inset:55% 0 0;background:linear-gradient(transparent,#061219a6);pointer-events:none}
+@media(max-aspect-ratio:4/5){body.menu-theme .splash-screen .splash-landscape{background-image:url('../assets/scenes/legends-splash-phone.webp');background-position:50% 35%}}
+@media(orientation:landscape) and (max-height:500px){body.menu-theme .splash-screen .splash-content{gap:8px;padding-bottom:30px}body.menu-theme .splash-screen .splash-emblem{width:32px!important;height:38px!important}body.menu-theme .splash-screen .splash-brand h1{width:210px}}

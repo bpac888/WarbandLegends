@@ -1,3 +1,5 @@
+import {bumpPath} from './keeper.js';
+import {premiumItemCount,takePremiumItem} from './premium-items.js';
 import {ascensionTier,currentLevelCap,ascensionRequirements,awakeningRank,awakeningRequirements,awakenedStats,ASCENSION_CAPS,normalLevelCap,LIMIT_BREAK_LEVELS,LIMIT_BREAK_RANKS} from './ascension.js';
 // Hero growth is separate from the immutable maximum-level roster and combat effects.
 export const LEVEL_CAPS=Object.freeze({common:30,rare:50,legendary:70,mythical:80});
@@ -34,31 +36,34 @@ export function trainingQuote(profile,champion){
 export function trainChampion(profile,champion,expectedXp){
  return {profile,error:'Feed Common or Rare heroes to grow this champion.'};
 }
-export function addHeroXp(profile,champion,amount){
+export function addHeroXp(profile,champion,amount,now=new Date()){
  if(!profile.collection[champion.id]||!Number.isSafeInteger(amount)||amount<=0)return profile;
  const d=development(champion,profile.heroXp?.[champion.id],currentLevelCap(profile,champion));if(d.atCap)return profile;
- return {...profile,heroXp:{...profile.heroXp,[champion.id]:Math.min(d.maxXp,d.xp+amount)}};
+ const xp=Math.min(d.maxXp,d.xp+amount),next={...profile,heroXp:{...profile.heroXp,[champion.id]:xp}},levels=development(champion,xp,currentLevelCap(profile,champion)).level-d.level;
+ return levels>0?bumpPath(next,{heroId:champion.id,levels},now):next;
 }
 
-export function ascensionQuote(profile,champion){
+export function ascensionQuote(profile,champion,{tome=false}={}){
  const tier=ascensionTier(profile,champion),requirements=ascensionRequirements(champion,tier),d=heroDevelopment(profile,champion);
- const error=!profile.collection[champion.id]?'Collect this champion before ascending.':!requirements?'This champion is fully ascended.':d.level!==currentLevelCap(profile,champion)?`Reach level ${currentLevelCap(profile,champion)} before ascending.`:profile.gold<requirements.gold?'More gold is needed.':Object.entries(requirements.items).some(([id,n])=>(profile.materials?.[id]||0)<n)?'Gather the missing ascension materials.':null;
+ const error=!profile.collection[champion.id]?'Collect this champion before ascending.':!requirements?'This champion is fully ascended.':d.level!==currentLevelCap(profile,champion)?`Reach level ${currentLevelCap(profile,champion)} before ascending.`:tome&&premiumItemCount(profile,'tome-of-ascension')<1?'No Tome of Ascension is owned.':!tome&&profile.gold<requirements.gold?'More gold is needed.':!tome&&Object.entries(requirements.items).some(([id,n])=>(profile.materials?.[id]||0)<n)?'Gather the missing ascension materials.':null;
  return {...d,tier,requirements,error};
 }
-export function ascendChampion(profile,champion,expectedTier){
- const q=ascensionQuote(profile,champion);if(q.error)return {profile,error:q.error};
+export function ascendChampion(profile,champion,expectedTier,{tome=false}={}){
+ const q=ascensionQuote(profile,champion,{tome});if(q.error)return {profile,error:q.error};
  if(expectedTier!==q.tier)return {profile,error:'Ascension changed. Review the new requirements.'};
+ if(tome)return {profile:{...takePremiumItem(profile,'tome-of-ascension'),ascensions:{...profile.ascensions,[champion.id]:q.tier+1}},cap:q.requirements.cap};
  const materials={...profile.materials};for(const [id,n]of Object.entries(q.requirements.items))materials[id]-=n;
  return {profile:{...profile,gold:profile.gold-q.requirements.gold,materials,ascensions:{...profile.ascensions,[champion.id]:q.tier+1}},cap:q.requirements.cap};
 }
 
-export function awakeningQuote(profile,champion){
+export function awakeningQuote(profile,champion,{tome=false}={}){
  const rank=awakeningRank(profile,champion),requirements=awakeningRequirements(champion,rank),d=heroDevelopment(profile,champion);
- const error=!profile.collection[champion.id]?'Collect this champion before a Limit Break.':!requirements?'No more Limit Breaks are available.':ascensionTier(profile,champion)!==ASCENSION_CAPS[champion.rarity].length-1||d.level!==currentLevelCap(profile,champion)?'Fully ascend and reach the current level cap before a Limit Break.':profile.gold<requirements.gold?'More gold is needed.':Object.entries(requirements.items).some(([id,n])=>(profile.materials?.[id]||0)<n)?'Gather the missing Limit Break materials.':null;
+ const error=!profile.collection[champion.id]?'Collect this champion before a Limit Break.':!requirements?'No more Limit Breaks are available.':ascensionTier(profile,champion)!==ASCENSION_CAPS[champion.rarity].length-1||d.level!==currentLevelCap(profile,champion)?'Fully ascend and reach the current level cap before a Limit Break.':tome&&premiumItemCount(profile,'tome-of-limit-break')<1?'No Tome of Limit Break is owned.':!tome&&profile.gold<requirements.gold?'More gold is needed.':!tome&&Object.entries(requirements.items).some(([id,n])=>(profile.materials?.[id]||0)<n)?'Gather the missing Limit Break materials.':null;
  const tier=ascensionTier(profile,champion);return {rank,requirements,error,current:awakenedStats(statsAtLevel(champion,d.level),rank,tier),next:awakenedStats(statsAtLevel(champion,d.level),Math.min(LIMIT_BREAK_RANKS,rank+1),tier)};
 }
-export function awakenChampion(profile,champion,expectedRank){
- const q=awakeningQuote(profile,champion);if(q.error)return {profile,error:q.error};if(expectedRank!==q.rank)return {profile,error:'Awakening changed. Review the new requirements.'};
+export function awakenChampion(profile,champion,expectedRank,{tome=false}={}){
+ const q=awakeningQuote(profile,champion,{tome});if(q.error)return {profile,error:q.error};if(expectedRank!==q.rank)return {profile,error:'Awakening changed. Review the new requirements.'};
+ if(tome)return {profile:{...takePremiumItem(profile,'tome-of-limit-break'),awakenings:{...profile.awakenings,[champion.id]:q.rank+1}},rank:q.rank+1};
  const materials={...profile.materials};for(const [id,n]of Object.entries(q.requirements.items))materials[id]-=n;
  return {profile:{...profile,gold:profile.gold-q.requirements.gold,materials,awakenings:{...profile.awakenings,[champion.id]:q.rank+1}},rank:q.rank+1};
 }

@@ -10,3 +10,6 @@ export const TOKEN_ART=Object.freeze({
 });
 
 export const ENERGY_ART='./assets/items/energy.webp';
+
+export const DAILY_PATH_ART='./assets/items/daily-path-medal.webp';
+export const PROFILE_XP_ART='./assets/items/profile-xp.webp';

@@ -1,5 +1,5 @@
 import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js';
-import {awakenedStats,normalLevelCap,ASCENSION_CAPS} from './ascension.js';
+import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js';
 import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js';
 import {SCENARIOS,validScenario} from './chapter.js';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
@@ -101,7 +101,7 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
   if(stage.scenario)state.scenario={id:stage.scenario,triggered:false};
   if(state.progression&&!state.sandbox)for(const hero of state.heroes)if(hero.awakening===2){
     const power={attack:'inc_atk',defense:'inc_def',support:'mana_surge'}[hero.role];
-    if(power)applyEffect(state,hero,hero,power,2);
+    if(power)applyEffect(state,hero,hero,power,LIMIT_BREAK_BUFF_TURNS);
   }
   initializeFactionBonuses(state,{roll:()=>roll(state),log:(...args)=>message(state,...args),gainMana});
   return state;

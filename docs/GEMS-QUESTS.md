@@ -28,7 +28,7 @@ Overall account levels 1–100 are separate from hero levels. The XP curve and b
 
 The daily calendar has 180 main days followed by a repeating 30-day loop. It follows Los Angeles midnight, keeps progress after missed days and allows one claim per day. Gifts include Gems/gold, occasional Arena Tokens, and ascension/awakening materials in place of source gear. Upcoming gifts can be previewed.
 
-Today's Path needs two real wins, 150 Gems earned today and one summon. Its once-daily chest grants 125 Gems, 400 gold, two Star Thread and 50 account XP. Calendar gifts, quests and token-exchange Gems count as earnings; spending Gems does not. Sandbox battles grant no progress. Clock rollback does not unlock an extra daily gift/chest.
+Today's Path needs two real wins, 150 Gems earned today, one summon, and three levels gained by the same character today. Feeding and battle XP count; characters and physical copies track separately. Growth is stored per character in `pathHeroLevels`, survives saves, and resets at Los Angeles midnight with the other objectives. Its once-daily chest grants 125 Gems, 400 gold, two Star Thread and 50 account XP. Calendar gifts, quests and token-exchange Gems count as earnings; spending Gems does not. Sandbox battles grant no progress. Clock rollback does not unlock an extra daily gift/chest.
 
 Six source profile portraits, ten faction emblems and three owned-team slots are integrated. Saved teams change the next encounter only. No equipment, gear slots, forging, or set bonuses are added. See [the reuse audit](REUSE-AUDIT.md) for source mapping and exclusions.
 
@@ -41,3 +41,5 @@ The 60-quest chronicle adds 17 one-time milestones: Hard stages 10/15; Nightmare
 Nine original category illustrations are shared across compact 58–68 px thumbnails: campaign, dungeons, Arena, events, collection, summoning, training, ascension and Limit Breaks. The atlas is a single cached WebP. Category filters combine with Active, Ready and Completed, with ready rewards sorted first and Show more for longer lists. The page has a compact summary and two columns on desktop, one on phones.
 
 Validation: `npm run check` and `CHROMIUM_PATH=/usr/bin/chromium npm run test:quests`. Native checks exercise every new milestone and repeat-claim rejection. Browser coverage includes claiming a new reward, reload persistence, category/status combinations, empty states, pagination, thumbnail and banner dimensions, and 320/390/760/1440 px layouts without overflow or missing assets.
+
+The Daily Gift page uses a compact gift header, a two-by-two objective grid and warm gold, violet, mint and coral accents. A gold medal beside the wallet opens Daily Gift / Today’s Path, and profile XP rewards use a dedicated high-definition crest.

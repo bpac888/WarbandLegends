@@ -2,6 +2,7 @@
 export const ASCENSION_CAPS=Object.freeze({common:[20,30],rare:[30,40,50],legendary:[40,50,60,70],mythical:[40,50,60,70,80]});
 export const LIMIT_BREAK_LEVELS=5;
 export const LIMIT_BREAK_RANKS=2;
+export const LIMIT_BREAK_BUFF_TURNS=3;
 export const normalLevelCap=champion=>ASCENSION_CAPS[champion.rarity].at(-1);
 export const MATERIAL_LIMIT=999999;
 export const MATERIALS=Object.freeze([

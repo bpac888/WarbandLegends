@@ -47,3 +47,19 @@ img[src$="-sigil.webp"]:not([src$="purple-sigil.webp"]):not([src$="yellow-sigil.
 /* Token Exchange reward artwork, without the old circular icon frame. */
 .menu-theme .game-page.page-shop .exchange-offers>article>span{display:flex;align-items:center;justify-content:center;width:72px;height:72px;padding:0;margin:0;border:0;border-radius:0;background:none;box-shadow:none}
 .menu-theme .game-page.page-shop .exchange-offers>article>span>.currency-icon{display:block;width:72px;height:72px;object-fit:contain;filter:none}
+
+.exchange-payment{display:flex;flex-direction:column;gap:5px;width:100%;margin:0;color:#c6d2c5;font-size:11px}
+.exchange-payment select{width:100%;min-width:0;min-height:40px;padding:8px 10px;border:1px solid #b5c4ad55;border-radius:8px;background:#18313b;color:#f4e6c8;font:inherit;font-size:12px}
+.exchange-payment select:focus-visible{outline:2px solid #e5cc8e;outline-offset:2px}
+
+.premium-inventory{margin-top:18px}
+.premium-inventory .premium-offers>article{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px;text-align:center;border:1px solid #b6c3b34d;border-radius:12px;background:#203541}
+.premium-inventory .premium-offers>article>img{width:96px;height:96px;object-fit:contain}
+.premium-inventory p{font-size:12px;line-height:1.5;margin:0}
+.premium-inventory h3{font-size:22px;margin:0}
+.booster-status,.booster-note{color:#dce8a7;font-size:12px;line-height:1.5}
+.premium-item-confirm{display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+.premium-item-confirm>img{width:120px;height:120px;object-fit:contain}
+.premium-item-confirm h3,.premium-item-confirm p{margin:0}
+.premium-item-confirm label{display:flex;flex-direction:column;gap:5px;width:100%;max-width:400px;text-align:left}
+.premium-item-confirm select{width:100%;min-height:44px;padding:8px;border:1px solid #b6c3b34d;border-radius:8px;background:#18313c;color:#f6e6c7;font:inherit}

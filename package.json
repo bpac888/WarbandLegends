@@ -53,6 +53,10 @@
     "test:tomes": "node tests/tomes-browser.mjs",
     "test:loot-tickets": "node tests/loot-tickets-browser.mjs",
     "test:team-editor": "node tests/team-editor-browser.mjs",
+    "test:token-exchange": "node tests/token-exchange-browser.mjs",
+    "test:premium-items": "node tests/premium-items-browser.mjs",
+    "test:splash-polish": "node tests/splash-polish-browser.mjs",
+    "test:daily-polish": "node tests/daily-polish-browser.mjs",
     "test:battle-weight": "node tests/battle-weight-browser.mjs",
     "test:aerie-court": "node tests/aerie-court-browser.mjs",
     "test:campaign-atmosphere": "node tests/campaign-atmosphere-browser.mjs"

@@ -1,3 +1,4 @@
+import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js';
 import {factionGuideHTML} from './faction-ui.js';
 import {EFFECTS} from './effects.js';
 import {effectIcon} from './icons.js';
@@ -11,9 +12,11 @@ const battleRules=[
 const topics=[
  ['battles','Battles',[...battleRules,['Energy','Campaign / Dungeons: 1/2/3 Energy (Normal/Hard/Nightmare). Arena: 1. Capacity: 50 + profile level. Full refill at midnight PST and on level-up. Entry costs are not refunded. Events use attempts.'],['Loot Tickets','Use one Loot Ticket on a campaign stage already cleared on that difficulty for instant replay rewards. Normal Energy still applies: 1 on Normal, 2 on Hard, or 3 on Nightmare. Buy tickets in Token Exchange. Not available in playtesting.']]],
  ['growth','Heroes',[
+  ['Boosters & Tomes','Activate boosters in Inventory: +25% feeding XP or +25% battle Gold for 24 real hours. Each type can be active once at a time. Ascension and Limit Break Tomes grant one step without materials or Gold; normal level and rarity requirements still apply. Premium purchases are previews for now.'],
   ['Feeding','Common / Rare copies cost 25 Gold to feed. Rare: 3× Common XP; matching Rare hero: another 5×. Same element: +25%. Saved teams are protected.'],
+  ['Today’s Path','Gain three levels with the same character during the day. Feeding and battle XP both count; different characters and copies track separately. Daily objectives reset at midnight Pacific time.'],
   ['Ascension','Each tier adds 2% stats and restarts at level 1 without losing power. Copies develop separately.'],
-  ['Limit Break','Rare or higher: two breaks after full ascension, each adding 5 levels and 3% stats. The second adds a 2-move role buff.'],
+  ['Limit Break',`Rare or higher: two breaks after full ascension, each adding 5 levels and 3% stats. The second adds a ${LIMIT_BREAK_BUFF_TURNS}-turn role buff at battle start.`],
  ]],
  ['factions','Factions',[['Faction Bonuses',factionGuideHTML()]]],
  ['effects','Effects',[]],

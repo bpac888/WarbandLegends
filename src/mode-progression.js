@@ -1,3 +1,4 @@
+import {boostedGold} from './premium-items.js';
 import {LOOT_TICKET_LIMIT} from './loot-ticket-item.js';
 import {heroForId,uniqueHeroCount} from './hero-copies.js';
 import {addAccountXp,accountBattleXp,bumpPath,spendEnergy,energyCost,refreshEnergy} from './keeper.js';
@@ -30,16 +31,16 @@ export function reserveEntry(profile,battle,now=new Date()){
  const next={...profile,eventAttempts:{...profile.eventAttempts,[window.key]:(profile.eventAttempts[window.key]||0)+1},eventEntry:{battleId:battle.id,key:window.key}};
  return {profile:next,battle:{...battle,eventWindow:window.key}};
 }
-export function modeReward(profile,battle){const e=getEncounter(battle.stageId),won=battle.phase==='victory';
+export function modeReward(profile,battle,now=Date.now()){const e=getEncounter(battle.stageId),won=battle.phase==='victory';
  if(!e||battle.sandbox||!['victory','defeat'].includes(battle.phase))return {gold:0,gems:0,xp:0};
- if(e.mode==='arena')return {gold:won?e.rewards.gold:0,gems:0,xp:0,accountXp:accountBattleXp(e,won),arenaTokens:won?e.arenaTokens:0,rating:won?18:-12};
- if(e.mode==='event'&&profile.eventEntry?.battleId===battle.id&&profile.eventEntry?.key===battle.eventWindow&&battle.eventWindow?.startsWith(e.eventId+':')){const first=won&&!profile.cleared.includes(e.id);return {gold:won?(first?450:150):0,gems:won?(first?100:25):0,xp:won?Math.round(e.rewards.xp*(first?1.5:1)):0,accountXp:accountBattleXp(e,won),eventToken:e.eventToken,eventTokens:won?8:0,first};}
+ if(e.mode==='arena')return {gold:won?boostedGold(profile,e.rewards.gold,now):0,gems:0,xp:0,accountXp:accountBattleXp(e,won),arenaTokens:won?e.arenaTokens:0,rating:won?18:-12};
+ if(e.mode==='event'&&profile.eventEntry?.battleId===battle.id&&profile.eventEntry?.key===battle.eventWindow&&battle.eventWindow?.startsWith(e.eventId+':')){const first=won&&!profile.cleared.includes(e.id);return {gold:won?boostedGold(profile,first?450:150,now):0,gems:won?(first?100:25):0,xp:won?Math.round(e.rewards.xp*(first?1.5:1)):0,accountXp:accountBattleXp(e,won),eventToken:e.eventToken,eventTokens:won?8:0,first};}
  return {gold:0,gems:0,xp:0};
 }
-export function settleMode(profile,battle,roster){if(battle.sandbox||!['victory','defeat'].includes(battle.phase)||profile.recorded.includes(battle.id))return profile;const e=getEncounter(battle.stageId);if(!['arena','event'].includes(e?.mode))return profile;
- const reward=modeReward(profile,battle),win=battle.phase==='victory';if(e.mode==='event'&&!reward.eventToken)return profile;
- let next=profile;if(reward.xp&&battle.progression)for(const id of new Set(battle.heroes.map(h=>h.id))){const c=heroForId(roster,id);if(c)next=addHeroXp(next,c,reward.xp);}
- next=bumpPath(addAccountXp(next,accountBattleXp(e,win)),{wins:win?1:0,gems:reward.gems});
+export function settleMode(profile,battle,roster,now=Date.now()){if(battle.sandbox||!['victory','defeat'].includes(battle.phase)||profile.recorded.includes(battle.id))return profile;const e=getEncounter(battle.stageId);if(!['arena','event'].includes(e?.mode))return profile;
+ const reward=modeReward(profile,battle,now),win=battle.phase==='victory';if(e.mode==='event'&&!reward.eventToken)return profile;
+ let next=profile;if(reward.xp&&battle.progression)for(const id of new Set(battle.heroes.map(h=>h.id))){const c=heroForId(roster,id);if(c)next=addHeroXp(next,c,reward.xp,new Date(now));}
+ next=bumpPath(addAccountXp(next,accountBattleXp(e,win)),{wins:win?1:0,gems:reward.gems},new Date(now));
  next={...next,gold:cap(profile.gold+reward.gold),gems:Math.min(GEM_LIMIT,profile.gems+reward.gems),recorded:[...profile.recorded,battle.id].slice(-200)};
  if(e.mode==='arena')return {...next,arenaRating:cap(profile.arenaRating+reward.rating),arenaTokens:cap(profile.arenaTokens+reward.arenaTokens),arenaWins:cap(profile.arenaWins+(win?1:0)),arenaLosses:cap(profile.arenaLosses+(win?0:1))};
  return {...next,eventWins:cap(profile.eventWins+(win?1:0)),eventTokens:{...profile.eventTokens,[e.eventToken]:cap(profile.eventTokens[e.eventToken]+reward.eventTokens)},eventEntry:null,cleared:win?[...new Set([...profile.cleared,e.id])]:profile.cleared};

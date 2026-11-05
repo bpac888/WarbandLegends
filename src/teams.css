@@ -40,3 +40,16 @@ body.menu-theme #modal[data-view=roster] .modal-header::after{display:none}
 body.menu-theme #modal[data-view=roster] .modal-header h2{font-size:24px;line-height:1;margin:0}
 body.menu-theme #modal[data-view=roster] .modal-header .icon-button{min-height:32px;height:32px;width:32px;padding:0}
 body.menu-theme #modal[data-view=roster] .modal-body{padding-top:8px}
+
+/* Compact framing leaves more room for champion artwork. */
+body.menu-theme #modal[data-view=roster] .modal-header{padding:2px 8px;border-bottom:0;box-shadow:none}
+body.menu-theme #modal[data-view=roster] .modal-header .icon-button{position:relative;isolation:isolate;min-width:36px;width:36px;min-height:36px;height:36px;border:0;background:none;border-radius:0;font-size:20px}
+body.menu-theme #modal[data-view=roster] .modal-header .icon-button::before{content:'';position:absolute;inset:5px;border:1px solid #b7cbbf55;border-radius:5px;background:#132f3a80;z-index:-1}
+body.menu-theme #modal[data-view=roster] .modal-body{padding:2px 8px 0}
+body.menu-theme #modal[data-view=roster] .collection-filters{margin:6px 0 8px}
+body.menu-theme #modal[data-view=roster] .roster-grid{gap:6px}
+body.menu-theme #modal[data-view=roster] .roster-save{padding:8px 0;margin-top:6px}
+body.menu-theme #modal[data-view=roster] .faction-team-bonuses,body.menu-theme #modal[data-view=roster] .faction-team-empty{margin-top:0;padding:6px 8px}
+@media(max-width:375px){body.menu-theme #modal[data-view=roster] .roster-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+body.menu-theme #modal[data-view=roster] #draft-team{margin-top:0}
+body.menu-theme #modal[data-view=roster] #draft-team summary{flex-direction:row;align-items:center}

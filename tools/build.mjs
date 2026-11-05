@@ -1,3 +1,4 @@
+import {PREMIUM_ITEMS} from '../src/premium-items.js';
 import {historicalPortraits} from './portrait-baseline.mjs';
 import {COURTYARD_SCENERY} from '../src/courtyard-scenery.js';
 import {COURTYARD_REPAIRS} from '../src/courtyard-repairs.js';
@@ -22,6 +23,8 @@ if(sha(roster.slice(0,latest.originalCount))!==latest.originalRecordsSha256||sha
 if(roster.length!==latest.totalCount||new Set(roster.map(c=>c.id)).size!==latest.totalCount||JSON.stringify(roster.slice(latest.originalCount).map(c=>c.id))!==JSON.stringify(latest.addedChampionIds))throw Error('Roster identity check failed');
 const originalPortraits=[];for(const c of roster.slice(0,latest.originalCount))originalPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(historicalPortraits(originalPortraits))!==latest.originalPortraitsSha256)throw Error('An existing portrait changed');
+for(const art of ['legends-splash','legends-splash-phone'])if((await stat('assets/scenes/'+art+'.webp')).size<100000)throw Error('Missing splash artwork: '+art);
+for(const item of PREMIUM_ITEMS)if((await stat('assets/items/'+item.id+'.webp')).size<10000)throw Error('Missing premium item artwork: '+item.id);
 if((await stat('assets/items/loot-tickets.webp')).size<10000)throw Error('Missing Loot Ticket artwork');
 if((await stat('assets/tomes/power.webp')).size<10000)throw Error('Missing Tome of Power artwork');
 if((await stat('assets/quests/categories.webp')).size<10000)throw Error('Missing quest category artwork');
@@ -40,7 +43,7 @@ for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/
 for(const e of ENCOUNTERS)if(e.enemyIds.some(id=>!roster.some(c=>c.id===id)))throw Error('Unknown encounter champion: '+e.id);
 for(const path of [...DIFFICULTIES.map(d=>d.art),...DUNGEONS.map(d=>d.art),'assets/dungeons/magma-wyrm.svg',...['altar','adventure','codex','exchange','arena'].map(id=>'assets/destinations/'+id+'.svg'),...['crimson-eclipse','frostwake-siege','veil-of-umbra'].map(id=>'assets/events/'+id+'.svg')])if((await stat(path)).size<1000)throw Error('Missing adventure artwork: '+path);
 for(const m of MATERIALS)if((await stat('assets/items/'+m.id+'.webp')).size<5000)throw Error('Missing new material artwork: '+m.id);
-for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inventory-gems','settings-gear','shop-stall','quest-scrolls','tavern-house','leather-backpack','adventure-swords','guide-question','summon-portal','codex-roster','arena-token','eclipse-sigil','frostwake-shard','veil-mark','energy'])if((await stat('assets/items/'+id+'.webp')).size<5000)throw Error('Missing shop artwork: '+id);
+for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inventory-gems','settings-gear','shop-stall','quest-scrolls','tavern-house','leather-backpack','adventure-swords','guide-question','daily-path-medal','profile-xp','summon-portal','codex-roster','arena-token','eclipse-sigil','frostwake-shard','veil-mark','energy'])if((await stat('assets/items/'+id+'.webp')).size<5000)throw Error('Missing shop artwork: '+id);
 for(const id of AVATARS)if((await stat('assets/portraits/'+id+'.svg')).size<1000)throw Error('Missing profile artwork: '+id);
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
 for(const path of ['index.html','manifest.webmanifest','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
