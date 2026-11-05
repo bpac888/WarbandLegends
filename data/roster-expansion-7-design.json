@@ -492,7 +492,7 @@
       "name": "Duovrax, Divided Vigil",
       "title": "Divided Vigil",
       "faction": "aerie_court",
-      "species": "two-headed owl and raven",
+      "species": "two-headed owl and raven monster-beast",
       "artKey": "twin",
       "color": "purple",
       "rarity": "legendary",
@@ -535,7 +535,7 @@
         }
       ],
       "lore": "One owl head watches the gates while one raven head counts the living; neither has ever been caught asleep.",
-      "gap": "Founding two-headed owl and raven defense; role/rarity median stats with a bounded existing-effect kit."
+      "gap": "Founding two-headed owl and raven monster-beast defense; role/rarity median stats with a bounded existing-effect kit."
     },
     {
       "id": "aerie_owl",
@@ -706,7 +706,7 @@
       "name": "Trivorath, Threefold Sovereign",
       "title": "Threefold Sovereign",
       "faction": "aerie_court",
-      "species": "three-headed eagle lion serpent hybrid",
+      "species": "three-headed eagle horned monster-beast serpent hybrid",
       "artKey": "hybrid",
       "color": "purple",
       "rarity": "mythical",
@@ -743,8 +743,8 @@
           ]
         }
       ],
-      "lore": "An eagle sees the storm, a lion commands its fury, and a serpent remembers its poison. Three wills share one sovereign body, bound by an oath to protect every roost.",
-      "gap": "Founding three-headed eagle lion serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
+      "lore": "An eagle sees the storm, a horned beast commands its fury, and a serpent remembers its poison. Three wills share one monstrous body, bound by an oath to protect every roost.",
+      "gap": "Founding three-headed eagle horned monster-beast serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
       "passive": {
         "id": "threefold_vigil",
         "name": "Threefold Vigil",

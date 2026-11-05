@@ -2,7 +2,7 @@
   "version": 2,
   "reviewDate": "2026-11-04",
   "scope": "Full 233-character analysis after eighteen Aerie Court additions. All previous 215 records remain unchanged; pending changes to existing characters remain recommendations.",
-  "rosterSha256": "be6fee2d1820d643d40e9a7d974a4738bd6ef15ad48f517c3b7c2c731a7a09f8",
+  "rosterSha256": "47a2e6b8a2fb5a40401af655a648e1dda1e1eac286c6f29e58730123ec4f79b9",
   "appliedChanges": {
     "date": "2026-10-28",
     "reason": "Owner requested improvements to both Astral Mythicals after a speed- and rarity-focused balance review.",
@@ -1763,7 +1763,7 @@
       "rarity": "legendary",
       "role": "defense",
       "manaSpeed": "slow",
-      "gap": "Founding two-headed owl and raven defense; role/rarity median stats with a bounded existing-effect kit.",
+      "gap": "Founding two-headed owl and raven monster-beast defense; role/rarity median stats with a bounded existing-effect kit.",
       "status": "implemented"
     },
     {
@@ -1818,7 +1818,7 @@
       "rarity": "mythical",
       "role": "attack",
       "manaSpeed": "slow",
-      "gap": "Founding three-headed eagle lion serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
+      "gap": "Founding three-headed eagle horned monster-beast serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
       "status": "implemented"
     }
   ],

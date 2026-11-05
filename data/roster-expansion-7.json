@@ -166,7 +166,7 @@
       "rarity": "legendary",
       "role": "defense",
       "manaSpeed": "slow",
-      "gap": "Founding two-headed owl and raven defense; role/rarity median stats with a bounded existing-effect kit.",
+      "gap": "Founding two-headed owl and raven monster-beast defense; role/rarity median stats with a bounded existing-effect kit.",
       "status": "implemented"
     },
     {
@@ -221,7 +221,7 @@
       "rarity": "mythical",
       "role": "attack",
       "manaSpeed": "slow",
-      "gap": "Founding three-headed eagle lion serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
+      "gap": "Founding three-headed eagle horned monster-beast serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
       "status": "implemented"
     }
   ]

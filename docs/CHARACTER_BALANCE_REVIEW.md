@@ -124,12 +124,12 @@ Veldtborn’s 30% and Astral’s 25% matching mana substantially alter repeat sp
 | Avaroc, Sunspire Regent | Aerie Court / Yellow | Legendary / Attack / Average | Founding eagle attack; role/rarity median stats with a bounded existing-effect kit. |
 | Macalisse, Scarlet Herald | Aerie Court / Red | Legendary / Support / Fast | Founding scarlet macaw support; role/rarity median stats with a bounded existing-effect kit. |
 | Pterovar, Ashcrest Ancestor | Aerie Court / Red | Legendary / Attack / Slow | Founding pterodactyl attack; role/rarity median stats with a bounded existing-effect kit. |
-| Duovrax, Divided Vigil | Aerie Court / Purple | Legendary / Defense / Slow | Founding two-headed owl and raven defense; role/rarity median stats with a bounded existing-effect kit. |
+| Duovrax, Divided Vigil | Aerie Court / Purple | Legendary / Defense / Slow | Founding two-headed owl and raven monster-beast defense; role/rarity median stats with a bounded existing-effect kit. |
 | Tyssara, Moonvault Oracle | Aerie Court / Blue | Legendary / Support / Average | Founding barn owl support; role/rarity median stats with a bounded existing-effect kit. |
 | Rudavain, Torrent Lancer | Aerie Court / Red | Legendary / Attack / Fast | Founding ruddy kingfisher attack; role/rarity median stats with a bounded existing-effect kit. |
 | Bucorath, Canopy Castellan | Aerie Court / Green | Legendary / Defense / Average | Founding great hornbill defense; role/rarity median stats with a bounded existing-effect kit. |
 | Sagivra, Quillblade Marshal | Aerie Court / Yellow | Legendary / Attack / Fast | Founding secretarybird attack; role/rarity median stats with a bounded existing-effect kit. |
-| Trivorath, Threefold Sovereign | Aerie Court / Purple | Mythical / Attack / Slow | Founding three-headed eagle lion serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit. |
+| Trivorath, Threefold Sovereign | Aerie Court / Purple | Mythical / Attack / Slow | Founding three-headed eagle horned monster-beast serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit. |
 
 Fifteen targeted additions are complete: **7 Legendaries, 8 Rares; 8 ATK, 4 DEF, 3 SUP**. No existing kits or portraits changed in this expansion. The [189-character review](history/CHARACTER-BALANCE-189.md) retains the original suggestions.
 
@@ -153,7 +153,7 @@ Each Special tier was cast through the real resolver against one, three and four
 
 These are controlled cast measurements and structural analysis, **not measured matchup win rates or proof that a character always wins**. They do not include board luck, enemy timing, overheal in live fights or every possible five-character composition. Counters, revival, immunities, Cleanse, Dispel and mana control are situational strengths. Recommendations need encounter tests before implementation.
 
-Verified 233 unique characters, all 263 Special tiers, 789 successful non-mutating resolver fixtures, and passives on all 18 Mythicals. Roster content SHA-256: `be6fee2d1820d643d40e9a7d974a4738bd6ef15ad48f517c3b7c2c731a7a09f8`.
+Verified 233 unique characters, all 263 Special tiers, 789 successful non-mutating resolver fixtures, and passives on all 18 Mythicals. Roster content SHA-256: `47a2e6b8a2fb5a40401af655a648e1dda1e1eac286c6f29e58730123ec4f79b9`.
 
 ## Every Character
 

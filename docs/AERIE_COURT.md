@@ -1,6 +1,6 @@
 # Aerie Court — Founding Roster
 
-A mountain civilization of bird-people: humanoid bodies below the shoulders, avian heads and necks above. Bronze featherwork, high palaces and richly colored plumage unite the faction without replacing each species’ identity. The pterosaur and twin-headed guardian are ancient branches of the court. Trivorath, its sole Mythical, combines eagle, lion and serpent heads on one humanoid body.
+A mountain civilization of bird-people: most have humanoid bodies below the shoulders, with compact avian heads and necks above. Bronze featherwork, high palaces and richly colored plumage unite the faction without replacing each species’ identity. The pterosaur and twin-headed guardian are ancient branches of the court. Duovrax is a two-headed owl/raven monster-beast. Trivorath, its sole Mythical, combines an eagle head, a horned monster-beast head and a serpent head on one massive quadrupedal body.
 
 Eighteen additions bring the roster from 215 to 233. The rarity spread is 2 Common, 7 Rare, 8 Legendary and 1 Mythical, alongside 10 Attack, 4 Defense and 4 Support champions. All five elements and Very Fast, Fast, Average and Slow speeds are represented. Existing 215 champion/source records, portraits and summon rarity odds are unchanged.
 
@@ -24,20 +24,24 @@ Two matching members gain **4% DEF and 5% extra matching-rune mana**. Three or m
 | Avaroc, Sunspire Regent | eagle | Legendary | Yellow | Attack | 10 tiles | Sovereign Talon |
 | Macalisse, Scarlet Herald | scarlet macaw | Legendary | Red | Support | 8 tiles | Banner of Many Voices |
 | Pterovar, Ashcrest Ancestor | pterodactyl | Legendary | Red | Attack | 12 tiles | Cinderwing Descent |
-| Duovrax, Divided Vigil | two-headed owl and raven | Legendary | Purple | Defense | 12 tiles | Dusk and Dawn Watch |
+| Duovrax, Divided Vigil | two-headed owl and raven monster-beast | Legendary | Purple | Defense | 12 tiles | Dusk and Dawn Watch |
 | Tyssara, Moonvault Oracle | barn owl | Legendary | Blue | Support | 10 tiles | Lantern of Quiet Skies |
 | Rudavain, Torrent Lancer | ruddy kingfisher | Legendary | Red | Attack | 8 tiles | Waterfall Impale |
 | Bucorath, Canopy Castellan | great hornbill | Legendary | Green | Defense | 10 tiles | Casque of the Citadel |
 | Sagivra, Quillblade Marshal | secretarybird | Legendary | Yellow | Attack | 8 tiles | Seven-Quill Cut |
-| Trivorath, Threefold Sovereign | three-headed eagle lion serpent hybrid | Mythical | Purple | Attack | 12 tiles | Concord of Fang and Feather |
+| Trivorath, Threefold Sovereign | three-headed eagle / horned monster-beast / serpent | Mythical | Purple | Attack | 12 tiles | Concord of Fang and Feather |
 
 ## Balance and artwork
 
 Base ATK, DEF and HP sit within 3% of the existing median for each rarity/type, with speed and coverage controlling Special budgets. Fast attacks trade utility or damage for access; area attacks are Slow; Common kits are simpler. Trivorath has Slow area damage, Attack Down and Poison, plus Poison immunity. This is a bounded initial balance pass, not a measured PvP win-rate claim.
 
-Each of the eighteen portraits was generated individually at native **1024 × 1536** and encoded as quality-95 WebP without cropping or upscaling. All were visually reviewed, including the separate heads on Duovrax and Trivorath. Existing art is untouched.
+Each of the eighteen portraits was generated individually at native **1024 × 1536** and encoded as quality-95 WebP without cropping or upscaling. All were visually reviewed, including the separate heads on Duovrax and Trivorath. The 215 pre-faction portraits are untouched.
 
 The shared Collection/Codex/Teams filter derives factions from the roster; Aerie Court therefore appears automatically. Its emblem is registered, and the Guide and team composition displays use the shared faction rules.
+
+## Artwork revisions
+
+Tivren and Dovessa have replacement portraits with compact, integrated avian heads. Duovrax and Trivorath have monster-beast bodies; Trivorath’s former lion head is a horned monstrous beast. Rosavelle, Ardoven, Sagivra and Macalisse retain their established costumes, props and settings with shorter necks. All eight revisions retain native high-definition dimensions and quality-95 WebP encoding. Champion kits, stats, rarities and faction bonuses are unchanged.
 
 ## Validation
 
