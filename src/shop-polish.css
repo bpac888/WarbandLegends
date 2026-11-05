@@ -18,3 +18,32 @@ img[src$="-sigil.webp"]:not([src$="purple-sigil.webp"]):not([src$="yellow-sigil.
 .premium-offers>article>.premium-total{font-size:12px;color:#d7c29d;border-top:1px solid #c2aa823d;padding-top:10px;width:100%}.premium-offers>article>.button{margin-top:auto;min-height:44px;width:100%}
 .kit-color{width:100%;display:flex;flex-direction:column;text-align:left;gap:6px;font-size:12px;color:#e1d3ba;margin:0 0 4px}.kit-color>select{width:100%;min-height:44px;padding:10px 12px;border-radius:8px;font-size:14px;cursor:pointer}
 @media(max-width:600px){.premium-offers>article{padding:16px 10px;gap:10px}.premium-offers>article>h3{font-size:20px}.premium-amount{font-size:15px}.premium-offers>article>p{font-size:12px}.kit-color>select{padding:10px 8px;font-size:13px}}
+
+/* Compact shop departments; the navigation already shows Gold and Gems. */
+.menu-theme .game-page.page-shop>.page-heading{min-height:0;padding:8px 0 12px;margin-bottom:0}
+.menu-theme .game-page.page-shop .shop-tabs{margin:0 0 16px}
+.menu-theme .game-page.page-shop .exchange-offers>article{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:18px 14px;min-height:0}
+.menu-theme .game-page.page-shop .exchange-loot-art{display:block;width:72px;height:72px;margin-inline:auto;align-self:center;object-fit:contain}
+.menu-theme .game-page.page-shop .exchange-offers h2{font-size:25px;margin:0;line-height:1.15}
+.menu-theme .game-page.page-shop .exchange-offers .exchange-cost{display:flex;justify-content:center;align-items:center;gap:7px;margin:2px 0 4px;font-size:13px}
+.menu-theme .game-page.page-shop .exchange-offers .button{margin-top:auto;min-height:38px;padding:9px 14px;font-size:12px}
+.menu-theme .game-page.page-shop .exchange-balances{gap:10px;margin-bottom:14px}
+.menu-theme .game-page.page-shop .exchange-balances>span{padding:12px;gap:6px}
+.menu-theme .game-page.page-shop .exchange-balances .exchange-currency-art{width:48px;height:48px}
+.menu-theme .game-page.page-shop .gem-shop .section-heading{margin-bottom:12px}
+.menu-theme .game-page.page-shop .gem-offers{margin:12px 0 0;gap:12px}
+.menu-theme .game-page.page-shop .gem-offer{padding:16px 12px;gap:9px}
+.menu-theme .game-page.page-shop .gem-offer>img{width:88px;height:88px}
+.menu-theme .game-page.page-shop .gem-offer>p{min-height:0;margin:0 0 8px}
+.menu-theme .game-page.page-shop .tome-offer{gap:8px;padding:16px 12px}
+.menu-theme .game-page.page-shop .tome-offer>.button{margin-top:4px}
+@media(max-width:600px){
+ .menu-theme .game-page.page-shop .exchange-offers>article{padding:15px 12px;gap:8px}
+ .menu-theme .game-page.page-shop .exchange-offers h2{font-size:23px}
+ .menu-theme .game-page.page-shop .gem-offer>img{width:76px;height:76px}
+ .menu-theme .game-page.page-shop .tome-offer{padding:14px 10px}
+}
+
+/* Token Exchange reward artwork, without the old circular icon frame. */
+.menu-theme .game-page.page-shop .exchange-offers>article>span{display:flex;align-items:center;justify-content:center;width:72px;height:72px;padding:0;margin:0;border:0;border-radius:0;background:none;box-shadow:none}
+.menu-theme .game-page.page-shop .exchange-offers>article>span>.currency-icon{display:block;width:72px;height:72px;object-fit:contain;filter:none}

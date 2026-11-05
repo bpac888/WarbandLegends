@@ -10,3 +10,11 @@
 @media(max-width:600px){.collection-filters>.library-filters{grid-template-columns:1fr;gap:10px}}
 
 .element-advantages{display:block;width:100%;max-width:640px;height:auto;object-fit:contain;margin:6px auto 0}
+
+/* Reduce empty space between the collection controls and the first row. */
+.menu-theme .game-page.page-roster .collection-toolbar{padding:0;margin:0}
+.menu-theme .game-page.page-roster .collection-tabs{margin:0 0 8px}
+.menu-theme .game-page.page-roster .collection-filters{margin:8px 0}
+.menu-theme .game-page.page-roster .collection-filters>summary{min-height:40px;padding:8px 12px}
+.menu-theme .game-page.page-roster .library-summary{margin:0 0 10px;padding:0}
+.menu-theme .game-page.page-roster .library-count{margin:0;line-height:1.5}

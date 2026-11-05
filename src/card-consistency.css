@@ -1,7 +1,30 @@
-/* Reserve the same name and speed space in Codex and owned-copy cards. */
-.library-card .library-label{display:flex;flex-direction:column;flex:1;gap:0}
-.library-card .library-name{line-height:1.16;min-height:2.32em;flex-shrink:0}
-.library-card .card-speed{min-height:2.4em;flex-shrink:0;align-items:center}
-.library-card .card-stats{margin-top:auto;flex-shrink:0}
+/* Share one compact metadata row; preserve the portrait geometry and grid columns. */
+.library-card .library-label{display:flex;flex-direction:column;flex:1;gap:0;min-height:0;padding:10px 12px}
+.library-card .library-label>.library-symbols{gap:7px;min-height:25px;flex-wrap:nowrap}
+.library-card .library-symbols>.card-speed{min-height:0;flex-shrink:0;align-items:center;gap:3px;font-size:11px;line-height:1.3;margin:0}
+.library-card .library-symbols>.card-speed .card-glyph{width:10px;height:12px}
+.library-card .library-symbols>.rarity-mark{gap:3px}
+.library-card .library-name{line-height:1.16;min-height:2.32em;flex-shrink:0;margin:6px 0}
+.library-card .library-label>.library-symbols+.library-name{margin-top:6px}
+.library-card .card-stats{margin-top:auto;flex-shrink:0;padding-top:7px}
 .currency-icon{object-fit:contain;filter:none}
 .card-glyph.currency-icon{width:24px;height:24px;flex-shrink:0;vertical-align:middle}
+@media(max-width:600px){
+ .library-card .library-label{padding:8px}
+ .library-card .library-label>.library-symbols{gap:6px;min-height:22px}
+ .library-card .library-symbols>.card-speed{font-size:10px}
+ .library-card .library-symbols>.faction-emblem{width:22px;height:22px}
+ .library-card .library-symbols>.codex-owned-mark{width:18px;height:18px}
+ .library-card .library-symbols>.codex-owned-mark .card-glyph{width:12px;height:12px}
+ .library-card .library-name{margin:5px 0}
+ .library-card .library-label>.library-symbols+.library-name{margin-top:5px}
+ .library-card .card-stats{padding-top:6px}
+}
+@media(max-width:360px){
+ .library-card .library-label>.library-symbols{gap:4px;min-height:20px}
+ .library-card .library-symbols>.faction-emblem{width:18px;height:18px}
+ .library-card .library-symbols>.rarity-mark i{width:3.5px;height:3.5px}
+ .library-card .library-symbols>.card-speed{font-size:9px;gap:2px}
+ .library-card .library-symbols>.card-speed .card-glyph{width:8px;height:10px}
+ .library-card .library-symbols>.codex-owned-mark{width:16px;height:16px}
+}

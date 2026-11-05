@@ -11,6 +11,4 @@
 .loot-ticket-rewards{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
 .loot-ticket-rewards>span{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:8px 10px;border:1px solid #bfd0b638;border-radius:8px;background:#152e35;color:#e4dec1}
 .loot-ticket-rewards img{width:24px;height:24px;object-fit:contain}
-.loot-inventory>p{font-size:13px;line-height:1.5;grid-column:1/-1}
-.loot-inventory>.button{grid-column:1/-1;justify-self:start}
 @media(max-width:600px){.loot-ticket-entry{flex-wrap:wrap;padding:12px}.loot-ticket-entry>.button{width:100%;justify-content:center}.loot-ticket-intro h3{font-size:21px}}

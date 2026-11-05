@@ -6,3 +6,6 @@ body:has(.loading),body:has(.splash-screen),body.menu-theme[data-menu-scene=load
 .splash-screen .splash-content{text-shadow:0 2px 5px #000,0 4px 18px #000c}
 .splash-screen .splash-content>h1{text-shadow:0 3px 7px #000,0 5px 24px #000a}
 @media(max-width:760px) and (orientation:portrait){.splash-landscape{background-position:70% center}}
+
+/* Keep the existing type size; trim the button's surrounding space. */
+.menu-theme .splash-screen .button.splash-enter{width:max-content;max-width:100%;min-width:0;min-height:44px;padding:8px 14px;gap:10px;justify-content:center}

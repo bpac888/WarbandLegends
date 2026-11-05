@@ -9,7 +9,7 @@ const battleRules=[
  ['Mana','Empty lanes give double mana. Specials spend all charge without using a move. Enemies gain 4 charge per attack opportunity.'],
 ];
 const topics=[
- ['battles','Battles',[...battleRules,['Energy','Campaign / Dungeons: 1/2/3 Energy (Normal/Hard/Nightmare). Arena: 1. Capacity: 50 + profile level. Full refill at midnight PST and on level-up. Entry costs are not refunded. Events use attempts.']]],
+ ['battles','Battles',[...battleRules,['Energy','Campaign / Dungeons: 1/2/3 Energy (Normal/Hard/Nightmare). Arena: 1. Capacity: 50 + profile level. Full refill at midnight PST and on level-up. Entry costs are not refunded. Events use attempts.'],['Loot Tickets','Buy five Loot Tickets in Token Exchange for 10 Arena Tokens or 6 tokens from one Special Event. Select a campaign stage already cleared on that exact difficulty, then choose Use Loot Ticket. Each instant clear spends one ticket and normal Energy: 1 on Normal, 2 on Hard, or 3 on Nightmare. You receive the usual replay rewards, including XP for the active warband and any five-victory Gem bonus. Tickets cannot clear new stages or be used in playtesting.']]],
  ['growth','Heroes',[
   ['Feeding','Common / Rare copies cost 25 Gold to feed. Rare: 3× Common XP; matching Rare hero: another 5×. Same element: +25%. Saved teams are protected.'],
   ['Ascension','Each tier adds 2% stats and restarts at level 1 without losing power. Copies develop separately.'],
