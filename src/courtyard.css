@@ -21,7 +21,7 @@ body:has(.courtyard-home) #app{padding-bottom:0}
 .courtyard-pin svg{width:16px;height:16px}.courtyard-target-label{font-size:12px;line-height:1.2;text-shadow:0 1px 3px #0007}
 .courtyard-scene .courtyard-destination.is-near{border-color:#fff2bd;background:linear-gradient(110deg,#76582be8,#334a35e8);box-shadow:0 0 0 3px #ffd88a1a,0 4px 20px #30271177}
 .courtyard-destination.is-near .courtyard-pin{background:#f3d28b;color:#34291b;border-color:#fff0bf}
-.courtyard-scene .wanted-poster.keeper-portrait{display:flex;flex-direction:column;align-items:center;gap:2px;width:92px;min-width:0;height:auto;max-height:none;padding:9px 7px 7px;transform:translate(-50%,-50%);border:1px solid #b18c4f;border-radius:2px 4px 3px 2px;background:radial-gradient(ellipse at 40% 40%,#f3e1b2,#d8bc82 90%);box-shadow:2px 4px 7px #1d160f80,inset 0 0 12px #936a3538;color:#402a18;clip-path:polygon(2% 0,31% 1%,61% 0,98% 2%,100% 28%,99% 62%,100% 99%,72% 98%,33% 100%,0 98%,1% 58%,0 27%);overflow:visible}
+.courtyard-scene .wanted-poster.keeper-portrait{display:flex;flex-direction:column;align-items:center;gap:2px;width:92px;min-width:92px;max-width:92px;height:168px;min-height:168px;max-height:168px;box-sizing:border-box;transform-origin:0 0;padding:9px 7px 7px;transform:translate(-50%,-50%);border:1px solid #b18c4f;border-radius:2px 4px 3px 2px;background:radial-gradient(ellipse at 40% 40%,#f3e1b2,#d8bc82 90%);box-shadow:2px 4px 7px #1d160f80,inset 0 0 12px #936a3538;color:#402a18;clip-path:polygon(2% 0,31% 1%,61% 0,98% 2%,100% 28%,99% 62%,100% 99%,72% 98%,33% 100%,0 98%,1% 58%,0 27%);overflow:visible}
 .courtyard-scene .wanted-poster .wanted-heading{font-family:'Citadel Display',serif!important;font-size:16px;letter-spacing:.09em;line-height:1.1;color:#493019;text-shadow:none}
 .courtyard-scene .wanted-poster>img{position:static;display:block;width:60px;height:60px;aspect-ratio:1;object-fit:cover;border:1px solid #77573f;border-radius:2px;margin:2px 0;box-shadow:none;filter:none}
 .courtyard-scene .wanted-poster .keeper-name{font-size:10px;line-height:1.15;max-width:100%;overflow-wrap:anywhere;color:#432818;text-shadow:none}
@@ -50,3 +50,8 @@ body:has(.courtyard-home) #app{padding-bottom:0}
 @media(prefers-reduced-motion:reduce){.courtyard-scene *{animation:none!important;transition:none!important}}
 
 .courtyard-live.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Fixed paper layout; its door-plane projection alone controls perspective. */
+.courtyard-scene .wanted-poster.keeper-portrait>*{flex-shrink:0}
+.courtyard-scene .wanted-poster .keeper-name{height:22px;max-height:22px;line-height:11px;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.courtyard-scene .wanted-poster .poster-level{line-height:11px}

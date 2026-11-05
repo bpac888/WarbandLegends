@@ -1,6 +1,6 @@
 import {createCourtyardScenery,createCourtyardGround,createCourtyardSky,COURTYARD_SCENERY} from './courtyard-scenery.js';
 import {courtyardLife} from './courtyard-life.js';
-import {COURTYARD_START,COURTYARD_PLACES,EYE_HEIGHT,pointOnPath,wrapAngle,stepCourtyard,approachPlace,distanceTo,projectCourtyardPoint} from './courtyard.js';
+import {COURTYARD_START,COURTYARD_PLACES,EYE_HEIGHT,pointOnPath,wrapAngle,stepCourtyard,approachPlace,distanceTo,projectCourtyardPoint,projectDoorPoster} from './courtyard.js';
 import {wantedPoster} from './courtyard-ui.js';
 import {playerDate} from './keeper.js';
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
@@ -40,10 +40,12 @@ export function mountCourtyard(root,{profile,onNavigate,onProfile,isPaused=()=>f
   compass.style.transform=`rotate(${state.yaw}rad)`;
   let nearest=null,nearestAngle=.6;
   for(const place of COURTYARD_PLACES){const button=buttons.get(place.id),p=projectCourtyardPoint(place,state,width,height,fov),distance=distanceTo(state,place),near=distance<=place.range+.12;
-   const visible=!!p&&p.x>12&&p.x<width-12&&p.y>30&&p.y<height-105&&(place.id!=='daily'||distance<7);
+   const mounted=place.id==='profile'?projectDoorPoster(state,width,height,fov,{flat:!graphics||graphics.lost}):null;
+   const anchor=mounted?.center||p;
+   const visible=!!anchor&&anchor.x>12&&anchor.x<width-12&&anchor.y>30&&anchor.y<height-105&&(place.id!=='daily'||distance<7)&&(place.id!=='profile'||!!mounted&&((graphics&&!graphics.lost)||fallbackArt.endsWith('tavern.webp')));
    if(!button)continue;
    button.hidden=!visible;button.classList.toggle('is-near',near);button.dataset.near=String(near);if(!visible)continue;
-   button.style.left=p.x+'px';button.style.top=p.y+'px';
+   if(mounted){button.style.left='0px';button.style.top='0px';button.style.transform=mounted.transform;}else{button.style.left=p.x+'px';button.style.top=p.y+'px';}
    let scale=1;if(place.id==='daily')scale=clamp(p.focal/(p.depth*120),.65,1.5);button.style.setProperty('--object-scale',scale);
    if(place.id!=='profile')button.setAttribute('aria-label',(near?(place.id==='tavern'?'Enter Tavern':place.id==='daily'?'Open Daily Gift':'Open '+place.name):'Approach '+place.name));
    const angle=Math.abs(wrapAngle(Math.atan2(-(place.x-state.x),-(place.z-state.z))-state.yaw));if(angle<nearestAngle){nearestAngle=angle;nearest=place;}
