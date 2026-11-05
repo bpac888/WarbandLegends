@@ -1,5 +1,6 @@
 import {historicalPortraits} from './portrait-baseline.mjs';
 import {COURTYARD_SCENERY} from '../src/courtyard-scenery.js';
+import {COURTYARD_REPAIRS} from '../src/courtyard-repairs.js';
 import {COURTYARD_PLACES} from '../src/courtyard.js';
 import {ARENA_RIVALS} from '../src/modes.js';
 import {beforeRarityRevision} from '../src/rarity-revision.js';
@@ -29,7 +30,7 @@ if((await stat('assets/factions/astral_concord.webp')).size<1000)throw Error('Mi
 for(const id of ['colosseum-phone','colosseum-wide',...ARENA_RIVALS.map(r=>r.preset_id)])if((await stat('assets/arena/'+id+'.webp')).size<100000)throw Error('Missing Arena artwork: '+id);
 // Validate the current viewer and its non-WebGL fallback, including the unified panorama.
 const courtyardArt=new Set([
- ...COURTYARD_SCENERY.map(p=>p.art),...COURTYARD_PLACES.map(p=>p.art).filter(Boolean),
+ ...COURTYARD_SCENERY.map(p=>p.art),...COURTYARD_REPAIRS.map(p=>p.art),...COURTYARD_PLACES.map(p=>p.art).filter(Boolean),
  ...['tavern','coin-pouch','villager-man','villager-woman','limestone-paving','afternoon-sky','garden-perimeter'].map(id=>'./assets/courtyard/'+id+'.webp'),
 ]);
 for(const path of courtyardArt)if((await stat(path)).size<10000)throw Error('Missing courtyard artwork: '+path);

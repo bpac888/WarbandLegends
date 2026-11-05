@@ -47,6 +47,7 @@
     "test:profile-tools": "node tests/profile-tools-browser.mjs",
     "test:courtyard": "node tests/courtyard-browser.mjs",
     "test:courtyard-polish": "node tests/courtyard-polish-browser.mjs",
+    "test:courtyard-repairs": "node tests/courtyard-repairs-browser.mjs",
     "test:roster-215": "node tests/roster-215-browser.mjs",
     "test:quests": "node tests/quests-browser.mjs",
     "test:tomes": "node tests/tomes-browser.mjs",

@@ -8,7 +8,7 @@ The local Three.js viewer combines a bounded ground plane, a continuous curved b
 
 Movement is temporary presentation state. It does not spend Energy, change battle teams or write progress. Profile edits update the poster without rebuilding the viewer or moving the camera. Route changes dispose the renderer, textures, geometries, observers and input listeners. The renderer runs at approximately 30 frames per second with bounded pixel density and no real-time shadows or remote dependencies.
 
-Validation: `npm run check`, `npm run test:courtyard`, `npm run test:courtyard-polish` and `npm run test:profile-tools`. Browser coverage includes real touch dragging, walking/turning, all destinations, profile persistence, once-only daily rewards, six viewport sizes including phone landscape, ambient motion, and the WebGL fallback. Existing roster and artwork fingerprints remain part of the production build.
+Validation: `npm run check`, `npm run test:courtyard`, `npm run test:courtyard-polish`, `npm run test:courtyard-repairs` and `npm run test:profile-tools`. Browser coverage includes real touch dragging, walking/turning, all destinations, profile persistence, once-only daily rewards, six viewport sizes including phone landscape, ambient motion, and the WebGL fallback. The repair check compares rendered pixels against the original scenery and requires pixels outside the two local masks to remain byte-for-byte unchanged. Existing roster and artwork fingerprints remain part of the production build.
 
 ## Current files
 
@@ -18,9 +18,12 @@ The current courtyard is the v0.36 scene with a unified market-to-Adventure pano
 - `src/courtyard-ui.js` and `src/courtyard.css`: markup and presentation.
 - `src/courtyard-view.js`: input, rendering and resource disposal.
 - `src/courtyard-scenery.js`: continuous background, shared sky and paving projection.
+- `src/courtyard-repairs.js`: bounded restorations of the castle/Altar and Altar/Codex joins, applied on the existing world surface and shared by the paving projection.
 - `src/courtyard-life.js` and `src/courtyard-birds.js`: pedestrians, leaves and articulated swallows.
 - `assets/courtyard/`: only the current scene and fallback images. The Adventure and Shop skyline images remain necessary for the non-WebGL fallback even though the WebGL scene uses the unified panorama.
 
 The wanted poster has a fixed physical size on the Tavern door. Its entire paper surface follows the door's perspective while walking or turning, with a stable 92 × 168 layout for the profile content. The flat fallback anchors it to the same part of the illustrated door. Limestone paving blends into the distant scenery, and the background shares the sky dome's viewing ray. The market panorama extends behind the Tavern so its outer fade cannot cut through the visible building and expose background sky. The garden perimeter avoids duplicate buildings beside the foreground Tavern. Pedestrians face their direction of travel, pause when blocked, and fade at route ends. Reduced motion pauses or hides ambient animation.
 
 Superseded courtyard paintings and paving were removed from the current tree during repository cleanup; earlier versions remain available in Git history. The production build validates the artwork referenced by both the current scenery and destination definitions.
+
+Two local repair textures restore the ghosted stonework and floating canopy beside the castle vista, and the disconnected mountain and fading flower bed beside the Altar. They were generated from unwrapped captures of those joins and are revealed only inside the masks in `courtyard-repairs.js`. The original paintings, layout, Tavern, sky, and interaction positions are preserved. Keep the repair texture bounds aligned with their source captures when editing these masks.

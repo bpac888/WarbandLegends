@@ -1,4 +1,5 @@
 // The background, paving and sky share world-space projection and lighting.
+import {COURTYARD_REPAIRS} from './courtyard-repairs.js';
 export const SCENERY_RADIUS=17.55;
 export const SCENERY_BOTTOM=-1.5335,SCENERY_HEIGHT=16.667;
 export const COURTYARD_SCENERY=Object.freeze([
@@ -27,9 +28,10 @@ const atmosphere=`
 `;
 const vertex='varying vec3 worldPoint;varying float circumference;void main(){vec4 p=modelMatrix*vec4(position,1.0);worldPoint=p.xyz;circumference=uv.x;gl_Position=projectionMatrix*viewMatrix*p;}';
 
-export async function createCourtyardScenery(THREE,load,stone=null){
+export async function createCourtyardScenery(THREE,load,stone=null,repairs=COURTYARD_REPAIRS){
  const sky=await load(new URL('../assets/courtyard/afternoon-sky.webp',import.meta.url).href);sky.wrapS=THREE.RepeatWrapping;
  const uniforms={skyMap:{value:sky},paving:{value:stone},atmosphereTime:{value:0},village:{value:await load(new URL('../assets/courtyard/garden-perimeter.webp',import.meta.url).href)}};
+ for(const [i,repair]of repairs.entries())uniforms['repairMap'+i]={value:await load(new URL(repair.art,document.baseURI).href)};
  const layouts=[];
  for(let i=0;i<COURTYARD_SCENERY.length;i++){
   const texture=await load(new URL(COURTYARD_SCENERY[i].art,document.baseURI).href);uniforms['painting'+i]={value:texture};
@@ -39,7 +41,22 @@ export async function createCourtyardScenery(THREE,load,stone=null){
  uniform sampler2D village;
  uniform sampler2D paving;
  ${COURTYARD_SCENERY.map((_,i)=>`uniform sampler2D painting${i};`).join('\n')}
+ ${repairs.map((_,i)=>`uniform sampler2D repairMap${i};`).join('\n')}
  const float TAU=6.28318530718;
+ float repairRegion(vec2 p,vec4 bounds,vec2 feather){
+  vec2 nearEdge=smoothstep(bounds.xz,bounds.xz+feather,p);
+  vec2 farEdge=vec2(1.0)-smoothstep(bounds.yw-feather,bounds.yw,p);
+  return nearEdge.x*nearEdge.y*farEdge.x*farEdge.y;
+ }
+ vec3 repairedJoins(vec3 original,float angle,float y){
+  vec2 p=vec2(fract(angle/TAU+1.0),y);
+  ${repairs.map((r,i)=>{
+   const floats=a=>a.map(v=>v.toFixed(8)).join(','),[l,right,b,t]=r.bounds;
+   const weights=r.regions.map(s=>`repairRegion(p,vec4(${floats(s.bounds)}),vec2(${floats(s.feather)}))`);
+   return `{float weight=max(${weights.join(',')});if(weight>0.0){vec2 uv=(p-vec2(${floats([l,b])}))/vec2(${floats([right-l,t-b])});original=mix(original,texture2D(repairMap${i},uv).rgb,weight);}}`;
+  }).join('\n')}
+  return original;
+ }
  vec3 pavingColor(vec2 p){
   vec3 stone=texture2D(paving,p/4.5).rgb;
   stone*=mix(.93,1.055,softNoise(p*.16));
@@ -79,7 +96,7 @@ export async function createCourtyardScenery(THREE,load,stone=null){
   vec3 color=mix(floorColor,garden,smoothstep(-.5,1.2,y));
   if(y>6.0){vec3 sky=courtyardSky(vec3(sin(angle)*17.55,y,-cos(angle)*17.55)-cameraPosition);float skyBlend=max(smoothstep(10.3,11.0,y),smoothstep(6.0,10.5,y)*skyMask(garden));color=mix(color,sky,skyBlend);}
   ${COURTYARD_SCENERY.map((p,i)=>`color=paintView(color,painting${i},angle,y,${(p.u*tau).toFixed(8)},${((p.leftWidth||p.halfWidth)*tau).toFixed(8)},${((p.rightWidth||p.halfWidth)*tau).toFixed(8)},${layouts[i].bottom.toFixed(7)},${layouts[i].height.toFixed(7)});`).join('\n')}
-  return color;
+  return repairedJoins(color,angle,y);
  }
  `;
  const fragment=`varying vec3 worldPoint;varying float circumference;${atmosphere}${paintingShader}
