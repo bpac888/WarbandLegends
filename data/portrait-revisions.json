@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "portraits": [
+    {
+      "id": "valcera_briar_magistrate",
+      "path": "assets/champions/valcera_briar_magistrate.webp",
+      "baselineSha256": "5ce25cff48fc8ba211c839bafe49f859ab8a4865d0a8c062e88358cf29f2b315",
+      "approvedSha256": "0b455d9b3cef53e4ef0eb901863e107a8cd121bf63cda2579349536542b1a79f",
+      "reason": "User requested center-split blonde and black hair; preserve the rest of Valcera\u2019s design."
+    },
+    {
+      "id": "zamrukh_thornstorm_rider",
+      "path": "assets/champions/zamrukh_thornstorm_rider.webp",
+      "baselineSha256": "aa4c553222365555b2b0cf70db04d67c801ac9f322822621838119408a85dbd0",
+      "approvedSha256": "a237a4cff3d157c4631729d1fd6ab2715af662d1ae2fa89fe28fb00dfe4722c0",
+      "reason": "User requested an emerald-green and royal-purple palette and Zamrukh visibly seated on his horse."
+    }
+  ]
+}

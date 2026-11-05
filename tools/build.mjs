@@ -1,3 +1,4 @@
+import {historicalPortraits} from './portrait-baseline.mjs';
 import {COURTYARD_SCENERY} from '../src/courtyard-scenery.js';
 import {COURTYARD_PLACES} from '../src/courtyard.js';
 import {ARENA_RIVALS} from '../src/modes.js';
@@ -19,7 +20,7 @@ if(sha(roster.slice(0,milestone200.originalCount))!==milestone200.originalRecord
 if(sha(roster.slice(0,latest.originalCount))!==latest.originalRecordsSha256||sha(sourceRoster.slice(0,latest.originalCount))!==latest.originalSourceRecordsSha256)throw Error('The 215-character baseline changed');
 if(roster.length!==latest.totalCount||new Set(roster.map(c=>c.id)).size!==latest.totalCount||JSON.stringify(roster.slice(latest.originalCount).map(c=>c.id))!==JSON.stringify(latest.addedChampionIds))throw Error('Roster identity check failed');
 const originalPortraits=[];for(const c of roster.slice(0,latest.originalCount))originalPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
-if(sha(originalPortraits)!==latest.originalPortraitsSha256)throw Error('An existing portrait changed');
+if(sha(historicalPortraits(originalPortraits))!==latest.originalPortraitsSha256)throw Error('An existing portrait changed');
 if((await stat('assets/items/loot-tickets.webp')).size<10000)throw Error('Missing Loot Ticket artwork');
 if((await stat('assets/tomes/power.webp')).size<10000)throw Error('Missing Tome of Power artwork');
 if((await stat('assets/quests/categories.webp')).size<10000)throw Error('Missing quest category artwork');

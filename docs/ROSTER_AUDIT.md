@@ -1,6 +1,6 @@
 # Warband Legends Roster Audit — 233 Champions
 
-Eighteen bird-people establish Aerie Court: 2 Commons, 7 Rares, 8 Legendaries and 1 Mythical, with 10 attackers, 4 defenders and 4 supports. All 215 previous records and portrait files are unchanged.
+Eighteen bird-people establish Aerie Court: 2 Commons, 7 Rares, 8 Legendaries and 1 Mythical, with 10 attackers, 4 defenders and 4 supports. All 215 previous records are unchanged. Explicit portrait edits are recorded in the artwork revision registry.
 
 ## Before and After
 

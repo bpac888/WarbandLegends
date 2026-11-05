@@ -1,3 +1,4 @@
+import {historicalPortraits} from '../tools/portrait-baseline.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -10,10 +11,10 @@ const read=async f=>JSON.parse(await readFile(new URL('../'+f,import.meta.url)))
 const roster=(await read('data/champions.json')).slice(0,215),manifest=await read('data/roster-expansion-6.json'),added=roster.slice(200),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 const counts=k=>Object.fromEntries([...new Set(added.map(c=>c[k]))].sort().map(v=>[v,added.filter(c=>c[k]===v).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.passive=null;e.shield=100;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0},shield:{turns:2,source:e.uid,appliedMove:0}};}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.3);h.passive=null;h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};}return b;}
-test('all 200 previous identities, kits, source records and portraits are unchanged',async()=>{
+test('all 200 previous identities, kits, source records and portrait baselines are preserved',async()=>{
  assert.equal(roster.length,215);assert.equal(new Set(roster.map(c=>c.id)).size,215);assert.equal(new Set(roster.map(c=>c.name.toLowerCase())).size,215);
  assert.equal(hash(roster.slice(0,200)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,200)),manifest.originalSourceRecordsSha256);
- const portraits=[];for(const c of roster.slice(0,200))portraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(new URL('../'+c.portrait,import.meta.url))).digest('hex')});assert.equal(hash(portraits),manifest.originalPortraitsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);
+ const portraits=[];for(const c of roster.slice(0,200))portraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(new URL('../'+c.portrait,import.meta.url))).digest('hex')});assert.equal(hash(historicalPortraits(portraits)),manifest.originalPortraitsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);
 });
 test('the approved fifteen preserve Attack frequency, rarity limits and varied access',()=>{
  assert.equal(added.length,15);assert.deepEqual(counts('rarity'),{legendary:7,rare:8});assert.deepEqual(counts('role'),{attack:8,defense:4,support:3});assert.deepEqual(counts('color'),{blue:2,green:4,purple:5,red:2,yellow:2});assert.deepEqual(counts('manaSpeed'),{average:6,charging:2,fast:4,slow:3});assert.ok(added.every(c=>!c.passive));

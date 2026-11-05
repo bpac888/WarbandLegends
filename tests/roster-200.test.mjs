@@ -1,3 +1,4 @@
+import {historicalPortraits} from '../tools/portrait-baseline.mjs';
 import {beforeRarityRevision} from '../src/rarity-revision.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -54,8 +55,8 @@ test('Auto considers every new ready kit and produces legal actions without muta
 test('archived audit reflects 200 characters and all eleven implemented additions',async()=>{
  const audit=await read('docs/history/roster-audit-200.json');assert.equal(audit.after.total,200);assert.equal(audit.before.total,189);assert.equal(audit.implementedRecommendations.length,11);assert.equal(audit.recommendations.length,0);for(const f of Object.values(audit.byFaction))assert.ok(Object.values(f.color).every(n=>n>0));
 });
-test('all original portraits are retained byte for byte',async()=>{
- const portraits=[];for(const c of roster.slice(0,189))portraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(new URL('../'+c.portrait,import.meta.url))).digest('hex')});assert.equal(hash(portraits),manifest.originalPortraitsSha256);
+test('all original portrait baselines are retained with explicit approved artwork revisions',async()=>{
+ const portraits=[];for(const c of roster.slice(0,189))portraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(new URL('../'+c.portrait,import.meta.url))).digest('hex')});assert.equal(hash(historicalPortraits(portraits)),manifest.originalPortraitsSha256);
 });
 test('three new warband combinations complete real Auto encounters without illegal actions or stalls',()=>{
  const groups=[added.slice(0,5),added.slice(4,9),added.slice(6,11)];

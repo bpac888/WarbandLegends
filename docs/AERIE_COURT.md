@@ -2,7 +2,7 @@
 
 A mountain civilization of bird-people: most have humanoid bodies below the shoulders, with compact avian heads and necks above. Bronze featherwork, high palaces and richly colored plumage unite the faction without replacing each species’ identity. The pterosaur and twin-headed guardian are ancient branches of the court. Duovrax is a two-headed owl/raven monster-beast. Veyrath, its sole Mythical, combines an eagle head and a horned monster-beast head, branching evenly from the center of one massive quadrupedal body.
 
-Eighteen additions bring the roster from 215 to 233. The rarity spread is 2 Common, 7 Rare, 8 Legendary and 1 Mythical, alongside 10 Attack, 4 Defense and 4 Support champions. All five elements and Very Fast, Fast, Average and Slow speeds are represented. Existing 215 champion/source records, portraits and summon rarity odds are unchanged.
+Eighteen additions bring the roster from 215 to 233. The rarity spread is 2 Common, 7 Rare, 8 Legendary and 1 Mythical, alongside 10 Attack, 4 Defense and 4 Support champions. All five elements and Very Fast, Fast, Average and Slow speeds are represented. Existing 215 champion/source records and summon rarity odds are unchanged. Subsequent explicitly requested portrait edits are recorded in [Artwork Revisions](ARTWORK_REVISIONS.md).
 
 ## Tailwind Guard
 
@@ -35,7 +35,7 @@ Two matching members gain **4% DEF and 5% extra matching-rune mana**. Three or m
 
 Base ATK, DEF and HP sit within 3% of the existing median for each rarity/type, with speed and coverage controlling Special budgets. Fast attacks trade utility or damage for access; area attacks are Slow; Common kits are simpler. Veyrath has Slow area damage, Attack Down and Poison, plus Poison immunity. This is a bounded initial balance pass, not a measured PvP win-rate claim.
 
-Each of the eighteen portraits was generated individually at native **1024 × 1536** and encoded as quality-95 WebP without cropping or upscaling. All were visually reviewed, including the separate heads on Duovrax and Veyrath. The 215 pre-faction portraits are untouched.
+Each of the eighteen portraits was generated individually at native **1024 × 1536** and encoded as quality-95 WebP without cropping or upscaling. All were visually reviewed, including the separate heads on Duovrax and Veyrath. Pre-faction portrait baselines are protected, with explicit approved edits recorded separately.
 
 The shared Collection/Codex/Teams filter derives factions from the roster; Aerie Court therefore appears automatically. Its emblem is registered, and the Guide and team composition displays use the shared faction rules.
 
