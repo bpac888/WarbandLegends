@@ -33,11 +33,14 @@ export async function createCourtyardScenery(THREE,load,stone=null,repairs=COURT
  const uniforms={skyMap:{value:sky},paving:{value:stone},atmosphereTime:{value:0},village:{value:await load(new URL('../assets/courtyard/garden-perimeter.webp',import.meta.url).href)}};
  for(const [i,repair]of repairs.entries())uniforms['repairMap'+i]={value:await load(new URL(repair.art,document.baseURI).href)};
  const layouts=[];
+ uniforms.marketTexel={value:new THREE.Vector2(1/2172,1/724)};
  for(let i=0;i<COURTYARD_SCENERY.length;i++){
   const texture=await load(new URL(COURTYARD_SCENERY[i].art,document.baseURI).href);uniforms['painting'+i]={value:texture};
+  if(COURTYARD_SCENERY[i].id==='market-adventure'&&texture.image?.width)uniforms.marketTexel.value.set(1/texture.image.width,1/texture.image.height);
   const aspect=texture.image?.width&&texture.image?.height?texture.image.width/texture.image.height:1.5,height=COURTYARD_SCENERY[i].height||25/aspect;layouts.push({height,bottom:6.8-height/2});
  }
  const paintingShader=`
+ uniform vec2 marketTexel;
  uniform sampler2D village;
  uniform sampler2D paving;
  ${COURTYARD_SCENERY.map((_,i)=>`uniform sampler2D painting${i};`).join('\n')}
@@ -68,7 +71,7 @@ export async function createCourtyardScenery(THREE,load,stone=null,repairs=COURT
   float high=min(ink.r,min(ink.g,ink.b)),chroma=max(ink.r,max(ink.g,ink.b))-high;
   return max(blue,smoothstep(.5,.85,high)*(1.0-smoothstep(.08,.3,chroma)));
  }
- vec3 paintView(vec3 below,sampler2D painting,float angle,float y,float center,float leftWidth,float rightWidth,float bottom,float height){
+ vec3 paintView(vec3 below,sampler2D painting,float angle,float y,float center,float leftWidth,float rightWidth,float bottom,float height,float marketDetail){
   float delta=angle-center;
   if(delta>3.14159265359)delta-=TAU;
   if(delta< -3.14159265359)delta+=TAU;
@@ -76,6 +79,15 @@ export async function createCourtyardScenery(THREE,load,stone=null,repairs=COURT
   if(uv.x<=0.0||uv.x>=1.0||uv.y<=0.0||uv.y>=1.0)return below;
   float feather=smoothstep(0.0,0.09,uv.x)*smoothstep(0.0,0.09,1.0-uv.x);
   vec3 ink=texture2D(painting,uv).rgb;
+  // Recover fine market detail without moving pixels or changing the panorama.
+  // Keep the blend edges, sky and Adventure half on their original sampling.
+  if(marketDetail>0.0){
+   float local=smoothstep(.05,.12,uv.x)*(1.0-smoothstep(.43,.50,uv.x))*smoothstep(.05,.10,uv.y)*(1.0-smoothstep(.84,.93,uv.y));
+   if(local>0.0){
+    vec3 nearby=(texture2D(painting,uv+vec2(marketTexel.x,0.0)).rgb+texture2D(painting,uv-vec2(marketTexel.x,0.0)).rgb+texture2D(painting,uv+vec2(0.0,marketTexel.y)).rgb+texture2D(painting,uv-vec2(0.0,marketTexel.y)).rgb)*.25;
+    ink=clamp(ink+clamp((ink-nearby)*marketDetail,vec3(-.025),vec3(.025))*local,0.0,1.0);
+   }
+  }
   float skyEdge=mix(smoothstep(0.0,.065,1.0-uv.y),smoothstep(0.0,.18,1.0-uv.y),skyMask(ink));
   // Sky replaces sky directly, so underlying trees cannot bleed through a crown.
   vec3 clearSky=courtyardSky(vec3(sin(angle)*17.55,y,-cos(angle)*17.55)-cameraPosition);
@@ -95,7 +107,7 @@ export async function createCourtyardScenery(THREE,load,stone=null,repairs=COURT
   vec3 garden=texture2D(village,villageUV).rgb;
   vec3 color=mix(floorColor,garden,smoothstep(-.5,1.2,y));
   if(y>6.0){vec3 sky=courtyardSky(vec3(sin(angle)*17.55,y,-cos(angle)*17.55)-cameraPosition);float skyBlend=max(smoothstep(10.3,11.0,y),smoothstep(6.0,10.5,y)*skyMask(garden));color=mix(color,sky,skyBlend);}
-  ${COURTYARD_SCENERY.map((p,i)=>`color=paintView(color,painting${i},angle,y,${(p.u*tau).toFixed(8)},${((p.leftWidth||p.halfWidth)*tau).toFixed(8)},${((p.rightWidth||p.halfWidth)*tau).toFixed(8)},${layouts[i].bottom.toFixed(7)},${layouts[i].height.toFixed(7)});`).join('\n')}
+  ${COURTYARD_SCENERY.map((p,i)=>`color=paintView(color,painting${i},angle,y,${(p.u*tau).toFixed(8)},${((p.leftWidth||p.halfWidth)*tau).toFixed(8)},${((p.rightWidth||p.halfWidth)*tau).toFixed(8)},${layouts[i].bottom.toFixed(7)},${layouts[i].height.toFixed(7)},${p.id==='market-adventure'?'.65':'0.0'});`).join('\n')}
   return repairedJoins(color,angle,y);
  }
  `;
