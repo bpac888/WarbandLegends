@@ -14,10 +14,10 @@ test('seventeen new milestones require actual progress and award each reward onl
   const snapshot=structuredClone(r.profile),again=claimQuest(r.profile,q.id,roster);assert.ok(again.error);assert.deepEqual(again.profile,snapshot);
  }
 });
-test('category and status filtering, empty states and the nine shared art variants reflect the quests shown',()=>{
+test('status filtering, empty states and the nine shared art variants reflect the quests shown',()=>{
  const p={...defaultProfile(),summons:1,claimed:['first-victory']};assert.deepEqual(new Set(QUESTS.map(questArtIndex)),new Set([0,1,2,3,4,5,6,7,8]));
- const ready=questsPage(p,{state:'ready',category:'collection'});assert.match(ready,/data-quest="first-summon"/);assert.ok(!ready.includes('data-quest="first-victory"'));
- const completed=questsPage(p,{state:'completed',category:'campaign'});assert.match(completed,/data-quest="first-victory"/);assert.ok(!completed.includes('data-quest="first-summon"'));
- const empty=questsPage(p,{state:'completed',category:'arena'});assert.match(empty,/No quests here yet/);assert.ok(!empty.includes('data-quest='));
+ const ready=questsPage(p,{state:'ready'});assert.match(ready,/data-quest="first-summon"/);assert.ok(!ready.includes('data-quest="first-victory"'));
+ const completed=questsPage(p,{state:'completed'});assert.match(completed,/data-quest="first-victory"/);assert.ok(!completed.includes('data-quest="first-summon"'));
+ const empty=questsPage(defaultProfile(),{state:'completed'});assert.match(empty,/No quests here yet/);assert.ok(!empty.includes('data-quest='));
  const all=questsPage(defaultProfile(),{limit:100});assert.equal((all.match(/data-quest=/g)||[]).length,60);assert.ok(!all.includes('assets/champions/'));assert.match(all,/assets\/quests\/categories.webp/);
 });

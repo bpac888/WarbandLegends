@@ -41,6 +41,7 @@ export function mountCourtyard(root,{profile,onNavigate,onProfile,isPaused=()=>f
   let nearest=null,nearestAngle=.6;
   for(const place of COURTYARD_PLACES){const button=buttons.get(place.id),p=projectCourtyardPoint(place,state,width,height,fov),distance=distanceTo(state,place),near=distance<=place.range+.12;
    const visible=!!p&&p.x>12&&p.x<width-12&&p.y>30&&p.y<height-105&&(place.id!=='daily'||distance<7);
+   if(!button)continue;
    button.hidden=!visible;button.classList.toggle('is-near',near);button.dataset.near=String(near);if(!visible)continue;
    button.style.left=p.x+'px';button.style.top=p.y+'px';
    let scale=1;if(place.id==='daily')scale=clamp(p.focal/(p.depth*120),.65,1.5);button.style.setProperty('--object-scale',scale);

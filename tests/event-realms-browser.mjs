@@ -30,9 +30,9 @@ try{
   }
   await page.screenshot({path:root+`artifacts/event-map-${width}.png`,fullPage:true});
  }
- for(const [day,id] of [[5,'crimson_eclipse'],[12,'frostwake_siege'],[20,'veil_of_umbra']]){
-  await page.evaluate(d=>localStorage.setItem('event-test-date',d),`2026-10-${String(day).padStart(2,'0')}T19:00:00Z`);
-  await go('events');await page.locator('[data-event="'+id+'"]').click();assert.ok(await page.locator('.event-play').isEnabled());assert.match(await page.locator('.event-play').innerText(),/Fight/);await page.locator('.event-play').click();await page.getByRole('button',{name:'Begin battle',exact:true}).waitFor();assert.ok(await page.getByRole('button',{name:'Begin battle',exact:true}).isEnabled());await page.locator('[data-action="close"]').first().click();
+ for(const width of [390,1440])for(const [day,id] of [[5,'crimson_eclipse'],[12,'frostwake_siege'],[20,'veil_of_umbra']]){
+  await page.setViewportSize({width,height:950});await page.evaluate(d=>localStorage.setItem('event-test-date',d),`2026-10-${String(day).padStart(2,'0')}T19:00:00Z`);
+  await go('events');await page.locator('[data-event="'+id+'"]').click();assert.ok(await page.locator('.event-play').isEnabled());assert.match(await page.locator('.event-play').innerText(),/Fight/);await page.locator('.event-play').click();await page.getByRole('button',{name:'Begin battle',exact:true}).waitFor();assert.ok(await page.getByRole('button',{name:'Begin battle',exact:true}).isEnabled());assert.equal(await page.locator('#modal .encounter-preview .eyebrow,#modal .recommended-level').count(),0);assert.ok(!(await page.locator('#modal').innerText()).includes('Suggested hero level'));if(id==='crimson_eclipse')await page.locator('#modal').screenshot({path:root+`artifacts/event-confirm-clean-${width}.png`});await page.locator('[data-action="close"]').first().click();
  }
  assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,viewports:[320,390,760,1440],checks:['three bright accessible regions, including closed windows','compact area panels with schedule on disabled battle buttons','active battles reach confirmation in all three monthly windows','no removed copy, overflow, missing assets or browser errors']},null,2));
 }finally{await browser.close();}

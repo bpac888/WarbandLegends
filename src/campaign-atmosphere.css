@@ -1,0 +1,17 @@
+/* Slow, small accents stay behind the route and stage controls. */
+.campaign-canvas .campaign-atmosphere{position:absolute;inset:0;overflow:hidden;z-index:1;pointer-events:none;contain:layout paint}
+.campaign-atmosphere>i{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);pointer-events:none;animation-duration:var(--duration);animation-delay:var(--delay);animation-timing-function:linear;animation-iteration-count:infinite;opacity:0}
+.campaign-atmosphere .map-mote{width:var(--size);height:var(--size);border-radius:50%}
+.atmosphere-normal .map-mote{background:#eedb99;box-shadow:0 0 4px #e9d78a55;animation-name:campaign-pollen}
+.atmosphere-hard .map-mote{background:#d4c4b1;border-radius:1px;animation-name:campaign-ash}
+.atmosphere-hard .map-ember{width:2px;height:3px;background:#e5a45f;border-radius:50%;box-shadow:0 0 4px #ed8c5044;animation-name:campaign-ember}
+.atmosphere-nightmare .map-mote{background:#c0aad9;box-shadow:0 0 5px #bea3dd55;animation-name:campaign-wisp}
+.campaign-canvas>.map-trail{z-index:1}
+.campaign-canvas>.map-world-caption{z-index:2}
+@keyframes campaign-pollen{0%{opacity:0;transform:translate(0,25px)}20%{opacity:.32}50%{transform:translate(16px,-8px)}75%{opacity:.25}100%{opacity:0;transform:translate(5px,-55px)}}
+@keyframes campaign-ash{0%{opacity:0;transform:translate(0,-45px) rotate(0)}18%,65%{opacity:.35}100%{opacity:0;transform:translate(-32px,125px) rotate(85deg)}}
+@keyframes campaign-ember{0%{opacity:0;transform:translate(0,20px)}25%{opacity:.38}65%{opacity:.2}100%{opacity:0;transform:translate(18px,-90px)}}
+@keyframes campaign-wisp{0%{opacity:0;transform:translate(-8px,25px) scale(.7)}35%{opacity:.3}70%{transform:translate(9px,-20px) scale(1)}100%{opacity:0;transform:translate(-4px,-55px) scale(.7)}}
+.menu-motion-paused .campaign-atmosphere>i,body:has(#modal[open]) .campaign-atmosphere>i{animation-play-state:paused!important}
+body.reduce-animation .campaign-atmosphere{display:none}
+@media(prefers-reduced-motion:reduce){.campaign-atmosphere{display:none}}
