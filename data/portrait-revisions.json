@@ -14,6 +14,174 @@
       "baselineSha256": "aa4c553222365555b2b0cf70db04d67c801ac9f322822621838119408a85dbd0",
       "approvedSha256": "a237a4cff3d157c4631729d1fd6ab2715af662d1ae2fa89fe28fb00dfe4722c0",
       "reason": "User requested an emerald-green and royal-purple palette and Zamrukh visibly seated on his horse."
+    },
+    {
+      "id": "ravel",
+      "path": "assets/champions/ravel.webp",
+      "baselineSha256": "2befec82ef77a232febdec5c57e3aafc57ce1ccf271a1f7cb3f33cc7887ee931",
+      "approvedSha256": "ff6a2ff82ecede112ff2a1f9a863b4db00cda2162b90ed17c7d22444c1d20f46",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "cursed_acolyte",
+      "path": "assets/champions/cursed_acolyte.webp",
+      "baselineSha256": "0dde406d2cd4bb3956f94709ed36f8b557bea02687ed0b69c27bb75777d69e7c",
+      "approvedSha256": "16d61b765a20697a98617e7b62949adffe599c061aaeb6cc8465f14472f783c9",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "jade_archer_linh",
+      "path": "assets/champions/jade_archer_linh.webp",
+      "baselineSha256": "cadffa8c34fd00524d8725f121d931ee16845253f967bb03f684bafddfa67d08",
+      "approvedSha256": "a1bc5014f9f7c03a2b2cedba63baf3ddfd58fdb6075164920f0052bb7567cb89",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "jade_monk_xuan",
+      "path": "assets/champions/jade_monk_xuan.webp",
+      "baselineSha256": "a59a33cc5eb21d3a68485851d6bc8e98e2d8e8ba9c4e941ddb121531348f0f9a",
+      "approvedSha256": "a1b7419f95093a877248dc8021d6211bfc5e914600be85efd5f2962012b751c7",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "spirit_fox_mei",
+      "path": "assets/champions/spirit_fox_mei.webp",
+      "baselineSha256": "f23ef181d30f9ee5f91ee22387b39157bd06e400e6426b8a475aaa8deb13da76",
+      "approvedSha256": "bede2aa95e28c1ddc74451529dff17f516a382759d21fcfbddfd19acc0c95b00",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "desert_assassin",
+      "path": "assets/champions/desert_assassin.webp",
+      "baselineSha256": "d96caa2928165a51ae09c6e52464630433549f91e4fea32344d29b89747a7e38",
+      "approvedSha256": "282d20dcd1c556dc4146c7e23f7286efedf89c7d6eff816c5c78f88806533bdc",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "beastmaster_gharn",
+      "path": "assets/champions/beastmaster_gharn.webp",
+      "baselineSha256": "cd9ddafac33b05f22736ff13b682c76c37585b81c69d3c9f2014708eb06dac49",
+      "approvedSha256": "a19bf13fc7f8e8d46f5cda0a9cb41c38885c53b2ad37b0d6799d4b9492d249e0",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "sister_seraphel",
+      "path": "assets/champions/sister_seraphel.webp",
+      "baselineSha256": "240d3bc6abc7386885ac4fa023e6b47d53981823234f6d39ad2fd150cffdcd1f",
+      "approvedSha256": "4a79c90f54556a4816679d253e386812a25660b593ec5abdaeb47ed2607978f1",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "wolf_handler_torv",
+      "path": "assets/champions/wolf_handler_torv.webp",
+      "baselineSha256": "085b8bfff323aa54166b73e8c41dac098aa2a7494ddc612121ad2728e6df4932",
+      "approvedSha256": "d3aca282b1ffb5d754c70ae8a4d80020ab3389a1fe508bfe3f17439cba2dc11b",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "shade_prince",
+      "path": "assets/champions/shade_prince.webp",
+      "baselineSha256": "5b047f391d1e06c5ab32ff9cf40442a32d13e1e4e4dba954c0b2b8f0a2687ad9",
+      "approvedSha256": "68d896ab0b8bb94f10c8f654ccd842209a58eea9cad298a72e46661d053a277d",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "alley_shade",
+      "path": "assets/champions/alley_shade.webp",
+      "baselineSha256": "36b60a886c1529b357d82e03774d712cd715d2adf831b6dac1d9f69bb43d93eb",
+      "approvedSha256": "dfbc21408c5bf80a5b3c2be83543fa6124a9d44cdc4cdbccdb10607d061268a5",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "shadow_thrall",
+      "path": "assets/champions/shadow_thrall.webp",
+      "baselineSha256": "79cff8b7e1dda25fbbad496cc7792785bf18a23e51b7d2e403ae894939c27160",
+      "approvedSha256": "f9e694e3366d5628693a4e659996d603bffec26e07b57309323c6b5ad32a2a6c",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "grove_druid",
+      "path": "assets/champions/grove_druid.webp",
+      "baselineSha256": "e9e8435547ce2d56c67a0849422fafd9ca377a2209cb0de018361f35882fb5b5",
+      "approvedSha256": "344a47ffd88ec437ff96398e52c1db31b251e2df6558260eb3e472ec81db54aa",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "mosswitch_lira",
+      "path": "assets/champions/mosswitch_lira.webp",
+      "baselineSha256": "0c429d202db07c5125735734a6f935f72ac48745333033f56d1ce26fb0a10926",
+      "approvedSha256": "1511733ea1217a01412c06c3dcb55061bf00a6950f66e02f862ca742d8004ed4",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "satyr_archer_kell",
+      "path": "assets/champions/satyr_archer_kell.webp",
+      "baselineSha256": "d7a237f14d49f3bac38ab5536a6dfc509baabdb16ea0bb33e7a884da318072d6",
+      "approvedSha256": "26e4afc6e5cc942848b96811d8d7577a3b4cf4e2f55930ff0e6614b20a41695e",
+      "reason": "User requested light portrait refinement, preserving character identity and design."
+    },
+    {
+      "id": "dragon_samurai_kenshin",
+      "path": "assets/champions/dragon_samurai_kenshin.webp",
+      "baselineSha256": "4429da1106daefb1b5211235b06f120db91693464e66bb1130f90ce2836bda41",
+      "approvedSha256": "922028fdcb477756699c341debea0eeff75f3652d9a5abdcd75ac2ff08675735",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "camel_rider_rashid",
+      "path": "assets/champions/camel_rider_rashid.webp",
+      "baselineSha256": "9a5fc63c7e31084476e418eb4a3f4417ad33cefc7fb14593d106c42002b97834",
+      "approvedSha256": "ffe8fc9dad704a20a6acf590697bd88ca1dd7a1cc4542f0f14e92d15772c6d10",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "shadow_stalker",
+      "path": "assets/champions/shadow_stalker.webp",
+      "baselineSha256": "2322b9bb222f683e16818fe8e3368fdec151f8e6ce5206a20e03452f8468a7cd",
+      "approvedSha256": "e5e6d2686a9da157d135a6a9f2747fd9fa15d87b0baea3e09227cf81e804c5be",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "justiciar_vael",
+      "path": "assets/champions/justiciar_vael.webp",
+      "baselineSha256": "ce75718b20988f514f4d9c42e35996d747905c3edf51e27222e58f9794b13d64",
+      "approvedSha256": "4c5756b9ee014eb8a52c654befbf50b1dd85a24336f50c4dbebcc9799ed4deb6",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "neon_hologram_assassin",
+      "path": "assets/champions/neon_hologram_assassin.webp",
+      "baselineSha256": "cbd6a66abc602245db0ede7c3db623d66d80e0f3025518ee9d0118f143159246",
+      "approvedSha256": "e8f6ea230f7baf60672f96231ee8e7cb8ddc9a56a2bed5fceabb3d8a8a9962e9",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "plague_doctor",
+      "path": "assets/champions/plague_doctor.webp",
+      "baselineSha256": "c38ad14b0937f7b9d2636296b294e5bbd09898571d189a78ec2660855acc0107",
+      "approvedSha256": "d02223c7963322e23b2e1d6ad463d9421e7dceec2197a8ad7e1f104a4d45df47",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "ghoul_scavenger",
+      "path": "assets/champions/ghoul_scavenger.webp",
+      "baselineSha256": "a4cde13e1ffe6c1ff7e8cb97680ee5ca7a09b1fa4534573ca5ec5e67e0de1b0c",
+      "approvedSha256": "f49996bd488424f3ae60d7d3ccb4ad9341a6804c111acae0b0be9d4f6d433516",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "solar_scribe",
+      "path": "assets/champions/solar_scribe.webp",
+      "baselineSha256": "23fff24480900bf5ad657391aaed835b91b9b839135b3936614bc958ec07c677",
+      "approvedSha256": "52e0dbbc9128204109742600b85bed1a2f8199ea927de53c4de59b99c48ad4bb",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "wraith_archer",
+      "path": "assets/champions/wraith_archer.webp",
+      "baselineSha256": "0996af6cc4916ca7ae12db723e501a376fe9d9db617855ab47441abe2143b4ba",
+      "approvedSha256": "b91c3b5e74bc46c15870bca51e2c829839dc9fb1a02eefa221e6d19fcc736fa8",
+      "reason": "User requested improved background and surroundings, preserving the foreground character."
     }
   ]
 }
