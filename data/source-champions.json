@@ -8041,8 +8041,8 @@
   },
   {
     "template_id": "aerie_hybrid",
-    "name": "Trivorath, Threefold Sovereign",
-    "title": "Threefold Sovereign",
+    "name": "Veyrath, Twin-Crowned Sovereign",
+    "title": "Twin-Crowned Sovereign",
     "rarity": "mythical",
     "faction": "aerie_court",
     "role": "attack",
@@ -8050,7 +8050,7 @@
     "def": 765,
     "hp": 1475,
     "ability_name": "Concord of Fang and Feather",
-    "lore": "An eagle sees the storm, a horned beast commands its fury, and a serpent remembers its poison. Three wills share one monstrous body, bound by an oath to protect every roost.",
+    "lore": "An eagle sees the storm and a horned beast commands its fury. Two wills share one monstrous body, their crowns joined by an oath to protect every roost.",
     "image_url": "/assets/champions/aerie_hybrid.webp",
     "id": "aerie_hybrid",
     "color": "purple",
@@ -8058,7 +8058,7 @@
     "portrait": "assets/champions/aerie_hybrid.webp",
     "passive": {
       "id": "threefold_vigil",
-      "name": "Threefold Vigil",
+      "name": "Twin-Crowned Vigil",
       "kind": "immune_effect",
       "immune": [
         "poison"

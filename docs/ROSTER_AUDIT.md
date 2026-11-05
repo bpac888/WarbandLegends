@@ -43,13 +43,13 @@ Attackers remain the majority: **125/233 (53.6%)**. Aerie Court adds 2 Commons, 
 | Rudavain, Torrent Lancer | Aerie Court | Red | Legendary | ATK | Fast |
 | Bucorath, Canopy Castellan | Aerie Court | Green | Legendary | DEF | Average |
 | Sagivra, Quillblade Marshal | Aerie Court | Yellow | Legendary | ATK | Fast |
-| Trivorath, Threefold Sovereign | Aerie Court | Purple | Mythical | ATK | Slow |
+| Veyrath, Twin-Crowned Sovereign | Aerie Court | Purple | Mythical | ATK | Slow |
 
 ## Factions and Mythicals
 
 | Faction | Before → After | Red / Blue / Green / Yellow / Purple | Mythicals (Element) |
 | --- | --- | --- | --- |
-| Aerie Court | 0 → 18 | 4 / 3 / 3 / 4 / 4 | Trivorath, Threefold Sovereign (Purple) |
+| Aerie Court | 0 → 18 | 4 / 3 / 3 / 4 / 4 | Veyrath, Twin-Crowned Sovereign (Purple) |
 | Astral Concord | 18 → 18 | 3 / 3 / 4 / 4 / 4 | Alkyron, Starbreaker (Red); Asterox, Labyrinth Moon (Blue) |
 | Bloodcourt | 18 → 18 | 8 / 2 / 2 / 3 / 3 | Sable, Pale Matriarch (Purple); Sir Aurel, the Crimson Paladin (Yellow) |
 | Chymera | 18 → 18 | 2 / 3 / 7 / 4 / 2 | Vex, the Elixir Apotheon (Green) |
@@ -63,7 +63,7 @@ Attackers remain the majority: **125/233 (53.6%)**. Aerie Court adds 2 Commons, 
 | Veldtborn | 18 → 18 | 3 / 4 / 3 / 4 / 4 | Azhar, the Rosetted Sun (Yellow) |
 | Wildgrove | 17 → 17 | 3 / 2 / 8 / 2 / 2 | Oakenhart, the First Warden (Green) |
 
-Every faction retains all five elements. All seventeen previous Mythicals are unchanged. Trivorath is Aerie Court’s sole Mythical.
+Every faction retains all five elements. All seventeen previous Mythicals are unchanged. Veyrath is Aerie Court’s sole Mythical.
 
 ## Speed Coverage
 

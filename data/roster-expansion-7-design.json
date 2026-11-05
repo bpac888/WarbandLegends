@@ -703,10 +703,10 @@
     },
     {
       "id": "aerie_hybrid",
-      "name": "Trivorath, Threefold Sovereign",
-      "title": "Threefold Sovereign",
+      "name": "Veyrath, Twin-Crowned Sovereign",
+      "title": "Twin-Crowned Sovereign",
       "faction": "aerie_court",
-      "species": "three-headed eagle horned monster-beast serpent hybrid",
+      "species": "two-headed eagle and horned monster-beast hybrid",
       "artKey": "hybrid",
       "color": "purple",
       "rarity": "mythical",
@@ -743,11 +743,11 @@
           ]
         }
       ],
-      "lore": "An eagle sees the storm, a horned beast commands its fury, and a serpent remembers its poison. Three wills share one monstrous body, bound by an oath to protect every roost.",
-      "gap": "Founding three-headed eagle horned monster-beast serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
+      "lore": "An eagle sees the storm and a horned beast commands its fury. Two wills share one monstrous body, their crowns joined by an oath to protect every roost.",
+      "gap": "Founding two-headed eagle and horned monster-beast hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
       "passive": {
         "id": "threefold_vigil",
-        "name": "Threefold Vigil",
+        "name": "Twin-Crowned Vigil",
         "kind": "immune_effect",
         "immune": [
           "poison"

@@ -122,7 +122,7 @@
       "before": 0,
       "mythicals": [
         {
-          "name": "Trivorath, Threefold Sovereign",
+          "name": "Veyrath, Twin-Crowned Sovereign",
           "color": "purple",
           "manaSpeed": "slow"
         }
@@ -1160,13 +1160,13 @@
     {
       "priority": 18,
       "championId": "aerie_hybrid",
-      "name": "Trivorath, Threefold Sovereign",
+      "name": "Veyrath, Twin-Crowned Sovereign",
       "faction": "aerie_court",
       "color": "purple",
       "rarity": "mythical",
       "role": "attack",
       "manaSpeed": "slow",
-      "gap": "Founding three-headed eagle horned monster-beast serpent hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
+      "gap": "Founding two-headed eagle and horned monster-beast hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
       "status": "implemented"
     }
   ],
