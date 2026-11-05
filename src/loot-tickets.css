@@ -1,0 +1,16 @@
+.exchange-offers .exchange-loot-art{width:72px;height:72px;object-fit:contain;border-radius:10px}
+.exchange-offers>article>p:not(.exchange-cost){font-size:12px;line-height:1.5;color:#c1d3ca;max-width:270px}
+.loot-ticket-entry{display:flex;align-items:center;gap:12px;padding:14px;margin-top:18px;border:1px solid #c6ae7455;border-radius:12px;background:#153038}
+.loot-ticket-entry>img,.loot-ticket-intro>img{width:64px;height:64px;object-fit:contain;border-radius:10px;flex-shrink:0}
+.loot-ticket-entry>div{flex:1;min-width:0}
+.loot-ticket-entry b{font-size:17px;color:#f0d79e}
+.loot-ticket-entry p,.loot-ticket-entry small{font-size:12px;line-height:1.5;margin:4px 0;color:#c6d6cb;display:block}
+.loot-ticket-intro{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.loot-ticket-intro h3{margin:0;font-size:24px;color:#f2deb1}
+.loot-ticket-intro p{font-size:12px;line-height:1.5;margin:5px 0;text-transform:capitalize}
+.loot-ticket-rewards{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.loot-ticket-rewards>span{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:8px 10px;border:1px solid #bfd0b638;border-radius:8px;background:#152e35;color:#e4dec1}
+.loot-ticket-rewards img{width:24px;height:24px;object-fit:contain}
+.loot-inventory>p{font-size:13px;line-height:1.5;grid-column:1/-1}
+.loot-inventory>.button{grid-column:1/-1;justify-self:start}
+@media(max-width:600px){.loot-ticket-entry{flex-wrap:wrap;padding:12px}.loot-ticket-entry>.button{width:100%;justify-content:center}.loot-ticket-intro h3{font-size:21px}}

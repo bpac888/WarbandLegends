@@ -1,3 +1,4 @@
+import {LOOT_TICKET_LIMIT} from './loot-ticket-item.js';
 import {heroForId,uniqueHeroCount} from './hero-copies.js';
 import {addAccountXp,accountBattleXp,bumpPath,spendEnergy,energyCost,refreshEnergy} from './keeper.js';
 import {GEM_LIMIT} from './economy.js';
@@ -6,13 +7,14 @@ import {getEncounter} from './encounters.js';
 import {addHeroXp} from './development.js';
 const cap=n=>Math.min(999999999,Math.max(0,n));
 const safe=(n,f=0,max=999999999)=>Number.isSafeInteger(n)&&n>=0&&n<=max?n:f;
-export function defaultModes(){return {arenaRating:1000,arenaTokens:0,arenaWins:0,arenaLosses:0,eventWins:0,eventAttempts:{},eventTokens:Object.fromEntries(SPECIAL_EVENTS.map(e=>[e.token,0])),eventEntry:null};}
+export function defaultModes(){return {lootTickets:0,lootTicketUses:0,arenaRating:1000,arenaTokens:0,arenaWins:0,arenaLosses:0,eventWins:0,eventAttempts:{},eventTokens:Object.fromEntries(SPECIAL_EVENTS.map(e=>[e.token,0])),eventEntry:null};}
 export function validEventKey(key){return typeof key==='string'&&SPECIAL_EVENTS.some(e=>key.startsWith(e.id+':'))&&/^\w+:\d{4}-(0[1-9]|1[0-2])$/.test(key);}
 export function normalizeModes(p){const base=defaultModes(),eventAttempts={};for(const [key,n]of Object.entries(p.eventAttempts&&typeof p.eventAttempts==='object'&&!Array.isArray(p.eventAttempts)?p.eventAttempts:{}))if(validEventKey(key)&&Number.isSafeInteger(n)&&n>=0&&n<=EVENT_ATTEMPTS)eventAttempts[key]=n;
  const entry=p.eventEntry&&typeof p.eventEntry==='object'&&!Array.isArray(p.eventEntry)&&typeof p.eventEntry.battleId==='string'&&p.eventEntry.battleId.length<=120&&validEventKey(p.eventEntry.key)&&eventAttempts[p.eventEntry.key]>0?{battleId:p.eventEntry.battleId,key:p.eventEntry.key}:null;
- return {...base,...Object.fromEntries(['arenaRating','arenaTokens','arenaWins','arenaLosses','eventWins'].map(k=>[k,safe(p[k],base[k])])),eventAttempts,eventTokens:Object.fromEntries(SPECIAL_EVENTS.map(e=>[e.token,safe(p.eventTokens?.[e.token])])),eventEntry:entry};
+ return {...base,lootTickets:safe(p.lootTickets,0,LOOT_TICKET_LIMIT),lootTicketUses:safe(p.lootTicketUses),...Object.fromEntries(['arenaRating','arenaTokens','arenaWins','arenaLosses','eventWins'].map(k=>[k,safe(p[k],base[k])])),eventAttempts,eventTokens:Object.fromEntries(SPECIAL_EVENTS.map(e=>[e.token,safe(p.eventTokens?.[e.token])])),eventEntry:entry};
 }
-export function validateModes(p){if(['arenaRating','arenaTokens','arenaWins','arenaLosses','eventWins'].some(k=>!Number.isSafeInteger(p[k])||p[k]<0||p[k]>999999999))return false;
+export function validateModes(p){if(p.lootTickets!==undefined&&(!Number.isSafeInteger(p.lootTickets)||p.lootTickets<0||p.lootTickets>LOOT_TICKET_LIMIT)||p.lootTicketUses!==undefined&&(!Number.isSafeInteger(p.lootTicketUses)||p.lootTicketUses<0||p.lootTicketUses>999999999))return false;
+ if(['arenaRating','arenaTokens','arenaWins','arenaLosses','eventWins'].some(k=>!Number.isSafeInteger(p[k])||p[k]<0||p[k]>999999999))return false;
  if(!p.eventAttempts||typeof p.eventAttempts!=='object'||Array.isArray(p.eventAttempts)||Object.entries(p.eventAttempts).some(([key,n])=>!validEventKey(key)||!Number.isSafeInteger(n)||n<0||n>EVENT_ATTEMPTS))return false;
  if(!p.eventTokens||typeof p.eventTokens!=='object'||Array.isArray(p.eventTokens)||SPECIAL_EVENTS.some(e=>!Number.isSafeInteger(p.eventTokens[e.token])||p.eventTokens[e.token]<0||p.eventTokens[e.token]>999999999))return false;
  return p.eventEntry===null||!!(p.eventEntry&&typeof p.eventEntry==='object'&&!Array.isArray(p.eventEntry)&&typeof p.eventEntry.battleId==='string'&&p.eventEntry.battleId.length<=120&&validEventKey(p.eventEntry.key)&&p.eventAttempts[p.eventEntry.key]>0);
@@ -42,7 +44,8 @@ export function settleMode(profile,battle,roster){if(battle.sandbox||!['victory'
  if(e.mode==='arena')return {...next,arenaRating:cap(profile.arenaRating+reward.rating),arenaTokens:cap(profile.arenaTokens+reward.arenaTokens),arenaWins:cap(profile.arenaWins+(win?1:0)),arenaLosses:cap(profile.arenaLosses+(win?0:1))};
  return {...next,eventWins:cap(profile.eventWins+(win?1:0)),eventTokens:{...profile.eventTokens,[e.eventToken]:cap(profile.eventTokens[e.eventToken]+reward.eventTokens)},eventEntry:null,cleared:win?[...new Set([...profile.cleared,e.id])]:profile.cleared};
 }
-export const EXCHANGE_OFFERS=[{id:'arena-gems',name:'100 Gems',currency:'arenaTokens',label:'Arena Tokens',cost:20,gems:100},{id:'arena-gold',name:'Gold',currency:'arenaTokens',label:'Arena Tokens',cost:10,gold:500},...SPECIAL_EVENTS.map(e=>({id:e.id+'-gems',name:'100 Gems',currency:e.token,label:e.tokenName,cost:12,gems:100}))];
+export const EXCHANGE_OFFERS=[{id:'arena-loot-tickets',name:'5 Loot Tickets',currency:'arenaTokens',label:'Arena Tokens',cost:10,lootTickets:5},...SPECIAL_EVENTS.map(e=>({id:e.id+'-loot-tickets',name:'5 Loot Tickets',currency:e.token,label:e.tokenName,cost:6,lootTickets:5})),{id:'arena-gems',name:'100 Gems',currency:'arenaTokens',label:'Arena Tokens',cost:20,gems:100},{id:'arena-gold',name:'Gold',currency:'arenaTokens',label:'Arena Tokens',cost:10,gold:500},...SPECIAL_EVENTS.map(e=>({id:e.id+'-gems',name:'100 Gems',currency:e.token,label:e.tokenName,cost:12,gems:100}))];
 export function exchange(profile,id){const offer=EXCHANGE_OFFERS.find(o=>o.id===id);if(!offer)return {profile,error:'Unknown exchange.'};const balance=offer.currency==='arenaTokens'?profile.arenaTokens:profile.eventTokens[offer.currency]||0;
+ if(offer.lootTickets&&(profile.lootTickets??0)+offer.lootTickets>LOOT_TICKET_LIMIT)return {profile,error:'Loot Ticket storage is full.'};
  if(balance<offer.cost)return {profile,error:'Earn more tokens before making this exchange.'};if(offer.gems&&profile.gems+offer.gems>GEM_LIMIT||offer.gold&&profile.gold+offer.gold>999999999)return {profile,error:'That resource is already at its storage limit.'};
- const next={...profile,gems:Math.min(GEM_LIMIT,profile.gems+(offer.gems||0)),gold:cap(profile.gold+(offer.gold||0))};if(offer.currency==='arenaTokens')next.arenaTokens=balance-offer.cost;else next.eventTokens={...profile.eventTokens,[offer.currency]:balance-offer.cost};return {profile:bumpPath(next,{gems:offer.gems||0}),offer};}
+ const next={...profile,...(offer.lootTickets?{lootTickets:(profile.lootTickets??0)+offer.lootTickets}:{}),gems:Math.min(GEM_LIMIT,profile.gems+(offer.gems||0)),gold:cap(profile.gold+(offer.gold||0))};if(offer.currency==='arenaTokens')next.arenaTokens=balance-offer.cost;else next.eventTokens={...profile.eventTokens,[offer.currency]:balance-offer.cost};return {profile:bumpPath(next,{gems:offer.gems||0}),offer};}

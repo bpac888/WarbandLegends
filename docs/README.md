@@ -28,6 +28,7 @@
 
 ## Design and reference
 
+- [Loot Tickets](LOOT_TICKETS.md) — token purchases and instant campaign replays with normal Energy costs.
 - [Tomes of Power](TOMES.md) — Premium item previews and planned effects.
 - [Game blueprint](GAME-BLUEPRINT.md)
 - [Design direction](DESIGN-DIRECTION.md)

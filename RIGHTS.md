@@ -79,3 +79,7 @@ Nine original fantasy illustrations were generated as a single 3 × 3 square atl
 ## Tomes of Power
 
 Twelve original Tome of Power illustrations were created using OpenAI image generation in November 2026 as a three-column, four-row atlas. The native artwork is encoded as quality-94 WebP and displayed as small item thumbnails. It includes two universal experience tomes and Lesser/Greater variants for all five elements.
+
+## Loot Tickets
+
+The original Loot Ticket illustration was generated using OpenAI image generation in November 2026 and encoded as quality-94 WebP at native resolution. The small item artwork is used in Token Exchange, inventory and campaign instant-clear dialogs.

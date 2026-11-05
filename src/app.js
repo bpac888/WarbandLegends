@@ -1,3 +1,5 @@
+import {lootTicketQuote,useLootTicket} from './loot-tickets.js';
+import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js';
 import {courtyardHTML} from './courtyard-ui.js';
 import {mountCourtyard} from './courtyard-view.js';
 import {profileEditorHTML,mountProfileEditor} from './profile-editor.js';
@@ -176,8 +178,10 @@ document.addEventListener('click',event=>{
   if(['ascend-confirm','awaken-confirm'].includes(action)){const c=byId.get(id);if(!c)return;const r=(action==='ascend-confirm'?ascendChampion:awakenChampion)(profile,c,Number(button.dataset.tier));if(r.error){closeModal();renderChampionPage(id);toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderChampionPage(id);document.querySelector(action==='ascend-confirm'?'#hero-ascension':'#hero-awakening')?.scrollIntoView({block:'center',behavior:'instant'});toast(action==='ascend-confirm'?'Ascended! Level '+r.cap+' is now unlocked.':'Limit Break '+r.rank+' reached! Five more levels unlocked.');return;}
   if(action==='open-codex'){collectionFilters.tab='all';go('roster');return;}
   if(action==='event-select'){selectedEvent=button.dataset.event;openModal('Special Event',Shell.eventArea(profile,selectedEvent),'event-area');return;}
+  if(action==='loot-preview'){syncEnergy();const q=lootTicketQuote(profile,stage,roster);if(q.error){toast(q.error);return;}openModal('Use a Loot Ticket?',lootTicketConfirmation(q),'loot-confirm');return;}
+  if(action==='loot-confirm'&&modal.dataset.view==='loot-confirm'){const result=useLootTicket(profile,stage,roster,{expectedUses:Number(button.dataset.uses),activeBattle:battle?.phase==='playing'});if(result.error){closeModal();toast(result.error);return;}profile=result.profile;persist(PROFILE_KEY,profile);closeModal();renderShell('campaign');openModal('Stage cleared',lootTicketResult(result),'loot-result');return;}
   if(action==='exchange-preview'){openModal('Exchange your spoils',Shell.exchangeConfirmation(profile,id),'exchange');return;}
-  if(action==='exchange-confirm'){const r=exchange(profile,id);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderShell('shop');toast('Exchange complete. Your rewards are saved.');return;}
+  if(action==='exchange-confirm'&&modal.dataset.view==='exchange'){const r=exchange(profile,id);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderShell('shop');toast('Exchange complete. Your rewards are saved.');return;}
   if(action==='skip-ritual'){finishRitual();return;}
   if(action==='multi-summon'){openPortal(10);return;}
   if(action==='campaign-difficulty'){campaignDifficulty=button.dataset.difficulty;renderShell('campaign');return;}
