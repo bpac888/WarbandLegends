@@ -136,3 +136,10 @@ body.menu-theme .page-summon .altar-actions>button:hover:not(:disabled){border-c
 .page-summon .altar-art-space>.portal-surface,.summon-ritual .ritual-art-space>.portal-surface{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
 .summon-ritual .summon-ritual-caption{min-height:88px}
 @media(orientation:landscape) and (max-height:600px){.summon-ritual .summon-ritual-caption{min-height:0}}
+/* The artwork and summon controls fill the space without a redundant page title. */
+body.menu-theme .page-summon .altar-page{grid-template-rows:minmax(0,1fr) auto}
+@media(orientation:landscape) and (max-height:600px){
+ body.menu-theme .page-summon .altar-page{grid-template-rows:minmax(0,1fr)}
+ .page-summon .altar-art-space{grid-row:1}
+ body.menu-theme .page-summon .altar-actions{grid-row:1;align-self:center}
+}

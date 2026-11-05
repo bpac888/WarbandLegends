@@ -33,3 +33,10 @@
  #modal[data-view=roster] .roster-save{flex-wrap:wrap;gap:7px}
  #modal[data-view=roster] .team-editor-actions{margin-left:auto}
 }
+
+/* Keep the team number and close control in one compact header row. */
+body.menu-theme #modal[data-view=roster] .modal-header{padding:6px 12px;min-height:0;gap:8px}
+body.menu-theme #modal[data-view=roster] .modal-header::after{display:none}
+body.menu-theme #modal[data-view=roster] .modal-header h2{font-size:24px;line-height:1;margin:0}
+body.menu-theme #modal[data-view=roster] .modal-header .icon-button{min-height:32px;height:32px;width:32px;padding:0}
+body.menu-theme #modal[data-view=roster] .modal-body{padding-top:8px}
