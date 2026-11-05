@@ -50,7 +50,9 @@
     "test:roster-215": "node tests/roster-215-browser.mjs",
     "test:quests": "node tests/quests-browser.mjs",
     "test:tomes": "node tests/tomes-browser.mjs",
-    "test:loot-tickets": "node tests/loot-tickets-browser.mjs"
+    "test:loot-tickets": "node tests/loot-tickets-browser.mjs",
+    "test:team-editor": "node tests/team-editor-browser.mjs",
+    "test:battle-weight": "node tests/battle-weight-browser.mjs"
   },
   "engines": {
     "node": ">=22"

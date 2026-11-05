@@ -232,10 +232,11 @@ function enemyPhase(state,frames) {
     enemy.actions++;gainMana(enemy,4);
     const targets=living(state.heroes);
     const target=protectedTarget(state.heroes,targets[Math.floor(roll(state)*targets.length)]);if(!target)break;
-    if(enemy.mana>=enemy.manaMax){enemy.mana=0;resolveSkill(state,enemy,null,manaLevels(enemy).length);}
+    const usedSpecial=enemy.mana>=enemy.manaMax;
+    if(usedSpecial){enemy.mana=0;resolveSkill(state,enemy,null,manaLevels(enemy).length);}
     else hit(state,enemy,target,effective(enemy,'atk'),{label:'Enemy attack',crit:roll(state)<.08});
     enemy.countdown=Math.max(1,enemy.baseCountdown);
-    finish(state);frame(state,frames,'enemy',{actor:enemy.uid,target:target.uid});
+    finish(state);frame(state,frames,'enemy',{actor:enemy.uid,target:target.uid,special:usedSpecial});
   }
   for(const unit of [...state.heroes,...state.enemies])if(unit.hp>0)endTurn(state,unit);
   finish(state);

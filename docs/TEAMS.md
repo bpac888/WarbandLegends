@@ -9,3 +9,5 @@ The profile stores `teamsVersion: 1`, `activeTeamSlot` and `teamSlots`. `profile
 Collection and Codex filters include Faction. Rarity, Element and Faction sorts each support both directions; rarity defaults to highest first. Secondary rarity/name ordering stays consistent within each primary group.
 
 Checks: `npm run check` and `npm run test:active-teams` cover migration, editing, activation, save round-trips, playtesting, sorting and real battle entry in all four modes.
+
+The team editor uses a compact I–IV title and shares the Collection/Codex Filters panel: Element, Rarity, Faction, Sort By and Order. Clear team deselects the draft without changing the saved lineup; saving requires five available distinct copies. Closing the editor cancels draft edits. `npm run test:team-editor` covers these controls, draft clearing, save/reload and responsive layouts.

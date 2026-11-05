@@ -17,3 +17,29 @@
 @media(max-width:600px){.mythic-stage{height:190px;gap:8px}.mythic-portrait{width:42%}.mythic-copy{max-width:50%;gap:8px}.mythic-copy small{font-size:8px;letter-spacing:.2em}.mythic-copy span{font-size:13px}.mythic-seal{font-size:20px;left:0}.special-announcement.mythic-cinematic{top:17%}}
 .still-hit,.combat-contact.contact-still{animation:none;opacity:.55}.combat-contact.contact-still{transform:scale(.7)}
 @media(prefers-reduced-motion:reduce){.battle-pressure-vignette,.battle-hit-flash,.combat-contact,.combat-knockout{animation:none}.mythic-cinematic{display:none!important}}
+
+/* A readable wind-up, firm contact and slower recovery at both battle speeds. */
+.battle-shell .tile.matched{animation:weighted-match calc(880ms / var(--fx-rate,1)) cubic-bezier(.3,0,.65,1) both}
+.battle-shell .tile.falling{animation:weighted-fall calc(310ms / var(--fx-rate,1)) cubic-bezier(.3,.05,.8,1) both;animation-delay:calc(var(--tile-order) * 8ms / var(--fx-rate,1))}
+@keyframes weighted-match{0%{transform:scale(1);filter:brightness(1)}20%{transform:translateY(2px) scale(.94);filter:brightness(1.25)}38%{transform:translateY(-1px) scale(1.1);filter:brightness(1.7)}70%,100%{transform:translateY(-6px) scale(.12);opacity:0;filter:brightness(1.8)}}
+@keyframes weighted-fall{0%{transform:translateY(-40%);opacity:.5}72%{transform:translateY(3%) scaleY(.94);opacity:1}88%{transform:translateY(-1%) scaleY(1.02)}100%{transform:translateY(0);opacity:1}}
+.battle-shell .special-caster .hero-main,.battle-shell .special-caster .enemy-target>img{animation:charged-cast calc(1600ms / var(--fx-rate,1)) ease both}
+@keyframes charged-cast{0%{filter:brightness(1);transform:scale(1)}25%{filter:brightness(1.35) drop-shadow(0 0 10px var(--rune));transform:scale(.97)}48%{filter:brightness(1.65) drop-shadow(0 0 20px var(--rune));transform:scale(1.045)}75%,100%{filter:brightness(1);transform:scale(1)}}
+.battle-shell .special-announcement:not(.mythic-cinematic){animation-duration:calc(1650ms / var(--fx-rate,1));border-width:2px;box-shadow:0 4px 30px #0008,0 0 22px rgba(var(--rgb),.35)}
+.special-impact{animation-duration:calc(900ms / var(--fx-rate,1));border-width:3px;box-shadow:0 0 34px rgba(var(--rgb),.65),inset 0 0 24px rgba(var(--rgb),.45)}
+.special-impact>i{animation-duration:calc(900ms / var(--fx-rate,1))}
+.spell-charge{position:fixed;width:105px;height:105px;margin:-52px;border:2px solid var(--rune);border-radius:50%;box-shadow:inset 0 0 20px rgba(var(--rgb),.35),0 0 18px rgba(var(--rgb),.4);animation:spell-charge calc(780ms / var(--fx-rate,1)) ease-in both;pointer-events:none}
+@keyframes spell-charge{from{opacity:0;transform:scale(1.45) rotate(0)}40%{opacity:.8}to{opacity:0;transform:scale(.4) rotate(90deg)}}
+.rune-power{position:fixed;width:90px;height:90px;margin:-45px;border:4px solid var(--rune-light);border-radius:50%;box-shadow:0 0 25px var(--rune),inset 0 0 20px var(--rune);animation:rune-shockwave var(--power-time) ease-out both;pointer-events:none}
+.rune-power::after{content:'';position:absolute;inset:12%;border:2px solid var(--rune);border-radius:inherit;box-shadow:0 0 12px var(--rune)}
+.power-prism{border-color:#fff0cf;box-shadow:0 0 24px #d9b5ff,inset 0 0 26px #8cbfff;background:conic-gradient(#fda38630,#f5d98730,#a3e7c330,#a7d7ff30,#daafff30,#fda38630)}
+.rune-power>i{position:absolute;top:50%;left:50%;width:5px;height:23px;border-radius:3px;background:var(--rune-light);box-shadow:0 0 8px var(--rune);transform:rotate(var(--angle)) translateY(-54px)}
+.power-prism>i{background:#fff0cf}
+.power-forged{border-style:double;border-width:7px;animation-name:rune-forge}
+.prism-link{position:fixed;height:3px;background:linear-gradient(90deg,#fff4cf,#d2b7ff99);box-shadow:0 0 9px #c5dfff;transform-origin:left center;pointer-events:none;animation:prism-link .7s ease-out both}
+@keyframes rune-shockwave{0%{opacity:0;transform:scale(.25)}20%{opacity:.95;transform:scale(.65)}100%{opacity:0;transform:scale(2.1)}}
+@keyframes rune-forge{0%{opacity:0;transform:scale(1.6) rotate(-20deg)}35%{opacity:.9}85%{opacity:.6;transform:scale(.45) rotate(20deg)}100%{opacity:0;transform:scale(.4) rotate(25deg)}}
+@keyframes prism-link{0%{opacity:0}25%,50%{opacity:.8}100%{opacity:0}}
+/* Auto preserves its steady stage; impact rings and spell trails still carry weight. */
+.battle-shell.auto-running .special-caster .hero-main,.battle-shell.auto-running .special-caster .enemy-target>img{animation:none;transform:none}
+@media(prefers-reduced-motion:reduce){.rune-power,.prism-link,.spell-charge{display:none}.battle-shell .tile.matched,.battle-shell .tile.falling,.battle-shell .special-caster .hero-main,.battle-shell .special-caster .enemy-target>img{animation:none!important}}

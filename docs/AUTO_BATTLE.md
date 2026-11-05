@@ -40,3 +40,16 @@ and new-encounter reset. Viewport and lifecycle suites cover the shared controls
 Development simulations also exercised campaign, dungeon, arena and event fights,
 including mixed teams covering all 135 hero designs. Auto is a heuristic player;
 team strength, board refills and enemy targeting can still lead to defeat.
+
+Battle presentation uses `src/battle-pacing.js` for both manual play and Auto.
+Matches resolve in 900 ms at ×1 and 450 ms at ×2, followed by a weighted
+380/190 ms tile fall. Hero and enemy Specials hold their frame for 1900 ms
+at ×1 and approximately 1152 ms at ×2. Reduced motion uses static Special
+announcements with a short 650 ms hold, without tile travel, spell trails or
+rune bursts. The engine marks enemy cast frames explicitly, including casts
+that finish charging on the attack opportunity; battle calculations are unchanged.
+Blast Runes use expanding rings and Prismatic Runes link the affected tiles.
+Auto keeps portraits and the stage steady while these effects play.
+
+Run `npm run test:battle-weight` for both speed settings, hero/enemy casts,
+Blast/Prismatic activation, Auto, reduced motion and navigation cleanup.

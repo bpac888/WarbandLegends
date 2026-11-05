@@ -13,7 +13,7 @@ try{
  const context=await browser.newContext({viewport:{width:1440,height:1100},reducedMotion:'no-preference'}),errors=[];
  await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='legends.local'){errors.push('external '+u.host);return route.abort();}try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:battleFixtureResponse(p,await fs.readFile(p)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}catch{errors.push('missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await fs.mkdir(root+'artifacts',{recursive:true});
- await page.goto('http://legends.local/#/home');await page.locator('.citadel-destinations').waitFor();
+ await page.goto('http://legends.local/#/home');await page.locator('.courtyard-scene').waitFor();
  async function loadBattle(state){await page.evaluate(({state,pk,bk})=>{const p=JSON.parse(localStorage.getItem(pk));p.helpSeen=true;localStorage.setItem(pk,JSON.stringify(p));localStorage.setItem(bk,JSON.stringify(state));},{state,pk:PROFILE_KEY,bk:BATTLE_KEY});await page.reload();await page.locator('.topbar').waitFor();await page.goto('http://legends.local/#/battle');await page.locator('.board').waitFor({timeout:5000}).catch(async e=>{console.error(JSON.stringify({errors,body:await page.locator('body').innerText()}));await page.screenshot({path:root+'artifacts/experience-load-error.png',fullPage:true});throw e;});}
 
  const state=createBattle(roster,REFERENCE_TEAM,'ashen-gate',945);
@@ -28,7 +28,7 @@ try{
   await page.locator('.combat-contact').first().waitFor();
   await page.locator('.mythic-cinematic').evaluate(n=>{for(const a of n.getAnimations()){a.pause();a.currentTime=300;}});
   await page.screenshot({path:root+'artifacts/combat-mythical-'+width+'.png'});
-  await page.goto('http://legends.local/#/home');await page.locator('.citadel-destinations').waitFor();assert.equal(await page.locator('#effects-layer>*').count(),0);assert.equal(await page.locator('.battle-pressure-vignette').count(),0);
+  await page.goto('http://legends.local/#/home');await page.locator('.courtyard-scene').waitFor();assert.equal(await page.locator('#effects-layer>*').count(),0);assert.equal(await page.locator('.battle-pressure-vignette').count(),0);
  }
  await loadBattle(state);
  // Exercise health and shield contact separately against real battle portraits.

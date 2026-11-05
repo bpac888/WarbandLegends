@@ -1,9 +1,10 @@
+import {battleTiming} from './battle-pacing.js';
 import {manaLevels} from './engine.js';
 // Presentation only. Neither the effect planner nor its renderer changes battle state.
 export function planSpecialEffects(previous,current,frame){
  const units=[...current.heroes,...current.enemies],oldUnits=[...previous.heroes,...previous.enemies],actor=units.find(u=>u.uid===frame.actor),beforeActor=oldUnits.find(u=>u.uid===frame.actor);
  if(!actor)return null;
- const special=['skill','mechanic','passive'].includes(frame.kind)||(frame.kind==='enemy'&&beforeActor?.mana>=beforeActor?.manaMax&&actor.mana<beforeActor.mana);
+ const special=['skill','mechanic','passive'].includes(frame.kind)||(frame.kind==='enemy'&&(frame.special??(beforeActor?.mana>=beforeActor?.manaMax&&actor.mana<beforeActor.mana)));
  const targets=[];
  for(const unit of units){const before=oldUnits.find(u=>u.uid===unit.uid);if(!before)continue;
   const newEffects=Object.keys(unit.effects).filter(id=>JSON.stringify(unit.effects[id])!==JSON.stringify(before.effects[id]));
@@ -40,39 +41,40 @@ export function clearBattleEffects(){generation++;for(const t of timers)clearTim
 function spawn(className,x,y,duration,html=''){const node=document.createElement('span');node.className=className;node.style.left=x+'px';node.style.top=y+'px';node.innerHTML=html;document.querySelector('#effects-layer').append(node);later(()=>node.remove(),duration);return node;}
 const center=(node,y=.5)=>{const r=node?.getBoundingClientRect();return r?{x:r.left+r.width/2,y:r.top+r.height*y}:null;};
 export function animateLaneShots(frame,state,root,{speed=1,reduced=false}={}){
- const duration=560/speed;
+ const duration=720/speed;
  for(const [i,shot]of(frame.shots||[]).entries()){
   if(!state.heroes.some(u=>u.color===shot.color&&u.hp>0))continue;
   const tile=root.querySelector(`[data-index="${shot.index}"]`),start=center(tile),enemy=root.querySelector(`[data-unit="${shot.target}"]`),end=shot.target?center(enemy,.6):center(root.querySelector('.battle-sky'),.07);if(!start||!end)continue;
   const lane=root.querySelector(`[data-lane="${shot.index%7}"]`);lane?.classList.add('lane-firing',shot.color);
   if(reduced)continue;
   const delay=Math.min(i*12,140)/speed;
-  later(()=>{const bolt=spawn(`lane-bolt ${shot.color} ${shot.ghost?'ghost-bolt':''}`,start.x,start.y,duration+80,`<img src="./assets/runes/${shot.color}.svg" alt="">`);bolt.style.setProperty('--dy',(end.y-start.y)+'px');bolt.style.setProperty('--duration',duration+'ms');if(shot.target)later(()=>{const pos=center(enemy,.6);if(pos&&enemy.isConnected)spawn(`lane-hit ${shot.color}`,start.x,pos.y,280/speed);},duration*.8);},delay);
+  later(()=>{const bolt=spawn(`lane-bolt ${shot.color} ${shot.ghost?'ghost-bolt':''}`,start.x,start.y,duration+80,`<img src="./assets/runes/${shot.color}.svg" alt="">`);bolt.style.setProperty('--dy',(end.y-start.y)+'px');bolt.style.setProperty('--duration',duration+'ms');if(shot.target)later(()=>{const pos=center(enemy,.6);if(pos&&enemy.isConnected)spawn(`lane-hit ${shot.color}`,start.x,pos.y,400/speed);},duration*.78);},delay);
  }
 }
 export function animateSpecial(previous,current,frame,root,{speed=1,reduced=false}={}){
- const plan=planSpecialEffects(previous,current,frame);if(!plan)return;const source=root.querySelector(`[data-unit="${plan.actor}"]`),start=center(source);if(!start)return;
+ const plan=planSpecialEffects(previous,current,frame);if(!plan)return;speed=battleTiming(frame.kind,{speed,special:plan.special}).rate;const source=root.querySelector(`[data-unit="${plan.actor}"]`),start=center(source);if(!start)return;
  source.classList.add(plan.special?'special-caster':'basic-attacker');
+ if(plan.special&&!reduced)spawn(`spell-charge ${plan.color}`,start.x,start.y,780/speed);
  if(plan.special&&plan.cinematic&&!reduced)mythicCinematic(plan,speed);
- else if(plan.special){const banner=document.createElement('div');banner.className=`special-announcement ${plan.color}`;const image=document.createElement('img');image.src=current.heroes.concat(current.enemies).find(u=>u.uid===plan.actor).portrait;image.alt='';const text=document.createElement('strong');text.textContent=plan.name;banner.append(image,text);root.querySelector('.battle-center').append(banner);later(()=>banner.remove(),(reduced?180:1050)/speed);}
- for(const target of plan.targets){const node=root.querySelector(`[data-unit="${target.uid}"]`),end=center(node,.42);if(!end)continue;const delay=reduced?0:(plan.special?220:70)/speed;
-  if(!reduced&&plan.special&&target.uid!==plan.actor){const mote=spawn(`special-orb ${plan.color} orb-${target.kind}`,start.x,start.y,600/speed);motion(mote,[{transform:'translate(-50%,-50%) scale(.4)'},{transform:`translate(calc(-50% + ${(end.x-start.x)*.45}px),calc(-50% + ${(end.y-start.y)*.5-35}px)) scale(1.2)`,offset:.5},{transform:`translate(calc(-50% + ${end.x-start.x}px),calc(-50% + ${end.y-start.y}px)) scale(.4)`}],{duration:450/speed,easing:'cubic-bezier(.2,.55,.55,1)',fill:'forwards'});}
-  later(()=>{if(!node.isConnected)return;node.classList.add('special-hit-'+target.kind);spawn(`special-impact ${plan.color} fx-${target.kind} ${reduced?'still-impact':''}`,end.x,end.y,(reduced?170:700)/speed,`${Array.from({length:reduced?0:8},(_,i)=>`<i style="--angle:${i*45}deg"></i>`).join('')}<b>${target.kind==='heal'?'+':target.kind==='ward'?'◇':target.kind==='curse'?'✧':''}</b>`);},delay);
+ else if(plan.special){const banner=document.createElement('div');banner.className=`special-announcement ${plan.color}`;const image=document.createElement('img');image.src=current.heroes.concat(current.enemies).find(u=>u.uid===plan.actor).portrait;image.alt='';const text=document.createElement('strong');text.textContent=plan.name;banner.append(image,text);root.querySelector('.battle-center').append(banner);later(()=>banner.remove(),(reduced?600:1650/speed));}
+ for(const target of plan.targets){const node=root.querySelector(`[data-unit="${target.uid}"]`),end=center(node,.42);if(!end)continue;const delay=reduced?0:(plan.special?780:160)/speed;
+  if(!reduced&&plan.special&&target.uid!==plan.actor){const mote=spawn(`special-orb ${plan.color} orb-${target.kind}`,start.x,start.y,820/speed);motion(mote,[{transform:'translate(-50%,-50%) scale(.4)'},{transform:`translate(calc(-50% + ${(end.x-start.x)*.45}px),calc(-50% + ${(end.y-start.y)*.5-35}px)) scale(1.2)`,offset:.5},{transform:`translate(calc(-50% + ${end.x-start.x}px),calc(-50% + ${end.y-start.y}px)) scale(.4)`}],{duration:780/speed,easing:'cubic-bezier(.2,.55,.55,1)',fill:'forwards'});}
+  later(()=>{if(!node.isConnected)return;node.classList.add('special-hit-'+target.kind);spawn(`special-impact ${plan.color} fx-${target.kind} ${reduced?'still-impact':''}`,end.x,end.y,(reduced?170:900)/speed,`${Array.from({length:reduced?0:8},(_,i)=>`<i style="--angle:${i*45}deg"></i>`).join('')}<b>${target.kind==='heal'?'+':target.kind==='ward'?'◇':target.kind==='curse'?'✧':''}</b>`);},delay);
  }
 }
 
 function mythicCinematic(plan,speed){
- const node=document.createElement('div');node.className=`special-announcement mythic-cinematic ${plan.color} caster-${plan.side}`;node.setAttribute('aria-hidden','true');node.style.setProperty('--cinematic-time',1100/speed+'ms');
+ const node=document.createElement('div');node.className=`special-announcement mythic-cinematic ${plan.color} caster-${plan.side}`;node.setAttribute('aria-hidden','true');node.style.setProperty('--cinematic-time',1750/speed+'ms');
  const stage=document.createElement('div');stage.className='mythic-stage';
  const seal=document.createElement('div');seal.className='mythic-seal';seal.textContent='ᚱ ᛟ ᚨ ᛉ ᛏ';
  const art=document.createElement('img');art.className='mythic-portrait';art.src=plan.portrait;art.alt='';
  const copy=document.createElement('div');copy.className='mythic-copy';
  for(const [tag,text]of [['small','MYTHICAL'],['strong',plan.champion],['span',plan.name]]){const line=document.createElement(tag);line.textContent=text;copy.append(line);}
- stage.append(seal,art,copy);node.append(stage);document.querySelector('#effects-layer')?.append(node);later(()=>node.remove(),1100/speed);
+ stage.append(seal,art,copy);node.append(stage);document.querySelector('#effects-layer')?.append(node);later(()=>node.remove(),1750/speed);
 }
 export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduced=false,calm=false}={}){
  const impacts=planImpactFeedback(previous,current,frame);
- const special=planSpecialEffects(previous,current,frame),delay=reduced?0:(frame.kind==='match'?390:special?.special?220:70)/speed;
+ const special=planSpecialEffects(previous,current,frame),timing=battleTiming(frame.kind,{speed,reduced,special:!!special?.special}),delay=timing.impact;speed=timing.rate;
  if(frame.kind==='match'&&frame.combo>1&&!reduced){
   const board=root.querySelector('.board');motion(board,[{filter:'brightness(1)'},{filter:`brightness(${Math.min(1.35,1+frame.combo*.07)})`,offset:.4},{filter:'brightness(1)'}],{duration:380/speed});
  }
@@ -96,4 +98,39 @@ export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduc
    }
   }
  },delay);
+}
+
+export function animateNumbers(previous,current,frame,root,{speed=1,reduced=false}={}){
+ const timing=battleTiming(frame.kind,{speed,reduced,special:!!planSpecialEffects(previous,current,frame)?.special});
+ for(const unit of [...current.heroes,...current.enemies]){
+  const old=[...previous.heroes,...previous.enemies].find(u=>u.uid===unit.uid);if(!old||old.hp===unit.hp)continue;
+  const target=root.querySelector(`[data-unit="${unit.uid}"]`),delta=Math.round(unit.hp-old.hp);
+  later(()=>{const pos=center(target,.42);if(!pos||!target.isConnected)return;const label=spawn(`combat-number ${delta>0?'restored':'wounded'}`,pos.x,pos.y,1000/timing.rate);label.textContent=(delta>0?'+':'−')+Math.abs(delta);label.style.animationDuration=1000/timing.rate+'ms';},timing.impact);
+ }
+}
+export function animateRunePower(frame,state,root,{speed=1,reduced=false}={}){
+ const activated=(frame.cleared||[]).flatMap(index=>state.board[index]?.special?[{index,...state.board[index]}]:[]);
+ for(const item of [...activated,...(frame.created||[]).map(t=>({...t,forged:true}))]){
+  const tile=root.querySelector(`[data-index="${item.index}"]`),pos=center(tile);if(!pos)continue;
+  tile.classList.add(item.forged?'rune-forging':'rune-detonating');
+  if(reduced)continue;
+  const duration=(item.forged?760:880)/speed,burst=spawn(`rune-power ${item.color} power-${item.special} ${item.forged?'power-forged':''}`,pos.x,pos.y,duration);
+  burst.setAttribute('aria-hidden','true');burst.style.setProperty('--power-time',duration+'ms');
+  for(let i=0;i<(item.special==='prism'?10:6);i++){const spark=document.createElement('i');spark.style.setProperty('--angle',i*360/(item.special==='prism'?10:6)+'deg');burst.append(spark);}
+  if(!item.forged&&item.special==='prism')for(const index of frame.cleared){const end=center(root.querySelector(`[data-index="${index}"]`));if(!end||index===item.index)continue;const ray=spawn(`prism-link ${item.color}`,pos.x,pos.y,700/speed);const dx=end.x-pos.x,dy=end.y-pos.y;ray.style.width=Math.hypot(dx,dy)+'px';ray.style.transform=`rotate(${Math.atan2(dy,dx)}rad)`;ray.style.animationDuration=700/speed+'ms';}
+ }
+}
+
+export function animateBoardMotion(previous,current,frame,root,{speed=1,reduced=false}={}){
+ if(reduced)return;
+ const oldPositions=new Map(previous.board.filter(Boolean).map(t=>[t.id,previous.board.indexOf(t)]));
+ for(let index=0;index<current.board.length;index++){
+  if(frame.kind==='swap'&&index!==frame.a&&index!==frame.b)continue;
+  const tile=root.querySelector(`[data-index="${index}"]`),rect=tile?.getBoundingClientRect();if(!rect)continue;
+  const from=oldPositions.get(current.board[index].id),column=index%7,row=Math.floor(index/7),gap=parseFloat(getComputedStyle(tile.parentNode).gap)||0;
+  const dx=from===undefined?0:(from%7-column)*(rect.width+gap),dy=(from===undefined?-2:Math.floor(from/7)-row)*(rect.height+gap);
+  tile.style.animation='none';if(!dx&&!dy)continue;
+  const swap=frame.kind==='swap',frames=swap?[{transform:`translate(${dx}px,${dy}px)`},{transform:'translate(0,0)'}]:[{transform:`translate(${dx}px,${dy}px)`},{transform:'translateY(2px) scaleY(.96)',offset:.8},{transform:'translateY(0) scaleY(1)'}];
+  motion(tile,frames,{duration:(swap?210:360)/speed,easing:swap?'cubic-bezier(.35,.05,.65,1)':'cubic-bezier(.45,.05,.75,1)',fill:'both'});
+ }
 }
