@@ -4,7 +4,9 @@ export const SCENERY_BOTTOM=-1.5335,SCENERY_HEIGHT=16.667;
 export const COURTYARD_SCENERY=Object.freeze([
  {id:'summon',u:.16,halfWidth:.10,art:'./assets/courtyard/altar-skyline.webp'},
  {id:'roster',u:.28,halfWidth:.10,rightWidth:.16,art:'./assets/courtyard/muster-skyline.webp'},
- {id:'market-adventure',u:.86,halfWidth:.25,height:16.667,art:'./assets/courtyard/market-adventure-panorama.webp'},
+ // Extend the market's outer wall behind the Tavern. Its painted building must
+ // be fully visible before it emerges beside the foreground facade.
+ {id:'market-adventure',u:.86,halfWidth:.25,leftWidth:.32,height:16.667,art:'./assets/courtyard/market-adventure-panorama.webp'},
 ]);
 const tau=Math.PI*2;
 export function sceneryPoint(u,y=1.65){return {x:Math.sin(u*tau)*SCENERY_RADIUS,y,z:-Math.cos(u*tau)*SCENERY_RADIUS};}

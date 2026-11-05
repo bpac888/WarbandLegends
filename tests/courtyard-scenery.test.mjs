@@ -19,9 +19,9 @@ test('only the courtyard Altar uses the new distant painting; destinations remai
 });
 test('the fading outer edges of Shop and Codex sit behind the foreground Tavern',()=>{
  const facade=new THREE.Mesh(new THREE.PlaneGeometry(18,12),new THREE.MeshBasicMaterial());facade.position.set(0,5.85,9.05);facade.rotation.y=Math.PI;facade.updateMatrixWorld();
- for(const id of ['roster']){const p=COURTYARD_SCENERY.find(p=>p.id===id),left=id==='shop',span=left?p.leftWidth:p.rightWidth;
-  for(const [x,z]of [[0,1.2],[6.5,-2],[-6.5,-2],[0,-7],[0,6.1]])for(const f of [.01,.04,.08]){
-   const u=p.u+(left?-1:1)*span*(1-f*2),target=sceneryPoint(u,1.65),origin=new THREE.Vector3(x,1.65,z),point=new THREE.Vector3(target.x,target.y,target.z),hits=new THREE.Raycaster(origin,point.clone().sub(origin).normalize()).intersectObject(facade);
+ for(const id of ['roster','market-adventure']){const p=COURTYARD_SCENERY.find(p=>p.id===id),left=id==='market-adventure',span=left?p.leftWidth:p.rightWidth;
+  for(const [x,z]of [[0,1.2],[6.5,-2],[-6.5,-2],[0,-7],[0,6.1],[6,3],[-6,3]])for(const f of [.001,.03,.06,.09])for(const y of [0,1.65,5,8]){
+   const u=p.u+(left?-1:1)*span*(1-f*2),target=sceneryPoint(u,y),origin=new THREE.Vector3(x,1.65,z),point=new THREE.Vector3(target.x,target.y,target.z),hits=new THREE.Raycaster(origin,point.clone().sub(origin).normalize()).intersectObject(facade);
    assert.ok(hits.length&&hits[0].distance<origin.distanceTo(point),`${id} backdrop join is hidden at ${x},${z}`);
   }
  }
