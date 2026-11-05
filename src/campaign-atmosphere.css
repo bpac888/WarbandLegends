@@ -1,17 +1,19 @@
-/* Slow, small accents stay behind the route and stage controls. */
+/* Visible, gently drifting accents stay behind the route and stage controls. */
 .campaign-canvas .campaign-atmosphere{position:absolute;inset:0;overflow:hidden;z-index:1;pointer-events:none;contain:layout paint}
 .campaign-atmosphere>i{position:absolute;left:calc(var(--x)*1%);top:calc(var(--y)*1%);pointer-events:none;animation-duration:var(--duration);animation-delay:var(--delay);animation-timing-function:linear;animation-iteration-count:infinite;opacity:0}
 .campaign-atmosphere .map-mote{width:var(--size);height:var(--size);border-radius:50%}
-.atmosphere-normal .map-mote{background:#fff0ae;box-shadow:0 0 4px #f5d78588;animation-name:campaign-pollen}
-.atmosphere-hard .map-mote{background:#e8dfcd;border-radius:1px;animation-name:campaign-ash}
-.atmosphere-hard .map-ember{width:3px;height:4px;background:#e5a45f;border-radius:50%;box-shadow:0 0 4px #ed8c5088;animation-name:campaign-ember}
-.atmosphere-nightmare .map-mote{background:#dec3ff;box-shadow:0 0 5px #bea3dd88;animation-name:campaign-wisp}
+.atmosphere-normal .map-mote{background:#fff0ae;box-shadow:0 0 3px #382c1970,0 0 9px #f5d785b0;animation-name:campaign-pollen}
+.atmosphere-hard .map-mote{background:#f1e8d8;border-radius:1px;animation-name:campaign-ash}
+.atmosphere-hard .map-ember{width:4px;height:6px;background:#ffd39a;border-radius:50%;box-shadow:0 0 3px #9b3315,0 0 9px #ff9c48b0;animation-name:campaign-ember}
+.atmosphere-nightmare .map-mote{background:#dec3ff;box-shadow:0 0 3px #493064,0 0 11px #d3afffcc;animation-name:campaign-wisp}
 .campaign-canvas>.map-trail{z-index:1}
 .campaign-canvas>.map-world-caption{z-index:2}
-@keyframes campaign-pollen{0%{opacity:0;transform:translate(0,25px)}20%{opacity:.55}50%{transform:translate(16px,-8px)}75%{opacity:.45}100%{opacity:0;transform:translate(5px,-55px)}}
-@keyframes campaign-ash{0%{opacity:0;transform:translate(0,-45px) rotate(0)}18%,65%{opacity:.65}100%{opacity:0;transform:translate(-46px,175px) rotate(85deg)}}
-@keyframes campaign-ember{0%{opacity:0;transform:translate(0,20px)}25%{opacity:.65}65%{opacity:.4}100%{opacity:0;transform:translate(28px,-135px)}}
-@keyframes campaign-wisp{0%{opacity:0;transform:translate(-8px,25px) scale(.7)}35%{opacity:.6}70%{transform:translate(9px,-20px) scale(1)}100%{opacity:0;transform:translate(-4px,-55px) scale(.7)}}
+.atmosphere-normal .map-leaf{width:9px;height:4px;border-radius:80% 10% 80% 10%;background:#d9bc72;box-shadow:0 1px 2px #263b2799;animation-name:campaign-leaf}
+@keyframes campaign-leaf{0%{opacity:0;transform:translate(-20px,-70px) rotate(-25deg)}15%,75%{opacity:.75}50%{transform:translate(22px,35px) rotate(95deg)}100%{opacity:0;transform:translate(48px,140px) rotate(200deg)}}
+@keyframes campaign-pollen{0%{opacity:0;transform:translate(-12px,45px)}20%{opacity:.8}50%{transform:translate(26px,-25px)}75%{opacity:.65}100%{opacity:0;transform:translate(12px,-110px)}}
+@keyframes campaign-ash{0%{opacity:0;transform:translate(12px,-65px) rotate(0)}15%,75%{opacity:.85}100%{opacity:0;transform:translate(-75px,240px) rotate(85deg)}}
+@keyframes campaign-ember{0%{opacity:0;transform:translate(0,20px)}20%{opacity:.9}70%{opacity:.7}100%{opacity:0;transform:translate(44px,-190px)}}
+@keyframes campaign-wisp{0%{opacity:0;transform:translate(-15px,45px) scale(.75)}25%,65%{opacity:.8}70%{transform:translate(24px,-35px) scale(1)}100%{opacity:0;transform:translate(-8px,-110px) scale(.7)}}
 .menu-motion-paused .campaign-atmosphere>i,body:has(#modal[open]) .campaign-atmosphere>i{animation-play-state:paused!important}
 body.reduce-animation .campaign-atmosphere{display:none}
 @media(prefers-reduced-motion:reduce){.campaign-atmosphere{display:none}}
