@@ -8338,5 +8338,277 @@
         ]
       ]
     }
+  },
+  {
+    "template_id": "djedi_kobe_kenobi",
+    "name": "Kobe Kenobi",
+    "title": "Warden of the Quiet Mind",
+    "rarity": "legendary",
+    "faction": "djedi",
+    "role": "attack",
+    "atk": 815,
+    "def": 735,
+    "hp": 1405,
+    "ability_name": "Stillness Before the Blade",
+    "lore": "Beneath an oversized brown hood, Kobe carries the calm of a thousand silent vigils. His green energy blade moves only when words have failed. Stones lift around him as he turns an enemy’s momentum aside with a thought.",
+    "image_url": "/assets/champions/djedi_kobe_kenobi.webp",
+    "id": "djedi_kobe_kenobi",
+    "color": "green",
+    "source_image": "assets/champions/djedi_kobe_kenobi.webp",
+    "portrait": "assets/champions/djedi_kobe_kenobi.webp",
+    "passive": null,
+    "ability_desc": "Deal 265% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "mana_slow",
+          2
+        ],
+        [
+          "strengthen",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "djedi_commander_pain",
+    "name": "Commander Pain",
+    "title": "The Fourfold Advance",
+    "rarity": "legendary",
+    "faction": "djedi",
+    "role": "attack",
+    "atk": 840,
+    "def": 680,
+    "hp": 1350,
+    "ability_name": "Fourfold Destruction",
+    "lore": "A scarred metal commander advances beneath a shredded dark cape, four arms drawing a wall of blue and green light. His blades spin until the air screams against them. Every dent upon his chassis records a battle he survived without yielding a step.",
+    "image_url": "/assets/champions/djedi_commander_pain.webp",
+    "id": "djedi_commander_pain",
+    "color": "blue",
+    "source_image": "assets/champions/djedi_commander_pain.webp",
+    "portrait": "assets/champions/djedi_commander_pain.webp",
+    "passive": null,
+    "ability_desc": "Deal 190% ATK damage to all living enemies, ignoring 25% of DEF.",
+    "spd": 88,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "counterattack",
+          2
+        ],
+        [
+          "aoe",
+          0
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "djedi_jace_hindu",
+    "name": "Jace Hindu",
+    "title": "Keeper of the Sacred Vow",
+    "rarity": "legendary",
+    "faction": "djedi",
+    "role": "attack",
+    "atk": 820,
+    "def": 725,
+    "hp": 1395,
+    "ability_name": "The Unbroken Vow",
+    "lore": "Jace places his faith in discipline, mercy and the sacred duty to protect life. Humble in speech and unwavering in judgment, he carries a purple energy sword as the final answer to cruelty. No borrowed enchantment can stand before his clear resolve.",
+    "image_url": "/assets/champions/djedi_jace_hindu.webp",
+    "id": "djedi_jace_hindu",
+    "color": "purple",
+    "source_image": "assets/champions/djedi_jace_hindu.webp",
+    "portrait": "assets/champions/djedi_jace_hindu.webp",
+    "passive": null,
+    "ability_desc": "Deal 280% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dispel",
+          0
+        ],
+        [
+          "block_buffs",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "djedi_ani_windwalker",
+    "name": "Ani Windwalker",
+    "title": "Bright Blade of the Rising Path",
+    "rarity": "legendary",
+    "faction": "djedi",
+    "role": "attack",
+    "atk": 825,
+    "def": 695,
+    "hp": 1370,
+    "ability_name": "Skyward Momentum",
+    "lore": "Ani greets impossible odds with a grin and a blue blade already in motion. A single thin braid falls over the front of his shoulder, a reminder that his learning is not finished. His quick feet and fearless heart often reach danger before caution can catch him.",
+    "image_url": "/assets/champions/djedi_ani_windwalker.webp",
+    "id": "djedi_ani_windwalker",
+    "color": "blue",
+    "source_image": "assets/champions/djedi_ani_windwalker.webp",
+    "portrait": "assets/champions/djedi_ani_windwalker.webp",
+    "passive": null,
+    "ability_desc": "Deal 270% ATK damage to selected enemy.",
+    "spd": 112,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "inc_atk",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "djedi_dark_lord",
+    "name": "Dark Lord",
+    "title": "Voice Behind the Black Mask",
+    "rarity": "legendary",
+    "faction": "djedi",
+    "role": "attack",
+    "atk": 835,
+    "def": 750,
+    "hp": 1450,
+    "ability_name": "Shadow of Command",
+    "lore": "Behind a sinister black helmet, the Dark Lord speaks with the certainty of an approaching storm. His cape drinks the light of his own crimson blade. Those who meet his gaze feel their strength and resolve begin to falter.",
+    "image_url": "/assets/champions/djedi_dark_lord.webp",
+    "id": "djedi_dark_lord",
+    "color": "red",
+    "source_image": "assets/champions/djedi_dark_lord.webp",
+    "portrait": "assets/champions/djedi_dark_lord.webp",
+    "passive": null,
+    "ability_desc": "Deal 195% ATK damage to all living enemies.",
+    "spd": 88,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "mana_slow",
+          2
+        ],
+        [
+          "dec_atk",
+          1
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "djedi_chewy",
+    "name": "Chewy",
+    "title": "The Roaring Bulwark",
+    "rarity": "legendary",
+    "faction": "djedi",
+    "role": "defense",
+    "atk": 675,
+    "def": 815,
+    "hp": 1580,
+    "ability_name": "Stand Behind the Roar",
+    "lore": "Chewy’s guttural roar can carry across a battlefield long after the guns fall silent. Beneath his long brown fur is a loyal heart and a strength few dare test. His crossbow and loaded utility bandolier stand between his companions and anyone foolish enough to pursue them.",
+    "image_url": "/assets/champions/djedi_chewy.webp",
+    "id": "djedi_chewy",
+    "color": "green",
+    "source_image": "assets/champions/djedi_chewy.webp",
+    "portrait": "assets/champions/djedi_chewy.webp",
+    "passive": null,
+    "ability_desc": "Deal 160% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "guard",
+          2
+        ],
+        [
+          "inc_def",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "djedi_ar2",
+    "name": "AR2",
+    "title": "The Golden-Eyed Improviser",
+    "rarity": "rare",
+    "faction": "djedi",
+    "role": "support",
+    "atk": 595,
+    "def": 635,
+    "hp": 1130,
+    "ability_name": "Patchwork Recharge",
+    "lore": "AR2 walks with the uneven rhythm of parts assembled across a hundred workshops. Great golden disc-eyes study every broken circuit and wounded companion. His mismatched hands always seem to find one last spare component when hope is running low.",
+    "image_url": "/assets/champions/djedi_ar2.webp",
+    "id": "djedi_ar2",
+    "color": "yellow",
+    "source_image": "assets/champions/djedi_ar2.webp",
+    "portrait": "assets/champions/djedi_ar2.webp",
+    "passive": null,
+    "ability_desc": "Restore 22% max HP to all living allies.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "mana_raise",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "djedi_dark_mauler",
+    "name": "Dark Mauler",
+    "title": "The Crimson Aerial Blade",
+    "rarity": "legendary",
+    "faction": "djedi",
+    "role": "attack",
+    "atk": 850,
+    "def": 670,
+    "hp": 1320,
+    "ability_name": "Crimson Vault",
+    "lore": "Four short horns rise above the Mauler’s red face and black-ringed eyes. His double-ended crimson weapon whirls as he vaults impossibly high, descending with predatory precision. He delights in leaving no safe angle from which to face him.",
+    "image_url": "/assets/champions/djedi_dark_mauler.webp",
+    "id": "djedi_dark_mauler",
+    "color": "red",
+    "source_image": "assets/champions/djedi_dark_mauler.webp",
+    "portrait": "assets/champions/djedi_dark_mauler.webp",
+    "passive": null,
+    "ability_desc": "Deal 260% ATK damage to selected enemy, ignoring 25% of DEF.",
+    "spd": 112,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "bleed",
+          2
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    }
   }
 ]

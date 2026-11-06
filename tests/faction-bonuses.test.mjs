@@ -5,7 +5,7 @@ import {awakenedStats} from '../src/ascension.js';import {statsAtLevel} from '..
 import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';import {loadBattle,save,BATTLE_KEY} from '../src/storage.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const original=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url)));
-const keys=Object.keys(FACTION_BONUSES).filter(f=>f!=='magic');
+const keys=Object.keys(FACTION_BONUSES).filter(f=>!['magic','djedi'].includes(f));
 function kit(effects=[],extras={}){return {name:'Fixture',charging:false,levels:[{level:1,speed:'average',tiles:10,target:'enemy',damage:0,healing:0,healScope:'allies',aoe:false,pierce:false,effects,...extras}]};}
 function fixture(faction,count=3,seed=42,{progression=false,tileCosts=null}={}){
  const roster=structuredClone(original),others=keys.filter(k=>k!==faction),sources=REFERENCE_TEAM.map(id=>roster.find(c=>c.id===id));
@@ -84,7 +84,7 @@ test('new faction metadata and4-turn ailments round-trip; malformed faction stat
  const bad=fixture('frost',3);bad.b.heroes[0].effects.burn={turns:4,source:'enemy-0',appliedMove:0};assert.equal(validateSave(bad.b,bad.roster),false);
 });
 test('Guide and team summaries share all12 exact rules and display mixed active groups without applying both tiers',()=>{
- const {b}=fixture('astral_concord',3),html=factionTeamHTML(b.heroes);assert.match(html,/Astral Concord · 3\+/);assert.match(html,/25%/);assert.doesNotMatch(html,/15%/);const guide=factionGuideHTML();for(const f of Object.values(FACTION_BONUSES))assert.ok(guide.includes(f.name));assert.equal((guide.match(/<details>/g)||[]).length,14);assert.equal(factionGroups([]).length,0);
+ const {b}=fixture('astral_concord',3),html=factionTeamHTML(b.heroes);assert.match(html,/Astral Concord · 3\+/);assert.match(html,/25%/);assert.doesNotMatch(html,/15%/);const guide=factionGuideHTML();for(const f of Object.values(FACTION_BONUSES))assert.ok(guide.includes(f.name));assert.equal((guide.match(/<details>/g)||[]).length,15);assert.equal(factionGroups([]).length,0);
 });
 test('Auto uses the same faction-aware resolver and completes real battles with valid states',()=>{
  for(const f of ['astral_concord','chymera','umbra','nether']){const group=original.filter(c=>c.faction===f).slice(0,3).map(c=>c.id);const fillers=REFERENCE_TEAM.filter(id=>!group.includes(id)&&original.find(c=>c.id===id).faction!==f).slice(0,2);let b=createBattle(original,[...group,...fillers],'ashen-gate',117),steps=0;while(b.phase==='playing'&&steps++<140){const a=chooseAutoAction(b);assert.ok(a);const result=applyAutoAction(b,a);assert.ok(!result.error);b=result.state;assert.ok(validateSave(b,original),f);}assert.notEqual(b.phase,'playing',f+' stalled');}

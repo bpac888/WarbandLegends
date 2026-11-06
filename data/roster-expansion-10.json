@@ -1,0 +1,108 @@
+{
+  "version": 10,
+  "originalCount": 240,
+  "totalCount": 248,
+  "originalRecordsSha256": "93be8734eccb99cedcdd22d21e375e0c5f784670b6201599a2e582ff0ad1e298",
+  "originalSourceRecordsSha256": "d95f974d0f849b68f79b1bf526032c6fc17845288283bab0293ec50e78b17f99",
+  "originalPortraitsSha256": "af481ef16aa1998ba87fb432dc213de7bdea002e03c5598de2da09b291f0cf58",
+  "addedChampionIds": [
+    "djedi_kobe_kenobi",
+    "djedi_commander_pain",
+    "djedi_jace_hindu",
+    "djedi_ani_windwalker",
+    "djedi_dark_lord",
+    "djedi_chewy",
+    "djedi_ar2",
+    "djedi_dark_mauler"
+  ],
+  "implementedRecommendations": [
+    {
+      "championId": "djedi_kobe_kenobi",
+      "name": "Kobe Kenobi",
+      "faction": "djedi",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "championId": "djedi_commander_pain",
+      "name": "Commander Pain",
+      "faction": "djedi",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "championId": "djedi_jace_hindu",
+      "name": "Jace Hindu",
+      "faction": "djedi",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "championId": "djedi_ani_windwalker",
+      "name": "Ani Windwalker",
+      "faction": "djedi",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "championId": "djedi_dark_lord",
+      "name": "Dark Lord",
+      "faction": "djedi",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "championId": "djedi_chewy",
+      "name": "Chewy",
+      "faction": "djedi",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "championId": "djedi_ar2",
+      "name": "AR2",
+      "faction": "djedi",
+      "color": "yellow",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "championId": "djedi_dark_mauler",
+      "name": "Dark Mauler",
+      "faction": "djedi",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    }
+  ]
+}

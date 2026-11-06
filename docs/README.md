@@ -4,7 +4,7 @@
 
 ## Start here
 
-Current roster: **240 champions across fourteen factions**. [Magic](MAGIC.md) adds six elite wizards; the thirteen previous factions retain eighteen members each.
+Current roster: **248 champions across fifteen factions**. [Djedi](DJEDI.md) adds eight champions. [Magic](MAGIC.md) has six wizards; the thirteen original factions retain eighteen members each.
 
 - [Detailed project guide](PROJECT-GUIDE.md) — full feature list, local development, builds and hosting.
 - [Game rules](RULES.md) — board, elements, mana and combat.

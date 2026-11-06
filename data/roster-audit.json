@@ -1,67 +1,9 @@
 {
-  "version": 9,
-  "scope": "Current 240-character roster after adding six elite Magic wizards. All 234 previous records and portraits preserved. Thirteen original factions have 18 members; Magic has six. Not a measured PvP win-rate study.",
+  "version": 10,
+  "scope": "Current 248-character roster after adding eight Djedi champions. All 240 previous records and portraits preserved. Thirteen original factions have 18 members; Magic has six; Djedi has eight. Not a measured PvP win-rate study.",
   "historicalBaselineVerified": true,
   "approvedRosterRevisionCount": 28,
   "before": {
-    "total": 234,
-    "rarity": {
-      "mythical": 18,
-      "legendary": 103,
-      "rare": 84,
-      "common": 29
-    },
-    "color": {
-      "red": 47,
-      "blue": 47,
-      "green": 47,
-      "yellow": 46,
-      "purple": 47
-    },
-    "type": {
-      "attack": 126,
-      "defense": 51,
-      "support": 57
-    },
-    "speed": {
-      "very_fast": 10,
-      "fast": 58,
-      "average": 109,
-      "slow": 34,
-      "very_slow": 2,
-      "charging": 21
-    }
-  },
-  "additions": {
-    "total": 6,
-    "rarity": {
-      "mythical": 1,
-      "legendary": 5,
-      "rare": 0,
-      "common": 0
-    },
-    "color": {
-      "red": 1,
-      "blue": 1,
-      "green": 1,
-      "yellow": 1,
-      "purple": 2
-    },
-    "type": {
-      "attack": 4,
-      "defense": 1,
-      "support": 1
-    },
-    "speed": {
-      "very_fast": 0,
-      "fast": 1,
-      "average": 3,
-      "slow": 2,
-      "very_slow": 0,
-      "charging": 0
-    }
-  },
-  "after": {
     "total": 240,
     "rarity": {
       "mythical": 19,
@@ -86,6 +28,64 @@
       "fast": 59,
       "average": 112,
       "slow": 36,
+      "very_slow": 2,
+      "charging": 21
+    }
+  },
+  "additions": {
+    "total": 8,
+    "rarity": {
+      "mythical": 0,
+      "legendary": 7,
+      "rare": 1,
+      "common": 0
+    },
+    "color": {
+      "red": 2,
+      "blue": 2,
+      "green": 2,
+      "yellow": 1,
+      "purple": 1
+    },
+    "type": {
+      "attack": 6,
+      "defense": 1,
+      "support": 1
+    },
+    "speed": {
+      "very_fast": 0,
+      "fast": 2,
+      "average": 4,
+      "slow": 2,
+      "very_slow": 0,
+      "charging": 0
+    }
+  },
+  "after": {
+    "total": 248,
+    "rarity": {
+      "mythical": 19,
+      "legendary": 115,
+      "rare": 85,
+      "common": 29
+    },
+    "color": {
+      "red": 50,
+      "blue": 50,
+      "green": 50,
+      "yellow": 48,
+      "purple": 50
+    },
+    "type": {
+      "attack": 136,
+      "defense": 53,
+      "support": 59
+    },
+    "speed": {
+      "very_fast": 10,
+      "fast": 61,
+      "average": 116,
+      "slow": 38,
       "very_slow": 2,
       "charging": 21
     }
@@ -248,6 +248,37 @@
           "manaSpeed": "charging"
         }
       ]
+    },
+    "djedi": {
+      "total": 8,
+      "rarity": {
+        "mythical": 0,
+        "legendary": 7,
+        "rare": 1,
+        "common": 0
+      },
+      "color": {
+        "red": 2,
+        "blue": 2,
+        "green": 2,
+        "yellow": 1,
+        "purple": 1
+      },
+      "type": {
+        "attack": 6,
+        "defense": 1,
+        "support": 1
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 2,
+        "average": 4,
+        "slow": 2,
+        "very_slow": 0,
+        "charging": 0
+      },
+      "before": 0,
+      "mythicals": []
     },
     "dragondynasty": {
       "total": 18,
@@ -440,7 +471,7 @@
         "very_slow": 0,
         "charging": 0
       },
-      "before": 0,
+      "before": 6,
       "mythicals": [
         {
           "name": "Eldravon, the First Arcanum",
@@ -666,58 +697,58 @@
       }
     },
     "legendary": {
-      "total": 108,
+      "total": 115,
       "rarity": {
         "mythical": 0,
-        "legendary": 108,
+        "legendary": 115,
         "rare": 0,
         "common": 0
       },
       "color": {
-        "red": 22,
-        "blue": 22,
-        "green": 20,
+        "red": 24,
+        "blue": 24,
+        "green": 22,
         "yellow": 23,
-        "purple": 21
+        "purple": 22
       },
       "type": {
-        "attack": 63,
-        "defense": 24,
+        "attack": 69,
+        "defense": 25,
         "support": 21
       },
       "speed": {
         "very_fast": 2,
-        "fast": 26,
-        "average": 36,
-        "slow": 28,
+        "fast": 28,
+        "average": 39,
+        "slow": 30,
         "very_slow": 1,
         "charging": 15
       }
     },
     "rare": {
-      "total": 84,
+      "total": 85,
       "rarity": {
         "mythical": 0,
         "legendary": 0,
-        "rare": 84,
+        "rare": 85,
         "common": 0
       },
       "color": {
         "red": 17,
         "blue": 16,
         "green": 20,
-        "yellow": 13,
+        "yellow": 14,
         "purple": 18
       },
       "type": {
         "attack": 43,
         "defense": 20,
-        "support": 21
+        "support": 22
       },
       "speed": {
         "very_fast": 5,
         "fast": 21,
-        "average": 53,
+        "average": 54,
         "slow": 3,
         "very_slow": 0,
         "charging": 2
@@ -755,126 +786,126 @@
   },
   "byColor": {
     "red": {
-      "total": 48,
+      "total": 50,
       "rarity": {
         "mythical": 4,
-        "legendary": 22,
+        "legendary": 24,
         "rare": 17,
         "common": 5
       },
       "color": {
-        "red": 48,
+        "red": 50,
         "blue": 0,
         "green": 0,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 32,
+        "attack": 34,
         "defense": 8,
         "support": 8
       },
       "speed": {
         "very_fast": 1,
-        "fast": 12,
+        "fast": 13,
         "average": 25,
-        "slow": 6,
+        "slow": 7,
         "very_slow": 0,
         "charging": 4
       }
     },
     "blue": {
-      "total": 48,
+      "total": 50,
       "rarity": {
         "mythical": 4,
-        "legendary": 22,
+        "legendary": 24,
         "rare": 16,
         "common": 6
       },
       "color": {
         "red": 0,
-        "blue": 48,
+        "blue": 50,
         "green": 0,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 18,
+        "attack": 20,
         "defense": 14,
         "support": 16
       },
       "speed": {
         "very_fast": 1,
-        "fast": 15,
+        "fast": 16,
         "average": 24,
-        "slow": 5,
+        "slow": 6,
         "very_slow": 0,
         "charging": 3
       }
     },
     "green": {
-      "total": 48,
+      "total": 50,
       "rarity": {
         "mythical": 2,
-        "legendary": 20,
+        "legendary": 22,
         "rare": 20,
         "common": 6
       },
       "color": {
         "red": 0,
         "blue": 0,
-        "green": 48,
+        "green": 50,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 24,
-        "defense": 10,
+        "attack": 25,
+        "defense": 11,
         "support": 14
       },
       "speed": {
         "very_fast": 0,
         "fast": 10,
-        "average": 27,
+        "average": 29,
         "slow": 6,
         "very_slow": 1,
         "charging": 4
       }
     },
     "yellow": {
-      "total": 47,
+      "total": 48,
       "rarity": {
         "mythical": 4,
         "legendary": 23,
-        "rare": 13,
+        "rare": 14,
         "common": 7
       },
       "color": {
         "red": 0,
         "blue": 0,
         "green": 0,
-        "yellow": 47,
+        "yellow": 48,
         "purple": 0
       },
       "type": {
         "attack": 25,
         "defense": 11,
-        "support": 11
+        "support": 12
       },
       "speed": {
         "very_fast": 5,
         "fast": 7,
-        "average": 20,
+        "average": 21,
         "slow": 8,
         "very_slow": 0,
         "charging": 7
       }
     },
     "purple": {
-      "total": 49,
+      "total": 50,
       "rarity": {
         "mythical": 5,
-        "legendary": 21,
+        "legendary": 22,
         "rare": 18,
         "common": 5
       },
@@ -883,17 +914,17 @@
         "blue": 0,
         "green": 0,
         "yellow": 0,
-        "purple": 49
+        "purple": 50
       },
       "type": {
-        "attack": 31,
+        "attack": 32,
         "defense": 9,
         "support": 9
       },
       "speed": {
         "very_fast": 3,
         "fast": 15,
-        "average": 16,
+        "average": 17,
         "slow": 11,
         "very_slow": 1,
         "charging": 3
@@ -902,87 +933,87 @@
   },
   "byType": {
     "attack": {
-      "total": 130,
+      "total": 136,
       "rarity": {
         "mythical": 9,
-        "legendary": 63,
+        "legendary": 69,
         "rare": 43,
         "common": 15
       },
       "color": {
-        "red": 32,
-        "blue": 18,
-        "green": 24,
+        "red": 34,
+        "blue": 20,
+        "green": 25,
         "yellow": 25,
-        "purple": 31
+        "purple": 32
       },
       "type": {
-        "attack": 130,
+        "attack": 136,
         "defense": 0,
         "support": 0
       },
       "speed": {
         "very_fast": 10,
-        "fast": 42,
-        "average": 47,
-        "slow": 15,
+        "fast": 44,
+        "average": 49,
+        "slow": 17,
         "very_slow": 1,
         "charging": 15
       }
     },
     "defense": {
-      "total": 52,
+      "total": 53,
       "rarity": {
         "mythical": 4,
-        "legendary": 24,
+        "legendary": 25,
         "rare": 20,
         "common": 4
       },
       "color": {
         "red": 8,
         "blue": 14,
-        "green": 10,
+        "green": 11,
         "yellow": 11,
         "purple": 9
       },
       "type": {
         "attack": 0,
-        "defense": 52,
+        "defense": 53,
         "support": 0
       },
       "speed": {
         "very_fast": 0,
         "fast": 5,
-        "average": 29,
+        "average": 30,
         "slow": 16,
         "very_slow": 0,
         "charging": 2
       }
     },
     "support": {
-      "total": 58,
+      "total": 59,
       "rarity": {
         "mythical": 6,
         "legendary": 21,
-        "rare": 21,
+        "rare": 22,
         "common": 10
       },
       "color": {
         "red": 8,
         "blue": 16,
         "green": 14,
-        "yellow": 11,
+        "yellow": 12,
         "purple": 9
       },
       "type": {
         "attack": 0,
         "defense": 0,
-        "support": 58
+        "support": 59
       },
       "speed": {
         "very_fast": 0,
         "fast": 12,
-        "average": 36,
+        "average": 37,
         "slow": 5,
         "very_slow": 1,
         "charging": 4
@@ -992,74 +1023,98 @@
   "implementedRecommendations": [
     {
       "priority": 1,
-      "championId": "magic_vaelric",
-      "name": "Vaelric, Cinder-Crowned Magus",
-      "faction": "magic",
-      "color": "red",
+      "championId": "djedi_kobe_kenobi",
+      "name": "Kobe Kenobi",
+      "faction": "djedi",
+      "color": "green",
       "rarity": "legendary",
       "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "manaSpeed": "average",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "priority": 2,
-      "championId": "magic_iseldra",
-      "name": "Iseldra, Glacial Archmage",
-      "faction": "magic",
+      "championId": "djedi_commander_pain",
+      "name": "Commander Pain",
+      "faction": "djedi",
       "color": "blue",
       "rarity": "legendary",
-      "role": "defense",
-      "manaSpeed": "average",
-      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "priority": 3,
-      "championId": "magic_merovant",
-      "name": "Merovant, Verdant Archmage",
-      "faction": "magic",
-      "color": "green",
+      "championId": "djedi_jace_hindu",
+      "name": "Jace Hindu",
+      "faction": "djedi",
+      "color": "purple",
       "rarity": "legendary",
-      "role": "support",
+      "role": "attack",
       "manaSpeed": "average",
-      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "priority": 4,
-      "championId": "magic_caldrien",
-      "name": "Caldrien, Dawn Wanderer",
-      "faction": "magic",
-      "color": "yellow",
+      "championId": "djedi_ani_windwalker",
+      "name": "Ani Windwalker",
+      "faction": "djedi",
+      "color": "blue",
       "rarity": "legendary",
       "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "manaSpeed": "fast",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "priority": 5,
-      "championId": "magic_nyzara",
-      "name": "Nyzara, Voidweaver",
-      "faction": "magic",
-      "color": "purple",
+      "championId": "djedi_dark_lord",
+      "name": "Dark Lord",
+      "faction": "djedi",
+      "color": "red",
       "rarity": "legendary",
       "role": "attack",
-      "manaSpeed": "fast",
-      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "manaSpeed": "slow",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "priority": 6,
-      "championId": "magic_eldravon",
-      "name": "Eldravon, the First Arcanum",
-      "faction": "magic",
-      "color": "purple",
-      "rarity": "mythical",
+      "championId": "djedi_chewy",
+      "name": "Chewy",
+      "faction": "djedi",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "priority": 7,
+      "championId": "djedi_ar2",
+      "name": "AR2",
+      "faction": "djedi",
+      "color": "yellow",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "status": "implemented"
+    },
+    {
+      "priority": 8,
+      "championId": "djedi_dark_mauler",
+      "name": "Dark Mauler",
+      "faction": "djedi",
+      "color": "red",
+      "rarity": "legendary",
       "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "manaSpeed": "fast",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     }
   ],

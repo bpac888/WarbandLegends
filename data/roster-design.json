@@ -4777,6 +4777,266 @@
         "def": 870,
         "hp": 1660
       }
+    },
+    "djedi_kobe_kenobi": {
+      "color": "green",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.65,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemy"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 815,
+        "def": 735,
+        "hp": 1405
+      }
+    },
+    "djedi_commander_pain": {
+      "color": "blue",
+      "manaSpeed": "slow",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.9,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": true,
+          "effects": [
+            {
+              "id": "counterattack",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 840,
+        "def": 680,
+        "hp": 1350
+      }
+    },
+    "djedi_jace_hindu": {
+      "color": "purple",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "block_buffs",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 820,
+        "def": 725,
+        "hp": 1395
+      }
+    },
+    "djedi_ani_windwalker": {
+      "color": "blue",
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.7,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 825,
+        "def": 695,
+        "hp": 1370
+      }
+    },
+    "djedi_dark_lord": {
+      "color": "red",
+      "manaSpeed": "slow",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.95,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemies"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 1,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 835,
+        "def": 750,
+        "hp": 1450
+      }
+    },
+    "djedi_chewy": {
+      "color": "green",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 675,
+        "def": 815,
+        "hp": 1580
+      }
+    },
+    "djedi_ar2": {
+      "color": "yellow",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.22,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_raise",
+              "turns": 0,
+              "scope": "other_allies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 595,
+        "def": 635,
+        "hp": 1130
+      }
+    },
+    "djedi_dark_mauler": {
+      "color": "red",
+      "manaSpeed": "fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": true,
+          "effects": [
+            {
+              "id": "bleed",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 850,
+        "def": 670,
+        "hp": 1320
+      }
     }
   }
 }

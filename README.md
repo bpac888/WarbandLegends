@@ -1,6 +1,6 @@
 # Warband Legends
 
-A standalone match-3 RPG with 240 collectible champions across 14 factions (13 with 18 members, plus six elite Magic wizards), a five-champion warband, campaign, dungeons, Arena and special events.
+A standalone match-3 RPG with 248 collectible champions across 15 factions (13 with 18 members, six Magic wizards and eight Djedi), a five-champion warband, campaign, dungeons, Arena and special events.
 
 ·[Documentation](docs/README.md) · [Game rules](docs/RULES.md)
 

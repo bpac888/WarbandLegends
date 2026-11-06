@@ -1,5 +1,5 @@
 import {FACTION_BONUSES,factionGroups,factionRule} from './faction-bonuses.js';
-const tierLabel=(f,t)=>f==='magic'?t:t===3?'3+':2;
+const tierLabel=(f,t)=>f==='magic'?t:f==='djedi'?'2+':t===3?'3+':2;
 export function factionTeamHTML(team){
  const groups=factionGroups(team);
  if(!groups.length)return '<div class="faction-team-empty">Faction Bonuses <span>None Active</span></div>';
@@ -10,4 +10,4 @@ export function factionUnitHTML(unit){
  const own=Object.keys(factionRule(unit)).length;
  return `<p class="faction-unit-bonus">${own?`<b>${FACTION_BONUSES[unit.faction].name} · ${tierLabel(unit.faction,unit.factionTier)} Faction Bonus</b>`:''}${unit.factionManaBonus?`<span>Magic Aura · +${Math.round(unit.factionManaBonus*100)}% mana generation</span>`:''}${unit.factionStacks?`<span>Umbral Growth ×${unit.factionStacks} · +${unit.factionStacks*2}% ATK / DEF / HP</span>`:''}</p>`;
 }
-export function factionGuideHTML(){return `<div class="faction-guide"><div class="faction-guide-list">${Object.values(FACTION_BONUSES).map(f=>`<details><summary>${f.name}</summary><dl>${Object.entries(f.tiers).map(([tier,rule])=>`<div><dt>${f.name==='Magic'?tier:Number(tier)===3?'3+':tier} ${tier==='1'?'Member':'Members'}</dt><dd>${rule.text}</dd></div>`).join('')}</dl></details>`).join('')}</div></div>`;}
+export function factionGuideHTML(){return `<div class="faction-guide"><div class="faction-guide-list">${Object.values(FACTION_BONUSES).map(f=>`<details><summary>${f.name}</summary><dl>${Object.entries(f.tiers).map(([tier,rule])=>`<div><dt>${f.name==='Magic'?tier:f.name==='Djedi'?'2+':Number(tier)===3?'3+':tier} ${tier==='1'?'Member':'Members'}</dt><dd>${rule.text}</dd></div>`).join('')}</dl></details>`).join('')}</div></div>`;}

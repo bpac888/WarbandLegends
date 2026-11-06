@@ -30,9 +30,15 @@ const preservedPortraits=[];for(const c of roster.slice(0,current.originalCount)
 if(sha(preservedPortraits)!==current.originalPortraitsSha256)throw Error('An existing portrait changed since the Wildgrove addition');
 const magic=JSON.parse(await readFile('data/roster-expansion-9.json','utf8'));
 if(sha(roster.slice(0,magic.originalCount))!==magic.originalRecordsSha256||sha(sourceRoster.slice(0,magic.originalCount))!==magic.originalSourceRecordsSha256)throw Error('The 234-character baseline changed');
-if(roster.length!==magic.totalCount||sourceRoster.length!==magic.totalCount||new Set(roster.map(c=>c.id)).size!==magic.totalCount||JSON.stringify(roster.slice(magic.originalCount).map(c=>c.id))!==JSON.stringify(magic.addedChampionIds))throw Error('Roster identity check failed');
+if(JSON.stringify(roster.slice(magic.originalCount,magic.totalCount).map(c=>c.id))!==JSON.stringify(magic.addedChampionIds))throw Error('Magic identity check failed');
 const magicPortraits=[];for(const c of roster.slice(0,magic.originalCount))magicPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(magicPortraits)!==magic.originalPortraitsSha256)throw Error('A previous portrait changed since Magic was added');
+const djedi=JSON.parse(await readFile('data/roster-expansion-10.json','utf8'));
+if(sha(roster.slice(0,djedi.originalCount))!==djedi.originalRecordsSha256||sha(sourceRoster.slice(0,djedi.originalCount))!==djedi.originalSourceRecordsSha256)throw Error('The 240-character baseline changed');
+if(roster.length!==djedi.totalCount||sourceRoster.length!==djedi.totalCount||new Set(roster.map(c=>c.id)).size!==djedi.totalCount||JSON.stringify(roster.slice(djedi.originalCount).map(c=>c.id))!==JSON.stringify(djedi.addedChampionIds))throw Error('Roster identity check failed');
+const djediPortraits=[];for(const c of roster.slice(0,djedi.originalCount))djediPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
+if(sha(djediPortraits)!==djedi.originalPortraitsSha256)throw Error('A previous portrait changed since Djedi was added');
+if((await stat('assets/factions/djedi.svg')).size<500)throw Error('Missing Djedi emblem');
 if((await stat('assets/factions/magic.svg')).size<500)throw Error('Missing Magic emblem');
 for(const art of ['legends-splash','legends-splash-phone'])if((await stat('assets/scenes/'+art+'.webp')).size<100000)throw Error('Missing splash artwork: '+art);
 for(const item of PREMIUM_ITEMS)if((await stat('assets/items/'+item.id+'.webp')).size<10000)throw Error('Missing premium item artwork: '+item.id);
