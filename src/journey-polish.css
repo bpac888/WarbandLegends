@@ -24,3 +24,7 @@
 #modal[data-view=result] .result-saved{font-size:12px;margin:8px 0}
 #modal[data-view=result] .modal-actions{position:sticky;bottom:-16px;margin:10px -18px -16px;padding:10px 18px 16px;background:#142b2c;z-index:2}
 #modal[data-view=result] .modal-actions>.button{width:100%;min-height:44px;font-size:12px;letter-spacing:0}
+
+/* A short orientation before the exact Special rules. */
+.special-at-a-glance{font-size:14px;line-height:1.55;color:#e0e8db;margin:12px 0 16px;padding:10px 12px;border-inline-start:2px solid #d9bb7c;background:#d6bf8620;border-radius:0 8px 8px 0;overflow-wrap:anywhere}
+.special-at-a-glance>span{display:block;font-size:10px;font-weight:600;letter-spacing:.04em;color:#e6cb95;margin-bottom:4px}
