@@ -50,3 +50,6 @@ body.menu-theme .game-page.page-summon:has(.first-steps){flex-direction:column}
 .page-summon>.first-steps{flex-shrink:0;width:100%;box-sizing:border-box}
 .battle-shell .tile.practice-hint{outline:3px solid #fff0bb;outline-offset:-3px;box-shadow:inset 0 0 14px #ffe291aa}
 .battle-shell.practice-battle .battle-center .battle-feedback{display:block;white-space:normal;text-wrap:wrap;overflow-wrap:anywhere;box-sizing:border-box;width:calc(100% - 16px);max-width:calc(100% - 16px);line-height:1.35;text-align:left;padding:6px 10px}
+#modal[data-view=tutorial-complete] .tutorial-complete-trophy{display:block;width:clamp(120px,22vh,180px);height:auto;aspect-ratio:1;object-fit:contain;margin:0 auto 14px;filter:drop-shadow(0 4px 14px #efc65c38)}
+#modal[data-view=tutorial-complete] .modal-body{text-align:center}
+#modal[data-view=tutorial-complete] .modal-actions{justify-content:center;margin-top:18px}

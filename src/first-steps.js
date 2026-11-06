@@ -3,7 +3,7 @@ import {tutorialState,tutorialFinished,TUTORIAL_QUESTS,tutorialProgress} from '.
 const reward=(quest,title)=>({id:'quest',quest,title:'Quest reward ready',text:title,label:'Collect Quest Reward',page:'quests'});
 export function nextFirstStep(p){
  if(p.onboardingDismissed||p.openRoster||tutorialFinished(p))return null;
- if(!p.claimed.includes('tutorial-combat'))return tutorialProgress(p,'tutorial-combat')===3?reward('tutorial-combat','Collect your practice battle reward before the campaign. '):{id:'practice',title:'Learn the basics of battle',text:'Cast a Special, then make a four-match and a five-match in one guided practice battle. No energy is spent.',label:'Start Practice Battle',page:'battle'};
+ if(!p.claimed.includes('tutorial-combat'))return tutorialProgress(p,'tutorial-combat')===3?reward('tutorial-combat','Collect your practice battle reward before the campaign. '):{id:'practice',title:'Learn the basics of battle',text:'Make a normal match, cast a Special, then create and activate four-match and five-match runes in one guided practice battle. No energy is spent.',label:'Start Practice Battle',page:'battle'};
  if(!p.wins)return {id:'battle',title:'Begin your journey',text:'Win your first Normal campaign battle.',label:'Open Campaign',page:'campaign'};
  if(!p.claimed.includes('first-victory'))return reward('first-victory','Collect the reward for your first campaign victory.');
  if(!p.summons)return p.gems>=SUMMON_COST?{id:'summon',title:'Meet a new champion',text:'A single summon costs 100 Gems. Choose when you’re ready.',label:'Visit the Altar',page:'summon'}:{id:'battle',title:'Continue your journey',text:'Campaign victories and quests can earn more Gems.',label:'Open Campaign',page:'campaign'};
