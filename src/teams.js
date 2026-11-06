@@ -1,3 +1,4 @@
+import {recordTutorial} from './tutorial.js';
 export const TEAM_SLOT_COUNT=4;
 export const sameTeam=(a,b)=>Array.isArray(a)&&Array.isArray(b)&&a.length===b.length&&a.every((id,i)=>id===b[i]);
 const teamShape=t=>Array.isArray(t)&&t.length===5&&new Set(t).size===5&&t.every(id=>typeof id==='string');
@@ -13,6 +14,6 @@ export function validTeams(p){return p.teamsVersion===1&&Number.isInteger(p.acti
 export function saveTeam(p,slot,team,roster=[]){
  if(!Number.isInteger(slot)||slot<0||slot>=TEAM_SLOT_COUNT)return {profile:p,error:'Unknown team slot.'};
  if(!teamShape(team)||team.some(id=>!p.collection[id]&&!(p.openRoster&&roster.some(c=>c.id===id))))return {profile:p,error:'Choose five distinct available champions.'};
- const teamSlots=p.teamSlots.map(t=>t?[...t]:null);teamSlots[slot]=[...team];return {profile:{...p,teamSlots,...(slot===p.activeTeamSlot?{team:[...team]}:{})}};
+ const teamSlots=p.teamSlots.map(t=>t?[...t]:null);teamSlots[slot]=[...team];let next={...p,teamSlots,...(slot===p.activeTeamSlot?{team:[...team]}:{})};if(!sameTeam(p.teamSlots[slot],team))next=recordTutorial(next,'team');return {profile:next};
 }
 export function activateTeam(p,slot){if(!Number.isInteger(slot)||slot<0||slot>=TEAM_SLOT_COUNT||!teamShape(p.teamSlots[slot])||!p.openRoster&&p.teamSlots[slot].some(id=>!p.collection[id]))return {profile:p,error:'Create this team first.'};return {profile:{...p,activeTeamSlot:slot,team:[...p.teamSlots[slot]]}};}

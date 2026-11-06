@@ -28,3 +28,25 @@
 /* A short orientation before the exact Special rules. */
 .special-at-a-glance{font-size:14px;line-height:1.55;color:#e0e8db;margin:12px 0 16px;padding:10px 12px;border-inline-start:2px solid #d9bb7c;background:#d6bf8620;border-radius:0 8px 8px 0;overflow-wrap:anywhere}
 .special-at-a-glance>span{display:block;font-size:10px;font-weight:600;letter-spacing:.04em;color:#e6cb95;margin-bottom:4px}
+/* Tutorial guidance stays legible on the lighter utility pages. */
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .first-steps p{color:#c6d6d0}
+
+/* Compact character information without repeating its section titles. */
+.page-champion .special-ability-label{display:block;font-size:10px;line-height:1.4;letter-spacing:.06em;color:#d9c696;margin-bottom:4px}
+.page-champion .champion-special{margin:18px 0 12px}
+.page-champion .special-name-row{margin-bottom:8px;gap:10px}
+.page-champion .special-at-a-glance{margin:8px 0 12px;padding:9px 11px}
+.page-champion .special-at-a-glance>span{font-size:10px;letter-spacing:0;line-height:1.4}
+.page-champion .special-sequence{border-top:0;margin:10px 0 12px;gap:14px}
+.page-champion .special-sequence p{line-height:1.6}
+.page-champion .special-sequence small{margin:3px 0;line-height:1.5}
+.page-champion .hero-development{padding:22px;gap:24px;margin-bottom:16px}
+.page-champion .development-intro>.eyebrow{display:block;line-height:1.4}
+.page-champion .development-intro .level-dial{margin-top:14px}
+.page-champion .development-intro>.development-cap{font-size:12px;line-height:1.4;margin:8px 0 0}
+@media(max-width:760px){.page-champion .hero-development{padding:18px;gap:14px}.page-champion .development-intro{min-height:66px;padding-right:82px}.page-champion .development-intro .level-dial{width:64px;height:64px;top:0;margin:0}.page-champion .development-intro .level-dial>b{font-size:25px}.page-champion .development-intro .level-dial>span{font-size:7px}.page-champion .development-intro .level-dial>small{font-size:9px}}
+/* Keep the suggestion above the altar instead of alongside its fixed-height artwork. */
+body.menu-theme .game-page.page-summon:has(.first-steps){flex-direction:column}
+.page-summon>.first-steps{flex-shrink:0;width:100%;box-sizing:border-box}
+.battle-shell .tile.practice-hint{outline:3px solid #fff0bb;outline-offset:-3px;box-shadow:inset 0 0 14px #ffe291aa}
+.battle-shell.practice-battle .battle-center .battle-feedback{display:block;white-space:normal;text-wrap:wrap;overflow-wrap:anywhere;box-sizing:border-box;width:calc(100% - 16px);max-width:calc(100% - 16px);line-height:1.35;text-align:left;padding:6px 10px}

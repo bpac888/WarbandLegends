@@ -1,3 +1,4 @@
+import {recordTutorial} from './tutorial.js';
 import {boosterActive} from './premium-items.js';
 import {heroForId,ownedHeroes,baseHeroId} from './hero-copies.js';
 import {development,heroDevelopment,addHeroXp} from './development.js';
@@ -21,6 +22,7 @@ export function consumeHeroes(profile,target,donors,roster,{battle=null,expected
  if(expectedXp!==(profile.heroXp[target.id]||0))return {profile,error:'Hero progress changed. Review training again.'};
  let next=addHeroXp({...profile,gold:profile.gold-q.gold},target,q.gained,new Date(now));
  for(const field of ['collection','heroXp','ascensions','awakenings']){next[field]={...next[field]};for(const id of donors)delete next[field][id];}
+ if(q.after.level>q.before.level)next=recordTutorial(next,'fed');
  return {profile:next,gained:q.gained,consumed:[...donors],before:q.before.level,after:q.after.level};
 }
 export function availableDonors(profile,target,roster,battle){const guard=protectedCopies(profile,battle);return ownedHeroes(profile,roster).filter(c=>donorRarities.has(c.rarity)&&c.id!==target.id&&!guard.has(c.id));}

@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
 import {QUESTS,questProgress,claimQuest} from '../src/quests.js';import {questsPage,questArtIndex} from '../src/quest-ui.js';import {defaultProfile} from '../src/progression.js';
-const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url))),added=QUESTS.slice(43);
+const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url))),added=QUESTS.slice(43,60);
 test('seventeen new milestones require actual progress and award each reward only once',()=>{
  assert.equal(added.length,17);
  for(const q of added){let p=defaultProfile();const before=structuredClone(p);assert.ok(claimQuest(p,q.id,roster).error,q.id);assert.deepEqual(p,before);
@@ -19,5 +19,5 @@ test('status filtering, empty states and the nine shared art variants reflect th
  const ready=questsPage(p,{state:'ready'});assert.match(ready,/data-quest="first-summon"/);assert.ok(!ready.includes('data-quest="first-victory"'));
  const completed=questsPage(p,{state:'completed'});assert.match(completed,/data-quest="first-victory"/);assert.ok(!completed.includes('data-quest="first-summon"'));
  const empty=questsPage(defaultProfile(),{state:'completed'});assert.match(empty,/No quests here yet/);assert.ok(!empty.includes('data-quest='));
- const all=questsPage(defaultProfile(),{limit:100});assert.equal((all.match(/data-quest=/g)||[]).length,60);assert.ok(!all.includes('assets/champions/'));assert.match(all,/assets\/quests\/categories.webp/);
+ const all=questsPage(defaultProfile(),{limit:100});assert.equal((all.match(/data-quest=/g)||[]).length,61);assert.ok(!all.includes('assets/champions/'));assert.match(all,/assets\/quests\/categories.webp/);
 });

@@ -1,9 +1,22 @@
-# First steps and battle rewards
+# Guided first steps
 
-New players receive one optional recommendation at a time: first Normal campaign win, first victory quest reward, first summon, then viewing a champion's Special and development options. Navigation never claims rewards, summons or spends automatically. Suggestions disappear after viewing the suggested champion, five campaign wins or three summons, and are suppressed in open-roster playtesting. The close button permanently dismisses them for that saved journey; restarting resets the preference.
+The tutorial follows actual gameplay, alternating every activity with a quest reward claim:
 
-The flags `onboardingDismissed` and `onboardingComplete` normalize to booleans without changing profile versions. Older saves default to false; established players are excluded by actual progress.
+1. Complete one free practice battle: cast a Special, make a four-match (Blast Rune), then make a five-match (Prismatic Rune) → claim **Your First Battle Lesson** (100 Gold, 50 Gems, 25 profile XP). No quest visits interrupt the three lessons.
+2. Win a Normal campaign battle → claim **Across the Broken Gate**.
+3. Summon a champion → claim **An Answer from Beyond**. Its one-time reward now includes one spare Common Cult Zealot copy for training, alongside the existing rewards.
+4. Raise a champion by at least one level through feeding → claim **A Stronger Champion** (150 Gold, 25 Gems, 25 profile XP).
+5. Visit the main Shop tab → claim **Know Your Supplies** (100 Gold, 25 Gems, 25 profile XP).
+6. Visit Token Exchange, Premium and Inventory → claim **Explore Your Resources** (100 Gold, 25 Gems, 25 profile XP).
+7. Save a changed team, including a changed order → claim **Shape Your Warband** (100 Gold, 25 Gems, 25 profile XP).
+8. Open the Guide → claim **Knowledge for the Road** (100 Gold, 25 Gems, 25 profile XP).
 
-The victory dialog shows a compact reward grid and collapsed champion gains. Expanding gains retains a visible Return to Courtyard action and a scrollable content region. Defeat and sandbox copy remain distinct, and reward calculations and claiming rules are unchanged.
+The final claim opens a one-time “You’re ready to start your adventure!” message with a campaign shortcut. Browsing never requires purchases or item activation. Suggested navigation never claims rewards, summons or feeds automatically. Feeding retains its explicit consumption warning, confirmation, Gold cost and protection for team members.
 
-Validation: `npm run check` and `npm run test:journey`. The browser journey completes a real first campaign battle with Auto, checks reward layouts at 320, 390 and 1440 pixels, explicitly claims a quest and summons, and verifies durable completion/dismissal without unintended spending.
+Each new tutorial quest unlocks after the preceding reward is claimed. Visits made before unlocking a lesson do not count. The resource lesson persists all three individual visits, and saving an unchanged team does not count. Feeding counts only when it produces at least one actual level. Normal quest XP, battle XP, tomes and boosters do not satisfy that feeding lesson.
+
+`profile.tutorial` stores normalized boolean flags. Existing short-tutorial completion does not skip these new lessons; the dismiss preference still hides suggestions. Tutorial quests remain usable through their Continue actions after dismissal. The final celebration is acknowledged in the save before display, preventing repeats on reload. Tutorial activity is not recorded in open-roster playtesting.
+
+There are 66 quests total: the original 60 plus six linked tutorial quests. Practice is the first quest, with one combined reward after its three lessons. Current tutorial reward claims are prioritized in the quest list; locked tutorial quests are hidden until available. Reward claims remain idempotent, including the Common copy grant.
+
+Validation: `npm run check` and `npm run test:journey`. Unit tests cover gates, feeding, copy grants, team changes, visits, normalization and repeated claims. The browser journey performs an actual first battle, summon, training, all visits, changed team save, Guide visit and reward claims, then checks the finale and reload behavior. The compact battle result view is also checked at 320, 390 and 1440 pixels. Practice uses normal casts, swaps and special-rune creation; its enemies cannot meaningfully threaten the player, Auto is disabled, and unexpected actions leave the guided board intact. Leaving practice early grants nothing and lets the player retry.
