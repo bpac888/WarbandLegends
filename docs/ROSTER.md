@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-248 champions. The newest faction is Djedi: seven Legendaries and Rare support AR2. All 240 previous champions remain unchanged. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
+264 champions. The newest faction is Goblins: eleven Legendaries and five Rares. All 248 previous champions remain unchanged. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -252,6 +252,22 @@
 | Cheeburrash | legendary | green | defense | 675 | 815 | 1580 | Average 10 |
 | AR2 | rare | yellow | support | 595 | 635 | 1130 | Average 10 |
 | Lord of Darkness | legendary | red | attack | 850 | 670 | 1320 | Fast 8 |
+| Riffix, Brassstring Bard | legendary | yellow | support | 735 | 755 | 1430 | Average 10 |
+| Vexra, Velvet Knife | legendary | purple | attack | 815 | 700 | 1360 | Fast 8 |
+| Brondak, Ironhorn Rider | legendary | green | defense | 675 | 815 | 1550 | Slow 12 |
+| Karvosh, the Greatblade | legendary | red | attack | 815 | 700 | 1360 | Average 10 |
+| Zizzara, Storm-in-Hand | legendary | blue | attack | 815 | 700 | 1360 | Average 10 |
+| Tickrul, Hourglass Heretic | legendary | yellow | support | 735 | 755 | 1430 | Slow 12 |
+| King Grumvold | legendary | red | attack | 815 | 700 | 1360 | Slow 12 |
+| Piknet, Reedpoint | rare | green | attack | 685 | 565 | 1035 | Average 10 |
+| Rukko, Rustroad Captain | legendary | purple | attack | 815 | 700 | 1360 | Average 10 |
+| Nibsy, Hoodwink Scoundrel | rare | blue | attack | 685 | 565 | 1035 | Fast 8 |
+| Molgrik, Cinderfiend | legendary | red | attack | 815 | 700 | 1360 | Slow 12 |
+| Bubzle, Bottlebrewer | rare | blue | support | 595 | 615 | 1120 | Average 10 |
+| Urdra, Gatebreaker | legendary | green | defense | 675 | 815 | 1550 | Average 10 |
+| Snaggle, Trapthorn | rare | yellow | attack | 685 | 565 | 1035 | Average 10 |
+| Morvessa, Moonbone Oracle | legendary | purple | support | 735 | 755 | 1430 | Average 10 |
+| Boltragg, Scrapwall | rare | red | defense | 550 | 680 | 1210 | Average 10 |
 
 ## Specials
 
@@ -1326,4 +1342,68 @@ Passive: **Unwritten Will** — Immune to Mana Block.
 ### Lord of Darkness — Crimson Vault
 
 - 8 tiles: Deal 260% ATK damage to selected enemy, ignoring 25% of DEF. Bleed (Selected enemy, 2 turns).
+
+### Riffix, Brassstring Bard — Brassstring Battle Hymn
+
+- 10 tiles: Restore 26% max HP to all living allies. Attack Up (All living allies, 2 turns).
+
+### Vexra, Velvet Knife — Velvet Venom
+
+- 8 tiles: Deal 275% ATK damage to selected enemy. Poison (Selected enemy, 2 turns).
+
+### Brondak, Ironhorn Rider — Ironhorn Advance
+
+- 12 tiles: Deal 180% ATK damage to selected enemy. Taunt (Caster, 2 turns); Damage Ward (All living allies, 2 turns).
+
+### Karvosh, the Greatblade — Split the Rampart
+
+- 10 tiles: Deal 300% ATK damage to selected enemy. Defense Down (Selected enemy, 2 turns).
+
+### Zizzara, Storm-in-Hand — Storm in the Palm
+
+- 10 tiles: Deal 190% ATK damage to all living enemies. Mana Slow (All living enemies, 2 turns).
+
+### Tickrul, Hourglass Heretic — Borrowed Seconds
+
+- 12 tiles: Restore 28% max HP to all living allies. Cleanse (All living allies); Mana Gift (Other living allies).
+
+### King Grumvold — The King Demands Victory
+
+- 12 tiles: Deal 205% ATK damage to all living enemies. Attack Up (All living allies, 2 turns).
+
+### Piknet, Reedpoint — Reedpoint Ambush
+
+- 10 tiles: Deal 245% ATK damage to selected enemy. Bleed (Selected enemy, 2 turns).
+
+### Rukko, Rustroad Captain — Rustroad Rampage
+
+- 10 tiles: Deal 270% ATK damage to selected enemy. Vulnerability (Selected enemy, 2 turns).
+
+### Nibsy, Hoodwink Scoundrel — A Trick up the Sleeve
+
+- 8 tiles: Deal 230% ATK damage to selected enemy. Dispel (Selected enemy).
+
+### Molgrik, Cinderfiend — Heart of the Furnace
+
+- 12 tiles: Deal 210% ATK damage to all living enemies. Burn (All living enemies, 2 turns).
+
+### Bubzle, Bottlebrewer — Bubbling Remedy
+
+- 10 tiles: Restore 24% max HP to all living allies. Cleanse (All living allies).
+
+### Urdra, Gatebreaker — Hold the Broken Gate
+
+- 10 tiles: Deal 150% ATK damage to selected enemy. Barrier (All living allies, 2 turns); Defense Up (Caster, 2 turns).
+
+### Snaggle, Trapthorn — Trapthorn Snare
+
+- 10 tiles: Deal 240% ATK damage to selected enemy. Mana Slow (Selected enemy, 2 turns).
+
+### Morvessa, Moonbone Oracle — Moonbone Benediction
+
+- 10 tiles: Restore 29% max HP to all living allies. Ailment Ward (All living allies, 2 turns).
+
+### Boltragg, Scrapwall — Scrapwall Stand
+
+- 10 tiles: Deal 150% ATK damage to selected enemy. Taunt (Caster, 2 turns); Defense Up (Caster, 2 turns).
 

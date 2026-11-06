@@ -1,0 +1,652 @@
+{
+  "version": 11,
+  "originalCount": 248,
+  "totalCount": 264,
+  "brief": "Sixteen Goblins: 11 Legendary and 5 Rare, nine Attack, four Support and three Defense.",
+  "champions": [
+    {
+      "id": "goblins_riffix",
+      "name": "Riffix, Brassstring Bard",
+      "title": "Brassstring Bard",
+      "faction": "goblins",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 735,
+        "def": 755,
+        "hp": 1430
+      },
+      "ability_name": "Brassstring Battle Hymn",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.26,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Riffix rebuilt a shattered royal trumpet into the neck of his favorite lute. His battle hymns turn tavern quarrels into marching songs, and even the most exhausted raider finds another breath when the brass strings ring.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_vexra",
+      "name": "Vexra, Velvet Knife",
+      "title": "Velvet Knife",
+      "faction": "goblins",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "stats": {
+        "atk": 815,
+        "def": 700,
+        "hp": 1360
+      },
+      "ability_name": "Velvet Venom",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.75,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Vexra learned to move between the lantern shadows of the glass-roofed city. Her velvet cloak conceals blades steeped in mooncap venom; by the time a guard hears the rain stop, she has already passed.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_brondak",
+      "name": "Brondak, Ironhorn Rider",
+      "title": "Ironhorn Rider",
+      "faction": "goblins",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "slow",
+      "stats": {
+        "atk": 675,
+        "def": 815,
+        "hp": 1550
+      },
+      "ability_name": "Ironhorn Advance",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Brondak rescued Ironhorn from a collapsed fighting pit and refused every offer to sell him. The armored rhinoceros now carries his rescuer into battle, breaking siege lines while smaller goblins shelter in their wake.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_karvosh",
+      "name": "Karvosh, the Greatblade",
+      "title": "the Greatblade",
+      "faction": "goblins",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 815,
+        "def": 700,
+        "hp": 1360
+      },
+      "ability_name": "Split the Rampart",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 3.0,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Karvosh forged his greatblade from the gate that once barred his clan from its own valley. He carries its enormous weight with a duelist’s precision, striking the weakest seam in every enemy rampart.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_zizzara",
+      "name": "Zizzara, Storm-in-Hand",
+      "title": "Storm-in-Hand",
+      "faction": "goblins",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 815,
+        "def": 700,
+        "hp": 1360
+      },
+      "ability_name": "Storm in the Palm",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.9,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Zizzara caught her first lightning bolt in a copper cooking pot. Years later she no longer needs the pot: a whole storm circles in her palm, waiting for a name and a direction.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_tickrul",
+      "name": "Tickrul, Hourglass Heretic",
+      "title": "Hourglass Heretic",
+      "faction": "goblins",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "slow",
+      "stats": {
+        "atk": 735,
+        "def": 755,
+        "hp": 1430
+      },
+      "ability_name": "Borrowed Seconds",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.28,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_raise",
+              "turns": 0,
+              "scope": "other_allies"
+            },
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Tickrul stole a minute from the clock of a forgotten god and has spent his life paying it back. His hourglass lends precious seconds to wounded companions while fractured clocks hang motionless around him.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_king_grumvold",
+      "name": "King Grumvold",
+      "title": "King Grumvold",
+      "faction": "goblins",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "stats": {
+        "atk": 815,
+        "def": 700,
+        "hp": 1360
+      },
+      "ability_name": "The King Demands Victory",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Grumvold claimed his crown by uniting feuding warrens rather than conquering them. His throne is built from the weapons surrendered that day, and every order he gives carries the weight of keeping that unlikely peace.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_piknet",
+      "name": "Piknet, Reedpoint",
+      "title": "Reedpoint",
+      "faction": "goblins",
+      "color": "green",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 685,
+        "def": 565,
+        "hp": 1035
+      },
+      "ability_name": "Reedpoint Ambush",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "bleed",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Piknet knows which reeds bend under a hunting heron and which hide a goblin spear. Marsh raiders fear the silent ripple that precedes his attack more than any war horn.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_rukko",
+      "name": "Rukko, Rustroad Captain",
+      "title": "Rustroad Captain",
+      "faction": "goblins",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 815,
+        "def": 700,
+        "hp": 1360
+      },
+      "ability_name": "Rustroad Rampage",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.7,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "weaken",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Rukko leads the Rustroad gang across ravines on engines assembled from wrecked siege machines. His chain-wrapped blade and roaring motorcycle turn a reckless charge into a carefully planned ambush.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_nibsy",
+      "name": "Nibsy, Hoodwink Scoundrel",
+      "title": "Hoodwink Scoundrel",
+      "faction": "goblins",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "stats": {
+        "atk": 685,
+        "def": 565,
+        "hp": 1035
+      },
+      "ability_name": "A Trick up the Sleeve",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Nibsy insists that every stolen purse is merely a loan from someone who will never miss it. Beneath the patchwork hood, a sharper mind watches for enchantments worth lifting along with the gold.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_molgrik",
+      "name": "Molgrik, Cinderfiend",
+      "title": "Cinderfiend",
+      "faction": "goblins",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "stats": {
+        "atk": 815,
+        "def": 700,
+        "hp": 1360
+      },
+      "ability_name": "Heart of the Furnace",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Molgrik survived a fall into the old furnace and returned with a heart of living magma. The warren calls him a demon, but he remembers every goblin who lowered a rope into the flames.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_bubzle",
+      "name": "Bubzle, Bottlebrewer",
+      "title": "Bottlebrewer",
+      "faction": "goblins",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 595,
+        "def": 615,
+        "hp": 1120
+      },
+      "ability_name": "Bubbling Remedy",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.24,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Bubzle brews remedies from ingredients that sensible healers refuse to touch. The bubbling pack on his back has saved more lives than any royal apothecary will admit, although its corks still require careful watching.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_urdra",
+      "name": "Urdra, Gatebreaker",
+      "title": "Gatebreaker",
+      "faction": "goblins",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 675,
+        "def": 815,
+        "hp": 1550
+      },
+      "ability_name": "Hold the Broken Gate",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.5,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Urdra’s shield was once the door of the last shelter standing after a siege. She carries it back to every threatened gate, refusing to let another clan learn how that night ended.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_snaggle",
+      "name": "Snaggle, Trapthorn",
+      "title": "Trapthorn",
+      "faction": "goblins",
+      "color": "yellow",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 685,
+        "def": 565,
+        "hp": 1035
+      },
+      "ability_name": "Trapthorn Snare",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.4,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Snaggle lays traps to capture the beasts that would otherwise be hunted to extinction. His tusked companion tests every snare, and together they can turn an empty woodland path into an impassable maze.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_morvessa",
+      "name": "Morvessa, Moonbone Oracle",
+      "title": "Moonbone Oracle",
+      "faction": "goblins",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 735,
+        "def": 755,
+        "hp": 1430
+      },
+      "ability_name": "Moonbone Benediction",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.29,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Morvessa reads the phases of the moon in bones polished by underground rivers. Her blessings settle over travelers like a quiet dream, keeping hostile spells from finding a place to take root.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    },
+    {
+      "id": "goblins_boltragg",
+      "name": "Boltragg, Scrapwall",
+      "title": "Scrapwall",
+      "faction": "goblins",
+      "color": "red",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 550,
+        "def": 680,
+        "hp": 1210
+      },
+      "ability_name": "Scrapwall Stand",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.5,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ],
+      "passive": null,
+      "lore": "Boltragg builds walls from armor that other warriors have already broken. Every new dent tells him where to place the next rivet, and his companions have learned to trust the sound of his stubborn hammer.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member."
+    }
+  ]
+}

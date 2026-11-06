@@ -164,3 +164,7 @@ body.menu-theme .game-page.page-shop .exchange-payment select{min-height:44px;pa
 body.menu-theme .game-page.page-shop .exchange-offers .exchange-cost{font-size:12px}
 body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2{border-bottom:0;padding-bottom:0;margin-bottom:12px}
 body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2::after{display:none}
+
+/* All shop item cards share the muted green used by the Ember Sigil card. */
+body.menu-theme .game-page.page-shop :is(.material-grid,.gem-offers,.exchange-offers,.premium-offers,.tome-offers)>article:nth-child(n),
+body.menu-theme .game-page.page-shop .exchange-balances>span{background:linear-gradient(145deg,#afb29e,#9fa58f)}

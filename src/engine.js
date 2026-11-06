@@ -136,6 +136,7 @@ function applyEffect(state,source,target,id,duration,{special=false}={}) {
   if(target.hp<=0||!EFFECTS[id]?.timed)return;
   const buff=BUFFS.has(id),factionImmune=factionRule(target).immune?.includes(id),immune=target.passive?.immune?.includes(id)||factionImmune;
   if(immune||(buff&&has(target,'block_buffs')&&target.passive?.kind!=='unblockable_buffs')||(!buff&&has(target,'block_debuffs'))){message(state,`${target.name}: ${effectName(id)} blocked${factionImmune?' by Frost faction immunity':immune?' by passive immunity':''}.`,'blocked',target.uid);return;}
+  if(!buff&&['mana_slow','mana_block'].includes(id)&&factionRule(target).manaResist&&roll(state)<factionRule(target).manaResist){message(state,`${target.name}: ${effectName(id)} blocked by Goblins faction resistance.`,'blocked',target.uid);return;}
   const previous=has(target,id),opposite=OPPOSITES[id];if(opposite&&has(target,opposite)){removeEffect(target,opposite);message(state,`${target.name}: ${effectName(opposite)} replaced by ${effectName(id)}.`,'neutral',target.uid);}
   let turns=Math.max(1,Math.min(3,duration||1));
   const chance=special&&source.side==='hero'&&target.side==='enemy'&&DEBUFFS.has(id)?factionRule(source).extendChance:0;

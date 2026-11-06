@@ -12758,5 +12758,745 @@
       ]
     },
     "ability_desc": "Deal 260% ATK damage to selected enemy, ignoring 25% of DEF."
+  },
+  {
+    "template_id": "goblins_riffix",
+    "name": "Riffix, Brassstring Bard",
+    "title": "Brassstring Bard",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "support",
+    "atk": 735,
+    "def": 755,
+    "hp": 1430,
+    "ability_name": "Brassstring Battle Hymn",
+    "lore": "Riffix rebuilt a shattered royal trumpet into the neck of his favorite lute. His battle hymns turn tavern quarrels into marching songs, and even the most exhausted raider finds another breath when the brass strings ring.",
+    "image_url": "/assets/champions/goblins_riffix.webp",
+    "id": "goblins_riffix",
+    "color": "yellow",
+    "source_image": "assets/champions/goblins_riffix.webp",
+    "portrait": "assets/champions/goblins_riffix.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Brassstring Battle Hymn",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.26,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 26% max HP to all living allies."
+  },
+  {
+    "template_id": "goblins_vexra",
+    "name": "Vexra, Velvet Knife",
+    "title": "Velvet Knife",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 815,
+    "def": 700,
+    "hp": 1360,
+    "ability_name": "Velvet Venom",
+    "lore": "Vexra learned to move between the lantern shadows of the glass-roofed city. Her velvet cloak conceals blades steeped in mooncap venom; by the time a guard hears the rain stop, she has already passed.",
+    "image_url": "/assets/champions/goblins_vexra.webp",
+    "id": "goblins_vexra",
+    "color": "purple",
+    "source_image": "assets/champions/goblins_vexra.webp",
+    "portrait": "assets/champions/goblins_vexra.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "Velvet Venom",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.75,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "poison",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 275% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "goblins_brondak",
+    "name": "Brondak, Ironhorn Rider",
+    "title": "Ironhorn Rider",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "defense",
+    "atk": 675,
+    "def": 815,
+    "hp": 1550,
+    "ability_name": "Ironhorn Advance",
+    "lore": "Brondak rescued Ironhorn from a collapsed fighting pit and refused every offer to sell him. The armored rhinoceros now carries his rescuer into battle, breaking siege lines while smaller goblins shelter in their wake.",
+    "image_url": "/assets/champions/goblins_brondak.webp",
+    "id": "goblins_brondak",
+    "color": "green",
+    "source_image": "assets/champions/goblins_brondak.webp",
+    "portrait": "assets/champions/goblins_brondak.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Ironhorn Advance",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 180% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "goblins_karvosh",
+    "name": "Karvosh, the Greatblade",
+    "title": "the Greatblade",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 815,
+    "def": 700,
+    "hp": 1360,
+    "ability_name": "Split the Rampart",
+    "lore": "Karvosh forged his greatblade from the gate that once barred his clan from its own valley. He carries its enormous weight with a duelist’s precision, striking the weakest seam in every enemy rampart.",
+    "image_url": "/assets/champions/goblins_karvosh.webp",
+    "id": "goblins_karvosh",
+    "color": "red",
+    "source_image": "assets/champions/goblins_karvosh.webp",
+    "portrait": "assets/champions/goblins_karvosh.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Split the Rampart",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dec_def",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 300% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "goblins_zizzara",
+    "name": "Zizzara, Storm-in-Hand",
+    "title": "Storm-in-Hand",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 815,
+    "def": 700,
+    "hp": 1360,
+    "ability_name": "Storm in the Palm",
+    "lore": "Zizzara caught her first lightning bolt in a copper cooking pot. Years later she no longer needs the pot: a whole storm circles in her palm, waiting for a name and a direction.",
+    "image_url": "/assets/champions/goblins_zizzara.webp",
+    "id": "goblins_zizzara",
+    "color": "blue",
+    "source_image": "assets/champions/goblins_zizzara.webp",
+    "portrait": "assets/champions/goblins_zizzara.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Storm in the Palm",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.9,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 190% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "goblins_tickrul",
+    "name": "Tickrul, Hourglass Heretic",
+    "title": "Hourglass Heretic",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "support",
+    "atk": 735,
+    "def": 755,
+    "hp": 1430,
+    "ability_name": "Borrowed Seconds",
+    "lore": "Tickrul stole a minute from the clock of a forgotten god and has spent his life paying it back. His hourglass lends precious seconds to wounded companions while fractured clocks hang motionless around him.",
+    "image_url": "/assets/champions/goblins_tickrul.webp",
+    "id": "goblins_tickrul",
+    "color": "yellow",
+    "source_image": "assets/champions/goblins_tickrul.webp",
+    "portrait": "assets/champions/goblins_tickrul.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Borrowed Seconds",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.28,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_raise",
+              "turns": 0,
+              "scope": "other_allies"
+            },
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 28% max HP to all living allies."
+  },
+  {
+    "template_id": "goblins_king_grumvold",
+    "name": "King Grumvold",
+    "title": "King Grumvold",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 815,
+    "def": 700,
+    "hp": 1360,
+    "ability_name": "The King Demands Victory",
+    "lore": "Grumvold claimed his crown by uniting feuding warrens rather than conquering them. His throne is built from the weapons surrendered that day, and every order he gives carries the weight of keeping that unlikely peace.",
+    "image_url": "/assets/champions/goblins_king_grumvold.webp",
+    "id": "goblins_king_grumvold",
+    "color": "red",
+    "source_image": "assets/champions/goblins_king_grumvold.webp",
+    "portrait": "assets/champions/goblins_king_grumvold.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "The King Demands Victory",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.05,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "inc_atk",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 205% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "goblins_piknet",
+    "name": "Piknet, Reedpoint",
+    "title": "Reedpoint",
+    "rarity": "rare",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 685,
+    "def": 565,
+    "hp": 1035,
+    "ability_name": "Reedpoint Ambush",
+    "lore": "Piknet knows which reeds bend under a hunting heron and which hide a goblin spear. Marsh raiders fear the silent ripple that precedes his attack more than any war horn.",
+    "image_url": "/assets/champions/goblins_piknet.webp",
+    "id": "goblins_piknet",
+    "color": "green",
+    "source_image": "assets/champions/goblins_piknet.webp",
+    "portrait": "assets/champions/goblins_piknet.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Reedpoint Ambush",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.45,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "bleed",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 245% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "goblins_rukko",
+    "name": "Rukko, Rustroad Captain",
+    "title": "Rustroad Captain",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 815,
+    "def": 700,
+    "hp": 1360,
+    "ability_name": "Rustroad Rampage",
+    "lore": "Rukko leads the Rustroad gang across ravines on engines assembled from wrecked siege machines. His chain-wrapped blade and roaring motorcycle turn a reckless charge into a carefully planned ambush.",
+    "image_url": "/assets/champions/goblins_rukko.webp",
+    "id": "goblins_rukko",
+    "color": "purple",
+    "source_image": "assets/champions/goblins_rukko.webp",
+    "portrait": "assets/champions/goblins_rukko.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Rustroad Rampage",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.7,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "weaken",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 270% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "goblins_nibsy",
+    "name": "Nibsy, Hoodwink Scoundrel",
+    "title": "Hoodwink Scoundrel",
+    "rarity": "rare",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 685,
+    "def": 565,
+    "hp": 1035,
+    "ability_name": "A Trick up the Sleeve",
+    "lore": "Nibsy insists that every stolen purse is merely a loan from someone who will never miss it. Beneath the patchwork hood, a sharper mind watches for enchantments worth lifting along with the gold.",
+    "image_url": "/assets/champions/goblins_nibsy.webp",
+    "id": "goblins_nibsy",
+    "color": "blue",
+    "source_image": "assets/champions/goblins_nibsy.webp",
+    "portrait": "assets/champions/goblins_nibsy.webp",
+    "passive": null,
+    "manaSpeed": "fast",
+    "special": {
+      "name": "A Trick up the Sleeve",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 230% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "goblins_molgrik",
+    "name": "Molgrik, Cinderfiend",
+    "title": "Cinderfiend",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 815,
+    "def": 700,
+    "hp": 1360,
+    "ability_name": "Heart of the Furnace",
+    "lore": "Molgrik survived a fall into the old furnace and returned with a heart of living magma. The warren calls him a demon, but he remembers every goblin who lowered a rope into the flames.",
+    "image_url": "/assets/champions/goblins_molgrik.webp",
+    "id": "goblins_molgrik",
+    "color": "red",
+    "source_image": "assets/champions/goblins_molgrik.webp",
+    "portrait": "assets/champions/goblins_molgrik.webp",
+    "passive": null,
+    "manaSpeed": "slow",
+    "special": {
+      "name": "Heart of the Furnace",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.1,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 210% ATK damage to all living enemies."
+  },
+  {
+    "template_id": "goblins_bubzle",
+    "name": "Bubzle, Bottlebrewer",
+    "title": "Bottlebrewer",
+    "rarity": "rare",
+    "faction": "goblins",
+    "role": "support",
+    "atk": 595,
+    "def": 615,
+    "hp": 1120,
+    "ability_name": "Bubbling Remedy",
+    "lore": "Bubzle brews remedies from ingredients that sensible healers refuse to touch. The bubbling pack on his back has saved more lives than any royal apothecary will admit, although its corks still require careful watching.",
+    "image_url": "/assets/champions/goblins_bubzle.webp",
+    "id": "goblins_bubzle",
+    "color": "blue",
+    "source_image": "assets/champions/goblins_bubzle.webp",
+    "portrait": "assets/champions/goblins_bubzle.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Bubbling Remedy",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.24,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 24% max HP to all living allies."
+  },
+  {
+    "template_id": "goblins_urdra",
+    "name": "Urdra, Gatebreaker",
+    "title": "Gatebreaker",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "defense",
+    "atk": 675,
+    "def": 815,
+    "hp": 1550,
+    "ability_name": "Hold the Broken Gate",
+    "lore": "Urdra’s shield was once the door of the last shelter standing after a siege. She carries it back to every threatened gate, refusing to let another clan learn how that night ended.",
+    "image_url": "/assets/champions/goblins_urdra.webp",
+    "id": "goblins_urdra",
+    "color": "green",
+    "source_image": "assets/champions/goblins_urdra.webp",
+    "portrait": "assets/champions/goblins_urdra.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Hold the Broken Gate",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.5,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "goblins_snaggle",
+    "name": "Snaggle, Trapthorn",
+    "title": "Trapthorn",
+    "rarity": "rare",
+    "faction": "goblins",
+    "role": "attack",
+    "atk": 685,
+    "def": 565,
+    "hp": 1035,
+    "ability_name": "Trapthorn Snare",
+    "lore": "Snaggle lays traps to capture the beasts that would otherwise be hunted to extinction. His tusked companion tests every snare, and together they can turn an empty woodland path into an impassable maze.",
+    "image_url": "/assets/champions/goblins_snaggle.webp",
+    "id": "goblins_snaggle",
+    "color": "yellow",
+    "source_image": "assets/champions/goblins_snaggle.webp",
+    "portrait": "assets/champions/goblins_snaggle.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Trapthorn Snare",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.4,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 240% ATK damage to selected enemy."
+  },
+  {
+    "template_id": "goblins_morvessa",
+    "name": "Morvessa, Moonbone Oracle",
+    "title": "Moonbone Oracle",
+    "rarity": "legendary",
+    "faction": "goblins",
+    "role": "support",
+    "atk": 735,
+    "def": 755,
+    "hp": 1430,
+    "ability_name": "Moonbone Benediction",
+    "lore": "Morvessa reads the phases of the moon in bones polished by underground rivers. Her blessings settle over travelers like a quiet dream, keeping hostile spells from finding a place to take root.",
+    "image_url": "/assets/champions/goblins_morvessa.webp",
+    "id": "goblins_morvessa",
+    "color": "purple",
+    "source_image": "assets/champions/goblins_morvessa.webp",
+    "portrait": "assets/champions/goblins_morvessa.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Moonbone Benediction",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.29,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "block_debuffs",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Restore 29% max HP to all living allies."
+  },
+  {
+    "template_id": "goblins_boltragg",
+    "name": "Boltragg, Scrapwall",
+    "title": "Scrapwall",
+    "rarity": "rare",
+    "faction": "goblins",
+    "role": "defense",
+    "atk": 550,
+    "def": 680,
+    "hp": 1210,
+    "ability_name": "Scrapwall Stand",
+    "lore": "Boltragg builds walls from armor that other warriors have already broken. Every new dent tells him where to place the next rivet, and his companions have learned to trust the sound of his stubborn hammer.",
+    "image_url": "/assets/champions/goblins_boltragg.webp",
+    "id": "goblins_boltragg",
+    "color": "red",
+    "source_image": "assets/champions/goblins_boltragg.webp",
+    "portrait": "assets/champions/goblins_boltragg.webp",
+    "passive": null,
+    "manaSpeed": "average",
+    "special": {
+      "name": "Scrapwall Stand",
+      "charging": false,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.5,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
+    },
+    "ability_desc": "Deal 150% ATK damage to selected enemy."
   }
 ]

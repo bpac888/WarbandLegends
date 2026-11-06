@@ -1,18 +1,18 @@
 {
   "version": 3,
-  "champions": 248,
+  "champions": 264,
   "colorCounts": {
-    "red": 50,
-    "blue": 50,
-    "green": 50,
-    "yellow": 48,
-    "purple": 50
+    "red": 54,
+    "blue": 53,
+    "green": 53,
+    "yellow": 51,
+    "purple": 53
   },
   "manaCounts": {
     "very_fast": 10,
-    "fast": 61,
-    "average": 116,
-    "slow": 38,
+    "fast": 63,
+    "average": 126,
+    "slow": 42,
     "very_slow": 2,
     "charging": 21
   },
@@ -196,41 +196,41 @@
       }
     },
     "rare": {
-      "count": 85,
+      "count": 90,
       "stats": {
         "atk": {
           "min": 515,
-          "average": 625.0470588235294,
+          "average": 625.8777777777777,
           "max": 716
         },
         "def": {
           "min": 530,
-          "average": 600.4588235294118,
+          "average": 600.3222222222222,
           "max": 705
         },
         "hp": {
           "min": 946,
-          "average": 1084.929411764706,
+          "average": 1085.0444444444445,
           "max": 1250
         }
       }
     },
     "legendary": {
-      "count": 115,
+      "count": 126,
       "stats": {
         "atk": {
           "min": 600,
-          "average": 766.7565217391304,
+          "average": 766.8412698412699,
           "max": 855
         },
         "def": {
           "min": 640,
-          "average": 727.9217391304347,
+          "average": 728.6190476190476,
           "max": 865
         },
         "hp": {
           "min": 1250,
-          "average": 1398.2782608695652,
+          "average": 1399.6190476190477,
           "max": 1600
         }
       }

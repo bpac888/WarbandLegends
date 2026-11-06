@@ -8,7 +8,7 @@ import {factionTeamHTML,factionGuideHTML} from '../src/faction-ui.js';
 import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url)));
-const roster=await read('data/champions.json'),djedi=roster.filter(c=>c.faction==='djedi'),manifest=await read('data/roster-expansion-10.json');
+const roster=(await read('data/champions.json')).slice(0,248),djedi=roster.filter(c=>c.faction==='djedi'),manifest=await read('data/roster-expansion-10.json');
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 
 test('Djedi has the eight requested identities, exact rarities and roles, while preserving all 240 previous champions',async()=>{

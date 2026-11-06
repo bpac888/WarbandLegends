@@ -63,7 +63,8 @@
     "test:lilywake": "node tests/wildgrove-lilywake-browser.mjs",
     "test:match-glow": "node tests/match-glow-browser.mjs",
     "test:magic": "node tests/magic-browser.mjs",
-    "test:djedi": "node tests/djedi-browser.mjs"
+    "test:djedi": "node tests/djedi-browser.mjs",
+    "test:goblins": "node tests/goblins-browser.mjs"
   },
   "engines": {
     "node": ">=22"

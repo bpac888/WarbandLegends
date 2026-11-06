@@ -42,7 +42,7 @@ test('Tailwind Guard caps at three members, affects only members',()=>{
  for(let i=0;i<count;i++){assert.equal(b.heroes[i].factionTier,count<2?0:Math.min(count,3));assert.equal(b.heroes[i].def,Math.round(added[i].def*(1+bonus)));}for(const h of b.heroes.slice(count))assert.equal(h.factionTier,0);assert.ok(validateSave(b,roster));}
 });
 test('audit, rarity pools and stat envelopes describe the current roster',async()=>{
- const a=await read('data/roster-audit.json');assert.equal(a.after.total,248);assert.equal(a.before.total,240);assert.equal(a.byFaction.aerie_court.total,18);assert.equal(a.after.type.attack,136);
+ const a=await read('data/roster-audit.json');assert.equal(a.after.total,264);assert.equal(a.before.total,248);assert.equal(a.byFaction.aerie_court.total,18);assert.equal(a.after.type.attack,145);
  for(const c of added)for(const stat of ['atk','def','hp']){const peers=roster.slice(0,215).filter(p=>p.rarity===c.rarity&&p.role===c.role).map(p=>p[stat]).sort((a,b)=>a-b),mid=peers.length/2,median=peers.length%2?peers[Math.floor(mid)]:(peers[mid-1]+peers[mid])/2;assert.ok(Math.abs(c[stat]/median-1)<.03,c.id+' '+stat);}
 });
 

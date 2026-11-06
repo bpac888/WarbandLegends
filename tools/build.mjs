@@ -35,9 +35,15 @@ const magicPortraits=[];for(const c of roster.slice(0,magic.originalCount))magic
 if(sha(magicPortraits)!==magic.originalPortraitsSha256)throw Error('A previous portrait changed since Magic was added');
 const djedi=JSON.parse(await readFile('data/roster-expansion-10.json','utf8'));
 if(sha(roster.slice(0,djedi.originalCount))!==djedi.originalRecordsSha256||sha(sourceRoster.slice(0,djedi.originalCount))!==djedi.originalSourceRecordsSha256)throw Error('The 240-character baseline changed');
-if(roster.length!==djedi.totalCount||sourceRoster.length!==djedi.totalCount||new Set(roster.map(c=>c.id)).size!==djedi.totalCount||JSON.stringify(roster.slice(djedi.originalCount).map(c=>c.id))!==JSON.stringify(djedi.addedChampionIds))throw Error('Roster identity check failed');
+if(JSON.stringify(roster.slice(djedi.originalCount,djedi.totalCount).map(c=>c.id))!==JSON.stringify(djedi.addedChampionIds))throw Error('Djedi identity check failed');
 const djediPortraits=[];for(const c of roster.slice(0,djedi.originalCount))djediPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(djediPortraits)!==djedi.originalPortraitsSha256)throw Error('A previous portrait changed since Djedi was added');
+const goblins=JSON.parse(await readFile('data/roster-expansion-11.json','utf8'));
+if(sha(roster.slice(0,248))!==goblins.originalRecordsSha256||sha(sourceRoster.slice(0,248))!==goblins.originalSourceRecordsSha256)throw Error('The 248-character baseline changed');
+if(roster.length!==264||sourceRoster.length!==264||new Set(roster.map(c=>c.id)).size!==264||JSON.stringify(roster.slice(248).map(c=>c.id))!==JSON.stringify(goblins.addedChampionIds))throw Error('Goblin identity check failed');
+const goblinPortraits=[];for(const c of roster.slice(0,248))goblinPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
+if(sha(goblinPortraits)!==goblins.originalPortraitsSha256)throw Error('A previous portrait changed since Goblins were added');
+if((await stat('assets/factions/goblins.svg')).size<500)throw Error('Missing Goblins emblem');
 if((await stat('assets/factions/djedi.svg')).size<500)throw Error('Missing Djedi emblem');
 if((await stat('assets/factions/magic.svg')).size<500)throw Error('Missing Magic emblem');
 for(const art of ['legends-splash','legends-splash-phone'])if((await stat('assets/scenes/'+art+'.webp')).size<100000)throw Error('Missing splash artwork: '+art);

@@ -2,6 +2,8 @@
 
 The thirteen original faction bonuses apply only to matching members of the player’s starting five-character team. Two unlocks the 2-member bonus; three, four or five use only the 3-member bonus. Counts stay fixed for that battle even if members fall. Two different factions can activate together in a 3+2 or 2+2+1 team. There are no enemy faction bonuses.
 
+**Goblins — Scrappy Minds:** each Goblin personally has a 70% chance to resist an incoming Mana Slow or Mana Block application, active from one member. Extra Goblins do not increase the chance. Blocked refreshes preserve existing timers; other ailments, buffs and previously applied effects are unchanged.
+
 **Djedi — Resonant Discipline:** two or more Djedi champions give **+10% ATK to Djedi members only**. The bonus stays at 10% with three, four or five members; it does not stack per member. One member receives no Djedi bonus. Magic is the exception to the member requirement and recipient rules: its aura starts with one member and affects the entire allied team.
 
 **Magic — Arcane Resonance:** +5% generated mana per Magic champion, stacking additively: 1 / 2 / 3 / 4 / 5 members give +5% / +10% / +15% / +20% / +25% to every ally, including Magic champions. Counts are locked from the starting team. The aura multiplies other matching-mana bonuses and Mana Flow/Slow, respects Mana Block and mana caps, and does not amplify flat Mana Gifts or Nether opening mana.
@@ -42,4 +44,4 @@ All pre-existing champion identities and artwork are preserved. All nineteen Myt
 
 ## Validation
 
-Native tests cover all fifteen factions at 1–5 members, mixed teams, local recipients, tier replacement, exact percentages and charge precision, independent chance rolls, dead members, cast/cascade timing, blocked and extended ailments, innate vs timed effects, developed stats, passive interactions, snapshot validity and Auto battles. Browser checks cover the Warband selector, Guide, battle inspection, Auto and the two passive dossiers on phone and desktop.
+Native tests cover all sixteen factions at 1–5 members, mixed teams, local recipients, tier replacement, exact percentages and charge precision, independent chance rolls, dead members, cast/cascade timing, blocked and extended ailments, innate vs timed effects, developed stats, passive interactions, snapshot validity and Auto battles. Browser checks cover the Warband selector, Guide, battle inspection, Auto and the two passive dossiers on phone and desktop.

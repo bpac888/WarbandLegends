@@ -1,67 +1,9 @@
 {
-  "version": 10,
-  "scope": "Current 248-character roster after adding eight Djedi champions. All 240 previous records and portraits preserved. Thirteen original factions have 18 members; Magic has six; Djedi has eight. Not a measured PvP win-rate study.",
+  "version": 11,
+  "scope": "Current 264-character roster after adding sixteen Goblins. All 248 previous records and portraits preserved. Thirteen original factions have 18 members; Magic has six; Djedi has eight; Goblins has sixteen. Not a measured PvP win-rate study.",
   "historicalBaselineVerified": true,
   "approvedRosterRevisionCount": 28,
   "before": {
-    "total": 240,
-    "rarity": {
-      "mythical": 19,
-      "legendary": 108,
-      "rare": 84,
-      "common": 29
-    },
-    "color": {
-      "red": 48,
-      "blue": 48,
-      "green": 48,
-      "yellow": 47,
-      "purple": 49
-    },
-    "type": {
-      "attack": 130,
-      "defense": 52,
-      "support": 58
-    },
-    "speed": {
-      "very_fast": 10,
-      "fast": 59,
-      "average": 112,
-      "slow": 36,
-      "very_slow": 2,
-      "charging": 21
-    }
-  },
-  "additions": {
-    "total": 8,
-    "rarity": {
-      "mythical": 0,
-      "legendary": 7,
-      "rare": 1,
-      "common": 0
-    },
-    "color": {
-      "red": 2,
-      "blue": 2,
-      "green": 2,
-      "yellow": 1,
-      "purple": 1
-    },
-    "type": {
-      "attack": 6,
-      "defense": 1,
-      "support": 1
-    },
-    "speed": {
-      "very_fast": 0,
-      "fast": 2,
-      "average": 4,
-      "slow": 2,
-      "very_slow": 0,
-      "charging": 0
-    }
-  },
-  "after": {
     "total": 248,
     "rarity": {
       "mythical": 19,
@@ -86,6 +28,64 @@
       "fast": 61,
       "average": 116,
       "slow": 38,
+      "very_slow": 2,
+      "charging": 21
+    }
+  },
+  "additions": {
+    "total": 16,
+    "rarity": {
+      "mythical": 0,
+      "legendary": 11,
+      "rare": 5,
+      "common": 0
+    },
+    "color": {
+      "red": 4,
+      "blue": 3,
+      "green": 3,
+      "yellow": 3,
+      "purple": 3
+    },
+    "type": {
+      "attack": 9,
+      "defense": 3,
+      "support": 4
+    },
+    "speed": {
+      "very_fast": 0,
+      "fast": 2,
+      "average": 10,
+      "slow": 4,
+      "very_slow": 0,
+      "charging": 0
+    }
+  },
+  "after": {
+    "total": 264,
+    "rarity": {
+      "mythical": 19,
+      "legendary": 126,
+      "rare": 90,
+      "common": 29
+    },
+    "color": {
+      "red": 54,
+      "blue": 53,
+      "green": 53,
+      "yellow": 51,
+      "purple": 53
+    },
+    "type": {
+      "attack": 145,
+      "defense": 56,
+      "support": 63
+    },
+    "speed": {
+      "very_fast": 10,
+      "fast": 63,
+      "average": 126,
+      "slow": 42,
       "very_slow": 2,
       "charging": 21
     }
@@ -277,7 +277,7 @@
         "very_slow": 0,
         "charging": 0
       },
-      "before": 0,
+      "before": 8,
       "mythicals": []
     },
     "dragondynasty": {
@@ -400,6 +400,37 @@
           "manaSpeed": "fast"
         }
       ]
+    },
+    "goblins": {
+      "total": 16,
+      "rarity": {
+        "mythical": 0,
+        "legendary": 11,
+        "rare": 5,
+        "common": 0
+      },
+      "color": {
+        "red": 4,
+        "blue": 3,
+        "green": 3,
+        "yellow": 3,
+        "purple": 3
+      },
+      "type": {
+        "attack": 9,
+        "defense": 3,
+        "support": 4
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 2,
+        "average": 10,
+        "slow": 4,
+        "very_slow": 0,
+        "charging": 0
+      },
+      "before": 0,
+      "mythicals": []
     },
     "ironclad": {
       "total": 18,
@@ -697,58 +728,58 @@
       }
     },
     "legendary": {
-      "total": 115,
+      "total": 126,
       "rarity": {
         "mythical": 0,
-        "legendary": 115,
+        "legendary": 126,
         "rare": 0,
         "common": 0
       },
       "color": {
-        "red": 24,
-        "blue": 24,
-        "green": 22,
-        "yellow": 23,
-        "purple": 22
+        "red": 27,
+        "blue": 25,
+        "green": 24,
+        "yellow": 25,
+        "purple": 25
       },
       "type": {
-        "attack": 69,
-        "defense": 25,
-        "support": 21
+        "attack": 75,
+        "defense": 27,
+        "support": 24
       },
       "speed": {
         "very_fast": 2,
-        "fast": 28,
-        "average": 39,
-        "slow": 30,
+        "fast": 29,
+        "average": 45,
+        "slow": 34,
         "very_slow": 1,
         "charging": 15
       }
     },
     "rare": {
-      "total": 85,
+      "total": 90,
       "rarity": {
         "mythical": 0,
         "legendary": 0,
-        "rare": 85,
+        "rare": 90,
         "common": 0
       },
       "color": {
-        "red": 17,
-        "blue": 16,
-        "green": 20,
-        "yellow": 14,
+        "red": 18,
+        "blue": 18,
+        "green": 21,
+        "yellow": 15,
         "purple": 18
       },
       "type": {
-        "attack": 43,
-        "defense": 20,
-        "support": 22
+        "attack": 46,
+        "defense": 21,
+        "support": 23
       },
       "speed": {
         "very_fast": 5,
-        "fast": 21,
-        "average": 54,
+        "fast": 22,
+        "average": 58,
         "slow": 3,
         "very_slow": 0,
         "charging": 2
@@ -786,126 +817,126 @@
   },
   "byColor": {
     "red": {
-      "total": 50,
+      "total": 54,
       "rarity": {
         "mythical": 4,
-        "legendary": 24,
-        "rare": 17,
+        "legendary": 27,
+        "rare": 18,
         "common": 5
       },
       "color": {
-        "red": 50,
+        "red": 54,
         "blue": 0,
         "green": 0,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 34,
-        "defense": 8,
+        "attack": 37,
+        "defense": 9,
         "support": 8
       },
       "speed": {
         "very_fast": 1,
         "fast": 13,
-        "average": 25,
-        "slow": 7,
+        "average": 27,
+        "slow": 9,
         "very_slow": 0,
         "charging": 4
       }
     },
     "blue": {
-      "total": 50,
+      "total": 53,
       "rarity": {
         "mythical": 4,
-        "legendary": 24,
-        "rare": 16,
+        "legendary": 25,
+        "rare": 18,
         "common": 6
       },
       "color": {
         "red": 0,
-        "blue": 50,
+        "blue": 53,
         "green": 0,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 20,
+        "attack": 22,
         "defense": 14,
-        "support": 16
+        "support": 17
       },
       "speed": {
         "very_fast": 1,
-        "fast": 16,
-        "average": 24,
+        "fast": 17,
+        "average": 26,
         "slow": 6,
         "very_slow": 0,
         "charging": 3
       }
     },
     "green": {
-      "total": 50,
+      "total": 53,
       "rarity": {
         "mythical": 2,
-        "legendary": 22,
-        "rare": 20,
+        "legendary": 24,
+        "rare": 21,
         "common": 6
       },
       "color": {
         "red": 0,
         "blue": 0,
-        "green": 50,
+        "green": 53,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 25,
-        "defense": 11,
+        "attack": 26,
+        "defense": 13,
         "support": 14
       },
       "speed": {
         "very_fast": 0,
         "fast": 10,
-        "average": 29,
-        "slow": 6,
+        "average": 31,
+        "slow": 7,
         "very_slow": 1,
         "charging": 4
       }
     },
     "yellow": {
-      "total": 48,
+      "total": 51,
       "rarity": {
         "mythical": 4,
-        "legendary": 23,
-        "rare": 14,
+        "legendary": 25,
+        "rare": 15,
         "common": 7
       },
       "color": {
         "red": 0,
         "blue": 0,
         "green": 0,
-        "yellow": 48,
+        "yellow": 51,
         "purple": 0
       },
       "type": {
-        "attack": 25,
+        "attack": 26,
         "defense": 11,
-        "support": 12
+        "support": 14
       },
       "speed": {
         "very_fast": 5,
         "fast": 7,
-        "average": 21,
-        "slow": 8,
+        "average": 23,
+        "slow": 9,
         "very_slow": 0,
         "charging": 7
       }
     },
     "purple": {
-      "total": 50,
+      "total": 53,
       "rarity": {
         "mythical": 5,
-        "legendary": 22,
+        "legendary": 25,
         "rare": 18,
         "common": 5
       },
@@ -914,17 +945,17 @@
         "blue": 0,
         "green": 0,
         "yellow": 0,
-        "purple": 50
+        "purple": 53
       },
       "type": {
-        "attack": 32,
+        "attack": 34,
         "defense": 9,
-        "support": 9
+        "support": 10
       },
       "speed": {
         "very_fast": 3,
-        "fast": 15,
-        "average": 17,
+        "fast": 16,
+        "average": 19,
         "slow": 11,
         "very_slow": 1,
         "charging": 3
@@ -933,88 +964,88 @@
   },
   "byType": {
     "attack": {
-      "total": 136,
+      "total": 145,
       "rarity": {
         "mythical": 9,
-        "legendary": 69,
-        "rare": 43,
+        "legendary": 75,
+        "rare": 46,
         "common": 15
       },
       "color": {
-        "red": 34,
-        "blue": 20,
-        "green": 25,
-        "yellow": 25,
-        "purple": 32
+        "red": 37,
+        "blue": 22,
+        "green": 26,
+        "yellow": 26,
+        "purple": 34
       },
       "type": {
-        "attack": 136,
+        "attack": 145,
         "defense": 0,
         "support": 0
       },
       "speed": {
         "very_fast": 10,
-        "fast": 44,
-        "average": 49,
-        "slow": 17,
+        "fast": 46,
+        "average": 54,
+        "slow": 19,
         "very_slow": 1,
         "charging": 15
       }
     },
     "defense": {
-      "total": 53,
+      "total": 56,
       "rarity": {
         "mythical": 4,
-        "legendary": 25,
-        "rare": 20,
+        "legendary": 27,
+        "rare": 21,
         "common": 4
       },
       "color": {
-        "red": 8,
+        "red": 9,
         "blue": 14,
-        "green": 11,
+        "green": 13,
         "yellow": 11,
         "purple": 9
       },
       "type": {
         "attack": 0,
-        "defense": 53,
+        "defense": 56,
         "support": 0
       },
       "speed": {
         "very_fast": 0,
         "fast": 5,
-        "average": 30,
-        "slow": 16,
+        "average": 32,
+        "slow": 17,
         "very_slow": 0,
         "charging": 2
       }
     },
     "support": {
-      "total": 59,
+      "total": 63,
       "rarity": {
         "mythical": 6,
-        "legendary": 21,
-        "rare": 22,
+        "legendary": 24,
+        "rare": 23,
         "common": 10
       },
       "color": {
         "red": 8,
-        "blue": 16,
+        "blue": 17,
         "green": 14,
-        "yellow": 12,
-        "purple": 9
+        "yellow": 14,
+        "purple": 10
       },
       "type": {
         "attack": 0,
         "defense": 0,
-        "support": 59
+        "support": 63
       },
       "speed": {
         "very_fast": 0,
         "fast": 12,
-        "average": 37,
-        "slow": 5,
+        "average": 40,
+        "slow": 6,
         "very_slow": 1,
         "charging": 4
       }
@@ -1023,98 +1054,194 @@
   "implementedRecommendations": [
     {
       "priority": 1,
-      "championId": "djedi_kobe_kenobi",
-      "name": "Kobe Jacoby",
-      "faction": "djedi",
-      "color": "green",
+      "championId": "goblins_riffix",
+      "name": "Riffix, Brassstring Bard",
+      "faction": "goblins",
+      "color": "yellow",
       "rarity": "legendary",
-      "role": "attack",
+      "role": "support",
       "manaSpeed": "average",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
       "status": "implemented"
     },
     {
       "priority": 2,
-      "championId": "djedi_commander_pain",
-      "name": "Commander Pain",
-      "faction": "djedi",
-      "color": "blue",
+      "championId": "goblins_vexra",
+      "name": "Vexra, Velvet Knife",
+      "faction": "goblins",
+      "color": "purple",
       "rarity": "legendary",
       "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
+      "manaSpeed": "fast",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
       "status": "implemented"
     },
     {
       "priority": 3,
-      "championId": "djedi_jace_hindu",
-      "name": "Jace Gold",
-      "faction": "djedi",
-      "color": "purple",
+      "championId": "goblins_brondak",
+      "name": "Brondak, Ironhorn Rider",
+      "faction": "goblins",
+      "color": "green",
       "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
+      "role": "defense",
+      "manaSpeed": "slow",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
       "status": "implemented"
     },
     {
       "priority": 4,
-      "championId": "djedi_ani_windwalker",
-      "name": "Windwalker",
-      "faction": "djedi",
-      "color": "blue",
+      "championId": "goblins_karvosh",
+      "name": "Karvosh, the Greatblade",
+      "faction": "goblins",
+      "color": "red",
       "rarity": "legendary",
       "role": "attack",
-      "manaSpeed": "fast",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
       "status": "implemented"
     },
     {
       "priority": 5,
-      "championId": "djedi_dark_lord",
-      "name": "Dark Lord",
-      "faction": "djedi",
-      "color": "red",
+      "championId": "goblins_zizzara",
+      "name": "Zizzara, Storm-in-Hand",
+      "faction": "goblins",
+      "color": "blue",
       "rarity": "legendary",
       "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
       "status": "implemented"
     },
     {
       "priority": 6,
-      "championId": "djedi_chewy",
-      "name": "Cheeburrash",
-      "faction": "djedi",
-      "color": "green",
+      "championId": "goblins_tickrul",
+      "name": "Tickrul, Hourglass Heretic",
+      "faction": "goblins",
+      "color": "yellow",
       "rarity": "legendary",
-      "role": "defense",
-      "manaSpeed": "average",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
+      "role": "support",
+      "manaSpeed": "slow",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
       "status": "implemented"
     },
     {
       "priority": 7,
-      "championId": "djedi_ar2",
-      "name": "AR2",
-      "faction": "djedi",
-      "color": "yellow",
-      "rarity": "rare",
-      "role": "support",
-      "manaSpeed": "average",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
+      "championId": "goblins_king_grumvold",
+      "name": "King Grumvold",
+      "faction": "goblins",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
       "status": "implemented"
     },
     {
       "priority": 8,
-      "championId": "djedi_dark_mauler",
-      "name": "Lord of Darkness",
-      "faction": "djedi",
+      "championId": "goblins_piknet",
+      "name": "Piknet, Reedpoint",
+      "faction": "goblins",
+      "color": "green",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "status": "implemented"
+    },
+    {
+      "priority": 9,
+      "championId": "goblins_rukko",
+      "name": "Rukko, Rustroad Captain",
+      "faction": "goblins",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "status": "implemented"
+    },
+    {
+      "priority": 10,
+      "championId": "goblins_nibsy",
+      "name": "Nibsy, Hoodwink Scoundrel",
+      "faction": "goblins",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "status": "implemented"
+    },
+    {
+      "priority": 11,
+      "championId": "goblins_molgrik",
+      "name": "Molgrik, Cinderfiend",
+      "faction": "goblins",
       "color": "red",
       "rarity": "legendary",
       "role": "attack",
-      "manaSpeed": "fast",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
+      "manaSpeed": "slow",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "status": "implemented"
+    },
+    {
+      "priority": 12,
+      "championId": "goblins_bubzle",
+      "name": "Bubzle, Bottlebrewer",
+      "faction": "goblins",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "status": "implemented"
+    },
+    {
+      "priority": 13,
+      "championId": "goblins_urdra",
+      "name": "Urdra, Gatebreaker",
+      "faction": "goblins",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "status": "implemented"
+    },
+    {
+      "priority": 14,
+      "championId": "goblins_snaggle",
+      "name": "Snaggle, Trapthorn",
+      "faction": "goblins",
+      "color": "yellow",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "status": "implemented"
+    },
+    {
+      "priority": 15,
+      "championId": "goblins_morvessa",
+      "name": "Morvessa, Moonbone Oracle",
+      "faction": "goblins",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "status": "implemented"
+    },
+    {
+      "priority": 16,
+      "championId": "goblins_boltragg",
+      "name": "Boltragg, Scrapwall",
+      "faction": "goblins",
+      "color": "red",
+      "rarity": "rare",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
       "status": "implemented"
     }
   ],
