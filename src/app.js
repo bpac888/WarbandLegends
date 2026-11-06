@@ -31,7 +31,7 @@ import {getEncounter,entryError} from './encounters.js';
 import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js';
 import {developmentPanel,levelMark,rankTrack} from './development-ui.js';
 import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js';
-import {animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js';
+import {animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js';
 import {DEFAULT_FILTERS,filterChampions} from './collection.js';
 import * as Shell from './shell.js';
 import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js';
@@ -112,7 +112,7 @@ function renderBattle(state=battle,frame={}){
   paintLanePreview(selectedRune);
   scheduleAuto();
   if(previous&&['swap','fall'].includes(frame.kind))animateBoardMotion(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation()});
-  if(frame.kind==='match')animateRunePower(frame,state,app,{speed:battleSpeed,reduced:reducedAnimation()});
+  if(frame.kind==='match'){animateMatchGlow(frame,state,app,{speed:battleSpeed,reduced:reducedAnimation()});animateRunePower(frame,state,app,{speed:battleSpeed,reduced:reducedAnimation()});}
   if(frame.kind==='match')animateLaneShots(frame,state,app,{speed:battleSpeed,reduced:reducedAnimation()});
   if(['enemy','skill','mechanic','passive'].includes(frame.kind)&&previous)animateSpecial(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation()});
   if(frame.kind&&previous)animateBattleFeedback(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation(),calm:autoEnabled});

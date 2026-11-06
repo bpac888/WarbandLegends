@@ -95,3 +95,13 @@ body:has(.battle-shell) .battle-dock{min-height:24px;padding-top:1px;padding-bot
 /* Special runes use separate dragon/crystal paintings, with a clear cell rim. */
 .battle-shell .tile.special::after{inset:3%;background:none;border:1px solid #edce8eb3;border-radius:8px;box-shadow:0 0 7px #edcb8640;pointer-events:none}
 .battle-shell .tile.prism::after{border:2px solid #e7ceffc2;box-shadow:0 0 9px #dbc6ff70,inset 0 0 8px #e2ccff14}
+
+/* Shorter rune cells give their spare vertical space to both portrait rows. */
+.battle-center .board{row-gap:2px;padding-block:3px}
+@media(orientation:portrait),(min-height:601px){
+ body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.31)) minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.44 + 4px)) minmax(0,1fr) auto}
+ .battle-shell .enemy-unit{max-width:250px}
+}
+@media(min-width:701px) and (min-height:601px){
+ body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.29)) minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.47 + 4px)) minmax(0,1fr) auto}
+}

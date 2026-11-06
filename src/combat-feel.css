@@ -43,3 +43,9 @@
 /* Auto preserves its steady stage; impact rings and spell trails still carry weight. */
 .battle-shell.auto-running .special-caster .hero-main,.battle-shell.auto-running .special-caster .enemy-target>img{animation:none;transform:none}
 @media(prefers-reduced-motion:reduce){.rune-power,.prism-link,.spell-charge{display:none}.battle-shell .tile.matched,.battle-shell .tile.falling,.battle-shell .special-caster .hero-main,.battle-shell .special-caster .enemy-target>img{animation:none!important}}
+.match-bloom{position:fixed;pointer-events:none;width:var(--match-size);height:var(--match-size);border-radius:50%;background:radial-gradient(circle,#fff6d94d,rgba(var(--rgb),.5) 28%,rgba(var(--rgb),.18) 52%,transparent 74%);box-shadow:0 0 12px rgba(var(--rgb),.32);mix-blend-mode:screen;animation:match-bloom var(--match-time) ease-out both}
+.match-bloom::before{content:'';position:absolute;inset:8%;border:1px solid rgba(var(--rgb),.75);border-radius:50%;box-shadow:0 0 7px rgba(var(--rgb),.45)}
+.match-bloom::after{content:'';position:absolute;inset:-12%;background:repeating-conic-gradient(from 15deg,transparent 0deg 50deg,rgba(var(--rgb),.65) 55deg,transparent 60deg);-webkit-mask-image:radial-gradient(circle,transparent 44%,#000 52% 64%,transparent 75%);mask-image:radial-gradient(circle,transparent 44%,#000 52% 64%,transparent 75%)}
+@keyframes match-bloom{0%{opacity:0;transform:translate(-50%,-50%) scale(.35)}28%{opacity:.7;transform:translate(-50%,-50%) scale(1.04)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.5)}}
+body.reduce-animation .match-bloom{display:none}
+@media(prefers-reduced-motion:reduce){.match-bloom{display:none}}

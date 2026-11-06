@@ -108,6 +108,16 @@ export function animateNumbers(previous,current,frame,root,{speed=1,reduced=fals
   later(()=>{const pos=center(target,.42);if(!pos||!target.isConnected)return;const label=spawn(`combat-number ${delta>0?'restored':'wounded'}`,pos.x,pos.y,1000/timing.rate);label.textContent=(delta>0?'+':'−')+Math.abs(delta);label.style.animationDuration=1000/timing.rate+'ms';},timing.impact);
  }
 }
+export function animateMatchGlow(frame,state,root,{speed=1,reduced=false}={}){
+ if(reduced)return;
+ for(const index of new Set(frame.cleared||[])){
+  const rune=state.board[index],tile=root.querySelector(`[data-index="${index}"]`),rect=tile?.getBoundingClientRect();if(!rune||!rect)continue;
+  const duration=560/speed,pulse=spawn(`match-bloom ${rune.color}`,rect.left+rect.width/2,rect.top+rect.height/2,duration);
+  pulse.setAttribute('aria-hidden','true');pulse.dataset.index=index;
+  pulse.style.setProperty('--match-size',Math.min(90,Math.min(rect.width,rect.height)*.9)+'px');
+  pulse.style.setProperty('--match-time',duration+'ms');
+ }
+}
 export function animateRunePower(frame,state,root,{speed=1,reduced=false}={}){
  const activated=(frame.cleared||[]).flatMap(index=>state.board[index]?.special?[{index,...state.board[index]}]:[]);
  for(const item of [...activated,...(frame.created||[]).map(t=>({...t,forged:true}))]){
@@ -127,8 +137,8 @@ export function animateBoardMotion(previous,current,frame,root,{speed=1,reduced=
  for(let index=0;index<current.board.length;index++){
   if(frame.kind==='swap'&&index!==frame.a&&index!==frame.b)continue;
   const tile=root.querySelector(`[data-index="${index}"]`),rect=tile?.getBoundingClientRect();if(!rect)continue;
-  const from=oldPositions.get(current.board[index].id),column=index%7,row=Math.floor(index/7),gap=parseFloat(getComputedStyle(tile.parentNode).gap)||0;
-  const dx=from===undefined?0:(from%7-column)*(rect.width+gap),dy=(from===undefined?-2:Math.floor(from/7)-row)*(rect.height+gap);
+  const from=oldPositions.get(current.board[index].id),column=index%7,row=Math.floor(index/7),style=getComputedStyle(tile.parentNode),columnGap=parseFloat(style.columnGap)||0,rowGap=parseFloat(style.rowGap)||0;
+  const dx=from===undefined?0:(from%7-column)*(rect.width+columnGap),dy=(from===undefined?-2:Math.floor(from/7)-row)*(rect.height+rowGap);
   tile.style.animation='none';if(!dx&&!dy)continue;
   const swap=frame.kind==='swap',frames=swap?[{transform:`translate(${dx}px,${dy}px)`},{transform:'translate(0,0)'}]:[{transform:`translate(${dx}px,${dy}px)`},{transform:'translateY(2px) scaleY(.96)',offset:.8},{transform:'translateY(0) scaleY(1)'}];
   motion(tile,frames,{duration:(swap?210:360)/speed,easing:swap?'cubic-bezier(.35,.05,.65,1)':'cubic-bezier(.45,.05,.75,1)',fill:'both'});
