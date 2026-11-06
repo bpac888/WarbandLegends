@@ -64,7 +64,11 @@ The current phone version is hosted on [ChatGPT Sites](https://legends-runes-bor
 
 ### GitHub Pages test hosting
 
-The workflow `.github/workflows/pages.yml` tests and builds the game, uploads `dist/`, and deploys it on pushes to `main` or manual dispatch. In this repository's Settings → Pages, select **GitHub Actions** as the build source once. The deployment job reports the live URL after successful completion. Changes pushed to `main` then update the test site automatically.
+GitHub Pages uses **Deploy from a branch**, with `main` and `/(root)` selected in Settings → Pages. The repository root contains the playable static game; `.nojekyll` disables Jekyll processing. Pushing to `main` updates the site through GitHub's managed Pages deployment. The redundant custom `pages.yml` workflow has been removed.
+
+`.github/workflows/check.yml` validates the game and does not publish it. Seeing a validation run and a managed Pages run for the same update is expected; only the Pages run deploys. Branch-based publishing does not wait for the validation workflow, so run the required checks before pushing.
+
+Old deployment records are history, not additional live copies of the website. Removing inactive historical deployment records does not remove commits or change the current published site. Keep the current successful deployment and the `github-pages` environment. Deleting Actions runs is separate from deleting deployment history. Historical records have not been deleted as part of this workflow cleanup.
 
 Game progress is stored in the browser for each site address. A GitHub Pages test site has separate saves from the existing ChatGPT Site; export a backup before transferring progress.
 
