@@ -61,7 +61,8 @@
     "test:aerie-court": "node tests/aerie-court-browser.mjs",
     "test:campaign-atmosphere": "node tests/campaign-atmosphere-browser.mjs",
     "test:lilywake": "node tests/wildgrove-lilywake-browser.mjs",
-    "test:match-glow": "node tests/match-glow-browser.mjs"
+    "test:match-glow": "node tests/match-glow-browser.mjs",
+    "test:magic": "node tests/magic-browser.mjs"
   },
   "engines": {
     "node": ">=22"

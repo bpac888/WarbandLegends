@@ -8114,5 +8114,229 @@
         ]
       ]
     }
+  },
+  {
+    "template_id": "magic_vaelric",
+    "name": "Vaelric, Cinder-Crowned Magus",
+    "title": "Lord of the Living Flame",
+    "rarity": "legendary",
+    "faction": "magic",
+    "role": "attack",
+    "atk": 855,
+    "def": 745,
+    "hp": 1440,
+    "ability_name": "Crown of the Inferno",
+    "lore": "Vaelric learned to command fire inside a mountain that had never known winter. The crown above his brow is a living spell, each ember carrying the name of a city he refused to let burn. When he raises his staff, the inferno bows before it strikes.",
+    "image_url": "/assets/champions/magic_vaelric.webp",
+    "id": "magic_vaelric",
+    "color": "red",
+    "source_image": "assets/champions/magic_vaelric.webp",
+    "portrait": "assets/champions/magic_vaelric.webp",
+    "passive": null,
+    "ability_desc": "Deal 230% ATK damage to all living enemies.",
+    "spd": 88,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "burn",
+          2
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "magic_iseldra",
+    "name": "Iseldra, Glacial Archmage",
+    "title": "Keeper of the Frozen Horizon",
+    "rarity": "legendary",
+    "faction": "magic",
+    "role": "defense",
+    "atk": 710,
+    "def": 865,
+    "hp": 1600,
+    "ability_name": "Citadel of Winterglass",
+    "lore": "Iseldra sealed an endless winter behind seven mirrors of living ice. She carries their reflection in her staff, opening a crystalline citadel around those under her protection. Even the ocean falls silent to hear her incantation.",
+    "image_url": "/assets/champions/magic_iseldra.webp",
+    "id": "magic_iseldra",
+    "color": "blue",
+    "source_image": "assets/champions/magic_iseldra.webp",
+    "portrait": "assets/champions/magic_iseldra.webp",
+    "passive": null,
+    "ability_desc": "Deal 160% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "shield",
+          2
+        ],
+        [
+          "strengthen",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "magic_merovant",
+    "name": "Merovant, Verdant Archmage",
+    "title": "Voice of the First Green Word",
+    "rarity": "legendary",
+    "faction": "magic",
+    "role": "support",
+    "atk": 755,
+    "def": 790,
+    "hp": 1490,
+    "ability_name": "The Everliving Spell",
+    "lore": "Merovant discovered that the first forests grew from a word the world had forgotten. He writes that word anew in root and starlight, drawing sickness from the wounded and waking the magic sleeping in their blood.",
+    "image_url": "/assets/champions/magic_merovant.webp",
+    "id": "magic_merovant",
+    "color": "green",
+    "source_image": "assets/champions/magic_merovant.webp",
+    "portrait": "assets/champions/magic_merovant.webp",
+    "passive": null,
+    "ability_desc": "Restore 32% max HP to all living allies.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "remove_debuffs",
+          0
+        ],
+        [
+          "mana_surge",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "magic_caldrien",
+    "name": "Caldrien, Dawn Wanderer",
+    "title": "The Lantern Beyond the Last Road",
+    "rarity": "legendary",
+    "faction": "magic",
+    "role": "attack",
+    "atk": 830,
+    "def": 775,
+    "hp": 1455,
+    "ability_name": "Let the Dawn Enter",
+    "lore": "A grey-cloaked wanderer has walked the old roads longer than kingdoms remember. Caldrien arrives without heraldry, bearing a weathered staff and a light that no sorcerer can counterfeit. At the darkest gate, his quiet voice becomes the dawn.",
+    "image_url": "/assets/champions/magic_caldrien.webp",
+    "id": "magic_caldrien",
+    "color": "yellow",
+    "source_image": "assets/champions/magic_caldrien.webp",
+    "portrait": "assets/champions/magic_caldrien.webp",
+    "passive": null,
+    "ability_desc": "Deal 195% ATK damage to all living enemies.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dispel",
+          0
+        ],
+        [
+          "dec_atk",
+          2
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "magic_nyzara",
+    "name": "Nyzara, Voidweaver",
+    "title": "Mistress of the Unlit Constellations",
+    "rarity": "legendary",
+    "faction": "magic",
+    "role": "attack",
+    "atk": 850,
+    "def": 735,
+    "hp": 1415,
+    "ability_name": "Silence Between Stars",
+    "lore": "Nyzara threads spells through the spaces where constellations have gone dark. With one motion she unravels an enemy’s enchantments; with the next she closes the silence around their power. Only the silver bells upon her staff warn that she has arrived.",
+    "image_url": "/assets/champions/magic_nyzara.webp",
+    "id": "magic_nyzara",
+    "color": "purple",
+    "source_image": "assets/champions/magic_nyzara.webp",
+    "portrait": "assets/champions/magic_nyzara.webp",
+    "passive": null,
+    "ability_desc": "Deal 280% ATK damage to selected enemy.",
+    "spd": 112,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dispel",
+          0
+        ],
+        [
+          "mana_block",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "template_id": "magic_eldravon",
+    "name": "Eldravon, the First Arcanum",
+    "title": "Sage of the Unwritten Age",
+    "rarity": "mythical",
+    "faction": "magic",
+    "role": "attack",
+    "atk": 960,
+    "def": 870,
+    "hp": 1660,
+    "ability_name": "Edict Before Creation",
+    "lore": "Before the first school of sorcery, Eldravon heard the universe speaking in unfinished spells. He bound its wild syllables into the First Arcanum and vanished beyond the edge of written time. Now stars break their orbits when he opens his book, and the laws of magic wait for his next word.",
+    "image_url": "/assets/champions/magic_eldravon.webp",
+    "id": "magic_eldravon",
+    "color": "purple",
+    "source_image": "assets/champions/magic_eldravon.webp",
+    "portrait": "assets/champions/magic_eldravon.webp",
+    "passive": {
+      "id": "first_arcanum_will",
+      "name": "Unwritten Will",
+      "kind": "immune_effect",
+      "immune": [
+        "mana_block"
+      ],
+      "desc": "Immune to Mana Block."
+    },
+    "ability_desc": "Deal 235% ATK damage to all living enemies.",
+    "spd": 88,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "dispel",
+          0
+        ],
+        [
+          "mana_block",
+          1
+        ],
+        [
+          "strengthen",
+          1
+        ],
+        [
+          "aoe",
+          0
+        ]
+      ]
+    }
   }
 ]

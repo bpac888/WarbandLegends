@@ -1,67 +1,9 @@
 {
-  "version": 8,
-  "scope": "Current 234-character roster after adding Ondelle to Wildgrove. All 233 previous records and portraits preserved. Every faction has 18 characters. Not a measured PvP win-rate study.",
+  "version": 9,
+  "scope": "Current 240-character roster after adding six elite Magic wizards. All 234 previous records and portraits preserved. Thirteen original factions have 18 members; Magic has six. Not a measured PvP win-rate study.",
   "historicalBaselineVerified": true,
   "approvedRosterRevisionCount": 28,
   "before": {
-    "total": 233,
-    "rarity": {
-      "mythical": 18,
-      "legendary": 103,
-      "rare": 83,
-      "common": 29
-    },
-    "color": {
-      "red": 47,
-      "blue": 46,
-      "green": 47,
-      "yellow": 46,
-      "purple": 47
-    },
-    "type": {
-      "attack": 125,
-      "defense": 51,
-      "support": 57
-    },
-    "speed": {
-      "very_fast": 10,
-      "fast": 58,
-      "average": 108,
-      "slow": 34,
-      "very_slow": 2,
-      "charging": 21
-    }
-  },
-  "additions": {
-    "total": 1,
-    "rarity": {
-      "mythical": 0,
-      "legendary": 0,
-      "rare": 1,
-      "common": 0
-    },
-    "color": {
-      "red": 0,
-      "blue": 1,
-      "green": 0,
-      "yellow": 0,
-      "purple": 0
-    },
-    "type": {
-      "attack": 1,
-      "defense": 0,
-      "support": 0
-    },
-    "speed": {
-      "very_fast": 0,
-      "fast": 0,
-      "average": 1,
-      "slow": 0,
-      "very_slow": 0,
-      "charging": 0
-    }
-  },
-  "after": {
     "total": 234,
     "rarity": {
       "mythical": 18,
@@ -86,6 +28,64 @@
       "fast": 58,
       "average": 109,
       "slow": 34,
+      "very_slow": 2,
+      "charging": 21
+    }
+  },
+  "additions": {
+    "total": 6,
+    "rarity": {
+      "mythical": 1,
+      "legendary": 5,
+      "rare": 0,
+      "common": 0
+    },
+    "color": {
+      "red": 1,
+      "blue": 1,
+      "green": 1,
+      "yellow": 1,
+      "purple": 2
+    },
+    "type": {
+      "attack": 4,
+      "defense": 1,
+      "support": 1
+    },
+    "speed": {
+      "very_fast": 0,
+      "fast": 1,
+      "average": 3,
+      "slow": 2,
+      "very_slow": 0,
+      "charging": 0
+    }
+  },
+  "after": {
+    "total": 240,
+    "rarity": {
+      "mythical": 19,
+      "legendary": 108,
+      "rare": 84,
+      "common": 29
+    },
+    "color": {
+      "red": 48,
+      "blue": 48,
+      "green": 48,
+      "yellow": 47,
+      "purple": 49
+    },
+    "type": {
+      "attack": 130,
+      "defense": 52,
+      "support": 58
+    },
+    "speed": {
+      "very_fast": 10,
+      "fast": 59,
+      "average": 112,
+      "slow": 36,
       "very_slow": 2,
       "charging": 21
     }
@@ -412,6 +412,43 @@
         }
       ]
     },
+    "magic": {
+      "total": 6,
+      "rarity": {
+        "mythical": 1,
+        "legendary": 5,
+        "rare": 0,
+        "common": 0
+      },
+      "color": {
+        "red": 1,
+        "blue": 1,
+        "green": 1,
+        "yellow": 1,
+        "purple": 2
+      },
+      "type": {
+        "attack": 4,
+        "defense": 1,
+        "support": 1
+      },
+      "speed": {
+        "very_fast": 0,
+        "fast": 1,
+        "average": 3,
+        "slow": 2,
+        "very_slow": 0,
+        "charging": 0
+      },
+      "before": 0,
+      "mythicals": [
+        {
+          "name": "Eldravon, the First Arcanum",
+          "color": "purple",
+          "manaSpeed": "slow"
+        }
+      ]
+    },
     "neon_syndicate": {
       "total": 18,
       "rarity": {
@@ -588,7 +625,7 @@
         "very_slow": 1,
         "charging": 0
       },
-      "before": 17,
+      "before": 18,
       "mythicals": [
         {
           "name": "Oakenhart, the First Warden",
@@ -600,9 +637,9 @@
   },
   "byRarity": {
     "mythical": {
-      "total": 18,
+      "total": 19,
       "rarity": {
-        "mythical": 18,
+        "mythical": 19,
         "legendary": 0,
         "rare": 0,
         "common": 0
@@ -612,10 +649,10 @@
         "blue": 4,
         "green": 2,
         "yellow": 4,
-        "purple": 4
+        "purple": 5
       },
       "type": {
-        "attack": 8,
+        "attack": 9,
         "defense": 4,
         "support": 6
       },
@@ -623,36 +660,36 @@
         "very_fast": 1,
         "fast": 6,
         "average": 2,
-        "slow": 4,
+        "slow": 5,
         "very_slow": 1,
         "charging": 4
       }
     },
     "legendary": {
-      "total": 103,
+      "total": 108,
       "rarity": {
         "mythical": 0,
-        "legendary": 103,
+        "legendary": 108,
         "rare": 0,
         "common": 0
       },
       "color": {
-        "red": 21,
-        "blue": 21,
-        "green": 19,
-        "yellow": 22,
-        "purple": 20
+        "red": 22,
+        "blue": 22,
+        "green": 20,
+        "yellow": 23,
+        "purple": 21
       },
       "type": {
-        "attack": 60,
-        "defense": 23,
-        "support": 20
+        "attack": 63,
+        "defense": 24,
+        "support": 21
       },
       "speed": {
         "very_fast": 2,
-        "fast": 25,
-        "average": 33,
-        "slow": 27,
+        "fast": 26,
+        "average": 36,
+        "slow": 28,
         "very_slow": 1,
         "charging": 15
       }
@@ -718,22 +755,22 @@
   },
   "byColor": {
     "red": {
-      "total": 47,
+      "total": 48,
       "rarity": {
         "mythical": 4,
-        "legendary": 21,
+        "legendary": 22,
         "rare": 17,
         "common": 5
       },
       "color": {
-        "red": 47,
+        "red": 48,
         "blue": 0,
         "green": 0,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 31,
+        "attack": 32,
         "defense": 8,
         "support": 8
       },
@@ -741,74 +778,74 @@
         "very_fast": 1,
         "fast": 12,
         "average": 25,
-        "slow": 5,
+        "slow": 6,
         "very_slow": 0,
         "charging": 4
       }
     },
     "blue": {
-      "total": 47,
+      "total": 48,
       "rarity": {
         "mythical": 4,
-        "legendary": 21,
+        "legendary": 22,
         "rare": 16,
         "common": 6
       },
       "color": {
         "red": 0,
-        "blue": 47,
+        "blue": 48,
         "green": 0,
         "yellow": 0,
         "purple": 0
       },
       "type": {
         "attack": 18,
-        "defense": 13,
+        "defense": 14,
         "support": 16
       },
       "speed": {
         "very_fast": 1,
         "fast": 15,
-        "average": 23,
+        "average": 24,
         "slow": 5,
         "very_slow": 0,
         "charging": 3
       }
     },
     "green": {
-      "total": 47,
+      "total": 48,
       "rarity": {
         "mythical": 2,
-        "legendary": 19,
+        "legendary": 20,
         "rare": 20,
         "common": 6
       },
       "color": {
         "red": 0,
         "blue": 0,
-        "green": 47,
+        "green": 48,
         "yellow": 0,
         "purple": 0
       },
       "type": {
         "attack": 24,
         "defense": 10,
-        "support": 13
+        "support": 14
       },
       "speed": {
         "very_fast": 0,
         "fast": 10,
-        "average": 26,
+        "average": 27,
         "slow": 6,
         "very_slow": 1,
         "charging": 4
       }
     },
     "yellow": {
-      "total": 46,
+      "total": 47,
       "rarity": {
         "mythical": 4,
-        "legendary": 22,
+        "legendary": 23,
         "rare": 13,
         "common": 7
       },
@@ -816,28 +853,28 @@
         "red": 0,
         "blue": 0,
         "green": 0,
-        "yellow": 46,
+        "yellow": 47,
         "purple": 0
       },
       "type": {
-        "attack": 24,
+        "attack": 25,
         "defense": 11,
         "support": 11
       },
       "speed": {
         "very_fast": 5,
         "fast": 7,
-        "average": 19,
+        "average": 20,
         "slow": 8,
         "very_slow": 0,
         "charging": 7
       }
     },
     "purple": {
-      "total": 47,
+      "total": 49,
       "rarity": {
-        "mythical": 4,
-        "legendary": 20,
+        "mythical": 5,
+        "legendary": 21,
         "rare": 18,
         "common": 5
       },
@@ -846,18 +883,18 @@
         "blue": 0,
         "green": 0,
         "yellow": 0,
-        "purple": 47
+        "purple": 49
       },
       "type": {
-        "attack": 29,
+        "attack": 31,
         "defense": 9,
         "support": 9
       },
       "speed": {
         "very_fast": 3,
-        "fast": 14,
+        "fast": 15,
         "average": 16,
-        "slow": 10,
+        "slow": 11,
         "very_slow": 1,
         "charging": 3
       }
@@ -865,87 +902,87 @@
   },
   "byType": {
     "attack": {
-      "total": 126,
+      "total": 130,
       "rarity": {
-        "mythical": 8,
-        "legendary": 60,
+        "mythical": 9,
+        "legendary": 63,
         "rare": 43,
         "common": 15
       },
       "color": {
-        "red": 31,
+        "red": 32,
         "blue": 18,
         "green": 24,
-        "yellow": 24,
-        "purple": 29
+        "yellow": 25,
+        "purple": 31
       },
       "type": {
-        "attack": 126,
+        "attack": 130,
         "defense": 0,
         "support": 0
       },
       "speed": {
         "very_fast": 10,
-        "fast": 41,
-        "average": 46,
-        "slow": 13,
+        "fast": 42,
+        "average": 47,
+        "slow": 15,
         "very_slow": 1,
         "charging": 15
       }
     },
     "defense": {
-      "total": 51,
+      "total": 52,
       "rarity": {
         "mythical": 4,
-        "legendary": 23,
+        "legendary": 24,
         "rare": 20,
         "common": 4
       },
       "color": {
         "red": 8,
-        "blue": 13,
+        "blue": 14,
         "green": 10,
         "yellow": 11,
         "purple": 9
       },
       "type": {
         "attack": 0,
-        "defense": 51,
+        "defense": 52,
         "support": 0
       },
       "speed": {
         "very_fast": 0,
         "fast": 5,
-        "average": 28,
+        "average": 29,
         "slow": 16,
         "very_slow": 0,
         "charging": 2
       }
     },
     "support": {
-      "total": 57,
+      "total": 58,
       "rarity": {
         "mythical": 6,
-        "legendary": 20,
+        "legendary": 21,
         "rare": 21,
         "common": 10
       },
       "color": {
         "red": 8,
         "blue": 16,
-        "green": 13,
+        "green": 14,
         "yellow": 11,
         "purple": 9
       },
       "type": {
         "attack": 0,
         "defense": 0,
-        "support": 57
+        "support": 58
       },
       "speed": {
         "very_fast": 0,
         "fast": 12,
-        "average": 35,
+        "average": 36,
         "slow": 5,
         "very_slow": 1,
         "charging": 4
@@ -955,14 +992,74 @@
   "implementedRecommendations": [
     {
       "priority": 1,
-      "championId": "ondelle_lilywake_huntress",
-      "name": "Ondelle, Lilywake Huntress",
-      "faction": "wildgrove",
+      "championId": "magic_vaelric",
+      "name": "Vaelric, Cinder-Crowned Magus",
+      "faction": "magic",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "priority": 2,
+      "championId": "magic_iseldra",
+      "name": "Iseldra, Glacial Archmage",
+      "faction": "magic",
       "color": "blue",
-      "rarity": "rare",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "priority": 3,
+      "championId": "magic_merovant",
+      "name": "Merovant, Verdant Archmage",
+      "faction": "magic",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "priority": 4,
+      "championId": "magic_caldrien",
+      "name": "Caldrien, Dawn Wanderer",
+      "faction": "magic",
+      "color": "yellow",
+      "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "average",
-      "gap": "Eighteenth Wildgrove champion: a blue Rare attacker with water-and-lily-pad identity, single-target damage and charge control; retains Attack as the faction’s most common role.",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "priority": 5,
+      "championId": "magic_nyzara",
+      "name": "Nyzara, Voidweaver",
+      "faction": "magic",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "priority": 6,
+      "championId": "magic_eldravon",
+      "name": "Eldravon, the First Arcanum",
+      "faction": "magic",
+      "color": "purple",
+      "rarity": "mythical",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
       "status": "implemented"
     }
   ],

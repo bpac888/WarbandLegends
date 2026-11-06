@@ -1,0 +1,84 @@
+{
+  "version": 9,
+  "originalCount": 234,
+  "totalCount": 240,
+  "originalRecordsSha256": "eaccc7118015e0ac0a9dda8f183c9940b06e7adb11a62a62194f3ddd46beb668",
+  "originalSourceRecordsSha256": "2118f8063b23caf47c924604653d03c42fdd9eaaad1ed8b1f0dfe0d2ee3ac918",
+  "originalPortraitsSha256": "8c348d55bbb3e3310e080e9744b1562e163d317cd223f7f8983a3a7c397ef8a3",
+  "addedChampionIds": [
+    "magic_vaelric",
+    "magic_iseldra",
+    "magic_merovant",
+    "magic_caldrien",
+    "magic_nyzara",
+    "magic_eldravon"
+  ],
+  "implementedRecommendations": [
+    {
+      "championId": "magic_vaelric",
+      "name": "Vaelric, Cinder-Crowned Magus",
+      "faction": "magic",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_iseldra",
+      "name": "Iseldra, Glacial Archmage",
+      "faction": "magic",
+      "color": "blue",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_merovant",
+      "name": "Merovant, Verdant Archmage",
+      "faction": "magic",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_caldrien",
+      "name": "Caldrien, Dawn Wanderer",
+      "faction": "magic",
+      "color": "yellow",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_nyzara",
+      "name": "Nyzara, Voidweaver",
+      "faction": "magic",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_eldravon",
+      "name": "Eldravon, the First Arcanum",
+      "faction": "magic",
+      "color": "purple",
+      "rarity": "mythical",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    }
+  ]
+}

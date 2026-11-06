@@ -8,7 +8,7 @@ import {makeBackup,parseBackup} from '../src/save-files.js';
 import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url)));
-const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion-8.json'),hero=roster.find(c=>c.id==='ondelle_lilywake_huntress');
+const roster=(await read('data/champions.json')).slice(0,234),manifest=await read('data/roster-expansion-8.json'),hero=roster.find(c=>c.id==='ondelle_lilywake_huntress');
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 
 test('Ondelle completes all thirteen factions without changing any of the previous 233 characters or portraits',async()=>{
@@ -40,5 +40,5 @@ test('Ondelle is summonable as a Rare and owned copies survive normalization and
  const p=defaultProfile(),pool=roster.filter(c=>c.rarity==='rare'),rolls=[.6,(pool.findIndex(c=>c.id===hero.id)+.5)/pool.length],r=summon(p,roster,()=>rolls.shift());
  assert.equal(r.champion.id,hero.id);assert.ok(validateProfile(r.profile,roster));assert.deepEqual(normalizeProfile(r.profile,roster),r.profile);
  assert.deepEqual(parseBackup(JSON.stringify(makeBackup(r.profile,null)),roster).profile,r.profile);
- const audit=await read('data/roster-audit.json');assert.equal(audit.after.total,234);assert.equal(audit.byFaction.wildgrove.total,18);assert.equal(audit.byFaction.wildgrove.color.blue,3);assert.equal(audit.byFaction.wildgrove.type.attack,9);
+ const audit=await read('data/roster-audit.json');assert.equal(audit.after.total,240);assert.equal(audit.byFaction.wildgrove.total,18);assert.equal(audit.byFaction.wildgrove.color.blue,3);assert.equal(audit.byFaction.wildgrove.type.attack,9);
 });

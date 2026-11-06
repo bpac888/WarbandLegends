@@ -25,9 +25,15 @@ const originalPortraits=[];for(const c of roster.slice(0,latest.originalCount))o
 if(sha(historicalPortraits(originalPortraits))!==latest.originalPortraitsSha256)throw Error('An existing portrait changed');
 const current=JSON.parse(await readFile('data/roster-expansion-8.json','utf8'));
 if(sha(roster.slice(0,current.originalCount))!==current.originalRecordsSha256||sha(sourceRoster.slice(0,current.originalCount))!==current.originalSourceRecordsSha256)throw Error('The 233-character baseline changed');
-if(roster.length!==current.totalCount||sourceRoster.length!==current.totalCount||new Set(roster.map(c=>c.id)).size!==current.totalCount||JSON.stringify(roster.slice(current.originalCount).map(c=>c.id))!==JSON.stringify(current.addedChampionIds))throw Error('Roster identity check failed');
+if(JSON.stringify(roster.slice(current.originalCount,current.totalCount).map(c=>c.id))!==JSON.stringify(current.addedChampionIds))throw Error('Wildgrove identity check failed');
 const preservedPortraits=[];for(const c of roster.slice(0,current.originalCount))preservedPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(preservedPortraits)!==current.originalPortraitsSha256)throw Error('An existing portrait changed since the Wildgrove addition');
+const magic=JSON.parse(await readFile('data/roster-expansion-9.json','utf8'));
+if(sha(roster.slice(0,magic.originalCount))!==magic.originalRecordsSha256||sha(sourceRoster.slice(0,magic.originalCount))!==magic.originalSourceRecordsSha256)throw Error('The 234-character baseline changed');
+if(roster.length!==magic.totalCount||sourceRoster.length!==magic.totalCount||new Set(roster.map(c=>c.id)).size!==magic.totalCount||JSON.stringify(roster.slice(magic.originalCount).map(c=>c.id))!==JSON.stringify(magic.addedChampionIds))throw Error('Roster identity check failed');
+const magicPortraits=[];for(const c of roster.slice(0,magic.originalCount))magicPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
+if(sha(magicPortraits)!==magic.originalPortraitsSha256)throw Error('A previous portrait changed since Magic was added');
+if((await stat('assets/factions/magic.svg')).size<500)throw Error('Missing Magic emblem');
 for(const art of ['legends-splash','legends-splash-phone'])if((await stat('assets/scenes/'+art+'.webp')).size<100000)throw Error('Missing splash artwork: '+art);
 for(const item of PREMIUM_ITEMS)if((await stat('assets/items/'+item.id+'.webp')).size<10000)throw Error('Missing premium item artwork: '+item.id);
 if((await stat('assets/items/loot-tickets.webp')).size<10000)throw Error('Missing Loot Ticket artwork');

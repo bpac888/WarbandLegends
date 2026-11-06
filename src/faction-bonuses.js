@@ -1,6 +1,7 @@
 // Shared faction rules for combat, team composition and the Guide.
 // Counts are locked from the five starting slots; fallen members do not remove a tier.
 export const FACTION_BONUSES={
+ magic:{name:'Magic',tiers:Object.fromEntries([1,2,3,4,5].map(n=>[n,{alliedMana:n/20,text:`Arcane Resonance: +${n*5}% mana generation for all allies, including Magic champions. Stacks by 5% per Magic champion.`}]))},
  aerie_court:{name:'Aerie Court',tiers:{2:{def:.04,tileMana:.05,text:'Tailwind Guard: +4% DEF and +5% mana from matching runes.'},3:{def:.06,tileMana:.10,text:'Tailwind Guard: +6% DEF and +10% mana from matching runes.'}}},
  astral_concord:{name:'Astral Concord',tiers:{2:{tileMana:.15,text:'+15% mana from matching runes.'},3:{tileMana:.25,text:'+25% mana from matching runes.'}}},
  bloodcourt:{name:'Bloodcourt',tiers:{2:{regen:.03,text:'Recover 3% max HP each turn.'},3:{regen:.06,text:'Recover 6% max HP each turn.'}}},
@@ -18,14 +19,14 @@ export const FACTION_BONUSES={
 const empty=Object.freeze({});
 export function factionGroups(team){
  const counts=new Map();for(const unit of team)if(unit&&FACTION_BONUSES[unit.faction])counts.set(unit.faction,(counts.get(unit.faction)||0)+1);
- return [...counts].filter(([,count])=>count>=2).map(([faction,count])=>({faction,count,tier:Math.min(3,count),...FACTION_BONUSES[faction]}));
+ return [...counts].flatMap(([faction,count])=>{const tiers=Object.keys(FACTION_BONUSES[faction].tiers).map(Number).filter(t=>t<=count);return tiers.length?[{faction,count,tier:Math.max(...tiers),...FACTION_BONUSES[faction]}]:[];});
 }
 export const factionRule=unit=>unit.side==='hero'?FACTION_BONUSES[unit.faction]?.tiers[unit.factionTier]||empty:empty;
 export function initializeFactionBonuses(state,{roll,log,gainMana}){
  state.factionRules=1;
- const groups=factionGroups(state.heroes),tiers=new Map(groups.map(g=>[g.faction,g.tier]));
+ const groups=factionGroups(state.heroes),manaBonus=groups.find(g=>g.faction==='magic')?.tiers[state.heroes.filter(h=>h.faction==='magic').length]?.alliedMana||0,tiers=new Map(groups.map(g=>[g.faction,g.tier]));
  for(const hero of state.heroes){
-  hero.factionTier=tiers.get(hero.faction)||0;hero.factionLastTurn=0;const rule=factionRule(hero);
+  if(manaBonus)hero.factionManaBonus=manaBonus;hero.factionTier=tiers.get(hero.faction)||0;hero.factionLastTurn=0;const rule=factionRule(hero);
   if(rule.atk)hero.atk=Math.round(hero.atk*(1+rule.atk));if(rule.def)hero.def=Math.round(hero.def*(1+rule.def));
   if(rule.hp){hero.maxHp=Math.round(hero.maxHp*(1+rule.hp));hero.hp=hero.maxHp;}
   if(rule.growthChance){hero.factionBase={atk:hero.atk,def:hero.def,maxHp:hero.maxHp};hero.factionStacks=0;}
@@ -50,11 +51,13 @@ export function factionUpkeep(state,unit,{roll,heal,log}){
  if(rule.regen)heal(unit,unit.maxHp*rule.regen,FACTION_BONUSES[unit.faction].name);
 }
 export function validFactionState(state,roster){
- if(state.factionRules===undefined)return [...state.heroes,...state.enemies].every(u=>u.factionTier===undefined&&u.factionStacks===undefined&&u.factionBase===undefined&&u.factionLastTurn===undefined);
+ if(state.factionRules===undefined)return [...state.heroes,...state.enemies].every(u=>u.factionTier===undefined&&u.factionStacks===undefined&&u.factionBase===undefined&&u.factionLastTurn===undefined&&u.factionManaBonus===undefined);
  if(state.factionRules!==1)return false;
+ const manaBonus=state.heroes.filter(h=>h.faction==='magic').length/20;
  const tiers=new Map(factionGroups(state.heroes).map(g=>[g.faction,g.tier]));
- if(state.enemies.some(u=>u.factionTier!==undefined||u.factionStacks!==undefined||u.factionBase!==undefined||u.factionLastTurn!==undefined))return false;
+ if(state.enemies.some(u=>u.factionTier!==undefined||u.factionStacks!==undefined||u.factionBase!==undefined||u.factionLastTurn!==undefined||u.factionManaBonus!==undefined))return false;
  return state.heroes.every(u=>{
+  if(u.factionManaBonus!==(manaBonus||undefined))return false;
   if(u.faction!==roster.find(c=>c.id===u.id)?.faction||u.factionTier!==(tiers.get(u.faction)||0)||!Number.isSafeInteger(u.factionLastTurn)||u.factionLastTurn<0||u.factionLastTurn>state.moves)return false;
   if(factionRule(u).growthChance)return Number.isSafeInteger(u.factionStacks)&&u.factionStacks>=0&&u.factionStacks<=state.moves&&u.factionBase&&['atk','def','maxHp'].every(k=>Number.isFinite(u.factionBase[k])&&u.factionBase[k]>0);
   return u.factionStacks===undefined&&u.factionBase===undefined;

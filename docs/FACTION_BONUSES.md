@@ -1,9 +1,12 @@
 # Faction Bonuses
 
-Bonuses apply only to matching members of the player’s starting five-character team. Two unlocks the 2-member bonus; three, four or five use only the 3-member bonus. Counts stay fixed for that battle even if members fall. Two different factions can activate together in a 3+2 or 2+2+1 team. There are no enemy faction bonuses.
+The thirteen original faction bonuses apply only to matching members of the player’s starting five-character team. Two unlocks the 2-member bonus; three, four or five use only the 3-member bonus. Counts stay fixed for that battle even if members fall. Two different factions can activate together in a 3+2 or 2+2+1 team. There are no enemy faction bonuses. Magic is the exception to the member requirement and recipient rules: its aura starts with one member and affects the entire allied team.
+
+**Magic — Arcane Resonance:** +5% generated mana per Magic champion, stacking additively: 1 / 2 / 3 / 4 / 5 members give +5% / +10% / +15% / +20% / +25% to every ally, including Magic champions. Counts are locked from the starting team. The aura multiplies other matching-mana bonuses and Mana Flow/Slow, respects Mana Block and mana caps, and does not amplify flat Mana Gifts or Nether opening mana.
 
 | Faction | 2 Members | 3+ Members |
 | --- | --- | --- |
+| Aerie Court | +4% DEF and +5% matching mana. | +6% DEF and +10% matching mana. |
 | Astral Concord | +15% mana from matching runes. | +25% mana from matching runes. |
 | Bloodcourt | Recover 3% max HP each turn. | Recover 6% max HP each turn. |
 | Chymera | 50% chance for each Special ailment applied to an enemy to last 1 extra turn. | Special ailments applied to enemies last 1 extra turn. |
@@ -33,8 +36,8 @@ Bonuses apply only to matching members of the player’s starting five-character
 - **Alkyron — Titan’s Resolve:** permanently immune to Attack Down and Burn, only on Alkyron.
 - **Asterox — Moonforged Aegis:** Barriers received by Asterox have 50% larger pools (normally 30% max HP instead of 20%). Allied Barriers remain normal.
 
-All champion identities and artwork are unchanged. All seventeen Mythicals now have passives.
+All pre-existing champion identities and artwork are preserved. All nineteen Mythicals have passives.
 
 ## Validation
 
-Native tests cover all twelve factions at 1–5 members, mixed teams, local recipients, tier replacement, exact percentages and charge precision, independent chance rolls, dead members, cast/cascade timing, blocked and extended ailments, innate vs timed effects, developed stats, passive interactions, snapshot validity and Auto battles. Browser checks cover the Warband selector, Guide, battle inspection, Auto and the two passive dossiers on phone and desktop.
+Native tests cover all fourteen factions at 1–5 members, mixed teams, local recipients, tier replacement, exact percentages and charge precision, independent chance rolls, dead members, cast/cascade timing, blocked and extended ailments, innate vs timed effects, developed stats, passive interactions, snapshot validity and Auto battles. Browser checks cover the Warband selector, Guide, battle inspection, Auto and the two passive dossiers on phone and desktop.

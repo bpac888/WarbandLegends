@@ -23,7 +23,7 @@ export function manaLevels(unit){return unit.special?.levels||[];}
 export function readyLevel(unit){if(unit.hp<=0)return 0;return manaLevels(unit).filter(l=>unit.mana>=l.tiles).at(-1)?.level||0;}
 export function manaLabel(unit){return unit.special?.charging?'Charging':MANA_SPEEDS[unit.manaSpeed]?.label||'Average';}
 export function chargeText(amount){return Number(Number(amount).toFixed(2)).toString();}
-function gainMana(unit,amount,{flat=false,matching=false}={}){if(has(unit,'mana_block'))return 0;const rate=flat?1:(has(unit,'mana_surge')?1.2:1)*(has(unit,'mana_slow')?.85:1)*(matching?1+(factionRule(unit).tileMana||0):1);const before=unit.mana;unit.mana=Math.min(unit.manaMax,Math.round((unit.mana+amount*rate)*1000000)/1000000);return Math.round((unit.mana-before)*100)/100;}
+function gainMana(unit,amount,{flat=false,matching=false}={}){if(has(unit,'mana_block'))return 0;const rate=flat?1:(1+(unit.factionManaBonus||0))*(has(unit,'mana_surge')?1.2:1)*(has(unit,'mana_slow')?.85:1)*(matching?1+(factionRule(unit).tileMana||0):1);const before=unit.mana;unit.mana=Math.min(unit.manaMax,Math.round((unit.mana+amount*rate)*1000000)/1000000);return Math.round((unit.mana-before)*100)/100;}
 
 export const STAGES=CAMPAIGN_STAGES;
 export const living = units => units.filter(u=>u.hp>0);

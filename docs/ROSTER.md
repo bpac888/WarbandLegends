@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-234 champions. The newest addition is Ondelle, Lilywake Huntress, a blue Rare Wildgrove attacker; every faction now has eighteen characters. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
+240 champions. The newest faction is Magic: five elemental Legendaries and one ancient Mythical sage. The thirteen previous factions retain eighteen characters each. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -238,6 +238,12 @@
 | Sagivra, Quillblade Marshal | legendary | yellow | attack | 820 | 680 | 1320 | Fast 8 |
 | Veyrath, Twin-Crowned Sovereign | mythical | purple | attack | 924 | 765 | 1475 | Slow 12 |
 | Ondelle, Lilywake Huntress | rare | blue | attack | 690 | 565 | 1060 | Average 10 |
+| Vaelric, Cinder-Crowned Magus | legendary | red | attack | 855 | 745 | 1440 | Slow 12 |
+| Iseldra, Glacial Archmage | legendary | blue | defense | 710 | 865 | 1600 | Average 10 |
+| Merovant, Verdant Archmage | legendary | green | support | 755 | 790 | 1490 | Average 10 |
+| Caldrien, Dawn Wanderer | legendary | yellow | attack | 830 | 775 | 1455 | Average 10 |
+| Nyzara, Voidweaver | legendary | purple | attack | 850 | 735 | 1415 | Fast 8 |
+| Eldravon, the First Arcanum | mythical | purple | attack | 960 | 870 | 1660 | Slow 12 |
 
 ## Specials
 
@@ -1254,4 +1260,30 @@ Passive: **Twin-Crowned Vigil** — Immune to Poison.
 ### Ondelle, Lilywake Huntress — Lilywake Undertow
 
 - 10 tiles: Deal 255% ATK damage to selected enemy. Mana Slow (Selected enemy, 2 turns).
+
+### Vaelric, Cinder-Crowned Magus — Crown of the Inferno
+
+- 12 tiles: Deal 230% ATK damage to all living enemies. Burn (All living enemies, 2 turns).
+
+### Iseldra, Glacial Archmage — Citadel of Winterglass
+
+- 10 tiles: Deal 160% ATK damage to selected enemy. Barrier (All living allies, 2 turns); Damage Ward (All living allies, 2 turns).
+
+### Merovant, Verdant Archmage — The Everliving Spell
+
+- 10 tiles: Restore 32% max HP to all living allies. Cleanse (All living allies); Mana Flow (All living allies, 2 turns).
+
+### Caldrien, Dawn Wanderer — Let the Dawn Enter
+
+- 10 tiles: Deal 195% ATK damage to all living enemies. Dispel (All living enemies); Attack Down (All living enemies, 2 turns).
+
+### Nyzara, Voidweaver — Silence Between Stars
+
+- 8 tiles: Deal 280% ATK damage to selected enemy. Dispel (Selected enemy); Mana Block (Selected enemy, 1 turns).
+
+### Eldravon, the First Arcanum — Edict Before Creation
+
+- 12 tiles: Deal 235% ATK damage to all living enemies. Dispel (All living enemies); Damage Ward (All living allies, 1 turns); Mana Block (All living enemies, 1 turns).
+
+Passive: **Unwritten Will** — Immune to Mana Block.
 

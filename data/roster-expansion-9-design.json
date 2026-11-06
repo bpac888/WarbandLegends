@@ -1,0 +1,280 @@
+{
+  "version": 9,
+  "originalCount": 234,
+  "totalCount": 240,
+  "brief": "Magic elite faction: five elemental Legendaries, one ancient Mythical; stacking teamwide 5% mana-generation aura per member.",
+  "champions": [
+    {
+      "id": "magic_vaelric",
+      "name": "Vaelric, Cinder-Crowned Magus",
+      "title": "Lord of the Living Flame",
+      "faction": "magic",
+      "rarity": "legendary",
+      "role": "attack",
+      "color": "red",
+      "manaSpeed": "slow",
+      "stats": {
+        "atk": 855,
+        "def": 745,
+        "hp": 1440
+      },
+      "ability_name": "Crown of the Inferno",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "lore": "Vaelric learned to command fire inside a mountain that had never known winter. The crown above his brow is a living spell, each ember carrying the name of a city he refused to let burn. When he raises his staff, the inferno bows before it strikes.",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "passive": null
+    },
+    {
+      "id": "magic_iseldra",
+      "name": "Iseldra, Glacial Archmage",
+      "title": "Keeper of the Frozen Horizon",
+      "faction": "magic",
+      "rarity": "legendary",
+      "role": "defense",
+      "color": "blue",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 710,
+        "def": 865,
+        "hp": 1600
+      },
+      "ability_name": "Citadel of Winterglass",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "Iseldra sealed an endless winter behind seven mirrors of living ice. She carries their reflection in her staff, opening a crystalline citadel around those under her protection. Even the ocean falls silent to hear her incantation.",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "passive": null
+    },
+    {
+      "id": "magic_merovant",
+      "name": "Merovant, Verdant Archmage",
+      "title": "Voice of the First Green Word",
+      "faction": "magic",
+      "rarity": "legendary",
+      "role": "support",
+      "color": "green",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 755,
+        "def": 790,
+        "hp": 1490
+      },
+      "ability_name": "The Everliving Spell",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.32,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "mana_surge",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "Merovant discovered that the first forests grew from a word the world had forgotten. He writes that word anew in root and starlight, drawing sickness from the wounded and waking the magic sleeping in their blood.",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "passive": null
+    },
+    {
+      "id": "magic_caldrien",
+      "name": "Caldrien, Dawn Wanderer",
+      "title": "The Lantern Beyond the Last Road",
+      "faction": "magic",
+      "rarity": "legendary",
+      "role": "attack",
+      "color": "yellow",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 830,
+        "def": 775,
+        "hp": 1455
+      },
+      "ability_name": "Let the Dawn Enter",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.95,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "lore": "A grey-cloaked wanderer has walked the old roads longer than kingdoms remember. Caldrien arrives without heraldry, bearing a weathered staff and a light that no sorcerer can counterfeit. At the darkest gate, his quiet voice becomes the dawn.",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "passive": null
+    },
+    {
+      "id": "magic_nyzara",
+      "name": "Nyzara, Voidweaver",
+      "title": "Mistress of the Unlit Constellations",
+      "faction": "magic",
+      "rarity": "legendary",
+      "role": "attack",
+      "color": "purple",
+      "manaSpeed": "fast",
+      "stats": {
+        "atk": 850,
+        "def": 735,
+        "hp": 1415
+      },
+      "ability_name": "Silence Between Stars",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "mana_block",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "lore": "Nyzara threads spells through the spaces where constellations have gone dark. With one motion she unravels an enemy’s enchantments; with the next she closes the silence around their power. Only the silver bells upon her staff warn that she has arrived.",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "passive": null
+    },
+    {
+      "id": "magic_eldravon",
+      "name": "Eldravon, the First Arcanum",
+      "title": "Sage of the Unwritten Age",
+      "faction": "magic",
+      "rarity": "mythical",
+      "role": "attack",
+      "color": "purple",
+      "manaSpeed": "slow",
+      "stats": {
+        "atk": 960,
+        "def": 870,
+        "hp": 1660
+      },
+      "ability_name": "Edict Before Creation",
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.35,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            },
+            {
+              "id": "mana_block",
+              "turns": 1,
+              "scope": "enemies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ]
+        }
+      ],
+      "lore": "Before the first school of sorcery, Eldravon heard the universe speaking in unfinished spells. He bound its wild syllables into the First Arcanum and vanished beyond the edge of written time. Now stars break their orbits when he opens his book, and the laws of magic wait for his next word.",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "passive": {
+        "id": "first_arcanum_will",
+        "name": "Unwritten Will",
+        "kind": "immune_effect",
+        "immune": [
+          "mana_block"
+        ],
+        "desc": "Immune to Mana Block."
+      }
+    }
+  ]
+}

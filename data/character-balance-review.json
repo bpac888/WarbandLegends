@@ -1,8 +1,8 @@
 {
   "version": 2,
   "reviewDate": "2026-11-05",
-  "scope": "Full 234-character analysis after Ondelle completes Wildgrove. All previous 233 records remain unchanged; pending changes to existing characters remain recommendations.",
-  "rosterSha256": "eaccc7118015e0ac0a9dda8f183c9940b06e7adb11a62a62194f3ddd46beb668",
+  "scope": "Full 240-character analysis after six elite Magic wizards. All previous 234 records remain unchanged; pending changes to existing characters remain recommendations.",
+  "rosterSha256": "93be8734eccb99cedcdd22d21e375e0c5f784670b6201599a2e582ff0ad1e298",
   "appliedChanges": {
     "date": "2026-10-28",
     "reason": "Owner requested improvements to both Astral Mythicals after a speed- and rarity-focused balance review.",
@@ -632,8 +632,8 @@
       }
     ]
   },
-  "count": 234,
-  "resolvedFixtures": 792,
+  "count": 240,
+  "resolvedFixtures": 810,
   "method": {
     "primaryAxes": [
       "speed / access / repeat cost",
@@ -736,44 +736,44 @@
       }
     },
     "legendary": {
-      "count": 103,
+      "count": 108,
       "roles": {
-        "attack": 60,
-        "defense": 23,
-        "support": 20
+        "attack": 63,
+        "defense": 24,
+        "support": 21
       },
       "elements": {
-        "red": 21,
-        "blue": 21,
-        "green": 19,
-        "yellow": 22,
-        "purple": 20
+        "red": 22,
+        "blue": 22,
+        "green": 20,
+        "yellow": 23,
+        "purple": 21
       },
       "speeds": {
         "very_fast": 2,
-        "fast": 25,
-        "average": 33,
-        "slow": 27,
+        "fast": 26,
+        "average": 36,
+        "slow": 28,
         "very_slow": 1,
         "charging": 15
       },
       "baseMean": {
-        "atk": 762.3,
-        "def": 725.54,
-        "hp": 1393.51,
-        "directEhp": 3425.43
+        "atk": 764.05,
+        "def": 728.16,
+        "hp": 1397.52,
+        "directEhp": 3442.8
       },
       "fullyDevelopedMean": {
-        "atk": 909.5,
-        "def": 865.61,
-        "hp": 1662.52,
-        "directEhp": 4554.69
+        "atk": 911.57,
+        "def": 868.74,
+        "hp": 1667.29,
+        "directEhp": 4578.49
       }
     },
     "mythical": {
-      "count": 18,
+      "count": 19,
       "roles": {
-        "attack": 8,
+        "attack": 9,
         "defense": 4,
         "support": 6
       },
@@ -782,51 +782,104 @@
         "blue": 4,
         "green": 2,
         "yellow": 4,
-        "purple": 4
+        "purple": 5
       },
       "speeds": {
         "very_fast": 1,
         "fast": 6,
         "average": 2,
-        "slow": 4,
+        "slow": 5,
         "very_slow": 1,
         "charging": 4
       },
       "baseMean": {
-        "atk": 839.94,
-        "def": 798.06,
-        "hp": 1536.39,
-        "directEhp": 3994.22
+        "atk": 846.26,
+        "def": 801.84,
+        "hp": 1542.89,
+        "directEhp": 4023.39
       },
       "fullyDevelopedMean": {
-        "atk": 1012.28,
-        "def": 961.72,
-        "hp": 1851.17,
-        "directEhp": 5419.91
+        "atk": 1019.89,
+        "def": 966.32,
+        "hp": 1859.05,
+        "directEhp": 5460.92
       }
     }
   },
   "elementCounts": {
-    "red": 47,
-    "blue": 47,
-    "green": 47,
-    "yellow": 46,
-    "purple": 47
+    "red": 48,
+    "blue": 48,
+    "green": 48,
+    "yellow": 47,
+    "purple": 49
   },
   "roleCounts": {
-    "attack": 126,
-    "defense": 51,
-    "support": 57
+    "attack": 130,
+    "defense": 52,
+    "support": 58
   },
   "speedCounts": {
     "very_fast": 10,
-    "fast": 58,
-    "average": 109,
-    "slow": 34,
+    "fast": 59,
+    "average": 112,
+    "slow": 36,
     "very_slow": 2,
     "charging": 21
   },
   "factions": [
+    {
+      "id": "magic",
+      "name": "Magic",
+      "count": 6,
+      "rarities": {
+        "common": 0,
+        "rare": 0,
+        "legendary": 5,
+        "mythical": 1
+      },
+      "elements": {
+        "red": 1,
+        "blue": 1,
+        "green": 1,
+        "yellow": 1,
+        "purple": 2
+      },
+      "roles": {
+        "attack": 4,
+        "defense": 1,
+        "support": 1
+      },
+      "speeds": {
+        "very_fast": 0,
+        "fast": 1,
+        "average": 3,
+        "slow": 2,
+        "very_slow": 0,
+        "charging": 0
+      },
+      "bonus": {
+        "1": {
+          "alliedMana": 0.05,
+          "text": "Arcane Resonance: +5% mana generation for all allies, including Magic champions. Stacks by 5% per Magic champion."
+        },
+        "2": {
+          "alliedMana": 0.1,
+          "text": "Arcane Resonance: +10% mana generation for all allies, including Magic champions. Stacks by 5% per Magic champion."
+        },
+        "3": {
+          "alliedMana": 0.15,
+          "text": "Arcane Resonance: +15% mana generation for all allies, including Magic champions. Stacks by 5% per Magic champion."
+        },
+        "4": {
+          "alliedMana": 0.2,
+          "text": "Arcane Resonance: +20% mana generation for all allies, including Magic champions. Stacks by 5% per Magic champion."
+        },
+        "5": {
+          "alliedMana": 0.25,
+          "text": "Arcane Resonance: +25% mana generation for all allies, including Magic champions. Stacks by 5% per Magic champion."
+        }
+      }
+    },
     {
       "id": "aerie_court",
       "name": "Aerie Court",
@@ -1481,7 +1534,7 @@
   "reviewCounts": {
     "Keep / Boss Watch": 1,
     "Buff": 13,
-    "Keep for Now": 182,
+    "Keep for Now": 188,
     "Watch: Upper Rare Flexibility": 1,
     "Watch: Common Support Gap": 3,
     "Watch: Upper Benchmark": 2,
@@ -1624,14 +1677,69 @@
   "proposedAdditions": [],
   "implementedAdditions": [
     {
-      "championId": "ondelle_lilywake_huntress",
-      "name": "Ondelle, Lilywake Huntress",
-      "faction": "wildgrove",
+      "championId": "magic_vaelric",
+      "name": "Vaelric, Cinder-Crowned Magus",
+      "faction": "magic",
+      "color": "red",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_iseldra",
+      "name": "Iseldra, Glacial Archmage",
+      "faction": "magic",
       "color": "blue",
-      "rarity": "rare",
+      "rarity": "legendary",
+      "role": "defense",
+      "manaSpeed": "average",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_merovant",
+      "name": "Merovant, Verdant Archmage",
+      "faction": "magic",
+      "color": "green",
+      "rarity": "legendary",
+      "role": "support",
+      "manaSpeed": "average",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_caldrien",
+      "name": "Caldrien, Dawn Wanderer",
+      "faction": "magic",
+      "color": "yellow",
+      "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "average",
-      "gap": "Eighteenth Wildgrove champion: a blue Rare attacker with water-and-lily-pad identity, single-target damage and charge control; retains Attack as the faction’s most common role.",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_nyzara",
+      "name": "Nyzara, Voidweaver",
+      "faction": "magic",
+      "color": "purple",
+      "rarity": "legendary",
+      "role": "attack",
+      "manaSpeed": "fast",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
+      "status": "implemented"
+    },
+    {
+      "championId": "magic_eldravon",
+      "name": "Eldravon, the First Arcanum",
+      "faction": "magic",
+      "color": "purple",
+      "rarity": "mythical",
+      "role": "attack",
+      "manaSpeed": "slow",
+      "gap": "Elite Magic founding wizard; one of five elemental Legendaries and an ancient Mythical. Each Magic member adds 5% generated mana for every ally.",
       "status": "implemented"
     }
   ],
@@ -1749,8 +1857,8 @@
         "directEhp": 4820.57
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.31,
-        "directBulkVsSameRarityRolePercent": -3.3
+        "atkVsSameRarityRolePercent": -0.25,
+        "directBulkVsSameRarityRolePercent": -5.77
       },
       "passive": {
         "id": "unclosing_wound",
@@ -1828,8 +1936,8 @@
         "directEhp": 5542.68
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.71,
-        "directBulkVsSameRarityRolePercent": 2.41
+        "atkVsSameRarityRolePercent": 0.41,
+        "directBulkVsSameRarityRolePercent": 2.08
       },
       "passive": null,
       "levels": [
@@ -1905,8 +2013,8 @@
         "directEhp": 4948.33
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.56,
-        "directBulkVsSameRarityRolePercent": -0.69
+        "atkVsSameRarityRolePercent": -1.13,
+        "directBulkVsSameRarityRolePercent": -3.23
       },
       "passive": {
         "id": "cold_of_the_pit",
@@ -1990,8 +2098,8 @@
         "directEhp": 4049.47
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.8,
-        "directBulkVsSameRarityRolePercent": -2.75
+        "atkVsSameRarityRolePercent": -0.96,
+        "directBulkVsSameRarityRolePercent": -3.41
       },
       "passive": null,
       "levels": [
@@ -2062,8 +2170,8 @@
         "directEhp": 4854.53
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.09,
-        "directBulkVsSameRarityRolePercent": 3.07
+        "atkVsSameRarityRolePercent": -0.38,
+        "directBulkVsSameRarityRolePercent": 2.65
       },
       "passive": null,
       "levels": [
@@ -2139,8 +2247,8 @@
         "directEhp": 5398.05
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.16,
-        "directBulkVsSameRarityRolePercent": -0.12
+        "atkVsSameRarityRolePercent": 0.86,
+        "directBulkVsSameRarityRolePercent": -0.45
       },
       "passive": null,
       "levels": [
@@ -2322,8 +2430,8 @@
         "directEhp": 4087.2
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.28,
-        "directBulkVsSameRarityRolePercent": -1.99
+        "atkVsSameRarityRolePercent": 1.12,
+        "directBulkVsSameRarityRolePercent": -2.65
       },
       "passive": null,
       "levels": [
@@ -2462,8 +2570,8 @@
         "directEhp": 4675.96
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.75,
-        "directBulkVsSameRarityRolePercent": -0.78
+        "atkVsSameRarityRolePercent": 0.46,
+        "directBulkVsSameRarityRolePercent": -1.18
       },
       "passive": null,
       "levels": [
@@ -2539,8 +2647,8 @@
         "directEhp": 4974.45
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.31,
-        "directBulkVsSameRarityRolePercent": -0.14
+        "atkVsSameRarityRolePercent": -0.25,
+        "directBulkVsSameRarityRolePercent": -2.68
       },
       "passive": {
         "id": "perfected_blood",
@@ -2965,8 +3073,8 @@
         "directEhp": 4136.44
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.04,
-        "directBulkVsSameRarityRolePercent": -0.8
+        "atkVsSameRarityRolePercent": 0.88,
+        "directBulkVsSameRarityRolePercent": -1.47
       },
       "passive": null,
       "levels": [
@@ -3037,8 +3145,8 @@
         "directEhp": 4086.19
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.77,
-        "directBulkVsSameRarityRolePercent": -2.01
+        "atkVsSameRarityRolePercent": 1.61,
+        "directBulkVsSameRarityRolePercent": -2.67
       },
       "passive": null,
       "levels": [
@@ -3210,8 +3318,8 @@
         "directEhp": 4062.2
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.43,
-        "directBulkVsSameRarityRolePercent": -2.61
+        "atkVsSameRarityRolePercent": -0.59,
+        "directBulkVsSameRarityRolePercent": -3.27
       },
       "passive": null,
       "levels": [
@@ -3277,8 +3385,8 @@
         "directEhp": 4144.3
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.06,
-        "directBulkVsSameRarityRolePercent": -0.73
+        "atkVsSameRarityRolePercent": -0.1,
+        "directBulkVsSameRarityRolePercent": -1.4
       },
       "passive": null,
       "levels": [
@@ -3437,8 +3545,8 @@
         "directEhp": 5566.15
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.77,
-        "directBulkVsSameRarityRolePercent": 2.83
+        "atkVsSameRarityRolePercent": 1.46,
+        "directBulkVsSameRarityRolePercent": 2.5
       },
       "passive": null,
       "levels": [
@@ -3849,8 +3957,8 @@
         "directEhp": 4106.59
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 3.48,
-        "directBulkVsSameRarityRolePercent": -1.61
+        "atkVsSameRarityRolePercent": 3.32,
+        "directBulkVsSameRarityRolePercent": -2.27
       },
       "passive": null,
       "levels": [
@@ -3916,8 +4024,8 @@
         "directEhp": 4429.25
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.72,
-        "directBulkVsSameRarityRolePercent": -5.9
+        "atkVsSameRarityRolePercent": 2.42,
+        "directBulkVsSameRarityRolePercent": -6.28
       },
       "passive": null,
       "levels": [
@@ -4060,8 +4168,8 @@
         "directEhp": 4175.23
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.77,
-        "directBulkVsSameRarityRolePercent": 0.01
+        "atkVsSameRarityRolePercent": 1.61,
+        "directBulkVsSameRarityRolePercent": -0.66
       },
       "passive": null,
       "levels": [
@@ -4127,8 +4235,8 @@
         "directEhp": 4787
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.07,
-        "directBulkVsSameRarityRolePercent": 1.5
+        "atkVsSameRarityRolePercent": -1.36,
+        "directBulkVsSameRarityRolePercent": 1.09
       },
       "passive": null,
       "levels": [
@@ -4204,8 +4312,8 @@
         "directEhp": 4081.52
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.28,
-        "directBulkVsSameRarityRolePercent": -2.18
+        "atkVsSameRarityRolePercent": 1.12,
+        "directBulkVsSameRarityRolePercent": -2.84
       },
       "passive": null,
       "levels": [
@@ -4281,8 +4389,8 @@
         "directEhp": 4151.41
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.04,
-        "directBulkVsSameRarityRolePercent": -0.63
+        "atkVsSameRarityRolePercent": 0.88,
+        "directBulkVsSameRarityRolePercent": -1.31
       },
       "passive": null,
       "levels": [
@@ -4358,8 +4466,8 @@
         "directEhp": 4016.32
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 3.12,
-        "directBulkVsSameRarityRolePercent": -3.68
+        "atkVsSameRarityRolePercent": 2.95,
+        "directBulkVsSameRarityRolePercent": -4.33
       },
       "passive": null,
       "levels": [
@@ -4497,8 +4605,8 @@
         "directEhp": 5254.02
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.67,
-        "directBulkVsSameRarityRolePercent": -2.79
+        "atkVsSameRarityRolePercent": 2.36,
+        "directBulkVsSameRarityRolePercent": -3.11
       },
       "passive": null,
       "levels": [
@@ -4875,8 +4983,8 @@
         "directEhp": 4207.1
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.4,
-        "directBulkVsSameRarityRolePercent": 0.7
+        "atkVsSameRarityRolePercent": 1.24,
+        "directBulkVsSameRarityRolePercent": 0.02
       },
       "passive": null,
       "levels": [
@@ -5215,8 +5323,8 @@
         "directEhp": 4502.27
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.45,
-        "directBulkVsSameRarityRolePercent": -4.38
+        "atkVsSameRarityRolePercent": 1.16,
+        "directBulkVsSameRarityRolePercent": -4.77
       },
       "passive": null,
       "levels": [
@@ -5436,8 +5544,8 @@
         "directEhp": 4636.2
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.78,
-        "directBulkVsSameRarityRolePercent": -1.57
+        "atkVsSameRarityRolePercent": -2.06,
+        "directBulkVsSameRarityRolePercent": -1.97
       },
       "passive": null,
       "levels": [
@@ -5641,8 +5749,8 @@
         "directEhp": 4120.19
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.67,
-        "directBulkVsSameRarityRolePercent": -1.22
+        "atkVsSameRarityRolePercent": 0.51,
+        "directBulkVsSameRarityRolePercent": -1.88
       },
       "passive": null,
       "levels": [
@@ -5785,8 +5893,8 @@
         "directEhp": 4077.05
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.31,
-        "directBulkVsSameRarityRolePercent": -2.29
+        "atkVsSameRarityRolePercent": -0.47,
+        "directBulkVsSameRarityRolePercent": -2.95
       },
       "passive": null,
       "levels": [
@@ -6130,8 +6238,8 @@
         "directEhp": 4147.86
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.67,
-        "directBulkVsSameRarityRolePercent": -0.52
+        "atkVsSameRarityRolePercent": 0.51,
+        "directBulkVsSameRarityRolePercent": -1.19
       },
       "passive": null,
       "levels": [
@@ -6346,8 +6454,8 @@
         "directEhp": 4112.16
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.16,
-        "directBulkVsSameRarityRolePercent": -1.49
+        "atkVsSameRarityRolePercent": 1,
+        "directBulkVsSameRarityRolePercent": -2.16
       },
       "passive": null,
       "levels": [
@@ -6752,8 +6860,8 @@
         "directEhp": 4559.98
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.23,
-        "directBulkVsSameRarityRolePercent": -3.1
+        "atkVsSameRarityRolePercent": -0.52,
+        "directBulkVsSameRarityRolePercent": -3.49
       },
       "passive": null,
       "levels": [
@@ -6951,8 +7059,8 @@
         "directEhp": 4166.36
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.8,
-        "directBulkVsSameRarityRolePercent": -0.11
+        "atkVsSameRarityRolePercent": -0.96,
+        "directBulkVsSameRarityRolePercent": -0.78
       },
       "passive": null,
       "levels": [
@@ -7319,8 +7427,8 @@
         "directEhp": 4069.98
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.55,
-        "directBulkVsSameRarityRolePercent": -2.51
+        "atkVsSameRarityRolePercent": 0.39,
+        "directBulkVsSameRarityRolePercent": -3.17
       },
       "passive": null,
       "levels": [
@@ -8457,8 +8565,8 @@
         "directEhp": 4193.83
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.63,
-        "directBulkVsSameRarityRolePercent": 0.61
+        "atkVsSameRarityRolePercent": 2.46,
+        "directBulkVsSameRarityRolePercent": -0.07
       },
       "passive": null,
       "levels": [
@@ -8534,8 +8642,8 @@
         "directEhp": 4549.06
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 3.98,
-        "directBulkVsSameRarityRolePercent": -3.41
+        "atkVsSameRarityRolePercent": 3.68,
+        "directBulkVsSameRarityRolePercent": -3.8
       },
       "passive": null,
       "levels": [
@@ -8616,8 +8724,8 @@
         "directEhp": 5231.95
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.86,
-        "directBulkVsSameRarityRolePercent": -3.3
+        "atkVsSameRarityRolePercent": -2.15,
+        "directBulkVsSameRarityRolePercent": -3.62
       },
       "passive": null,
       "levels": [
@@ -8693,8 +8801,8 @@
         "directEhp": 4992.13
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.42,
-        "directBulkVsSameRarityRolePercent": 0.33
+        "atkVsSameRarityRolePercent": -0.15,
+        "directBulkVsSameRarityRolePercent": -2.23
       },
       "passive": {
         "id": "entropy_bloom",
@@ -9225,8 +9333,8 @@
         "directEhp": 5404.73
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.35,
-        "directBulkVsSameRarityRolePercent": -0.18
+        "atkVsSameRarityRolePercent": -0.65,
+        "directBulkVsSameRarityRolePercent": -0.5
       },
       "passive": null,
       "levels": [
@@ -9974,8 +10082,8 @@
         "directEhp": 4821.5
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.23,
-        "directBulkVsSameRarityRolePercent": 2.31
+        "atkVsSameRarityRolePercent": -0.52,
+        "directBulkVsSameRarityRolePercent": 1.89
       },
       "passive": null,
       "levels": [
@@ -10051,8 +10159,8 @@
         "directEhp": 5633.24
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.65,
-        "directBulkVsSameRarityRolePercent": 3.96
+        "atkVsSameRarityRolePercent": -0.95,
+        "directBulkVsSameRarityRolePercent": 3.62
       },
       "passive": null,
       "levels": [
@@ -10128,8 +10236,8 @@
         "directEhp": 5072.97
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.31,
-        "directBulkVsSameRarityRolePercent": 1.77
+        "atkVsSameRarityRolePercent": -0.25,
+        "directBulkVsSameRarityRolePercent": -0.82
       },
       "passive": {
         "id": "unbroken_advance",
@@ -10491,8 +10599,8 @@
         "directEhp": 5504.77
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.25,
-        "directBulkVsSameRarityRolePercent": 1.65
+        "atkVsSameRarityRolePercent": -1.55,
+        "directBulkVsSameRarityRolePercent": 1.32
       },
       "passive": null,
       "levels": [
@@ -10979,8 +11087,8 @@
         "directEhp": 4081.46
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.43,
-        "directBulkVsSameRarityRolePercent": -2.15
+        "atkVsSameRarityRolePercent": 0.27,
+        "directBulkVsSameRarityRolePercent": -2.81
       },
       "passive": null,
       "levels": [
@@ -11051,8 +11159,8 @@
         "directEhp": 5520.48
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.86,
-        "directBulkVsSameRarityRolePercent": 1.98
+        "atkVsSameRarityRolePercent": 0.56,
+        "directBulkVsSameRarityRolePercent": 1.65
       },
       "passive": null,
       "levels": [
@@ -11128,8 +11236,8 @@
         "directEhp": 4690.84
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.45,
-        "directBulkVsSameRarityRolePercent": -0.43
+        "atkVsSameRarityRolePercent": 1.16,
+        "directBulkVsSameRarityRolePercent": -0.84
       },
       "passive": null,
       "levels": [
@@ -11244,8 +11352,8 @@
         "directEhp": 4841.94
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.53,
-        "directBulkVsSameRarityRolePercent": -2.84
+        "atkVsSameRarityRolePercent": -0.04,
+        "directBulkVsSameRarityRolePercent": -5.32
       },
       "passive": {
         "id": "sunscar_oath",
@@ -11329,8 +11437,8 @@
         "directEhp": 3969.02
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.51,
-        "directBulkVsSameRarityRolePercent": -4.79
+        "atkVsSameRarityRolePercent": 2.34,
+        "directBulkVsSameRarityRolePercent": -5.44
       },
       "passive": null,
       "levels": [
@@ -11540,8 +11648,8 @@
         "directEhp": 4635.54
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.03,
-        "directBulkVsSameRarityRolePercent": -1.55
+        "atkVsSameRarityRolePercent": 0.74,
+        "directBulkVsSameRarityRolePercent": -1.95
       },
       "passive": null,
       "levels": [
@@ -11622,8 +11730,8 @@
         "directEhp": 4094.45
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.43,
-        "directBulkVsSameRarityRolePercent": -1.86
+        "atkVsSameRarityRolePercent": 0.27,
+        "directBulkVsSameRarityRolePercent": -2.52
       },
       "passive": null,
       "levels": [
@@ -11689,8 +11797,8 @@
         "directEhp": 5535.99
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.4,
-        "directBulkVsSameRarityRolePercent": 2.34
+        "atkVsSameRarityRolePercent": -1.7,
+        "directBulkVsSameRarityRolePercent": 2
       },
       "passive": null,
       "levels": [
@@ -12111,8 +12219,8 @@
         "directEhp": 4082.45
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.55,
-        "directBulkVsSameRarityRolePercent": -2.13
+        "atkVsSameRarityRolePercent": 0.39,
+        "directBulkVsSameRarityRolePercent": -2.8
       },
       "passive": {
         "id": "unbroken_circuit",
@@ -12291,8 +12399,8 @@
         "directEhp": 4391.84
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -3.37,
-        "directBulkVsSameRarityRolePercent": 5.02
+        "atkVsSameRarityRolePercent": -3.52,
+        "directBulkVsSameRarityRolePercent": 4.31
       },
       "passive": {
         "id": "unburied",
@@ -12370,8 +12478,8 @@
         "directEhp": 5304.67
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.41,
-        "directBulkVsSameRarityRolePercent": -2.02
+        "atkVsSameRarityRolePercent": 0.11,
+        "directBulkVsSameRarityRolePercent": -2.34
       },
       "passive": {
         "id": "emberbound",
@@ -12454,8 +12562,8 @@
         "directEhp": 4256.33
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.92,
-        "directBulkVsSameRarityRolePercent": 1.85
+        "atkVsSameRarityRolePercent": -1.08,
+        "directBulkVsSameRarityRolePercent": 1.17
       },
       "passive": null,
       "levels": [
@@ -12526,8 +12634,8 @@
         "directEhp": 4436.88
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 3.98,
-        "directBulkVsSameRarityRolePercent": -5.57
+        "atkVsSameRarityRolePercent": 3.68,
+        "directBulkVsSameRarityRolePercent": -5.96
       },
       "passive": {
         "id": "emberleaf_pact",
@@ -12683,8 +12791,8 @@
         "directEhp": 5165.94
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 4.18,
-        "directBulkVsSameRarityRolePercent": -4.47
+        "atkVsSameRarityRolePercent": 3.87,
+        "directBulkVsSameRarityRolePercent": -4.78
       },
       "passive": null,
       "levels": [
@@ -12760,8 +12868,8 @@
         "directEhp": 4004.68
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.14,
-        "directBulkVsSameRarityRolePercent": -3.91
+        "atkVsSameRarityRolePercent": 1.98,
+        "directBulkVsSameRarityRolePercent": -4.56
       },
       "passive": null,
       "levels": [
@@ -12832,8 +12940,8 @@
         "directEhp": 5430.17
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -3.37,
-        "directBulkVsSameRarityRolePercent": 0.36
+        "atkVsSameRarityRolePercent": -3.66,
+        "directBulkVsSameRarityRolePercent": 0.03
       },
       "passive": {
         "id": "borrowed_dawn",
@@ -12982,8 +13090,8 @@
         "directEhp": 5085.77
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 5.69,
-        "directBulkVsSameRarityRolePercent": -5.84
+        "atkVsSameRarityRolePercent": 5.38,
+        "directBulkVsSameRarityRolePercent": -6.15
       },
       "passive": {
         "id": "rimeclaw",
@@ -13061,8 +13169,8 @@
         "directEhp": 4205.52
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.06,
-        "directBulkVsSameRarityRolePercent": 0.71
+        "atkVsSameRarityRolePercent": -0.1,
+        "directBulkVsSameRarityRolePercent": 0.03
       },
       "passive": null,
       "levels": [
@@ -13133,8 +13241,8 @@
         "directEhp": 3771.78
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 3.97,
-        "directBulkVsSameRarityRolePercent": -9.44
+        "atkVsSameRarityRolePercent": 3.81,
+        "directBulkVsSameRarityRolePercent": -10.05
       },
       "passive": null,
       "levels": [
@@ -13340,8 +13448,8 @@
         "directEhp": 4460.82
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -7.04,
-        "directBulkVsSameRarityRolePercent": 6.66
+        "atkVsSameRarityRolePercent": -7.18,
+        "directBulkVsSameRarityRolePercent": 5.94
       },
       "passive": null,
       "levels": [
@@ -13407,8 +13515,8 @@
         "directEhp": 4372.36
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -2.14,
-        "directBulkVsSameRarityRolePercent": 4.58
+        "atkVsSameRarityRolePercent": -2.3,
+        "directBulkVsSameRarityRolePercent": 3.88
       },
       "passive": null,
       "levels": [
@@ -13479,8 +13587,8 @@
         "directEhp": 4493.58
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -3.37,
-        "directBulkVsSameRarityRolePercent": 7.44
+        "atkVsSameRarityRolePercent": -3.52,
+        "directBulkVsSameRarityRolePercent": 6.71
       },
       "passive": null,
       "levels": [
@@ -13585,8 +13693,8 @@
         "directEhp": 4294.42
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -3.37,
-        "directBulkVsSameRarityRolePercent": 2.7
+        "atkVsSameRarityRolePercent": -3.52,
+        "directBulkVsSameRarityRolePercent": 2.01
       },
       "passive": null,
       "levels": [
@@ -13657,8 +13765,8 @@
         "directEhp": 4568.89
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -9.48,
-        "directBulkVsSameRarityRolePercent": 9.1
+        "atkVsSameRarityRolePercent": -9.63,
+        "directBulkVsSameRarityRolePercent": 8.36
       },
       "passive": null,
       "levels": [
@@ -13724,8 +13832,8 @@
         "directEhp": 4473.83
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -4.59,
-        "directBulkVsSameRarityRolePercent": 7
+        "atkVsSameRarityRolePercent": -4.74,
+        "directBulkVsSameRarityRolePercent": 6.28
       },
       "passive": null,
       "levels": [
@@ -13791,8 +13899,8 @@
         "directEhp": 4269.24
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -2.14,
-        "directBulkVsSameRarityRolePercent": 2.15
+        "atkVsSameRarityRolePercent": -2.3,
+        "directBulkVsSameRarityRolePercent": 1.46
       },
       "passive": null,
       "levels": [
@@ -13925,8 +14033,8 @@
         "directEhp": 4514.6
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -4.59,
-        "directBulkVsSameRarityRolePercent": 7.93
+        "atkVsSameRarityRolePercent": -4.74,
+        "directBulkVsSameRarityRolePercent": 7.2
       },
       "passive": null,
       "levels": [
@@ -14064,8 +14172,8 @@
         "directEhp": 5460.7
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -15.69,
-        "directBulkVsSameRarityRolePercent": 15.66
+        "atkVsSameRarityRolePercent": -15.93,
+        "directBulkVsSameRarityRolePercent": 15.19
       },
       "passive": null,
       "levels": [
@@ -14280,8 +14388,8 @@
         "directEhp": 5357.48
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.16,
-        "directBulkVsSameRarityRolePercent": -1.05
+        "atkVsSameRarityRolePercent": 0.86,
+        "directBulkVsSameRarityRolePercent": -1.37
       },
       "passive": null,
       "levels": [
@@ -14352,8 +14460,8 @@
         "directEhp": 5430.17
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.86,
-        "directBulkVsSameRarityRolePercent": 0.36
+        "atkVsSameRarityRolePercent": -2.15,
+        "directBulkVsSameRarityRolePercent": 0.03
       },
       "passive": null,
       "levels": [
@@ -14429,8 +14537,8 @@
         "directEhp": 4674.81
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.58,
-        "directBulkVsSameRarityRolePercent": -0.8
+        "atkVsSameRarityRolePercent": 2.28,
+        "directBulkVsSameRarityRolePercent": -1.2
       },
       "passive": null,
       "levels": [
@@ -14496,8 +14604,8 @@
         "directEhp": 4694.12
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.58,
-        "directBulkVsSameRarityRolePercent": -0.31
+        "atkVsSameRarityRolePercent": 2.28,
+        "directBulkVsSameRarityRolePercent": -0.71
       },
       "passive": null,
       "levels": [
@@ -14563,8 +14671,8 @@
         "directEhp": 4095.56
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.3,
-        "directBulkVsSameRarityRolePercent": -1.76
+        "atkVsSameRarityRolePercent": 0.14,
+        "directBulkVsSameRarityRolePercent": -2.42
       },
       "passive": null,
       "levels": [
@@ -14630,8 +14738,8 @@
         "directEhp": 4199.2
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -2.14,
-        "directBulkVsSameRarityRolePercent": 0.59
+        "atkVsSameRarityRolePercent": -2.3,
+        "directBulkVsSameRarityRolePercent": -0.09
       },
       "passive": null,
       "levels": [
@@ -14870,8 +14978,8 @@
         "directEhp": 4129.65
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.31,
-        "directBulkVsSameRarityRolePercent": -1.01
+        "atkVsSameRarityRolePercent": -0.47,
+        "directBulkVsSameRarityRolePercent": -1.68
       },
       "passive": null,
       "levels": [
@@ -15071,8 +15179,8 @@
         "directEhp": 4269.86
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.92,
-        "directBulkVsSameRarityRolePercent": 2.19
+        "atkVsSameRarityRolePercent": -1.08,
+        "directBulkVsSameRarityRolePercent": 1.5
       },
       "passive": null,
       "levels": [
@@ -15138,8 +15246,8 @@
         "directEhp": 4129.65
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.31,
-        "directBulkVsSameRarityRolePercent": -1.01
+        "atkVsSameRarityRolePercent": -0.47,
+        "directBulkVsSameRarityRolePercent": -1.68
       },
       "passive": null,
       "levels": [
@@ -15244,8 +15352,8 @@
         "directEhp": 5160.79
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -2.53,
-        "directBulkVsSameRarityRolePercent": 3.5
+        "atkVsSameRarityRolePercent": -3.09,
+        "directBulkVsSameRarityRolePercent": 0.86
       },
       "passive": {
         "id": "titans_resolve",
@@ -15392,8 +15500,8 @@
         "directEhp": 4772.6
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.23,
-        "directBulkVsSameRarityRolePercent": 1.25
+        "atkVsSameRarityRolePercent": -0.52,
+        "directBulkVsSameRarityRolePercent": 0.84
       },
       "passive": null,
       "levels": [
@@ -15609,8 +15717,8 @@
         "directEhp": 4129.65
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.31,
-        "directBulkVsSameRarityRolePercent": -1.01
+        "atkVsSameRarityRolePercent": -0.47,
+        "directBulkVsSameRarityRolePercent": -1.68
       },
       "passive": null,
       "levels": [
@@ -15676,8 +15784,8 @@
         "directEhp": 5618.25
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.86,
-        "directBulkVsSameRarityRolePercent": 3.7
+        "atkVsSameRarityRolePercent": -2.15,
+        "directBulkVsSameRarityRolePercent": 3.36
       },
       "passive": null,
       "levels": [
@@ -15815,8 +15923,8 @@
         "directEhp": 4810.4
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.64,
-        "directBulkVsSameRarityRolePercent": 2.06
+        "atkVsSameRarityRolePercent": -1.92,
+        "directBulkVsSameRarityRolePercent": 1.65
       },
       "passive": null,
       "levels": [
@@ -15882,8 +15990,8 @@
         "directEhp": 4095.56
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.3,
-        "directBulkVsSameRarityRolePercent": -1.76
+        "atkVsSameRarityRolePercent": 0.14,
+        "directBulkVsSameRarityRolePercent": -2.42
       },
       "passive": null,
       "levels": [
@@ -16116,8 +16224,8 @@
         "directEhp": 4285.84
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.92,
-        "directBulkVsSameRarityRolePercent": 2.62
+        "atkVsSameRarityRolePercent": -1.08,
+        "directBulkVsSameRarityRolePercent": 1.93
       },
       "passive": null,
       "levels": [
@@ -16255,8 +16363,8 @@
         "directEhp": 4161.11
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.31,
-        "directBulkVsSameRarityRolePercent": -0.26
+        "atkVsSameRarityRolePercent": -0.47,
+        "directBulkVsSameRarityRolePercent": -0.93
       },
       "passive": null,
       "levels": [
@@ -16322,8 +16430,8 @@
         "directEhp": 4199.2
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.92,
-        "directBulkVsSameRarityRolePercent": 0.59
+        "atkVsSameRarityRolePercent": 0.75,
+        "directBulkVsSameRarityRolePercent": -0.09
       },
       "passive": null,
       "levels": [
@@ -16389,8 +16497,8 @@
         "directEhp": 4256.5
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.92,
-        "directBulkVsSameRarityRolePercent": 1.81
+        "atkVsSameRarityRolePercent": -1.08,
+        "directBulkVsSameRarityRolePercent": 1.12
       },
       "passive": null,
       "levels": [
@@ -16456,8 +16564,8 @@
         "directEhp": 4095.56
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.75,
-        "directBulkVsSameRarityRolePercent": -1.76
+        "atkVsSameRarityRolePercent": 2.59,
+        "directBulkVsSameRarityRolePercent": -2.42
       },
       "passive": null,
       "levels": [
@@ -16656,8 +16764,8 @@
         "directEhp": 4256.5
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.3,
-        "directBulkVsSameRarityRolePercent": 1.81
+        "atkVsSameRarityRolePercent": 0.14,
+        "directBulkVsSameRarityRolePercent": 1.12
       },
       "passive": null,
       "levels": [
@@ -16723,8 +16831,8 @@
         "directEhp": 4236.03
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.92,
-        "directBulkVsSameRarityRolePercent": 1.56
+        "atkVsSameRarityRolePercent": 0.75,
+        "directBulkVsSameRarityRolePercent": 0.87
       },
       "passive": null,
       "levels": [
@@ -16790,8 +16898,8 @@
         "directEhp": 4264.74
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.53,
-        "directBulkVsSameRarityRolePercent": 2.31
+        "atkVsSameRarityRolePercent": 1.36,
+        "directBulkVsSameRarityRolePercent": 1.61
       },
       "passive": null,
       "levels": [
@@ -16857,8 +16965,8 @@
         "directEhp": 5408.13
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.67,
-        "directBulkVsSameRarityRolePercent": -0.02
+        "atkVsSameRarityRolePercent": 2.36,
+        "directBulkVsSameRarityRolePercent": -0.35
       },
       "passive": null,
       "levels": [
@@ -16929,8 +17037,8 @@
         "directEhp": 4282.04
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.31,
-        "directBulkVsSameRarityRolePercent": 2.53
+        "atkVsSameRarityRolePercent": -0.47,
+        "directBulkVsSameRarityRolePercent": 1.83
       },
       "passive": null,
       "levels": [
@@ -16990,8 +17098,8 @@
         "directEhp": 4855.94
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.23,
-        "directBulkVsSameRarityRolePercent": 3.01
+        "atkVsSameRarityRolePercent": -0.52,
+        "directBulkVsSameRarityRolePercent": 2.59
       },
       "passive": null,
       "levels": [
@@ -17357,8 +17465,8 @@
         "directEhp": 5463.39
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.86,
-        "directBulkVsSameRarityRolePercent": 0.84
+        "atkVsSameRarityRolePercent": -2.15,
+        "directBulkVsSameRarityRolePercent": 0.51
       },
       "passive": null,
       "levels": [
@@ -17429,8 +17537,8 @@
         "directEhp": 5463.39
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.86,
-        "directBulkVsSameRarityRolePercent": 0.84
+        "atkVsSameRarityRolePercent": -2.15,
+        "directBulkVsSameRarityRolePercent": 0.51
       },
       "passive": null,
       "levels": [
@@ -17540,8 +17648,8 @@
         "directEhp": 4063.77
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.14,
-        "directBulkVsSameRarityRolePercent": -2.55
+        "atkVsSameRarityRolePercent": 1.98,
+        "directBulkVsSameRarityRolePercent": -3.21
       },
       "passive": null,
       "levels": [
@@ -17607,8 +17715,8 @@
         "directEhp": 5463.39
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.86,
-        "directBulkVsSameRarityRolePercent": 0.84
+        "atkVsSameRarityRolePercent": -2.15,
+        "directBulkVsSameRarityRolePercent": 0.51
       },
       "passive": null,
       "levels": [
@@ -17879,8 +17987,8 @@
         "directEhp": 4063.77
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.14,
-        "directBulkVsSameRarityRolePercent": -2.55
+        "atkVsSameRarityRolePercent": 1.98,
+        "directBulkVsSameRarityRolePercent": -3.21
       },
       "passive": null,
       "levels": [
@@ -18012,8 +18120,8 @@
         "directEhp": 4063.77
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.14,
-        "directBulkVsSameRarityRolePercent": -2.55
+        "atkVsSameRarityRolePercent": 1.98,
+        "directBulkVsSameRarityRolePercent": -3.21
       },
       "passive": null,
       "levels": [
@@ -18079,8 +18187,8 @@
         "directEhp": 4063.77
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 2.14,
-        "directBulkVsSameRarityRolePercent": -2.55
+        "atkVsSameRarityRolePercent": 1.98,
+        "directBulkVsSameRarityRolePercent": -3.21
       },
       "passive": null,
       "levels": [
@@ -18747,8 +18855,8 @@
         "directEhp": 4057.54
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.67,
-        "directBulkVsSameRarityRolePercent": -2.71
+        "atkVsSameRarityRolePercent": -0.83,
+        "directBulkVsSameRarityRolePercent": -3.37
       },
       "passive": null,
       "levels": [
@@ -18814,8 +18922,8 @@
         "directEhp": 4685.2
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.33,
-        "directBulkVsSameRarityRolePercent": -0.53
+        "atkVsSameRarityRolePercent": 0.04,
+        "directBulkVsSameRarityRolePercent": -0.93
       },
       "passive": null,
       "levels": [
@@ -18886,8 +18994,8 @@
         "directEhp": 4205.52
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.28,
-        "directBulkVsSameRarityRolePercent": 0.71
+        "atkVsSameRarityRolePercent": 1.12,
+        "directBulkVsSameRarityRolePercent": 0.03
       },
       "passive": null,
       "levels": [
@@ -18953,8 +19061,8 @@
         "directEhp": 5347.86
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.56,
-        "directBulkVsSameRarityRolePercent": -1.15
+        "atkVsSameRarityRolePercent": -1.85,
+        "directBulkVsSameRarityRolePercent": -1.47
       },
       "passive": null,
       "levels": [
@@ -19030,8 +19138,8 @@
         "directEhp": 4685.2
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.33,
-        "directBulkVsSameRarityRolePercent": -0.53
+        "atkVsSameRarityRolePercent": 0.04,
+        "directBulkVsSameRarityRolePercent": -0.93
       },
       "passive": null,
       "levels": [
@@ -19102,8 +19210,8 @@
         "directEhp": 4205.52
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.28,
-        "directBulkVsSameRarityRolePercent": 0.71
+        "atkVsSameRarityRolePercent": 1.12,
+        "directBulkVsSameRarityRolePercent": 0.03
       },
       "passive": null,
       "levels": [
@@ -19163,8 +19271,8 @@
         "directEhp": 5347.86
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.56,
-        "directBulkVsSameRarityRolePercent": -1.15
+        "atkVsSameRarityRolePercent": -1.85,
+        "directBulkVsSameRarityRolePercent": -1.47
       },
       "passive": null,
       "levels": [
@@ -19235,8 +19343,8 @@
         "directEhp": 4129.65
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.3,
-        "directBulkVsSameRarityRolePercent": -1.01
+        "atkVsSameRarityRolePercent": 0.14,
+        "directBulkVsSameRarityRolePercent": -1.68
       },
       "passive": null,
       "levels": [
@@ -19302,8 +19410,8 @@
         "directEhp": 5053.79
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 1.19,
-        "directBulkVsSameRarityRolePercent": 1.37
+        "atkVsSameRarityRolePercent": 0.62,
+        "directBulkVsSameRarityRolePercent": -1.21
       },
       "passive": {
         "id": "threefold_vigil",
@@ -19426,6 +19534,446 @@
         "status": "Keep for Now",
         "priority": "None",
         "note": "Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem."
+      }
+    },
+    {
+      "id": "magic_vaelric",
+      "name": "Vaelric, Cinder-Crowned Magus",
+      "rarity": "legendary",
+      "faction": "magic",
+      "element": "red",
+      "role": "attack",
+      "speed": "slow",
+      "base": {
+        "atk": 855,
+        "def": 745,
+        "hp": 1440,
+        "directEhp": 3585.6
+      },
+      "fullyDeveloped": {
+        "atk": 1020,
+        "def": 889,
+        "hp": 1718,
+        "directEhp": 4772.6
+      },
+      "statsComparison": {
+        "atkVsSameRarityRolePercent": 4.42,
+        "directBulkVsSameRarityRolePercent": 13.17
+      },
+      "passive": null,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.3,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "burn",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ],
+          "benchmark": {
+            "level": 1,
+            "tiles": 12,
+            "singleEnemyDamage": 787,
+            "threeEnemyDamage": 2361,
+            "fourEnemyDamage": 3148,
+            "singleDamagePerTile": 65.58,
+            "threeEnemyDamagePerTile": 196.75,
+            "teamInstantHealCapacity": 0,
+            "teamRegenerationCapacity": 0,
+            "teamBarrierCapacity": 0,
+            "threeEnemyDotCapacity": 384,
+            "teamManaGift": 0,
+            "effectiveRepeatTileCostAtThree": 12,
+            "openingTileCostAtThree": 12
+          }
+        }
+      ],
+      "review": {
+        "status": "Keep for Now",
+        "priority": "None",
+        "note": "Slow access needs a strong damage, coverage or protection payoff. No clear priority change found in this review; retain unless encounter testing reveals a problem."
+      }
+    },
+    {
+      "id": "magic_iseldra",
+      "name": "Iseldra, Glacial Archmage",
+      "rarity": "legendary",
+      "faction": "magic",
+      "element": "blue",
+      "role": "defense",
+      "speed": "average",
+      "base": {
+        "atk": 710,
+        "def": 865,
+        "hp": 1600,
+        "directEhp": 4368
+      },
+      "fullyDeveloped": {
+        "atk": 847,
+        "def": 1032,
+        "hp": 1908,
+        "directEhp": 5846.11
+      },
+      "statsComparison": {
+        "atkVsSameRarityRolePercent": 6.88,
+        "directBulkVsSameRarityRolePercent": 7.47
+      },
+      "passive": null,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.6,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ],
+          "benchmark": {
+            "level": 1,
+            "tiles": 10,
+            "singleEnemyDamage": 454,
+            "threeEnemyDamage": 454,
+            "fourEnemyDamage": 454,
+            "singleDamagePerTile": 45.4,
+            "threeEnemyDamagePerTile": 45.4,
+            "teamInstantHealCapacity": 0,
+            "teamRegenerationCapacity": 0,
+            "teamBarrierCapacity": 1600,
+            "threeEnemyDotCapacity": 0,
+            "teamManaGift": 0,
+            "effectiveRepeatTileCostAtThree": 10,
+            "openingTileCostAtThree": 10
+          }
+        }
+      ],
+      "review": {
+        "status": "Keep for Now",
+        "priority": "None",
+        "note": "Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem."
+      }
+    },
+    {
+      "id": "magic_merovant",
+      "name": "Merovant, Verdant Archmage",
+      "rarity": "legendary",
+      "faction": "magic",
+      "element": "green",
+      "role": "support",
+      "speed": "average",
+      "base": {
+        "atk": 755,
+        "def": 790,
+        "hp": 1490,
+        "directEhp": 3844.2
+      },
+      "fullyDeveloped": {
+        "atk": 900,
+        "def": 943,
+        "hp": 1777,
+        "directEhp": 5128.42
+      },
+      "statsComparison": {
+        "atkVsSameRarityRolePercent": 5.78,
+        "directBulkVsSameRarityRolePercent": 8.11
+      },
+      "passive": null,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "self",
+          "damage": 0,
+          "healing": 0.32,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "remove_debuffs",
+              "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "mana_surge",
+              "turns": 2,
+              "scope": "allies"
+            }
+          ],
+          "benchmark": {
+            "level": 1,
+            "tiles": 10,
+            "singleEnemyDamage": 0,
+            "threeEnemyDamage": 0,
+            "fourEnemyDamage": 0,
+            "singleDamagePerTile": 0,
+            "threeEnemyDamagePerTile": 0,
+            "teamInstantHealCapacity": 2560,
+            "teamRegenerationCapacity": 0,
+            "teamBarrierCapacity": 0,
+            "threeEnemyDotCapacity": 0,
+            "teamManaGift": 0,
+            "effectiveRepeatTileCostAtThree": 10,
+            "openingTileCostAtThree": 10
+          }
+        }
+      ],
+      "review": {
+        "status": "Keep for Now",
+        "priority": "None",
+        "note": "Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem."
+      }
+    },
+    {
+      "id": "magic_caldrien",
+      "name": "Caldrien, Dawn Wanderer",
+      "rarity": "legendary",
+      "faction": "magic",
+      "element": "yellow",
+      "role": "attack",
+      "speed": "average",
+      "base": {
+        "atk": 830,
+        "def": 775,
+        "hp": 1455,
+        "directEhp": 3710.25
+      },
+      "fullyDeveloped": {
+        "atk": 990,
+        "def": 925,
+        "hp": 1736,
+        "directEhp": 4947.6
+      },
+      "statsComparison": {
+        "atkVsSameRarityRolePercent": 1.36,
+        "directBulkVsSameRarityRolePercent": 17.1
+      },
+      "passive": null,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 1.95,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ],
+          "benchmark": {
+            "level": 1,
+            "tiles": 10,
+            "singleEnemyDamage": 647,
+            "threeEnemyDamage": 1941,
+            "fourEnemyDamage": 2588,
+            "singleDamagePerTile": 64.7,
+            "threeEnemyDamagePerTile": 194.1,
+            "teamInstantHealCapacity": 0,
+            "teamRegenerationCapacity": 0,
+            "teamBarrierCapacity": 0,
+            "threeEnemyDotCapacity": 0,
+            "teamManaGift": 0,
+            "effectiveRepeatTileCostAtThree": 10,
+            "openingTileCostAtThree": 10
+          }
+        }
+      ],
+      "review": {
+        "status": "Keep for Now",
+        "priority": "None",
+        "note": "Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem."
+      }
+    },
+    {
+      "id": "magic_nyzara",
+      "name": "Nyzara, Voidweaver",
+      "rarity": "legendary",
+      "faction": "magic",
+      "element": "purple",
+      "role": "attack",
+      "speed": "fast",
+      "base": {
+        "atk": 850,
+        "def": 735,
+        "hp": 1415,
+        "directEhp": 3495.05
+      },
+      "fullyDeveloped": {
+        "atk": 1014,
+        "def": 877,
+        "hp": 1688,
+        "directEhp": 4648.75
+      },
+      "statsComparison": {
+        "atkVsSameRarityRolePercent": 3.81,
+        "directBulkVsSameRarityRolePercent": 10.31
+      },
+      "passive": null,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "fast",
+          "tiles": 8,
+          "target": "enemy",
+          "damage": 2.8,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemy"
+            },
+            {
+              "id": "mana_block",
+              "turns": 1,
+              "scope": "enemy"
+            }
+          ],
+          "benchmark": {
+            "level": 1,
+            "tiles": 8,
+            "singleEnemyDamage": 952,
+            "threeEnemyDamage": 952,
+            "fourEnemyDamage": 952,
+            "singleDamagePerTile": 119,
+            "threeEnemyDamagePerTile": 119,
+            "teamInstantHealCapacity": 0,
+            "teamRegenerationCapacity": 0,
+            "teamBarrierCapacity": 0,
+            "threeEnemyDotCapacity": 0,
+            "teamManaGift": 0,
+            "effectiveRepeatTileCostAtThree": 8,
+            "openingTileCostAtThree": 8
+          }
+        }
+      ],
+      "review": {
+        "status": "Keep for Now",
+        "priority": "None",
+        "note": "Fast access is a meaningful strength. No clear priority change found in this review; retain unless encounter testing reveals a problem."
+      }
+    },
+    {
+      "id": "magic_eldravon",
+      "name": "Eldravon, the First Arcanum",
+      "rarity": "mythical",
+      "faction": "magic",
+      "element": "purple",
+      "role": "attack",
+      "speed": "slow",
+      "base": {
+        "atk": 960,
+        "def": 870,
+        "hp": 1660,
+        "directEhp": 4548.4
+      },
+      "fullyDeveloped": {
+        "atk": 1157,
+        "def": 1049,
+        "hp": 2001,
+        "directEhp": 6199.1
+      },
+      "statsComparison": {
+        "atkVsSameRarityRolePercent": 4.54,
+        "directBulkVsSameRarityRolePercent": 20.4
+      },
+      "passive": {
+        "id": "first_arcanum_will",
+        "name": "Unwritten Will",
+        "kind": "immune_effect",
+        "immune": [
+          "mana_block"
+        ],
+        "desc": "Immune to Mana Block."
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 2.35,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": true,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "dispel",
+              "turns": 0,
+              "scope": "enemies"
+            },
+            {
+              "id": "mana_block",
+              "turns": 1,
+              "scope": "enemies"
+            },
+            {
+              "id": "strengthen",
+              "turns": 1,
+              "scope": "allies"
+            }
+          ],
+          "benchmark": {
+            "level": 1,
+            "tiles": 12,
+            "singleEnemyDamage": 902,
+            "threeEnemyDamage": 2706,
+            "fourEnemyDamage": 3608,
+            "singleDamagePerTile": 75.17,
+            "threeEnemyDamagePerTile": 225.5,
+            "teamInstantHealCapacity": 0,
+            "teamRegenerationCapacity": 0,
+            "teamBarrierCapacity": 0,
+            "threeEnemyDotCapacity": 0,
+            "teamManaGift": 0,
+            "effectiveRepeatTileCostAtThree": 12,
+            "openingTileCostAtThree": 12
+          }
+        }
+      ],
+      "review": {
+        "status": "Keep for Now",
+        "priority": "None",
+        "note": "Slow access needs a strong damage, coverage or protection payoff. No clear priority change found in this review; retain unless encounter testing reveals a problem."
       }
     }
   ]
