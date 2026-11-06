@@ -4,6 +4,8 @@
 
 ## Start here
 
+Current roster: **234 champions, eighteen in each of thirteen factions**. [Ondelle, Lilywake Huntress](LILYWAKE.md) is the newest addition.
+
 - [Detailed project guide](PROJECT-GUIDE.md) — full feature list, local development, builds and hosting.
 - [Game rules](RULES.md) — board, elements, mana and combat.
 - [QA and validation](QA.md) — verification procedures and prior results.

@@ -59,7 +59,8 @@
     "test:daily-polish": "node tests/daily-polish-browser.mjs",
     "test:battle-weight": "node tests/battle-weight-browser.mjs",
     "test:aerie-court": "node tests/aerie-court-browser.mjs",
-    "test:campaign-atmosphere": "node tests/campaign-atmosphere-browser.mjs"
+    "test:campaign-atmosphere": "node tests/campaign-atmosphere-browser.mjs",
+    "test:lilywake": "node tests/wildgrove-lilywake-browser.mjs"
   },
   "engines": {
     "node": ">=22"

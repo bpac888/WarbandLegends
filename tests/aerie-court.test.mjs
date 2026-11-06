@@ -8,7 +8,7 @@ import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';
 import {defaultProfile,summon,normalizeProfile,validateProfile,SUMMON_ODDS} from '../src/progression.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const read=async f=>JSON.parse(await readFile(new URL('../'+f,import.meta.url)));
-const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion-7.json'),added=roster.slice(215),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const roster=(await read('data/champions.json')).slice(0,233),manifest=await read('data/roster-expansion-7.json'),added=roster.slice(215),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 const counts=k=>Object.fromEntries([...new Set(added.map(c=>c[k]))].sort().map(v=>[v,added.filter(c=>c[k]===v).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.passive=null;e.shield=100;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0},shield:{turns:2,source:e.uid,appliedMove:0}};}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.3);h.passive=null;h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};}return b;}
 test('all 215 previous identities, kits, source records and portrait baselines are preserved',async()=>{
@@ -41,8 +41,8 @@ test('Tailwind Guard caps at three members, affects only members',()=>{
  for(const count of [1,2,3,4,5]){const team=[...added.slice(0,count).map(c=>c.id),...REFERENCE_TEAM.slice(0,5-count)];const b=createBattle(roster,team,'ashen-gate',42),bonus=count<2?0:count===2?.04:.06;
  for(let i=0;i<count;i++){assert.equal(b.heroes[i].factionTier,count<2?0:Math.min(count,3));assert.equal(b.heroes[i].def,Math.round(added[i].def*(1+bonus)));}for(const h of b.heroes.slice(count))assert.equal(h.factionTier,0);assert.ok(validateSave(b,roster));}
 });
-test('audit, rarity pools and stat envelopes describe the current 233 roster',async()=>{
- const a=await read('data/roster-audit.json');assert.equal(a.after.total,233);assert.equal(a.before.total,215);assert.equal(a.byFaction.aerie_court.total,18);assert.equal(a.after.type.attack,125);
+test('audit, rarity pools and stat envelopes describe the current roster',async()=>{
+ const a=await read('data/roster-audit.json');assert.equal(a.after.total,234);assert.equal(a.before.total,233);assert.equal(a.byFaction.aerie_court.total,18);assert.equal(a.after.type.attack,126);
  for(const c of added)for(const stat of ['atk','def','hp']){const peers=roster.slice(0,215).filter(p=>p.rarity===c.rarity&&p.role===c.role).map(p=>p[stat]).sort((a,b)=>a-b),mid=peers.length/2,median=peers.length%2?peers[Math.floor(mid)]:(peers[mid-1]+peers[mid])/2;assert.ok(Math.abs(c[stat]/median-1)<.03,c.id+' '+stat);}
 });
 

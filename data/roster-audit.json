@@ -1,67 +1,9 @@
 {
-  "version": 7,
-  "scope": "Current 233-character roster after founding Aerie Court. Existing 215 records preserved; approved portrait edits recorded separately. Not a measured PvP win-rate study.",
+  "version": 8,
+  "scope": "Current 234-character roster after adding Ondelle to Wildgrove. All 233 previous records and portraits preserved. Every faction has 18 characters. Not a measured PvP win-rate study.",
   "historicalBaselineVerified": true,
   "approvedRosterRevisionCount": 28,
   "before": {
-    "total": 215,
-    "rarity": {
-      "mythical": 17,
-      "legendary": 95,
-      "rare": 76,
-      "common": 27
-    },
-    "color": {
-      "red": 43,
-      "blue": 43,
-      "green": 44,
-      "yellow": 42,
-      "purple": 43
-    },
-    "type": {
-      "attack": 115,
-      "defense": 47,
-      "support": 53
-    },
-    "speed": {
-      "very_fast": 9,
-      "fast": 53,
-      "average": 100,
-      "slow": 30,
-      "very_slow": 2,
-      "charging": 21
-    }
-  },
-  "additions": {
-    "total": 18,
-    "rarity": {
-      "mythical": 1,
-      "legendary": 8,
-      "rare": 7,
-      "common": 2
-    },
-    "color": {
-      "red": 4,
-      "blue": 3,
-      "green": 3,
-      "yellow": 4,
-      "purple": 4
-    },
-    "type": {
-      "attack": 10,
-      "defense": 4,
-      "support": 4
-    },
-    "speed": {
-      "very_fast": 1,
-      "fast": 5,
-      "average": 8,
-      "slow": 4,
-      "very_slow": 0,
-      "charging": 0
-    }
-  },
-  "after": {
     "total": 233,
     "rarity": {
       "mythical": 18,
@@ -85,6 +27,64 @@
       "very_fast": 10,
       "fast": 58,
       "average": 108,
+      "slow": 34,
+      "very_slow": 2,
+      "charging": 21
+    }
+  },
+  "additions": {
+    "total": 1,
+    "rarity": {
+      "mythical": 0,
+      "legendary": 0,
+      "rare": 1,
+      "common": 0
+    },
+    "color": {
+      "red": 0,
+      "blue": 1,
+      "green": 0,
+      "yellow": 0,
+      "purple": 0
+    },
+    "type": {
+      "attack": 1,
+      "defense": 0,
+      "support": 0
+    },
+    "speed": {
+      "very_fast": 0,
+      "fast": 0,
+      "average": 1,
+      "slow": 0,
+      "very_slow": 0,
+      "charging": 0
+    }
+  },
+  "after": {
+    "total": 234,
+    "rarity": {
+      "mythical": 18,
+      "legendary": 103,
+      "rare": 84,
+      "common": 29
+    },
+    "color": {
+      "red": 47,
+      "blue": 47,
+      "green": 47,
+      "yellow": 46,
+      "purple": 47
+    },
+    "type": {
+      "attack": 126,
+      "defense": 51,
+      "support": 57
+    },
+    "speed": {
+      "very_fast": 10,
+      "fast": 58,
+      "average": 109,
       "slow": 34,
       "very_slow": 2,
       "charging": 21
@@ -119,7 +119,7 @@
         "very_slow": 0,
         "charging": 0
       },
-      "before": 0,
+      "before": 18,
       "mythicals": [
         {
           "name": "Veyrath, Twin-Crowned Sovereign",
@@ -561,29 +561,29 @@
       ]
     },
     "wildgrove": {
-      "total": 17,
+      "total": 18,
       "rarity": {
         "mythical": 1,
         "legendary": 6,
-        "rare": 7,
+        "rare": 8,
         "common": 3
       },
       "color": {
         "red": 3,
-        "blue": 2,
+        "blue": 3,
         "green": 8,
         "yellow": 2,
         "purple": 2
       },
       "type": {
-        "attack": 8,
+        "attack": 9,
         "defense": 3,
         "support": 6
       },
       "speed": {
         "very_fast": 1,
         "fast": 4,
-        "average": 8,
+        "average": 9,
         "slow": 3,
         "very_slow": 1,
         "charging": 0
@@ -658,29 +658,29 @@
       }
     },
     "rare": {
-      "total": 83,
+      "total": 84,
       "rarity": {
         "mythical": 0,
         "legendary": 0,
-        "rare": 83,
+        "rare": 84,
         "common": 0
       },
       "color": {
         "red": 17,
-        "blue": 15,
+        "blue": 16,
         "green": 20,
         "yellow": 13,
         "purple": 18
       },
       "type": {
-        "attack": 42,
+        "attack": 43,
         "defense": 20,
         "support": 21
       },
       "speed": {
         "very_fast": 5,
         "fast": 21,
-        "average": 52,
+        "average": 53,
         "slow": 3,
         "very_slow": 0,
         "charging": 2
@@ -747,29 +747,29 @@
       }
     },
     "blue": {
-      "total": 46,
+      "total": 47,
       "rarity": {
         "mythical": 4,
         "legendary": 21,
-        "rare": 15,
+        "rare": 16,
         "common": 6
       },
       "color": {
         "red": 0,
-        "blue": 46,
+        "blue": 47,
         "green": 0,
         "yellow": 0,
         "purple": 0
       },
       "type": {
-        "attack": 17,
+        "attack": 18,
         "defense": 13,
         "support": 16
       },
       "speed": {
         "very_fast": 1,
         "fast": 15,
-        "average": 22,
+        "average": 23,
         "slow": 5,
         "very_slow": 0,
         "charging": 3
@@ -865,29 +865,29 @@
   },
   "byType": {
     "attack": {
-      "total": 125,
+      "total": 126,
       "rarity": {
         "mythical": 8,
         "legendary": 60,
-        "rare": 42,
+        "rare": 43,
         "common": 15
       },
       "color": {
         "red": 31,
-        "blue": 17,
+        "blue": 18,
         "green": 24,
         "yellow": 24,
         "purple": 29
       },
       "type": {
-        "attack": 125,
+        "attack": 126,
         "defense": 0,
         "support": 0
       },
       "speed": {
         "very_fast": 10,
         "fast": 41,
-        "average": 45,
+        "average": 46,
         "slow": 13,
         "very_slow": 1,
         "charging": 15
@@ -955,218 +955,14 @@
   "implementedRecommendations": [
     {
       "priority": 1,
-      "championId": "aerie_finch",
-      "name": "Tivren, Gilded Scout",
-      "faction": "aerie_court",
-      "color": "yellow",
-      "rarity": "common",
-      "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Founding goldfinch attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 2,
-      "championId": "aerie_pigeon",
-      "name": "Dovessa, Rampart Keeper",
-      "faction": "aerie_court",
-      "color": "blue",
-      "rarity": "common",
-      "role": "defense",
-      "manaSpeed": "average",
-      "gap": "Founding rock pigeon defense; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 3,
-      "championId": "aerie_flamingo",
-      "name": "Rosavelle, Coral Cantor",
-      "faction": "aerie_court",
-      "color": "red",
-      "rarity": "rare",
-      "role": "support",
-      "manaSpeed": "average",
-      "gap": "Founding flamingo support; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 4,
-      "championId": "aerie_toucan",
-      "name": "Tocaren, Canopy Duelist",
-      "faction": "aerie_court",
-      "color": "green",
-      "rarity": "rare",
-      "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Founding toucan attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 5,
-      "championId": "aerie_ibis",
-      "name": "Ibsareth, Floodscript Keeper",
-      "faction": "aerie_court",
+      "championId": "ondelle_lilywake_huntress",
+      "name": "Ondelle, Lilywake Huntress",
+      "faction": "wildgrove",
       "color": "blue",
       "rarity": "rare",
-      "role": "support",
-      "manaSpeed": "fast",
-      "gap": "Founding ibis support; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 6,
-      "championId": "aerie_swift",
-      "name": "Cirrivel, Gale Courier",
-      "faction": "aerie_court",
-      "color": "yellow",
-      "rarity": "rare",
-      "role": "attack",
-      "manaSpeed": "very_fast",
-      "gap": "Founding swift attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 7,
-      "championId": "aerie_vulture",
-      "name": "Ossavik, Carrion Judge",
-      "faction": "aerie_court",
-      "color": "purple",
-      "rarity": "rare",
-      "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Founding bearded vulture attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 8,
-      "championId": "aerie_heron",
-      "name": "Ardoven, Stillwater Warden",
-      "faction": "aerie_court",
-      "color": "green",
-      "rarity": "rare",
-      "role": "defense",
-      "manaSpeed": "average",
-      "gap": "Founding grey heron defense; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 9,
-      "championId": "aerie_raven",
-      "name": "Corveth, Bellshadow Huntress",
-      "faction": "aerie_court",
-      "color": "purple",
-      "rarity": "rare",
-      "role": "attack",
-      "manaSpeed": "fast",
-      "gap": "Founding raven attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 10,
-      "championId": "aerie_avaroc",
-      "name": "Avaroc, Sunspire Regent",
-      "faction": "aerie_court",
-      "color": "yellow",
-      "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "average",
-      "gap": "Founding eagle attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 11,
-      "championId": "aerie_parrot",
-      "name": "Macalisse, Scarlet Herald",
-      "faction": "aerie_court",
-      "color": "red",
-      "rarity": "legendary",
-      "role": "support",
-      "manaSpeed": "fast",
-      "gap": "Founding scarlet macaw support; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 12,
-      "championId": "aerie_pterodactyl",
-      "name": "Pterovar, Ashcrest Ancestor",
-      "faction": "aerie_court",
-      "color": "red",
-      "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Founding pterodactyl attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 13,
-      "championId": "aerie_twin",
-      "name": "Duovrax, Divided Vigil",
-      "faction": "aerie_court",
-      "color": "purple",
-      "rarity": "legendary",
-      "role": "defense",
-      "manaSpeed": "slow",
-      "gap": "Founding two-headed owl and raven monster-beast defense; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 14,
-      "championId": "aerie_owl",
-      "name": "Tyssara, Moonvault Oracle",
-      "faction": "aerie_court",
-      "color": "blue",
-      "rarity": "legendary",
-      "role": "support",
-      "manaSpeed": "average",
-      "gap": "Founding barn owl support; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 15,
-      "championId": "aerie_kingfisher",
-      "name": "Rudavain, Torrent Lancer",
-      "faction": "aerie_court",
-      "color": "red",
-      "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "fast",
-      "gap": "Founding ruddy kingfisher attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 16,
-      "championId": "aerie_hornbill",
-      "name": "Bucorath, Canopy Castellan",
-      "faction": "aerie_court",
-      "color": "green",
-      "rarity": "legendary",
-      "role": "defense",
-      "manaSpeed": "average",
-      "gap": "Founding great hornbill defense; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 17,
-      "championId": "aerie_secretary",
-      "name": "Sagivra, Quillblade Marshal",
-      "faction": "aerie_court",
-      "color": "yellow",
-      "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "fast",
-      "gap": "Founding secretarybird attack; role/rarity median stats with a bounded existing-effect kit.",
-      "status": "implemented"
-    },
-    {
-      "priority": 18,
-      "championId": "aerie_hybrid",
-      "name": "Veyrath, Twin-Crowned Sovereign",
-      "faction": "aerie_court",
-      "color": "purple",
-      "rarity": "mythical",
-      "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Founding two-headed eagle and horned monster-beast hybrid attack; role/rarity median stats with a bounded existing-effect kit.",
+      "gap": "Eighteenth Wildgrove champion: a blue Rare attacker with water-and-lily-pad identity, single-target damage and charge control; retains Attack as the faction’s most common role.",
       "status": "implemented"
     }
   ],

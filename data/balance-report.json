@@ -1,18 +1,18 @@
 {
   "version": 3,
-  "champions": 215,
+  "champions": 234,
   "colorCounts": {
-    "red": 43,
-    "blue": 43,
-    "green": 44,
-    "yellow": 42,
-    "purple": 43
+    "red": 47,
+    "blue": 47,
+    "green": 47,
+    "yellow": 46,
+    "purple": 47
   },
   "manaCounts": {
-    "very_fast": 9,
-    "fast": 53,
-    "average": 100,
-    "slow": 30,
+    "very_fast": 10,
+    "fast": 58,
+    "average": 109,
+    "slow": 34,
     "very_slow": 2,
     "charging": 21
   },
@@ -176,81 +176,81 @@
   ],
   "rarities": {
     "common": {
-      "count": 27,
+      "count": 29,
       "stats": {
         "atk": {
           "min": 351,
-          "average": 455.8888888888889,
+          "average": 455.2413793103448,
           "max": 522
         },
         "def": {
-          "min": 408,
-          "average": 452.6666666666667,
+          "min": 406,
+          "average": 454,
           "max": 560
         },
         "hp": {
           "min": 703,
-          "average": 804.3703703703703,
+          "average": 805.8965517241379,
           "max": 980
         }
       }
     },
     "rare": {
-      "count": 76,
+      "count": 84,
       "stats": {
         "atk": {
           "min": 515,
-          "average": 623.6842105263158,
+          "average": 625.4047619047619,
           "max": 716
         },
         "def": {
           "min": 530,
-          "average": 601.1447368421053,
+          "average": 600.047619047619,
           "max": 705
         },
         "hp": {
           "min": 946,
-          "average": 1085.5657894736842,
+          "average": 1084.392857142857,
           "max": 1250
         }
       }
     },
     "legendary": {
-      "count": 95,
+      "count": 103,
       "stats": {
         "atk": {
           "min": 600,
-          "average": 763.1263157894737,
+          "average": 762.3009708737864,
           "max": 850
         },
         "def": {
           "min": 640,
-          "average": 725.3263157894737,
+          "average": 725.5436893203884,
           "max": 837
         },
         "hp": {
           "min": 1250,
-          "average": 1393.0210526315789,
+          "average": 1393.514563106796,
           "max": 1600
         }
       }
     },
     "mythical": {
-      "count": 17,
+      "count": 18,
       "stats": {
         "atk": {
           "min": 748,
-          "average": 835,
-          "max": 918
+          "average": 839.9444444444445,
+          "max": 924
         },
         "def": {
           "min": 727,
-          "average": 800,
+          "average": 798.0555555555555,
           "max": 877
         },
         "hp": {
           "min": 1416,
-          "average": 1540,
+          "average": 1536.388888888889,
           "max": 1653
         }
       }

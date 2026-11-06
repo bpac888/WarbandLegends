@@ -8084,5 +8084,35 @@
         ]
       ]
     }
+  },
+  {
+    "template_id": "ondelle_lilywake_huntress",
+    "name": "Ondelle, Lilywake Huntress",
+    "title": "Spear of the Stillwater Glade",
+    "rarity": "rare",
+    "faction": "wildgrove",
+    "role": "attack",
+    "atk": 690,
+    "def": 565,
+    "hp": 1060,
+    "ability_name": "Lilywake Undertow",
+    "lore": "Ondelle guards the quiet pools where Wildgrove’s rivers first learn their names. She crosses the water on living lily pads, weaving their roots into armor and turning the pond’s hidden currents against intruders. When her spear rises, the lilies close around the trespasser’s shadow and the water steals their momentum.",
+    "image_url": "/assets/champions/ondelle_lilywake_huntress.webp",
+    "id": "ondelle_lilywake_huntress",
+    "color": "blue",
+    "source_image": "assets/champions/ondelle_lilywake_huntress.webp",
+    "portrait": "assets/champions/ondelle_lilywake_huntress.webp",
+    "passive": null,
+    "ability_desc": "Deal 255% ATK damage to selected enemy.",
+    "spd": 100,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "mana_slow",
+          2
+        ]
+      ]
+    }
   }
 ]

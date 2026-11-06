@@ -1,0 +1,24 @@
+{
+  "version": 8,
+  "originalCount": 233,
+  "totalCount": 234,
+  "originalRecordsSha256": "7cea687ed0ece32c36f78d118a320e3fc7d0d068ff04720eb03a71021573f4ef",
+  "originalSourceRecordsSha256": "fca16b654424683c87b6a99b9155f51942411e1c985201ade4b79ab0d8e36980",
+  "originalPortraitsSha256": "aba5bd3b26c335463f16711e01822c042720e650c44c57471036de36ec1266c2",
+  "addedChampionIds": [
+    "ondelle_lilywake_huntress"
+  ],
+  "implementedRecommendations": [
+    {
+      "championId": "ondelle_lilywake_huntress",
+      "name": "Ondelle, Lilywake Huntress",
+      "faction": "wildgrove",
+      "color": "blue",
+      "rarity": "rare",
+      "role": "attack",
+      "manaSpeed": "average",
+      "gap": "Eighteenth Wildgrove champion: a blue Rare attacker with water-and-lily-pad identity, single-target damage and charge control; retains Attack as the faction’s most common role.",
+      "status": "implemented"
+    }
+  ]
+}

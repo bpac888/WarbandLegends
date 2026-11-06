@@ -6,7 +6,7 @@ import {defaultProfile} from '../src/progression.js';
 import {PROFILE_KEY} from '../src/storage.js';
 import {factionLabel} from '../src/collection.js';
 const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
-const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json')),added=roster.slice(215);
+const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json')),added=roster.slice(215,233);
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
 try{
  const context=await browser.newContext({viewport:{width:390,height:844}}),errors=[];
@@ -42,5 +42,5 @@ try{
   await go('champion/'+added[width<700?0:10].id);await page.screenshot({path:root+`artifacts/aerie-court-dossier-${width}.png`,fullPage:true});
  }
  await page.setViewportSize({width:390,height:844});await go('roster');await page.locator('[data-tab="all"]').click();if(!await page.locator('.collection-filters').evaluate(e=>e.open))await page.locator('.collection-filters summary').click();await page.locator('#collection-faction').selectOption('aerie_court');await page.locator('.collection-filters summary').click();assert.equal(await page.locator('#library-grid .library-card').count(),18);await page.locator('#library-grid .library-art>img').evaluateAll(imgs=>Promise.all(imgs.map(i=>{i.loading='eager';return i.decode();})));await page.screenshot({path:root+'artifacts/aerie-court-codex-phone.png',fullPage:true});
- assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,characters:roster.length,newPortraits:added.length,dossiers:added.length*4,viewports:[320,390,760,1440],checks:['all 233 Codex portraits load','native 1024x1536 art with no tint or filter','owned collection and all element/rarity filters','element sorting','names, faction labels and Specials','ascension and Limit Break menus','no overflow, missing assets, external calls or browser errors']},null,2));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,characters:roster.length,newPortraits:added.length,dossiers:added.length*4,viewports:[320,390,760,1440],checks:['all current Codex portraits load','native 1024x1536 art with no tint or filter','owned collection and all element/rarity filters','element sorting','names, faction labels and Specials','ascension and Limit Break menus','no overflow, missing assets, external calls or browser errors']},null,2));
 }finally{await browser.close();}

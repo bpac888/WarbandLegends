@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-215 champions. The newest expansion adds eleven audit-led champions: nine Legendaries and two Rares. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
+234 champions. The newest addition is Ondelle, Lilywake Huntress, a blue Rare Wildgrove attacker; every faction now has eighteen characters. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -219,6 +219,25 @@
 | Elythra, Eclipse Cantor | rare | purple | support | 535 | 610 | 1150 | Average 10 |
 | Vaedros, Comet Shear | legendary | green | attack | 835 | 675 | 1305 | Fast 8 |
 | Orastel, Sunwake Herald | legendary | yellow | attack | 835 | 675 | 1305 | Average 10 |
+| Tivren, Gilded Scout | common | yellow | attack | 511 | 406 | 719 | Average 10 |
+| Dovessa, Rampart Keeper | common | blue | defense | 382 | 538 | 934 | Average 10 |
+| Rosavelle, Coral Cantor | rare | red | support | 587 | 617 | 1131 | Average 10 |
+| Tocaren, Canopy Duelist | rare | green | attack | 676 | 552 | 1005 | Average 10 |
+| Ibsareth, Floodscript Keeper | rare | blue | support | 579 | 610 | 1116 | Fast 8 |
+| Cirrivel, Gale Courier | rare | yellow | attack | 692 | 566 | 1035 | Very Fast 6.5 |
+| Ossavik, Carrion Judge | rare | purple | attack | 676 | 552 | 1005 | Slow 12 |
+| Ardoven, Stillwater Warden | rare | green | defense | 542 | 689 | 1199 | Average 10 |
+| Corveth, Bellshadow Huntress | rare | purple | attack | 692 | 566 | 1035 | Fast 8 |
+| Avaroc, Sunspire Regent | legendary | yellow | attack | 812 | 673 | 1305 | Average 10 |
+| Macalisse, Scarlet Herald | legendary | red | support | 714 | 736 | 1425 | Fast 8 |
+| Pterovar, Ashcrest Ancestor | legendary | red | attack | 828 | 687 | 1335 | Slow 12 |
+| Duovrax, Divided Vigil | legendary | purple | defense | 652 | 813 | 1525 | Slow 12 |
+| Tyssara, Moonvault Oracle | legendary | blue | support | 714 | 736 | 1425 | Average 10 |
+| Rudavain, Torrent Lancer | legendary | red | attack | 828 | 687 | 1335 | Fast 8 |
+| Bucorath, Canopy Castellan | legendary | green | defense | 652 | 813 | 1525 | Average 10 |
+| Sagivra, Quillblade Marshal | legendary | yellow | attack | 820 | 680 | 1320 | Fast 8 |
+| Veyrath, Twin-Crowned Sovereign | mythical | purple | attack | 924 | 765 | 1475 | Slow 12 |
+| Ondelle, Lilywake Huntress | rare | blue | attack | 690 | 565 | 1060 | Average 10 |
 
 ## Specials
 
@@ -1157,4 +1176,82 @@ Passive: **Moonforged Aegis** — Barriers received by Asterox have 50% larger s
 ### Orastel, Sunwake Herald — Sunwake Procession
 
 - 10 tiles: Deal 190% ATK damage to all living enemies. Burn (All living enemies, 1 turns).
+
+### Tivren, Gilded Scout — Sunseed Arrow
+
+- 10 tiles: Deal 185% ATK damage to selected enemy. .
+
+### Dovessa, Rampart Keeper — Hearthwing Vigil
+
+- 10 tiles: Empower your warband with the effects below. Taunt (Caster, 1 turns); Damage Ward (Caster, 1 turns).
+
+### Rosavelle, Coral Cantor — Rosewater Refrain
+
+- 10 tiles: Restore 30% max HP to all living allies. Cleanse (All living allies).
+
+### Tocaren, Canopy Duelist — Verdant Beakblade
+
+- 10 tiles: Deal 225% ATK damage to selected enemy. Defense Down (Selected enemy, 1 turns).
+
+### Ibsareth, Floodscript Keeper — Ink of Renewal
+
+- 8 tiles: Restore 32% max HP to one living ally. Ailment Ward (Selected ally, 1 turns).
+
+### Cirrivel, Gale Courier — Crosswind Needle
+
+- 6.5 tiles: Deal 155% ATK damage to selected enemy. .
+
+### Ossavik, Carrion Judge — Last Ration
+
+- 12 tiles: Deal 305% ATK damage to selected enemy. Buff Seal (Selected enemy, 2 turns).
+
+### Ardoven, Stillwater Warden — Reedwall Shelter
+
+- 10 tiles: Empower your warband with the effects below. Barrier (All living allies, 2 turns); Defense Up (Caster, 2 turns).
+
+### Corveth, Bellshadow Huntress — Silent Bell
+
+- 8 tiles: Deal 210% ATK damage to selected enemy. Dispel (Selected enemy).
+
+### Avaroc, Sunspire Regent — Sovereign Talon
+
+- 10 tiles: Deal 280% ATK damage to selected enemy. Attack Down (Selected enemy, 2 turns).
+
+### Macalisse, Scarlet Herald — Banner of Many Voices
+
+- 8 tiles: Empower your warband with the effects below. Attack Up (All living allies, 2 turns); Ailment Ward (All living allies, 1 turns).
+
+### Pterovar, Ashcrest Ancestor — Cinderwing Descent
+
+- 12 tiles: Deal 205% ATK damage to all living enemies. Burn (All living enemies, 2 turns).
+
+### Duovrax, Divided Vigil — Dusk and Dawn Watch
+
+- 12 tiles: Empower your warband with the effects below. Taunt (Caster, 2 turns); Damage Ward (All living allies, 2 turns); Barrier (Caster, 2 turns).
+
+### Tyssara, Moonvault Oracle — Lantern of Quiet Skies
+
+- 10 tiles: Restore 36% max HP to all living allies. Cleanse (All living allies); Regeneration (All living allies, 2 turns).
+
+### Rudavain, Torrent Lancer — Waterfall Impale
+
+- 8 tiles: Deal 255% ATK damage to selected enemy, ignoring 25% of DEF. .
+
+### Bucorath, Canopy Castellan — Casque of the Citadel
+
+- 10 tiles: Empower your warband with the effects below. Barrier (All living allies, 2 turns); Defense Up (All living allies, 2 turns).
+
+### Sagivra, Quillblade Marshal — Seven-Quill Cut
+
+- 8 tiles: Deal 245% ATK damage to selected enemy. Defense Down (Selected enemy, 2 turns).
+
+### Veyrath, Twin-Crowned Sovereign — Concord of Fang and Feather
+
+- 12 tiles: Deal 215% ATK damage to all living enemies. Attack Down (All living enemies, 2 turns); Poison (All living enemies, 2 turns).
+
+Passive: **Twin-Crowned Vigil** — Immune to Poison.
+
+### Ondelle, Lilywake Huntress — Lilywake Undertow
+
+- 10 tiles: Deal 255% ATK damage to selected enemy. Mana Slow (Selected enemy, 2 turns).
 

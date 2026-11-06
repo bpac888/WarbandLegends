@@ -1,0 +1,47 @@
+{
+  "version": 8,
+  "originalCount": 233,
+  "totalCount": 234,
+  "brief": "One water-themed Wildgrove Rare attacker; all thirteen factions reach eighteen characters.",
+  "champions": [
+    {
+      "id": "ondelle_lilywake_huntress",
+      "name": "Ondelle, Lilywake Huntress",
+      "title": "Spear of the Stillwater Glade",
+      "rarity": "rare",
+      "faction": "wildgrove",
+      "role": "attack",
+      "color": "blue",
+      "manaSpeed": "average",
+      "stats": {
+        "atk": 690,
+        "def": 565,
+        "hp": 1060
+      },
+      "ability_name": "Lilywake Undertow",
+      "lore": "Ondelle guards the quiet pools where Wildgrove’s rivers first learn their names. She crosses the water on living lily pads, weaving their roots into armor and turning the pond’s hidden currents against intruders. When her spear rises, the lilies close around the trespasser’s shadow and the water steals their momentum.",
+      "gap": "Eighteenth Wildgrove champion: a blue Rare attacker with water-and-lily-pad identity, single-target damage and charge control; retains Attack as the faction’s most common role.",
+      "passive": null,
+      "levels": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

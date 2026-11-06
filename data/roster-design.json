@@ -4537,6 +4537,36 @@
         "def": 765,
         "hp": 1475
       }
+    },
+    "ondelle_lilywake_huntress": {
+      "color": "blue",
+      "manaSpeed": "average",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "average",
+          "tiles": 10,
+          "target": "enemy",
+          "damage": 2.55,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "mana_slow",
+              "turns": 2,
+              "scope": "enemy"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 690,
+        "def": 565,
+        "hp": 1060
+      }
     }
   }
 }
