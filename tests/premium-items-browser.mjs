@@ -38,5 +38,16 @@ try{
  for(const width of [320,390,760,1440]){await page.setViewportSize({width,height:950});await page.locator('.premium-inventory').scrollIntoViewIfNeeded();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(width===390||width===1440)await page.screenshot({path:root+`artifacts/premium-inventory-${width}.png`});}
  await page.evaluate(key=>{const p=JSON.parse(localStorage.getItem(key));p.boosters.experience=Date.now()+3000;localStorage.setItem(key,JSON.stringify(p));},PROFILE_KEY);
  await page.reload();const xpCard=page.locator('.premium-inventory [data-premium-item="experience-booster"]');await xpCard.waitFor();assert.ok(await xpCard.locator('button').isDisabled());await page.waitForFunction(()=>!document.querySelector('.premium-inventory [data-premium-item="experience-booster"] button').disabled,{},{timeout:8000});assert.equal(await xpCard.locator('.booster-status').count(),0,'expiry refreshes inventory without reloading');
+ await page.evaluate(key=>{const p=JSON.parse(localStorage.getItem(key));p.premiumItems={'epic-tome-experience':1};p.boosters={gold:Date.now()+86400000};localStorage.setItem(key,JSON.stringify(p));},PROFILE_KEY);
+ await page.reload();await page.locator('.premium-inventory').waitFor();
+ assert.equal(await page.locator('[data-premium-item]').count(),2,'only owned tome and active unowned booster');
+ assert.ok(await page.locator('[data-premium-item="gold-booster"] button').isDisabled());
+ const tome=page.locator('[data-premium-item="epic-tome-experience"]');await tome.locator('button').click();
+ const target=await page.locator('#premium-item-champion').inputValue(),beforeTome=await profile();
+ await page.locator('[data-action="premium-item-confirm"]').click();const afterTome=await profile();
+ assert.equal(afterTome.premiumItems['epic-tome-experience'],0);assert.ok(afterTome.heroXp[target]>(beforeTome.heroXp[target]||0));
+ assert.equal(await page.locator('[data-premium-item="epic-tome-experience"]').count(),0,'spent tome disappears');
+ await page.evaluate(key=>{const p=JSON.parse(localStorage.getItem(key));p.boosters={};localStorage.setItem(key,JSON.stringify(p));},PROFILE_KEY);
+ await page.reload();await page.locator('.inventory-grid').waitFor();assert.equal(await page.locator('.premium-inventory').count(),0,'empty premium section hidden');
  assert.deepEqual(errors,[]);console.log('PASS: HD preview art, disabled purchases, activation/cancel, independent 24-hour boosters, save/reload, live expiry, free tome use and blocked ineligible targets, phone/tablet/desktop layouts.');
 }finally{await browser.close();}

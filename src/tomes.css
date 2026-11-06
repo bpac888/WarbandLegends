@@ -4,7 +4,7 @@
 .page-shop .tomes-preview .section-heading p{max-width:700px;font-size:13px;line-height:1.6;color:#c2d4cb;margin:0}
 .page-shop .tome-offers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .page-shop .tome-offer{display:flex;flex-direction:column;align-items:center;text-align:center;gap:9px;min-width:0;padding:18px 14px;border:1px solid #b9b89a55;border-radius:13px;background:var(--legend-surface)}
-.page-shop .tome-art{position:relative;display:block;width:80px;height:80px;flex-shrink:0;overflow:hidden;border-radius:9px;background:#0a2329}
+.page-shop .tome-art{position:relative;display:block;width:80px;height:80px;flex-shrink:0;overflow:hidden;border-radius:9px;background:none}
 .page-shop .tome-art>img{position:absolute;max-width:none;display:block;width:300%;height:400%;left:calc(var(--tome-x)*-100%);top:calc(var(--tome-y)*-100%);object-fit:fill;filter:none}
 .page-shop .tome-offer h3{font-size:21px;line-height:1.2;margin:0;color:#f4e0b9;overflow-wrap:anywhere}
 .page-shop .tome-offer>strong{font-size:14px;color:#f0d096}

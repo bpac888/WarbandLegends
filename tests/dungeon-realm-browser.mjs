@@ -20,7 +20,7 @@ try{
  await fs.mkdir(root+'artifacts',{recursive:true});
  const {c,page}=await make();
  for(const [width,height] of [[320,568],[360,800],[390,844],[700,1000],[844,390],[1440,1000]]){
-  await page.setViewportSize({width,height});await go(page,'dungeons');await page.locator('.dungeon-realm-painting img').evaluate(i=>i.decode());
+  await page.setViewportSize({width,height});await go(page,'dungeons');await page.locator('.dungeon-realm-painting img').evaluate(i=>i.decode());assert.equal(await page.locator('.dungeon-page-heading').count(),0);assert.ok((await page.locator('.realm-tabs').boundingBox()).height<=45,'compact difficulty selector');
   await page.locator('[data-action="dungeon-difficulty"][data-difficulty="normal"]').click();
   if(width<=700)await page.locator('.dungeon-phone-dragon img').evaluate(i=>i.decode());
   assert.equal(await page.locator('.dungeon-guardian').count(),7);assert.equal(await page.locator('.dungeon-guardian:disabled').count(),0);

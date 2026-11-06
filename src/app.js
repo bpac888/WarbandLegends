@@ -1,3 +1,4 @@
+import {useExperienceTome} from './experience-tomes.js';
 import {premiumItem,activateBooster} from './premium-items.js';
 import {premiumItemConfirmation} from './premium-items-ui.js';
 import {ascensionTier} from './ascension.js';
@@ -137,7 +138,7 @@ function start(stageId){
 
   begin();
 }
-function openModal(title,body,view='info'){pauseAuto();modal.dataset.view=view;modalContent.innerHTML=`<header class="modal-header"><div>${['roster','page-guide'].includes(view)?'':'<span class="eyebrow">WARBAND LEGENDS</span>'}<h2 id="modal-title">${title}</h2></div>${view==='result'?'':'<button class="icon-button" data-action="close" aria-label="Close dialog">×</button>'}</header><div class="modal-body">${body}</div>`;if(!modal.open)modal.showModal();if(view==='ritual')modalContent.querySelector('[data-action="skip-ritual"]')?.focus({preventScroll:true});}
+function openModal(title,body,view='info'){pauseAuto();modal.dataset.view=view;modalContent.innerHTML=`<header class="modal-header"><div>${['roster','page-guide','event-stage'].includes(view)?'':'<span class="eyebrow">WARBAND LEGENDS</span>'}<h2 id="modal-title">${title}</h2></div>${view==='result'?'':'<button class="icon-button" data-action="close" aria-label="Close dialog">×</button>'}</header><div class="modal-body">${body}</div>`;if(!modal.open)modal.showModal();if(view==='ritual')modalContent.querySelector('[data-action="skip-ritual"]')?.focus({preventScroll:true});}
 function settleVictory(){if(['victory','defeat'].includes(battle?.phase)&&(['arena','event'].includes(getEncounter(battle.stageId)?.mode)||battle.phase==='victory')&&!battle.sandbox&&!profile.recorded.includes(battle.id)){
  const rewardAt=Date.now(),reward=victoryRewards(profile,battle,rewardAt),before=profile;profile=recordVictory(profile,battle,roster,rewardAt);
  battle.rewardSummary={...reward,growth:reward.xp?battle.heroes.filter(h=>before.collection[h.id]).map(h=>{const c=byId.get(h.id),old=heroDevelopment(before,c),next=heroDevelopment(profile,c);return {id:h.id,name:h.name,portrait:h.portrait,before:old.level,after:next.level,gained:(profile.heroXp[h.id]||0)-(before.heroXp[h.id]||0),cap:next.cap,ratio:next.ratio};}):[]};
@@ -183,7 +184,7 @@ document.addEventListener('click',event=>{
   if(['ascend-preview','awaken-preview'].includes(action)){const c=byId.get(id);if(!c)return;const kind=action.split('-')[0];openModal(kind==='ascend'?'Ascend your champion':'Awaken your champion',advancementConfirmation(c,profile,kind),'advancement');return;}
   if(['ascend-confirm','awaken-confirm'].includes(action)){const c=byId.get(id);if(!c)return;const r=(action==='ascend-confirm'?ascendChampion:awakenChampion)(profile,c,Number(button.dataset.tier));if(r.error){closeModal();renderChampionPage(id);toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderChampionPage(id);document.querySelector(action==='ascend-confirm'?'#hero-ascension':'#hero-awakening')?.scrollIntoView({block:'center',behavior:'instant'});toast(action==='ascend-confirm'?'Ascended! Level '+r.cap+' is now unlocked.':'Limit Break '+r.rank+' reached! Five more levels unlocked.');return;}
   if(action==='open-codex'){collectionFilters.tab='all';go('roster');return;}
-  if(action==='event-select'){selectedEvent=button.dataset.event;openModal('Special Event',Shell.eventArea(profile,selectedEvent),'event-area');return;}
+  if(action==='event-select'){selectedEvent=button.dataset.event;const e=getEncounter('event-'+selectedEvent);if(e)openModal(esc(e.name),Shell.encounterPreview(profile,e.id),'event-stage');return;}
   if(action==='loot-preview'){syncEnergy();const q=lootTicketQuote(profile,stage,roster);if(q.error){toast(q.error);return;}openModal('Use a Loot Ticket?',lootTicketConfirmation(q),'loot-confirm');return;}
   if(action==='loot-confirm'&&modal.dataset.view==='loot-confirm'){const result=useLootTicket(profile,stage,roster,{expectedUses:Number(button.dataset.uses),activeBattle:battle?.phase==='playing'});if(result.error){closeModal();toast(result.error);return;}profile=result.profile;persist(PROFILE_KEY,profile);closeModal();renderShell('campaign');openModal('Stage cleared',lootTicketResult(result),'loot-result');return;}
   if(action==='exchange-preview'){openModal('Exchange your spoils',Shell.exchangeConfirmation(profile,id),'exchange');return;}
@@ -192,7 +193,7 @@ document.addEventListener('click',event=>{
   if(action==='multi-summon'){openPortal(10);return;}
   if(action==='campaign-difficulty'){campaignDifficulty=button.dataset.difficulty;renderShell('campaign');return;}
   if(action==='dungeon-difficulty'){dungeonDifficulty=button.dataset.difficulty;renderShell('dungeons');return;}
-  if(action==='preview-encounter'){const e=getEncounter(stage);if(e){const campaign=e.mode==='campaign',dungeon=e.mode==='dungeon',difficulty={normal:'Normal',hard:'Hard',nightmare:'Nightmare'}[e.difficulty],title=campaign?`${difficulty} · Stage ${e.number} · ${esc(e.name)}`:dungeon?`${esc(e.bossName)} · ${difficulty}`:esc(e.name);openModal(title,Shell.encounterPreview(profile,stage),campaign?'campaign-stage':dungeon?'dungeon-stage':e.mode==='arena'?'arena-stage':'encounter');}return;}
+  if(action==='preview-encounter'){const e=getEncounter(stage);if(e){const campaign=e.mode==='campaign',dungeon=e.mode==='dungeon',difficulty={normal:'Normal',hard:'Hard',nightmare:'Nightmare'}[e.difficulty],title=campaign?`${difficulty} · Stage ${e.number} · ${esc(e.name)}`:dungeon?`${esc(e.bossName)} · ${difficulty}`:esc(e.name);openModal(title,Shell.encounterPreview(profile,stage),campaign?'campaign-stage':dungeon?'dungeon-stage':e.mode==='arena'?'arena-stage':e.mode==='event'?'event-stage':'encounter');}return;}
   if(action==='nav'){go(button.dataset.page);return;}
   if(action==='champion'){go('champion/'+encodeURIComponent(id)+(button.dataset.preview==='true'?'/codex':''));return;}
   if(action==='reset-collection'){collectionFilters={...DEFAULT_FILTERS,tab:collectionFilters.tab};renderCollectionPage();return;}
@@ -209,7 +210,7 @@ document.addEventListener('click',event=>{
   if(action==='premium-item-confirm'&&modal.dataset.view==='premium-item'){
    const item=premiumItem(id);if(!item)return;let result;
    if(item.kind)result=activateBooster(profile,id);
-   else{const hero=heroForId(roster,modalContent.querySelector('#premium-item-champion')?.value);if(!hero){toast('Choose an eligible champion.');return;}result=id==='tome-of-ascension'?ascendChampion(profile,hero,ascensionTier(profile,hero),{tome:true}):awakenChampion(profile,hero,awakeningRank(profile,hero),{tome:true});}
+   else{const hero=heroForId(roster,modalContent.querySelector('#premium-item-champion')?.value);if(!hero){toast('Choose an eligible champion.');return;}result=item.maxLevels?useExperienceTome(profile,id,hero):id==='tome-of-ascension'?ascendChampion(profile,hero,ascensionTier(profile,hero),{tome:true}):awakenChampion(profile,hero,awakeningRank(profile,hero),{tome:true});}
    if(result.error){toast(result.error);return;}profile=result.profile;persist(PROFILE_KEY,profile);closeModal();if(screen==='champion')renderChampionPage(app.querySelector('.champion-page')?.dataset.championId);else renderShell('inventory');toast(item.kind?item.name+' active for 24 hours.':item.name+' used.');return;
   }
   if(action==='gem-preview'){openModal('Spend Gems',gemConfirmation(profile,id),'gem-shop');return;}

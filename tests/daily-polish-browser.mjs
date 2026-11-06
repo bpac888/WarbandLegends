@@ -24,6 +24,14 @@ try{
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'page overflow '+width);
   const cells=await page.locator('.path-objectives>article').evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height};}));
   assert.ok(Math.abs(cells[0].y-cells[1].y)<1&&Math.abs(cells[2].y-cells[3].y)<1&&cells[2].y>cells[0].y&&cells[1].x>cells[0].x,'2 by 2 objectives '+width);
+  const header=await page.locator('.daily-gift-heading').evaluate(e=>{const [day,journey]=[...e.children].map(c=>c.getBoundingClientRect());return {day:{x:day.x,right:day.right,y:day.y},journey:{x:journey.x,y:journey.y}};});
+  assert.ok(header.journey.x>=header.day.right+10,'spaced day and journey '+width);
+  const rewards=await page.locator('.daily-objectives>.quest-reward-marks>span').evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect();return {x:r.x,y:r.y};}));
+  assert.equal(rewards.length,4);assert.ok(rewards[0].y===rewards[1].y&&rewards[2].y===rewards[3].y&&rewards[2].y>rewards[0].y,'2 by 2 chest rewards '+width);
+  await page.locator('.daily-road').evaluate(e=>e.open=true);
+  assert.equal(await page.locator('.daily-road h2,.daily-road .eyebrow').count(),0);
+  assert.equal(await page.locator('.daily-preview>article').count(),7);
+  assert.ok(await page.locator('.daily-preview>article').evaluateAll(nodes=>nodes.every(e=>parseFloat(getComputedStyle(e).paddingTop)<=8)));
   assert.ok(cells.every(c=>c.height<=100));assert.ok(await page.locator('.daily-vista h2').evaluate(e=>parseFloat(getComputedStyle(e).fontSize)<=26));assert.ok((await page.locator('.daily-vista').boundingBox()).height<=230);
   for(const button of await page.locator('.topbar button').all()){const r=await button.boundingBox();if(r)assert.ok(r.x>=0&&r.x+r.width<=width+1,'header control fits '+width);}
   const brand=await page.locator('.topbar .brand').boundingBox(),wallet=await page.locator('.game-wallet').boundingBox();assert.ok(brand.y+brand.height<=wallet.y+1||wallet.y+wallet.height<=brand.y+1||brand.x+brand.width<=wallet.x+1,'brand does not overlap currencies '+width);

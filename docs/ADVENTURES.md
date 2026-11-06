@@ -18,6 +18,8 @@ First campaign clears grant 500 gold, 1 seal and 1.5× the encounter's repeat XP
 
 ## Dungeons
 
+The redundant page title is omitted and the difficulty selector is compact. The existing high-definition phone and desktop guardian paintings fill a larger area at their original proportions, with selection regions aligned to the same art.
+
 Seven original dungeon illustrations are reused from `frontend/src/assets/dungeons` in the owner's Warband Legends checkout, bundled as optimized local WebP data in SVG wrappers:
 
 - Ashen Crypt — The Cinder Warden

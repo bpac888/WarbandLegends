@@ -13,3 +13,11 @@ The Altar adapts the owner's original summoning page and SummonPortal animation.
 The Citadel's four destination cards reuse the original Tavern illustrations for the Altar, Adventure, Codex and Supply Exchange. All reused art is local, optimized WebP embedded in SVG wrappers. The original repository and services remain untouched.
 
 Profile schema 7 adds mode resources to schemas 5/6 without resetting collection, levels, campaign, dungeon progress or saved fights. All 135 champion IDs and existing core combat rules are preserved. This remains an independent local game; event dates and saves use the player's browser, with no server authority or online multiplayer yet.
+
+## Event map and entry panel
+
+The Special Events map omits its redundant heading and uses a wider, preserved-proportion view of the existing HD painting. Each landmark opens the image and description confirmation directly. The compact header has no divider; reward prose and Guardian stats are omitted. The panel shows the current month’s remaining attempts as `13/20 attempts remaining`, with opening dates or exhaustion information when entry is unavailable. Previewing or cancelling spends nothing; starting still reserves exactly one attempt.
+
+Localized CSS effects follow the phone and desktop artwork separately: a red eclipse pulse, a sky-only aurora shimmer and a rotating purple portal swirl. They do not intercept clicks, pause behind dialogs or when the tab is hidden, and remain static with reduced motion.
+
+Validation: `npm run check`, `npm run test:event-realms`, and `npm run test:dungeon-realm`. Browser coverage includes open/closed/exhausted event windows, direct confirmation, attempt accounting, each effect actually painting and animating, reduced motion, and responsive selection areas.

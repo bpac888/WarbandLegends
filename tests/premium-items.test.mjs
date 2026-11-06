@@ -8,8 +8,31 @@ import {feedingQuote,consumeHeroes} from '../src/feeding.js';
 import {ascendChampion,awakenChampion,xpForLevel} from '../src/development.js';
 import {ASCENSION_CAPS,currentLevelCap} from '../src/ascension.js';
 import {ENCOUNTERS} from '../src/encounters.js';
+import {experienceTomeQuote,useExperienceTome} from '../src/experience-tomes.js';
+import {premiumInventory} from '../src/premium-items-ui.js';
 const roster=JSON.parse(fs.readFileSync(new URL('../data/champions.json',import.meta.url))),now=Date.UTC(2026,10,5,12);
 const stock=()=>({...defaultProfile(),premiumItems:{'experience-booster':2,'gold-booster':2,'tome-of-ascension':2,'tome-of-limit-break':2}});
+
+test('inventory shows only owned items or active boosters, and hides exhausted and expired items',()=>{
+ const p=defaultProfile();assert.equal(premiumInventory(p,now),'');
+ p.premiumItems={'epic-tome-experience':1,'gold-booster':0};p.boosters={gold:now+1};
+ assert.match(premiumInventory(p,now),/epic-tome-experience/);assert.match(premiumInventory(p,now),/gold-booster/);
+ assert.doesNotMatch(premiumInventory(p,now),/experience-booster/);
+ p.premiumItems['epic-tome-experience']=0;assert.equal(premiumInventory(p,now+1),'');
+});
+
+test('owned experience tomes respect elements and caps, spend one item, persist, and advance Daily Path',()=>{
+ const c=roster.find(c=>c.rarity==='legendary'&&c.color==='red'),p=defaultProfile();
+ p.collection[c.id]=1;p.gold=0;p.premiumItems={'epic-tome-experience':1,'greater-red-tome':1,'lesser-blue-tome':1};
+ assert.ok(validateProfile(p,roster));assert.deepEqual(normalizeProfile(p,roster).premiumItems,p.premiumItems);
+ assert.ok(useExperienceTome(p,'lesser-blue-tome',c).error);assert.equal(useExperienceTome(p,'lesser-blue-tome',c).profile,p);
+ const q=experienceTomeQuote(p,'epic-tome-experience',c),used=useExperienceTome(p,'epic-tome-experience',c,new Date(now));
+ assert.equal(q.level,21);assert.equal(used.profile.heroXp[c.id],xpForLevel(c,21));assert.equal(used.profile.premiumItems['epic-tome-experience'],0);assert.equal(used.profile.pathHeroLevels[c.id],3);assert.equal(used.profile.gold,0);
+ assert.ok(useExperienceTome(used.profile,'epic-tome-experience',c).error);
+ const capped=useExperienceTome(used.profile,'greater-red-tome',c,new Date(now));assert.equal(capped.profile.heroXp[c.id],xpForLevel(c,currentLevelCap(p,c)));
+ assert.ok(experienceTomeQuote(capped.profile,'greater-red-tome',c).error);
+ assert.deepEqual(parseBackup(JSON.stringify(makeBackup(capped.profile,null)),roster).profile,capped.profile);
+});
 
 test('boosters consume one item for exactly 24 hours, survive saves, and cannot stack or waste stock',()=>{
  const p=stock(),active=activateBooster(p,'experience-booster',now).profile;

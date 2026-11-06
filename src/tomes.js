@@ -1,4 +1,4 @@
-// Item definitions only. Acquisition and consumption remain disabled with Premium.
+// Purchases remain previews; owned tomes can be used from Inventory.
 const elements=['red','blue','green','yellow','purple'];
 const title=s=>s[0].toUpperCase()+s.slice(1);
 const tome=(id,name,maxLevels,element,artIndex)=>Object.freeze({id,name,maxLevels,element,artIndex,source:'premium',available:false,description:`Raises ${element?'a matching '+element:'a'} character by up to ${maxLevels} levels, stopping at their current unlocked level cap.`});
