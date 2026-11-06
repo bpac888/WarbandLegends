@@ -168,3 +168,9 @@ body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2:
 /* All shop item cards share the muted green used by the Ember Sigil card. */
 body.menu-theme .game-page.page-shop :is(.material-grid,.gem-offers,.exchange-offers,.premium-offers,.tome-offers)>article:nth-child(n),
 body.menu-theme .game-page.page-shop .exchange-balances>span{background:linear-gradient(145deg,#afb29e,#9fa58f)}
+
+/* Near-white pink-peach purchase buttons in all three shop departments. */
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.exchange-offers>article,.premium-offers>article,.tome-offer)>.button{background:linear-gradient(135deg,#fff6f3,#fcebe6);border-color:#d7bcb5;color:#543b43;text-shadow:none;box-shadow:0 2px 6px #67414914}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.exchange-offers>article,.premium-offers>article,.tome-offer)>.button:enabled:hover{background:linear-gradient(135deg,#fffaf8,#fce2dc);border-color:#b98c87}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.exchange-offers>article,.premium-offers>article,.tome-offer)>.button:disabled{color:#756169;box-shadow:none}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.exchange-offers>article,.premium-offers>article,.tome-offer)>.button :is(.gem-amount,.gem-amount small){color:inherit}
