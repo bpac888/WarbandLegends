@@ -97,9 +97,7 @@ body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop){--utility
 body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :is(.quest-banner,.inventory-card,.premium-banner){position:relative;isolation:isolate}
 body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) :is(.quest-banner,.inventory-card,.premium-banner)::before{content:'';position:absolute;inset:7px;border:1px solid #6750373d;border-radius:10px;pointer-events:none;z-index:-1;background:linear-gradient(135deg,#80613d66 0 2px,transparent 2px) left top/14px 14px no-repeat,linear-gradient(315deg,#80613d66 0 2px,transparent 2px) right bottom/14px 14px no-repeat}
 body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section{background:transparent;box-shadow:none;border:0}
-body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2,
 body.menu-theme .game-page.page-shop .tomes-preview .section-heading{position:relative;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--utility-rule)}
-body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2::after,
 body.menu-theme .game-page.page-shop .tomes-preview .section-heading::after{content:'';position:absolute;left:0;bottom:-3px;width:5px;height:5px;background:#73542f;transform:rotate(45deg);box-shadow:0 0 0 3px #a79c8c}
 body.menu-theme .game-page.page-shop .gem-shop .section-heading{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--utility-rule)}
 body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>.eyebrow{display:block;margin:0 0 5px}
@@ -145,3 +143,24 @@ body.menu-theme .game-page.page-shop .gem-offer>p{min-height:0;margin:0}
 body.menu-theme .game-page.page-shop .gem-offer>p+.button{margin-top:0}
 body.menu-theme .game-page.page-shop .gem-shop .section-heading{padding-bottom:10px;margin-bottom:12px}
 @media(max-width:600px){body.menu-theme .game-page.page-shop .material-offer{grid-template-rows:104px auto auto auto auto auto;gap:8px}}
+/* Equal card dimensions and aligned content across every shop department. */
+body.menu-theme .game-page.page-shop :is(.material-grid,.gem-offers,.premium-offers,.exchange-offers,.tome-offers){display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;align-items:stretch}
+body.menu-theme .game-page.page-shop :is(.material-grid,.gem-offers,.premium-offers,.exchange-offers,.tome-offers)>article{height:100%;box-sizing:border-box;min-width:0;display:flex;flex-direction:column;align-items:center}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.premium-offers>article)>img{width:132px;height:132px;object-fit:contain;flex-shrink:0}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.premium-offers>article)>h3{min-height:2.4em;line-height:1.2;display:flex;align-items:center;justify-content:center}
+body.menu-theme .game-page.page-shop .tome-offer>h3{min-height:3.6em;line-height:1.2;display:flex;align-items:center;justify-content:center}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.premium-offers>article,.exchange-offers>article,.tome-offer)>.button:last-child{margin-top:auto;width:100%;min-height:44px}
+body.menu-theme .game-page.page-shop .material-offer>small{margin-top:auto}
+body.menu-theme .game-page.page-shop .material-offer>small+.button{margin-top:0}
+body.menu-theme .game-page.page-shop .material-offer>.button:last-child{margin-top:0}
+@media(max-width:1000px){body.menu-theme .game-page.page-shop :is(.material-grid,.gem-offers,.premium-offers,.exchange-offers,.tome-offers){grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){body.menu-theme .game-page.page-shop :is(.material-grid,.gem-offers,.premium-offers,.exchange-offers,.tome-offers){grid-template-columns:repeat(2,minmax(0,1fr))}body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.premium-offers>article)>img{width:108px;height:108px}}
+@media(max-width:360px){body.menu-theme .game-page.page-shop :is(.material-grid,.gem-offers,.premium-offers,.exchange-offers,.tome-offers){grid-template-columns:minmax(0,1fr)}}
+body.menu-theme .game-page.page-shop .exchange-offers{gap:8px}
+body.menu-theme .game-page.page-shop .exchange-offers>article{padding:10px;gap:6px}
+body.menu-theme .game-page.page-shop .exchange-offers>article h2{font-size:21px}
+body.menu-theme .game-page.page-shop .exchange-payment{gap:3px;font-size:10px}
+body.menu-theme .game-page.page-shop .exchange-payment select{min-height:44px;padding:6px 8px}
+body.menu-theme .game-page.page-shop .exchange-offers .exchange-cost{font-size:12px}
+body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2{border-bottom:0;padding-bottom:0;margin-bottom:12px}
+body.menu-theme .game-page:is(.page-inventory,.page-shop) .materials-section>h2::after{display:none}

@@ -27,9 +27,24 @@ try{
    const motion=()=>layer.evaluate(e=>[getComputedStyle(e.querySelector('.event-eclipse-glow'),'::before').opacity,getComputedStyle(e.querySelector('.event-aurora')).backgroundPosition,getComputedStyle(e.querySelector('.event-portal-swirl'),'::before').transform]);
    const before=await motion();await page.waitForTimeout(300);const after=await motion();assert.ok(after.every((v,i)=>v!==before[i]),'all three effects animate');
    await map.evaluate(e=>e.getAnimations({subtree:true}).forEach(a=>a.pause()));const painted=await map.screenshot({path:root+`artifacts/event-effects-${width}.png`});
-   for(const selector of ['.event-eclipse-glow','.event-aurora','.event-portal-swirl']){const effect=layer.locator(selector);await effect.evaluate(e=>e.style.visibility='hidden');const hidden=await map.screenshot();assert.notEqual(Buffer.compare(painted,hidden),0,selector+' is painted over the artwork');await effect.evaluate(e=>e.style.visibility='');}
+   for(const selector of ['.event-eclipse-glow','.event-aurora','.event-portal-swirl','.event-portal-aura']){const effect=layer.locator(selector);await effect.evaluate(e=>e.style.visibility='hidden');const hidden=await map.screenshot();assert.notEqual(Buffer.compare(painted,hidden),0,selector+' is painted over the artwork');await effect.evaluate(e=>e.style.visibility='');}
+   const changedPixels=async(a,b)=>page.evaluate(async([a,b])=>{
+    const read=async data=>{const i=new Image();i.src='data:image/png;base64,'+data;await i.decode();const c=document.createElement('canvas');c.width=i.width;c.height=i.height;const ctx=c.getContext('2d');ctx.drawImage(i,0,0);return ctx.getImageData(0,0,c.width,c.height).data;};
+    const [x,y]=await Promise.all([read(a),read(b)]);let changed=0;for(let i=0;i<x.length;i+=4)if(Math.max(Math.abs(x[i]-y[i]),Math.abs(x[i+1]-y[i+1]),Math.abs(x[i+2]-y[i+2]))>=24)changed++;return changed;
+   },[a.toString('base64'),b.toString('base64')]);
+   for(const selector of ['.event-eclipse-glow','.event-aurora','.event-portal-swirl','.event-portal-aura']){
+    const effect=layer.locator(selector);await effect.evaluate(e=>e.getAnimations({subtree:true}).forEach(a=>a.currentTime=0));const first=await map.screenshot();
+    await effect.evaluate(e=>e.getAnimations({subtree:true}).forEach(a=>a.currentTime=1500));const next=await map.screenshot();
+    assert.ok(await changedPixels(first,next)>(width===390?80:200),selector+' produces clearly changing pixels');
+   }
+   const shade=page.locator('.event-eclipse-sky');assert.equal(await shade.evaluate(e=>getComputedStyle(e).pointerEvents),'none');
+   await shade.evaluate(e=>e.getAnimations().forEach(a=>a.currentTime=0));const normalSky=await map.screenshot();
+   await shade.evaluate(e=>e.getAnimations().forEach(a=>a.currentTime=4800));const darkSky=await map.screenshot({path:root+`artifacts/event-eclipse-dark-${width}.png`});
+   assert.ok(await changedPixels(normalSky,darkSky)>(width===390?100:500),'eclipse darkens the surrounding sky');
+   await shade.evaluate(e=>e.getAnimations().forEach(a=>a.currentTime=6900));assert.ok(Number(await shade.evaluate(e=>getComputedStyle(e).opacity))>.9,'deep red sky holds for several seconds');
+   await shade.evaluate(e=>e.getAnimations().forEach(a=>a.currentTime=11000));assert.equal(Number(await shade.evaluate(e=>getComputedStyle(e).opacity)),0,'sky returns to normal');
    await map.evaluate(e=>e.getAnimations({subtree:true}).forEach(a=>a.play()));
-   await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await layer.evaluate(e=>e.getAnimations({subtree:true}).length),0,'reduced motion stops the effects');await page.emulateMedia({reducedMotion:'no-preference'});
+   await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await layer.evaluate(e=>e.getAnimations({subtree:true}).length),0,'reduced motion stops the effects');assert.equal(await shade.evaluate(e=>e.getAnimations().length),0,'reduced motion stops the sky transition');await page.emulateMedia({reducedMotion:'no-preference'});
   }
   const text=await page.locator('.page-events').innerText();assert.ok(!/When the World|Three monthly|Between Windows|Edit Warband|Returns on days|Visit Shop/i.test(text));
   for(const id of ['crimson_eclipse','frostwake_siege','veil_of_umbra']){

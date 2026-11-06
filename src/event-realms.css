@@ -43,20 +43,33 @@ body.menu-theme #modal[data-view="event-stage"] .modal-actions .button{min-heigh
 .event-map-magic{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;contain:layout paint;mix-blend-mode:screen}
 .event-map-magic>i{position:absolute;display:block;pointer-events:none}
 .event-map>nav{z-index:3}.event-map-sparks{z-index:2}
+.event-eclipse-sky{position:absolute;z-index:1;left:4%;top:-7%;width:40%;height:26%;pointer-events:none;opacity:0;mix-blend-mode:multiply;background:radial-gradient(ellipse at var(--eclipse-sky-x,41%) 50%,#621027ed 0 18%,#8f1736bf 35%,#a42a3566 55%,transparent 76%);animation:event-eclipse-shadow 12s ease-in-out infinite}
 .event-eclipse-glow{left:20.3%;top:6.15%;width:15%;aspect-ratio:1;transform:translate(-50%,-50%)}
-.event-eclipse-glow::before{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle closest-side,transparent 0 40%,#ff693e20 44%,#ff554bab 53%,#e621475c 66%,transparent 100%);filter:blur(1px);animation:event-eclipse-pulse 5s ease-in-out infinite}
-.event-aurora{left:62%;top:-2%;width:42%;height:14%;opacity:.6;background:repeating-linear-gradient(102deg,transparent 0 5%,#67e6b272 7%,#9affdd8c 9%,#67a1df45 12%,transparent 15% 21%),linear-gradient(0deg,transparent,#83ffd84d,transparent);background-size:170% 100%,100% 100%;filter:blur(3px);-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 73%);mask-image:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 73%);animation:event-aurora-flow 9s ease-in-out infinite alternate}
-.event-portal-swirl{left:61.5%;top:55.7%;width:8%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(ellipse,#f4d7ff66, #b254f92e 36%,transparent 73%)}
-.event-portal-swirl::before,.event-portal-swirl::after{content:'';position:absolute;inset:8%;border-radius:50%;background:conic-gradient(from 20deg,transparent 0deg,#ad6bff50 35deg,#f5dcffe6 65deg,transparent 115deg,transparent 180deg,#9961f550 215deg,#e6d0ffe0 245deg,transparent 295deg);-webkit-mask-image:radial-gradient(ellipse closest-side,transparent 50%,#000 62% 78%,transparent 94%);mask-image:radial-gradient(ellipse closest-side,transparent 50%,#000 62% 78%,transparent 94%);filter:blur(.4px);animation:event-portal-spin 12s linear infinite}
-.event-portal-swirl::after{inset:25%;animation-direction:reverse;animation-duration:17s;opacity:.8}
-@keyframes event-eclipse-pulse{0%,100%{opacity:.5;transform:scale(.96)}50%{opacity:.95;transform:scale(1.08)}}
-@keyframes event-aurora-flow{from{opacity:.4;background-position:0 0,0 0;transform:skewX(-5deg)}to{opacity:.8;background-position:100% 0,0 0;transform:skewX(5deg)}}
+.event-eclipse-glow::before{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle closest-side,transparent 0 36%,#ff5a3c44 42%,#ff6848ef 51%,#f02b5d99 65%,transparent 94%);filter:blur(1px);animation:event-eclipse-pulse 2.8s ease-in-out infinite}
+.event-eclipse-glow::after{content:'';position:absolute;inset:3%;border-radius:50%;background:conic-gradient(from 15deg,transparent 0deg,#ff7a5366 30deg,#ffe5bafa 55deg,#ff413999 72deg,transparent 110deg,#fa355688 150deg,#ffb88afa 175deg,transparent 215deg,#ff284455 265deg,#ffc194f0 292deg,transparent 330deg);-webkit-mask-image:radial-gradient(circle closest-side,transparent 43%,#000 50% 65%,transparent 90%);mask-image:radial-gradient(circle closest-side,transparent 43%,#000 50% 65%,transparent 90%);filter:blur(.6px);animation:event-portal-spin 8s linear infinite}
+.event-aurora{left:62%;top:-2%;width:42%;height:16%;opacity:.8;background:repeating-linear-gradient(102deg,transparent 0 4%,#45e4ad99 6%,#9affddeb 9%,#65a8df88 12%,transparent 16% 22%),linear-gradient(0deg,transparent,#64ffd980,transparent);background-size:210% 100%,100% 100%;filter:blur(2px);-webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 25%,transparent 76%);mask-image:radial-gradient(ellipse at 50% 35%,#000 25%,transparent 76%);animation:event-aurora-flow 6s ease-in-out infinite alternate}
+.event-aurora::before{content:'';position:absolute;inset:5% -8% 8%;background:repeating-linear-gradient(113deg,transparent 0 8%,#91e9ffb3 11%,#9b8dff80 14%,transparent 18% 28%);background-size:180% 100%;filter:blur(2px);animation:event-aurora-ribbon 7.5s ease-in-out infinite alternate-reverse}
+.event-portal-swirl{left:61.5%;top:55.7%;width:11%;aspect-ratio:.85;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(ellipse,#f4d7ff77,#b254f97a 35%,#9a42e13d 58%,transparent 76%);box-shadow:0 0 14px 3px #a951f266;animation:event-portal-bloom 3.6s ease-in-out infinite}
+.event-portal-swirl::before,.event-portal-swirl::after{content:'';position:absolute;inset:6%;border-radius:50%;background:conic-gradient(from 20deg,transparent 0deg,#a867ff99 25deg,#faeafffa 55deg,#bb7affb3 75deg,transparent 110deg,#9961f580 155deg,#efdcfff5 180deg,transparent 230deg,#b25aff88 275deg,#fff2fff0 300deg,transparent 345deg);-webkit-mask-image:radial-gradient(ellipse closest-side,transparent 26%,#000 36% 66%,transparent 89%);mask-image:radial-gradient(ellipse closest-side,transparent 26%,#000 36% 66%,transparent 89%);filter:blur(.65px);animation:event-portal-spin 4.8s linear infinite}
+.event-portal-swirl::after{inset:24%;animation-direction:reverse;animation-duration:6.5s;opacity:.95}
+.event-portal-aura{left:61.5%;top:55.7%;width:20%;aspect-ratio:.85;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(ellipse,transparent 12%,#c386ff55 30%,#ad57f080 42%,#823cf244 59%,transparent 76%);filter:blur(3px);animation:event-portal-aura 3.6s ease-in-out infinite}
+@keyframes event-eclipse-shadow{0%,14%,80%,100%{opacity:0}32%,59%{opacity:.92}}
+@keyframes event-eclipse-pulse{0%,100%{opacity:.28;transform:scale(.9)}50%{opacity:1;transform:scale(1.13)}}
+@keyframes event-aurora-flow{from{opacity:.55;background-position:0 0,0 0;transform:translateY(-2%) skewX(-7deg)}to{opacity:1;background-position:100% 0,0 0;transform:translateY(5%) skewX(7deg)}}
+@keyframes event-aurora-ribbon{from{opacity:.45;background-position:100% 0;transform:translateY(-4%)}to{opacity:.9;background-position:0 0;transform:translateY(9%)}}
+@keyframes event-portal-bloom{0%,100%{box-shadow:0 0 8px 1px #a951f233}50%{box-shadow:0 0 26px 9px #bc6affaa}}
+@keyframes event-portal-aura{0%,100%{opacity:.3;scale:.88}50%{opacity:1;scale:1.12}}
 @keyframes event-portal-spin{to{transform:rotate(360deg)}}
 @media(max-width:700px){
  .event-eclipse-glow{left:34%;top:4.2%;width:24%}
- .event-aurora{left:63%;top:-2%;width:42%;height:13%}
- .event-portal-swirl{left:32.6%;top:61.4%;width:11%;aspect-ratio:.85}
+ .event-eclipse-sky{left:0;top:-8%;width:70%;height:24%;--eclipse-sky-x:49%}
+ .event-aurora{left:63%;top:-2%;width:42%;height:15%}
+ .event-portal-swirl{left:32.6%;top:61.4%;width:17%}
+ .event-portal-aura{left:32.6%;top:61.4%;width:29%}
 }
 body:has(#modal[open]) .event-map-magic *,body:has(#modal[open]) .event-map-magic *::before,body:has(#modal[open]) .event-map-magic *::after,.menu-motion-paused .event-map-magic *,.menu-motion-paused .event-map-magic *::before,.menu-motion-paused .event-map-magic *::after{animation-play-state:paused!important}
 body.reduce-animation .event-map-magic *,body.reduce-animation .event-map-magic *::before,body.reduce-animation .event-map-magic *::after{animation:none!important}
 @media(prefers-reduced-motion:reduce){.event-map-magic *,.event-map-magic *::before,.event-map-magic *::after{animation:none!important}}
+body:has(#modal[open]) .event-eclipse-sky,.menu-motion-paused .event-eclipse-sky{animation-play-state:paused!important}
+body.reduce-animation .event-eclipse-sky{animation:none!important}
+@media(prefers-reduced-motion:reduce){.event-eclipse-sky{animation:none!important}}

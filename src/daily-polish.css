@@ -13,7 +13,7 @@
 .menu-theme .page-daily .daily-vista .button{min-height:40px;padding:8px 12px;font-size:12px}
 .menu-theme .page-daily .daily-road{margin-top:10px;padding:0 12px;border-color:#b7a6da55;background:linear-gradient(130deg,#263c43,#353449)}
 .menu-theme .page-daily .daily-road>summary{min-height:40px;padding:10px 0}
-.menu-theme .page-daily .daily-preview{gap:6px;padding-bottom:10px;align-items:start}
+.menu-theme .page-daily .daily-preview{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding-bottom:10px;align-items:stretch}
 .menu-theme .page-daily .daily-preview>article{padding:8px;border-radius:8px;min-width:0}
 .menu-theme .page-daily .daily-preview>article>b{font-size:12px}
 .menu-theme .page-daily .daily-preview .quest-reward-marks{gap:4px;margin:5px 0 0}
@@ -47,3 +47,5 @@
  .topbar.with-nav .daily-path-shortcut>img{width:23px;height:23px}
 }
 @media(min-width:360px) and (max-width:389px){.topbar.with-nav .brand .brand-name{width:82px}.topbar.with-nav .brand-sigil{width:30px;height:30px}}
+
+@media(max-width:600px){.menu-theme .page-daily .daily-preview{grid-template-columns:repeat(2,minmax(0,1fr))}}

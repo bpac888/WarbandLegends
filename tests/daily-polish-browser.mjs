@@ -30,7 +30,10 @@ try{
   assert.equal(rewards.length,4);assert.ok(rewards[0].y===rewards[1].y&&rewards[2].y===rewards[3].y&&rewards[2].y>rewards[0].y,'2 by 2 chest rewards '+width);
   await page.locator('.daily-road').evaluate(e=>e.open=true);
   assert.equal(await page.locator('.daily-road h2,.daily-road .eyebrow').count(),0);
-  assert.equal(await page.locator('.daily-preview>article').count(),7);
+  assert.equal(await page.locator('.daily-road>summary').innerText(),'Upcoming Gifts');
+  const gifts=await page.locator('.daily-preview>article').evaluateAll(nodes=>nodes.map(e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,height:r.height};}));
+  const columns=width<=600?2:3;for(let i=0;i<6;i+=columns)assert.ok(gifts.slice(i,i+columns).every(r=>Math.abs(r.y-gifts[i].y)<1&&Math.abs(r.height-gifts[i].height)<1),'aligned gift rows '+width);
+  assert.equal(await page.locator('.daily-preview>article').count(),6);
   assert.ok(await page.locator('.daily-preview>article').evaluateAll(nodes=>nodes.every(e=>parseFloat(getComputedStyle(e).paddingTop)<=8)));
   assert.ok(cells.every(c=>c.height<=100));assert.ok(await page.locator('.daily-vista h2').evaluate(e=>parseFloat(getComputedStyle(e).fontSize)<=26));assert.ok((await page.locator('.daily-vista').boundingBox()).height<=230);
   for(const button of await page.locator('.topbar button').all()){const r=await button.boundingBox();if(r)assert.ok(r.x>=0&&r.x+r.width<=width+1,'header control fits '+width);}
@@ -39,7 +42,7 @@ try{
   if(width===390||width===1440)await page.screenshot({path:root+`artifacts/daily-polished-${width}.png`});
  }
  await page.setViewportSize({width:390,height:844});await page.locator('[data-action="daily-claim"]').click();assert.ok(await page.locator('[data-action="daily-claim"]').isDisabled());
- await page.goto('http://daily.local/#/champion/'+target.id);await page.locator('[data-action="feed-preview"]').click();
+ await page.goto('http://daily.local/#/champion/'+target.id);assert.ok(await page.locator('.advancement-menu>summary').evaluateAll(nodes=>nodes.every(e=>parseFloat(getComputedStyle(e).paddingLeft)>=20)),'advancement labels have an inset margin');await page.locator('[data-action="feed-preview"]').click();
  for(const donor of donors)await page.locator(`input[name="feed-copy"][value="${donor.id}"]`).check();
  await page.locator('[data-action="feed-confirm"]').click();
  const grown=await profile();assert.equal(grown.pathHeroLevels[target.id],3);

@@ -2,7 +2,7 @@
 export const ARENA_RIVALS=[
  {
   "preset_id": "rival_ashlord",
-  "player_name": "Ashlord_Kael",
+  "player_name": "Ashlord Kael",
   "title": "Cinder Rank III",
   "rating": 1120,
   "team_templates": [
@@ -15,7 +15,7 @@ export const ARENA_RIVALS=[
  },
  {
   "preset_id": "rival_veilcutter",
-  "player_name": "Veilcutter_Nyx",
+  "player_name": "Veilcutter Nyx",
   "title": "Umbra Contender",
   "rating": 1280,
   "team_templates": [
@@ -28,7 +28,7 @@ export const ARENA_RIVALS=[
  },
  {
   "preset_id": "rival_ironvow",
-  "player_name": "IronVow_Bren",
+  "player_name": "IronVow Bren",
   "title": "Shield Wall",
   "rating": 1350,
   "team_templates": [
@@ -41,7 +41,7 @@ export const ARENA_RIVALS=[
  },
  {
   "preset_id": "rival_goldvein",
-  "player_name": "Goldvein_Mira",
+  "player_name": "Goldvein Mira",
   "title": "Chymera Adept",
   "rating": 1410,
   "team_templates": [
@@ -54,7 +54,7 @@ export const ARENA_RIVALS=[
  },
  {
   "preset_id": "rival_nightcourt",
-  "player_name": "Nightcourt_Vess",
+  "player_name": "Nightcourt Vess",
   "title": "Bloodcourt Duelist",
   "rating": 1500,
   "team_templates": [
@@ -67,7 +67,7 @@ export const ARENA_RIVALS=[
  },
  {
   "preset_id": "rival_radiant",
-  "player_name": "Halo_Seraph",
+  "player_name": "Halo Seraph",
   "title": "Radiant Vanguard",
   "rating": 1580,
   "team_templates": [
@@ -93,7 +93,7 @@ export const ARENA_RIVALS=[
  },
  {
   "preset_id": "rival_dunerider",
-  "player_name": "Sandglass_Orin",
+  "player_name": "Sandglass Orin",
   "title": "Dunerider Scout",
   "rating": 1190,
   "team_templates": [
@@ -106,7 +106,7 @@ export const ARENA_RIVALS=[
  },
  {
   "preset_id": "rival_ossuary",
-  "player_name": "Bone_Scribe",
+  "player_name": "Bone Scribe",
   "title": "Nether Chronicler",
   "rating": 1460,
   "team_templates": [

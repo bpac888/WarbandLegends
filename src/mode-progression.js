@@ -1,7 +1,7 @@
 import {boostedGold} from './premium-items.js';
 import {LOOT_TICKET_LIMIT} from './loot-ticket-item.js';
 import {heroForId,uniqueHeroCount} from './hero-copies.js';
-import {addAccountXp,accountBattleXp,bumpPath,spendEnergy,energyCost,refreshEnergy} from './keeper.js';
+import {addAccountXp,accountBattleXp,bumpPath,spendEnergy,energyCost,refreshEnergy,energyStatus} from './keeper.js';
 import {GEM_LIMIT} from './economy.js';
 import {SPECIAL_EVENTS,eventWindow,eventAttemptsLeft,EVENT_ATTEMPTS} from './modes.js';
 import {getEncounter} from './encounters.js';
@@ -45,8 +45,10 @@ export function settleMode(profile,battle,roster,now=Date.now()){if(battle.sandb
  if(e.mode==='arena')return {...next,arenaRating:cap(profile.arenaRating+reward.rating),arenaTokens:cap(profile.arenaTokens+reward.arenaTokens),arenaWins:cap(profile.arenaWins+(win?1:0)),arenaLosses:cap(profile.arenaLosses+(win?0:1))};
  return {...next,eventWins:cap(profile.eventWins+(win?1:0)),eventTokens:{...profile.eventTokens,[e.eventToken]:cap(profile.eventTokens[e.eventToken]+reward.eventTokens)},eventEntry:null,cleared:win?[...new Set([...profile.cleared,e.id])]:profile.cleared};
 }
-export const EXCHANGE_OFFERS=[{id:'arena-loot-tickets',name:'5 Loot Tickets',currency:'arenaTokens',label:'Arena Tokens',cost:10,lootTickets:5},...SPECIAL_EVENTS.map(e=>({id:e.id+'-loot-tickets',name:'5 Loot Tickets',currency:e.token,label:e.tokenName,cost:6,lootTickets:5})),{id:'arena-gems',name:'100 Gems',currency:'arenaTokens',label:'Arena Tokens',cost:20,gems:100},{id:'arena-gold',name:'Gold',currency:'arenaTokens',label:'Arena Tokens',cost:10,gold:500},...SPECIAL_EVENTS.map(e=>({id:e.id+'-gems',name:'100 Gems',currency:e.token,label:e.tokenName,cost:12,gems:100}))];
-export function exchange(profile,id){const offer=EXCHANGE_OFFERS.find(o=>o.id===id);if(!offer)return {profile,error:'Unknown exchange.'};const balance=offer.currency==='arenaTokens'?profile.arenaTokens:profile.eventTokens[offer.currency]||0;
+export const EXCHANGE_OFFERS=[{id:'arena-energy-refill',name:'Energy Refill',currency:'arenaTokens',label:'Arena Tokens',cost:20,energyRefill:true},...SPECIAL_EVENTS.map(e=>({id:e.id+'-energy-refill',name:'Energy Refill',currency:e.token,label:e.tokenName,cost:12,energyRefill:true})),{id:'arena-loot-tickets',name:'5 Loot Tickets',currency:'arenaTokens',label:'Arena Tokens',cost:10,lootTickets:5},...SPECIAL_EVENTS.map(e=>({id:e.id+'-loot-tickets',name:'5 Loot Tickets',currency:e.token,label:e.tokenName,cost:6,lootTickets:5})),{id:'arena-gems',name:'100 Gems',currency:'arenaTokens',label:'Arena Tokens',cost:20,gems:100},{id:'arena-gold',name:'Gold',currency:'arenaTokens',label:'Arena Tokens',cost:10,gold:500},...SPECIAL_EVENTS.map(e=>({id:e.id+'-gems',name:'100 Gems',currency:e.token,label:e.tokenName,cost:12,gems:100}))];
+export function exchange(profile,id,now=new Date()){const offer=EXCHANGE_OFFERS.find(o=>o.id===id);if(!offer)return {profile,error:'Unknown exchange.'};const balance=offer.currency==='arenaTokens'?profile.arenaTokens:profile.eventTokens[offer.currency]||0;
+ const energy=offer.energyRefill?energyStatus(profile,now):null;
+ if(energy&&energy.current>=energy.max)return {profile,error:'Energy is already full.'};
  if(offer.lootTickets&&(profile.lootTickets??0)+offer.lootTickets>LOOT_TICKET_LIMIT)return {profile,error:'Loot Ticket storage is full.'};
  if(balance<offer.cost)return {profile,error:'Earn more tokens before making this exchange.'};if(offer.gems&&profile.gems+offer.gems>GEM_LIMIT||offer.gold&&profile.gold+offer.gold>999999999)return {profile,error:'That resource is already at its storage limit.'};
- const next={...profile,...(offer.lootTickets?{lootTickets:(profile.lootTickets??0)+offer.lootTickets}:{}),gems:Math.min(GEM_LIMIT,profile.gems+(offer.gems||0)),gold:cap(profile.gold+(offer.gold||0))};if(offer.currency==='arenaTokens')next.arenaTokens=balance-offer.cost;else next.eventTokens={...profile.eventTokens,[offer.currency]:balance-offer.cost};return {profile:bumpPath(next,{gems:offer.gems||0}),offer};}
+ const next={...profile,...(energy?{energy:energy.max,energyDate:energy.date}:{}),...(offer.lootTickets?{lootTickets:(profile.lootTickets??0)+offer.lootTickets}:{}),gems:Math.min(GEM_LIMIT,profile.gems+(offer.gems||0)),gold:cap(profile.gold+(offer.gold||0))};if(offer.currency==='arenaTokens')next.arenaTokens=balance-offer.cost;else next.eventTokens={...profile.eventTokens,[offer.currency]:balance-offer.cost};return {profile:bumpPath(next,{gems:offer.gems||0}),offer};}

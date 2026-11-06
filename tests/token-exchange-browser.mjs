@@ -4,6 +4,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {defaultProfile} from '../src/progression.js';
 import {PROFILE_KEY} from '../src/storage.js';
+import {energyCap} from '../src/keeper.js';
 import {EXCHANGE_OFFERS} from '../src/mode-progression.js';
 const root=new URL('../',import.meta.url).pathname;
 const {chromium}=createRequire(import.meta.url)('playwright');
@@ -15,10 +16,11 @@ try{
  await context.addInitScript(({p,key})=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(p));},{p:seed,key:PROFILE_KEY});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  const profile=()=>page.evaluate(key=>JSON.parse(localStorage.getItem(key)),PROFILE_KEY);
- const group=o=>o.lootTickets?'tickets-'+o.lootTickets:o.gems?'gems-'+o.gems:'gold-'+o.gold;
+ const group=o=>o.energyRefill?'energy-refill':o.lootTickets?'tickets-'+o.lootTickets:o.gems?'gems-'+o.gems:'gold-'+o.gold;
  await page.goto('http://exchange.local/#/shop');await page.locator('[data-action="shop-tab"][data-tab="tokens"]').click();
- assert.equal(await page.locator('.exchange-offers>article').count(),3);
+ assert.equal(await page.locator('.exchange-offers>article').count(),4);
  for(const o of EXCHANGE_OFFERS){
+  if(o.energyRefill){await page.evaluate(key=>{const p=JSON.parse(localStorage.getItem(key));p.energy=7;localStorage.setItem(key,JSON.stringify(p));},PROFILE_KEY);await page.reload();await page.locator('[data-action="shop-tab"][data-tab="tokens"]').click();}
   const card=page.locator(`[data-exchange-item="${group(o)}"]`);
   await card.locator('select').selectOption(o.id);
   assert.match(await card.locator('.exchange-cost').innerText(),new RegExp(`${o.cost} ${o.label}`));
@@ -26,7 +28,7 @@ try{
   assert.equal(await page.locator('[data-action="exchange-confirm"]').getAttribute('data-id'),o.id);
   await page.locator('#modal [data-action="close"]').last().click();assert.deepEqual(await profile(),before,'cancel does not spend tokens');
   await card.locator('[data-action="exchange-preview"]').click();await page.locator('[data-action="exchange-confirm"]').click();
-  const after=await profile();
+  const after=await profile();if(o.energyRefill){assert.equal(after.energy,energyCap(before));assert.ok(await card.locator('button').isDisabled());assert.match(await card.locator('button').innerText(),/Energy full/);}
   assert.equal(after.arenaTokens,before.arenaTokens-(o.currency==='arenaTokens'?o.cost:0));
   for(const key of Object.keys(before.eventTokens))assert.equal(after.eventTokens[key],before.eventTokens[key]-(o.currency===key?o.cost:0));
   for(const key of ['gold','gems','lootTickets'])assert.equal(after[key],before[key]+(o[key]||0));
@@ -40,5 +42,19 @@ try{
  await tickets.locator('select').selectOption('arena-loot-tickets');assert.ok(await tickets.locator('button').isDisabled());
  await tickets.locator('select').selectOption(EXCHANGE_OFFERS.find(o=>o.lootTickets&&o.currency!=='arenaTokens').id);assert.ok(await tickets.locator('button').isEnabled());
  for(const width of [320,390,760,1440]){await page.setViewportSize({width,height:950});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));for(const select of await page.locator('.exchange-offers select').all()){const box=await select.boundingBox();assert.ok(box.width>0&&box.x>=0&&box.x+box.width<=width);}if(width===390||width===1440)await page.screenshot({path:root+`artifacts/token-exchange-grouped-${width}.png`});}
- assert.deepEqual(errors,[]);console.log('PASS: three grouped listings, every original token price and purchase, cancel, affordability, currency persistence, saved rewards, and four viewport sizes.');
+ for(const width of [320,390,760,1440]){
+  await page.setViewportSize({width,height:950});
+  for(const tab of ['supplies','tokens','premium']){
+   await page.locator('[data-action="shop-tab"][data-tab="'+tab+'"]').click();await page.evaluate(()=>document.fonts.ready);
+   for(const selector of ['.material-grid','.gem-offers','.premium-offers','.exchange-offers','.tome-offers']){
+    const grid=page.locator('.page-shop '+selector+':visible');if(!await grid.count())continue;
+    const cards=await grid.locator(':scope>article').evaluateAll(nodes=>nodes.map(e=>{const r=e.getBoundingClientRect(),button=e.querySelector('button:last-child').getBoundingClientRect();return {width:r.width,height:r.height,bottomGap:r.bottom-button.bottom};}));
+    assert.ok(cards.every(c=>Math.abs(c.width-cards[0].width)<1&&Math.abs(c.height-cards[0].height)<1),'uniform '+tab+' '+selector+' '+width);
+    assert.ok(cards.every(c=>Math.abs(c.bottomGap-cards[0].bottomGap)<1),'aligned buttons '+tab+' '+selector+' '+width);
+   }
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'shop overflow '+tab+' '+width);
+   if(width===390)await page.screenshot({path:root+'artifacts/shop-uniform-'+tab+'-390.png',fullPage:true});
+  }
+ }
+ assert.deepEqual(errors,[]);console.log('PASS: four grouped listings including a full Energy refill, every original token price and purchase, cancel, affordability, currency persistence, saved rewards, and four viewport sizes.');
 }finally{await browser.close();}
