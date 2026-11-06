@@ -147,7 +147,7 @@ Each Special tier was cast through the real resolver against one, three and four
 
 These are controlled cast measurements and structural analysis, **not measured matchup win rates or proof that a character always wins**. They do not include board luck, enemy timing, overheal in live fights or every possible five-character composition. Counters, revival, immunities, Cleanse, Dispel and mana control are situational strengths. Recommendations need encounter tests before implementation.
 
-Verified 248 unique characters, all 278 Special tiers, 834 successful non-mutating resolver fixtures, and passives on all 19 Mythicals. Roster content SHA-256: `b196c83cf154dfb716ae8eaf34ed05cdcfd6a16689e9e9df18ff8ee0122b1e8f`.
+Verified 248 unique characters, all 278 Special tiers, 834 successful non-mutating resolver fixtures, and passives on all 19 Mythicals. Roster content SHA-256: `52be563a324fb709c567b005ea1c146bd0e9571869dd97a91d1b22123b54607c`.
 
 ## Every Character
 
