@@ -2,7 +2,7 @@
   "version": 2,
   "reviewDate": "2026-11-05",
   "scope": "Full 248-character analysis after eight Djedi champions. All previous 240 records remain unchanged; pending changes to existing characters remain recommendations.",
-  "rosterSha256": "5788646511ac993efdba20ade9518db9e2ab04f7ed0afad2cc95df61b5a470c4",
+  "rosterSha256": "b196c83cf154dfb716ae8eaf34ed05cdcfd6a16689e9e9df18ff8ee0122b1e8f",
   "appliedChanges": {
     "date": "2026-10-28",
     "reason": "Owner requested improvements to both Astral Mythicals after a speed- and rarity-focused balance review.",
@@ -1715,13 +1715,13 @@
   "implementedAdditions": [
     {
       "championId": "djedi_kobe_kenobi",
-      "name": "Kobe Kenobi",
+      "name": "Kobe Jacoby",
       "faction": "djedi",
       "color": "green",
       "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "average",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
@@ -1732,29 +1732,29 @@
       "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "slow",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "championId": "djedi_jace_hindu",
-      "name": "Jace Hindu",
+      "name": "Jace Gold",
       "faction": "djedi",
       "color": "purple",
       "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "average",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "championId": "djedi_ani_windwalker",
-      "name": "Ani Windwalker",
+      "name": "Windwalker",
       "faction": "djedi",
       "color": "blue",
       "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "fast",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
@@ -1765,18 +1765,18 @@
       "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "slow",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "championId": "djedi_chewy",
-      "name": "Chewy",
+      "name": "Cheeburrash",
       "faction": "djedi",
       "color": "green",
       "rarity": "legendary",
       "role": "defense",
       "manaSpeed": "average",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
@@ -1787,18 +1787,18 @@
       "rarity": "rare",
       "role": "support",
       "manaSpeed": "average",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     },
     {
       "championId": "djedi_dark_mauler",
-      "name": "Dark Mauler",
+      "name": "Lord of Darkness",
       "faction": "djedi",
       "color": "red",
       "rarity": "legendary",
       "role": "attack",
       "manaSpeed": "fast",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "status": "implemented"
     }
   ],
@@ -20037,7 +20037,7 @@
     },
     {
       "id": "djedi_kobe_kenobi",
-      "name": "Kobe Kenobi",
+      "name": "Kobe Jacoby",
       "rarity": "legendary",
       "faction": "djedi",
       "element": "green",
@@ -20176,7 +20176,7 @@
     },
     {
       "id": "djedi_jace_hindu",
-      "name": "Jace Hindu",
+      "name": "Jace Gold",
       "rarity": "legendary",
       "faction": "djedi",
       "element": "purple",
@@ -20248,7 +20248,7 @@
     },
     {
       "id": "djedi_ani_windwalker",
-      "name": "Ani Windwalker",
+      "name": "Windwalker",
       "rarity": "legendary",
       "faction": "djedi",
       "element": "blue",
@@ -20387,7 +20387,7 @@
     },
     {
       "id": "djedi_chewy",
-      "name": "Chewy",
+      "name": "Cheeburrash",
       "rarity": "legendary",
       "faction": "djedi",
       "element": "green",
@@ -20526,7 +20526,7 @@
     },
     {
       "id": "djedi_dark_mauler",
-      "name": "Dark Mauler",
+      "name": "Lord of Darkness",
       "rarity": "legendary",
       "faction": "djedi",
       "element": "red",

@@ -13,8 +13,8 @@ const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 
 test('Djedi has the eight requested identities, exact rarities and roles, while preserving all 240 previous champions',async()=>{
  assert.equal(roster.length,248);assert.equal(djedi.length,8);assert.equal(new Set(roster.map(c=>c.id)).size,248);assert.equal(new Set(roster.map(c=>c.name.toLowerCase())).size,248);
- assert.deepEqual(djedi.map(c=>c.name).sort(),['Kobe Kenobi','Commander Pain','Jace Hindu','Ani Windwalker','Dark Lord','Chewy','AR2','Dark Mauler'].sort());
- for(const c of djedi){assert.equal(c.rarity,c.name==='AR2'?'rare':'legendary');assert.equal(c.role,c.name==='AR2'?'support':c.name==='Chewy'?'defense':'attack');}
+ assert.deepEqual(djedi.map(c=>c.name).sort(),['Kobe Jacoby','Commander Pain','Jace Gold','Windwalker','Dark Lord','Cheeburrash','AR2','Lord of Darkness'].sort());
+ for(const c of djedi){assert.equal(c.rarity,c.name==='AR2'?'rare':'legendary');assert.equal(c.role,c.name==='AR2'?'support':c.name==='Cheeburrash'?'defense':'attack');}
  assert.equal(new Set(djedi.map(c=>c.color)).size,5);
  assert.equal(hash(roster.slice(0,240)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,240)),manifest.originalSourceRecordsSha256);
  const portraits=[];for(const c of roster.slice(0,240))portraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(new URL('../'+c.portrait,import.meta.url))).digest('hex')});assert.equal(hash(portraits),manifest.originalPortraitsSha256);
@@ -39,11 +39,23 @@ test('all eight kits resolve with correct targeting, mana costs and Auto support
   const before=structuredClone(b),l=c.special.levels[0],r=cast(b,'hero-0',l.target==='self'?'hero-0':'enemy-1',1);assert.ok(!r.error,c.id);assert.deepEqual(b,before);assert.ok(validateSave(r.state,roster));assert.equal(r.state.heroes[0].mana,0);assert.equal(r.state.moves,b.moves);
   if(l.damage)r.state.enemies.forEach((e,i)=>assert.equal(e.hp<b.enemies[i].hp,l.aoe||i===1,c.name));
   if(c.name==='AR2'){r.state.heroes.forEach((h,i)=>{assert.ok(h.hp>b.heroes[i].hp);assert.equal(h.mana,i?1.5:0);});}
-  if(c.name==='Chewy'){assert.equal(r.state.heroes[0].effects.guard.turns,2);assert.equal(r.state.heroes[0].effects.inc_def.turns,2);}
+  if(c.name==='Cheeburrash'){assert.equal(r.state.heroes[0].effects.guard.turns,2);assert.equal(r.state.heroes[0].effects.inc_def.turns,2);}
   assert.ok(!applyAutoAction(b,chooseAutoAction(b)).error);
  }
 });
 
 test('every Djedi enters the correct summon pool and survives profile normalization',()=>{
  for(const c of djedi){const pool=roster.filter(h=>h.rarity===c.rarity),rolls=[c.rarity==='rare'?.6:.83,(pool.findIndex(h=>h.id===c.id)+.5)/pool.length],r=summon(defaultProfile(),roster,()=>rolls.shift());assert.equal(r.champion.id,c.id);assert.ok(validateProfile(r.profile,roster));assert.deepEqual(normalizeProfile(r.profile,roster),r.profile);}
+});
+
+test('approved Djedi appearance revisions retain stable IDs, stats, kits and source mechanics',async()=>{
+ const revisions=await read('data/djedi-appearance-revisions.json'),art=await read('data/portrait-revisions.json'),source=await read('data/source-champions.json');
+ const gameplay=record=>{const {name,lore,...rest}=record;return rest;};
+ for(const edit of revisions.changes){
+  const current=roster.find(c=>c.id===edit.id);assert.equal(current.name,edit.name);
+  assert.deepEqual(gameplay(current),gameplay(edit.beforeRecord),edit.id+' gameplay');
+  assert.deepEqual(gameplay(source.find(c=>c.id===edit.id)),gameplay(edit.beforeSource),edit.id+' source mechanics');
+  const approved=art.portraits.find(p=>p.id===edit.id),actual=createHash('sha256').update(await readFile(new URL('../'+current.portrait,import.meta.url))).digest('hex');
+  assert.equal(actual,approved.approvedSha256);assert.notEqual(actual,approved.baselineSha256);
+ }
 });

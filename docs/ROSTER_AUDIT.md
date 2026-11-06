@@ -1,6 +1,6 @@
 # Warband Legends Roster Audit — 248 Champions
 
-Djedi adds seven Legendaries and Rare support AR2: six attackers, defense Chewy and support AR2. Thirteen original factions retain eighteen members each, Magic has six and Djedi has eight. All 240 previous records and portraits are unchanged.
+Djedi adds seven Legendaries and Rare support AR2: six attackers, defense Cheeburrash and support AR2. Thirteen original factions retain eighteen members each, Magic has six and Djedi has eight. All 240 previous records and portraits are unchanged.
 
 ## Before and After
 
@@ -26,14 +26,14 @@ Attackers remain the majority: **136/248 (54.8%)**. Djedi adds six attackers, on
 
 | Champion | Faction | Element | Rarity | Type | Speed |
 | --- | --- | --- | --- | --- | --- |
-| Kobe Kenobi | Djedi | Green | Legendary | ATK | Average |
+| Kobe Jacoby | Djedi | Green | Legendary | ATK | Average |
 | Commander Pain | Djedi | Blue | Legendary | ATK | Slow |
-| Jace Hindu | Djedi | Purple | Legendary | ATK | Average |
-| Ani Windwalker | Djedi | Blue | Legendary | ATK | Fast |
+| Jace Gold | Djedi | Purple | Legendary | ATK | Average |
+| Windwalker | Djedi | Blue | Legendary | ATK | Fast |
 | Dark Lord | Djedi | Red | Legendary | ATK | Slow |
-| Chewy | Djedi | Green | Legendary | DEF | Average |
+| Cheeburrash | Djedi | Green | Legendary | DEF | Average |
 | AR2 | Djedi | Yellow | Rare | SUP | Average |
-| Dark Mauler | Djedi | Red | Legendary | ATK | Fast |
+| Lord of Darkness | Djedi | Red | Legendary | ATK | Fast |
 
 ## Factions and Mythicals
 

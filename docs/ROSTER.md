@@ -244,14 +244,14 @@
 | Caldrien, Dawn Wanderer | legendary | yellow | attack | 830 | 775 | 1455 | Average 10 |
 | Nyzara, Voidweaver | legendary | purple | attack | 850 | 735 | 1415 | Fast 8 |
 | Eldravon, the First Arcanum | mythical | purple | attack | 960 | 870 | 1660 | Slow 12 |
-| Kobe Kenobi | legendary | green | attack | 815 | 735 | 1405 | Average 10 |
+| Kobe Jacoby | legendary | green | attack | 815 | 735 | 1405 | Average 10 |
 | Commander Pain | legendary | blue | attack | 840 | 680 | 1350 | Slow 12 |
-| Jace Hindu | legendary | purple | attack | 820 | 725 | 1395 | Average 10 |
-| Ani Windwalker | legendary | blue | attack | 825 | 695 | 1370 | Fast 8 |
+| Jace Gold | legendary | purple | attack | 820 | 725 | 1395 | Average 10 |
+| Windwalker | legendary | blue | attack | 825 | 695 | 1370 | Fast 8 |
 | Dark Lord | legendary | red | attack | 835 | 750 | 1450 | Slow 12 |
-| Chewy | legendary | green | defense | 675 | 815 | 1580 | Average 10 |
+| Cheeburrash | legendary | green | defense | 675 | 815 | 1580 | Average 10 |
 | AR2 | rare | yellow | support | 595 | 635 | 1130 | Average 10 |
-| Dark Mauler | legendary | red | attack | 850 | 670 | 1320 | Fast 8 |
+| Lord of Darkness | legendary | red | attack | 850 | 670 | 1320 | Fast 8 |
 
 ## Specials
 
@@ -1295,7 +1295,7 @@ Passive: **Twin-Crowned Vigil** — Immune to Poison.
 
 Passive: **Unwritten Will** — Immune to Mana Block.
 
-### Kobe Kenobi — Stillness Before the Blade
+### Kobe Jacoby — Stillness Before the Blade
 
 - 10 tiles: Deal 265% ATK damage to selected enemy. Damage Ward (Caster, 1 turns); Mana Slow (Selected enemy, 2 turns).
 
@@ -1303,11 +1303,11 @@ Passive: **Unwritten Will** — Immune to Mana Block.
 
 - 12 tiles: Deal 190% ATK damage to all living enemies, ignoring 25% of DEF. Riposte (Caster, 2 turns).
 
-### Jace Hindu — The Unbroken Vow
+### Jace Gold — The Unbroken Vow
 
 - 10 tiles: Deal 280% ATK damage to selected enemy. Dispel (Selected enemy); Buff Seal (Selected enemy, 2 turns).
 
-### Ani Windwalker — Skyward Momentum
+### Windwalker — Skyward Momentum
 
 - 8 tiles: Deal 270% ATK damage to selected enemy. Attack Up (Caster, 2 turns).
 
@@ -1315,7 +1315,7 @@ Passive: **Unwritten Will** — Immune to Mana Block.
 
 - 12 tiles: Deal 195% ATK damage to all living enemies. Mana Slow (All living enemies, 2 turns); Attack Down (All living enemies, 1 turns).
 
-### Chewy — Stand Behind the Roar
+### Cheeburrash — Stand Behind the Roar
 
 - 10 tiles: Deal 160% ATK damage to selected enemy. Taunt (Caster, 2 turns); Defense Up (Caster, 2 turns).
 
@@ -1323,7 +1323,7 @@ Passive: **Unwritten Will** — Immune to Mana Block.
 
 - 10 tiles: Restore 22% max HP to all living allies. Mana Gift (Other living allies).
 
-### Dark Mauler — Crimson Vault
+### Lord of Darkness — Crimson Vault
 
 - 8 tiles: Deal 260% ATK damage to selected enemy, ignoring 25% of DEF. Bleed (Selected enemy, 2 turns).
 

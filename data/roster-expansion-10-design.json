@@ -6,7 +6,7 @@
   "champions": [
     {
       "id": "djedi_kobe_kenobi",
-      "name": "Kobe Kenobi",
+      "name": "Kobe Jacoby",
       "title": "Warden of the Quiet Mind",
       "faction": "djedi",
       "rarity": "legendary",
@@ -45,7 +45,7 @@
         }
       ],
       "lore": "Beneath an oversized brown hood, Kobe carries the calm of a thousand silent vigils. His green energy blade moves only when words have failed. Stones lift around him as he turns an enemy’s momentum aside with a thought.",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "passive": null
     },
     {
@@ -84,12 +84,12 @@
         }
       ],
       "lore": "A scarred metal commander advances beneath a shredded dark cape, four arms drawing a wall of blue and green light. His blades spin until the air screams against them. Every dent upon his chassis records a battle he survived without yielding a step.",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "passive": null
     },
     {
       "id": "djedi_jace_hindu",
-      "name": "Jace Hindu",
+      "name": "Jace Gold",
       "title": "Keeper of the Sacred Vow",
       "faction": "djedi",
       "rarity": "legendary",
@@ -127,13 +127,13 @@
           ]
         }
       ],
-      "lore": "Jace places his faith in discipline, mercy and the sacred duty to protect life. Humble in speech and unwavering in judgment, he carries a purple energy sword as the final answer to cruelty. No borrowed enchantment can stand before his clear resolve.",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "lore": "Jace Gold places his faith in discipline, mercy and the sacred duty to protect life. Humble in speech and unwavering in judgment, he carries a purple energy sword as the final answer to cruelty. No borrowed enchantment can stand before his clear resolve.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "passive": null
     },
     {
       "id": "djedi_ani_windwalker",
-      "name": "Ani Windwalker",
+      "name": "Windwalker",
       "title": "Bright Blade of the Rising Path",
       "faction": "djedi",
       "rarity": "legendary",
@@ -166,8 +166,8 @@
           ]
         }
       ],
-      "lore": "Ani greets impossible odds with a grin and a blue blade already in motion. A single thin braid falls over the front of his shoulder, a reminder that his learning is not finished. His quick feet and fearless heart often reach danger before caution can catch him.",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "lore": "Windwalker greets impossible odds with a grin and a blue blade already in motion. A single thin braid falls over the front of his shoulder, a reminder that his learning is not finished. His quick feet and fearless heart often reach danger before caution can catch him.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "passive": null
     },
     {
@@ -210,13 +210,13 @@
           ]
         }
       ],
-      "lore": "Behind a sinister black helmet, the Dark Lord speaks with the certainty of an approaching storm. His cape drinks the light of his own crimson blade. Those who meet his gaze feel their strength and resolve begin to falter.",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "lore": "Behind a black helmet warped and scorched by volcanic heat, the Dark Lord speaks with the certainty of an approaching storm. His cape drinks the light of his own crimson blade. Those who meet his gaze feel their strength and resolve begin to falter.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "passive": null
     },
     {
       "id": "djedi_chewy",
-      "name": "Chewy",
+      "name": "Cheeburrash",
       "title": "The Roaring Bulwark",
       "faction": "djedi",
       "rarity": "legendary",
@@ -254,8 +254,8 @@
           ]
         }
       ],
-      "lore": "Chewy’s guttural roar can carry across a battlefield long after the guns fall silent. Beneath his long brown fur is a loyal heart and a strength few dare test. His crossbow and loaded utility bandolier stand between his companions and anyone foolish enough to pursue them.",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "lore": "Cheeburrash’s guttural roar can carry across a battlefield long after the guns fall silent. Beneath his long brown fur is a loyal heart and a strength few dare test. His crossbow and loaded utility bandolier stand between his companions and anyone foolish enough to pursue them.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "passive": null
     },
     {
@@ -294,12 +294,12 @@
         }
       ],
       "lore": "AR2 walks with the uneven rhythm of parts assembled across a hundred workshops. Great golden disc-eyes study every broken circuit and wounded companion. His mismatched hands always seem to find one last spare component when hope is running low.",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "passive": null
     },
     {
       "id": "djedi_dark_mauler",
-      "name": "Dark Mauler",
+      "name": "Lord of Darkness",
       "title": "The Crimson Aerial Blade",
       "faction": "djedi",
       "rarity": "legendary",
@@ -332,8 +332,8 @@
           ]
         }
       ],
-      "lore": "Four short horns rise above the Mauler’s red face and black-ringed eyes. His double-ended crimson weapon whirls as he vaults impossibly high, descending with predatory precision. He delights in leaving no safe angle from which to face him.",
-      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK.",
+      "lore": "Beneath an oversized black hood, four short horns crown a sinister red face and black-ringed eyes. The Lord of Darkness’s double-ended crimson weapon whirls as he vaults impossibly high, descending with predatory precision. He delights in leaving no safe angle from which to face him.",
+      "gap": "Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK.",
       "passive": null
     }
   ]

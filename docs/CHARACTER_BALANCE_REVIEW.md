@@ -116,14 +116,14 @@ Veldtborn’s 30% and Astral’s 25% matching mana substantially alter repeat sp
 
 | Character | Faction / Element | Rarity / Type / Speed | Gap Filled |
 | --- | --- | --- | --- |
-| Kobe Kenobi | Djedi / Green | Legendary / Attack / Average | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK. |
-| Commander Pain | Djedi / Blue | Legendary / Attack / Slow | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK. |
-| Jace Hindu | Djedi / Purple | Legendary / Attack / Average | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK. |
-| Ani Windwalker | Djedi / Blue | Legendary / Attack / Fast | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK. |
-| Dark Lord | Djedi / Red | Legendary / Attack / Slow | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK. |
-| Chewy | Djedi / Green | Legendary / Defense / Average | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK. |
-| AR2 | Djedi / Yellow | Rare / Support / Average | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK. |
-| Dark Mauler | Djedi / Red | Legendary / Attack / Fast | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Chewy and support AR2. Two or more Djedi members receive +10% ATK. |
+| Kobe Jacoby | Djedi / Green | Legendary / Attack / Average | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK. |
+| Commander Pain | Djedi / Blue | Legendary / Attack / Slow | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK. |
+| Jace Gold | Djedi / Purple | Legendary / Attack / Average | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK. |
+| Windwalker | Djedi / Blue | Legendary / Attack / Fast | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK. |
+| Dark Lord | Djedi / Red | Legendary / Attack / Slow | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK. |
+| Cheeburrash | Djedi / Green | Legendary / Defense / Average | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK. |
+| AR2 | Djedi / Yellow | Rare / Support / Average | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK. |
+| Lord of Darkness | Djedi / Red | Legendary / Attack / Fast | Djedi founding roster: seven Legendaries and Rare support AR2; six attackers, defense Cheeburrash and support AR2. Two or more Djedi members receive +10% ATK. |
 
 Fifteen targeted additions are complete: **7 Legendaries, 8 Rares; 8 ATK, 4 DEF, 3 SUP**. No existing kits or portraits changed in this expansion. The [189-character review](history/CHARACTER-BALANCE-189.md) retains the original suggestions.
 
@@ -147,7 +147,7 @@ Each Special tier was cast through the real resolver against one, three and four
 
 These are controlled cast measurements and structural analysis, **not measured matchup win rates or proof that a character always wins**. They do not include board luck, enemy timing, overheal in live fights or every possible five-character composition. Counters, revival, immunities, Cleanse, Dispel and mana control are situational strengths. Recommendations need encounter tests before implementation.
 
-Verified 248 unique characters, all 278 Special tiers, 834 successful non-mutating resolver fixtures, and passives on all 19 Mythicals. Roster content SHA-256: `5788646511ac993efdba20ade9518db9e2ab04f7ed0afad2cc95df61b5a470c4`.
+Verified 248 unique characters, all 278 Special tiers, 834 successful non-mutating resolver fixtures, and passives on all 19 Mythicals. Roster content SHA-256: `b196c83cf154dfb716ae8eaf34ed05cdcfd6a16689e9e9df18ff8ee0122b1e8f`.
 
 ## Every Character
 
@@ -389,13 +389,13 @@ The tables record every current character. ATK/bulk deltas compare only with the
 | Merovant, Verdant Archmage / Magic / Green | Support; 755 / 790 / 1490 | Average; 10 | No direct hit; heal 32% team; Cleanse (team), Mana Flow (team, 2t) | +5.78% / +8.11% | Keep for Now (None): Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
 | Caldrien, Dawn Wanderer / Magic / Yellow | Attack; 830 / 775 / 1455 | Average; 10 | 195% AoE; Dispel (all enemies), Attack Down (all enemies, 2t) | +1.24% / +16.54% | Keep for Now (None): Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
 | Nyzara, Voidweaver / Magic / Purple | Attack; 850 / 735 / 1415 | Fast; 8 | 280% single; Dispel (one enemy), Mana Block (one enemy, 1t) | +3.68% / +9.78% | Keep for Now (None): Fast access is a meaningful strength. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
-| Kobe Kenobi / Djedi / Green | Attack; 815 / 735 / 1405 | Average; 10 | 265% single; Mana Slow (one enemy, 2t), Damage Ward (self, 1t) | -0.59% / +9.01% | Keep for Now (None): Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
+| Kobe Jacoby / Djedi / Green | Attack; 815 / 735 / 1405 | Average; 10 | 265% single; Mana Slow (one enemy, 2t), Damage Ward (self, 1t) | -0.59% / +9.01% | Keep for Now (None): Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
 | Commander Pain / Djedi / Blue | Attack; 840 / 680 / 1350 | Slow; 12 | 190% AoE Pierce; Riposte (self, 2t) | +2.46% / +0.07% | Keep for Now (None): Slow access needs a strong damage, coverage or protection payoff. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
-| Jace Hindu / Djedi / Purple | Attack; 820 / 725 / 1395 | Average; 10 | 280% single; Dispel (one enemy), Buff Seal (one enemy, 2t) | +0.02% / +7.35% | Keep for Now (None): Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
-| Ani Windwalker / Djedi / Blue | Attack; 825 / 695 / 1370 | Fast; 8 | 270% single; Attack Up (self, 2t) | +0.63% / +2.85% | Keep for Now (None): Fast access is a meaningful strength. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
+| Jace Gold / Djedi / Purple | Attack; 820 / 725 / 1395 | Average; 10 | 280% single; Dispel (one enemy), Buff Seal (one enemy, 2t) | +0.02% / +7.35% | Keep for Now (None): Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
+| Windwalker / Djedi / Blue | Attack; 825 / 695 / 1370 | Fast; 8 | 270% single; Attack Up (self, 2t) | +0.63% / +2.85% | Keep for Now (None): Fast access is a meaningful strength. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
 | Dark Lord / Djedi / Red | Attack; 835 / 750 / 1450 | Slow; 12 | 195% AoE; Mana Slow (all enemies, 2t), Attack Down (all enemies, 1t) | +1.85% / +13.86% | Keep for Now (None): Slow access needs a strong damage, coverage or protection payoff. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
-| Chewy / Djedi / Green | Defense; 675 / 815 / 1580 | Average; 10 | 160% single; Taunt (self, 2t), Defense Up (self, 2t) | +1.55% / +2.15% | Keep for Now (None): Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
-| Dark Mauler / Djedi / Red | Attack; 850 / 670 / 1320 | Fast; 8 | 260% single Pierce; Bleed (one enemy, 2t) | +3.68% / -2.98% | Keep for Now (None): Fast access is a meaningful strength. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
+| Cheeburrash / Djedi / Green | Defense; 675 / 815 / 1580 | Average; 10 | 160% single; Taunt (self, 2t), Defense Up (self, 2t) | +1.55% / +2.15% | Keep for Now (None): Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
+| Lord of Darkness / Djedi / Red | Attack; 850 / 670 / 1320 | Fast; 8 | 260% single Pierce; Bleed (one enemy, 2t) | +3.68% / -2.98% | Keep for Now (None): Fast access is a meaningful strength. No clear priority change found in this review; retain unless encounter testing reveals a problem. |
 
 ### Mythical
 

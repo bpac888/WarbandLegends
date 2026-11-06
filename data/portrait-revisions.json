@@ -6,7 +6,7 @@
       "path": "assets/champions/valcera_briar_magistrate.webp",
       "baselineSha256": "5ce25cff48fc8ba211c839bafe49f859ab8a4865d0a8c062e88358cf29f2b315",
       "approvedSha256": "0b455d9b3cef53e4ef0eb901863e107a8cd121bf63cda2579349536542b1a79f",
-      "reason": "User requested center-split blonde and black hair; preserve the rest of Valcera\u2019s design."
+      "reason": "User requested center-split blonde and black hair; preserve the rest of Valcera’s design."
     },
     {
       "id": "zamrukh_thornstorm_rider",
@@ -182,6 +182,48 @@
       "baselineSha256": "0996af6cc4916ca7ae12db723e501a376fe9d9db617855ab47441abe2143b4ba",
       "approvedSha256": "b91c3b5e74bc46c15870bca51e2c829839dc9fb1a02eefa221e6d19fcc736fa8",
       "reason": "User requested improved background and surroundings, preserving the foreground character."
+    },
+    {
+      "id": "djedi_kobe_kenobi",
+      "path": "assets/champions/djedi_kobe_kenobi.webp",
+      "baselineSha256": "c0b5878b859c4dec342fbf0ebc022406607fbf02eed636cf3136f051e9826abe",
+      "approvedSha256": "6908cdd547cb28db5cb9b59eed285eda8a5c0b7bf4db34d084090f882591ec01",
+      "reason": "Renamed Kobe Jacoby; long white beard under the existing brown hood."
+    },
+    {
+      "id": "djedi_jace_hindu",
+      "path": "assets/champions/djedi_jace_hindu.webp",
+      "baselineSha256": "37420e79ce0a731fdd38a7b1b7b0e3c440e10401cc552c0672b27d9cc156983a",
+      "approvedSha256": "79a01e795248eca28d9ec1cee53d52a488f7e6e0dc9067188865c2a511f9087f",
+      "reason": "Renamed Jace Gold; long flowing platinum-blond dreadlocks."
+    },
+    {
+      "id": "djedi_ani_windwalker",
+      "path": "assets/champions/djedi_ani_windwalker.webp",
+      "baselineSha256": "dc211ee7413871fee2ee96a2548c29a1f90359d410feaf2449089fdbcc1032f7",
+      "approvedSha256": "0ee7a80a09726529b422ff2e50afd13327db8275cc77ac72ad25be682f69d155",
+      "reason": "Renamed Windwalker; dark black goatee while retaining the single braid in front of the shoulder."
+    },
+    {
+      "id": "djedi_dark_lord",
+      "path": "assets/champions/djedi_dark_lord.webp",
+      "baselineSha256": "ba5d346fe73a903474de7889249e2842c7a9f2475eb5c8833c8875266a2411c5",
+      "approvedSha256": "4455ea6830f00ff6d01e76e9fca040b0c9cba82f23f7bb8e1b6e8299e297f245",
+      "reason": "Heavily heat-deformed, partially melted black helmet; pose, equipment and scene retained."
+    },
+    {
+      "id": "djedi_chewy",
+      "path": "assets/champions/djedi_chewy.webp",
+      "baselineSha256": "e77bb03c4f77bb5104da1e2a5ad37ad1040cfbf738b09c31369fba748cec4c92",
+      "approvedSha256": "b6b452aaea8cf5364604602d8056dc497af2bbc81b784e553ed57b07190b73bf",
+      "reason": "Renamed Cheeburrash; rounder head, larger ears and brown/beige/gray/black upper-body fur."
+    },
+    {
+      "id": "djedi_dark_mauler",
+      "path": "assets/champions/djedi_dark_mauler.webp",
+      "baselineSha256": "3571595a79d1cef4a6d6a7a030569dd68bc42db5d9a7ff9c81a56cc725af5921",
+      "approvedSha256": "6cb1fba4c93a88fe1f089b1f8e3d91f3165cdb681ca1e2022bcf19325d45abe7",
+      "reason": "Renamed Lord of Darkness; oversized black robe and deep hood partially concealing the face."
     }
   ]
 }
