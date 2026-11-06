@@ -1,0 +1,24 @@
+{
+  "version": 12,
+  "originalCount": 264,
+  "totalCount": 265,
+  "originalRecordsSha256": "bfb737923a6ff6ea79cfadae86b2fc297d4be9a62a5b78fd04a4ceec80db40d6",
+  "originalSourceRecordsSha256": "ab2e8303069be045da66b3ce3641c007f3a1d979f03d328ffd41707ff8491d8a",
+  "originalPortraitsSha256": "30ed246165921ce303189ef0c40faa45301b924485e4f58f7c165f79a30b27b1",
+  "addedChampionIds": [
+    "the_king"
+  ],
+  "implementedRecommendations": [
+    {
+      "championId": "the_king",
+      "name": "The King",
+      "faction": "none",
+      "color": "yellow",
+      "rarity": "mythical",
+      "role": "attack",
+      "manaSpeed": "very_fast",
+      "gap": "Factionless warrior king with the highest baseline Attack and a 25% chance to dodge damaging Specials.",
+      "status": "implemented"
+    }
+  ]
+}

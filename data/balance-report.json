@@ -1,15 +1,15 @@
 {
   "version": 3,
-  "champions": 264,
+  "champions": 265,
   "colorCounts": {
     "red": 54,
     "blue": 53,
     "green": 53,
-    "yellow": 51,
+    "yellow": 52,
     "purple": 53
   },
   "manaCounts": {
-    "very_fast": 10,
+    "very_fast": 11,
     "fast": 63,
     "average": 126,
     "slow": 42,
@@ -236,21 +236,21 @@
       }
     },
     "mythical": {
-      "count": 19,
+      "count": 20,
       "stats": {
         "atk": {
           "min": 748,
-          "average": 846.2631578947369,
-          "max": 960
+          "average": 853.95,
+          "max": 1000
         },
         "def": {
           "min": 727,
-          "average": 801.8421052631579,
+          "average": 799.75,
           "max": 877
         },
         "hp": {
           "min": 1416,
-          "average": 1542.8947368421052,
+          "average": 1539.75,
           "max": 1660
         }
       }

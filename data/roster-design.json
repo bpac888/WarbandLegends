@@ -5537,6 +5537,35 @@
         "def": 680,
         "hp": 1210
       }
+    },
+    "the_king": {
+      "color": "yellow",
+      "manaSpeed": "very_fast",
+      "chargeLevels": 1,
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "very_fast",
+          "tiles": 6.5,
+          "target": "enemy",
+          "damage": 1.8,
+          "healing": 0,
+          "aoe": true,
+          "pierce": true,
+          "effects": [
+            {
+              "id": "bleed",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ]
+        }
+      ],
+      "statsOverride": {
+        "atk": 1000,
+        "def": 760,
+        "hp": 1480
+      }
     }
   }
 }

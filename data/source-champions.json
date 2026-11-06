@@ -9118,5 +9118,49 @@
         ]
       ]
     }
+  },
+  {
+    "template_id": "the_king",
+    "name": "The King",
+    "title": "The Unbroken Crown",
+    "rarity": "mythical",
+    "faction": "none",
+    "role": "attack",
+    "atk": 1000,
+    "def": 760,
+    "hp": 1480,
+    "ability_name": "A Crown Beyond Time",
+    "lore": "No banner can claim him, and no army can hold his pace. In light chainmail and an unadorned circlet, the King crosses a battlefield between heartbeats, his great longsword tracing a silver arc through ranks that seem frozen in time. Strength carries his blade; courage carries him where no other crown would dare to stand.",
+    "image_url": "/assets/champions/the_king.webp",
+    "id": "the_king",
+    "color": "yellow",
+    "source_image": "assets/champions/the_king.webp",
+    "portrait": "assets/champions/the_king.webp",
+    "passive": {
+      "id": "sovereigns_evasion",
+      "name": "Sovereign’s Evasion",
+      "kind": "dodge_damaging_special",
+      "value": 0.25,
+      "desc": "25% chance to dodge an incoming damaging Special, avoiding its damage and attached hostile effects. Rolled once per Special. Does not dodge basic attacks, rune strikes or ongoing damage."
+    },
+    "ability_desc": "Deal 180% ATK damage to all living enemies, ignoring 25% of DEF.",
+    "spd": 120,
+    "kit": {
+      "a2": [],
+      "a3": [
+        [
+          "bleed",
+          2
+        ],
+        [
+          "aoe",
+          0
+        ],
+        [
+          "ignore_def",
+          0
+        ]
+      ]
+    }
   }
 ]

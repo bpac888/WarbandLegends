@@ -4,7 +4,7 @@
 
 ## Start here
 
-Current roster: **264 champions across sixteen factions**. [Goblins](GOBLINS.md) adds sixteen Rare and Legendary champions. [Djedi](DJEDI.md) adds eight champions. [Magic](MAGIC.md) has six wizards; the thirteen original factions retain eighteen members each.
+Current roster: **265 champions, with sixteen factions and one factionless Mythical**. [The King](THE_KING.md) has the highest Attack and personal Special evasion. [Goblins](GOBLINS.md) adds sixteen Rare and Legendary champions. [Djedi](DJEDI.md) adds eight champions. [Magic](MAGIC.md) has six wizards; the thirteen original factions retain eighteen members each.
 
 - [Detailed project guide](PROJECT-GUIDE.md) — full feature list, local development, builds and hosting.
 - [Game rules](RULES.md) — board, elements, mana and combat.

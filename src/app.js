@@ -32,7 +32,7 @@ import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from '.
 import {developmentPanel,levelMark,rankTrack} from './development-ui.js';
 import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js';
 import {animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js';
-import {DEFAULT_FILTERS,filterChampions} from './collection.js';
+import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js';
 import * as Shell from './shell.js';
 import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js';
 import {EFFECTS} from './effects.js';
@@ -43,7 +43,7 @@ const app=document.querySelector('#app'),modal=document.querySelector('#modal'),
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={red:'<path d="M32 8c4 13 16 15 16 29a16 16 0 0 1-32 0c0-9 6-16 12-22-1 10 2 12 5 13 4-7 2-13-1-20Z"/>',green:'<path d="M50 12c1 27-10 40-28 32C5 27 25 12 50 12Z"/><path d="M17 51 42 22M28 39l-2-10m8 4 8 1" fill="none" stroke="var(--rune-dark)" stroke-width="3"/>',blue:'<path d="M32 9v46M12 20l40 24M12 44l40-24M24 14l8 7 8-7M24 50l8-7 8 7M13 29l10-2-1-10M51 35l-10 2 1 10M13 35l10 2-1 10M51 29l-10-2 1-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',yellow:'<path d="m32 5 7 18 20 9-20 9-7 18-7-18L5 32l20-9Z"/><circle cx="32" cy="32" r="8" fill="var(--rune-dark)"/>',purple:'<path d="M43 9a24 24 0 1 0 11 35A22 22 0 0 1 43 9Z"/><path d="m44 22 3-6 3 6 6 3-6 3-3 6-3-6-6-3Z"/>'};
 const rune=(color,extra='')=>`<svg viewBox="0 0 64 64" class="rune-icon ${extra}" aria-hidden="true">${icons[color]}</svg>`;
-const faction=id=>id.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase()).replace('Dragondynasty','Dragon Dynasty').replace('Duneriders','Dune Riders');
+const faction=factionLabel;
 const role=id=>({attack:'ATK',defense:'DEF',support:'SUP'}[id]||id);
 const percent=(a,b)=>Math.max(0,Math.min(100,a/b*100));
 let displayedBattle=null;

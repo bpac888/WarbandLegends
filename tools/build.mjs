@@ -40,9 +40,14 @@ const djediPortraits=[];for(const c of roster.slice(0,djedi.originalCount))djedi
 if(sha(djediPortraits)!==djedi.originalPortraitsSha256)throw Error('A previous portrait changed since Djedi was added');
 const goblins=JSON.parse(await readFile('data/roster-expansion-11.json','utf8'));
 if(sha(roster.slice(0,248))!==goblins.originalRecordsSha256||sha(sourceRoster.slice(0,248))!==goblins.originalSourceRecordsSha256)throw Error('The 248-character baseline changed');
-if(roster.length!==264||sourceRoster.length!==264||new Set(roster.map(c=>c.id)).size!==264||JSON.stringify(roster.slice(248).map(c=>c.id))!==JSON.stringify(goblins.addedChampionIds))throw Error('Goblin identity check failed');
+if(JSON.stringify(roster.slice(248,264).map(c=>c.id))!==JSON.stringify(goblins.addedChampionIds))throw Error('Goblin identity check failed');
 const goblinPortraits=[];for(const c of roster.slice(0,248))goblinPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(goblinPortraits)!==goblins.originalPortraitsSha256)throw Error('A previous portrait changed since Goblins were added');
+const king=JSON.parse(await readFile('data/roster-expansion-12.json','utf8'));
+if(roster.length!==265||sourceRoster.length!==265||new Set(roster.map(c=>c.id)).size!==265||JSON.stringify(roster.slice(264).map(c=>c.id))!==JSON.stringify(king.addedChampionIds))throw Error('The King identity check failed');
+if(sha(roster.slice(0,264))!==king.originalRecordsSha256||sha(sourceRoster.slice(0,264))!==king.originalSourceRecordsSha256)throw Error('The 264-character baseline changed');
+const kingPortraits=[];for(const c of roster.slice(0,264))kingPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
+if(sha(kingPortraits)!==king.originalPortraitsSha256)throw Error('A previous portrait changed since The King was added');
 if((await stat('assets/factions/goblins.svg')).size<500)throw Error('Missing Goblins emblem');
 if((await stat('assets/factions/djedi.svg')).size<500)throw Error('Missing Djedi emblem');
 if((await stat('assets/factions/magic.svg')).size<500)throw Error('Missing Magic emblem');

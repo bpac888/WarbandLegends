@@ -1,8 +1,8 @@
 {
   "version": 2,
   "reviewDate": "2026-11-05",
-  "scope": "Full 264-character analysis after sixteen Goblins. All previous 248 records remain unchanged; pending changes to existing characters remain recommendations.",
-  "rosterSha256": "bfb737923a6ff6ea79cfadae86b2fc297d4be9a62a5b78fd04a4ceec80db40d6",
+  "scope": "Full 265-character analysis after The King. All previous 264 records remain unchanged; pending changes to existing characters remain recommendations.",
+  "rosterSha256": "eb296018b16fc1d5c214b02cfe749dc0304c1efe6c92e0becdecb7e9707d074b",
   "appliedChanges": {
     "date": "2026-10-28",
     "reason": "Owner requested improvements to both Astral Mythicals after a speed- and rarity-focused balance review.",
@@ -632,8 +632,8 @@
       }
     ]
   },
-  "count": 264,
-  "resolvedFixtures": 882,
+  "count": 265,
+  "resolvedFixtures": 885,
   "method": {
     "primaryAxes": [
       "speed / access / repeat cost",
@@ -771,9 +771,9 @@
       }
     },
     "mythical": {
-      "count": 19,
+      "count": 20,
       "roles": {
-        "attack": 9,
+        "attack": 10,
         "defense": 4,
         "support": 6
       },
@@ -781,11 +781,11 @@
         "red": 4,
         "blue": 4,
         "green": 2,
-        "yellow": 4,
+        "yellow": 5,
         "purple": 5
       },
       "speeds": {
-        "very_fast": 1,
+        "very_fast": 2,
         "fast": 6,
         "average": 2,
         "slow": 5,
@@ -793,16 +793,16 @@
         "charging": 4
       },
       "baseMean": {
-        "atk": 846.26,
-        "def": 801.84,
-        "hp": 1542.89,
-        "directEhp": 4023.39
+        "atk": 853.95,
+        "def": 799.75,
+        "hp": 1539.75,
+        "directEhp": 4008.7
       },
       "fullyDevelopedMean": {
-        "atk": 1019.89,
-        "def": 966.32,
-        "hp": 1859.05,
-        "directEhp": 5460.92
+        "atk": 1029.15,
+        "def": 963.75,
+        "hp": 1855.25,
+        "directEhp": 5440.17
       }
     }
   },
@@ -810,16 +810,16 @@
     "red": 54,
     "blue": 53,
     "green": 53,
-    "yellow": 51,
+    "yellow": 52,
     "purple": 53
   },
   "roleCounts": {
-    "attack": 145,
+    "attack": 146,
     "defense": 56,
     "support": 63
   },
   "speedCounts": {
-    "very_fast": 10,
+    "very_fast": 11,
     "fast": 63,
     "average": 126,
     "slow": 42,
@@ -1500,6 +1500,42 @@
           "text": "Recover 4% max HP each turn; start with +5% max HP."
         }
       }
+    },
+    {
+      "id": "none",
+      "name": "No Faction",
+      "count": 1,
+      "rarities": {
+        "common": 0,
+        "rare": 0,
+        "legendary": 0,
+        "mythical": 1
+      },
+      "elements": {
+        "red": 0,
+        "blue": 0,
+        "green": 0,
+        "yellow": 1,
+        "purple": 0
+      },
+      "roles": {
+        "attack": 1,
+        "defense": 0,
+        "support": 0
+      },
+      "speeds": {
+        "very_fast": 1,
+        "fast": 0,
+        "average": 0,
+        "slow": 0,
+        "very_slow": 0,
+        "charging": 0
+      },
+      "bonus": {
+        "1": {
+          "text": "No faction bonus."
+        }
+      }
     }
   ],
   "duplicateSpecials": [
@@ -1608,7 +1644,7 @@
   "reviewCounts": {
     "Keep / Boss Watch": 1,
     "Buff": 13,
-    "Keep for Now": 212,
+    "Keep for Now": 213,
     "Watch: Upper Rare Flexibility": 1,
     "Watch: Common Support Gap": 3,
     "Watch: Upper Benchmark": 2,
@@ -1751,179 +1787,14 @@
   "proposedAdditions": [],
   "implementedAdditions": [
     {
-      "championId": "goblins_riffix",
-      "name": "Riffix, Brassstring Bard",
-      "faction": "goblins",
+      "championId": "the_king",
+      "name": "The King",
+      "faction": "none",
       "color": "yellow",
-      "rarity": "legendary",
-      "role": "support",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_vexra",
-      "name": "Vexra, Velvet Knife",
-      "faction": "goblins",
-      "color": "purple",
-      "rarity": "legendary",
+      "rarity": "mythical",
       "role": "attack",
-      "manaSpeed": "fast",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_brondak",
-      "name": "Brondak, Ironhorn Rider",
-      "faction": "goblins",
-      "color": "green",
-      "rarity": "legendary",
-      "role": "defense",
-      "manaSpeed": "slow",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_karvosh",
-      "name": "Karvosh, the Greatblade",
-      "faction": "goblins",
-      "color": "red",
-      "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_zizzara",
-      "name": "Zizzara, Storm-in-Hand",
-      "faction": "goblins",
-      "color": "blue",
-      "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_tickrul",
-      "name": "Tickrul, Hourglass Heretic",
-      "faction": "goblins",
-      "color": "yellow",
-      "rarity": "legendary",
-      "role": "support",
-      "manaSpeed": "slow",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_king_grumvold",
-      "name": "King Grumvold",
-      "faction": "goblins",
-      "color": "red",
-      "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_piknet",
-      "name": "Piknet, Reedpoint",
-      "faction": "goblins",
-      "color": "green",
-      "rarity": "rare",
-      "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_rukko",
-      "name": "Rukko, Rustroad Captain",
-      "faction": "goblins",
-      "color": "purple",
-      "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_nibsy",
-      "name": "Nibsy, Hoodwink Scoundrel",
-      "faction": "goblins",
-      "color": "blue",
-      "rarity": "rare",
-      "role": "attack",
-      "manaSpeed": "fast",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_molgrik",
-      "name": "Molgrik, Cinderfiend",
-      "faction": "goblins",
-      "color": "red",
-      "rarity": "legendary",
-      "role": "attack",
-      "manaSpeed": "slow",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_bubzle",
-      "name": "Bubzle, Bottlebrewer",
-      "faction": "goblins",
-      "color": "blue",
-      "rarity": "rare",
-      "role": "support",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_urdra",
-      "name": "Urdra, Gatebreaker",
-      "faction": "goblins",
-      "color": "green",
-      "rarity": "legendary",
-      "role": "defense",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_snaggle",
-      "name": "Snaggle, Trapthorn",
-      "faction": "goblins",
-      "color": "yellow",
-      "rarity": "rare",
-      "role": "attack",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_morvessa",
-      "name": "Morvessa, Moonbone Oracle",
-      "faction": "goblins",
-      "color": "purple",
-      "rarity": "legendary",
-      "role": "support",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
-      "status": "implemented"
-    },
-    {
-      "championId": "goblins_boltragg",
-      "name": "Boltragg, Scrapwall",
-      "faction": "goblins",
-      "color": "red",
-      "rarity": "rare",
-      "role": "defense",
-      "manaSpeed": "average",
-      "gap": "Goblins founding roster: 11 Legendary, 5 Rare; a personal 70% chance to resist newly applied Mana Slow or Mana Block from one member.",
+      "manaSpeed": "very_fast",
+      "gap": "Factionless warrior king with the highest baseline Attack and a 25% chance to dodge damaging Specials.",
       "status": "implemented"
     }
   ],
@@ -2041,8 +1912,8 @@
         "directEhp": 4820.57
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.25,
-        "directBulkVsSameRarityRolePercent": -5.77
+        "atkVsSameRarityRolePercent": -1.13,
+        "directBulkVsSameRarityRolePercent": -5.65
       },
       "passive": {
         "id": "unclosing_wound",
@@ -2197,8 +2068,8 @@
         "directEhp": 4948.33
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -1.13,
-        "directBulkVsSameRarityRolePercent": -3.23
+        "atkVsSameRarityRolePercent": -2,
+        "directBulkVsSameRarityRolePercent": -3.1
       },
       "passive": {
         "id": "cold_of_the_pit",
@@ -2831,8 +2702,8 @@
         "directEhp": 4974.45
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.25,
-        "directBulkVsSameRarityRolePercent": -2.68
+        "atkVsSameRarityRolePercent": -1.13,
+        "directBulkVsSameRarityRolePercent": -2.56
       },
       "passive": {
         "id": "perfected_blood",
@@ -8985,8 +8856,8 @@
         "directEhp": 4992.13
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.15,
-        "directBulkVsSameRarityRolePercent": -2.23
+        "atkVsSameRarityRolePercent": -1.03,
+        "directBulkVsSameRarityRolePercent": -2.11
       },
       "passive": {
         "id": "entropy_bloom",
@@ -10420,8 +10291,8 @@
         "directEhp": 5072.97
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.25,
-        "directBulkVsSameRarityRolePercent": -0.82
+        "atkVsSameRarityRolePercent": -1.13,
+        "directBulkVsSameRarityRolePercent": -0.7
       },
       "passive": {
         "id": "unbroken_advance",
@@ -11536,8 +11407,8 @@
         "directEhp": 4841.94
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -0.04,
-        "directBulkVsSameRarityRolePercent": -5.32
+        "atkVsSameRarityRolePercent": -0.92,
+        "directBulkVsSameRarityRolePercent": -5.2
       },
       "passive": {
         "id": "sunscar_oath",
@@ -15536,8 +15407,8 @@
         "directEhp": 5160.79
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": -3.09,
-        "directBulkVsSameRarityRolePercent": 0.86
+        "atkVsSameRarityRolePercent": -3.94,
+        "directBulkVsSameRarityRolePercent": 0.99
       },
       "passive": {
         "id": "titans_resolve",
@@ -19594,8 +19465,8 @@
         "directEhp": 5053.79
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 0.62,
-        "directBulkVsSameRarityRolePercent": -1.21
+        "atkVsSameRarityRolePercent": -0.27,
+        "directBulkVsSameRarityRolePercent": -1.09
       },
       "passive": {
         "id": "threefold_vigil",
@@ -20096,8 +19967,8 @@
         "directEhp": 6199.1
       },
       "statsComparison": {
-        "atkVsSameRarityRolePercent": 4.54,
-        "directBulkVsSameRarityRolePercent": 20.4
+        "atkVsSameRarityRolePercent": 3.62,
+        "directBulkVsSameRarityRolePercent": 20.56
       },
       "passive": {
         "id": "first_arcanum_will",
@@ -21806,6 +21677,78 @@
         "status": "Keep for Now",
         "priority": "None",
         "note": "Average access; compare damage, effect scope and duration together. No clear priority change found in this review; retain unless encounter testing reveals a problem."
+      }
+    },
+    {
+      "id": "the_king",
+      "name": "The King",
+      "rarity": "mythical",
+      "faction": "none",
+      "element": "yellow",
+      "role": "attack",
+      "speed": "very_fast",
+      "base": {
+        "atk": 1000,
+        "def": 760,
+        "hp": 1480,
+        "directEhp": 3729.6
+      },
+      "fullyDeveloped": {
+        "atk": 1205,
+        "def": 915,
+        "hp": 1783,
+        "directEhp": 5045.89
+      },
+      "statsComparison": {
+        "atkVsSameRarityRolePercent": 7.93,
+        "directBulkVsSameRarityRolePercent": -1.15
+      },
+      "passive": {
+        "id": "sovereigns_evasion",
+        "name": "Sovereign’s Evasion",
+        "kind": "dodge_damaging_special",
+        "value": 0.25,
+        "desc": "25% chance to dodge an incoming damaging Special, avoiding its damage and attached hostile effects. Rolled once per Special. Does not dodge basic attacks, rune strikes or ongoing damage."
+      },
+      "levels": [
+        {
+          "level": 1,
+          "speed": "very_fast",
+          "tiles": 6.5,
+          "target": "enemy",
+          "damage": 1.8,
+          "healing": 0,
+          "aoe": true,
+          "pierce": true,
+          "effects": [
+            {
+              "id": "bleed",
+              "turns": 2,
+              "scope": "enemies"
+            }
+          ],
+          "benchmark": {
+            "level": 1,
+            "tiles": 6.5,
+            "singleEnemyDamage": 847,
+            "threeEnemyDamage": 2541,
+            "fourEnemyDamage": 3388,
+            "singleDamagePerTile": 130.31,
+            "threeEnemyDamagePerTile": 390.92,
+            "teamInstantHealCapacity": 0,
+            "teamRegenerationCapacity": 0,
+            "teamBarrierCapacity": 0,
+            "threeEnemyDotCapacity": 384,
+            "teamManaGift": 0,
+            "effectiveRepeatTileCostAtThree": 6.5,
+            "openingTileCostAtThree": 6.5
+          }
+        }
+      ],
+      "review": {
+        "status": "Keep for Now",
+        "priority": "None",
+        "note": "Fast access is a meaningful strength. No clear priority change found in this review; retain unless encounter testing reveals a problem."
       }
     }
   ]

@@ -64,7 +64,8 @@
     "test:match-glow": "node tests/match-glow-browser.mjs",
     "test:magic": "node tests/magic-browser.mjs",
     "test:djedi": "node tests/djedi-browser.mjs",
-    "test:goblins": "node tests/goblins-browser.mjs"
+    "test:goblins": "node tests/goblins-browser.mjs",
+    "test:the-king": "node tests/the-king-browser.mjs"
   },
   "engines": {
     "node": ">=22"

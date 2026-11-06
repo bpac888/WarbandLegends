@@ -183,21 +183,29 @@ function resolveSkill(state,actor,selectedTarget,level) {
   const enemy=spec.aoe?intended:protectedTarget(foes,intended);
   if(enemy&&intended&&enemy.uid!==intended.uid)message(state,`${enemy.name}: Taunt redirects ${actor.name}'s Special from ${intended.name}.`,'buff',enemy.uid);
   message(state,`${actor.name} invokes ${actor.special.name}${actor.special.charging?' · Charge '+level:''}.`,'skill',actor.uid);
+  // One evasion roll for each actual hostile recipient, before Dispel or ailments.
+  const dodged=new Set();
+  if(spec.damage>0)for(const target of spec.aoe?living(foes):enemy?[enemy]:[]){
+    if(target.passive?.kind==='dodge_damaging_special'&&roll(state)<target.passive.value){
+      dodged.add(target.uid);message(state,`${target.name}: dodged ${actor.special.name} · ${target.passive.name}.`,'blocked',target.uid);
+    }
+  }
   const recipients=scope=>scope==='self'?[actor]:scope==='ally'?[ally]:scope==='allies'?living(own):scope==='other_allies'?living(own).filter(u=>u.uid!==actor.uid):scope==='enemies'?living(foes):enemy?[enemy]:[];
   for(const step of specialPlan(spec)){
     const effect=step.effect;
-    if(step.kind==='cleanse'||step.kind==='dispel')for(const target of recipients(effect.scope)){
+    if(step.kind==='cleanse'||step.kind==='dispel')for(const target of recipients(effect.scope).filter(u=>!dodged.has(u.uid))){
       const eligible=step.kind==='cleanse'?DEBUFFS:BUFFS,removed=Object.keys(target.effects).filter(id=>eligible.has(id));
       for(const id of removed)removeEffect(target,id);
       if(removed.length)message(state,`${target.name}: ${step.kind==='cleanse'?'cleansed':'dispelled'} ${removed.map(effectName).join(', ')}.`,step.kind==='cleanse'?'heal':'dispel',target.uid);
     }
-    else if(step.kind==='buff'||step.kind==='debuff')for(const target of recipients(effect.scope))applyEffect(state,actor,target,effect.id,effect.turns,{special:true});
+    else if(step.kind==='buff'||step.kind==='debuff')for(const target of recipients(effect.scope).filter(u=>!dodged.has(u.uid)))applyEffect(state,actor,target,effect.id,effect.turns,{special:true});
     else if(step.kind==='heal')for(const target of recipients(step.scope))heal(state,target,target.maxHp*step.amount,actor.special.name);
     else if(step.kind==='mana')for(const target of recipients(effect.scope)){
       const gained=gainMana(target,1.5,{flat:true});message(state,`${target.name}: ${gained?'+'+chargeText(gained)+' tile charge':'Mana Gift blocked or already full'}.`,'mana',target.uid);
     }
     else if(step.kind==='damage')for(const target of step.aoe?living(foes):enemy?[enemy]:[]){
       if(actor.hp<=0)break;
+      if(dodged.has(target.uid))continue;
       hit(state,actor,target,effective(actor,'atk')*step.amount,{pierce:step.pierce,label:actor.special.name});
     }
   }

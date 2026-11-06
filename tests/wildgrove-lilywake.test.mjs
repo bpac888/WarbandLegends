@@ -40,5 +40,5 @@ test('Ondelle is summonable as a Rare and owned copies survive normalization and
  const p=defaultProfile(),pool=roster.filter(c=>c.rarity==='rare'),rolls=[.6,(pool.findIndex(c=>c.id===hero.id)+.5)/pool.length],r=summon(p,roster,()=>rolls.shift());
  assert.equal(r.champion.id,hero.id);assert.ok(validateProfile(r.profile,roster));assert.deepEqual(normalizeProfile(r.profile,roster),r.profile);
  assert.deepEqual(parseBackup(JSON.stringify(makeBackup(r.profile,null)),roster).profile,r.profile);
- const audit=await read('data/roster-audit.json');assert.equal(audit.after.total,264);assert.equal(audit.byFaction.wildgrove.total,18);assert.equal(audit.byFaction.wildgrove.color.blue,3);assert.equal(audit.byFaction.wildgrove.type.attack,9);
+ const audit=await read('data/roster-audit.json');assert.equal(audit.after.total,265);assert.equal(audit.byFaction.wildgrove.total,18);assert.equal(audit.byFaction.wildgrove.color.blue,3);assert.equal(audit.byFaction.wildgrove.type.attack,9);
 });

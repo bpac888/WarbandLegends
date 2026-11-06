@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-264 champions. The newest faction is Goblins: eleven Legendaries and five Rares. All 248 previous champions remain unchanged. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
+265 champions. The King is a factionless Mythical warrior with the highest baseline Attack. All 264 previous champions remain unchanged. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -268,6 +268,7 @@
 | Snaggle, Trapthorn | rare | yellow | attack | 685 | 565 | 1035 | Average 10 |
 | Morvessa, Moonbone Oracle | legendary | purple | support | 735 | 755 | 1430 | Average 10 |
 | Boltragg, Scrapwall | rare | red | defense | 550 | 680 | 1210 | Average 10 |
+| The King | mythical | yellow | attack | 1000 | 760 | 1480 | Very Fast 6.5 |
 
 ## Specials
 
@@ -1406,4 +1407,10 @@ Passive: **Unwritten Will** — Immune to Mana Block.
 ### Boltragg, Scrapwall — Scrapwall Stand
 
 - 10 tiles: Deal 150% ATK damage to selected enemy. Taunt (Caster, 2 turns); Defense Up (Caster, 2 turns).
+
+### The King — A Crown Beyond Time
+
+- 6.5 tiles: Deal 180% ATK damage to all living enemies, ignoring 25% of DEF. Bleed (All living enemies, 2 turns).
+
+Passive: **Sovereign’s Evasion** — 25% chance to dodge an incoming damaging Special, avoiding its damage and attached hostile effects. Rolled once per Special. Does not dodge basic attacks, rune strikes or ongoing damage.
 
