@@ -126,3 +126,37 @@ body.menu-theme #modal[data-view=roster] .modal-header .icon-button{background:#
 body.menu-theme #modal[data-view=roster] .modal-header .icon-button::before{content:none}
 body.menu-theme #modal[data-view=roster] .modal-header .icon-button:hover{background:#d8c6a7;border-color:#957c59}
 body.menu-theme #modal[data-view=roster] #modal-title:focus{outline:none}
+
+/* Empty quest results should use the same readable light surfaces as their tabs. */
+body.menu-theme .game-page.page-quests .empty-state{background:linear-gradient(135deg,#ded3dd,#d1c6d3);border-color:#a99bae;color:#30343c}
+body.menu-theme .game-page.page-quests .empty-state h3{color:#252831}
+body.menu-theme .game-page.page-quests .empty-state p{color:#414650}
+/* Guide and feeding dialogs: slightly deeper stone around warm parchment. */
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]){--ui-ivory:#252831;--ui-copy:#343740;--ui-muted:#414650;--ui-panel:#e4d3b3;--ui-edge:#b5a080;background:#bfbbc5;color:#343740;border-color:#a99ba7;color-scheme:light}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) .modal-header{background:#d9c8aa;border-color:#b4a184;box-shadow:none}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) .modal-header::after{display:none}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) :is(h2,h3){font-family:'Collection Serif',Georgia,serif!important;color:#252831;text-shadow:none}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) :is(p,small,.eyebrow,dt,dd){color:#414650}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) :is(b,strong,label){color:#30343c}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) .modal-header .icon-button{background:#eadcbe;color:#72272b;border:1px solid #a78e6d;box-shadow:none}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) .button.outline{background:#eaddc5;color:#85272c;border-color:#a98e70;text-shadow:none}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) .button.gold{background:#9e2a2b;color:#fff7e9;border-color:#842023;text-shadow:none}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) .button:disabled{background:#c8bfb5;color:#57525a;border-color:#aaa095;opacity:1;box-shadow:none}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) :is(button,input,summary):focus-visible{outline:3px solid #9e2a2b;outline-offset:2px}
+body.menu-theme #modal[data-view=page-guide] :is(.guide-layout>nav,.codex-tabs){background:#d2c6b7;border-color:#aa977f;box-shadow:none}
+body.menu-theme #modal[data-view=page-guide] :is(.guide-layout>nav,.codex-tabs)>button{color:#343740;background:transparent;border-color:transparent}
+body.menu-theme #modal[data-view=page-guide] :is(.guide-layout>nav,.codex-tabs)>button.active{background:#9e2a2b;color:#fff7e9;border-color:#842023;box-shadow:none}
+body.menu-theme #modal[data-view=page-guide] .guide-layout>section>article{background:#e4d3b3;border:1px solid #b5a080;border-radius:10px;padding:12px;margin-bottom:9px}
+body.menu-theme #modal[data-view=page-guide] :is(.codex-card,.faction-guide-list>details,.guide-playtesting,.hero-tactics,.stacking-note){background:#e4d3b3;border-color:#b5a080;color:#343740;box-shadow:none}
+body.menu-theme #modal[data-view=page-guide] .faction-guide-list details[open]{background:#eadfc9;border-color:#a78e6d}
+body.menu-theme #modal[data-view=page-guide] .faction-guide-list summary{color:#72272b}
+body.menu-theme #modal[data-view=page-guide] .codex-icon{background:#d6c59f;border-color:#a88f68;color:#435b49}
+body.menu-theme #modal[data-view=page-guide] .ailment .codex-icon{background:#dcc1b7;border-color:#ac8276;color:#852d3b}
+body.menu-theme #modal[data-view=feeding] .feeding-list>label{background:#e4d3b3;border-color:#b5a080}
+body.menu-theme #modal[data-view=feeding] .feeding-list>label:has(input:checked){background:#ead3bb;border-color:#9e2a2b;box-shadow:inset 3px 0 #9e2a2b}
+body.menu-theme #modal[data-view=feeding] .feeding-list input{accent-color:#9e2a2b}
+body.menu-theme #modal[data-view=feeding] .feeding-summary{background:#e4d3b3;border-color:#ad9877;color:#343740}
+body.menu-theme #modal[data-view=feeding] .modal-actions{border-color:#a99ba7}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) input[type=checkbox]{background:#a9a1aa;border-color:#8e838f}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) input[type=checkbox]::before{background:#f0e4cd}
+body.menu-theme #modal:is([data-view=page-guide],[data-view=feeding]) input[type=checkbox]:checked{background:#9e2a2b;border-color:#842023}
