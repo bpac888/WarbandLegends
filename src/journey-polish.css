@@ -53,3 +53,5 @@ body.menu-theme .game-page.page-summon:has(.first-steps){flex-direction:column}
 #modal[data-view=tutorial-complete] .tutorial-complete-trophy{display:block;width:clamp(120px,22vh,180px);height:auto;aspect-ratio:1;object-fit:contain;margin:0 auto 14px;filter:drop-shadow(0 4px 14px #efc65c38)}
 #modal[data-view=tutorial-complete] .modal-body{text-align:center}
 #modal[data-view=tutorial-complete] .modal-actions{justify-content:center;margin-top:18px}
+/* Practice instructions must be readable at phone viewing distance. */
+.battle-shell.practice-battle .battle-center .battle-feedback{font-size:14px;line-height:1.4;font-weight:500;padding:8px 10px;color:#fff0d0;background:#142b3bf5}

@@ -25,7 +25,7 @@ try{
  assert.equal(await page.locator('#library-grid .library-card[data-id="nima_dewthread"] .faction-emblem').count(),1);await page.locator('#library-grid .library-card[data-id="nima_dewthread"]').screenshot({path:root+'artifacts/codex-veldtborn-card.png'});
  await page.locator('.library-art>img').evaluateAll(imgs=>imgs.forEach(i=>i.loading='eager'));
  await page.waitForFunction(()=>[...document.querySelectorAll('.library-art>img')].every(i=>i.complete&&i.naturalWidth>0));
- assert.ok(await page.locator('.library-art>img').evaluateAll(imgs=>imgs.every(i=>getComputedStyle(i).filter==='none'&&getComputedStyle(i).opacity==='1'&&getComputedStyle(i).objectFit==='contain')));
+ assert.ok(await page.locator('.library-art>img').evaluateAll(imgs=>imgs.every(i=>getComputedStyle(i).filter==='brightness(1.13) contrast(1.03) saturate(1.04)'&&getComputedStyle(i).opacity==='1'&&getComputedStyle(i).objectFit==='contain')));
  assert.ok(await page.locator('#library-grid .library-card').evaluateAll(cards=>cards.every(c=>c.querySelector('.library-label').getBoundingClientRect().top>=c.querySelector('.library-art').getBoundingClientRect().bottom-1)));
  for(const id of ['neon_biochem_doc','crimson_castellan','the_verdant_king','neon_wire runner']){const portrait=page.locator(`#library-grid .library-card[data-id="${id}"] .library-art>img`);assert.equal(await portrait.count(),1);assert.ok(await portrait.evaluate(img=>img.complete&&img.naturalWidth>=1000&&Math.abs(img.naturalWidth/img.naturalHeight-.75)<.01));await page.locator(`#library-grid .library-card[data-id="${id}"]`).screenshot({path:root+`artifacts/updated-${id.replaceAll(' ','-')}-card.png`});}
  await page.screenshot({path:root+'artifacts/identity-codex.png',fullPage:false});

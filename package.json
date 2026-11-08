@@ -66,7 +66,9 @@
     "test:djedi": "node tests/djedi-browser.mjs",
     "test:goblins": "node tests/goblins-browser.mjs",
     "test:the-king": "node tests/the-king-browser.mjs",
-    "test:journey": "node tests/journey-browser.mjs"
+    "test:journey": "node tests/journey-browser.mjs",
+    "test:collection-polish": "node tests/collection-polish-browser.mjs",
+    "test:board-gestures": "node tests/board-gestures-browser.mjs"
   },
   "engines": {
     "node": ">=22"

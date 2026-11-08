@@ -2,7 +2,7 @@ import {recordTutorial} from './tutorial.js';
 import {boosterActive} from './premium-items.js';
 import {heroForId,ownedHeroes,baseHeroId} from './hero-copies.js';
 import {development,heroDevelopment,addHeroXp} from './development.js';
-import {currentLevelCap} from './ascension.js';
+import {currentLevelCap,tierLevel} from './ascension.js';
 const donorRarities=new Set(['common','rare']);
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function protectedCopies(profile,battle){return new Set([...profile.team,...(profile.teamSlots||[]).flatMap(t=>t||[]),...(battle?.phase==='playing'?battle.heroes.map(h=>h.id):[])]);}
@@ -14,7 +14,7 @@ export function feedingQuote(profile,target,donors,roster,{battle=null,now=Date.
  const baseXp=rows.reduce((n,c)=>n+c.xp,0),boosted=boosterActive(profile,'experience',now),xp=boosted?Math.floor(baseXp*1.25):baseXp,gold=rows.length*25,gained=Math.max(0,Math.min(xpForPhysical(target,physical)-(profile.heroXp[target.id]||0),xp));
  if(!error&&Object.keys(profile.collection).length-rows.length<5)error='Keep at least five collected heroes.';
  if(!error&&profile.gold<gold)error='You need 25 Gold per donor.';
- return {error,rows,gold,xp,baseXp,boosted,gained,before:d,after:development(target,(profile.heroXp[target.id]||0)+gained,physical)};
+ const after=development(target,(profile.heroXp[target.id]||0)+gained,physical);return {error,rows,gold,xp,baseXp,boosted,gained,before:d,after,displayBefore:tierLevel(profile,target,d.level).level,displayAfter:tierLevel(profile,target,after.level).level};
 }
 function xpForPhysical(target,cap){return development(target,Number.MAX_SAFE_INTEGER,cap).maxXp;}
 export function consumeHeroes(profile,target,donors,roster,{battle=null,expectedXp,now=Date.now()}={}){
@@ -23,7 +23,7 @@ export function consumeHeroes(profile,target,donors,roster,{battle=null,expected
  let next=addHeroXp({...profile,gold:profile.gold-q.gold},target,q.gained,new Date(now));
  for(const field of ['collection','heroXp','ascensions','awakenings']){next[field]={...next[field]};for(const id of donors)delete next[field][id];}
  if(q.after.level>q.before.level)next=recordTutorial(next,'fed');
- return {profile:next,gained:q.gained,consumed:[...donors],before:q.before.level,after:q.after.level};
+ return {profile:next,gained:q.gained,consumed:[...donors],before:q.before.level,after:q.after.level,displayBefore:q.displayBefore,displayAfter:q.displayAfter};
 }
 export function availableDonors(profile,target,roster,battle){const guard=protectedCopies(profile,battle);return ownedHeroes(profile,roster).filter(c=>donorRarities.has(c.rarity)&&c.id!==target.id&&!guard.has(c.id));}
 export function feedingPanel(profile,target,roster,battle){const n=availableDonors(profile,target,roster,battle).length,d=heroDevelopment(profile,target);return `<section class="feeding-panel"><img src="./assets/items/star-thread.webp" alt=""><div><span class="eyebrow">CHAMPION GROWTH</span><h2>Train with Common & Rare heroes</h2><p>${n} available · Common 360+ XP · Rare 1,080+ XP · Same Rare hero ×5 · 25 Gold each</p></div><button class="button gold" data-action="feed-preview" data-id="${esc(target.id)}" ${!n||d.atCap?'disabled':''}>Choose Heroes</button></section>`;}

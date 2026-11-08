@@ -1,0 +1,33 @@
+/* Card-only lift: the original portraits and detail-page art remain unchanged. */
+body.menu-theme:has(.page-roster),body.menu-theme:has(.page-champion){background:radial-gradient(ellipse at 0 0,#56627645,transparent 65%),linear-gradient(145deg,#3c485d,#4c425d 70%,#435268);background-attachment:fixed}
+.page-roster .library-art>img{filter:brightness(1.13) contrast(1.03) saturate(1.04)!important}
+body.menu-theme .page-roster .library-card{background:#4b5870;border-color:#b7acc374}
+body.menu-theme .page-roster .library-card .library-label{background:linear-gradient(135deg,#545e76,#574f69);border-top-color:#d1bca65c}
+body.menu-theme .page-roster .library-card .card-stats{background:#34495eb3;border:1px solid #aebccc3d;border-radius:7px;padding:7px 5px;margin-top:8px}
+body.menu-theme .page-roster :is(.collection-tabs,.collection-filters){background:#4c526b;border-color:#b8adbd60}
+body.menu-theme .page-roster .collection-filters[open]{background:linear-gradient(135deg,#5b526d,#465c70)}
+body.menu-theme .page-roster .collection-filters select{background:#3e536a;color:#f1e6d3;border-color:#b0b6c569}
+body.menu-theme .page-roster .team-slot{background:linear-gradient(135deg,#4d5d70,#5b4c65)}
+body.menu-theme .page-champion .champion-story{background:#5d536b;border-color:#b6a0bb60;padding:11px 14px;border-radius:9px}
+body.menu-theme .page-champion .hero-development{background:linear-gradient(135deg,#4d6070,#4e506b);border-color:#a2afc165}
+body.menu-theme .page-champion .hero-development:before{background:linear-gradient(120deg,#52627ae6,#4b4d69e8);opacity:.9}
+body.menu-theme .page-champion .growth-stats{background:#66566d66;border:1px solid #b0a3b63d;border-radius:9px;padding:6px 12px}
+body.menu-theme .page-champion .advancement-menu{background:linear-gradient(135deg,#5c5a72,#514961);border-color:#afa3b469}
+body.menu-theme .page-champion .advancement-menu[open]{background:linear-gradient(135deg,#6b5668,#4b6076)}
+/* Header, explanation, XP preview and confirmation stay outside the donor scroller. */
+#modal[data-view=feeding]{width:min(680px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:hidden}
+#modal[data-view=feeding] #modal-content{display:flex;flex-direction:column;max-height:calc(100dvh - 26px)}
+#modal[data-view=feeding] .modal-header{flex-shrink:0;position:static;padding:12px 16px}
+#modal[data-view=feeding] .modal-header h2{font-size:24px;line-height:1.15}
+#modal[data-view=feeding] .modal-body{display:flex;flex-direction:column;min-height:0;overflow:hidden;padding:12px 16px;gap:10px}
+#modal[data-view=feeding] .modal-body>p{margin:0;font-size:12px;line-height:1.45;flex-shrink:0}
+#modal[data-view=feeding] .feeding-list{overflow-y:auto;overscroll-behavior:contain;min-height:0;max-height:min(34dvh,290px);flex:0 1 auto;margin:0;padding:2px 5px 2px 0;scrollbar-gutter:stable}
+#modal[data-view=feeding] .feeding-list>label{min-height:62px;padding:7px;gap:9px}
+#modal[data-view=feeding] .feeding-list>label>img{width:38px;height:50px;object-fit:cover}
+#modal[data-view=feeding] .feeding-summary{flex-shrink:0;min-height:38px;font-size:12px;line-height:1.5;margin:0}
+#modal[data-view=feeding] .modal-actions{flex-shrink:0;margin:0;padding-top:8px;border-top:1px solid #b5b6bb42;flex-wrap:nowrap}
+#modal[data-view=feeding] .modal-actions>.button{min-height:44px;letter-spacing:0;font-size:12px;padding:10px 14px}
+#modal[data-view=feeding] .modal-actions>.gold{flex:1}
+
+body.menu-theme .page-roster .collection-tabs>button.active{background:#6d637b;border-color:#d9c7a6;color:#fff3db}
+body.menu-theme .page-champion .hero-development :is(p,small,.eyebrow){color:#e4e8e4}

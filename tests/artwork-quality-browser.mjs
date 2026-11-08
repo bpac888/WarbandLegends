@@ -17,7 +17,7 @@ try{
  await go('roster');await page.locator('[data-tab="all"]').click();assert.equal(await page.locator('#library-grid .library-card').count(),roster.length);
  await page.locator('.library-art>img').evaluateAll(imgs=>imgs.forEach(i=>i.loading='eager'));
  await page.waitForFunction(()=>[...document.querySelectorAll('.library-art>img')].every(i=>i.complete&&i.naturalWidth>0));
- for(const c of added){const image=page.locator(`#library-grid [data-id="${c.id}"] .library-art>img`);assert.ok(await image.evaluate(i=>i.naturalWidth>=768&&i.naturalHeight>=1000&&getComputedStyle(i).filter==='none'&&getComputedStyle(i).opacity==='1'),c.id);}
+ for(const c of added){const image=page.locator(`#library-grid [data-id="${c.id}"] .library-art>img`);assert.ok(await image.evaluate(i=>i.naturalWidth>=768&&i.naturalHeight>=1000&&getComputedStyle(i).filter==='brightness(1.13) contrast(1.03) saturate(1.04)'&&getComputedStyle(i).opacity==='1'),c.id);}
  for(const width of [390,1440]){
   await page.setViewportSize({width,height:width>700?1000:844});
   for(const c of added){await go('champion/'+c.id);await page.locator('.champion-special').waitFor();await page.waitForFunction(()=>{const i=document.querySelector('.champion-showcase>img');return i?.complete&&i.naturalWidth>=768;});assert.ok(await page.locator('.champion-showcase>img').evaluate(i=>getComputedStyle(i).filter==='none'&&getComputedStyle(i).opacity==='1'));assert.ok((await page.locator('body').innerText()).includes(c.name));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),c.id+' overflow '+width);}
