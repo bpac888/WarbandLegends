@@ -57,6 +57,7 @@ body.menu-theme .page-roster .button:disabled,#modal[data-view=roster] .button:d
 #modal[data-view=roster] .pick-number{background:#9e2a2b;color:#fff7eb;box-shadow:0 1px 4px #45202040}
 #modal[data-view=roster] .roster-card>.hero-rank-track{bottom:auto;top:28%;transform:none}
 #modal[data-view=roster] .roster-mana .hero-level-mark{background:#e9d7b4;color:#383b42;border-color:#b6a17c}
+body.menu-theme #modal[data-view=roster] .roster-mana{background:#e6d4b1;color:#414650;border-radius:0 0 6px 6px}
 body.menu-theme .page-roster .composition>b{color:#5c606a}
 body.menu-theme .page-roster .first-steps{background:linear-gradient(120deg,#f3e8d1,#e4d7c4);border-color:#bda785;color:#16171b}
 body.menu-theme .page-roster .first-steps :is(p,span){color:#5c606a}
