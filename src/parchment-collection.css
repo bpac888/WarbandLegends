@@ -67,3 +67,50 @@ body.menu-theme .page-roster .collection-filters option,#modal[data-view=roster]
 body.menu-theme #modal[data-view=roster] #draft-count{color:#5c606a}
 body.menu-theme #modal[data-view=roster] .modal-header .icon-button{background:#f6edda;color:#72272b;border-color:#b6a084}
 body.menu-theme .page-roster .slot-portraits>span{color:#5c606a}
+/* Dossiers share the same stone, scroll paper and crimson controls as the library. */
+body.menu-theme:has(.page-champion){background:radial-gradient(ellipse at 5% 0,#d7deec,transparent 65%),linear-gradient(135deg,#e9e9ed,#e5e1e9 60%,#e8e8e2);background-attachment:fixed}
+body.menu-theme .page-champion{--ui-ivory:#16171b;--ui-copy:#343740;--ui-muted:#5c606a;--ui-edge:#baac93;color:#343740;color-scheme:light}
+body.menu-theme .page-champion :is(h1,h2,h3){font-family:'Collection Serif',Georgia,serif!important;color:#16171b;text-shadow:none}
+body.menu-theme .page-champion :is(p,small,.eyebrow,.champion-title,.detail-element,.special-ability-label){color:#5c606a;text-shadow:none}
+body.menu-theme .page-champion .text-button{color:#92292d}
+.page-champion .tier-mythical{--rarity-rgb:158,123,199}.page-champion .tier-legendary{--rarity-rgb:183,137,38}.page-champion .tier-rare{--rarity-rgb:77,144,195}.page-champion .tier-common{--rarity-rgb:113,163,116}
+body.menu-theme .page-champion .champion-showcase{border:2px solid rgb(var(--rarity-rgb));box-shadow:0 0 0 1px rgba(var(--rarity-rgb),.15),0 4px 18px rgba(var(--rarity-rgb),.25)}
+body.menu-theme .page-champion :is(.champion-story,.special-at-a-glance,.hero-development,.advancement-menu,.passive-info){background:linear-gradient(135deg,#eadbbb,#dfcba7);border-color:#bda785;color:#343740;box-shadow:0 3px 12px #4a3c2a0d}
+body.menu-theme .page-champion .champion-story[open],body.menu-theme .page-champion .advancement-menu[open]{background:linear-gradient(135deg,#f2e8d4,#e4d3b4)}
+body.menu-theme .page-champion .champion-story summary{color:#85272b}
+body.menu-theme .page-champion .special-at-a-glance{border-inline-start-color:#9e2a2b;color:#343740}
+body.menu-theme .page-champion .special-at-a-glance>span{color:#8a2a2e}
+body.menu-theme .page-champion .special-tile-cost{background:#f4e8ce;color:#535660;border-color:#bca785}
+body.menu-theme .page-champion .special-level>header{color:#343740;border-color:#c6b493}
+body.menu-theme .page-champion .special-sequence b{color:#24262c}
+body.menu-theme .page-champion .special-sequence :is(p,small,em){color:#535966}
+body.menu-theme .page-champion .sequence-icon{background:#f1e5cd;color:#8b292d;border-color:#bda47e}
+body.menu-theme .page-champion .sequence-icon:before{background:#ead8b7;color:#5c4c3e;border-color:#bda47e}
+body.menu-theme .page-champion .special-sequence>li+li:before{background:#bdaa89}
+body.menu-theme .page-champion .hero-development:before{display:none}
+body.menu-theme .page-champion .hero-development :is(p,small,.eyebrow,.xp-caption){color:#5c606a}
+body.menu-theme .page-champion .level-dial{background:#f4e9d1;border-color:#baa079;box-shadow:inset 0 0 10px #b6976120}
+body.menu-theme .page-champion .level-dial :is(b,span,small){color:#343740}
+body.menu-theme .page-champion .growth-stats{background:#f5eddbb8;border-color:#c2b398}
+body.menu-theme .page-champion .growth-stats :is(b,small,.card-glyph,.stat-growth-arrow){color:#535966}
+body.menu-theme .page-champion .growth-stats strong{color:#386044}
+body.menu-theme .page-champion .hero-xp-bar{background:#d4c6ad;border-color:#bfa983}
+body.menu-theme .page-champion .hero-xp-bar>i{background:linear-gradient(90deg,#ad5650,#9e2a2b)}
+body.menu-theme .page-champion .training-offer{background:#f2e5ce;border-color:#bda785;color:#343740}
+body.menu-theme .page-champion .button.gold{background:#9e2a2b;color:#fff7e9;border-color:#842023;text-shadow:none}
+body.menu-theme .page-champion .button.outline{background:#f5eddd;color:#85272c;border-color:#b6a48b}
+body.menu-theme .page-champion .button:disabled{background:#d8d1c5;color:#66636a;border-color:#bbb2a4;opacity:1;box-shadow:none}
+body.menu-theme .page-champion .advancement-menu summary>span{color:#5c606a}
+body.menu-theme .page-champion :is(.material-tile,.ascension-road li,.charge-diff){background:#f4ead4;border-color:#bda785;color:#535966}
+body.menu-theme .page-champion :is(.material-tile b,.material-tile strong,.ascension-road b,.ascension-road span,.ritual-gold,.charge-diff summary){color:#343740}
+body.menu-theme .page-champion .material-tile.missing strong{color:#9e2a2b}
+body.menu-theme .page-champion .ascension-road li.unlocked{background:#e7d5af;border-color:#a88a57}
+body.menu-theme .page-champion :is(button,summary):focus-visible{outline:3px solid #9e2a2b;outline-offset:3px}
+body.menu-theme .game-page.page-champion{--ui-panel:linear-gradient(135deg,#eadbbb,#dfcba7);--legend-surface:linear-gradient(135deg,#eadbbb,#dfcba7);--legend-edge:#bda785}
+body.menu-theme .page-champion :is(.training-offer b,.xp-caption strong,.level-dial b,.advancement-menu>summary,.charge-comparison summary){color:#343740}
+body.menu-theme .page-champion .charge-comparison{background:#f1e5ce;border-color:#bda785;color:#343740}
+body.menu-theme .page-champion .charge-comparison :is(dt,dd,span,strong,b){color:#535966}
+body.menu-theme .page-champion .champion-biography .detail-element{color:#535966}
+
+body.menu-theme .game-page.page-champion{background:#e7e5e9;border-radius:14px}
+body.menu-theme .page-champion .advancement-content .card-stats :is(span,b,.card-glyph){color:#535966}

@@ -69,3 +69,6 @@ img[src$="-sigil.webp"]:not([src$="purple-sigil.webp"]):not([src$="yellow-sigil.
 .premium-item-confirm h3,.premium-item-confirm p{margin:0}
 .premium-item-confirm label{display:flex;flex-direction:column;gap:5px;width:100%;max-width:400px;text-align:left}
 .premium-item-confirm select{width:100%;min-height:44px;padding:8px;border:1px solid #b6c3b34d;border-radius:8px;background:#18313c;color:#f6e6c7;font:inherit}
+
+/* Priced previews stay visibly muted and cannot be purchased. */
+body.menu-theme .page-shop .premium-price:disabled{background:#c8b9b5;color:#514b50;border-color:#ad9c99;opacity:1;box-shadow:none;text-shadow:none;cursor:default}
