@@ -1,0 +1,69 @@
+@font-face{font-family:'Collection Serif';src:url('../assets/fonts/lora.ttf') format('truetype');font-weight:400 700;font-style:normal;font-display:swap}
+/* Cool stone around warm scroll paper; these changes belong to the library and teams. */
+body.menu-theme:has(.page-roster){background:radial-gradient(ellipse at 5% 0,#d7deec,transparent 65%),linear-gradient(135deg,#e9e9ed,#e5e1e9 60%,#e8e8e2);background-attachment:fixed}
+body.menu-theme .page-roster,#modal[data-view=roster]{--ui-ivory:#16171b;--ui-copy:#343740;--ui-muted:#5c606a;--ui-accent:#9e2a2b;--ui-edge:#baac93;--ui-panel:#e7d6b5;--ui-shadow:0 5px 16px #4a3c2a12;color:#343740;color-scheme:light}
+body.menu-theme .page-roster :is(h1,h2,h3,h4,.library-name),body.menu-theme #modal[data-view=roster] :is(h2,.roster-label strong){font-family:'Collection Serif',Georgia,serif!important;color:#16171b;text-shadow:none;font-weight:600}
+body.menu-theme .page-roster :is(p,small,label,.eyebrow){color:#5c606a;text-shadow:none}
+body.menu-theme .page-roster .text-button{color:#92292d}
+body.menu-theme .page-roster :is(.collection-tabs,.collection-filters),#modal[data-view=roster] .collection-filters{background:#eee7d7;border-color:#c4b79f;box-shadow:0 2px 7px #4a3c2a0c;color:#343740}
+body.menu-theme .page-roster .collection-tabs>button{color:#535660;background:none}
+body.menu-theme .page-roster .collection-tabs>button.active{background:#9e2a2b;color:#fff8ed;border-color:#842023;box-shadow:0 2px 5px #77252620}
+body.menu-theme .page-roster .collection-tabs>button>b{background:#d9cbb4;color:inherit}
+body.menu-theme .page-roster .collection-tabs>button.active>b{background:#ffffff24}
+body.menu-theme .page-roster .collection-filters[open],#modal[data-view=roster] .collection-filters[open]{background:linear-gradient(135deg,#f2ebdf,#e5ddcf)}
+body.menu-theme .page-roster .collection-filters select,#modal[data-view=roster] select{background:#f7f3e9;color:#23252c;border-color:#b5a58a;box-shadow:inset 0 1px 2px #6450360a;color-scheme:light}
+body.menu-theme .page-roster :is(button,select):focus-visible,#modal[data-view=roster] :is(button,select):focus-visible{outline:3px solid #9e2a2b;outline-offset:3px}
+body.menu-theme .page-roster .library-card{background:#dfcba4}
+body.menu-theme .page-roster .library-card .library-label{background:linear-gradient(135deg,#eadbbb,#dec79e);border-top-color:#bda47b;color:#16171b}
+body.menu-theme .page-roster .library-card .library-name{color:#16171b;line-height:1.2}
+body.menu-theme .page-roster .library-card .card-stats{background:#f5eddbb8;border-color:#c2b398;box-shadow:inset 0 1px #fff9eb}
+body.menu-theme .page-roster .library-card .card-stats :is(span,b,.card-glyph){color:#4f5661}
+body.menu-theme .page-roster .library-card .card-speed{color:#535966}
+body.menu-theme .page-roster .library-card .codex-owned-mark{background:#f5ecd7;color:#8e262a;border-color:#b69b72}
+/* The rarity edge is independent of elemental color and selected state. */
+:is(.page-roster,#modal[data-view=roster]) .tier-mythical{--rarity-rgb:158,123,199}
+:is(.page-roster,#modal[data-view=roster]) .tier-legendary{--rarity-rgb:183,137,38}
+:is(.page-roster,#modal[data-view=roster]) .tier-rare{--rarity-rgb:77,144,195}
+:is(.page-roster,#modal[data-view=roster]) .tier-common{--rarity-rgb:113,163,116}
+body.menu-theme .page-roster .library-card,#modal[data-view=roster] .roster-card{border:2px solid rgb(var(--rarity-rgb));box-shadow:0 0 0 1px rgba(var(--rarity-rgb),.15),0 3px 12px rgba(var(--rarity-rgb),.25)}
+body.menu-theme .page-roster .library-card:hover,#modal[data-view=roster] .roster-card:hover{box-shadow:0 0 0 1px rgba(var(--rarity-rgb),.4),0 4px 15px rgba(var(--rarity-rgb),.38)}
+:is(.page-roster,#modal[data-view=roster]) .rarity-common{color:#538255}
+:is(.page-roster,#modal[data-view=roster]) .rarity-rare{color:#347aa9}
+:is(.page-roster,#modal[data-view=roster]) .rarity-legendary{color:#9b6c16}
+:is(.page-roster,#modal[data-view=roster]) .rarity-mythical{color:#8056ad}
+body.menu-theme .page-roster .team-slot{background:linear-gradient(140deg,#eadbbb,#dfcba7);border-color:#bdab8c;box-shadow:0 4px 12px #493c2a0d}
+body.menu-theme .page-roster .team-slot.is-active{border-color:#9e2a2b;box-shadow:inset 3px 0 #9e2a2b}
+body.menu-theme .page-roster .active-team-mark{background:#f7edda;color:#8e2529;border-color:#bfa889}
+body.menu-theme .page-roster .slot-portraits{color:#5c606a}
+body.menu-theme .page-roster .slot-portraits img{border:2px solid rgb(var(--rarity-rgb));box-shadow:0 0 7px rgba(var(--rarity-rgb),.25)}
+body.menu-theme .page-roster .button.outline,#modal[data-view=roster] .button.outline{background:#f5eddd;color:#85272c;border-color:#b6a48b;text-shadow:none}
+body.menu-theme .page-roster .button.gold,#modal[data-view=roster] .button.gold{background:#9e2a2b;color:#fff7e9;border-color:#842023;text-shadow:none}
+body.menu-theme .page-roster .button:disabled,#modal[data-view=roster] .button:disabled{background:#d8d1c5;color:#66636a;border-color:#bbb2a4;opacity:1;box-shadow:none}
+:is(.page-roster,#modal[data-view=roster]) :is(.faction-team-bonuses,.faction-team-empty){background:#f1e5ce;border-color:#bca785;color:#343740}
+:is(.page-roster,#modal[data-view=roster]) :is(.faction-team-bonuses summary>span,.faction-team-empty>span){color:#8b292c}
+:is(.page-roster,#modal[data-view=roster]) .faction-team-bonuses article{background:#faf3e5;padding:9px;border-radius:7px}
+:is(.page-roster,#modal[data-view=roster]) .faction-team-bonuses article p{color:#535966}
+/* The team picker has the same paper surfaces, including its stationary footer. */
+#modal[data-view=roster]{background:#eee7d8;border-color:#b9a687}
+#modal[data-view=roster] .modal-header{background:#e3d5ba;border-bottom-color:#c0ac89}
+#modal[data-view=roster] .modal-header .icon-button{background:#f6edda;color:#72272b;border-color:#b6a084}
+#modal[data-view=roster] .roster-save{background:linear-gradient(0deg,#eee7d8 85%,#eee7d800);color:#535966}
+#modal[data-view=roster] :is(.roster-save>span,.roster-mana,label,.text-button){color:#535966}
+#modal[data-view=roster] .roster-card{background:#e1cfac}
+#modal[data-view=roster] .roster-card.picked{outline:2px solid #9e2a2b;outline-offset:2px}
+#modal[data-view=roster] .roster-shade{background:none}
+#modal[data-view=roster] .roster-label{left:0;right:0;bottom:0;background:#e6d4b1;padding:7px 6px;gap:4px}
+#modal[data-view=roster] .roster-label strong{color:#16171b;font-size:13px;line-height:1.15}
+#modal[data-view=roster] .pick-number{background:#9e2a2b;color:#fff7eb;box-shadow:0 1px 4px #45202040}
+#modal[data-view=roster] .roster-card>.hero-rank-track{bottom:auto;top:28%;transform:none}
+#modal[data-view=roster] .roster-mana .hero-level-mark{background:#e9d7b4;color:#383b42;border-color:#b6a17c}
+body.menu-theme .page-roster .composition>b{color:#5c606a}
+body.menu-theme .page-roster .first-steps{background:linear-gradient(120deg,#f3e8d1,#e4d7c4);border-color:#bda785;color:#16171b}
+body.menu-theme .page-roster .first-steps :is(p,span){color:#5c606a}
+body.menu-theme .page-roster .first-steps-dismiss{color:#92292b}
+body.menu-theme .page-roster .collection-filters summary,body.menu-theme #modal[data-view=roster] .collection-filters summary{color:#343740!important}
+body.menu-theme .page-roster .collection-filters select,body.menu-theme #modal[data-view=roster] select{background:#f7f3e9!important;color:#23252c!important;border-color:#b5a58a!important}
+body.menu-theme .page-roster .collection-filters option,#modal[data-view=roster] option{background:#f7f3e9;color:#23252c}
+body.menu-theme #modal[data-view=roster] #draft-count{color:#5c606a}
+body.menu-theme #modal[data-view=roster] .modal-header .icon-button{background:#f6edda;color:#72272b;border-color:#b6a084}
+body.menu-theme .page-roster .slot-portraits>span{color:#5c606a}

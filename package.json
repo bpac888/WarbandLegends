@@ -68,7 +68,8 @@
     "test:the-king": "node tests/the-king-browser.mjs",
     "test:journey": "node tests/journey-browser.mjs",
     "test:collection-polish": "node tests/collection-polish-browser.mjs",
-    "test:board-gestures": "node tests/board-gestures-browser.mjs"
+    "test:board-gestures": "node tests/board-gestures-browser.mjs",
+    "test:parchment-collection": "node tests/parchment-collection-browser.mjs"
   },
   "engines": {
     "node": ">=22"
