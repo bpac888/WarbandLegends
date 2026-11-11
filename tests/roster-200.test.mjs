@@ -1,3 +1,4 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import {historicalPortraits} from '../tools/portrait-baseline.mjs';
 import {beforeRarityRevision} from '../src/rarity-revision.js';
 import test from 'node:test';
@@ -11,7 +12,7 @@ import {REFERENCE_TEAM} from './reference-team.mjs';
 import {EFFECTS} from '../src/effects.js';
 const read=async file=>JSON.parse(await readFile(new URL('../'+file,import.meta.url)));
 const roster=(await read('data/champions.json')).slice(0,200),manifest=await read('data/roster-expansion-5.json'),added=roster.slice(manifest.originalCount,manifest.totalCount);
-const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+const hash=value=>createHash('sha256').update(JSON.stringify(Array.isArray(value)?beforeUpgradeBalance(value):value)).digest('hex');
 const count=key=>Object.fromEntries([...new Set(added.map(c=>c[key]))].sort().map(k=>[k,added.filter(c=>c[key]===k).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0}};e.passive=null;e.shield=0;}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.4);h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};h.passive=null;}return b;}
 test('all 189 previous records and source identities are preserved exactly',async()=>{

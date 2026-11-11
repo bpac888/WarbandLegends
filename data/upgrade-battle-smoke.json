@@ -1,0 +1,557 @@
+{
+  "scope": "24 before/after pairs on two fixed seeds in Ashen Gate; real Auto decisions, no fabricated victories. Normal-max default stats; no claim about all levels, bosses or PvP balance.",
+  "rows": [
+    {
+      "id": "necropolis_titan",
+      "seed": 31,
+      "party": [
+        "necropolis_titan",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "necropolis_titan",
+      "seed": 117,
+      "party": [
+        "necropolis_titan",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "bronze_juggernaut",
+      "seed": 31,
+      "party": [
+        "bronze_juggernaut",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 3,
+        "actions": 5,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 3,
+        "actions": 5,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "bronze_juggernaut",
+      "seed": 117,
+      "party": [
+        "bronze_juggernaut",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 6,
+        "actions": 8,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 6,
+        "actions": 8,
+        "survivors": 4
+      }
+    },
+    {
+      "id": "nayara_deep_well",
+      "seed": 31,
+      "party": [
+        "nayara_deep_well",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "nayara_deep_well",
+      "seed": 117,
+      "party": [
+        "nayara_deep_well",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 6,
+        "actions": 8,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 6,
+        "actions": 8,
+        "survivors": 4
+      }
+    },
+    {
+      "id": "beatrice_verdigris_mender",
+      "seed": 31,
+      "party": [
+        "beatrice_verdigris_mender",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "beatrice_verdigris_mender",
+      "seed": 117,
+      "party": [
+        "beatrice_verdigris_mender",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 8,
+        "actions": 11,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 8,
+        "actions": 11,
+        "survivors": 4
+      }
+    },
+    {
+      "id": "eudoma_nova_keeper",
+      "seed": 31,
+      "party": [
+        "eudoma_nova_keeper",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 7,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 7,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "eudoma_nova_keeper",
+      "seed": 117,
+      "party": [
+        "eudoma_nova_keeper",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 6,
+        "actions": 8,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 6,
+        "actions": 8,
+        "survivors": 4
+      }
+    },
+    {
+      "id": "ophira_seed_of_worlds",
+      "seed": 31,
+      "party": [
+        "ophira_seed_of_worlds",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "ophira_seed_of_worlds",
+      "seed": 117,
+      "party": [
+        "ophira_seed_of_worlds",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 8,
+        "actions": 11,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 8,
+        "actions": 11,
+        "survivors": 4
+      }
+    },
+    {
+      "id": "kelydras_worldbearer",
+      "seed": 31,
+      "party": [
+        "kelydras_worldbearer",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "kelydras_worldbearer",
+      "seed": 117,
+      "party": [
+        "kelydras_worldbearer",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 8,
+        "actions": 10,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 8,
+        "actions": 10,
+        "survivors": 4
+      }
+    },
+    {
+      "id": "orrix_amethyst_bulwark",
+      "seed": 31,
+      "party": [
+        "orrix_amethyst_bulwark",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 5,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 5,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "orrix_amethyst_bulwark",
+      "seed": 117,
+      "party": [
+        "orrix_amethyst_bulwark",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 5,
+        "actions": 7,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "qingluo_jade_tempest",
+      "seed": 31,
+      "party": [
+        "qingluo_jade_tempest",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "qingluo_jade_tempest",
+      "seed": 117,
+      "party": [
+        "qingluo_jade_tempest",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 7,
+        "actions": 8,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 7,
+        "actions": 8,
+        "survivors": 4
+      }
+    },
+    {
+      "id": "nix_biosteel_hunter",
+      "seed": 31,
+      "party": [
+        "nix_biosteel_hunter",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "nix_biosteel_hunter",
+      "seed": 117,
+      "party": [
+        "nix_biosteel_hunter",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 7,
+        "actions": 9,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 7,
+        "actions": 9,
+        "survivors": 4
+      }
+    },
+    {
+      "id": "kozhak_glacier_prowler",
+      "seed": 31,
+      "party": [
+        "kozhak_glacier_prowler",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 3,
+        "actions": 5,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 3,
+        "actions": 4,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "kozhak_glacier_prowler",
+      "seed": 117,
+      "party": [
+        "kozhak_glacier_prowler",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 6,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "phozia_star_oracle",
+      "seed": 31,
+      "party": [
+        "phozia_star_oracle",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 5,
+        "survivors": 5
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 4,
+        "actions": 5,
+        "survivors": 5
+      }
+    },
+    {
+      "id": "phozia_star_oracle",
+      "seed": 117,
+      "party": [
+        "phozia_star_oracle",
+        "ravel",
+        "nima_dewthread",
+        "barkskin_bruiser",
+        "jade_archer_linh"
+      ],
+      "before": {
+        "outcome": "victory",
+        "moves": 8,
+        "actions": 11,
+        "survivors": 4
+      },
+      "after": {
+        "outcome": "victory",
+        "moves": 8,
+        "actions": 11,
+        "survivors": 4
+      }
+    }
+  ]
+}

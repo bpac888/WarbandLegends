@@ -1,3 +1,6 @@
+import {validTeamPreferences} from './team-preferences.js';
+import {normalizeJournal} from './campaign-journal.js';
+import {normalizeWeekly,completeWeekly,validWeeklyProfile} from './weekly.js';
 import {tutorialState} from './tutorial.js';
 import {normalizePremiumItems,validPremiumItems,boostedGold} from './premium-items.js';
 import {normalizeTeams} from './teams.js';
@@ -15,7 +18,7 @@ export const PROFILE_VERSION=13;
 export const CAMPAIGN_REWARDS=Object.freeze(Object.fromEntries(ENCOUNTERS.map(e=>[e.id,e.rewards])));
 export const STARTER_TEAM=['nima_dewthread','ravel','plague_doctor_mors','gallows_marksman_oren','cult_zealot'];
 export const SUMMON_ODDS=[{rarity:'common',chance:50},{rarity:'rare',chance:30},{rarity:'legendary',chance:7.5},{rarity:'mythical',chance:1.5},{rarity:'double_common',chance:11}];
-export function defaultProfile(){return {...normalizePremiumItems({}),...defaultModes(),...defaultKeeper(STARTER_TEAM),profileVersion:PROFILE_VERSION,copySequence:0,name:'Rune Keeper',team:[...STARTER_TEAM],unlocked:0,wins:0,cleared:[],recorded:[],speed:1,helpSeen:false,onboardingDismissed:false,onboardingComplete:false,tutorial:tutorialState({}),gold:500,gems:INITIAL_GEMS,collection:Object.fromEntries(STARTER_TEAM.map(id=>[id,1])),summons:0,history:[],claimed:[],heroXp:{},ascensions:{},awakenings:{},materials:{},campaignProgress:{normal:0,hard:0,nightmare:0},dungeonClears:{},dungeonWins:0,openRoster:false,reducedMotion:false};}
+export function defaultProfile(){return {cinematicsEnabled:true,...normalizeJournal({}),...normalizeWeekly({}),...normalizePremiumItems({}),...defaultModes(),...defaultKeeper(STARTER_TEAM),profileVersion:PROFILE_VERSION,copySequence:0,name:'Rune Keeper',team:[...STARTER_TEAM],unlocked:0,wins:0,cleared:[],recorded:[],speed:1,helpSeen:false,onboardingDismissed:false,onboardingComplete:false,tutorial:tutorialState({}),gold:500,gems:INITIAL_GEMS,collection:Object.fromEntries(STARTER_TEAM.map(id=>[id,1])),summons:0,history:[],claimed:[],heroXp:{},ascensions:{},awakenings:{},materials:{},campaignProgress:{normal:0,hard:0,nightmare:0},dungeonClears:{},dungeonWins:0,openRoster:false,reducedMotion:false};}
 const safeInt=(v,fallback,max=999999999)=>Number.isSafeInteger(v)&&v>=0&&v<=max?v:fallback;
 export function normalizeProfile(raw,roster){
  const base=defaultProfile();if(raw?.profileVersion===9)raw=splitLegacyCopies(raw,roster);if(![10,11,12,PROFILE_VERSION].includes(raw?.profileVersion))return base;const catalogue=roster;roster=battleRoster(raw,roster);const ids=new Set(roster.map(c=>c.id)),p=raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};
@@ -42,7 +45,7 @@ export function normalizeProfile(raw,roster){
  const dungeonClears={};for(const [id,n]of Object.entries(p.dungeonClears&&typeof p.dungeonClears==='object'&&!Array.isArray(p.dungeonClears)?p.dungeonClears:{}))if(getEncounter(id)?.mode==='dungeon'&&Number.isSafeInteger(n)&&n>0&&n<=999999999)dungeonClears[id]=n;
  const openRoster=p.openRoster===true;
  let selected=team;if(!openRoster&&selected.some(id=>!collection[id]))selected=[...selected.filter(id=>collection[id]),...Object.keys(collection).filter(id=>!selected.includes(id))].slice(0,5);
- return {...base,...normalizePremiumItems(p),...normalizeModes(p),...normalizeKeeper({...p,team:selected,openRoster},collection,catalogue),copySequence:Math.max(safeInt(p.copySequence,0),...Object.keys(collection).map(id=>Number(id.split('~')[1])||0)),name:typeof p.name==='string'&&p.name.trim()?p.name.trim().slice(0,24):base.name,team:selected,unlocked:safeInt(p.unlocked,0,2),wins:safeInt(p.wins,0),cleared,recorded:Array.isArray(p.recorded)?p.recorded.filter(id=>typeof id==='string'&&id.length<150).slice(-200):[],speed:1,helpSeen:p.helpSeen===true,onboardingDismissed:p.onboardingDismissed===true,onboardingComplete:p.onboardingComplete===true,tutorial:tutorialState(p),gold:safeInt(p.gold,500),gems:safeInt(p.gems,INITIAL_GEMS,GEM_LIMIT),collection,campaignProgress,dungeonClears,dungeonWins:safeInt(p.dungeonWins,0),summons:safeInt(p.summons,0),history:Array.isArray(p.history)?p.history.filter(h=>h&&ids.has(h.championId)&&Number.isSafeInteger(h.sequence)&&h.sequence>0&&typeof h.at==='string'&&Number.isFinite(Date.parse(h.at))).slice(-20):[],heroXp,ascensions,awakenings,materials,claimed:Array.isArray(p.claimed)?[...new Set(p.claimed.filter(id=>QUESTS.some(q=>q.id===id)))]:[],openRoster,reducedMotion:p.reducedMotion===true};
+ return {...base,cinematicsEnabled:p.cinematicsEnabled!==false,...normalizeJournal(p),...normalizeWeekly(p),...normalizePremiumItems(p),...normalizeModes(p),...normalizeKeeper({...p,team:selected,openRoster},collection,catalogue),copySequence:Math.max(safeInt(p.copySequence,0),...Object.keys(collection).map(id=>Number(id.split('~')[1])||0)),name:typeof p.name==='string'&&p.name.trim()?p.name.trim().slice(0,24):base.name,team:selected,unlocked:safeInt(p.unlocked,0,2),wins:safeInt(p.wins,0),cleared,recorded:Array.isArray(p.recorded)?p.recorded.filter(id=>typeof id==='string'&&id.length<150).slice(-200):[],speed:1,helpSeen:p.helpSeen===true,onboardingDismissed:p.onboardingDismissed===true,onboardingComplete:p.onboardingComplete===true,tutorial:tutorialState(p),gold:safeInt(p.gold,500),gems:safeInt(p.gems,INITIAL_GEMS,GEM_LIMIT),collection,campaignProgress,dungeonClears,dungeonWins:safeInt(p.dungeonWins,0),summons:safeInt(p.summons,0),history:Array.isArray(p.history)?p.history.filter(h=>h&&ids.has(h.championId)&&Number.isSafeInteger(h.sequence)&&h.sequence>0&&typeof h.at==='string'&&Number.isFinite(Date.parse(h.at))).slice(-20):[],heroXp,ascensions,awakenings,materials,claimed:Array.isArray(p.claimed)?[...new Set(p.claimed.filter(id=>QUESTS.some(q=>q.id===id)))]:[],openRoster,reducedMotion:p.reducedMotion===true};
 }
 export function canUse(profile,id){return profile.openRoster||!!profile.collection[id];}
 export function setOpenRoster(profile,enabled){if(enabled&&profile.openRoster)return profile;const next={...profile,openRoster:enabled};if(!enabled&&next.team.some(id=>!profile.collection[id]))next.team=[...next.team.filter(id=>profile.collection[id]),...Object.keys(profile.collection).filter(id=>!next.team.includes(id))].slice(0,5);return {...next,...normalizeTeams(next,next.collection,[])};}
@@ -67,12 +70,14 @@ function drawChampion(profile,roster,random,at,forcedRarity=null){
  return {profile:bumpPath(next,{summons:results.length},new Date(at)),results,rarity};
 }
 export function victoryRewards(profile,battle,now=Date.now()){
+ if(getEncounter(battle.stageId)?.mode==='weekly')return {gold:0,gems:0,xp:0};
  if(['arena','event'].includes(getEncounter(battle.stageId)?.mode))return modeReward(profile,battle,now);
  const encounter=getEncounter(battle.stageId),reward=encounter?.rewards;if(!reward||battle.phase!=='victory'||battle.sandbox)return {gold:0,gems:0,xp:0};
  const first=!profile.cleared.includes(battle.stageId),milestone=encounter.mode==='campaign'&&(profile.wins+1)%GEM_INTERVAL===0;
  return {gold:boostedGold(profile,first?(encounter.mode==='campaign'?500:reward.gold*3):reward.gold,now),gems:(first?(encounter.mode==='campaign'?200:100):encounter.mode==='dungeon'?10:0)+(milestone?50:0),xp:Math.round(reward.xp*(first?1.5:1)),accountXp:accountBattleXp(encounter,true),first,milestone,materials:materialDrops(encounter)};
 }
 export function awardVictory(profile,battle,roster=[],now=Date.now()){
+ if(getEncounter(battle.stageId)?.mode==='weekly')return completeWeekly(profile,battle,getEncounter(battle.stageId));
  if(['arena','event'].includes(getEncounter(battle.stageId)?.mode))return settleMode(profile,battle,roster,now);
  if(battle.phase!=='victory'||battle.sandbox||profile.recorded.includes(battle.id)||entryError(profile,battle.stageId))return profile;
  const e=getEncounter(battle.stageId);if(!e)return profile;
@@ -83,7 +88,7 @@ export function awardVictory(profile,battle,roster=[],now=Date.now()){
  return {...bumpPath(addAccountXp(addMaterials(grown,reward.materials),accountBattleXp(e,true)),{wins:1,gems:reward.gems},new Date(now)),campaignProgress,dungeonClears,wins:Math.min(999999999,profile.wins+(e.mode==='campaign'?1:0)),dungeonWins:Math.min(999999999,(profile.dungeonWins||0)+(e.mode==='dungeon'?1:0)),unlocked:Math.min(2,campaignProgress.normal),cleared:[...new Set([...profile.cleared,battle.stageId])],recorded:[...profile.recorded,battle.id].slice(-200),gold:Math.min(999999999,profile.gold+reward.gold),gems:Math.min(GEM_LIMIT,profile.gems+reward.gems)};
 }
 export function validateProfile(p,roster){
- if(!p||!validPremiumItems(p))return false;
+ if(!p||!validPremiumItems(p)||!validTeamPreferences(p)||!validWeeklyProfile(p)||p.cinematicsEnabled!==undefined&&typeof p.cinematicsEnabled!=='boolean')return false;
  const catalogue=roster;if(p)roster=battleRoster(p,roster);const ids=new Set(roster.map(c=>c.id));if(!p||![PROFILE_VERSION].includes(p.profileVersion)||typeof p.name!=='string'||!p.name.trim()||p.name.length>24||!Array.isArray(p.team)||p.team.length!==5||new Set(p.team).size!==5||p.team.some(id=>!ids.has(id)))return false;
  if(!Number.isSafeInteger(p.copySequence)||p.copySequence<0||p.copySequence>999999999||Object.keys(p.collection||{}).some(id=>id.includes('~')&&Number(id.split('~')[1])>p.copySequence))return false;
  for(const [key,max]of [['gold',999999999],['gems',GEM_LIMIT],['summons',999999999],['wins',999999999],['unlocked',2]])if(!Number.isSafeInteger(p[key])||p[key]<0||p[key]>max)return false;

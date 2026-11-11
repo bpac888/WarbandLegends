@@ -8,7 +8,7 @@ export const xpToNext=level=>level>=100?0:Math.floor(100*Math.max(1,level)**1.22
 export const accountThreshold=level=>Array.from({length:Math.max(0,Math.min(100,level)-1)},(_,i)=>xpToNext(i+1)).reduce((n,v)=>n+v,0);
 export const ACCOUNT_XP_MAX=accountThreshold(100);
 export function accountDevelopment(xp=0){xp=Math.min(ACCOUNT_XP_MAX,Math.max(0,Number.isSafeInteger(xp)?xp:0));let level=1;while(level<100&&xp>=accountThreshold(level+1))level++;const earned=xp-accountThreshold(level),needed=xpToNext(level);return {level,xp,earned,needed,ratio:needed?earned/needed:1};}
-export const defaultKeeper=(team=null)=>({accountXp:0,energy:51,energyDate:playerDate(),avatar:'frost-viking',dailyClaims:0,dailyLastDate:null,pathDate:null,pathWins:0,pathGems:0,pathSummons:0,pathHeroLevels:{},pathClaimed:false,teamsVersion:1,activeTeamSlot:0,teamSlots:Array.from({length:TEAM_SLOT_COUNT},(_,i)=>i===0&&team?[...team]:null)});
+export const defaultKeeper=(team=null)=>({accountXp:0,energy:51,energyDate:playerDate(),avatar:'frost-viking',dailyClaims:0,dailyLastDate:null,pathDate:null,pathWins:0,pathGems:0,pathSummons:0,pathHeroLevels:{},pathClaimed:false,teamNames:['Team 1','Team 2','Team 3','Team 4'],favorites:[],lockedHeroes:[],teamsVersion:1,activeTeamSlot:0,teamSlots:Array.from({length:TEAM_SLOT_COUNT},(_,i)=>i===0&&team?[...team]:null)});
 export function playerDate(now=new Date()){const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);const get=k=>parts.find(p=>p.type===k).value;return `${get('year')}-${get('month')}-${get('day')}`;}
 const cap=n=>Math.min(999999999,n),safe=n=>Number.isSafeInteger(n)&&n>=0&&n<=999999999;
 const date=v=>v===null||typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&Number.isFinite(Date.parse(v+'T12:00:00Z'))&&new Date(v+'T12:00:00Z').toISOString().slice(0,10)===v;
@@ -36,7 +36,7 @@ export function energyStatus(p,now=new Date()){
  return {current,max,date:stored<today?today:stored};
 }
 export function refreshEnergy(p,now=new Date()){const e=energyStatus(p,now);return p.energy===e.current&&p.energyDate===e.date?p:{...p,energy:e.current,energyDate:e.date};}
-export const energyCost=e=>!e||e.mode==='event'?0:e.mode==='arena'?1:({normal:1,hard:2,nightmare:3}[e.difficulty]||1);
+export const energyCost=e=>!e||['event','weekly'].includes(e.mode)?0:e.mode==='arena'?1:({normal:1,hard:2,nightmare:3}[e.difficulty]||1);
 export function spendEnergy(p,e,now=new Date()){
  const profile=refreshEnergy(p,now),cost=energyCost(e);
  if(profile.energy<cost)return {profile,cost,error:`Need ${cost} Energy. Your energy refills at midnight PST.`};

@@ -5,12 +5,12 @@ import {development,heroDevelopment,addHeroXp} from './development.js';
 import {currentLevelCap,tierLevel} from './ascension.js';
 const donorRarities=new Set(['common','rare']);
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function protectedCopies(profile,battle){return new Set([...profile.team,...(profile.teamSlots||[]).flatMap(t=>t||[]),...(battle?.phase==='playing'?battle.heroes.map(h=>h.id):[])]);}
+export function protectedCopies(profile,battle){return new Set([...(profile.lockedHeroes||[]),...profile.team,...(profile.teamSlots||[]).flatMap(t=>t||[]),...(battle?.phase==='playing'?battle.heroes.map(h=>h.id):[])]);}
 export function feedingQuote(profile,target,donors,roster,{battle=null,now=Date.now()}={}){
  const d=heroDevelopment(profile,target),physical=currentLevelCap(profile,target),guard=protectedCopies(profile,battle);
  let error=!profile.collection[target.id]?'Collect this hero before training.':d.atCap&&d.cap===physical?'Ascend or choose a hero below their level cap.':!Array.isArray(donors)||!donors.length||donors.length>10?'Select 1–10 Common or Rare heroes.':new Set(donors).size!==donors.length?'Select each copy once.':null;
  const rows=[];
- if(!error)for(const id of donors){const c=heroForId(roster,id);if(!c||!profile.collection[id]||!donorRarities.has(c.rarity)||id===target.id||guard.has(id)){error='A selected hero is unavailable or assigned to a team or active battle.';break;}const multiplier=c.rarity==='rare'&&target.rarity==='rare'&&baseHeroId(c.id)===baseHeroId(target.id)?5:1;const rarityMultiplier=c.rarity==='rare'?3:1;const normalXp=Math.floor(3*(120+Math.floor((profile.heroXp[id]||0)/2))*(c.color===target.color?1.25:1));rows.push({id,name:c.name,multiplier,level:development(c,profile.heroXp[id],currentLevelCap(profile,c)).level,rarityMultiplier,xp:normalXp*rarityMultiplier*multiplier});}
+ if(!error)for(const id of donors){const c=heroForId(roster,id);if(!c||!profile.collection[id]||!donorRarities.has(c.rarity)||id===target.id||guard.has(id)){error='A selected hero is unavailable locked or assigned to a team or active battle.';break;}const multiplier=c.rarity==='rare'&&target.rarity==='rare'&&baseHeroId(c.id)===baseHeroId(target.id)?5:1;const rarityMultiplier=c.rarity==='rare'?3:1;const normalXp=Math.floor(3*(120+Math.floor((profile.heroXp[id]||0)/2))*(c.color===target.color?1.25:1));rows.push({id,name:c.name,multiplier,level:development(c,profile.heroXp[id],currentLevelCap(profile,c)).level,rarityMultiplier,xp:normalXp*rarityMultiplier*multiplier});}
  const baseXp=rows.reduce((n,c)=>n+c.xp,0),boosted=boosterActive(profile,'experience',now),xp=boosted?Math.floor(baseXp*1.25):baseXp,gold=rows.length*25,gained=Math.max(0,Math.min(xpForPhysical(target,physical)-(profile.heroXp[target.id]||0),xp));
  if(!error&&Object.keys(profile.collection).length-rows.length<5)error='Keep at least five collected heroes.';
  if(!error&&profile.gold<gold)error='You need 25 Gold per donor.';
@@ -22,6 +22,7 @@ export function consumeHeroes(profile,target,donors,roster,{battle=null,expected
  if(expectedXp!==(profile.heroXp[target.id]||0))return {profile,error:'Hero progress changed. Review training again.'};
  let next=addHeroXp({...profile,gold:profile.gold-q.gold},target,q.gained,new Date(now));
  for(const field of ['collection','heroXp','ascensions','awakenings']){next[field]={...next[field]};for(const id of donors)delete next[field][id];}
+ next.favorites=(next.favorites||[]).filter(id=>next.collection[id]);next.lockedHeroes=(next.lockedHeroes||[]).filter(id=>next.collection[id]);
  if(q.after.level>q.before.level)next=recordTutorial(next,'fed');
  return {profile:next,gained:q.gained,consumed:[...donors],before:q.before.level,after:q.after.level,displayBefore:q.displayBefore,displayAfter:q.displayAfter};
 }

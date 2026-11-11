@@ -1,0 +1,144 @@
+{
+  "source": "Owner-supplied Warband Legends trailer, two portrait uploads",
+  "sourceSha256": [
+    "b6febdcdbc62941dabf6b94c339ef7fc75b8f7264677c73da6bebc550700333e",
+    "916cdc1d5bfacb6e8142c08ab0b56071733a90b1263cf760e19fca6e9cf917c2"
+  ],
+  "clips": [
+    {
+      "id": "iseldra",
+      "characterId": "magic_iseldra",
+      "sourcePart": 1,
+      "startSeconds": 10.15,
+      "cutSeconds": 1.65,
+      "path": "assets/cinematics/iseldra.mp4",
+      "bytes": 965728,
+      "sha256": "c5da71fa2795981a4fd94950ce19307103ce5f1f3654703be288468d4b14c323",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "1.666667"
+        }
+      }
+    },
+    {
+      "id": "juggernaut",
+      "characterId": "bronze_juggernaut",
+      "sourcePart": 2,
+      "startSeconds": 1.88,
+      "cutSeconds": 2.05,
+      "path": "assets/cinematics/juggernaut.mp4",
+      "bytes": 1132053,
+      "sha256": "ad74ae7db999df3e6bf01807124b67320af6273ecb209b886372f1bc1b2783fc",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.041667"
+        }
+      }
+    },
+    {
+      "id": "vex",
+      "characterId": "elixir_apotheon",
+      "sourcePart": 2,
+      "startSeconds": 12.0,
+      "cutSeconds": 1.12,
+      "path": "assets/cinematics/vex.mp4",
+      "bytes": 846480,
+      "sha256": "c0f28dd1eb437339eb1ea0d79750808da1c326e20348632aa3e386f4c78296af",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "1.125000"
+        }
+      }
+    },
+    {
+      "id": "jade-dragon",
+      "characterId": "qingluo_jade_tempest",
+      "sourcePart": 2,
+      "startSeconds": 8.25,
+      "cutSeconds": 1.5,
+      "path": "assets/cinematics/jade-dragon.mp4",
+      "bytes": 1074246,
+      "sha256": "a693d68f709c9497309739ea1fb02cfafcda8ce7707bec5c03a6bca59b4d835a",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "1.500000"
+        }
+      }
+    },
+    {
+      "id": "intro-realm",
+      "characterId": null,
+      "sourcePart": 2,
+      "startSeconds": 13.65,
+      "cutSeconds": 1.55,
+      "path": "assets/cinematics/intro-realm.mp4",
+      "bytes": 26669,
+      "sha256": "261416e947c345ddf56ea240f17397f6314fc00d08c0259e4cc8d8120c341c81",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "1.541667"
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Original uploads remain outside the production bundle.",
+    "Intro background is blurred to obscure the baked-in older branding; the live interface overlays the current owner logo and wordmark.",
+    "Muted inline playback, still artwork fallback, Reduced Motion and user cinematic preference apply."
+  ]
+}

@@ -1,3 +1,4 @@
+import {WEEKLY_STAGES,weeklyWindow} from './weekly.js';
 import {authoredStage} from './chapter.js';
 import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js';
 // Independent Legends encounters. Structure/names/art adapted from the owner's source game.
@@ -37,10 +38,13 @@ export const DUNGEONS=[
 ].map(d=>({...d,art:`assets/dungeons/${d.id.replaceAll('_','-')}.svg`}));
 export const DUNGEON_STAGES=DUNGEONS.flatMap(d=>DIFFICULTIES.map((diff,i)=>({id:`dungeon-${d.id}-${diff.id}`,mode:'dungeon',dungeonId:d.id,difficulty:diff.id,number:i+1,name:d.name,region:`${diff.label} · Dungeon`,description:d.lore,enemyIds:[d.guards[0],d.bossId,d.guards[1]],bossName:d.boss,bossPortrait:d.bossPortrait,hp:1,atk:1,countdown:i===2?2:3,stats:[Math.round((850+d.rank*110)*diff.mult),Math.round((300+d.rank*27)*diff.mult),Math.round((250+d.rank*35)*diff.mult)],bossHp:1.65,boss:true,art:d.art,portrait:d.art,recommendedLevel:Math.min(80,5+d.rank*7+i*20),rewards:{gold:Math.round((100+d.rank*30)*diff.mult),xp:Math.round((130+d.rank*35)*diff.mult)}})));
 export const ENCOUNTERS=[...CAMPAIGN_STAGES,...DUNGEON_STAGES,...ARENA_STAGES,...EVENT_STAGES];
-const byId=new Map(ENCOUNTERS.map(e=>[e.id,e]));
+// Keep the permanent encounter catalog stable; rotating challenges are additional entries.
+export const ALL_ENCOUNTERS=[...ENCOUNTERS,...WEEKLY_STAGES];
+const byId=new Map(ALL_ENCOUNTERS.map(e=>[e.id,e]));
 export const getEncounter=id=>byId.get(id);
 export const campaignStages=(difficulty='normal')=>CAMPAIGN_STAGES.filter(e=>e.difficulty===difficulty);
 export function entryError(profile,id,now=new Date()){const e=getEncounter(id);if(!e)return 'Unknown encounter.';
+ if(e.mode==='weekly'){if(!weeklyWindow(now).stages.some(s=>s.id===id))return 'This challenge has rotated. Open Weekly Challenges for the current week.';return null;}
  if(e.mode==='arena')return null;
  if(e.mode==='event'){if(!eventWindow(e.eventId,now)?.active)return 'This event is outside its monthly window.';return eventAttemptsLeft(profile,e.eventId,now)>0?null:'No attempts remain in this event window.';}
  if(profile.openRoster)return null;

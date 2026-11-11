@@ -1,6 +1,7 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
 import {createBattle,cast,validateSave} from '../src/engine.js';import {defaultProfile,summon,normalizeProfile} from '../src/progression.js';import {factionGuideHTML,factionTeamHTML} from '../src/faction-ui.js';import {REFERENCE_TEAM} from './reference-team.mjs';
-const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url))),roster=(await read('data/champions.json')).slice(0,264),goblins=roster.filter(c=>c.faction==='goblins'),manifest=await read('data/roster-expansion-11.json'),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url))),roster=(await read('data/champions.json')).slice(0,264),goblins=roster.filter(c=>c.faction==='goblins'),manifest=await read('data/roster-expansion-11.json'),hash=x=>createHash('sha256').update(JSON.stringify(Array.isArray(x)?beforeUpgradeBalance(x):x)).digest('hex');
 const random=seed=>{let x=seed|0;x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296;};
 function fixture(id){const data=structuredClone(roster),c=data.find(c=>c.id===goblins[0].id);c.special={name:'Resistance fixture',charging:false,levels:[{level:1,tiles:10,speed:'average',target:'self',damage:0,healing:0,aoe:false,pierce:false,effects:[{id,turns:2,scope:'allies'}]}]};const b=createBattle(data,[c.id,...REFERENCE_TEAM.slice(0,4)],'ashen-gate',42);b.heroes[0].mana=10;return {b,data};}
 test('sixteen Goblins are 11 Legendary and 5 Rare, with no changes to the previous 248 characters',async()=>{

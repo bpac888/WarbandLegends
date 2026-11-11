@@ -1,8 +1,9 @@
 {
   "version": 12,
-  "scope": "Current 265-character roster after adding The King, a factionless Mythical. All 264 previous records and portraits preserved. Thirteen original factions have 18 members; Magic has six; Djedi has eight; Goblins has sixteen. Not a measured PvP win-rate study.",
+  "scope": "Current 265-character roster after adding The King, a factionless Mythical. Twelve owner-approved kit changes applied on 2026-11-11; all base stats and portraits preserved. Thirteen original factions have 18 members; Magic has six; Djedi has eight; Goblins has sixteen. Not a measured PvP win-rate study.",
   "historicalBaselineVerified": true,
   "approvedRosterRevisionCount": 28,
+  "approvedBalanceRevisionCount": 12,
   "before": {
     "total": 264,
     "rarity": {
@@ -26,8 +27,8 @@
     "speed": {
       "very_fast": 10,
       "fast": 63,
-      "average": 126,
-      "slow": 42,
+      "average": 127,
+      "slow": 41,
       "very_slow": 2,
       "charging": 21
     }
@@ -84,8 +85,8 @@
     "speed": {
       "very_fast": 11,
       "fast": 63,
-      "average": 126,
-      "slow": 42,
+      "average": 127,
+      "slow": 41,
       "very_slow": 2,
       "charging": 21
     }
@@ -235,8 +236,8 @@
       "speed": {
         "very_fast": 0,
         "fast": 3,
-        "average": 9,
-        "slow": 3,
+        "average": 10,
+        "slow": 2,
         "very_slow": 0,
         "charging": 3
       },
@@ -816,8 +817,8 @@
       "speed": {
         "very_fast": 5,
         "fast": 22,
-        "average": 58,
-        "slow": 3,
+        "average": 59,
+        "slow": 2,
         "very_slow": 0,
         "charging": 2
       }
@@ -992,8 +993,8 @@
       "speed": {
         "very_fast": 3,
         "fast": 16,
-        "average": 19,
-        "slow": 11,
+        "average": 20,
+        "slow": 10,
         "very_slow": 1,
         "charging": 3
       }
@@ -1052,8 +1053,8 @@
       "speed": {
         "very_fast": 0,
         "fast": 5,
-        "average": 32,
-        "slow": 17,
+        "average": 33,
+        "slow": 16,
         "very_slow": 0,
         "charging": 2
       }

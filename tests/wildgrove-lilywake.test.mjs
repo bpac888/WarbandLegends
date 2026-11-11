@@ -1,3 +1,4 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -9,7 +10,7 @@ import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url)));
 const roster=(await read('data/champions.json')).slice(0,234),manifest=await read('data/roster-expansion-8.json'),hero=roster.find(c=>c.id==='ondelle_lilywake_huntress');
-const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const hash=x=>createHash('sha256').update(JSON.stringify(Array.isArray(x)?beforeUpgradeBalance(x):x)).digest('hex');
 
 test('Ondelle completes all thirteen factions without changing any of the previous 233 characters or portraits',async()=>{
  assert.equal(roster.length,234);assert.equal(new Set(roster.map(c=>c.id)).size,234);

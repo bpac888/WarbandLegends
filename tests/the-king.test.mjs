@@ -1,6 +1,7 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
 import {createBattle,cast,swap,validMoves,validateSave} from '../src/engine.js';import {factionGroups,FACTION_BONUSES} from '../src/faction-bonuses.js';import {filterChampions,factionLabel} from '../src/collection.js';import {defaultProfile,summon,normalizeProfile} from '../src/progression.js';import {REFERENCE_TEAM} from './reference-team.mjs';
-const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url))),roster=await read('data/champions.json'),king=roster.find(c=>c.id==='the_king'),manifest=await read('data/roster-expansion-12.json'),sha=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url))),roster=await read('data/champions.json'),king=roster.find(c=>c.id==='the_king'),manifest=await read('data/roster-expansion-12.json'),sha=x=>createHash('sha256').update(JSON.stringify(Array.isArray(x)?beforeUpgradeBalance(x):x)).digest('hex');
 const next=seed=>{let x=seed|0;x^=x<<13;x^=x>>>17;x^=x<<5;return x>>>0;};
 function incoming({damage=1,aoe=false,guard=false}={}){
  const data=structuredClone(roster),caster=data.find(c=>c.id===REFERENCE_TEAM[0]);caster.special={name:'Enemy fixture',charging:false,levels:[{level:1,tiles:10,speed:'average',target:'enemy',damage,healing:0,aoe,pierce:false,effects:[{id:'dispel',turns:0,scope:aoe?'enemies':'enemy'},{id:'poison',turns:2,scope:aoe?'enemies':'enemy'}]}]};

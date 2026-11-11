@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "reviewDate": "2026-11-05",
-  "scope": "Full 265-character analysis after The King. All previous 264 records remain unchanged; pending changes to existing characters remain recommendations.",
-  "rosterSha256": "eb296018b16fc1d5c214b02cfe749dc0304c1efe6c92e0becdecb7e9707d074b",
+  "reviewDate": "2026-11-11",
+  "scope": "Full 265-character analysis after The King. Twelve owner-approved kit improvements applied on 2026-11-11; all base stats and artwork preserved. Remaining watch cases are recommendations.",
+  "rosterSha256": "79171a101bbca60b4f0cbbebf20e3688f9406cef2d933145387bed9d91fdcc7c",
   "appliedChanges": {
     "date": "2026-10-28",
     "reason": "Owner requested improvements to both Astral Mythicals after a speed- and rarity-focused balance review.",
@@ -717,8 +717,8 @@
       "speeds": {
         "very_fast": 5,
         "fast": 22,
-        "average": 58,
-        "slow": 3,
+        "average": 59,
+        "slow": 2,
         "very_slow": 0,
         "charging": 2
       },
@@ -821,8 +821,8 @@
   "speedCounts": {
     "very_fast": 11,
     "fast": 63,
-    "average": 126,
-    "slow": 42,
+    "average": 127,
+    "slow": 41,
     "very_slow": 2,
     "charging": 21
   },
@@ -1104,8 +1104,8 @@
       "speeds": {
         "very_fast": 0,
         "fast": 3,
-        "average": 9,
-        "slow": 3,
+        "average": 10,
+        "slow": 2,
         "very_slow": 0,
         "charging": 3
       },
@@ -1620,17 +1620,6 @@
     },
     {
       "ids": [
-        "melia_dawn_pollen",
-        "beatrice_verdigris_mender"
-      ],
-      "names": [
-        "Melia, Dawn-Pollen Mender",
-        "Beatrice, Verdigris Mender"
-      ],
-      "crossRarity": true
-    },
-    {
-      "ids": [
         "ushala_quillgrass_tracker",
         "xiphae_comet_huntress"
       ],
@@ -1643,7 +1632,7 @@
   ],
   "reviewCounts": {
     "Keep / Boss Watch": 1,
-    "Buff": 13,
+    "Improved This Pass": 14,
     "Keep for Now": 213,
     "Watch: Upper Rare Flexibility": 1,
     "Watch: Common Support Gap": 3,
@@ -1657,34 +1646,19 @@
     "Watch: Possible Trim": 1,
     "Keep / Fast Rare Reference": 1,
     "Watch: Potential Excess": 1,
-    "Buff / Differentiate": 3,
+    "Buff / Differentiate": 2,
+    "Buff": 3,
     "Watch: Support Gap": 1,
     "Watch: Specialist Payoff": 1,
     "Watch: Thin Kit": 1,
     "Watch: Timing Sensitive": 1,
     "Keep / Durable Sniper": 1,
     "Keep / Durable Fast Attacker": 1,
-    "Differentiate": 1,
-    "Improved This Pass": 2,
     "Watch: Rarity Premium": 2,
     "Watch: Protection Window": 1,
     "Watch: Brief Control": 1
   },
   "recommendations": [
-    {
-      "id": "necropolis_titan",
-      "name": "Ossir, Necropolis Titan",
-      "status": "Buff",
-      "priority": "High",
-      "note": "Twelve-tile tank with only one-turn Taunt and Damage Ward. Karthos has three-turn Taunt and team Barrier at the same cost with similar stats. Extend the core protection or improve its distinct control role."
-    },
-    {
-      "id": "bronze_juggernaut",
-      "name": "The Bronze Juggernaut",
-      "status": "Buff",
-      "priority": "High",
-      "note": "All three protective effects last only one turn at twelve tiles. Similar slow tanks have longer coverage. Increase protection duration/payoff; a faster cast is an alternative if the brief effects are intentional."
-    },
     {
       "id": "carmine_veinreader",
       "name": "Sister Carmine",
@@ -1707,81 +1681,11 @@
       "note": "Full-charge 260% plus Dispel/Mana Slow costs 10, while Sora casts at 8 with a stronger actual hit through Vulnerability and Dispel. Mana Slow immunity is useful but does not fill the gap. Improve the full-charge utility/payoff while retaining early choice."
     },
     {
-      "id": "nayara_deep_well",
-      "name": "Nayara, Keeper of the Deep Well",
-      "status": "Buff / Differentiate",
-      "priority": "High",
-      "note": "Fast is appropriate, but 24% team healing plus Cleanse/one-turn Ward resembles Rare/Legendary kits. Personal 3% regeneration is modest beside Sable’s much larger team package. Give a distinct Mythical-grade cleanse/protection payoff; retain Fast."
-    },
-    {
-      "id": "nix_biosteel_hunter",
-      "name": "Nix, Biosteel Hunter",
-      "status": "Buff",
-      "priority": "High",
-      "note": "All three charges deliver roughly the same low damage per tile; the 15-tile single-target payoff is too small for the wait. Selka nearly matches the full-charge hit at only 6.5 tiles and already has Dispel. Improve early damage and a clear final-charge reward."
-    },
-    {
-      "id": "orrix_amethyst_bulwark",
-      "name": "Orrix, Amethyst Bulwark",
-      "status": "Buff",
-      "priority": "High",
-      "note": "Slow 125% with Barrier 2 and personal Riposte 1 is worse than Average Jarek’s hit, Barrier 3 and Riposte 3, with lower bulk. Chymera’s ailment bonus does not help this all-buff kit. Prioritize Average speed and/or a useful Taunt/counter window."
-    },
-    {
-      "id": "beatrice_verdigris_mender",
-      "name": "Beatrice, Verdigris Mender",
-      "status": "Differentiate",
-      "priority": "High",
-      "note": "Exactly the same Fast 24%-team-heal/Cleanse Special as Rare Melia. Personal stats are better, but the higher rarity should add a tangible support benefit. Preserve the fast cleanser identity and add a modest Legendary distinction."
-    },
-    {
-      "id": "kozhak_glacier_prowler",
-      "name": "Kozhak, Glacier Prowler",
-      "status": "Buff",
-      "priority": "High",
-      "note": "85% at five tiles and 260% plus brief elemental Defense Down at fifteen are weak single-target rewards. Veldtborn mana helps but should not be mandatory for a Legendary to feel worthwhile. Improve charge efficiency, especially the final tier."
-    },
-    {
-      "id": "qingluo_jade_tempest",
-      "name": "Qingluo, Jade Tempest",
-      "status": "Buff",
-      "priority": "High",
-      "note": "Slow 165% AoE and one-turn Defense Down is substantially lighter than Executor’s same-cost 182% AoE, Defense Down 3 and Burn 2. Dragon stats help slightly; the slow Legendary needs a stronger payoff."
-    },
-    {
-      "id": "eudoma_nova_keeper",
-      "name": "Eudoma, Nova Keeper",
-      "status": "Buff",
-      "priority": "High",
-      "note": "26% team healing and one-turn Attack Up at ten tiles is thin for a Legendary. Rare Carmine has 32%, the same Attack Up and three-turn Regeneration at the same cost. Higher personal stats and Astral charge help, but do not fully explain the team-utility gap."
-    },
-    {
-      "id": "kelydras_worldbearer",
-      "name": "Kelydras, Worldbearer",
-      "status": "Buff",
-      "priority": "High",
-      "note": "Twelve tiles for team Barrier 2 and Ward 1, with no attack or Taunt, is too restrained for a Legendary tank. High personal bulk cannot protect allies without redirection. Add meaningful team coverage or Taunt rather than a cosmetic stat increase."
-    },
-    {
-      "id": "ophira_seed_of_worlds",
-      "name": "Ophira, Seed of Worlds",
-      "status": "Buff",
-      "priority": "High",
-      "note": "26% team healing plus one-turn Ward at ten tiles is much thinner than Rare Dr. Aris’s 32%, Ward 2 and Mana Flow 2. Give the Legendary a stronger or unique support payoff."
-    },
-    {
       "id": "ixanth_solar_wing",
       "name": "Ixanth, Solar Wing",
       "status": "Buff",
       "priority": "High",
       "note": "The eight-tile 160% tier has no utility and loses neutral burst to Rare Scavenger Jax. Full-charge damage is almost identical to Rare Shade Prince at the same ten tiles; Dispel and better stats help, but the Legendary kit needs a clearer premium."
-    },
-    {
-      "id": "phozia_star_oracle",
-      "name": "Phozia, Star Oracle",
-      "status": "Buff",
-      "priority": "High",
-      "note": "22% heal plus Barrier 1 at ten tiles is notably below Orsa’s 32%, the same Barrier and Mana Flow 2. Astral charge is helpful but not enough to make the standalone Rare kit competitive."
     }
   ],
   "proposedAdditions": [],
@@ -2009,7 +1913,7 @@
           "effects": [
             {
               "id": "strengthen",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             },
             {
@@ -2019,7 +1923,7 @@
             },
             {
               "id": "guard",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             }
           ],
@@ -2042,9 +1946,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "Twelve-tile tank with only one-turn Taunt and Damage Ward. Karthos has three-turn Taunt and team Barrier at the same cost with similar stats. Extend the core protection or improve its distinct control role."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Slow 12; extend Taunt and self Damage Ward from 1 to 2 turns. Retain the 176% hit and Attack Down 3. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -2320,17 +2224,17 @@
           "effects": [
             {
               "id": "strengthen",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             },
             {
               "id": "shield",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             },
             {
               "id": "guard",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             }
           ],
@@ -2353,9 +2257,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "All three protective effects last only one turn at twelve tiles. Similar slow tanks have longer coverage. Increase protection duration/payoff; a faster cast is an alternative if the brief effects are intentional."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Slow 12; extend self Damage Ward, team Barrier and Taunt from 1 to 2 turns. Retain damage. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -12785,7 +12689,7 @@
           "tiles": 8,
           "target": "self",
           "damage": 0,
-          "healing": 0.24,
+          "healing": 0.28,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -12797,7 +12701,7 @@
             },
             {
               "id": "block_debuffs",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ],
@@ -12809,7 +12713,7 @@
             "fourEnemyDamage": 0,
             "singleDamagePerTile": 0,
             "threeEnemyDamagePerTile": 0,
-            "teamInstantHealCapacity": 1920,
+            "teamInstantHealCapacity": 2240,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
             "threeEnemyDotCapacity": 0,
@@ -12820,9 +12724,9 @@
         }
       ],
       "review": {
-        "status": "Buff / Differentiate",
-        "priority": "High",
-        "note": "Fast is appropriate, but 24% team healing plus Cleanse/one-turn Ward resembles Rare/Legendary kits. Personal 3% regeneration is modest beside Sable’s much larger team package. Give a distinct Mythical-grade cleanse/protection payoff; retain Fast."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Fast 8; increase team healing from 24% to 28% and Ailment Ward from 1 to 2 turns; retain Cleanse and passive. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -13964,7 +13868,7 @@
           "speed": "charge_1",
           "tiles": 5,
           "target": "enemy",
-          "damage": 0.9,
+          "damage": 1.1,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -13973,11 +13877,11 @@
           "benchmark": {
             "level": 1,
             "tiles": 5,
-            "singleEnemyDamage": 339,
-            "threeEnemyDamage": 339,
-            "fourEnemyDamage": 339,
-            "singleDamagePerTile": 67.8,
-            "threeEnemyDamagePerTile": 67.8,
+            "singleEnemyDamage": 414,
+            "threeEnemyDamage": 414,
+            "fourEnemyDamage": 414,
+            "singleDamagePerTile": 82.8,
+            "threeEnemyDamagePerTile": 82.8,
             "teamInstantHealCapacity": 0,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
@@ -13992,7 +13896,7 @@
           "speed": "charge_2",
           "tiles": 10,
           "target": "enemy",
-          "damage": 1.8,
+          "damage": 2.2,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -14007,11 +13911,11 @@
           "benchmark": {
             "level": 2,
             "tiles": 10,
-            "singleEnemyDamage": 678,
-            "threeEnemyDamage": 678,
-            "fourEnemyDamage": 678,
-            "singleDamagePerTile": 67.8,
-            "threeEnemyDamagePerTile": 67.8,
+            "singleEnemyDamage": 828,
+            "threeEnemyDamage": 828,
+            "fourEnemyDamage": 828,
+            "singleDamagePerTile": 82.8,
+            "threeEnemyDamagePerTile": 82.8,
             "teamInstantHealCapacity": 0,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
@@ -14026,7 +13930,7 @@
           "speed": "charge_3",
           "tiles": 15,
           "target": "enemy",
-          "damage": 2.7,
+          "damage": 3.4,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -14046,11 +13950,11 @@
           "benchmark": {
             "level": 3,
             "tiles": 15,
-            "singleEnemyDamage": 1016,
-            "threeEnemyDamage": 1016,
-            "fourEnemyDamage": 1016,
-            "singleDamagePerTile": 67.73,
-            "threeEnemyDamagePerTile": 67.73,
+            "singleEnemyDamage": 1280,
+            "threeEnemyDamage": 1280,
+            "fourEnemyDamage": 1280,
+            "singleDamagePerTile": 85.33,
+            "threeEnemyDamagePerTile": 85.33,
             "teamInstantHealCapacity": 0,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
@@ -14062,9 +13966,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "All three charges deliver roughly the same low damage per tile; the 15-tile single-target payoff is too small for the wait. Selka nearly matches the full-charge hit at only 6.5 tiles and already has Dispel. Improve early damage and a clear final-charge reward."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep 5/10/15 charge costs and Pierce; damage 90/180/270% to 110/220/340%; retain existing utility. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -14357,7 +14261,7 @@
       "faction": "chymera",
       "element": "purple",
       "role": "defense",
-      "speed": "slow",
+      "speed": "average",
       "base": {
         "atk": 618,
         "def": 620,
@@ -14378,8 +14282,8 @@
       "levels": [
         {
           "level": 1,
-          "speed": "slow",
-          "tiles": 12,
+          "speed": "average",
+          "tiles": 10,
           "target": "enemy",
           "damage": 1.25,
           "healing": 0,
@@ -14394,32 +14298,32 @@
             },
             {
               "id": "counterattack",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             }
           ],
           "benchmark": {
             "level": 1,
-            "tiles": 12,
+            "tiles": 10,
             "singleEnemyDamage": 309,
             "threeEnemyDamage": 309,
             "fourEnemyDamage": 309,
-            "singleDamagePerTile": 25.75,
-            "threeEnemyDamagePerTile": 25.75,
+            "singleDamagePerTile": 30.9,
+            "threeEnemyDamagePerTile": 30.9,
             "teamInstantHealCapacity": 0,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 1600,
             "threeEnemyDotCapacity": 0,
             "teamManaGift": 0,
-            "effectiveRepeatTileCostAtThree": 12,
-            "openingTileCostAtThree": 12
+            "effectiveRepeatTileCostAtThree": 10,
+            "openingTileCostAtThree": 10
           }
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "Slow 125% with Barrier 2 and personal Riposte 1 is worse than Average Jarek’s hit, Barrier 3 and Riposte 3, with lower bulk. Chymera’s ailment bonus does not help this all-buff kit. Prioritize Average speed and/or a useful Taunt/counter window."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Slow 12 to Average 10; retain 125% hit/team Barrier 2 and extend self Riposte 1 to 2 turns. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -14612,6 +14516,11 @@
               "id": "remove_debuffs",
               "turns": 0,
               "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
+              "scope": "allies"
             }
           ],
           "benchmark": {
@@ -14633,9 +14542,9 @@
         }
       ],
       "review": {
-        "status": "Differentiate",
-        "priority": "High",
-        "note": "Exactly the same Fast 24%-team-heal/Cleanse Special as Rare Melia. Personal stats are better, but the higher rarity should add a tangible support benefit. Preserve the fast cleanser identity and add a modest Legendary distinction."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Fast 8 and 24% team healing/Cleanse; add team Defense Up for 2 turns. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -15042,7 +14951,7 @@
           "level": 1,
           "speed": "charge_1",
           "tiles": 5,
-          "damage": 0.85,
+          "damage": 1,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -15052,11 +14961,11 @@
           "benchmark": {
             "level": 1,
             "tiles": 5,
-            "singleEnemyDamage": 277,
-            "threeEnemyDamage": 277,
-            "fourEnemyDamage": 277,
-            "singleDamagePerTile": 55.4,
-            "threeEnemyDamagePerTile": 55.4,
+            "singleEnemyDamage": 326,
+            "threeEnemyDamage": 326,
+            "fourEnemyDamage": 326,
+            "singleDamagePerTile": 65.2,
+            "threeEnemyDamagePerTile": 65.2,
             "teamInstantHealCapacity": 0,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
@@ -15070,7 +14979,7 @@
           "level": 2,
           "speed": "charge_2",
           "tiles": 10,
-          "damage": 1.75,
+          "damage": 2.1,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -15086,11 +14995,11 @@
           "benchmark": {
             "level": 2,
             "tiles": 10,
-            "singleEnemyDamage": 571,
-            "threeEnemyDamage": 571,
-            "fourEnemyDamage": 571,
-            "singleDamagePerTile": 57.1,
-            "threeEnemyDamagePerTile": 57.1,
+            "singleEnemyDamage": 685,
+            "threeEnemyDamage": 685,
+            "fourEnemyDamage": 685,
+            "singleDamagePerTile": 68.5,
+            "threeEnemyDamagePerTile": 68.5,
             "teamInstantHealCapacity": 0,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
@@ -15104,7 +15013,7 @@
           "level": 3,
           "speed": "charge_3",
           "tiles": 15,
-          "damage": 2.6,
+          "damage": 3.3,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -15118,18 +15027,18 @@
             },
             {
               "id": "vulnerable_blue",
-              "turns": 1,
+              "turns": 2,
               "scope": "enemy"
             }
           ],
           "benchmark": {
             "level": 3,
             "tiles": 15,
-            "singleEnemyDamage": 997,
-            "threeEnemyDamage": 997,
-            "fourEnemyDamage": 997,
-            "singleDamagePerTile": 66.47,
-            "threeEnemyDamagePerTile": 66.47,
+            "singleEnemyDamage": 1266,
+            "threeEnemyDamage": 1266,
+            "fourEnemyDamage": 1266,
+            "singleDamagePerTile": 84.4,
+            "threeEnemyDamagePerTile": 84.4,
             "teamInstantHealCapacity": 0,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
@@ -15141,9 +15050,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "85% at five tiles and 260% plus brief elemental Defense Down at fifteen are weak single-target rewards. Veldtborn mana helps but should not be mandatory for a Legendary to feel worthwhile. Improve charge efficiency, especially the final tier."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep 5/10/15 costs; damage 85/175/260% to 100/210/330%; final blue Vulnerability 1 to 2 turns. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -15243,7 +15152,7 @@
           "level": 1,
           "speed": "slow",
           "tiles": 12,
-          "damage": 1.65,
+          "damage": 1.85,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -15252,18 +15161,18 @@
           "effects": [
             {
               "id": "dec_def",
-              "turns": 1,
+              "turns": 2,
               "scope": "enemies"
             }
           ],
           "benchmark": {
             "level": 1,
             "tiles": 12,
-            "singleEnemyDamage": 629,
-            "threeEnemyDamage": 1887,
-            "fourEnemyDamage": 2516,
-            "singleDamagePerTile": 52.42,
-            "threeEnemyDamagePerTile": 157.25,
+            "singleEnemyDamage": 705,
+            "threeEnemyDamage": 2115,
+            "fourEnemyDamage": 2820,
+            "singleDamagePerTile": 58.75,
+            "threeEnemyDamagePerTile": 176.25,
             "teamInstantHealCapacity": 0,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
@@ -15275,9 +15184,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "Slow 165% AoE and one-turn Defense Down is substantially lighter than Executor’s same-cost 182% AoE, Defense Down 3 and Burn 2. Dragon stats help slightly; the slow Legendary needs a stronger payoff."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Slow 12; AoE coefficient 165% to 185%, enemy Defense Down 1 to 2 turns. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -15565,7 +15474,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.26,
+          "healing": 0.3,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -15573,7 +15482,7 @@
           "effects": [
             {
               "id": "inc_atk",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ],
@@ -15585,7 +15494,7 @@
             "fourEnemyDamage": 0,
             "singleDamagePerTile": 0,
             "threeEnemyDamagePerTile": 0,
-            "teamInstantHealCapacity": 2080,
+            "teamInstantHealCapacity": 2400,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
             "threeEnemyDotCapacity": 0,
@@ -15596,9 +15505,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "26% team healing and one-turn Attack Up at ten tiles is thin for a Legendary. Rare Carmine has 32%, the same Attack Up and three-turn Regeneration at the same cost. Higher personal stats and Astral charge help, but do not fully explain the team-utility gap."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Average 10; healing 26% to 30%, team Attack Up 1 to 2 turns. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -15857,12 +15766,12 @@
           "effects": [
             {
               "id": "shield",
-              "turns": 2,
+              "turns": 3,
               "scope": "allies"
             },
             {
               "id": "strengthen",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ],
@@ -15885,9 +15794,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "Twelve tiles for team Barrier 2 and Ward 1, with no attack or Taunt, is too restrained for a Legendary tank. High personal bulk cannot protect allies without redirection. Add meaningful team coverage or Taunt rather than a cosmetic stat increase."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Slow 12; team Barrier 2 to 3 turns and team Damage Ward 1 to 2 turns. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -15988,7 +15897,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.26,
+          "healing": 0.3,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -15996,7 +15905,7 @@
           "effects": [
             {
               "id": "block_debuffs",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ],
@@ -16008,7 +15917,7 @@
             "fourEnemyDamage": 0,
             "singleDamagePerTile": 0,
             "threeEnemyDamagePerTile": 0,
-            "teamInstantHealCapacity": 2080,
+            "teamInstantHealCapacity": 2400,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 0,
             "threeEnemyDotCapacity": 0,
@@ -16019,9 +15928,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "26% team healing plus one-turn Ward at ten tiles is much thinner than Rare Dr. Aris’s 32%, Ward 2 and Mana Flow 2. Give the Legendary a stronger or unique support payoff."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Average 10; healing 26% to 30%, team Ailment Ward 1 to 2 turns. Owner-approved 2026-11-11; now implemented."
       }
     },
     {
@@ -16222,7 +16131,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.22,
+          "healing": 0.28,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -16230,7 +16139,7 @@
           "effects": [
             {
               "id": "shield",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ],
@@ -16242,7 +16151,7 @@
             "fourEnemyDamage": 0,
             "singleDamagePerTile": 0,
             "threeEnemyDamagePerTile": 0,
-            "teamInstantHealCapacity": 1760,
+            "teamInstantHealCapacity": 2240,
             "teamRegenerationCapacity": 0,
             "teamBarrierCapacity": 1600,
             "threeEnemyDotCapacity": 0,
@@ -16253,9 +16162,9 @@
         }
       ],
       "review": {
-        "status": "Buff",
-        "priority": "High",
-        "note": "22% heal plus Barrier 1 at ten tiles is notably below Orsa’s 32%, the same Barrier and Mana Flow 2. Astral charge is helpful but not enough to make the standalone Rare kit competitive."
+        "status": "Improved This Pass",
+        "priority": "Completed",
+        "note": "Keep Average 10; healing 22% to 28%, team Barrier 1 to 2 turns. Owner-approved 2026-11-11; now implemented."
       }
     },
     {

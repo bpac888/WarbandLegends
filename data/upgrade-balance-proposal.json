@@ -1,0 +1,546 @@
+{
+  "date": "2026-11-11",
+  "baselineCommit": "b70a629c1f12a680f3b0ac9d23909136f81dd7cd",
+  "status": "proposal-only",
+  "count": 265,
+  "roles": {
+    "attack": 146,
+    "defense": 56,
+    "support": 63
+  },
+  "rarities": {
+    "common": 29,
+    "legendary": 126,
+    "mythical": 20,
+    "rare": 90
+  },
+  "elements": {
+    "blue": 53,
+    "green": 53,
+    "purple": 53,
+    "red": 54,
+    "yellow": 52
+  },
+  "speeds": {
+    "average": 126,
+    "charging": 21,
+    "fast": 63,
+    "slow": 42,
+    "very_fast": 11,
+    "very_slow": 2
+  },
+  "factions": {
+    "aerie_court": 18,
+    "astral_concord": 18,
+    "bloodcourt": 18,
+    "chymera": 18,
+    "djedi": 8,
+    "dragondynasty": 18,
+    "duneriders": 18,
+    "frost": 18,
+    "goblins": 16,
+    "ironclad": 18,
+    "magic": 6,
+    "neon_syndicate": 18,
+    "nether": 18,
+    "none": 1,
+    "umbra": 18,
+    "veldtborn": 18,
+    "wildgrove": 18
+  },
+  "sourceRosterSha256": "01f6db96861c15a566f179b9c1ea0515bac1c493b4503a4a3839c10f1a1fed10",
+  "normalizedRosterSha256": "eb296018b16fc1d5c214b02cfe749dc0304c1efe6c92e0becdecb7e9707d074b",
+  "fixtures": 885,
+  "specialTiers": 295,
+  "proposals": [
+    {
+      "id": "necropolis_titan",
+      "name": "Ossir, Necropolis Titan",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "slow",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "target": "enemy",
+            "damage": 1.76,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "strengthen",
+                "turns": 1,
+                "scope": "self"
+              },
+              {
+                "id": "dec_atk",
+                "turns": 3,
+                "scope": "enemy"
+              },
+              {
+                "id": "guard",
+                "turns": 1,
+                "scope": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Slow 12; extend Taunt and self Damage Ward from 1 to 2 turns. Retain the 176% hit and Attack Down 3.",
+      "reason": "A Slow Legendary needs a protection window that lasts beyond its activation."
+    },
+    {
+      "id": "bronze_juggernaut",
+      "name": "The Bronze Juggernaut",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "slow",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "target": "enemy",
+            "damage": 1.76,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "strengthen",
+                "turns": 1,
+                "scope": "self"
+              },
+              {
+                "id": "shield",
+                "turns": 1,
+                "scope": "allies"
+              },
+              {
+                "id": "guard",
+                "turns": 1,
+                "scope": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Slow 12; extend self Damage Ward, team Barrier and Taunt from 1 to 2 turns. Retain damage.",
+      "reason": "Improve protective uptime without changing this tank into a faster attacker."
+    },
+    {
+      "id": "nayara_deep_well",
+      "name": "Nayara, Keeper of the Deep Well",
+      "rarity": "mythical",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "fast",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "fast",
+            "tiles": 8,
+            "target": "self",
+            "damage": 0,
+            "healing": 0.24,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "remove_debuffs",
+                "turns": 0,
+                "scope": "allies"
+              },
+              {
+                "id": "block_debuffs",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Fast 8; increase team healing from 24% to 28% and Ailment Ward from 1 to 2 turns; retain Cleanse and passive.",
+      "reason": "Give a Mythical cleanser a tangible prevention advantage without copying Sable’s entire kit."
+    },
+    {
+      "id": "beatrice_verdigris_mender",
+      "name": "Beatrice, Verdigris Mender",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "fast",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "fast",
+            "tiles": 8,
+            "damage": 0,
+            "healing": 0.24,
+            "target": "self",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "remove_debuffs",
+                "turns": 0,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Fast 8 and 24% team healing/Cleanse; add team Defense Up for 2 turns.",
+      "reason": "Differentiate the Legendary from Rare Melia with defensive support."
+    },
+    {
+      "id": "eudoma_nova_keeper",
+      "name": "Eudoma, Nova Keeper",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "average",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "damage": 0,
+            "healing": 0.26,
+            "target": "self",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "inc_atk",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Average 10; healing 26% to 30%, team Attack Up 1 to 2 turns.",
+      "reason": "Improve the Legendary offensive healer without adding every support effect."
+    },
+    {
+      "id": "ophira_seed_of_worlds",
+      "name": "Ophira, Seed of Worlds",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "average",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "damage": 0,
+            "healing": 0.26,
+            "target": "self",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "block_debuffs",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Average 10; healing 26% to 30%, team Ailment Ward 1 to 2 turns.",
+      "reason": "Make prevention the reason to pick her rather than turning her into another mana healer."
+    },
+    {
+      "id": "kelydras_worldbearer",
+      "name": "Kelydras, Worldbearer",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "slow",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "damage": 0,
+            "healing": 0,
+            "target": "self",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "shield",
+                "turns": 2,
+                "scope": "allies"
+              },
+              {
+                "id": "strengthen",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Slow 12; team Barrier 2 to 3 turns and team Damage Ward 1 to 2 turns.",
+      "reason": "Extend actual team protection; do not add Taunt in this first pass."
+    },
+    {
+      "id": "orrix_amethyst_bulwark",
+      "name": "Orrix, Amethyst Bulwark",
+      "rarity": "rare",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "slow",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "target": "enemy",
+            "damage": 1.25,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "shield",
+                "turns": 2,
+                "scope": "allies"
+              },
+              {
+                "id": "counterattack",
+                "turns": 1,
+                "scope": "self"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Slow 12 to Average 10; retain 125% hit/team Barrier 2 and extend self Riposte 1 to 2 turns.",
+      "reason": "This is a Rare, so improve access and the counter window rather than giving a Legendary-sized kit."
+    },
+    {
+      "id": "qingluo_jade_tempest",
+      "name": "Qingluo, Jade Tempest",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "slow",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "slow",
+            "tiles": 12,
+            "damage": 1.65,
+            "healing": 0,
+            "target": "enemy",
+            "healScope": "allies",
+            "aoe": true,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "dec_def",
+                "turns": 1,
+                "scope": "enemies"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Slow 12; AoE coefficient 165% to 185%, enemy Defense Down 1 to 2 turns.",
+      "reason": "Give waiting for this Legendary a clearer damage and setup payoff."
+    },
+    {
+      "id": "nix_biosteel_hunter",
+      "name": "Nix, Biosteel Hunter",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "charging",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "charge_1",
+            "tiles": 5,
+            "target": "enemy",
+            "damage": 0.9,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": true,
+            "effects": []
+          },
+          {
+            "level": 2,
+            "speed": "charge_2",
+            "tiles": 10,
+            "target": "enemy",
+            "damage": 1.8,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": true,
+            "effects": [
+              {
+                "id": "dispel",
+                "turns": 0,
+                "scope": "enemy"
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "speed": "charge_3",
+            "tiles": 15,
+            "target": "enemy",
+            "damage": 2.7,
+            "healing": 0,
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": true,
+            "effects": [
+              {
+                "id": "dispel",
+                "turns": 0,
+                "scope": "enemy"
+              },
+              {
+                "id": "block_buffs",
+                "turns": 2,
+                "scope": "enemy"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep 5/10/15 charge costs and Pierce; damage 90/180/270% to 110/220/340%; retain existing utility.",
+      "reason": "Make later charge increasingly rewarding; test actual damage because Pierce affects the comparison."
+    },
+    {
+      "id": "kozhak_glacier_prowler",
+      "name": "Kozhak, Glacier Prowler",
+      "rarity": "legendary",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "charging",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "charge_1",
+            "tiles": 5,
+            "damage": 0.85,
+            "healing": 0,
+            "target": "enemy",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": []
+          },
+          {
+            "level": 2,
+            "speed": "charge_2",
+            "tiles": 10,
+            "damage": 1.75,
+            "healing": 0,
+            "target": "enemy",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "frostbite",
+                "turns": 1,
+                "scope": "enemy"
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "speed": "charge_3",
+            "tiles": 15,
+            "damage": 2.6,
+            "healing": 0,
+            "target": "enemy",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "frostbite",
+                "turns": 2,
+                "scope": "enemy"
+              },
+              {
+                "id": "vulnerable_blue",
+                "turns": 1,
+                "scope": "enemy"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep 5/10/15 costs; damage 85/175/260% to 100/210/330%; final blue Vulnerability 1 to 2 turns.",
+      "reason": "Reward holding charge while retaining frost and blue-team identity."
+    },
+    {
+      "id": "phozia_star_oracle",
+      "name": "Phozia, Star Oracle",
+      "rarity": "rare",
+      "status": "proposed-not-applied",
+      "current": {
+        "speed": "average",
+        "levels": [
+          {
+            "level": 1,
+            "speed": "average",
+            "tiles": 10,
+            "damage": 0,
+            "healing": 0.22,
+            "target": "self",
+            "healScope": "allies",
+            "aoe": false,
+            "pierce": false,
+            "effects": [
+              {
+                "id": "shield",
+                "turns": 1,
+                "scope": "allies"
+              }
+            ]
+          }
+        ]
+      },
+      "proposal": "Keep Average 10; healing 22% to 28%, team Barrier 1 to 2 turns.",
+      "reason": "Bring this Rare into a useful protection niche without copying Orsa’s mana utility."
+    }
+  ],
+  "watchOnly": [
+    "Azhar: Very Fast AoE plus Veldtborn matching mana.",
+    "Sister Carmine and upper Rare healers: compare realized healing before any nerf.",
+    "Magic: preserve requested 5% allied mana per member; test hybrid teams, especially with Veldtborn/Astral.",
+    "The King: preserve requested highest Attack and 25% damaging-Special evasion.",
+    "Yshmir: preserve explicitly requested Very Slow speed and boss-scaling passive."
+  ],
+  "limits": [
+    "Controlled individual casts, not full-match win rates.",
+    "Proposal values require full-battle tests before application.",
+    "No universal power score: healing, control and damage are not interchangeable."
+  ]
+}

@@ -1,3 +1,4 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -9,7 +10,7 @@ import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url)));
 const original=(await read('data/champions.json')).slice(0,240),magic=original.filter(c=>c.faction==='magic'),manifest=await read('data/roster-expansion-9.json');
-const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const hash=x=>createHash('sha256').update(JSON.stringify(Array.isArray(x)?beforeUpgradeBalance(x):x)).digest('hex');
 function fixture(n){
  const roster=structuredClone(original),ids=[...magic.slice(0,n).map(c=>c.id),...REFERENCE_TEAM.slice(0,5-n)],others=['wildgrove','ironclad','frost','umbra'];
  ids.forEach((id,i)=>{const c=roster.find(c=>c.id===id);c.color='red';if(i>=n)c.faction=others[i-n];});

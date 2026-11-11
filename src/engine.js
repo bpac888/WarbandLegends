@@ -1,3 +1,4 @@
+import {validWeeklyBattle} from './weekly.js';
 import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js';
 import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js';
 import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js';
@@ -223,9 +224,10 @@ function encounterPhase(state,frames){
   const rule=SCENARIOS[state.scenario?.id];
   if(state.phase!=='playing'||!rule||state.scenario.triggered)return;
   const boss=state.enemies[1];if(boss.hp<=0)return;
-  const ready=rule.trigger==='half_health'?boss.hp<=boss.maxHp*rule.threshold:state.enemies.every((e,i)=>i===1||e.hp<=0);
+  const ready=rule.trigger==='move_three'?state.moves>=3:rule.trigger==='none'?false:rule.trigger==='reinforcements'?state.moves>=3&&state.enemies.some((e,i)=>i!==1&&e.hp<=0):rule.trigger==='half_health'?boss.hp<=boss.maxHp*rule.threshold:state.enemies.every((e,i)=>i===1||e.hp<=0);
   if(!ready)return;
   state.scenario.triggered=true;
+  if(rule.trigger==='reinforcements'){const escort=state.enemies.find((e,i)=>i!==1&&e.hp<=0);escort.hp=Math.round(escort.maxHp*.65);escort.mana=0;escort.shield=0;escort.effects={};escort.countdown=2;escort.reviveUsed=false;message(state,`${boss.name}: ${rule.notice}`,'skill',boss.uid);frame(state,frames,'mechanic',{actor:boss.uid,target:escort.uid,name:rule.name});return;}
   message(state,`${boss.name}: ${rule.name} · ${rule.notice}`,'skill',boss.uid);
   for(const id of rule.effects)applyEffect(state,boss,boss,id,rule.turns);
   boss.countdown=rule.countdownMinimum?Math.max(boss.countdown,rule.countdown):rule.countdown;
@@ -339,7 +341,7 @@ export function validateSave(value,roster) {
   if(!Array.isArray(value.log)||value.log.length>80||value.log.some(l=>!l||typeof l.text!=='string'||typeof l.tone!=='string'||!integer(l.move)))return false;
   if(!['playing','victory','defeat'].includes(value.phase)||!Array.isArray(value.board)||value.board.length!==SIZE||value.board.some(t=>!t||!COLORS.includes(t.color)||!integer(t.id,1)||t.id>=value.nextTile||!([null,'blast','prism'].includes(t.special))))return false;
   if(value.eventWindow!==undefined&&(getEncounter(value.stageId)?.mode!=='event'||typeof value.eventWindow!=='string'||!value.eventWindow.startsWith(getEncounter(value.stageId).eventId+':')||!/^\w+:\d{4}-(0[1-9]|1[0-2])$/.test(value.eventWindow)))return false;
-  if(!validScenario(value,getEncounter(value.stageId)))return false;
+  if(!validScenario(value,getEncounter(value.stageId))||!validWeeklyBattle(value,getEncounter(value.stageId)))return false;
   const ids=new Set(roster.map(c=>c.id));
   if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==getEncounter(value.stageId).enemyIds.length)return false;
   if(value.heroes?.some(u=>!u||u.awakening!==undefined&&(!integer(u.awakening,1)||u.awakening>2||u.level<normalLevelCap(roster.find(c=>c.id===u.id)||{rarity:'common'})+(u.awakening-1)*5)))return false;

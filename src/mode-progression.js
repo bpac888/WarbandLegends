@@ -1,3 +1,4 @@
+import {weeklyWindow,weeklyTeamError} from './weekly.js';
 import {boostedGold} from './premium-items.js';
 import {LOOT_TICKET_LIMIT} from './loot-ticket-item.js';
 import {heroForId,uniqueHeroCount} from './hero-copies.js';
@@ -22,6 +23,7 @@ export function validateModes(p){if(p.lootTickets!==undefined&&(!Number.isSafeIn
 }
 export function reserveEntry(profile,battle,now=new Date()){
  const e=getEncounter(battle.stageId);if(!e)return {profile,error:'Unknown encounter.'};
+ if(e.mode==='weekly'){const w=weeklyWindow(now),error=weeklyTeamError(e,battle.heroes);if(!w.stages.some(s=>s.id===e.id))return {profile,error:'This challenge has rotated.'};if(error)return {profile,error};const key=w.key+':'+e.weeklyKind;return {profile:{...profile,weeklyEntry:{battleId:battle.id,key,stageId:e.id}},battle:{...battle,weeklyKey:key,energySpent:0}};}
  if(e.mode!=='event'&&battle.energySpent===energyCost(e))return {profile:{...refreshEnergy(profile,now),eventEntry:null},battle};
  if(e.mode!=='event'||battle.sandbox){const paid=spendEnergy(profile,e,now);return paid.error?paid:{profile:{...paid.profile,eventEntry:null},battle:{...battle,energySpent:paid.cost}};}
  const window=eventWindow(e.eventId,now);if(!window.active)return {profile,error:'This event is outside its monthly window.'};

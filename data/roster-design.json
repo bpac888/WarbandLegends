@@ -15,7 +15,37 @@
     },
     "necropolis_titan": {
       "color": "purple",
-      "manaSpeed": "slow"
+      "manaSpeed": "slow",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.76,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "dec_atk",
+              "turns": 3,
+              "scope": "enemy"
+            },
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
     },
     "abyss_lord": {
       "color": "red",
@@ -31,7 +61,37 @@
     },
     "bronze_juggernaut": {
       "color": "red",
-      "manaSpeed": "slow"
+      "manaSpeed": "slow",
+      "levelOverrides": [
+        {
+          "level": 1,
+          "speed": "slow",
+          "tiles": 12,
+          "target": "enemy",
+          "damage": 1.76,
+          "healing": 0,
+          "healScope": "allies",
+          "aoe": false,
+          "pierce": false,
+          "effects": [
+            {
+              "id": "strengthen",
+              "turns": 2,
+              "scope": "self"
+            },
+            {
+              "id": "shield",
+              "turns": 2,
+              "scope": "allies"
+            },
+            {
+              "id": "guard",
+              "turns": 2,
+              "scope": "self"
+            }
+          ]
+        }
+      ]
     },
     "spore_engineer": {
       "color": "green",
@@ -1444,7 +1504,7 @@
           "tiles": 8,
           "target": "self",
           "damage": 0,
-          "healing": 0.24,
+          "healing": 0.28,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -1456,7 +1516,7 @@
             },
             {
               "id": "block_debuffs",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
@@ -1995,7 +2055,7 @@
           "speed": "charge_1",
           "tiles": 5,
           "target": "enemy",
-          "damage": 0.9,
+          "damage": 1.1,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -2007,7 +2067,7 @@
           "speed": "charge_2",
           "tiles": 10,
           "target": "enemy",
-          "damage": 1.8,
+          "damage": 2.2,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -2025,7 +2085,7 @@
           "speed": "charge_3",
           "tiles": 15,
           "target": "enemy",
-          "damage": 2.7,
+          "damage": 3.4,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -2183,12 +2243,12 @@
     },
     "orrix_amethyst_bulwark": {
       "color": "purple",
-      "manaSpeed": "slow",
+      "manaSpeed": "average",
       "levelOverrides": [
         {
           "level": 1,
-          "speed": "slow",
-          "tiles": 12,
+          "speed": "average",
+          "tiles": 10,
           "target": "enemy",
           "damage": 1.25,
           "healing": 0,
@@ -2203,7 +2263,7 @@
             },
             {
               "id": "counterattack",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             }
           ]
@@ -2306,6 +2366,11 @@
             {
               "id": "remove_debuffs",
               "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
               "scope": "allies"
             }
           ]
@@ -2495,7 +2560,7 @@
           "level": 1,
           "speed": "charge_1",
           "tiles": 5,
-          "damage": 0.85,
+          "damage": 1,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -2507,7 +2572,7 @@
           "level": 2,
           "speed": "charge_2",
           "tiles": 10,
-          "damage": 1.75,
+          "damage": 2.1,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -2525,7 +2590,7 @@
           "level": 3,
           "speed": "charge_3",
           "tiles": 15,
-          "damage": 2.6,
+          "damage": 3.3,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -2539,7 +2604,7 @@
             },
             {
               "id": "vulnerable_blue",
-              "turns": 1,
+              "turns": 2,
               "scope": "enemy"
             }
           ]
@@ -2588,7 +2653,7 @@
           "level": 1,
           "speed": "slow",
           "tiles": 12,
-          "damage": 1.65,
+          "damage": 1.85,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -2597,7 +2662,7 @@
           "effects": [
             {
               "id": "dec_def",
-              "turns": 1,
+              "turns": 2,
               "scope": "enemies"
             }
           ]
@@ -2744,7 +2809,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.26,
+          "healing": 0.3,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -2752,7 +2817,7 @@
           "effects": [
             {
               "id": "inc_atk",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
@@ -2885,12 +2950,12 @@
           "effects": [
             {
               "id": "shield",
-              "turns": 2,
+              "turns": 3,
               "scope": "allies"
             },
             {
               "id": "strengthen",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
@@ -2940,7 +3005,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.26,
+          "healing": 0.3,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -2948,7 +3013,7 @@
           "effects": [
             {
               "id": "block_debuffs",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
@@ -3045,7 +3110,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.22,
+          "healing": 0.28,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -3053,7 +3118,7 @@
           "effects": [
             {
               "id": "shield",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]

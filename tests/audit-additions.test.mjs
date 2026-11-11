@@ -1,3 +1,4 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import {beforeRarityRevision} from '../src/rarity-revision.js';
 import test from 'node:test';
 import {historicalRecords} from '../src/roster-identity.js';
@@ -13,14 +14,14 @@ const read=async file=>JSON.parse(await readFile(new URL('../'+file,import.meta.
 const roster=await read('data/champions.json'),manifest=await read('data/roster-expansion-2.json'),added=roster.slice(manifest.originalCount,162);
 const nameAudit=await read('data/roster-name-audit.json');
 const hash=value=>createHash('sha256').update(JSON.stringify(historicalRecords(value,nameAudit,{source:!value[0]?.special}))).digest('hex');
-const count=key=>Object.fromEntries([...new Set(added.map(c=>c[key]))].sort().map(k=>[k,added.filter(c=>c[key]===k).length]));
+const count=key=>{const original=beforeUpgradeBalance(added);return Object.fromEntries([...new Set(original.map(c=>c[key]))].sort().map(k=>[k,original.filter(c=>c[key]===k).length]));};
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0}};e.passive=null;e.shield=0;}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.4);h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};h.passive=null;}return b;}
 test('all 150 previous records and source identities are preserved exactly',async()=>{
  assert.equal(hash(roster.slice(0,150)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,150)),manifest.originalSourceRecordsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,roster.length);
 });
 test('the 12 additions match the approved rarity, role, color and speed mix',()=>{
  assert.deepEqual(count('rarity'),{legendary:9,rare:3});assert.deepEqual(count('role'),{attack:8,defense:2,support:2});assert.deepEqual(count('color'),{blue:2,green:2,purple:3,red:3,yellow:2});assert.deepEqual(count('manaSpeed'),{average:3,charging:2,fast:4,slow:2,very_fast:1});
- for(const x of manifest.implementedRecommendations){const c=added.find(c=>c.id===x.championId);for(const k of ['faction','color','rarity','role','manaSpeed'])assert.equal(c[k],x[k]);assert.ok(!beforeRarityRevision(roster.slice(0,150)).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role));}
+ for(const x of manifest.implementedRecommendations){const c=beforeUpgradeBalance(added).find(c=>c.id===x.championId);for(const k of ['faction','color','rarity','role','manaSpeed'])assert.equal(c[k],x[k]);assert.ok(!beforeRarityRevision(roster.slice(0,150)).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role));}
  for(const c of added)for(const l of c.special.levels)for(const e of l.effects){assert.ok(EFFECTS[e.id]);assert.ok(Number.isInteger(e.turns)&&e.turns>=0&&e.turns<=3);}
 });
 test('every new charge tier damages, heals, cleanses, dispels and applies effects to the declared recipients without spending a board turn',()=>{

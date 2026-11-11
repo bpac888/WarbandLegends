@@ -1,0 +1,39 @@
+/* New gameplay panels retain the established parchment and crimson language. */
+.team-power{font-size:12px;color:#414650;margin:8px 0;line-height:1.45}
+.hero-preferences,.adventure-shortcuts,.weekly-actions,.journal-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.hero-preferences{margin:10px 0}.hero-preferences .button{padding:8px 11px;min-height:40px;font-size:12px}
+body.menu-theme .hero-preferences [aria-pressed=true]{background:#dbc49f;border-color:#9e2a2b;color:#72272b}
+.team-slot-actions{flex-wrap:wrap}.team-slot .faction-team-bonuses{margin-bottom:10px}
+.battle-team-preview{padding:10px 12px;background:#e1d0b0;color:#30343c;border:1px solid #b49d78;border-radius:10px;margin-bottom:12px;display:grid;gap:8px}
+.battle-team-preview>span{font-size:12px}.battle-team-preview .faction-team-bonuses{background:#f0e4cc;color:#343740;border-color:#b9a07a}
+.battle-team-preview :is(summary,p,b){color:#343740}.battle-team-preview summary>span{color:#85272c}
+.adventure-shortcuts{justify-content:center;margin:0 0 12px}.adventure-shortcuts .button{font-size:12px;min-height:40px;padding:8px 13px;background:#e2d0b0;color:#72272b;border-color:#a89270}
+body.menu-theme:has(.page-weekly){background:linear-gradient(135deg,#c4c3cd,#bfb9c7)}
+body.menu-theme .page-weekly{color:#343740;color-scheme:light}
+.page-weekly :is(h1,h2){font-family:'Collection Serif',Georgia,serif;color:#252831;text-shadow:none}
+.weekly-header{margin-bottom:18px}.weekly-header h1{margin:0 0 8px}.weekly-header p{color:#414650;margin:6px 0}.weekly-header small{color:#414650}
+.weekly-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.weekly-card{background:linear-gradient(145deg,#e4d4b6,#d9c29d);border:1px solid #ac9470;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.weekly-card>img{width:100%;height:190px;object-fit:cover;border-radius:9px}.weekly-card :is(h2,p){margin:0;color:#343740}.weekly-card h2{font-size:25px}.weekly-card .eyebrow{color:#72272b}.weekly-card p{font-size:13px;line-height:1.5}.weekly-actions{margin-top:auto}
+body.menu-theme .page-weekly .button.gold{background:#9e2a2b;color:#fff5e7;border-color:#842023}
+body.menu-theme .page-weekly .button.outline{background:#eadfc9;color:#72272b;border-color:#b29b77}
+body.menu-theme .page-weekly .button:disabled{background:#c9c1b5;color:#5a555d;border-color:#a89b8c;opacity:1;box-shadow:none}
+body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],[data-view=team-name]){background:#c0bbc7;color:#343740;color-scheme:light;border-color:#a99ba7}
+body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],[data-view=team-name]) .modal-header{background:#d9c8aa}
+body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],[data-view=team-name]) :is(h2,h3,p,label,strong,span){color:#30343c}
+body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],[data-view=team-name]) .button.gold{background:#9e2a2b;color:#fff6e9;border-color:#842023}
+body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],[data-view=team-name]) .button.outline{background:#e9dcc3;color:#72272b;border-color:#af9775}
+body.menu-theme #modal[data-view=team-name] input{width:100%;background:#eadfc9!important;color:#252831!important;border-color:#a88f6d!important;display:block;margin:8px 0}
+.chapter-story>img,.chapter-complete>img{width:100%;max-height:220px;object-fit:cover;border-radius:10px}.chapter-story>p{display:grid;gap:4px;background:#e5d5b8;padding:12px;border-radius:9px}
+.chapter-complete,.journal-chapter{padding:14px;background:#e1ceac;color:#343740;border:1px solid #b19a76;border-radius:12px;margin:12px 0}.chapter-complete :is(h3,p){color:#343740}.chapter-complete h3,.journal-chapter h3{font-family:'Collection Serif',Georgia,serif}.journal-actions{margin-top:10px}.journal-actions>span{min-width:84px;font-size:12px}
+.battle-mechanic-notice{font-size:12px;line-height:1.4;padding:8px 10px;background:#312734;color:#f0dfbb;border:1px solid #ba805f;border-radius:8px;margin:6px 0}.battle-mechanic-notice>b{color:#ffd998}
+.champion-showcase{position:relative}.detail-motion{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;pointer-events:none;transition:opacity .25s;z-index:1}.detail-motion.playing{opacity:1}
+.cinematic-overlay{position:fixed;inset:0;z-index:100000;background:#09111a;display:grid;place-items:center;isolation:isolate}.cinematic-overlay>video{height:100%;max-width:100%;object-fit:contain}.cinematic-skip{position:absolute;bottom:max(24px,env(safe-area-inset-bottom));right:24px;background:#eadcc2;color:#72272b;border-color:#baa17c;min-height:44px}
+.cinematic-brand{position:absolute;inset:23% 0 24%;background:linear-gradient(0deg,transparent,#111923 15%,#111923 85%,transparent);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:20px}.cinematic-brand img:first-child{width:min(45vw,230px);height:auto}.cinematic-brand img:last-child{width:min(76vw,440px);height:auto}
+@media(max-width:650px){.weekly-grid{grid-template-columns:minmax(0,1fr)}.weekly-card>img{height:160px}.team-slot-actions .button{font-size:11px;padding-inline:8px}.hero-preferences .button{flex:1}.battle-mechanic-notice{font-size:11px}.weekly-actions .button{flex:1}}
+@media(prefers-reduced-motion:reduce){.detail-motion{display:none;transition:none}}
+body.menu-theme .game-page.page-weekly :is(h1,h2){color:#252831;text-shadow:none}
+body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],[data-view=team-name]) .modal-header::after{display:none}
+body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],[data-view=team-name]) .modal-header .icon-button{background:#eadcbe;color:#72272b;border:1px solid #ae9672;box-shadow:none}
+.chapter-story>h3{font-family:'Collection Serif',Georgia,serif;font-size:23px;margin:12px 0}
+.chapter-story>p{margin:8px 0}.story-feature{position:relative;height:230px;background:#1b2328;border-radius:10px;overflow:hidden}.story-feature>img{width:100%;height:100%;object-fit:contain}.story-feature .detail-motion{object-fit:contain}

@@ -1,3 +1,4 @@
+import {normalizeTeamPreferences} from './team-preferences.js';
 import {recordTutorial} from './tutorial.js';
 export const TEAM_SLOT_COUNT=4;
 export const sameTeam=(a,b)=>Array.isArray(a)&&Array.isArray(b)&&a.length===b.length&&a.every((id,i)=>id===b[i]);
@@ -8,7 +9,7 @@ export function normalizeTeams(p,collection,roster=[]){
  let teamSlots,activeTeamSlot;
  if(p.teamsVersion===1){teamSlots=Array.from({length:TEAM_SLOT_COUNT},(_,i)=>valid(p.teamSlots?.[i])?[...p.teamSlots[i]]:null);activeTeamSlot=Number.isInteger(p.activeTeamSlot)&&p.activeTeamSlot>=0&&p.activeTeamSlot<TEAM_SLOT_COUNT?p.activeTeamSlot:0;teamSlots[activeTeamSlot]=[...current];}
  else{teamSlots=[[...current]];for(const t of (Array.isArray(p.teamSlots)?p.teamSlots:[]).slice(0,3))if(valid(t)&&!teamSlots.some(old=>sameTeam(old,t)))teamSlots.push([...t]);while(teamSlots.length<TEAM_SLOT_COUNT)teamSlots.push(null);activeTeamSlot=0;}
- return {teamsVersion:1,activeTeamSlot,teamSlots};
+ return {...normalizeTeamPreferences(p,collection),teamsVersion:1,activeTeamSlot,teamSlots};
 }
 export function validTeams(p){return p.teamsVersion===1&&Number.isInteger(p.activeTeamSlot)&&p.activeTeamSlot>=0&&p.activeTeamSlot<TEAM_SLOT_COUNT&&Array.isArray(p.teamSlots)&&p.teamSlots.length===TEAM_SLOT_COUNT&&p.teamSlots.every(t=>t===null||teamShape(t)&&t.every(id=>p.openRoster||p.collection[id]))&&sameTeam(p.team,p.teamSlots[p.activeTeamSlot]);}
 export function saveTeam(p,slot,team,roster=[]){

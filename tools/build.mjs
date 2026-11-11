@@ -1,3 +1,5 @@
+import {WEEKLY_STAGES} from '../src/weekly.js';
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import {PREMIUM_ITEMS} from '../src/premium-items.js';
 import {historicalPortraits} from './portrait-baseline.mjs';
 import {COURTYARD_SCENERY} from '../src/courtyard-scenery.js';
@@ -17,7 +19,7 @@ const sourceRoster=JSON.parse(await readFile('data/source-champions.json','utf8'
 if(createHash('sha256').update(JSON.stringify(beforeRarityRevision(sourceRoster.slice(0,expansion.originalCount),{source:true}))).digest('hex')!==expansion.originalSourceRecordsSha256)throw Error('Existing source records changed');
 const milestone200=JSON.parse(await readFile('data/roster-expansion-5.json','utf8'));
 const latest=JSON.parse(await readFile('data/roster-expansion-7.json','utf8'));
-const sha=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+const sha=value=>createHash('sha256').update(JSON.stringify(Array.isArray(value)?beforeUpgradeBalance(value):value)).digest('hex');
 if(sha(roster.slice(0,milestone200.originalCount))!==milestone200.originalRecordsSha256||sha(sourceRoster.slice(0,milestone200.originalCount))!==milestone200.originalSourceRecordsSha256)throw Error('The 189-character baseline changed');
 if(sha(roster.slice(0,latest.originalCount))!==latest.originalRecordsSha256||sha(sourceRoster.slice(0,latest.originalCount))!==latest.originalSourceRecordsSha256)throw Error('The 215-character baseline changed');
 if(JSON.stringify(roster.slice(latest.originalCount,latest.totalCount).map(c=>c.id))!==JSON.stringify(latest.addedChampionIds))throw Error('Aerie Court identity check failed');
@@ -67,14 +69,15 @@ const courtyardArt=new Set([
 for(const path of courtyardArt)if((await stat(path)).size<10000)throw Error('Missing courtyard artwork: '+path);
 for(const c of roster){if(!/^assets\/champions\/[a-zA-Z0-9_ -]+\.webp$/.test(c.portrait)||(await stat(c.portrait)).size<1000)throw Error(`Missing portrait: ${c.id}`);}
 for(const color of ['red','blue','green','yellow','purple'])for(const suffix of ['','-blast','-prism'])if((await stat(`assets/runes/${color}${suffix}.svg`)).size<10000)throw Error('Missing rune artwork: '+color+suffix);
-for(const path of ['assets/brand/crest.svg','assets/favicon.svg','assets/scenes/world-map.svg','assets/scenes/adventure-realm-wide.webp','assets/scenes/adventure-realm-phone.webp','assets/dungeons/guardians-wide.webp','assets/dungeons/guardians-phone.webp','assets/dungeons/guardians-phone-dragon.webp','assets/events/realms-phone.webp','assets/events/realms-wide.webp','assets/altar/portal-phone.webp','assets/altar/portal-wide.webp','assets/altar/aether-vortex.webp','assets/brand/warband-crest.webp','assets/brand/warband-favicon.png','assets/brand/warband-touch.png','assets/brand/warband-wordmark.png','assets/guide/element-advantages.webp'])if((await stat(path)).size<500)throw Error('Missing brand artwork');
-for(const e of ENCOUNTERS)if(e.enemyIds.some(id=>!roster.some(c=>c.id===id)))throw Error('Unknown encounter champion: '+e.id);
+for(const path of ['assets/favicon.svg','assets/scenes/world-map.svg','assets/scenes/adventure-realm-wide.webp','assets/scenes/adventure-realm-phone.webp','assets/dungeons/guardians-wide.webp','assets/dungeons/guardians-phone.webp','assets/dungeons/guardians-phone-dragon.webp','assets/events/realms-phone.webp','assets/events/realms-wide.webp','assets/altar/portal-phone.webp','assets/altar/portal-wide.webp','assets/altar/aether-vortex.webp','assets/brand/warband-crest.webp','assets/brand/warband-favicon.png','assets/brand/warband-touch.png','assets/brand/warband-wordmark.png','assets/guide/element-advantages.webp'])if((await stat(path)).size<500)throw Error('Missing brand artwork');
+for(const e of [...ENCOUNTERS,...WEEKLY_STAGES])if(e.enemyIds.some(id=>!roster.some(c=>c.id===id)))throw Error('Unknown encounter champion: '+e.id);
 for(const path of [...DIFFICULTIES.map(d=>d.art),...DUNGEONS.map(d=>d.art),'assets/dungeons/magma-wyrm.svg',...['altar','adventure','codex','exchange','arena'].map(id=>'assets/destinations/'+id+'.svg'),...['crimson-eclipse','frostwake-siege','veil-of-umbra'].map(id=>'assets/events/'+id+'.svg')])if((await stat(path)).size<1000)throw Error('Missing adventure artwork: '+path);
 for(const m of MATERIALS)if((await stat('assets/items/'+m.id+'.webp')).size<5000)throw Error('Missing new material artwork: '+m.id);
 for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inventory-gems','settings-gear','shop-stall','quest-scrolls','tavern-house','leather-backpack','adventure-swords','guide-question','daily-path-medal','profile-xp','summon-portal','codex-roster','arena-token','eclipse-sigil','frostwake-shard','veil-mark','energy'])if((await stat('assets/items/'+id+'.webp')).size<5000)throw Error('Missing shop artwork: '+id);
 for(const id of AVATARS)if((await stat('assets/portraits/'+id+'.svg')).size<1000)throw Error('Missing profile artwork: '+id);
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
 for(const path of ['index.html','manifest.webmanifest','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
-const manifest={version:JSON.parse(await readFile('package.json','utf8')).version,champions:roster.length,campaignStages:75,dungeons:7,dungeonEncounters:21,arenaRivals:9,specialEvents:3,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
+for(const clip of ['intro-realm','iseldra','juggernaut','vex','jade-dragon']){const size=(await stat('assets/cinematics/'+clip+'.mp4')).size;if(size<1000||size>2000000)throw Error('Cinematic missing or exceeds mobile size budget: '+clip);}
+const manifest={version:JSON.parse(await readFile('package.json','utf8')).version,champions:roster.length,campaignStages:75,dungeons:7,dungeonEncounters:21,arenaRivals:9,specialEvents:3,weeklyChallenges:2,weeklyRotations:4,authoredChapters:3,cinematicClips:5,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
 await writeFile('dist/build.json',JSON.stringify(manifest,null,2)+'\n');
 console.log(`Built independent static game: ${roster.length} champions and local portraits → dist/`);

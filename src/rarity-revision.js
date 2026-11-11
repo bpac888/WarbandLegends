@@ -1,3 +1,4 @@
+import {beforeUpgradeBalance} from './upgrade-balance-revision.js';
 // Explicitly approved roster changes; snapshots preserve historical audit contracts.
 export const RARITY_REVISION=[
   {
@@ -4690,4 +4691,4 @@ export const RARITY_REVISION=[
     }
   }
 ];
-export function beforeRarityRevision(records,{source=false}={}){const m=new Map(RARITY_REVISION.map(x=>[x.id,x]));return records.map(c=>{const x=m.get(c.id);if(!x)return c;const expected=source?x.sourceAfter:x.after;if(JSON.stringify(c)!==JSON.stringify(expected))throw Error("Unexpected rarity revision: "+c.id);return structuredClone(source?x.sourceBefore:x.before);});}
+export function beforeRarityRevision(records,{source=false}={}){const m=new Map(RARITY_REVISION.map(x=>[x.id,x]));return beforeUpgradeBalance(records).map(c=>{const x=m.get(c.id);if(!x)return c;const expected=source?x.sourceAfter:x.after;if(JSON.stringify(c)!==JSON.stringify(expected))throw Error("Unexpected rarity revision: "+c.id);return structuredClone(source?x.sourceBefore:x.before);});}

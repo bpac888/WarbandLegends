@@ -92,7 +92,7 @@
           "effects": [
             {
               "id": "strengthen",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             },
             {
@@ -102,7 +102,7 @@
             },
             {
               "id": "guard",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             }
           ]
@@ -315,17 +315,17 @@
           "effects": [
             {
               "id": "strengthen",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             },
             {
               "id": "shield",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             },
             {
               "id": "guard",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             }
           ]
@@ -7500,7 +7500,7 @@
           "tiles": 8,
           "target": "self",
           "damage": 0,
-          "healing": 0.24,
+          "healing": 0.28,
           "healScope": "allies",
           "aoe": false,
           "pierce": false,
@@ -7512,14 +7512,14 @@
             },
             {
               "id": "block_debuffs",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 24% max HP to all living allies."
+    "ability_desc": "Restore 28% max HP to all living allies."
   },
   {
     "template_id": "qadir_glassveil_warden",
@@ -8301,7 +8301,7 @@
           "speed": "charge_1",
           "tiles": 5,
           "target": "enemy",
-          "damage": 0.9,
+          "damage": 1.1,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -8313,7 +8313,7 @@
           "speed": "charge_2",
           "tiles": 10,
           "target": "enemy",
-          "damage": 1.8,
+          "damage": 2.2,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -8331,7 +8331,7 @@
           "speed": "charge_3",
           "tiles": 15,
           "target": "enemy",
-          "damage": 2.7,
+          "damage": 3.4,
           "healing": 0,
           "healScope": "allies",
           "aoe": false,
@@ -8351,7 +8351,7 @@
         }
       ]
     },
-    "ability_desc": "Deal 270% ATK damage to selected enemy, ignoring 25% of DEF."
+    "ability_desc": "Deal 340% ATK damage to selected enemy, ignoring 25% of DEF."
   },
   {
     "template_id": "draeven_gravefrost",
@@ -8566,15 +8566,15 @@
     "source_image": "assets/champions/orrix_amethyst_bulwark.webp",
     "portrait": "assets/champions/orrix_amethyst_bulwark.webp",
     "passive": null,
-    "manaSpeed": "slow",
+    "manaSpeed": "average",
     "special": {
       "name": "Living Bastion",
       "charging": false,
       "levels": [
         {
           "level": 1,
-          "speed": "slow",
-          "tiles": 12,
+          "speed": "average",
+          "tiles": 10,
           "target": "enemy",
           "damage": 1.25,
           "healing": 0,
@@ -8589,7 +8589,7 @@
             },
             {
               "id": "counterattack",
-              "turns": 1,
+              "turns": 2,
               "scope": "self"
             }
           ]
@@ -8740,6 +8740,11 @@
             {
               "id": "remove_debuffs",
               "turns": 0,
+              "scope": "allies"
+            },
+            {
+              "id": "inc_def",
+              "turns": 2,
               "scope": "allies"
             }
           ]
@@ -9023,7 +9028,7 @@
           "level": 1,
           "speed": "charge_1",
           "tiles": 5,
-          "damage": 0.85,
+          "damage": 1,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -9035,7 +9040,7 @@
           "level": 2,
           "speed": "charge_2",
           "tiles": 10,
-          "damage": 1.75,
+          "damage": 2.1,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -9053,7 +9058,7 @@
           "level": 3,
           "speed": "charge_3",
           "tiles": 15,
-          "damage": 2.6,
+          "damage": 3.3,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -9067,14 +9072,14 @@
             },
             {
               "id": "vulnerable_blue",
-              "turns": 1,
+              "turns": 2,
               "scope": "enemy"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 260% ATK damage to selected enemy."
+    "ability_desc": "Deal 330% ATK damage to selected enemy."
   },
   {
     "template_id": "ushala_quillgrass_tracker",
@@ -9148,7 +9153,7 @@
           "level": 1,
           "speed": "slow",
           "tiles": 12,
-          "damage": 1.65,
+          "damage": 1.85,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
@@ -9157,14 +9162,14 @@
           "effects": [
             {
               "id": "dec_def",
-              "turns": 1,
+              "turns": 2,
               "scope": "enemies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Deal 165% ATK damage to all living enemies."
+    "ability_desc": "Deal 185% ATK damage to all living enemies."
   },
   {
     "template_id": "thyssara_eclipse_blade",
@@ -9366,7 +9371,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.26,
+          "healing": 0.3,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -9374,14 +9379,14 @@
           "effects": [
             {
               "id": "inc_atk",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 26% max HP to all living allies."
+    "ability_desc": "Restore 30% max HP to all living allies."
   },
   {
     "template_id": "asterox_labyrinth_moon",
@@ -9570,12 +9575,12 @@
           "effects": [
             {
               "id": "shield",
-              "turns": 2,
+              "turns": 3,
               "scope": "allies"
             },
             {
               "id": "strengthen",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
@@ -9657,7 +9662,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.26,
+          "healing": 0.3,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -9665,14 +9670,14 @@
           "effects": [
             {
               "id": "block_debuffs",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 26% max HP to all living allies."
+    "ability_desc": "Restore 30% max HP to all living allies."
   },
   {
     "template_id": "ixanth_solar_wing",
@@ -9809,7 +9814,7 @@
           "speed": "average",
           "tiles": 10,
           "damage": 0,
-          "healing": 0.22,
+          "healing": 0.28,
           "target": "self",
           "healScope": "allies",
           "aoe": false,
@@ -9817,14 +9822,14 @@
           "effects": [
             {
               "id": "shield",
-              "turns": 1,
+              "turns": 2,
               "scope": "allies"
             }
           ]
         }
       ]
     },
-    "ability_desc": "Restore 22% max HP to all living allies."
+    "ability_desc": "Restore 28% max HP to all living allies."
   },
   {
     "template_id": "gorgythe_prism_gaze",

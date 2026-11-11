@@ -1,6 +1,6 @@
 # Warband Legends Roster Audit — 265 Champions
 
-The King adds one Yellow Mythical attacker with no faction, the highest baseline Attack, and personal Special evasion. Thirteen original factions retain eighteen members each, Magic has six, Djedi has eight and Goblins has sixteen. All 264 previous records and portraits are unchanged.
+The King adds one Yellow Mythical attacker with no faction, the highest baseline Attack, and personal Special evasion. Thirteen original factions retain eighteen members each, Magic has six, Djedi has eight and Goblins has sixteen. Twelve approved kit changes are implemented; base stats and portraits are unchanged.
 
 ## Before and After
 
@@ -58,8 +58,8 @@ Every actual faction retains all five elements. The King is unaffiliated and rec
 | --- | --- | --- | --- | --- | --- |
 | Very Fast | 2 | 2 | 5 | 2 | 11 |
 | Fast | 6 | 29 | 22 | 6 | 63 |
-| Average | 2 | 45 | 58 | 21 | 126 |
-| Slow | 5 | 34 | 3 | 0 | 42 |
+| Average | 2 | 45 | 59 | 21 | 127 |
+| Slow | 5 | 34 | 2 | 0 | 41 |
 | Very Slow | 1 | 1 | 0 | 0 | 2 |
 | Charging | 4 | 15 | 2 | 0 | 21 |
 

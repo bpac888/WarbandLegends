@@ -62,7 +62,7 @@
     "def": 269,
     "spd": 102,
     "ability_name": "Verdict of the Silent Court",
-    "ability_desc": "The bone-court passes sentence on one foe — their strength withers for three rounds and the verdict drags their eyes onto Ossir alone.",
+    "ability_desc": "Deal 176% ATK damage to selected enemy.",
     "lore": "Ossir ruled a kingdom of dust for so long the dust began to worship him. He did not stop it.",
     "image_url": "/api/static/champions/necropolis_titan.png",
     "id": "necropolis_titan",
@@ -230,7 +230,7 @@
     "def": 259,
     "spd": 110,
     "ability_name": "Steam Purge",
-    "ability_desc": "Vents scalding pressure — bronze shields settle over the warband and the struck foe can look at nothing else.",
+    "ability_desc": "Deal 176% ATK damage to selected enemy.",
     "lore": "The heart crystal in his chest still remembers being a person. The pistons remember only work.",
     "image_url": "/api/static/champions/bronze_juggernaut.png",
     "id": "bronze_juggernaut",
@@ -5114,7 +5114,7 @@
       "value": 0.03,
       "desc": "Restore 3% of Nayara's maximum HP at the start of each board move."
     },
-    "ability_desc": "Restore 24% max HP to all living allies.",
+    "ability_desc": "Restore 28% max HP to all living allies.",
     "spd": 100,
     "kit": {
       "a2": [],
@@ -5625,7 +5625,7 @@
     "source_image": "assets/champions/nix_biosteel_hunter.webp",
     "portrait": "assets/champions/nix_biosteel_hunter.webp",
     "passive": null,
-    "ability_desc": "Deal 270% ATK damage to selected enemy, ignoring 25% of DEF.",
+    "ability_desc": "Deal 340% ATK damage to selected enemy, ignoring 25% of DEF.",
     "spd": 100,
     "kit": {
       "a2": [],
@@ -6081,7 +6081,7 @@
     "source_image": "assets/champions/kozhak_glacier_prowler.webp",
     "portrait": "assets/champions/kozhak_glacier_prowler.webp",
     "passive": null,
-    "ability_desc": "Deal 260% ATK damage to selected enemy.",
+    "ability_desc": "Deal 330% ATK damage to selected enemy.",
     "spd": 100,
     "kit": {
       "a2": [],
@@ -6145,7 +6145,7 @@
     "source_image": "assets/champions/qingluo_jade_tempest.webp",
     "portrait": "assets/champions/qingluo_jade_tempest.webp",
     "passive": null,
-    "ability_desc": "Deal 165% ATK damage to all living enemies.",
+    "ability_desc": "Deal 185% ATK damage to all living enemies.",
     "spd": 100,
     "kit": {
       "a2": [],
@@ -6282,7 +6282,7 @@
     "source_image": "assets/champions/eudoma_nova_keeper.webp",
     "portrait": "assets/champions/eudoma_nova_keeper.webp",
     "passive": null,
-    "ability_desc": "Restore 26% max HP to all living allies.",
+    "ability_desc": "Restore 30% max HP to all living allies.",
     "spd": 100,
     "kit": {
       "a2": [],
@@ -6480,7 +6480,7 @@
     "source_image": "assets/champions/ophira_seed_of_worlds.webp",
     "portrait": "assets/champions/ophira_seed_of_worlds.webp",
     "passive": null,
-    "ability_desc": "Restore 26% max HP to all living allies.",
+    "ability_desc": "Restore 30% max HP to all living allies.",
     "spd": 100,
     "kit": {
       "a2": [],
@@ -6574,7 +6574,7 @@
     "source_image": "assets/champions/phozia_star_oracle.webp",
     "portrait": "assets/champions/phozia_star_oracle.webp",
     "passive": null,
-    "ability_desc": "Restore 22% max HP to all living allies.",
+    "ability_desc": "Restore 28% max HP to all living allies.",
     "spd": 100,
     "kit": {
       "a2": [],

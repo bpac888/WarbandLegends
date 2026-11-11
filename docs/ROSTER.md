@@ -1,6 +1,6 @@
 # Warband Legends Champion Catalog
 
-265 champions. The King is a factionless Mythical warrior with the highest baseline Attack. All 264 previous champions remain unchanged. All previous character records and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
+265 champions. The King is a factionless Mythical warrior with the highest baseline Attack. Twelve owner-approved kit improvements were applied on 2026-11-11. Base stats, identities and artwork are preserved. Stats below are maximum-level baselines; each owned copy develops independently.
 
 | Champion | Rarity | Color | Type | ATK | DEF | HP | Mana (tiles) |
 | --- | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -165,7 +165,7 @@
 | Melia, Dawn-Pollen Mender | rare | yellow | support | 660 | 540 | 1000 | Fast 8 |
 | Nyrali, Moon-Pride Keeper | legendary | purple | support | 600 | 780 | 1600 | Fast 8 |
 | Haska, Hearth Guard | rare | red | defense | 600 | 640 | 1120 | Average 10 |
-| Orrix, Amethyst Bulwark | rare | purple | defense | 618 | 620 | 1129 | Slow 12 |
+| Orrix, Amethyst Bulwark | rare | purple | defense | 618 | 620 | 1129 | Average 10 |
 | Othrel, Riverstone Aegis | legendary | blue | defense | 670 | 810 | 1530 | Fast 8 |
 | Domitrix, the Gilded Vigil | legendary | yellow | defense | 650 | 820 | 1540 | Average 10 |
 | Beatrice, Verdigris Mender | legendary | green | support | 730 | 737 | 1420 | Fast 8 |
@@ -280,7 +280,7 @@ Passive: **Unclosing Wound** — On turns 5, 10, 15 and every fifth board turn t
 
 ### Ossir, Necropolis Titan — Verdict of the Silent Court
 
-- 12 tiles: Deal 176% ATK damage to selected enemy. Damage Ward (Caster, 1 turns); Taunt (Caster, 1 turns); Attack Down (Selected enemy, 3 turns).
+- 12 tiles: Deal 176% ATK damage to selected enemy. Damage Ward (Caster, 2 turns); Taunt (Caster, 2 turns); Attack Down (Selected enemy, 3 turns).
 
 ### Malzhur, the Abyss Lord — Cinder Cataclysm
 
@@ -298,7 +298,7 @@ Passive: **Cold of the Pit** — Immune to Burn.
 
 ### The Bronze Juggernaut — Steam Purge
 
-- 12 tiles: Deal 176% ATK damage to selected enemy. Damage Ward (Caster, 1 turns); Barrier (All living allies, 1 turns); Taunt (Caster, 1 turns).
+- 12 tiles: Deal 176% ATK damage to selected enemy. Damage Ward (Caster, 2 turns); Barrier (All living allies, 2 turns); Taunt (Caster, 2 turns).
 
 ### Chispa, the Spore Adept — Colony Bloom
 
@@ -892,7 +892,7 @@ Passive: **Emberleaf Pact** — Immune to Burn.
 
 ### Nayara, Keeper of the Deep Well — The River Remembers
 
-- 8 tiles: Restore 24% max HP to all living allies. Cleanse (All living allies); Ailment Ward (All living allies, 1 turns).
+- 8 tiles: Restore 28% max HP to all living allies. Cleanse (All living allies); Ailment Ward (All living allies, 2 turns).
 
 Passive: **Heart of the Deep Well** — Restore 3% of Nayara's maximum HP at the start of each board move.
 
@@ -961,9 +961,9 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 ### Nix, Biosteel Hunter — Overgrow the Grid
 
-- Charge 1 · 5 tiles: Deal 90% ATK damage to selected enemy, ignoring 25% of DEF. .
-- Charge 2 · 10 tiles: Deal 180% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy).
-- Charge 3 · 15 tiles: Deal 270% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy); Buff Seal (Selected enemy, 2 turns).
+- Charge 1 · 5 tiles: Deal 110% ATK damage to selected enemy, ignoring 25% of DEF. .
+- Charge 2 · 10 tiles: Deal 220% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy).
+- Charge 3 · 15 tiles: Deal 340% ATK damage to selected enemy, ignoring 25% of DEF. Dispel (Selected enemy); Buff Seal (Selected enemy, 2 turns).
 
 ### Draeven, Gravefrost Headsman — Sentence of Winter
 
@@ -983,7 +983,7 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 ### Orrix, Amethyst Bulwark — Living Bastion
 
-- 12 tiles: Deal 125% ATK damage to selected enemy. Barrier (All living allies, 2 turns); Riposte (Caster, 1 turns).
+- 10 tiles: Deal 125% ATK damage to selected enemy. Barrier (All living allies, 2 turns); Riposte (Caster, 2 turns).
 
 ### Othrel, Riverstone Aegis — Riverstone Covenant
 
@@ -995,7 +995,7 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 ### Beatrice, Verdigris Mender — Mend the Living Line
 
-- 8 tiles: Restore 24% max HP to all living allies. Cleanse (All living allies).
+- 8 tiles: Restore 24% max HP to all living allies. Cleanse (All living allies); Defense Up (All living allies, 2 turns).
 
 ### Ephoros, Pale Ferryman — Safe Passage
 
@@ -1020,9 +1020,9 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 ### Kozhak, Glacier Prowler — Whiteout Pursuit
 
-- Charge 1 · 5 tiles: Deal 85% ATK damage to selected enemy. .
-- Charge 2 · 10 tiles: Deal 175% ATK damage to selected enemy. Frostbite (Selected enemy, 1 turns).
-- Charge 3 · 15 tiles: Deal 260% ATK damage to selected enemy. Frostbite (Selected enemy, 2 turns); Frost Defense Down (Selected enemy, 1 turns).
+- Charge 1 · 5 tiles: Deal 100% ATK damage to selected enemy. .
+- Charge 2 · 10 tiles: Deal 210% ATK damage to selected enemy. Frostbite (Selected enemy, 1 turns).
+- Charge 3 · 15 tiles: Deal 330% ATK damage to selected enemy. Frostbite (Selected enemy, 2 turns); Frost Defense Down (Selected enemy, 2 turns).
 
 ### Ushala, Quillgrass Tracker — Barbs in the Tall Grass
 
@@ -1030,7 +1030,7 @@ Passive: **Rimeclaw** — Immune to Frostbite.
 
 ### Qingluo, Jade Tempest — Dragon Through the Bamboo
 
-- 12 tiles: Deal 165% ATK damage to all living enemies. Defense Down (All living enemies, 1 turns).
+- 12 tiles: Deal 185% ATK damage to all living enemies. Defense Down (All living enemies, 2 turns).
 
 ### Thyssara, Eclipse Blade — Light Stolen from the Veil
 
@@ -1049,7 +1049,7 @@ Passive: **Titan’s Resolve** — Alkyron is permanently immune to Attack Down 
 
 ### Eudoma, Nova Keeper — Hearth of the Wanderers
 
-- 10 tiles: Restore 26% max HP to all living allies. Attack Up (All living allies, 1 turns).
+- 10 tiles: Restore 30% max HP to all living allies. Attack Up (All living allies, 2 turns).
 
 ### Asterox, Labyrinth Moon — Walls Between Worlds
 
@@ -1067,7 +1067,7 @@ Passive: **Moonforged Aegis** — Barriers received by Asterox have 50% larger s
 
 ### Kelydras, Worldbearer — Carry the Living World
 
-- 12 tiles: Empower your warband with the effects below. Barrier (All living allies, 2 turns); Damage Ward (All living allies, 1 turns).
+- 12 tiles: Empower your warband with the effects below. Barrier (All living allies, 3 turns); Damage Ward (All living allies, 2 turns).
 
 ### Xiphae, Comet Huntress — Arrow Beyond the Horizon
 
@@ -1075,7 +1075,7 @@ Passive: **Moonforged Aegis** — Barriers received by Asterox have 50% larger s
 
 ### Ophira, Seed of Worlds — Spring Beyond the Stars
 
-- 10 tiles: Restore 26% max HP to all living allies. Ailment Ward (All living allies, 1 turns).
+- 10 tiles: Restore 30% max HP to all living allies. Ailment Ward (All living allies, 2 turns).
 
 ### Ixanth, Solar Wing — Flight Through the Sun
 
@@ -1088,7 +1088,7 @@ Passive: **Moonforged Aegis** — Barriers received by Asterox have 50% larger s
 
 ### Phozia, Star Oracle — Tomorrow’s Shelter
 
-- 10 tiles: Restore 22% max HP to all living allies. Barrier (All living allies, 1 turns).
+- 10 tiles: Restore 28% max HP to all living allies. Barrier (All living allies, 2 turns).
 
 ### Gorgythe, Prism Gaze — The Unblinking Horizon
 

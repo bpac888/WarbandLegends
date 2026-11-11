@@ -1,3 +1,4 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {createBattle,cast,swap,validMoves,validateSave} from '../src/engine.js';import {REFERENCE_TEAM} from './reference-team.mjs';
 const roster=JSON.parse(await readFile(new URL('../data/champions.json',import.meta.url)));
 test('every Mythical now has a passive and both Astral passives match source records',async()=>{const source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url)));assert.ok(roster.filter(c=>c.rarity==='mythical').every(c=>c.passive?.name&&c.passive?.desc));for(const id of ['alkyron_starbreaker','asterox_labyrinth_moon'])assert.deepEqual(roster.find(c=>c.id===id).passive,source.find(c=>c.id===id).passive);});
@@ -8,7 +9,7 @@ test('only the two requested Astral kits change, with stats, identities, passive
  const {createHash}=await import('node:crypto'),revision=JSON.parse(await readFile(new URL('../data/astral-mythical-revision.json',import.meta.url))),source=JSON.parse(await readFile(new URL('../data/source-champions.json',import.meta.url))),design=JSON.parse(await readFile(new URL('../data/roster-design.json',import.meta.url))),before=structuredClone(roster.slice(0,189));
  assert.deepEqual(revision.characters.map(c=>c.id),['alkyron_starbreaker','asterox_labyrinth_moon']);
  for(const x of revision.characters){const c=roster.find(c=>c.id===x.id);assert.deepEqual(c,x.after);assert.deepEqual(source.find(c=>c.id===x.id),x.sourceAfter);assert.deepEqual(design.champions[x.id],x.designAfter);for(const k of Object.keys(x.before))if(!['manaSpeed','special','ability_desc'].includes(k))assert.deepEqual(c[k],x.before[k],x.id+' '+k);before[before.findIndex(c=>c.id===x.id)]=x.before;}
- assert.equal(createHash('sha256').update(JSON.stringify(before)).digest('hex'),revision.previousRosterSha256);
+ assert.equal(createHash('sha256').update(JSON.stringify(beforeUpgradeBalance(before))).digest('hex'),revision.previousRosterSha256);
 });
 
 test('Alkyron casts at ten tiles, Dispels every enemy before Burn and deals the stronger neutral area hit',()=>{

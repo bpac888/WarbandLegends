@@ -1,3 +1,4 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -9,7 +10,7 @@ import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const read=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url)));
 const roster=(await read('data/champions.json')).slice(0,248),djedi=roster.filter(c=>c.faction==='djedi'),manifest=await read('data/roster-expansion-10.json');
-const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const hash=x=>createHash('sha256').update(JSON.stringify(Array.isArray(x)?beforeUpgradeBalance(x):x)).digest('hex');
 
 test('Djedi has the eight requested identities, exact rarities and roles, while preserving all 240 previous champions',async()=>{
  assert.equal(roster.length,248);assert.equal(djedi.length,8);assert.equal(new Set(roster.map(c=>c.id)).size,248);assert.equal(new Set(roster.map(c=>c.name.toLowerCase())).size,248);

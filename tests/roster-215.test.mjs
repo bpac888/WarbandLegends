@@ -1,3 +1,4 @@
+import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import {historicalPortraits} from '../tools/portrait-baseline.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -8,7 +9,7 @@ import {chooseAutoAction,applyAutoAction} from '../src/auto-battle.js';
 import {defaultProfile,summon,normalizeProfile,validateProfile,SUMMON_ODDS} from '../src/progression.js';
 import {REFERENCE_TEAM} from './reference-team.mjs';
 const read=async f=>JSON.parse(await readFile(new URL('../'+f,import.meta.url)));
-const roster=(await read('data/champions.json')).slice(0,215),manifest=await read('data/roster-expansion-6.json'),added=roster.slice(200),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const roster=(await read('data/champions.json')).slice(0,215),manifest=await read('data/roster-expansion-6.json'),added=roster.slice(200),hash=x=>createHash('sha256').update(JSON.stringify(Array.isArray(x)?beforeUpgradeBalance(x):x)).digest('hex');
 const counts=k=>Object.fromEntries([...new Set(added.map(c=>c[k]))].sort().map(v=>[v,added.filter(c=>c[k]===v).length]));
 function fixture(c){const b=createBattle(roster,[c.id,...REFERENCE_TEAM.filter(id=>id!==c.id).slice(0,4)],'ashen-gate',42);for(const e of b.enemies){e.hp=e.maxHp=100000;e.passive=null;e.shield=100;e.effects={inc_atk:{turns:2,source:e.uid,appliedMove:0},shield:{turns:2,source:e.uid,appliedMove:0}};}for(const h of b.heroes){h.hp=Math.floor(h.maxHp*.3);h.passive=null;h.effects={poison:{turns:2,source:'enemy-0',appliedMove:0}};}return b;}
 test('all 200 previous identities, kits, source records and portrait baselines are preserved',async()=>{

@@ -14,16 +14,27 @@ export const SECOND_CHAPTER={name:'The Hollow Covenant',objective:'Defeat the en
  {number:10,label:'Outlast the last light',story:'Archangel Lucifer guards the obsidian gate. His final oath awakens when both sentries fall.',tactic:'Once both escorts are defeated, the living boss gains Defense Up and Riposte for 2 board moves. His next attack is at least 2 moves away. Dispel the buffs, use runes that cannot trigger Riposte, or defeat the boss before both escorts fall.',enemyIds:['cult_zealot','archangel_lucifer','demon_witchblade'],scenario:'obsidian-last-light',bossHp:1.65,opening:{hpMultipliers:[.65,1.65,.65]}},
 ]};
 OPENING_CHAPTER.description='Break the shieldwall, interrupt the ritual and silence the boiler at the crossroads.';
-export const CHAPTERS=[OPENING_CHAPTER,SECOND_CHAPTER];
+export const THIRD_CHAPTER={name:'The Summoner’s March',description:'Read the warning, break the protector, and silence the call.',stages:[
+ {number:11,label:'Read the storm',story:'A storm captain gathers a visible surge at the crossroads.',tactic:'On move 3 the center gains Attack Up for 2 moves and attacks in 1 move. Defeat it before then, Dispel the buff or protect your team.',scenario:'weekly-telegraph'},
+ {number:12,label:'Break the protector',story:'A sworn sentinel draws the warband’s strongest strikes away from the captain.',tactic:'The left escort starts with Taunt and Defense Up for 4 moves. Taunt redirects single-target Specials, not rune columns or area attacks. Dispel it or defeat the escort.',scenario:'weekly-protector',opening:{effects:[{index:0,id:'guard',turns:4},{index:0,id:'inc_def',turns:4}]}},
+ {number:13,label:'Silence the call',story:'A summoner calls a fallen escort back into the battle line.',tactic:'From move 3, the living center replaces one fallen escort once at 65% HP. Defeat the center first to stop the call.',scenario:'weekly-reinforcements'},
+ {number:14,label:'Hold the road',story:'The captain’s last patrol makes its stand before the dragon gate.',tactic:'Clear a flank to charge Specials through empty lanes.'},
+ {number:15,label:'The open horizon',story:'Beyond the last banner, the road opens toward the Worldwound.',tactic:'Build charge and protect your warband for the guardian.'}
+]};
+export const CHAPTERS=[OPENING_CHAPTER,SECOND_CHAPTER,THIRD_CHAPTER];
 export function chapterForStage(number){return CHAPTERS.find(ch=>ch.stages.some(s=>s.number===number));}
 export function authoredStage(number){const chapter=chapterForStage(number);return chapter?{...chapter.stages.find(s=>s.number===number),chapter:chapter.name}:null;}
 export function openingStage(number){return OPENING_CHAPTER.stages.find(s=>s.number===number);}
 export const OVERPRESSURE={id:'iron-overpressure',name:'Overpressure',trigger:'half_health',threshold:.5,turns:2,effects:['shield','inc_atk'],countdown:1,notice:'Barrier and Attack Up for 2 moves; next attack in 1 move. Dispel or protect your warband.',waiting:'Overpressure waits at half HP. Keep a dispel or protection Special ready.'};
 export const LAST_LIGHT={id:'obsidian-last-light',name:'Last Light',trigger:'escorts_defeated',turns:2,effects:['inc_def','counterattack'],countdown:2,countdownMinimum:true,notice:'Defense Up and Riposte for 2 moves; next attack no sooner than 2 moves. Dispel or use runes to avoid Riposte.',waiting:'Last Light waits until both escorts fall. Rune damage cannot trigger Riposte; a dispel can remove it.'};
-export const SCENARIOS=Object.fromEntries([OVERPRESSURE,LAST_LIGHT].map(s=>[s.id,s]));
+export const STORM_WARNING={id:'weekly-telegraph',name:'Gathering Storm',trigger:'move_three',turns:2,effects:['inc_atk'],countdown:1,notice:'Attack Up for 2 moves; next attack in 1 move. Dispel the buff or protect your team.',waiting:'On move 3 the center empowers its next attacks. Defeat it early, save Dispel or prepare protection.'};
+export const PROTECTOR={id:'weekly-protector',name:'Sworn Protector',trigger:'none',turns:0,effects:[],waiting:'The left escort has Taunt and Defense Up for 4 moves. Dispel or defeat it; rune columns and area attacks bypass Taunt.'};
+export const REINFORCEMENTS={id:'weekly-reinforcements',name:'Call of the Fallen',trigger:'reinforcements',turns:0,effects:[],notice:'One fallen escort returns at 65% HP. The call cannot repeat.',waiting:'From move 3 the living center replaces one defeated escort once. Defeat the summoner first to stop the call.'};
+export const SCENARIOS=Object.fromEntries([OVERPRESSURE,LAST_LIGHT,STORM_WARNING,PROTECTOR,REINFORCEMENTS].map(s=>[s.id,s]));
 export function scenarioStatus(state){
  const rule=SCENARIOS[state.scenario?.id];if(!rule)return null;
  const boss=state.enemies[1];
+ if(rule.id==='weekly-protector'){const escort=state.enemies[0];return {name:rule.name,phase:escort.hp<=0||!escort.effects.guard?'ended':'waiting',text:escort.hp<=0?'The protector has fallen.':!escort.effects.guard?'Taunt has ended. The captain is exposed.':`The left escort redirects single-target Specials for ${escort.effects.guard.turns} more moves. Dispel, defeat it, or use runes and area attacks.`};}
  if(boss.hp<=0)return {name:rule.name,phase:'ended',text:'The guardian has fallen.'};
  return state.scenario.triggered?{name:rule.name,phase:'triggered',text:rule.name+' triggered. It cannot trigger again. Inspect the boss’s badges for remaining buffs.'}:{name:rule.name,phase:'waiting',text:rule.waiting};
 }
