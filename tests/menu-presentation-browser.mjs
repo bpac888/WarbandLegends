@@ -78,7 +78,7 @@ try{
  await page.emulateMedia({reducedMotion:'no-preference'});await go('home');assert.equal(await page.locator('.aether-tracery').evaluate(e=>getComputedStyle(e).animationName),'aether-orbit');
  await page.setViewportSize({width:1440,height:1000});await go('shop');await page.locator('[data-action="shop-tab"][data-tab="premium"]').click();await page.screenshot({path:root+'artifacts/citadel-premium-desktop.png'});
  await go('home');await page.evaluate(k=>{const p=JSON.parse(localStorage.getItem(k));p.helpSeen=false;localStorage.setItem(k,JSON.stringify(p));},PROFILE_KEY);
- await go('campaign');await page.locator('.campaign-node[data-stage="ashen-gate"]').click();await page.locator('#modal [data-action="start"]').click();await page.locator('.board').waitFor();
+ await go('campaign');await page.locator('.campaign-node[data-stage="ashen-gate"]').click();await page.locator('#modal [data-action="start"]').click();if(await page.locator('#modal[data-view=chapter-story][open]').count())await page.getByRole('button',{name:'Skip',exact:true}).click();await page.locator('.board').waitFor();
  assert.equal(await page.locator('#modal[open]').count(),0,'new battles must not open a guide');
  assert.equal(await page.locator('.battle-dock button').count(),3);
  assert.equal(await page.locator('.battle-dock [data-action="help"],.battle-dock [data-action="effects-guide"]').count(),0);

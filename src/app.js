@@ -1,6 +1,6 @@
-import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,CHARACTER_CLIPS,motionAllowed} from './cinematics.js';
+import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js';
 import {scenarioStatus} from './chapter.js';
-import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML} from './campaign-journal.js';
+import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML} from './campaign-journal.js';
 import {weeklyPage} from './weekly-ui.js';
 import {claimWeekly,weeklyWindow} from './weekly.js';
 import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js';
@@ -151,12 +151,12 @@ function startCombatPractice(){stopAuto();const lesson=createCombatPractice(batt
 function start(stageId){
   syncEnergy();
   const error=entryError(profile,stageId);if(error){toast(error);return;}
-  const stage=getEncounter(stageId);if(isChapterBoss(stage)&&!(profile.storySeen||[]).includes(chapterKey(stage))){openModal(stage.chapter||'Before the guardian',storyHTML(chapterId(stage),{stageId}), 'chapter-story');return;}
+  const stage=getEncounter(stageId);if(stage?.mode==='campaign'&&stage.number===1&&!(profile.storySeen||[]).includes(stage.difficulty+':opening')){openModal('Your adventure begins',openingStoryHTML(stageId),'chapter-story');return;}if(isChapterBoss(stage)&&!(profile.storySeen||[]).includes(chapterKey(stage))){openModal(stage.chapter||'Before the guardian',storyHTML(chapterId(stage),{stageId}), 'chapter-story');return;}
   const begin=()=>{const seed=crypto.getRandomValues(new Uint32Array(1))[0];battle=createBattle(battleRoster(profile,roster),profile.team,stageId,seed,{progression:true,sandbox:profile.openRoster,awakenings:profile.awakenings,ascensions:profile.ascensions,levels:Object.fromEntries(profile.team.map(id=>[id,heroDevelopment(profile,byId.get(id)).level]))});const reserved=reserveEntry(profile,battle);if(reserved.error){profile=reserved.profile;persist(PROFILE_KEY,profile);closeModal();toast(reserved.error);battle=null;return;}stopAuto();profile=reserved.profile;battle=reserved.battle;battleSpeed=1;persist(PROFILE_KEY,profile);selectedEnemy=battle.enemies[1].uid;go('battle');};
 
   begin();
 }
-function openModal(title,body,view='info'){pauseAuto();modal.dataset.view=view;modalContent.innerHTML=`<header class="modal-header"><div>${['roster','page-guide','event-stage'].includes(view)?'':'<span class="eyebrow">WARBAND LEGENDS</span>'}<h2 id="modal-title">${title}</h2></div>${view==='result'?'':'<button class="icon-button" data-action="close" aria-label="Close dialog">×</button>'}</header><div class="modal-body">${body}</div>`;if(!modal.open)modal.showModal();if(view==='chapter-story')mountDetailMotion(modalContent,profile,reducedAnimation());if(view==='roster'){const title=modalContent.querySelector('#modal-title');title.tabIndex=-1;title.focus({preventScroll:true});}if(view==='result'){modal.scrollTop=0;modalContent.querySelector('[data-action="home"]')?.focus({preventScroll:true});}if(view==='ritual')modalContent.querySelector('[data-action="skip-ritual"]')?.focus({preventScroll:true});}
+function openModal(title,body,view='info'){pauseAuto();modal.dataset.view=view;modalContent.innerHTML=`<header class="modal-header"><div>${['roster','page-guide','event-stage','chapter-story','chapter-journal','team-name'].includes(view)?'':'<span class="eyebrow">WARBAND LEGENDS</span>'}<h2 id="modal-title">${title}</h2></div>${view==='result'?'':'<button class="icon-button" data-action="close" aria-label="Close dialog">×</button>'}</header><div class="modal-body">${body}</div>`;if(!modal.open)modal.showModal();if(view==='chapter-story')mountDetailMotion(modalContent,profile,reducedAnimation());if(view==='roster'){const title=modalContent.querySelector('#modal-title');title.tabIndex=-1;title.focus({preventScroll:true});}if(view==='result'){modal.scrollTop=0;modalContent.querySelector('[data-action="home"]')?.focus({preventScroll:true});}if(view==='ritual')modalContent.querySelector('[data-action="skip-ritual"]')?.focus({preventScroll:true});}
 function settleVictory(){if(['victory','defeat'].includes(battle?.phase)&&(['arena','event'].includes(getEncounter(battle.stageId)?.mode)||battle.phase==='victory')&&!battle.sandbox&&!profile.recorded.includes(battle.id)){
  const rewardAt=Date.now(),reward=victoryRewards(profile,battle,rewardAt),before=profile;profile=recordVictory(profile,battle,roster,rewardAt);
  battle.rewardSummary={...reward,growth:reward.xp?battle.heroes.filter(h=>before.collection[h.id]).map(h=>{const c=byId.get(h.id),old=heroDevelopment(before,c),next=heroDevelopment(profile,c);return {id:h.id,name:h.name,portrait:h.portrait,before:tierLevel(before,c,old.level).level,after:tierLevel(profile,c,next.level).level,gained:(profile.heroXp[h.id]||0)-(before.heroXp[h.id]||0),cap:tierLevel(profile,c,next.cap).level,ratio:next.ratio};}):[]};
@@ -194,6 +194,7 @@ document.addEventListener('click',event=>{
   const button=event.target.closest('[data-action]');if(!button||button.disabled)return;const {action,id,uid,stage,color,index}=button.dataset;
   if(button.tagName==='A')event.preventDefault();
   if(['tile','hero','enemy','choose-charge'].includes(action)&&autoEnabled){stopAuto();if(screen==='battle'&&!busy)renderBattle();}
+  if(action==='play-intro'){playIntro(profile,reducedAnimation());return;}
   if(action==='practice-reward'){questState='ready';go('quests');return;}
   if(action==='auto-battle'){if(combatPractice)return;if(!battle||battle.phase!=='playing')return;if(autoEnabled)stopAuto();else{manualBattleSpeed=battleSpeed;autoEnabled=true;battleSpeed=2;pendingCaster=null;selectedRune=null;}if(!busy)renderBattle();else{button.textContent=autoEnabled?'Auto On':'Auto Off';button.setAttribute('aria-pressed',String(autoEnabled));button.classList.toggle('active',autoEnabled);}return;}
   if(action==='encounter-tactics'){const state=displayedBattle||battle,stage=getEncounter(state.stageId);openModal(esc(stage.name),encounterTactics(stage,state)||`<p>${esc(stage.description)}</p><p>Defeat the enemy warband. Read attack countdowns, elements and lanes.</p>`,'tactics');return;}
@@ -268,8 +269,9 @@ document.addEventListener('click',event=>{
   if(action==='save-team'){const r=saveTeam(profile,editingTeamSlot,draftTeam,roster);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();collectionFilters.tab='teams';go('roster');toast('Team '+(editingTeamSlot+1)+' saved.');return;}
 
   if(action==='chapter-journal'){openModal('Chapter Journal',journalHTML(profile),'chapter-journal');return;}
+  if(action==='opening-replay'){openModal('Your adventure begins',openingStoryHTML('',{replay:true}),'chapter-story');return;}
   if(action==='story-replay'){openModal('Chapter story',storyHTML(Number(button.dataset.chapter),{replay:true}),'chapter-story');return;}
-  if(action==='story-start'){const e=getEncounter(stage);if(!isChapterBoss(e))return;profile={...profile,storySeen:[...new Set([...(profile.storySeen||[]),chapterKey(e)])]};persist(PROFILE_KEY,profile);start(stage);return;}
+  if(action==='story-start'){const e=getEncounter(stage);if(!isChapterBoss(e)&&!(e?.mode==='campaign'&&e.number===1))return;profile={...profile,storySeen:[...new Set([...(profile.storySeen||[]),e.number===1?e.difficulty+':opening':chapterKey(e)])]};persist(PROFILE_KEY,profile);start(stage);return;}
   if(action==='chapter-claim'){const r=claimChapter(profile,button.dataset.key);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);if(battle?.phase==='victory')showResult();else openModal('Chapter Journal',journalHTML(profile),'chapter-journal');toast('Chapter gift saved.');return;}
   if(action==='weekly-team'){collectionFilters.tab='teams';go('roster');return;}
   if(action==='weekly-claim'){const r=claimWeekly(profile,button.dataset.key);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);go('weekly');toast('Weekly gift saved.');return;}
@@ -323,7 +325,7 @@ function renderRoute(){
   if(page!=='battle'&&battle)abandonBattle();
   pauseAuto();animationToken++;busy=false;pendingCaster=null;selectedRune=null;closeModal();clearBattleEffects();
   if(page!=='summon'){summonToken++;summoning=false;portalReveal=null;}
-  if(page==='splash'){screen='splash';app.innerHTML=Shell.splash();introOnce(profile,reducedAnimation());}
+  if(page==='splash'){screen='splash';app.innerHTML=Shell.splash({cinematics:motionAllowed(profile,reducedAnimation())});introOnce(profile,reducedAnimation());}
   else if(page==='home')renderHome();
   else if(page==='battle'){if(!battle){go('campaign');return;}screen='battle';renderBattle();if(battle.phase!=='playing')showResult();}
   else if(page==='weekly')renderWeeklyPage();

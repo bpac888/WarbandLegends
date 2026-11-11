@@ -1,0 +1,32 @@
+import {createRequire} from 'node:module';import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';
+import {defaultProfile} from '../src/progression.js';import {PROFILE_KEY} from '../src/storage.js';import {ASCENSION_CAPS} from '../src/ascension.js';
+const root=new URL('../',import.meta.url).pathname,{chromium}=createRequire(import.meta.url)('playwright'),roster=JSON.parse(await fs.readFile(root+'data/champions.json'));
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
+try{
+ const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'}),errors=[],videos=[];
+ await fs.mkdir(root+'artifacts',{recursive:true});
+ await context.route('**/*',async r=>{const u=new URL(r.request().url());if(u.pathname.endsWith('.mp4'))videos.push(u.pathname);try{const f=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await r.fulfill({body:await fs.readFile(f),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml','.png':'image/png','.mp4':'video/mp4','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(f)]});}catch{errors.push('Missing '+u.pathname);await r.abort();}});
+
+ const p={...defaultProfile(),onboardingDismissed:true,helpSeen:true,campaignProgress:{normal:15,hard:0,nightmare:0}};
+ await context.addInitScript(({p,key})=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(p));},{p,key:PROFILE_KEY});
+ const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));const failures=[];
+ const go=async route=>{await page.goto('http://upgrade.local/#/'+route);await page.locator('.game-page,.splash-screen').first().waitFor();};
+ async function check(selector,label){const rows=await page.locator(selector).evaluateAll(nodes=>{
+ const rgb=s=>{const a=s.match(/[\d.]+/g)?.map(Number);return a&&a.length>=3?[a[0],a[1],a[2],a[3]??1]:null;};
+ const lum=c=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((n,v,i)=>n+v*[.2126,.7152,.0722][i],0);
+ function backs(e){if(!e)return [[255,255,255]];const s=getComputedStyle(e),solid=rgb(s.backgroundColor);if(solid?.[3]===1)return [solid];const colors=[...s.backgroundImage.matchAll(/rgba?\([^)]+\)/g)].map(m=>rgb(m[0])).filter(c=>c&&c[3]===1);if(colors.length)return colors;return backs(e.parentElement);}
+ return nodes.filter(e=>e.getBoundingClientRect().width&&e.textContent.trim()).map(e=>{const s=getComputedStyle(e),fg=rgb(s.color),backgrounds=backs(e),ratio=Math.min(...backgrounds.map(bg=>(Math.max(lum(fg),lum(bg))+.05)/(Math.min(lum(fg),lum(bg))+.05)));return {text:e.textContent.trim().slice(0,65),selector:e.tagName+'.'+e.className,color:s.color,backgrounds,ratio:Math.round(ratio*100)/100,minimum:e.matches(':disabled')?3:parseFloat(s.fontSize)>=24||parseFloat(s.fontSize)>=18.66&&Number(s.fontWeight)>=700?3:4.5};});});for(const r of rows)if(r.ratio<r.minimum)failures.push({label,...r});}
+ for(const width of [390,1440]){
+  await page.setViewportSize({width,height:900});await go('roster');await page.locator('[data-tab="teams"]').click();await check('.team-slot .team-power,.team-slot h3,.team-slot .button,.team-slot .active-team-mark','teams '+width);
+  await page.locator('[data-action="team-rename"]').first().click();await check('#modal h2,#modal label,#modal .button','rename '+width);await page.locator('#modal [data-action="close"]').first().click();
+  await go('champion/'+p.team[0]);await check('.hero-preferences .button','hero controls '+width);await page.locator('[data-preference="favorites"]').click();await check('.hero-preferences .button','selected favorite '+width);
+  await go('campaign');await check('.campaign-journal-link','campaign Journal '+width);
+  await go('weekly');await check('.weekly-header h1,.weekly-header p,.weekly-header small,.weekly-card h2,.weekly-card p,.weekly-card .eyebrow,.weekly-card .button','weekly '+width);await page.screenshot({path:root+'artifacts/contrast-weekly-'+width+'.png',fullPage:true});
+  await page.locator('[data-action="preview-encounter"]').last().click();await check('.battle-team-preview strong,.battle-team-preview>span,.battle-team-preview summary,.battle-team-preview summary>span,#modal .encounter-preview h3,#modal .encounter-preview p,#modal .modal-actions .button','battle preview '+width);await page.locator('#modal [data-action="close"]').first().click();
+  await go('world');await page.locator('[data-action="chapter-journal"]').click();await check('#modal h2,.journal-chapter h3,.journal-chapter p,.journal-actions>span,.journal-actions .button','journal '+width);await page.screenshot({path:root+'artifacts/contrast-journal-'+width+'.png'});await page.locator('[data-action="story-replay"]').first().click();await check('#modal h2,.chapter-story h3,.chapter-story p,.chapter-story strong,.chapter-story span,.chapter-story .button','story '+width);await page.screenshot({path:root+'artifacts/contrast-story-'+width+'.png'});await page.locator('#modal [data-action="close"]').first().click();
+  await page.evaluate(async p=>{const {chapterGiftHTML}=await import('./src/campaign-journal.js'),{getEncounter}=await import('./src/encounters.js');const modal=document.querySelector('#modal');modal.dataset.view='result';modal.querySelector('.modal-body').innerHTML=chapterGiftHTML(p,getEncounter('campaign-normal-05'));modal.showModal();},p);await check('.chapter-complete h3,.chapter-complete p,.chapter-complete .button','chapter gift '+width);await page.screenshot({path:root+'artifacts/contrast-chapter-gift-'+width+'.png'});await page.evaluate(()=>document.querySelector('#modal').close());
+  await go('quests');await page.locator('[data-action="quest-status"][data-state="ready"]').click();await check('.empty-state h3,.empty-state p','empty quests '+width);
+  await page.getByRole('button',{name:'Guide',exact:true}).click();await page.locator('[data-topic="tools"]').click();await check('.guide-playtesting b,.guide-playtesting small','cinematic settings '+width);await page.locator('#modal [data-action="close"]').first().click();
+ }
+ console.log(JSON.stringify({failures,errors},null,2));assert.deepEqual(failures,[]);assert.deepEqual(errors,[]);console.log('PASS: new feature text meets 4.5:1 normal/3:1 large or disabled contrast at phone and desktop sizes.');
+}finally{await browser.close();}

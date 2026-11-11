@@ -37,3 +37,15 @@ body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],
 body.menu-theme #modal:is([data-view=chapter-journal],[data-view=chapter-story],[data-view=team-name]) .modal-header .icon-button{background:#eadcbe;color:#72272b;border:1px solid #ae9672;box-shadow:none}
 .chapter-story>h3{font-family:'Collection Serif',Georgia,serif;font-size:23px;margin:12px 0}
 .chapter-story>p{margin:8px 0}.story-feature{position:relative;height:230px;background:#1b2328;border-radius:10px;overflow:hidden}.story-feature>img{width:100%;height:100%;object-fit:contain}.story-feature .detail-motion{object-fit:contain}
+.splash-play-intro{align-self:center;border:1px solid #e1d5c755;border-radius:8px;padding:9px 15px;min-height:40px;background:#14242bd9;color:#f4e6c9;font:600 13px var(--font-sub);cursor:pointer;margin:8px 0 4px}
+.splash-play-intro:hover{background:#29414ae8;border-color:#e8d6b88c}.splash-play-intro:disabled{opacity:.55;cursor:default}.splash-play-intro:focus-visible{outline:2px solid #f3dcc0;outline-offset:3px}
+/* New feature copy must override the older pale menu text on paper surfaces. */
+body.menu-theme .page-roster p.team-power,body.menu-theme #modal[data-view=roster] .team-power{color:#414650}
+body.menu-theme #modal .chapter-complete :is(h3,p,strong,small){color:#30343c;text-shadow:none}
+body.menu-theme #modal .chapter-complete .button.gold{background:#9e2a2b;color:#fff6e9;border-color:#842023;text-shadow:none}
+body.menu-theme #modal .chapter-complete .button:disabled{background:#c8bfb5;color:#57525a;border-color:#aaa095;opacity:1;box-shadow:none}
+.campaign-controls{display:flex;align-items:stretch;gap:8px;flex-shrink:0;min-width:0}
+body.menu-theme .page-campaign .campaign-controls .realm-tabs{flex:1;min-width:0}
+body.menu-theme .page-campaign .campaign-journal-link{min-height:44px;padding:8px 12px;font-size:12px;background:#e3d2b2;color:#65272c;border-color:#b49b76;text-shadow:none}
+@media(max-width:650px){body.menu-theme .page-campaign .campaign-controls .realm-tabs>button{flex-direction:column;gap:2px;padding:5px 3px}body.menu-theme .page-campaign .campaign-journal-link{padding:8px}}
+@media(max-width:650px){body.menu-theme .page-campaign .campaign-controls .realm-tabs>button>span{font-size:12px;letter-spacing:0}}
