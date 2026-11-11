@@ -1,8 +1,8 @@
-import {PREMIUM_INVENTORY_ITEMS,premiumItem,premiumItemArt,premiumItemCount,boosterActive} from './premium-items.js';
-import {tomeArt} from './tomes.js';
-import {experienceTomeQuote} from './experience-tomes.js';
-import {ownedHeroes} from './hero-copies.js';
-import {ascensionQuote,awakeningQuote} from './development.js';
+import {PREMIUM_INVENTORY_ITEMS,premiumItem,premiumItemArt,premiumItemCount,boosterActive} from './premium-items.js?v=0.40.2';
+import {tomeArt} from './tomes.js?v=0.40.2';
+import {experienceTomeQuote} from './experience-tomes.js?v=0.40.2';
+import {ownedHeroes} from './hero-copies.js?v=0.40.2';
+import {ascensionQuote,awakeningQuote} from './development.js?v=0.40.2';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const itemArt=item=>item.maxLevels?tomeArt(item):`<img src="${premiumItemArt(item.id)}" alt="">`;
 const until=(profile,item)=>new Date(profile.boosters[item.kind]).toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'});

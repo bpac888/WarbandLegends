@@ -1,7 +1,7 @@
-import {ascensionPanel} from './ascension-ui.js';
-import {trainingQuote,developedChampion,heroDevelopment} from './development.js';
-import {ASCENSION_CAPS,ascensionTier,awakeningRank,tierLevel} from './ascension.js';
-import {glyph} from './card-ui.js';
+import {ascensionPanel} from './ascension-ui.js?v=0.40.2';
+import {trainingQuote,developedChampion,heroDevelopment} from './development.js?v=0.40.2';
+import {ASCENSION_CAPS,ascensionTier,awakeningRank,tierLevel} from './ascension.js?v=0.40.2';
+import {glyph} from './card-ui.js?v=0.40.2';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function levelMark(champion,profile,{preview=false,showTier=true}={}){const owned=!!profile.collection[champion.id]&&!preview,d=heroDevelopment(profile,champion),stage=tierLevel(profile,champion,d.level);return `<span class="hero-level-mark" title="${owned?'Ascension tier and level':'Maximum-level codex preview'}">${owned?`${showTier?`T${stage.tier} · `:''}Lv. ${stage.level}`:'MAX'}</span>`;}
 export function rankTrack(champion,profile,{preview=false}={}){

@@ -1,12 +1,12 @@
-import {weeklyWindow,weeklyTeamError} from './weekly.js';
-import {boostedGold} from './premium-items.js';
-import {LOOT_TICKET_LIMIT} from './loot-ticket-item.js';
-import {heroForId,uniqueHeroCount} from './hero-copies.js';
-import {addAccountXp,accountBattleXp,bumpPath,spendEnergy,energyCost,refreshEnergy,energyStatus} from './keeper.js';
-import {GEM_LIMIT} from './economy.js';
-import {SPECIAL_EVENTS,eventWindow,eventAttemptsLeft,EVENT_ATTEMPTS} from './modes.js';
-import {getEncounter} from './encounters.js';
-import {addHeroXp} from './development.js';
+import {weeklyWindow,weeklyTeamError} from './weekly.js?v=0.40.2';
+import {boostedGold} from './premium-items.js?v=0.40.2';
+import {LOOT_TICKET_LIMIT} from './loot-ticket-item.js?v=0.40.2';
+import {heroForId,uniqueHeroCount} from './hero-copies.js?v=0.40.2';
+import {addAccountXp,accountBattleXp,bumpPath,spendEnergy,energyCost,refreshEnergy,energyStatus} from './keeper.js?v=0.40.2';
+import {GEM_LIMIT} from './economy.js?v=0.40.2';
+import {SPECIAL_EVENTS,eventWindow,eventAttemptsLeft,EVENT_ATTEMPTS} from './modes.js?v=0.40.2';
+import {getEncounter} from './encounters.js?v=0.40.2';
+import {addHeroXp} from './development.js?v=0.40.2';
 const cap=n=>Math.min(999999999,Math.max(0,n));
 const safe=(n,f=0,max=999999999)=>Number.isSafeInteger(n)&&n>=0&&n<=max?n:f;
 export function defaultModes(){return {lootTickets:0,lootTicketUses:0,arenaRating:1000,arenaTokens:0,arenaWins:0,arenaLosses:0,eventWins:0,eventAttempts:{},eventTokens:Object.fromEntries(SPECIAL_EVENTS.map(e=>[e.token,0])),eventEntry:null};}

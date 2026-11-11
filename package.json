@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.40.1",
+  "version": "0.40.2",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's draft1 roster.",
@@ -75,7 +75,11 @@
     "test:jade-special": "node tests/jade-cinematic-browser.mjs",
     "test:contrast": "node tests/upgrade-contrast-browser.mjs",
     "test:splash-intro": "node tests/splash-intro-browser.mjs",
-    "test:campaign-opening": "node tests/campaign-opening-browser.mjs"
+    "test:campaign-opening": "node tests/campaign-opening-browser.mjs",
+    "pretest": "node tools/stamp-release.mjs",
+    "prebuild": "node tools/stamp-release.mjs",
+    "release:stamp": "node tools/stamp-release.mjs",
+    "test:release-cache": "node tests/release-cache-browser.mjs"
   },
   "engines": {
     "node": ">=22"

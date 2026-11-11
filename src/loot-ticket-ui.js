@@ -1,6 +1,6 @@
-import {LOOT_TICKET_ART} from './loot-ticket-item.js';
-import {energyCost,energyStatus} from './keeper.js';
-import {materialArt,materialById} from './ascension.js';
+import {LOOT_TICKET_ART} from './loot-ticket-item.js?v=0.40.2';
+import {energyCost,energyStatus} from './keeper.js?v=0.40.2';
+import {materialArt,materialById} from './ascension.js?v=0.40.2';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function lootTicketEntry(profile,stage){
  if(stage.mode!=='campaign'||profile.openRoster||!profile.cleared.includes(stage.id))return '';

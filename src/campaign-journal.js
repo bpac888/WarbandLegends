@@ -1,5 +1,5 @@
-import {detailMotionHTML} from './cinematics.js';
-import {CHAPTERS} from './chapter.js';
+import {detailMotionHTML} from './cinematics.js?v=0.40.2';
+import {CHAPTERS} from './chapter.js?v=0.40.2';
 export const CHAPTER_GIFT={gold:150,gems:25};
 export function normalizeJournal(p){const clean=(v,re)=>[...new Set((Array.isArray(v)?v:[]).filter(x=>typeof x==='string'&&re.test(x)))];return {storySeen:clean(p.storySeen,/^(normal|hard|nightmare):([123]|opening)$/),chapterClaims:clean(p.chapterClaims,/^(normal|hard|nightmare):[123]$/)};}
 export function chapterId(stage){return stage?.mode==='campaign'?CHAPTERS.findIndex(ch=>ch.stages.some(s=>s.number===stage.number))+1:0;}

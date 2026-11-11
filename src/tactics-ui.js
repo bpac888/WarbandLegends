@@ -1,7 +1,7 @@
-import {chargeComparison} from './special-plan.js';
-import {HERO_INSIGHTS} from './hero-insights.js';
-import {scenarioStatus,SCENARIOS} from './chapter.js';
-import {glyph} from './card-ui.js';
+import {chargeComparison} from './special-plan.js?v=0.40.2';
+import {HERO_INSIGHTS} from './hero-insights.js?v=0.40.2';
+import {scenarioStatus,SCENARIOS} from './chapter.js?v=0.40.2';
+import {glyph} from './card-ui.js?v=0.40.2';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function heroInsight(unit){const insight=HERO_INSIGHTS[unit.baseId||unit.id.split('~')[0]];return insight?`<details class="hero-tactics"><summary>${glyph(unit.role==='defense'?'defense':unit.role==='support'?'health':'attack')} ${esc(insight.role)} · Special Tips</summary><p>${esc(insight.decision)}</p><p class="tactics-counter"><b>Limits</b>${esc(insight.counter)}</p></details>`:'';}
 export function encounterTactics(stage,state=null){
