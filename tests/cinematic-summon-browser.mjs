@@ -20,6 +20,6 @@ try{
   await page.waitForFunction(()=>document.querySelector('.cinematic-overlay video')?.readyState>=2);await page.locator('.cinematic-skip').click();await page.waitForFunction(()=>window.cinematicDone);
  }
  // A missing clip resolves to the still-image game immediately instead of trapping input.
- await context.route('**/jade-dragon.mp4',r=>r.abort());await page.evaluate(()=>{window.cinematicDone=false;import('./src/cinematics.js').then(m=>m.playCinematic('jade-dragon',{profile:{},duration:1000})).then(()=>window.cinematicDone=true);});await page.waitForFunction(()=>window.cinematicDone,{timeout:6000});assert.equal(await page.locator('.cinematic-overlay').count(),0);
+ await context.route('**/jade-dragon.mp4*',r=>r.abort());await page.evaluate(()=>{window.cinematicDone=false;import('./src/cinematics.js').then(m=>m.playCinematic('jade-dragon',{profile:{},duration:1000})).then(()=>window.cinematicDone=true);});await page.waitForFunction(()=>window.cinematicDone,{timeout:6000});assert.equal(await page.locator('.cinematic-overlay').count(),0);
  assert.deepEqual(errors,[]);console.log('PASS: real seeded Legendary summon with video reveal, Skip Ritual bypass, once-only charges/awards, four playable clips and missing-video fallback.');
 }finally{await browser.close();}

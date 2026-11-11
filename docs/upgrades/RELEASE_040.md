@@ -1,5 +1,7 @@
 # Gameplay and trailer release 0.40.0
 
+Later fixes: [0.40.1](PATCH_0401.md), [0.40.2](PATCH_0402.md), and [0.40.3](PATCH_0403.md). The latest patch restores the original trailer ending and adds conversational dialogue bubbles.
+
 ## What is implemented
 
 ### Approved roster balance

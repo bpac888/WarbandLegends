@@ -1,5 +1,5 @@
-import {GOLD_ART,PROFILE_XP_ART} from './currency-art.js?v=0.40.2';
-import {GEM_ART,GEM_OFFERS} from './economy.js?v=0.40.2';import {materialArt,materialById} from './ascension.js?v=0.40.2';import {glyph} from './card-ui.js?v=0.40.2';
+import {GOLD_ART,PROFILE_XP_ART} from './currency-art.js?v=0.40.3';
+import {GEM_ART,GEM_OFFERS} from './economy.js?v=0.40.3';import {materialArt,materialById} from './ascension.js?v=0.40.3';import {glyph} from './card-ui.js?v=0.40.3';
 const offerArt=o=>o.items?materialArt(o.id):GOLD_ART;
 export const gemMark=n=>`<span class="gem-amount"><img src="${GEM_ART}" alt="">${n.toLocaleString()} <small>Gems</small></span>`;
 export function gemShop(profile){return `<section class="gem-shop materials-section"><div class="section-heading"><div><h2>Gold Bundles</h2></div></div><div class="gem-offers">${GEM_OFFERS.filter(o=>o.gold).map(o=>`<article class="gem-offer"><img src="${offerArt(o)}" alt=""><h3>${o.name}</h3><p>${o.description}</p><button class="button ${profile.gems<o.cost?'outline':'gold'}" data-action="gem-preview" data-id="${o.id}" ${profile.gems<o.cost?'disabled':''}>${gemMark(o.cost)}</button></article>`).join('')}</div></section>`;}

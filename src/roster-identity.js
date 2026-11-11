@@ -1,4 +1,4 @@
-import {beforeRarityRevision} from './rarity-revision.js?v=0.40.2';
+import {beforeRarityRevision} from './rarity-revision.js?v=0.40.3';
 // Fingerprint historical records while permitting only the audited name/lore edits.
 // This does not run migrations or change saved hero IDs.
 export function historicalRecords(records,audit,{source=false}={}){

@@ -29,7 +29,6 @@ body.menu-theme #modal[data-view=team-name] input{width:100%;background:#eadfc9!
 .battle-mechanic-notice{font-size:12px;line-height:1.4;padding:8px 10px;background:#312734;color:#f0dfbb;border:1px solid #ba805f;border-radius:8px;margin:6px 0}.battle-mechanic-notice>b{color:#ffd998}
 .champion-showcase{position:relative}.detail-motion{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;pointer-events:none;transition:opacity .25s;z-index:1}.detail-motion.playing{opacity:1}
 .cinematic-overlay{position:fixed;inset:0;z-index:100000;background:#09111a;display:grid;place-items:center;isolation:isolate}.cinematic-overlay>video{height:100%;max-width:100%;object-fit:contain}.cinematic-skip{position:absolute;bottom:max(24px,env(safe-area-inset-bottom));right:24px;background:#eadcc2;color:#72272b;border-color:#baa17c;min-height:44px}
-.cinematic-brand{position:absolute;inset:23% 0 24%;background:linear-gradient(0deg,transparent,#111923 15%,#111923 85%,transparent);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:20px}.cinematic-brand img:first-child{width:min(45vw,230px);height:auto}.cinematic-brand img:last-child{width:min(76vw,440px);height:auto}
 @media(max-width:650px){.weekly-grid{grid-template-columns:minmax(0,1fr)}.weekly-card>img{height:160px}.team-slot-actions .button{font-size:11px;padding-inline:8px}.hero-preferences .button{flex:1}.battle-mechanic-notice{font-size:11px}.weekly-actions .button{flex:1}}
 @media(prefers-reduced-motion:reduce){.detail-motion{display:none;transition:none}}
 body.menu-theme .game-page.page-weekly :is(h1,h2){color:#252831;text-shadow:none}
@@ -49,3 +48,13 @@ body.menu-theme .page-campaign .campaign-controls .realm-tabs{flex:1;min-width:0
 body.menu-theme .page-campaign .campaign-journal-link{min-height:44px;padding:8px 12px;font-size:12px;background:#e3d2b2;color:#65272c;border-color:#b49b76;text-shadow:none}
 @media(max-width:650px){body.menu-theme .page-campaign .campaign-controls .realm-tabs>button{flex-direction:column;gap:2px;padding:5px 3px}body.menu-theme .page-campaign .campaign-journal-link{padding:8px}}
 @media(max-width:650px){body.menu-theme .page-campaign .campaign-controls .realm-tabs>button>span{font-size:12px;letter-spacing:0}}
+/* Expanded pre-battle faction descriptions sit on parchment, not a dark modal. */
+body.menu-theme #modal .battle-team-preview .faction-team-bonuses article{background:#eadcc1;border-radius:7px;padding:9px;color:#30343c}
+body.menu-theme #modal .battle-team-preview .faction-team-bonuses article :is(p,b,strong,small,span){color:#30343c;text-shadow:none}
+.story-dialogue{display:flex;flex-direction:column;gap:16px;margin:18px 0}
+.dialogue-turn{display:flex;flex-direction:column;align-items:flex-start;width:86%;max-width:540px;gap:5px;align-self:flex-start}
+.dialogue-turn.dialogue-right{align-self:flex-end;align-items:flex-end}
+body.menu-theme #modal .dialogue-speaker{font-size:12px;font-weight:750;color:#343740;letter-spacing:.025em;padding:0 6px}
+body.menu-theme #modal .chapter-story .dialogue-bubble{position:relative;margin:0;padding:12px 14px;background:#e5d5b8;border:1px solid #b29a76;border-radius:12px 12px 12px 3px;color:#30343c;font-size:14px;line-height:1.55;box-shadow:0 2px 5px #3b30400b}
+body.menu-theme #modal .chapter-story .dialogue-right .dialogue-bubble{background:#d5dbe2;border-color:#9ba7b4;border-radius:12px 12px 3px 12px}
+@media(max-width:400px){.dialogue-turn{width:90%}body.menu-theme #modal .chapter-story .dialogue-bubble{padding:11px 12px}}
