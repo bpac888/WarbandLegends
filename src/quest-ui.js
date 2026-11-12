@@ -1,9 +1,9 @@
-import {nextFirstStep} from './first-steps.js?v=0.44.1';
-import {tutorialQuestAvailable} from './tutorial.js?v=0.44.1';
-import {GEM_INTERVAL} from './economy.js?v=0.44.1';
-import {GEM_ART} from './currency-art.js?v=0.44.1';
-import {QUESTS,questProgress} from './quests.js?v=0.44.1';
-import {questRewardMarks} from './gem-ui.js?v=0.44.1';
+import {nextFirstStep} from './first-steps.js?v=0.45.0';
+import {tutorialQuestAvailable} from './tutorial.js?v=0.45.0';
+import {GEM_INTERVAL} from './economy.js?v=0.45.0';
+import {GEM_ART} from './currency-art.js?v=0.45.0';
+import {QUESTS,questProgress} from './quests.js?v=0.45.0';
+import {questRewardMarks} from './gem-ui.js?v=0.45.0';
 export const QUEST_ART='./assets/quests/categories.webp';
 export function questArtIndex(quest){return quest.metric==='summons'?5:quest.metric==='ascensions'?7:quest.metric==='awakenings'?8:({campaign:0,dungeons:1,arena:2,events:3,collection:4,growth:6}[quest.category]??6);}
 const art=index=>`<span class="quest-thumbnail" aria-hidden="true"><img src="${QUEST_ART}" alt="" width="1254" height="1254" style="--quest-x:${index%3};--quest-y:${Math.floor(index/3)}"></span>`;

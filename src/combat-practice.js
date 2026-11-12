@@ -1,4 +1,4 @@
-import {createBattle,COLORS} from './engine.js?v=0.44.1';
+import {createBattle,COLORS} from './engine.js?v=0.45.0';
 export const PRACTICE_PHASES=['match3','special','match4','activate4','match5','activate5'];
 export function practiceBoard(state,size){const next=structuredClone(state);next.rng=1;next.board=Array.from({length:35},(_,i)=>({id:next.nextTile++,color:COLORS[(i%7+Math.floor(i/7)*2)%5],special:null}));if(size){for(let c=0;c<7;c++)next.board[c].color=c<size?'green':c===5?'yellow':'purple';next.board[2].color='red';next.board[9].color='green';next.board[16].color='blue';}return next;}
 export function createCombatPractice(roster,team,seed=1701){let state=createBattle(roster,team,'ashen-gate',seed,{progression:true,sandbox:true});for(const e of state.enemies){e.hp=e.maxHp=100000000;e.countdown=e.baseCountdown=1000000;e.atk=0;e.passive=null;}const actor=state.heroes.find(h=>h.role==='attack')||state.heroes[0];for(const h of state.heroes)h.mana=0;state=practiceBoard(state,3);return {state,actor:actor.uid};}

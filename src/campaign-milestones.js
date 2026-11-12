@@ -7,4 +7,5 @@ export function campaignMilestone(difficulty,number){
  const focus=place==='obsidian'?(difficulty==='hard'?60:72):place==='crown'?70:place==='moonward'&&difficulty==='normal'?35:50;
  return {focus,art:`assets/scenes/milestones/${difficulty}-${place}.webp`,alt:`The ${places[place]} in the ${states[difficulty]}`};
 }
-export function milestoneIllustration(difficulty,number){const m=campaignMilestone(difficulty,number);return m?`<figure class="campaign-milestone-art"><img src="./${m.art}" alt="${m.alt}" width="1536" height="1024" style="object-position:${m.focus}% center"></figure>`:'';}
+export function campaignEntryArt(difficulty,number){return number===1&&states[difficulty]?{focus:50,art:`assets/scenes/world-map${difficulty==='normal'?'':'-'+difficulty}.svg`,alt:`The ${states[difficulty]}`} : campaignMilestone(difficulty,number);}
+export function milestoneIllustration(difficulty,number){const m=campaignEntryArt(difficulty,number);return m?`<figure class="campaign-milestone-art"><img src="./${m.art}" alt="${m.alt}" width="1536" height="1024" style="object-position:${m.focus}% center"></figure>`:'';}
