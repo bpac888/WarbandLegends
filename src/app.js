@@ -1,55 +1,55 @@
-import {campaignArc} from './campaign-story.js?v=0.45.1';
-import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.45.1';
-import {scenarioStatus} from './chapter.js?v=0.45.1';
-import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.45.1';
-import {claimWeekly,weeklyWindow} from './weekly.js?v=0.45.1';
-import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.45.1';
-import {swipeTarget} from './board-gestures.js?v=0.45.1';
-import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.45.1';
-import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.45.1';
-import {specialSummary} from './special-summary.js?v=0.45.1';
-import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.45.1';
-import {useExperienceTome} from './experience-tomes.js?v=0.45.1';
-import {premiumItem,activateBooster} from './premium-items.js?v=0.45.1';
-import {premiumItemConfirmation} from './premium-items-ui.js?v=0.45.1';
-import {ascensionTier} from './ascension.js?v=0.45.1';
-import {battleTiming} from './battle-pacing.js?v=0.45.1';
-import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.45.1';
-import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.45.1';
-import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.45.1';
-import {courtyardHTML} from './courtyard-ui.js?v=0.45.1';
-import {mountCourtyard} from './courtyard-view.js?v=0.45.1';
-import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.45.1';
-import {saveTeam} from './teams.js?v=0.45.1';
-import {mountArenaScene} from './arena-scene.js?v=0.45.1';
-import './menu-atmosphere.js?v=0.45.1';
-import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.45.1';
-import {refreshEnergy,energyStatus} from './keeper.js?v=0.45.1';
-import {applyAutoAction} from './auto-battle.js?v=0.45.1';
-import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.45.1';
-import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.45.1';
-import {guideHTML,guideTopics,effectCard} from './guide-ui.js?v=0.45.1';
-import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.45.1';
-import {dailyPage} from './keeper-ui.js?v=0.45.1';
-import {buyWithGems} from './economy.js?v=0.45.1';
-import {gemConfirmation} from './gem-ui.js?v=0.45.1';
-import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.45.1';
-import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.45.1';
-import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.45.1';
-import {reserveEntry,exchange} from './mode-progression.js?v=0.45.1';
-import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.45.1';
-import {getEncounter,entryError} from './encounters.js?v=0.45.1';
-import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.45.1';
-import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.45.1';
-import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.45.1';
-import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.45.1';
-import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.45.1';
-import * as Shell from './shell.js?v=0.45.1';
-import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.45.1';
-import {EFFECTS} from './effects.js?v=0.45.1';
-import {effectIcon} from './icons.js?v=0.45.1';
-import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.45.1';
-import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.45.1';
+import {campaignArc} from './campaign-story.js?v=0.45.2';
+import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.45.2';
+import {scenarioStatus} from './chapter.js?v=0.45.2';
+import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.45.2';
+import {claimWeekly,weeklyWindow} from './weekly.js?v=0.45.2';
+import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.45.2';
+import {swipeTarget} from './board-gestures.js?v=0.45.2';
+import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.45.2';
+import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.45.2';
+import {specialSummary} from './special-summary.js?v=0.45.2';
+import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.45.2';
+import {useExperienceTome} from './experience-tomes.js?v=0.45.2';
+import {premiumItem,activateBooster} from './premium-items.js?v=0.45.2';
+import {premiumItemConfirmation} from './premium-items-ui.js?v=0.45.2';
+import {ascensionTier} from './ascension.js?v=0.45.2';
+import {battleTiming} from './battle-pacing.js?v=0.45.2';
+import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.45.2';
+import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.45.2';
+import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.45.2';
+import {courtyardHTML} from './courtyard-ui.js?v=0.45.2';
+import {mountCourtyard} from './courtyard-view.js?v=0.45.2';
+import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.45.2';
+import {saveTeam} from './teams.js?v=0.45.2';
+import {mountArenaScene} from './arena-scene.js?v=0.45.2';
+import './menu-atmosphere.js?v=0.45.2';
+import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.45.2';
+import {refreshEnergy,energyStatus} from './keeper.js?v=0.45.2';
+import {applyAutoAction} from './auto-battle.js?v=0.45.2';
+import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.45.2';
+import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.45.2';
+import {guideHTML,guideTopics,effectCard} from './guide-ui.js?v=0.45.2';
+import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.45.2';
+import {dailyPage} from './keeper-ui.js?v=0.45.2';
+import {buyWithGems} from './economy.js?v=0.45.2';
+import {gemConfirmation} from './gem-ui.js?v=0.45.2';
+import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.45.2';
+import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.45.2';
+import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.45.2';
+import {reserveEntry,exchange} from './mode-progression.js?v=0.45.2';
+import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.45.2';
+import {getEncounter,entryError} from './encounters.js?v=0.45.2';
+import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.45.2';
+import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.45.2';
+import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.45.2';
+import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.45.2';
+import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.45.2';
+import * as Shell from './shell.js?v=0.45.2';
+import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.45.2';
+import {EFFECTS} from './effects.js?v=0.45.2';
+import {effectIcon} from './icons.js?v=0.45.2';
+import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.45.2';
+import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.45.2';
 const app=document.querySelector('#app'),modal=document.querySelector('#modal'),modalContent=document.querySelector('#modal-content'),notice=document.querySelector('#notice');
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={red:'<path d="M32 8c4 13 16 15 16 29a16 16 0 0 1-32 0c0-9 6-16 12-22-1 10 2 12 5 13 4-7 2-13-1-20Z"/>',green:'<path d="M50 12c1 27-10 40-28 32C5 27 25 12 50 12Z"/><path d="M17 51 42 22M28 39l-2-10m8 4 8 1" fill="none" stroke="var(--rune-dark)" stroke-width="3"/>',blue:'<path d="M32 9v46M12 20l40 24M12 44l40-24M24 14l8 7 8-7M24 50l8-7 8 7M13 29l10-2-1-10M51 35l-10 2 1 10M13 35l10 2-1 10M51 29l-10-2 1-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',yellow:'<path d="m32 5 7 18 20 9-20 9-7 18-7-18L5 32l20-9Z"/><circle cx="32" cy="32" r="8" fill="var(--rune-dark)"/>',purple:'<path d="M43 9a24 24 0 1 0 11 35A22 22 0 0 1 43 9Z"/><path d="m44 22 3-6 3 6 6 3-6 3-3 6-3-6-6-3Z"/>'};
@@ -67,7 +67,7 @@ function scheduleAuto(){
  autoTimer=setTimeout(()=>{autoTimer=null;if(!autoEnabled||busy||modal.open||document.hidden||screen!=='battle'||battle?.phase!=='playing')return;
   autoThinking=true;const id=++autoJob;
   try{
-   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.45.1',import.meta.url),{type:'module'});
+   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.45.2',import.meta.url),{type:'module'});
    autoWorker.onerror=()=>{stopAuto();if(screen==='battle')renderBattle();toast('Auto paused. You can continue manually.');};
    autoWorker.onmessage=({data})=>{
     if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;
@@ -199,7 +199,7 @@ function renderRoster(){
 }
 function tapTile(index){if(busy||screen!=='battle'||pendingCaster)return;if(selectedRune===index){if(battle.board[index].special)play(activate(battle,index));else{selectedRune=null;renderBattle();}return;}if(selectedRune!==null){const a=selectedRune;selectedRune=null;play(swap(battle,a,index));if(!busy)renderBattle();}else{selectedRune=index;renderBattle();}}
 function openPlayerProfile(){openModal('Your Profile',profileEditorHTML(profile),'profile-editor');mountProfileEditor(modalContent,{avatar:profile.avatar,onAvatar:avatar=>{profile={...profile,avatar};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);},onName:name=>{profile={...profile,name};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);}});}
-function closeModal(){if(modal.dataset.view==='chapter-story')stopCinematic();if(modal.open)modal.close();modal.dataset.view='';scheduleAuto();}
+function closeModal(){if(modal.dataset.view==='battle-exit'){drag=null;edgeTap=null;suppressClickUntil=0;}if(modal.dataset.view==='chapter-story')stopCinematic();if(modal.open)modal.close();modal.dataset.view='';scheduleAuto();}
 document.addEventListener('click',event=>{
   const button=event.target.closest('[data-action]');if(!button||button.disabled)return;const {action,id,uid,stage,color,index}=button.dataset;
   if(button.tagName==='A')event.preventDefault();
@@ -257,8 +257,8 @@ document.addEventListener('click',event=>{
   if(action==='restart-confirm'&&modal.dataset.view==='restart'){restartJourney();return;}
 
   if(action==='close'){if(modal.dataset.view==='ritual')finishRitual(true);else closeModal();return;}
-  if(action==='battle-exit'){if(battle?.phase!=='playing'){closeModal();go('home');return;}openModal('Exit battle?','<p>This battle will be abandoned.</p><div class="modal-actions"><button class="button outline" data-action="close">Stay in battle</button><button class="button gold" data-action="home">Exit to Tavern</button></div>','battle-exit');return;}
-  if(action==='home'){closeModal();go('home');return;}
+  if(action==='battle-exit'){if(battle?.phase!=='playing'){closeModal();go('home');return;}requestBattleExit('home');return;}
+  if(action==='home'){closeModal();if(button.dataset.leaveBattle){const destination=button.dataset.page||'home';abandonBattle();history.replaceState(null,'','#/'+destination);renderRoute();}else go('home');return;}
   if(action==='guide-effects'){openGuide('effects',button.dataset.kind);return;}
   if(action==='status'){showStatuses(uid);return;}
   if(action==='help'){openGuide(button.dataset.topic||'overview');return;}
@@ -301,19 +301,33 @@ document.addEventListener('change',event=>{if(event.target.id==='cinematic-prefe
 modal.addEventListener('click',event=>{if(event.target===modal&&modal.dataset.view!=='result')closeModal();});
 modal.addEventListener('close',()=>{if(!modal.open)modal.dataset.view='';});
 
-let drag=null,suppressClickUntil=0;
+let drag=null,suppressClickUntil=0,edgeTap=null;
+// Safari reserves edge-start touches for its history swipe unless cancelled early.
+document.addEventListener('touchstart',event=>{
+ edgeTap=null;if(screen!=='battle'||battle?.phase!=='playing'||modal.open||event.touches.length!==1)return;
+ const touch=event.touches[0];if(touch.clientX>24||!event.cancelable)return;
+ edgeTap={id:touch.identifier,x:touch.clientX,y:touch.clientY,target:event.target.closest('button'),moved:false};event.preventDefault();
+},{passive:false});
+document.addEventListener('touchmove',event=>{if(!edgeTap)return;const touch=[...event.touches].find(t=>t.identifier===edgeTap.id);if(!touch)return;if(Math.hypot(touch.clientX-edgeTap.x,touch.clientY-edgeTap.y)>8)edgeTap.moved=true;if(event.cancelable)event.preventDefault();},{passive:false});
+document.addEventListener('touchend',event=>{
+ const tap=edgeTap;if(!tap||![...event.changedTouches].some(t=>t.identifier===tap.id))return;edgeTap=null;
+ // Cancelling the native gesture also cancels its compatibility click.
+ if(!tap.moved&&tap.target?.isConnected&&!tap.target.disabled&&screen==='battle'&&!modal.open&&!busy&&Date.now()>=suppressClickUntil){drag=null;tap.target.click();}
+},{passive:false});
+document.addEventListener('touchcancel',()=>{edgeTap=null;});
+
 app.addEventListener('pointerdown',event=>{const tile=event.target.closest('[data-index]');if(screen!=='battle'||drag||!event.isPrimary||event.button!==0||!tile||tile.disabled||busy||pendingCaster)return;if(autoEnabled)stopAuto();drag={pointerId:event.pointerId,index:Number(tile.dataset.index),x:event.clientX,y:event.clientY,size:Math.min(tile.clientWidth,tile.clientHeight)};});
 function continueBoardSwipe(event,finish=false){if(!drag||event.pointerId!==drag.pointerId)return;const old=drag;if(screen!=='battle'||busy||pendingCaster){drag=null;return;}const target=swipeTarget(old.index,event.clientX-old.x,event.clientY-old.y,{tileSize:old.size,finish});if(target===undefined){if(finish)drag=null;return;}drag=null;event.preventDefault();suppressClickUntil=Date.now()+400;selectedRune=null;if(target!==null)play(swap(battle,old.index,target));else renderBattle();}
 document.addEventListener('pointermove',event=>continueBoardSwipe(event),{passive:false});
 document.addEventListener('pointerup',event=>continueBoardSwipe(event,true),{passive:false});
 document.addEventListener('pointercancel',event=>{if(drag?.pointerId===event.pointerId)drag=null;});
-window.addEventListener('blur',()=>{drag=null;});
+window.addEventListener('blur',()=>{drag=null;edgeTap=null;});
 // Suppress the synthetic click after a drag before the delegated click handler runs.
 app.addEventListener('click',event=>{if(Date.now()<suppressClickUntil&&event.target.closest('[data-index]')){event.stopPropagation();event.preventDefault();}},true);
 app.addEventListener('keydown',event=>{const tile=event.target.closest('[data-index]');if(!tile)return;const i=Number(tile.dataset.index),delta={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[event.key];if(delta){event.preventDefault();const n=i+delta;if(n>=0&&n<35&&(!(Math.abs(delta)===1)||Math.floor(i/7)===Math.floor(n/7)))app.querySelector(`[data-index="${n}"]`)?.focus();}});
 let collectionFilters={...DEFAULT_FILTERS},summoning=false,summonToken=0,portalReveal=null;
 function abandonBattle(){
-  drag=null;suppressClickUntil=0;
+  drag=null;edgeTap=null;suppressClickUntil=0;
   combatPractice=null;
   stopAuto();
   clearBattleEffects();
@@ -325,6 +339,14 @@ function abandonBattle(){
 window.addEventListener('pagehide',()=>{abandonBattle();courtyardView?.destroy();courtyardView=null;});
 window.addEventListener('pageshow',event=>{if(event.persisted)renderRoute();});
 function go(path){const hash='#/'+path;if(location.hash!==hash)history.pushState(null,'',hash);renderRoute();}
+function requestBattleExit(destination){openModal('Exit battle?','<p>This battle will be abandoned.</p><div class="modal-actions"><button class="button outline" data-action="close">Stay in battle</button><button class="button gold" data-action="home" data-leave-battle="true" data-page="'+esc(destination)+'">Exit battle</button></div>','battle-exit');}
+function handleHashNavigation(){
+ const destination=location.hash.replace(/^#\/?/,'')||'splash';
+ if(screen==='battle'&&battle?.phase==='playing'&&destination.split('/')[0]!=='battle'){
+  history.pushState(null,'','#/battle');drag=null;edgeTap=null;suppressClickUntil=Date.now()+400;requestBattleExit(destination);return;
+ }
+ renderRoute();
+}
 let weeklyRefreshTimer=null;
 
 function renderRoute(){
@@ -366,7 +388,7 @@ async function openPortal(count=1){
 }
 modal.addEventListener('cancel',event=>{if(modal.dataset.view==='result'){event.preventDefault();return;}if(modal.dataset.view==='ritual'){event.preventDefault();finishRitual(true);}});
 function restartJourney(){const oldProfile=storage.getItem(PROFILE_KEY),oldBattle=storage.getItem(BATTLE_KEY),fresh=defaultProfile();try{storage.setItem(PROFILE_KEY,JSON.stringify(fresh));storage.removeItem(BATTLE_KEY);}catch{try{if(oldProfile===null)storage.removeItem(PROFILE_KEY);else storage.setItem(PROFILE_KEY,oldProfile);if(oldBattle!==null)storage.setItem(BATTLE_KEY,oldBattle);}catch{}toast('Restart failed. Your saved progress is still available.');return;}profile=fresh;battle=null;displayedBattle=null;byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));go('splash');toast('A new journey begins.');}
-window.addEventListener('hashchange',renderRoute);
+window.addEventListener('hashchange',handleHashNavigation);
 document.addEventListener('keydown',event=>{if(screen==='splash'&&event.key==='Enter'&&!event.repeat){event.preventDefault();go('home');}});
 document.addEventListener('change',async event=>{
  if(event.target.matches('[data-exchange-currency]')){const key=event.target.dataset.exchangeCurrency;exchangeChoices[key]=event.target.value;const offers=event.target.closest('.exchange-offers');offers.innerHTML=Shell.exchangeOffers(profile,exchangeChoices);offers.querySelector(`[data-exchange-currency="${key}"]`).focus();return;}
@@ -377,7 +399,7 @@ document.addEventListener('change',async event=>{
 
 });
 async function boot(){try{
-  const responses=await Promise.all([fetch('./data/champions.json?v=0.45.1'),fetch('./data/effects.json?v=0.45.1')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
+  const responses=await Promise.all([fetch('./data/champions.json?v=0.45.2'),fetch('./data/effects.json?v=0.45.2')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
 

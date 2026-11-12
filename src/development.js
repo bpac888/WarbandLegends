@@ -1,6 +1,6 @@
-import {bumpPath} from './keeper.js?v=0.45.1';
-import {premiumItemCount,takePremiumItem} from './premium-items.js?v=0.45.1';
-import {ascensionTier,currentLevelCap,ascensionRequirements,awakeningRank,awakeningRequirements,awakenedStats,ASCENSION_CAPS,normalLevelCap,LIMIT_BREAK_LEVELS,LIMIT_BREAK_RANKS} from './ascension.js?v=0.45.1';
+import {bumpPath} from './keeper.js?v=0.45.2';
+import {premiumItemCount,takePremiumItem} from './premium-items.js?v=0.45.2';
+import {ascensionTier,currentLevelCap,ascensionRequirements,awakeningRank,awakeningRequirements,awakenedStats,ASCENSION_CAPS,normalLevelCap,LIMIT_BREAK_LEVELS,LIMIT_BREAK_RANKS} from './ascension.js?v=0.45.2';
 // Hero growth is separate from the immutable maximum-level roster and combat effects.
 export const LEVEL_CAPS=Object.freeze({common:30,rare:50,legendary:70,mythical:80});
 const XP_WEIGHTS={common:1,rare:1.25,legendary:1.6,mythical:2};

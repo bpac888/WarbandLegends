@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.45.1",
+  "version": "0.45.2",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's draft1 roster.",
@@ -83,7 +83,8 @@
     "test:map-story": "node tests/map-story-browser.mjs",
     "test:fallen-tiles": "node tests/fallen-color-tiles-browser.mjs",
     "test:status-art": "node tests/status-art-browser.mjs",
-    "test:defeat-fade": "node tests/defeat-fade-browser.mjs"
+    "test:defeat-fade": "node tests/defeat-fade-browser.mjs",
+    "test:battle-edge": "node tests/battle-edge-browser.mjs"
   },
   "engines": {
     "node": ">=22"

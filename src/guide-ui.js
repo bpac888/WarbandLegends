@@ -1,9 +1,9 @@
-import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.45.1';
-import {factionGuideHTML} from './faction-ui.js?v=0.45.1';
-import {EFFECTS} from './effects.js?v=0.45.1';
-import {effectIcon} from './icons.js?v=0.45.1';
-import {SUMMON_ODDS} from './progression.js?v=0.45.1';
-import {heroInsight} from './tactics-ui.js?v=0.45.1';
+import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.45.2';
+import {factionGuideHTML} from './faction-ui.js?v=0.45.2';
+import {EFFECTS} from './effects.js?v=0.45.2';
+import {effectIcon} from './icons.js?v=0.45.2';
+import {SUMMON_ODDS} from './progression.js?v=0.45.2';
+import {heroInsight} from './tactics-ui.js?v=0.45.2';
 export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
 const battleRules=[
  ['Elements','<img class="element-advantages" src="./assets/guide/element-advantages.webp" alt="Red beats Green; Green beats Blue; Blue beats Red. Yellow and Purple are strong against each other.">'],

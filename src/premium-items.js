@@ -1,4 +1,4 @@
-import {TOMES} from './tomes.js?v=0.45.1';
+import {TOMES} from './tomes.js?v=0.45.2';
 export const BOOSTER_DURATION=24*60*60*1000;
 export const PREMIUM_ITEM_LIMIT=999999;
 export const PREMIUM_ITEMS=Object.freeze([
