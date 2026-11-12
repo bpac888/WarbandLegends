@@ -1,10 +1,23 @@
-import {RELEASE_VERSION} from './release-version.js?v=0.42.0';
+import {RELEASE_VERSION} from './release-version.js?v=0.42.1';
 // Small on-demand clips cut from the owner's trailer. Static art is always the fallback.
 export const CHARACTER_CLIPS={magic_iseldra:'iseldra',bronze_juggernaut:'juggernaut',elixir_apotheon:'vex',qingluo_jade_tempest:'jade-dragon',azhar_rosetted_sun:'sun-omen',asterox_labyrinth_moon:'moonward',pit_grunt:'burning-gate',blood_paladin:'last-escort',yshmir_worldwound:'worldwound',gorgythe_prism_gaze:'prism-gaze',goblins_brondak:'ironhorn-rider',sin_archon:'sin-archon',crimson_praetor:'crimson-praetor',inko_plasma_skirmisher:'plasma-skirmisher'};
 export const cinematicSource=id=>'./assets/cinematics/'+id+'.mp4?v='+RELEASE_VERSION;
 export const motionAllowed=(p,reduced=false)=>p.cinematicsEnabled!==false&&!reduced;
 export function detailMotionHTML(id){const clip=CHARACTER_CLIPS[id.split('~')[0]];return clip?`<video class="detail-motion" data-clip="${clip}" muted playsinline preload="none" aria-hidden="true"></video>`:'';}
-export function mountDetailMotion(root,p,reduced=false){const video=root.querySelector('.detail-motion');if(!video||!motionAllowed(p,reduced))return;video.muted=true;video.src=cinematicSource(video.dataset.clip);const stop=()=>{video.classList.remove('playing');video.pause();video.removeAttribute('src');video.load();};video.addEventListener('playing',()=>video.classList.add('playing'),{once:true});video.addEventListener('ended',stop,{once:true});video.addEventListener('error',stop,{once:true});video.play().catch(stop);}
+export function mountDetailMotion(root,p,reduced=false){
+ const video=root.querySelector('.detail-motion');
+ if(!video||!motionAllowed(p,reduced))return;
+ video.muted=true;video.defaultMuted=true;video.playsInline=true;video.autoplay=true;video.setAttribute('muted','');
+ const stop=()=>{video.classList.remove('playing');video.pause();video.removeAttribute('src');video.load();};
+ const play=()=>{video.src=cinematicSource(video.dataset.clip);video.play().catch(stop);};
+ video.addEventListener('playing',()=>video.classList.add('playing'));
+ video.addEventListener('ended',stop);video.addEventListener('error',stop);
+ // A short portrait scene can otherwise finish before its artwork enters view.
+ if(typeof IntersectionObserver==='undefined'){play();return;}
+ const observer=new IntersectionObserver(entries=>{if(!video.isConnected){observer.disconnect();return;}if(entries.some(e=>e.isIntersecting)){observer.disconnect();play();}},{threshold:.25});
+ observer.observe(video);
+}
+
 let active=null;
 export function stopCinematic(){active?.();if(typeof document!=='undefined')for(const v of document.querySelectorAll('.detail-motion')){v.classList.remove('playing');v.pause();v.removeAttribute('src');v.load();}}
 export function playCinematic(clip,{profile={},reduced=false,label='Character cinematic',duration=null}={}){
