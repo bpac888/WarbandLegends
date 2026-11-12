@@ -1,7 +1,7 @@
-import {premiumPrice} from './premium-prices.js?v=0.42.2';
-import {PREMIUM_ITEMS,premiumItemArt} from './premium-items.js?v=0.42.2';
-import {tomesPreview} from './tomes.js?v=0.42.2';
-import {GEM_ART,GOLD_ART,ENERGY_ART} from './currency-art.js?v=0.42.2';
+import {premiumPrice} from './premium-prices.js?v=0.43.0';
+import {PREMIUM_ITEMS,premiumItemArt} from './premium-items.js?v=0.43.0';
+import {tomesPreview} from './tomes.js?v=0.43.0';
+import {GEM_ART,GOLD_ART,ENERGY_ART} from './currency-art.js?v=0.43.0';
 const colors=[['red','Red'],['blue','Blue'],['green','Green'],['yellow','Yellow'],['purple','Purple']];
 const offers=[
  {id:'energy-refill',name:'Energy Refill',art:ENERGY_ART,amount:'Full Energy',detail:'Restores Energy to your current maximum.'},

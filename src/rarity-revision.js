@@ -1,4 +1,4 @@
-import {beforeUpgradeBalance} from './upgrade-balance-revision.js?v=0.42.2';
+import {beforeUpgradeBalance} from './upgrade-balance-revision.js?v=0.43.0';
 // Explicitly approved roster changes; snapshots preserve historical audit contracts.
 export const RARITY_REVISION=[
   {

@@ -1,13 +1,13 @@
-import {validWeeklyBattle} from './weekly.js?v=0.42.2';
-import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.42.2';
-import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.42.2';
-import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.42.2';
-import {SCENARIOS,validScenario} from './chapter.js?v=0.42.2';
+import {validWeeklyBattle} from './weekly.js?v=0.43.0';
+import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.43.0';
+import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.43.0';
+import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.43.0';
+import {SCENARIOS,validScenario} from './chapter.js?v=0.43.0';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
-import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.42.2';
-import {statsAtLevel,levelCap} from './development.js?v=0.42.2';
-import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.42.2';
-export {effectName} from './effects.js?v=0.42.2';
+import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.43.0';
+import {statsAtLevel,levelCap} from './development.js?v=0.43.0';
+import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.43.0';
+export {effectName} from './effects.js?v=0.43.0';
 export const VERSION = 3;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
 export const COLORS = ['red', 'green', 'blue', 'yellow', 'purple'];
@@ -274,12 +274,13 @@ function resolveBoard(state,frames,initialGroups,preferred,activation=null) {
     const shots=[];
     for(const index of clear){
       const t=state.board[index];if(!t)continue;
-      const attackers=living(state.heroes).filter(u=>u.color===t.color);
+      // Original team members retain their base rune contribution after falling.
+      const colorTeam=state.heroes.filter(u=>u.color===t.color),attackers=living(colorTeam);
       const target=living(state.enemies).find(e=>e.lanes.includes(index%COLS));
-      if(attackers.length){
+      if(colorTeam.length){
         for(const hero of attackers)gainMana(hero,target?1:2,{matching:true});
-        if(target){const power=attackers.reduce((n,u)=>n+effective(u,'atk')*(u.role==='attack'?1.1:1)*(has(u,'tile_boost')?1.35:1),0)*.24*(1+(combo-1)*.2);hit(state,null,target,power,{color:t.color,counter:false,label:`${ELEMENTS[t.color].name} rune${combo>1?` · ${combo}× combo`:''}`});}
-        else message(state,`${ELEMENTS[t.color].name}: empty lane · double mana.`,'mana');
+        if(target){const power=colorTeam.reduce((n,u)=>n+(u.hp>0?effective(u,'atk')*(has(u,'tile_boost')?1.35:1):u.atk)*(u.role==='attack'?1.1:1),0)*.24*(1+(combo-1)*.2);hit(state,null,target,power,{color:t.color,counter:false,label:`${ELEMENTS[t.color].name} rune${combo>1?` · ${combo}× combo`:''}`});}
+        else if(attackers.length)message(state,`${ELEMENTS[t.color].name}: empty lane · double mana.`,'mana');
       }
       shots.push({index,color:t.color,target:target?.uid||null,ghost:!target});
     }

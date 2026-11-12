@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.42.2",
+  "version": "0.43.0",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's draft1 roster.",
@@ -80,7 +80,8 @@
     "prebuild": "node tools/stamp-release.mjs",
     "release:stamp": "node tools/stamp-release.mjs",
     "test:release-cache": "node tests/release-cache-browser.mjs",
-    "test:map-story": "node tests/map-story-browser.mjs"
+    "test:map-story": "node tests/map-story-browser.mjs",
+    "test:fallen-tiles": "node tests/fallen-color-tiles-browser.mjs"
   },
   "engines": {
     "node": ">=22"

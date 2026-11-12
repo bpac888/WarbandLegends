@@ -1,7 +1,7 @@
-import {getEncounter,entryError} from './encounters.js?v=0.42.2';
-import {energyCost,energyStatus,spendEnergy} from './keeper.js?v=0.42.2';
-import {victoryRewards,awardVictory} from './progression.js?v=0.42.2';
-import {heroForId} from './hero-copies.js?v=0.42.2';
+import {getEncounter,entryError} from './encounters.js?v=0.43.0';
+import {energyCost,energyStatus,spendEnergy} from './keeper.js?v=0.43.0';
+import {victoryRewards,awardVictory} from './progression.js?v=0.43.0';
+import {heroForId} from './hero-copies.js?v=0.43.0';
 export function lootTicketQuote(profile,stageId,roster,now=new Date()){
  const stage=getEncounter(stageId),uses=profile.lootTicketUses??0,tickets=profile.lootTickets??0,cost=energyCost(stage);
  const error=stage?.mode!=='campaign'?'Loot Tickets can only clear campaign stages.':profile.openRoster?'Leave playtesting to use Loot Tickets.':!profile.cleared.includes(stageId)?'Clear this stage on this difficulty before using a Loot Ticket.':entryError(profile,stageId,now)||(!Number.isSafeInteger(tickets)||tickets<1?'You need a Loot Ticket.':!Number.isSafeInteger(uses)||uses<0||uses>=999999999?'Loot Ticket use limit reached.':energyStatus(profile,now).current<cost?`Need ${cost} Energy for this stage.`:profile.team.length!==5||new Set(profile.team).size!==5||profile.team.some(id=>!profile.collection[id]||!heroForId(roster,id))?'Choose five collected champions for the replay rewards.':null);

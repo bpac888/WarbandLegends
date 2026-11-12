@@ -1,4 +1,4 @@
-import {RELEASE_VERSION} from './release-version.js?v=0.42.2';
+import {RELEASE_VERSION} from './release-version.js?v=0.43.0';
 // Small on-demand clips cut from the owner's trailer. Static art is always the fallback.
 export const CHARACTER_CLIPS={magic_iseldra:'iseldra',bronze_juggernaut:'juggernaut',elixir_apotheon:'vex',qingluo_jade_tempest:'jade-dragon',azhar_rosetted_sun:'sun-omen',asterox_labyrinth_moon:'moonward',pit_grunt:'burning-gate',blood_paladin:'last-escort',yshmir_worldwound:'worldwound',gorgythe_prism_gaze:'prism-gaze',goblins_brondak:'ironhorn-rider',sin_archon:'sin-archon',crimson_praetor:'crimson-praetor',inko_plasma_skirmisher:'plasma-skirmisher'};
 export const cinematicSource=id=>'./assets/cinematics/'+id+'.mp4?v='+RELEASE_VERSION;
