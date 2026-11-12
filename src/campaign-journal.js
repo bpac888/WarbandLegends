@@ -1,5 +1,5 @@
-import {campaignMilestone} from './campaign-milestones.js?v=0.45.2';
-import {CAMPAIGN_ARCS,STORY_DIFFICULTIES,STORY_CHAPTERS,campaignArc,campaignScene,narrativeKey,sceneViewed} from './campaign-story.js?v=0.45.2';
+import {campaignMilestone} from './campaign-milestones.js?v=0.46.0';
+import {CAMPAIGN_ARCS,STORY_DIFFICULTIES,STORY_CHAPTERS,campaignArc,campaignScene,narrativeKey,sceneViewed} from './campaign-story.js?v=0.46.0';
 export {narrativeKey,sceneViewed};
 export const CHAPTER_GIFT={gold:150,gems:25};
 export function normalizeJournal(p){const clean=(v,re)=>[...new Set((Array.isArray(v)?v:[]).filter(x=>typeof x==='string'&&re.test(x)))];return {storySeen:clean(p.storySeen,/^(normal|hard|nightmare):(?:map:)?([1-5]|opening)$/),chapterClaims:clean(p.chapterClaims,/^(normal|hard|nightmare):[1-5]$/)};}
