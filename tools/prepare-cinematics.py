@@ -8,7 +8,7 @@ parts=[pathlib.Path(args.part_one),pathlib.Path(args.part_two)]
 for p in parts:
     if not p.is_file():raise SystemExit(f'Missing source: {p}')
 root=pathlib.Path(__file__).resolve().parents[1];out=root/'assets/cinematics';out.mkdir(exist_ok=True)
-cuts=[('iseldra',0,10.15,1.65,'magic_iseldra'),('juggernaut',1,1.88,2.05,'bronze_juggernaut'),('vex',1,12.0,1.12,'elixir_apotheon'),('jade-dragon',1,8.25,1.5,'qingluo_jade_tempest'),('intro-realm',1,13.65,2.0,None)]
+cuts=[('iseldra',0,10.15,1.65,'magic_iseldra'),('juggernaut',1,1.88,2.05,'bronze_juggernaut'),('vex',1,12.0,1.12,'elixir_apotheon'),('jade-dragon',1,8.25,1.5,'qingluo_jade_tempest'),('intro-realm',1,13.65,2.0,None),('sun-omen',0,1.05,1.5,'azhar_rosetted_sun'),('moonward',0,4.85,1.35,'asterox_labyrinth_moon'),('burning-gate',0,6.55,1.8,'pit_grunt'),('last-escort',1,9.88,.9,'blood_paladin'),('worldwound',0,.02,.85,'yshmir_worldwound'),('prism-gaze',0,2.8,1.7,'gorgythe_prism_gaze'),('ironhorn-rider',0,8.75,1.2,'goblins_brondak'),('sin-archon',0,12.8,1.5,'sin_archon'),('crimson-praetor',1,.05,1.65,'crimson_praetor'),('plasma-skirmisher',1,4.15,2.2,'inko_plasma_skirmisher')]
 clips=[]
 for name,part,start,duration,champion in cuts:
     target=out/(name+'.mp4');vf=('trim=duration=1.55,scale=720:-2,fps=24,tpad=stop_mode=clone:stop_duration=0.45' if name=='intro-realm' else 'scale=720:-2,fps=24')

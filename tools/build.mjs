@@ -1,3 +1,4 @@
+import {CAMPAIGN_ARCS} from '../src/campaign-story.js';
 import {WEEKLY_STAGES} from '../src/weekly.js';
 import {beforeUpgradeBalance} from '../src/upgrade-balance-revision.js';
 import {PREMIUM_ITEMS} from '../src/premium-items.js';
@@ -77,7 +78,9 @@ for(const id of ['gold-pouch','gold-chest','gem-offer','premium-gold-chest','inv
 for(const id of AVATARS)if((await stat('assets/portraits/'+id+'.svg')).size<1000)throw Error('Missing profile artwork: '+id);
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
 for(const path of ['index.html','manifest.webmanifest','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
-for(const clip of ['intro-realm','iseldra','juggernaut','vex','jade-dragon']){const size=(await stat('assets/cinematics/'+clip+'.mp4')).size;if(size<1000||size>2000000)throw Error('Cinematic missing or exceeds mobile size budget: '+clip);}
-const manifest={version:JSON.parse(await readFile('package.json','utf8')).version,champions:roster.length,campaignStages:75,dungeons:7,dungeonEncounters:21,arenaRivals:9,specialEvents:3,weeklyChallenges:2,weeklyRotations:4,authoredChapters:3,cinematicClips:5,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
+const cinematicManifest=JSON.parse(await readFile('data/cinematic-manifest.json','utf8'));
+for(const clip of cinematicManifest.clips){const bytes=await readFile(clip.path);if(bytes.length<1000||bytes.length>2000000||bytes.length!==clip.bytes||createHash('sha256').update(bytes).digest('hex')!==clip.sha256)throw Error('Cinematic missing, changed or exceeds mobile budget: '+clip.id);if(clip.characterId&&!roster.some(c=>c.id===clip.characterId))throw Error('Unknown cinematic character: '+clip.characterId);}
+for(const arc of Object.values(CAMPAIGN_ARCS))for(const scene of arc.chapters)if(scene.media)throw Error('Campaign scenes must remain static: '+scene.title);
+const manifest={version:JSON.parse(await readFile('package.json','utf8')).version,champions:roster.length,campaignStages:75,dungeons:7,dungeonEncounters:21,arenaRivals:9,specialEvents:3,weeklyChallenges:2,weeklyRotations:4,authoredChapters:3,storyChaptersPerDifficulty:5,storyScenes:33,cinematicClips:cinematicManifest.clips.length,rosterSha256:createHash('sha256').update(await readFile('data/champions.json')).digest('hex')};
 await writeFile('dist/build.json',JSON.stringify(manifest,null,2)+'\n');
 console.log(`Built independent static game: ${roster.length} champions and local portraits → dist/`);

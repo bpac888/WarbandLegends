@@ -1,13 +1,14 @@
-import {EVENT_ATTEMPTS,eventWindow} from './modes.js?v=0.40.3';
-import {campaignAtmosphere} from './campaign-atmosphere.js?v=0.40.3';
-import {lootTicketEntry} from './loot-ticket-ui.js?v=0.40.3';
-import {dungeonRealm} from './dungeon-realm.js?v=0.40.3';
-import {energyCostMark} from './energy-ui.js?v=0.40.3';
-import {materialDrops,materialArt,materialById} from './ascension.js?v=0.40.3';
-import {encounterTactics} from './tactics-ui.js?v=0.40.3';
-import {DIFFICULTIES,DUNGEONS,campaignStages,getEncounter,entryError} from './encounters.js?v=0.40.3';
-import {glyph} from './card-ui.js?v=0.40.3';
-import {victoryRewards} from './progression.js?v=0.40.3';
+import {campaignArc} from './campaign-story.js?v=0.41.0';
+import {EVENT_ATTEMPTS,eventWindow} from './modes.js?v=0.41.0';
+import {campaignAtmosphere} from './campaign-atmosphere.js?v=0.41.0';
+import {lootTicketEntry} from './loot-ticket-ui.js?v=0.41.0';
+import {dungeonRealm} from './dungeon-realm.js?v=0.41.0';
+import {energyCostMark} from './energy-ui.js?v=0.41.0';
+import {materialDrops,materialArt,materialById} from './ascension.js?v=0.41.0';
+import {encounterTactics} from './tactics-ui.js?v=0.41.0';
+import {DIFFICULTIES,DUNGEONS,campaignStages,getEncounter,entryError} from './encounters.js?v=0.41.0';
+import {glyph} from './card-ui.js?v=0.41.0';
+import {victoryRewards} from './progression.js?v=0.41.0';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function tabs(mode,current,profile){return `<div class="realm-tabs" role="group" aria-label="${mode} difficulty">${DIFFICULTIES.map(d=>`<button data-action="${mode}-difficulty" data-difficulty="${d.id}" class="${current===d.id?'active':''}" aria-pressed="${current===d.id}" style="--realm-color:${d.color}"><span>${d.label}</span><small>${mode==='campaign'?`${profile.campaignProgress?.[d.id]||0} / 25`:DUNGEONS.filter(x=>profile.dungeonClears?.[`dungeon-${x.id}-${d.id}`]).length+' / 7'}</small></button>`).join('')}</div>`;}
@@ -17,7 +18,7 @@ function rewardLine(profile,e,showEnergy=true){const r=victoryRewards(profile,{s
 export function campaign(profile,{difficulty='normal'}={}){
  const diff=DIFFICULTIES.find(d=>d.id===difficulty)||DIFFICULTIES[0],stages=campaignStages(diff.id),progress=profile.campaignProgress?.[diff.id]||0;
  const points=stages.map(s=>s.map.join(',')).join(' ');
- return `<div class="campaign-controls">${tabs('campaign',diff.id,profile)}<button class="button outline campaign-journal-link" data-action="chapter-journal" aria-label="Chapter Journal">Journal</button></div><div class="campaign-map-viewport" tabindex="0" role="region" aria-label="${diff.label} campaign map. Scroll to explore all 25 stages."><section class="illustrated-map campaign-canvas realm-${diff.id}" aria-label="Campaign chapter map"><img class="world-painting" src="./${diff.art}" alt="${diff.description}" width="1536" height="1024">${campaignAtmosphere(diff.id)}<svg class="map-trail" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="${points}"/></svg>${stages.map(e=>{const locked=!!entryError(profile,e.id),complete=profile.cleared.includes(e.id);return `<button class="map-node campaign-node ${locked?'locked':''} ${complete?'complete':''} ${e.boss?'guardian-node':''}" data-action="preview-encounter" data-stage="${e.id}" data-current="${e.number===Math.min(25,progress+1)}" style="--map-x:${e.map[0]}%;--map-y:${e.map[1]}%" aria-label="${locked?'Locked: ':complete?'Replay ':'Preview '}Stage ${e.number}: ${esc(e.name)}${e.boss?', guardian':''}" title="${e.number} · ${esc(e.name)}${e.boss?' · Guardian':''}" ${locked?'disabled':''}><span>${complete?glyph('check'):e.number}</span>${e.boss?'<i aria-hidden="true">♛</i>':''}</button>`;}).join('')}<div class="map-world-caption"><span>LEGENDS</span><strong>${diff.label}</strong></div></section></div>`;
+ return `<div class="campaign-controls">${tabs('campaign',diff.id,profile)}</div><div class="campaign-map-frame"><div class="campaign-map-viewport" tabindex="0" role="region" aria-label="${diff.label} campaign map. Scroll to explore all 25 stages."><section class="illustrated-map campaign-canvas realm-${diff.id}" aria-label="Campaign chapter map"><img class="world-painting" src="./${diff.art}" alt="${diff.description}" width="1536" height="1024">${campaignAtmosphere(diff.id)}<svg class="map-trail" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="${points}"/></svg>${stages.map(e=>{const locked=!!entryError(profile,e.id),complete=profile.cleared.includes(e.id);return `<button class="map-node campaign-node ${locked?'locked':''} ${complete?'complete':''} ${e.boss?'guardian-node':''}" data-action="preview-encounter" data-stage="${e.id}" data-current="${e.number===Math.min(25,progress+1)}" style="--map-x:${e.map[0]}%;--map-y:${e.map[1]}%" aria-label="${locked?'Locked: ':complete?'Replay ':'Preview '}Stage ${e.number}: ${esc(e.name)}${e.boss?', guardian':''}" title="${e.number} · ${esc(e.name)}${e.boss?' · Guardian':''}" ${locked?'disabled':''}><span>${complete?glyph('check'):e.number}</span>${e.boss?'<i aria-hidden="true">♛</i>':''}</button>`;}).join('')}<div class="map-world-caption"><span>Act ${campaignArc(diff.id).act} · ${diff.label}</span><strong>${campaignArc(diff.id).title}</strong></div></section></div><button class="campaign-journal-link" data-action="chapter-journal" aria-label="Chapter Journal" title="Chapter Journal"><img src="./assets/items/campaign-journal.svg" alt="" width="44" height="44"></button></div>`;
 }
 export function dungeons(profile,{difficulty='normal'}={}){const diff=DIFFICULTIES.find(d=>d.id===difficulty)||DIFFICULTIES[0];return `${tabs('dungeon',diff.id,profile)}${dungeonRealm(profile,diff.id)}`;}
 export function encounterPreview(profile,id,{now=new Date()}={}){const e=getEncounter(id);if(!e)return '';if(e.mode==='weekly')return `<div class="encounter-preview"><img src="./${e.art}" alt=""><div><h3>${e.name}</h3><p>${e.description}</p><p>No Energy cost. Weekly gift claimed separately.</p></div></div><div class="modal-actions"><button class="button outline" data-action="close">Back</button><button class="button gold" data-action="start" data-stage="${e.id}">Begin challenge</button></div>`;if(e.mode==='event'){

@@ -1,4 +1,4 @@
-import {EFFECTS} from './effects.js?v=0.40.3';
+import {EFFECTS} from './effects.js?v=0.41.0';
 const paths={
  sword:'M5 19 18 6l2-3-4 2L3 18m1-5 7 7m-8 1 3-3',shield:'M12 3 3 6v6c0 5 9 9 9 9s9-4 9-9V6Z',
  fist:'m5 17-1-7c0-2 3-2 3 0V5c0-2 3-2 3 0V4c0-2 3-2 3 0v1c0-2 3-2 3 0v3c0-2 3-2 3 0v7l-4 6H8Z',

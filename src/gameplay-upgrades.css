@@ -58,3 +58,31 @@ body.menu-theme #modal .dialogue-speaker{font-size:12px;font-weight:750;color:#3
 body.menu-theme #modal .chapter-story .dialogue-bubble{position:relative;margin:0;padding:12px 14px;background:#e5d5b8;border:1px solid #b29a76;border-radius:12px 12px 12px 3px;color:#30343c;font-size:14px;line-height:1.55;box-shadow:0 2px 5px #3b30400b}
 body.menu-theme #modal .chapter-story .dialogue-right .dialogue-bubble{background:#d5dbe2;border-color:#9ba7b4;border-radius:12px 12px 3px 12px}
 @media(max-width:400px){.dialogue-turn{width:90%}body.menu-theme #modal .chapter-story .dialogue-bubble{padding:11px 12px}}
+.journal-intro{font-size:13px;line-height:1.6;margin:0 0 14px}
+.journal-arc{border:1px solid #ac987c;border-radius:12px;background:#d9c7aa;padding:12px;margin:12px 0}
+.journal-arc>summary{display:grid;grid-template-columns:82px minmax(0,1fr);gap:12px;align-items:center;cursor:pointer;list-style:none}
+.journal-arc>summary::-webkit-details-marker{display:none}.journal-arc>summary img{width:82px;height:92px;object-fit:cover;border-radius:8px}
+.journal-arc>summary h3{font-family:'Collection Serif',Georgia,serif;font-size:23px;line-height:1.2;margin:4px 0 7px}
+.journal-arc>summary p{font-size:12px;line-height:1.5;margin:0}.journal-arc>button{margin:12px 0 2px}
+.journal-chapter h3{font-size:19px;margin:0 0 7px}.journal-chapter p{font-size:13px;line-height:1.5}.journal-chapter>small{display:block;font-size:11px;margin-top:5px}
+body.menu-theme #modal[data-view=chapter-journal] .button:disabled{background:#cdc5ba;color:#57525a;border-color:#aaa095;opacity:1;box-shadow:none}
+body.menu-theme #modal .story-act{display:block;color:#752c30;font-size:11px;font-weight:750;letter-spacing:.04em;margin-top:12px}
+body.menu-theme #modal .chapter-story>p.story-objective,body.menu-theme #modal .chapter-story>p.story-media-caption{background:none;border:0;padding:0;box-shadow:none;color:#414650;font-size:13px;line-height:1.55}
+body.menu-theme #modal .chapter-story>p.story-media-caption{font-size:11px;margin:6px 0 12px}
+.chapter-aftermath>summary{cursor:pointer;font-size:14px;font-weight:700;padding:10px 0;color:#343740}
+body.menu-theme #modal .chapter-complete .chapter-story .dialogue-right .dialogue-bubble{color:#30343c}
+@media(max-width:420px){.journal-arc{padding:10px}.journal-arc>summary{grid-template-columns:65px minmax(0,1fr);gap:9px}.journal-arc>summary img{width:65px;height:86px}.journal-arc>summary h3{font-size:20px}}
+body.menu-theme #modal .chapter-complete .button.outline{background:#e9dcc3;color:#72272b;border-color:#af9775;text-shadow:none}
+.campaign-act-next{margin-top:12px;width:100%;min-height:44px}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story>.modal-actions{position:sticky;bottom:0;z-index:4;background:#c0bbc7;padding:12px 0 5px;margin:12px 0 0;box-shadow:0 -8px 12px #c0bbc7dd}
+/* Keep the journal within reach while the campaign map scrolls beneath it. */
+.campaign-map-frame{position:relative;flex:1;min-height:80px;isolation:isolate}
+body.menu-theme .page-campaign .campaign-map-frame>.campaign-map-viewport{height:100%;min-height:0}
+body.menu-theme .page-campaign .campaign-map-frame>.campaign-journal-link{position:absolute;bottom:12px;left:12px;z-index:5;width:52px;height:52px;min-height:44px;padding:4px;display:grid;place-items:center;border:1px solid #b49b76;border-radius:12px;background:#e3d2b2ed;box-shadow:0 3px 12px #0005;cursor:pointer}
+.campaign-journal-link img{width:44px;height:44px;object-fit:contain}.campaign-journal-link:focus-visible{outline:3px solid #9e2a2b;outline-offset:3px}
+.daily-weekly{margin-top:22px;padding:16px;border:1px solid #b6a487;border-radius:14px;background:#dfd2bb;color:#30343c;color-scheme:light}
+body.menu-theme .daily-weekly :is(h2,h3,p,small){color:#30343c;text-shadow:none}.daily-weekly .weekly-header{margin-bottom:14px}.daily-weekly .weekly-header h2{font-family:'Collection Serif',Georgia,serif;font-size:27px;margin:0 0 8px}.daily-weekly .weekly-header p{font-size:12px;margin:5px 0}.daily-weekly .weekly-header small{font-size:11px}
+body.menu-theme .game-page.page-daily .daily-weekly :is(h2,h3,p,small){color:#30343c;text-shadow:none}
+body.menu-theme .game-page.page-daily .daily-weekly .button.gold{background:#9e2a2b;color:#fff5e7;border-color:#842023}
+body.menu-theme .game-page.page-daily .daily-weekly .button.outline{background:#eadfc9;color:#72272b;border-color:#b29b77}
+body.menu-theme .game-page.page-daily .daily-weekly .button:disabled{background:#c9c1b5;color:#5a555d;border-color:#a89b8c;opacity:1;box-shadow:none}

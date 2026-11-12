@@ -1,16 +1,16 @@
-import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.40.3';
-import {factionGuideHTML} from './faction-ui.js?v=0.40.3';
-import {EFFECTS} from './effects.js?v=0.40.3';
-import {effectIcon} from './icons.js?v=0.40.3';
-import {SUMMON_ODDS} from './progression.js?v=0.40.3';
-import {heroInsight} from './tactics-ui.js?v=0.40.3';
+import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.41.0';
+import {factionGuideHTML} from './faction-ui.js?v=0.41.0';
+import {EFFECTS} from './effects.js?v=0.41.0';
+import {effectIcon} from './icons.js?v=0.41.0';
+import {SUMMON_ODDS} from './progression.js?v=0.41.0';
+import {heroInsight} from './tactics-ui.js?v=0.41.0';
 export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
 const battleRules=[
  ['Elements','<img class="element-advantages" src="./assets/guide/element-advantages.webp" alt="Red beats Green; Green beats Blue; Blue beats Red. Yellow and Purple are strong against each other.">'],
  ['Mana','Empty lanes give double mana. Specials spend all charge without using a move. Enemies gain 4 charge per attack opportunity.'],
 ];
 const topics=[
- ['battles','Battles',[...battleRules,['Weekly Challenges','Adventure has two weekly challenges: a restricted-team Trial and a mechanic-focused Encounter. Both reset Monday at midnight Pacific time. Retry without Energy; claim each weekly gift once. Completed gifts from an earlier week remain claimable.'],['Chapter Journal','Replay chapter dialogue from Adventure. Complete each chapter on each difficulty to unlock a one-time chapter gift. Replaying a story never grants rewards.'],['Energy','Campaign / Dungeons: 1/2/3 Energy (Normal/Hard/Nightmare). Arena: 1. Capacity: 50 + profile level. Full refill at midnight PST and on level-up. Entry costs are not refunded. Events use attempts.'],['Loot Tickets','Use one Loot Ticket on a campaign stage already cleared on that difficulty for instant replay rewards. Normal Energy still applies: 1 on Normal, 2 on Hard, or 3 on Nightmare. Buy tickets in Token Exchange. Not available in playtesting.']]],
+ ['battles','Battles',[...battleRules,['Weekly Challenges','Daily Gift includes a Weekly Trial and Weekly Encounter. Both reset Monday at midnight Pacific time. No Energy cost; claim each gift once. Unclaimed completed gifts stay available.'],['Chapter Journal','Tap the journal icon at the bottom left of any Campaign map to replay unlocked story scenes. Normal is green, Hard burns, and Nightmare lies in ruins. Each chapter has a one-time gift per difficulty. Replays grant no rewards.'],['Energy','Campaign / Dungeons: 1/2/3 Energy (Normal/Hard/Nightmare). Arena: 1. Capacity: 50 + profile level. Full refill at midnight PST and on level-up. Entry costs are not refunded. Events use attempts.'],['Loot Tickets','Use one Loot Ticket on a campaign stage already cleared on that difficulty for instant replay rewards. Normal Energy still applies: 1 on Normal, 2 on Hard, or 3 on Nightmare. Buy tickets in Token Exchange. Not available in playtesting.']]],
  ['growth','Heroes',[
   ['Favorites & Locks','Favorite champions in their detail page, then choose Favorites First in Collection or team filters. Lock individual copies to protect them from feeding. Saved teams remain protected too. Rename any of your four teams in Teams.'],
   ['Boosters & Tomes','Activate boosters in Inventory: +25% feeding XP or +25% battle Gold for 24 real hours. Each type can be active once at a time. Ascension and Limit Break Tomes grant one step without materials or Gold; normal level and rarity requirements still apply. Premium purchases are previews for now.'],
