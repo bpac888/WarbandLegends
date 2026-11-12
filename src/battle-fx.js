@@ -1,5 +1,5 @@
-import {battleTiming} from './battle-pacing.js?v=0.41.1';
-import {manaLevels} from './engine.js?v=0.41.1';
+import {battleTiming} from './battle-pacing.js?v=0.42.0';
+import {manaLevels} from './engine.js?v=0.42.0';
 // Presentation only. Neither the effect planner nor its renderer changes battle state.
 export function planSpecialEffects(previous,current,frame){
  const units=[...current.heroes,...current.enemies],oldUnits=[...previous.heroes,...previous.enemies],actor=units.find(u=>u.uid===frame.actor),beforeActor=oldUnits.find(u=>u.uid===frame.actor);

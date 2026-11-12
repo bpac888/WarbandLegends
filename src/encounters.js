@@ -1,6 +1,6 @@
-import {WEEKLY_STAGES,weeklyWindow} from './weekly.js?v=0.41.1';
-import {authoredStage} from './chapter.js?v=0.41.1';
-import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js?v=0.41.1';
+import {WEEKLY_STAGES,weeklyWindow} from './weekly.js?v=0.42.0';
+import {authoredStage} from './chapter.js?v=0.42.0';
+import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js?v=0.42.0';
 // Independent Legends encounters. Structure/names/art adapted from the owner's source game.
 export const DIFFICULTIES=[
  {id:'normal',label:'Normal',realm:'The First Crossing',description:'A living realm. The first shadows gather.',art:'assets/scenes/world-map.svg',mult:1,color:'#92c99c'},

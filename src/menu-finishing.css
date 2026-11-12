@@ -32,3 +32,8 @@ body.menu-theme #modal[data-view=page-guide] .guide-playtesting{gap:12px}
  body.menu-theme .game-page.page-inventory .inventory-card .treasure-art{width:60px;height:60px}
  body.menu-theme .game-page.page-quests .chronicle-copy{padding:12px}
 }
+/* Guardian illustrations share the story frame without changing the map canvas. */
+.campaign-milestone-art{margin:0 0 12px;border:1px solid #b6a078;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px #0002;background:#242b32}
+.campaign-milestone-art>img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+#modal[data-view=campaign-stage] .campaign-milestone-art{max-width:640px;margin-inline:auto}
+@media(max-width:600px){#modal[data-view=campaign-stage] .campaign-milestone-art>img{aspect-ratio:16/9}}

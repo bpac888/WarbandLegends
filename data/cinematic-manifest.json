@@ -6,16 +6,100 @@
   ],
   "clips": [
     {
-      "id": "iseldra",
-      "characterId": "magic_iseldra",
+      "id": "worldwound",
+      "characterId": "yshmir_worldwound",
       "sourcePart": 1,
-      "startSeconds": 10.15,
-      "cutSeconds": 1.65,
-      "sourceSeconds": 1.65,
+      "startSeconds": 0,
+      "cutSeconds": 0.97944,
+      "sourceSeconds": 0.97944,
       "holdSeconds": 0,
-      "path": "assets/cinematics/iseldra.mp4",
-      "bytes": 965728,
-      "sha256": "c5da71fa2795981a4fd94950ce19307103ce5f1f3654703be288468d4b14c323",
+      "path": "assets/cinematics/worldwound.mp4",
+      "bytes": 744113,
+      "sha256": "62dd3adf0e9b3e63da3c304e90f35c8e7946d4f91604186767f1ce77ea7c35bd",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "0.958333"
+        }
+      }
+    },
+    {
+      "id": "sun-omen",
+      "characterId": "azhar_rosetted_sun",
+      "sourcePart": 1,
+      "startSeconds": 0.97944,
+      "cutSeconds": 1.7,
+      "sourceSeconds": 1.7,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/sun-omen.mp4",
+      "bytes": 1146517,
+      "sha256": "6a6cf51f1634ce46cc5df880f008f19319c142cabbc043c7bb9d9babd06384e4",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "1.708333"
+        }
+      }
+    },
+    {
+      "id": "prism-gaze",
+      "characterId": "gorgythe_prism_gaze",
+      "sourcePart": 1,
+      "startSeconds": 2.67944,
+      "cutSeconds": 2.083334,
+      "sourceSeconds": 2.083334,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/prism-gaze.mp4",
+      "bytes": 1287089,
+      "sha256": "4352d369be448c6680b5a043f632901a979b784874912140562e86939c2d1d54",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.083333"
+        }
+      }
+    },
+    {
+      "id": "moonward",
+      "characterId": "asterox_labyrinth_moon",
+      "sourcePart": 1,
+      "startSeconds": 4.762774,
+      "cutSeconds": 1.683333,
+      "sourceSeconds": 1.683333,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/moonward.mp4",
+      "bytes": 1135989,
+      "sha256": "1e0b34c9e8ba1d5b0e9992b83c74b766dfa2468cb62dafa5553facef9c6fd38d",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -34,16 +118,100 @@
       }
     },
     {
-      "id": "juggernaut",
-      "characterId": "bronze_juggernaut",
-      "sourcePart": 2,
-      "startSeconds": 1.88,
-      "cutSeconds": 2.05,
-      "sourceSeconds": 2.05,
+      "id": "burning-gate",
+      "characterId": "pit_grunt",
+      "sourcePart": 1,
+      "startSeconds": 6.446107,
+      "cutSeconds": 2.2,
+      "sourceSeconds": 2.2,
       "holdSeconds": 0,
-      "path": "assets/cinematics/juggernaut.mp4",
-      "bytes": 1132053,
-      "sha256": "ad74ae7db999df3e6bf01807124b67320af6273ecb209b886372f1bc1b2783fc",
+      "path": "assets/cinematics/burning-gate.mp4",
+      "bytes": 1021724,
+      "sha256": "38880a6bf987d0f9cc88d31410c349fa5fea4afe7ad2313626cf8321f7ae0c20",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.208333"
+        }
+      }
+    },
+    {
+      "id": "ironhorn-rider",
+      "characterId": "goblins_brondak",
+      "sourcePart": 1,
+      "startSeconds": 8.646107,
+      "cutSeconds": 1.433333,
+      "sourceSeconds": 1.433333,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/ironhorn-rider.mp4",
+      "bytes": 740415,
+      "sha256": "faf7d48f8dc4c3085eaae3654e9329cae24f3ad09450b415357d5252ef098df9",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "1.416667"
+        }
+      }
+    },
+    {
+      "id": "iseldra",
+      "characterId": "magic_iseldra",
+      "sourcePart": 1,
+      "startSeconds": 10.07944,
+      "cutSeconds": 2.583334,
+      "sourceSeconds": 2.583334,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/iseldra.mp4",
+      "bytes": 1631948,
+      "sha256": "6b1c9821c0b4c5ecb57c631287d6c8ad10eb8cf295a8366659e886d8831932b6",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.583333"
+        }
+      }
+    },
+    {
+      "id": "sin-archon",
+      "characterId": "sin_archon",
+      "sourcePart": 1,
+      "startSeconds": 12.662774,
+      "cutSeconds": 2.082226,
+      "sourceSeconds": 2.082226,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/sin-archon.mp4",
+      "bytes": 848810,
+      "sha256": "ff7f749c7e6926c26401503a6ddc16e005cf30af71264d7ccd74b423702b0501",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -62,16 +230,16 @@
       }
     },
     {
-      "id": "vex",
-      "characterId": "elixir_apotheon",
+      "id": "crimson-praetor",
+      "characterId": "crimson_praetor",
       "sourcePart": 2,
-      "startSeconds": 12.0,
-      "cutSeconds": 1.12,
-      "sourceSeconds": 1.12,
+      "startSeconds": 0,
+      "cutSeconds": 1.833334,
+      "sourceSeconds": 1.833334,
       "holdSeconds": 0,
-      "path": "assets/cinematics/vex.mp4",
-      "bytes": 846480,
-      "sha256": "c0f28dd1eb437339eb1ea0d79750808da1c326e20348632aa3e386f4c78296af",
+      "path": "assets/cinematics/crimson-praetor.mp4",
+      "bytes": 984027,
+      "sha256": "99fe8af07a83bb1a75d2f882d23ede303031deebc7e7481ad2b67a9c3edda3e6",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -85,7 +253,63 @@
           }
         ],
         "format": {
-          "duration": "1.125000"
+          "duration": "1.833333"
+        }
+      }
+    },
+    {
+      "id": "juggernaut",
+      "characterId": "bronze_juggernaut",
+      "sourcePart": 2,
+      "startSeconds": 1.833334,
+      "cutSeconds": 2.2,
+      "sourceSeconds": 2.2,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/juggernaut.mp4",
+      "bytes": 1225054,
+      "sha256": "836e04e4a196aa574a97d23588638ef833a874575127a2c06ca680018b8f1e3a",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.208333"
+        }
+      }
+    },
+    {
+      "id": "plasma-skirmisher",
+      "characterId": "inko_plasma_skirmisher",
+      "sourcePart": 2,
+      "startSeconds": 4.033334,
+      "cutSeconds": 3.233333,
+      "sourceSeconds": 3.233333,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/plasma-skirmisher.mp4",
+      "bytes": 1632147,
+      "sha256": "6db36c079558fc788155fa48b3e4e12def0e60ce6d041dc796550036f19ee3e6",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "3.250000"
         }
       }
     },
@@ -93,13 +317,13 @@
       "id": "jade-dragon",
       "characterId": "qingluo_jade_tempest",
       "sourcePart": 2,
-      "startSeconds": 8.25,
-      "cutSeconds": 1.5,
-      "sourceSeconds": 1.5,
+      "startSeconds": 7.266667,
+      "cutSeconds": 2.55,
+      "sourceSeconds": 2.55,
       "holdSeconds": 0,
       "path": "assets/cinematics/jade-dragon.mp4",
-      "bytes": 1074246,
-      "sha256": "a693d68f709c9497309739ea1fb02cfafcda8ce7707bec5c03a6bca59b4d835a",
+      "bytes": 1820065,
+      "sha256": "726102a2d9be84417a7bc1922702685a3dfaf235f9edc9f7bbe6d771e96c9dd0",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -113,7 +337,63 @@
           }
         ],
         "format": {
-          "duration": "1.500000"
+          "duration": "2.541667"
+        }
+      }
+    },
+    {
+      "id": "last-escort",
+      "characterId": "blood_paladin",
+      "sourcePart": 2,
+      "startSeconds": 9.816667,
+      "cutSeconds": 1.533333,
+      "sourceSeconds": 1.533333,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/last-escort.mp4",
+      "bytes": 1104259,
+      "sha256": "a04fb96ac4f509355580fc89370d6d7343c14ef0cae1108933feaaca5333a033",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "1.541667"
+        }
+      }
+    },
+    {
+      "id": "vex",
+      "characterId": "elixir_apotheon",
+      "sourcePart": 2,
+      "startSeconds": 11.35,
+      "cutSeconds": 2.0,
+      "sourceSeconds": 2.0,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/vex.mp4",
+      "bytes": 1610722,
+      "sha256": "dd20ae989142422c2baf4dada15b38782ba9bde70fcab0540ad146004b09d956",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.000000"
         }
       }
     },
@@ -144,290 +424,11 @@
           "duration": "2.000000"
         }
       }
-    },
-    {
-      "id": "sun-omen",
-      "characterId": "azhar_rosetted_sun",
-      "sourcePart": 1,
-      "startSeconds": 1.05,
-      "cutSeconds": 1.5,
-      "sourceSeconds": 1.5,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/sun-omen.mp4",
-      "bytes": 1068603,
-      "sha256": "8587873bfb9576884e6dcc3616582d6d3e19fff6af3e1afe112be941e0943c9c",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "1.500000"
-        }
-      }
-    },
-    {
-      "id": "moonward",
-      "characterId": "asterox_labyrinth_moon",
-      "sourcePart": 1,
-      "startSeconds": 4.85,
-      "cutSeconds": 1.35,
-      "sourceSeconds": 1.35,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/moonward.mp4",
-      "bytes": 943322,
-      "sha256": "9738bdbb2771feafd9cda6b1ffcc6dc667f885bb9d70e6ff6fb05635b5f3845c",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "1.333333"
-        }
-      }
-    },
-    {
-      "id": "burning-gate",
-      "characterId": "pit_grunt",
-      "sourcePart": 1,
-      "startSeconds": 6.55,
-      "cutSeconds": 1.8,
-      "sourceSeconds": 1.8,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/burning-gate.mp4",
-      "bytes": 874669,
-      "sha256": "fb6ddc5c0a039d67b1a1c2fdabe152645a27a9130d39f63ac77d98195259a78d",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "1.791667"
-        }
-      }
-    },
-    {
-      "id": "last-escort",
-      "characterId": "blood_paladin",
-      "sourcePart": 2,
-      "startSeconds": 9.88,
-      "cutSeconds": 0.9,
-      "sourceSeconds": 0.9,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/last-escort.mp4",
-      "bytes": 700966,
-      "sha256": "ae740c2aa9116ae71c6bb7638bfbfb0497f100d9529869b4526ca9c921507840",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "0.916667"
-        }
-      }
-    },
-    {
-      "id": "worldwound",
-      "characterId": "yshmir_worldwound",
-      "sourcePart": 1,
-      "startSeconds": 0.02,
-      "cutSeconds": 0.85,
-      "sourceSeconds": 0.85,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/worldwound.mp4",
-      "bytes": 687374,
-      "sha256": "d7952bc74ed4c4d865c5f1ab50fa06489511c421d7e158062887a3cdb1cd0a92",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "0.833333"
-        }
-      }
-    },
-    {
-      "id": "prism-gaze",
-      "characterId": "gorgythe_prism_gaze",
-      "sourcePart": 1,
-      "startSeconds": 2.8,
-      "cutSeconds": 1.7,
-      "sourceSeconds": 1.7,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/prism-gaze.mp4",
-      "bytes": 1132906,
-      "sha256": "1d05627bf870cccbba210e4ae9afefe6fcdd5162b473c614aec468a36c971c57",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "1.708333"
-        }
-      }
-    },
-    {
-      "id": "ironhorn-rider",
-      "characterId": "goblins_brondak",
-      "sourcePart": 1,
-      "startSeconds": 8.75,
-      "cutSeconds": 1.2,
-      "sourceSeconds": 1.2,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/ironhorn-rider.mp4",
-      "bytes": 632285,
-      "sha256": "99a1d7f61b8b56212adb7b466145f6870fd5f1011720760001700a7429105507",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "1.208333"
-        }
-      }
-    },
-    {
-      "id": "sin-archon",
-      "characterId": "sin_archon",
-      "sourcePart": 1,
-      "startSeconds": 12.8,
-      "cutSeconds": 1.5,
-      "sourceSeconds": 1.5,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/sin-archon.mp4",
-      "bytes": 658191,
-      "sha256": "b57a56c70c29964e640b20606f29ab51934726405340d1a8bccd901f5b6b9f55",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "1.500000"
-        }
-      }
-    },
-    {
-      "id": "crimson-praetor",
-      "characterId": "crimson_praetor",
-      "sourcePart": 2,
-      "startSeconds": 0.05,
-      "cutSeconds": 1.65,
-      "sourceSeconds": 1.65,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/crimson-praetor.mp4",
-      "bytes": 946231,
-      "sha256": "1f7abf5c9ec0a6807128d22f0ad3e5f971bb7303e062f19f57cb0491f6f25520",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "1.666667"
-        }
-      }
-    },
-    {
-      "id": "plasma-skirmisher",
-      "characterId": "inko_plasma_skirmisher",
-      "sourcePart": 2,
-      "startSeconds": 4.15,
-      "cutSeconds": 2.2,
-      "sourceSeconds": 2.2,
-      "holdSeconds": 0,
-      "path": "assets/cinematics/plasma-skirmisher.mp4",
-      "bytes": 1152997,
-      "sha256": "84cb2558eac232872a4fa580557e766babb46e030fdd775b01ffbafbdf75b773",
-      "probe": {
-        "programs": [],
-        "stream_groups": [],
-        "streams": [
-          {
-            "codec_name": "h264",
-            "codec_type": "video",
-            "width": 720,
-            "height": 1280,
-            "pix_fmt": "yuv420p"
-          }
-        ],
-        "format": {
-          "duration": "2.208333"
-        }
-      }
     }
   ],
   "notes": [
     "Original uploads remain outside the production bundle.",
+    "Character clips cover their complete source scenes; only neighbouring shots are excluded.",
     "Intro preserves the original final logo scene without blur or separate branding overlays; the last frame is held briefly to give two seconds of clean logo footage.",
     "Muted inline playback, still artwork fallback, Reduced Motion and user cinematic preference apply."
   ]
