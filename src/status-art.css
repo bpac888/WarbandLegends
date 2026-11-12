@@ -17,7 +17,7 @@
 @media(max-width:360px){.battle-shell .battle-center .hero-unit .statuses{width:30px}.battle-shell .battle-center :is(.hero-unit,.enemy-unit) .status{width:28px;height:28px;min-width:28px;min-height:28px;flex-basis:28px}.battle-shell .battle-center .status .effect-icon{width:24px;height:24px}}
 @media(orientation:landscape) and (max-height:600px){.battle-shell .battle-center .hero-unit .statuses{left:60px;right:2px;top:auto;bottom:24px;width:auto;max-width:none;max-height:28px;flex-flow:row nowrap;overflow-x:auto;overflow-y:hidden}.battle-shell .battle-center :is(.hero-unit,.enemy-unit) .status{width:24px;height:24px;min-width:24px;min-height:24px;flex-basis:24px}.battle-shell .battle-center .status .effect-icon{width:20px;height:20px}.battle-shell .battle-center .enemy-unit:has(.statuses:not(:empty)){padding-bottom:26px}.battle-shell .battle-center .enemy-unit .statuses{height:26px;max-height:26px}.battle-shell .battle-center .enemy-target>img{height:clamp(24px,calc(20svh - 38px),70px)}}
 /* Damage cues use the actual event type, never the victim's element. */
-.typed-impact,.defeat-burst,.defeat-echo{position:fixed;pointer-events:none;z-index:43;--impact:#fff0bb}
+.typed-impact,.defeat-burst,.defeat-fade{position:fixed;pointer-events:none;z-index:43;--impact:#fff0bb}
 .typed-impact{width:66px;height:66px;margin:-33px;border:2px solid var(--impact);border-radius:50%;box-shadow:0 0 18px var(--impact),inset 0 0 18px var(--impact);animation:typed-impact .65s ease-out both}
 .damage-poison{--impact:#a7ff5e}.damage-burn,.damage-red{--impact:#ff9a43}.damage-frostbite,.damage-blue{--impact:#8ee9ff}.damage-bleed{--impact:#ff647d}.damage-green{--impact:#94e994}.damage-yellow{--impact:#ffe69a}.damage-purple{--impact:#d0a2ff}
 .typed-impact.damage-poison{border-style:dotted;background:radial-gradient(circle at 30% 35%,#bfff9255 0 13%,transparent 15%),radial-gradient(circle at 65% 70%,#a7ff5e66 0 17%,transparent 19%)}
@@ -26,13 +26,11 @@
 .typed-impact.damage-bleed{border:0;border-radius:0;box-shadow:none;background:repeating-linear-gradient(125deg,transparent 0 12px,#ff647daa 13px 16px,transparent 18px 26px)}
 .combat-number.typed-number{display:flex;align-items:center;gap:4px;font:800 clamp(19px,3.6vw,30px)/1.1 var(--font-sub);color:var(--impact,#fff0bb);text-shadow:0 2px 2px #000,-1px 0 #000,1px 0 #000;white-space:nowrap}
 .combat-number.typed-number .effect-art{width:21px;height:21px}.combat-number.typed-number>small{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.04em;color:inherit}
-.defeat-echo{background-position:center;background-size:cover;border-radius:12px;filter:brightness(2.4) saturate(.2);animation:defeat-dissolve .85s ease-out both;box-shadow:0 0 20px #ddf2ff88}
 .defeat-burst{width:80px;height:80px;margin:-40px;border:2px solid #e2f3ff;border-radius:50%;box-shadow:0 0 22px #cae9ff88;animation:defeat-release .8s ease-out both}
 .defeat-burst>i{position:absolute;left:50%;top:50%;width:3px;height:18px;border-radius:50%;background:linear-gradient(#fff,#a4d7ff00);transform:rotate(var(--angle)) translateY(-34px);transform-origin:0 0}
 @keyframes typed-impact{0%{opacity:0;transform:scale(.35)}25%{opacity:.8}100%{opacity:0;transform:scale(1.35)}}
-@keyframes defeat-dissolve{0%{opacity:.75;transform:translateY(0) scale(1)}40%{opacity:.6;filter:brightness(3) saturate(0)}100%{opacity:0;transform:translateY(-24px) scale(.92);clip-path:inset(0 0 100% 0)}}
 @keyframes defeat-release{0%{opacity:0;transform:scale(.3)}25%{opacity:.9}100%{opacity:0;transform:scale(1.6)}}
-@media(prefers-reduced-motion:reduce){.typed-impact,.defeat-burst,.defeat-echo{display:none!important}}
+@media(prefers-reduced-motion:reduce){.typed-impact,.defeat-burst,.defeat-fade{display:none!important}}
 #modal[data-view=page-guide] .effect-key{margin:8px 0 12px}#modal[data-view=page-guide] .effect-key p{font-size:12px;line-height:1.5;margin:5px 0}
 @media(prefers-reduced-motion:reduce){.combat-number.typed-number{animation:none}}
 
@@ -47,3 +45,11 @@ body.menu-theme #modal .effect-codex .codex-icon{width:46px;height:46px;min-widt
 body.menu-theme #modal .effect-codex .codex-icon .effect-art{width:38px;height:38px;max-width:none}
 /* Reclaim the tall gaps inside phone tile rows for the champion portraits. */
 @media(min-height:601px){body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.25)) minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.47 + 4px)) minmax(0,1fr) auto}}
+
+/* Fallen artwork stays hidden on every redraw; only its outgoing copy fades. */
+.battle-shell .enemy-unit.fallen{opacity:0;filter:none;transition:none;pointer-events:none}
+.battle-shell .hero-unit.fallen .hero-main>img{opacity:0;transition:none}
+.defeat-fade{position:fixed;z-index:39;display:block;overflow:hidden;pointer-events:none;animation:defeat-fade-out .6s ease-out both}
+.defeat-fade>img{display:block;width:100%;height:100%;min-width:0;min-height:0;margin:0;opacity:1;filter:none;transform:none}
+@keyframes defeat-fade-out{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(8px)}}
+@media(prefers-reduced-motion:reduce){.defeat-fade{display:none!important}}

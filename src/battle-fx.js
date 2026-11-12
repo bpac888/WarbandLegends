@@ -1,6 +1,6 @@
-import {effectIcon} from './icons.js?v=0.45.0';
-import {battleTiming} from './battle-pacing.js?v=0.45.0';
-import {manaLevels} from './engine.js?v=0.45.0';
+import {effectIcon} from './icons.js?v=0.45.1';
+import {battleTiming} from './battle-pacing.js?v=0.45.1';
+import {manaLevels} from './engine.js?v=0.45.1';
 // Presentation only. Neither the effect planner nor its renderer changes battle state.
 export function planSpecialEffects(previous,current,frame){
  const units=[...current.heroes,...current.enemies],oldUnits=[...previous.heroes,...previous.enemies],actor=units.find(u=>u.uid===frame.actor),beforeActor=oldUnits.find(u=>u.uid===frame.actor);
@@ -82,6 +82,21 @@ function mythicCinematic(plan,speed){
  for(const [tag,text]of [['small','MYTHICAL'],['strong',plan.champion],['span',plan.name]]){const line=document.createElement(tag);line.textContent=text;copy.append(line);}
  stage.append(seal,art,copy);node.append(stage);document.querySelector('#effects-layer')?.append(node);later(()=>node.remove(),1750/speed);
 }
+// Capture the outgoing portrait before the battle markup is replaced. A single
+// fixed layer bridges redraws, then fades to the permanently hidden fallen art.
+export function animateDefeats(previous,current,frame,root,{speed=1,reduced=false}={}){
+ if(!previous||previous.id!==current.id)return;
+ for(const unit of [...current.heroes,...current.enemies]){const old=[...previous.heroes,...previous.enemies].find(u=>u.uid===unit.uid);if(old?.hp<=0&&unit.hp>0)document.querySelectorAll(`.defeat-fade[data-defeat-unit="${unit.uid}"]`).forEach(n=>n.remove());}
+ if(reduced)return;
+ const timing=battleTiming(frame.kind,{speed,special:!!planSpecialEffects(previous,current,frame)?.special});
+ for(const hit of planImpactFeedback(previous,current,frame).filter(h=>h.knockout)){
+  if(document.querySelector(`.defeat-fade[data-defeat-unit="${hit.uid}"]`))continue;
+  const image=root.querySelector(`[data-unit="${hit.uid}"] .hero-main>img,[data-unit="${hit.uid}"] .enemy-target>img`),rect=image?.getBoundingClientRect();if(!rect?.width||!rect.height)continue;
+  const duration=600/timing.rate,fade=spawn('defeat-fade',rect.left,rect.top,timing.impact+duration+30),portrait=image.cloneNode(false),style=getComputedStyle(image);
+  fade.dataset.defeatUnit=hit.uid;fade.style.width=rect.width+'px';fade.style.height=rect.height+'px';fade.style.borderRadius=style.borderRadius;fade.style.animationDelay=timing.impact+'ms';fade.style.animationDuration=duration+'ms';fade.setAttribute('aria-hidden','true');
+  portrait.removeAttribute('id');portrait.alt='';portrait.style.objectFit=style.objectFit;portrait.style.objectPosition=style.objectPosition;fade.append(portrait);
+ }
+}
 export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduced=false,calm=false}={}){
  const impacts=planImpactFeedback(previous,current,frame),packets=planDamageFeedback(previous,current);
  const special=planSpecialEffects(previous,current,frame),timing=battleTiming(frame.kind,{speed,reduced,special:!!special?.special}),delay=timing.impact;speed=timing.rate;
@@ -105,7 +120,7 @@ export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduc
    if(!reduced){
     if(!calm)motion(portrait,[{transform:'translateY(0)',filter:'brightness(1)'},{transform:`translateY(${hit.side==='hero'?4:-4}px) scale(.97)`,filter:'brightness(1.35)',offset:.25},{transform:'translateY(0)',filter:'brightness(1)'}],{duration:240/speed});
     const packet=packets.find(p=>p.uid===hit.uid);if(packet){const typed=spawn(`typed-impact damage-${packet.type}`,pos.x,pos.y,650/speed);typed.setAttribute('aria-hidden','true');typed.style.animationDuration=650/speed+'ms';if(!hit.knockout){const art=unit.querySelector('.hero-main>img,.enemy-target>img'),rect=art?.getBoundingClientRect();if(rect){const tint=spawn(`damage-tint damage-${packet.type}`,rect.left,rect.top,480/speed);tint.style.width=rect.width+'px';tint.style.height=rect.height+'px';tint.style.animationDuration=480/speed+'ms';tint.setAttribute('aria-hidden','true');}}}
-    if(hit.knockout){const image=unit.querySelector('.hero-main>img,.enemy-target>img'),rect=image?.getBoundingClientRect();if(rect){const echo=spawn('defeat-echo',rect.left,rect.top,850/speed);echo.style.width=rect.width+'px';echo.style.height=rect.height+'px';echo.style.backgroundImage=`url("${image.src}")`;echo.style.animationDuration=850/speed+'ms';echo.setAttribute('aria-hidden','true');}const burst=spawn('defeat-burst',pos.x,pos.y,800/speed,Array.from({length:8},(_,i)=>`<i style="--angle:${i*45}deg"></i>`).join(''));burst.style.animationDuration=800/speed+'ms';burst.setAttribute('aria-hidden','true');}
+    if(hit.knockout){const burst=spawn('defeat-burst',pos.x,pos.y,800/speed,Array.from({length:8},(_,i)=>`<i style="--angle:${i*45}deg"></i>`).join(''));burst.style.animationDuration=800/speed+'ms';burst.setAttribute('aria-hidden','true');}
    }
   }
  },delay);
