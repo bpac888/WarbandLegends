@@ -1,4 +1,4 @@
-import {EFFECTS} from './effects.js?v=0.43.0';
+import {EFFECTS} from './effects.js?v=0.44.0';
 const paths={
  sword:'M5 19 18 6l2-3-4 2L3 18m1-5 7 7m-8 1 3-3',shield:'M12 3 3 6v6c0 5 9 9 9 9s9-4 9-9V6Z',
  fist:'m5 17-1-7c0-2 3-2 3 0V5c0-2 3-2 3 0V4c0-2 3-2 3 0v1c0-2 3-2 3 0v3c0-2 3-2 3 0v7l-4 6H8Z',
@@ -19,7 +19,8 @@ const paths={
  area:'M2 2h7v7H2Zm13 0h7v7h-7ZM2 15h7v7H2Zm13 0h7v7h-7Z',
  pierce:'m3 21 18-18m-9 0h9v9M4 4h8M4 4v8m8 8h8v-8',
 };
-export function effectIcon(id){const icon=EFFECTS[id]?.icon||id;let key=icon,extra='';
+export const effectArt=id=>EFFECTS[id]?'./assets/effects/'+id+'.webp':null;
+export function effectIcon(id){if(EFFECTS[id])return `<img class="effect-icon effect-art" src="${effectArt(id)}" alt="" width="256" height="256" aria-hidden="true">`;const icon=EFFECTS[id]?.icon||id;let key=icon,extra='';
  if(icon.startsWith('sword-'))key='sword';if(icon.startsWith('shield-'))key='shield';if(icon.startsWith('mana-'))key='mana';
  if(icon.endsWith('-up'))extra='<path d="m17 9 3-4 3 4m-3-4v9"/>';
  if(icon.endsWith('-down'))extra='<path d="m17 12 3 4 3-4m-3-6v10"/>';

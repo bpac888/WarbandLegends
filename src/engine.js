@@ -1,13 +1,13 @@
-import {validWeeklyBattle} from './weekly.js?v=0.43.0';
-import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.43.0';
-import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.43.0';
-import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.43.0';
-import {SCENARIOS,validScenario} from './chapter.js?v=0.43.0';
+import {validWeeklyBattle} from './weekly.js?v=0.44.0';
+import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.44.0';
+import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.44.0';
+import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.44.0';
+import {SCENARIOS,validScenario} from './chapter.js?v=0.44.0';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
-import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.43.0';
-import {statsAtLevel,levelCap} from './development.js?v=0.43.0';
-import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.43.0';
-export {effectName} from './effects.js?v=0.43.0';
+import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.44.0';
+import {statsAtLevel,levelCap} from './development.js?v=0.44.0';
+import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.44.0';
+export {effectName} from './effects.js?v=0.44.0';
 export const VERSION = 3;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
 export const COLORS = ['red', 'green', 'blue', 'yellow', 'purple'];

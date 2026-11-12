@@ -1,0 +1,49 @@
+/* Painted status symbols remain distinct at phone size; timers live in details. */
+.effect-art{object-fit:contain;display:block;flex-shrink:0;border-radius:5px}
+.battle-shell .battle-center :is(.hero-unit,.enemy-unit) .statuses{display:flex;gap:3px;padding:1px;z-index:5;scrollbar-width:thin;scrollbar-color:#d4ba82 #172835}
+.battle-shell .battle-center .hero-unit .statuses{left:auto;right:2px;top:34px;bottom:45px;width:34px;max-width:34px;height:auto;max-height:none;flex-flow:column nowrap;overflow-x:hidden;overflow-y:auto;transform:none}
+.battle-shell .battle-center :is(.hero-unit,.enemy-unit) .status{width:32px;height:32px;min-width:32px;min-height:32px;flex:0 0 32px;padding:1px;border:1px solid #74cbb2;border-radius:7px;background:#0d1825;box-shadow:0 1px 4px #0007;overflow:hidden;position:relative}
+.battle-shell .battle-center .status.negative{border-color:#f08b9b}
+.battle-shell .battle-center .status .effect-icon{width:28px;height:28px;max-width:none;opacity:1;filter:none}
+.battle-shell .battle-center .status:focus-visible{outline:2px solid #fff2b6;outline-offset:1px}
+@media(min-height:601px){.battle-shell .battle-center .enemy-unit{height:calc(100% - 10px);align-self:center}}
+.battle-shell .battle-center .enemy-unit:has(.statuses:not(:empty)){padding-bottom:34px}
+.battle-shell .battle-center .enemy-unit .statuses{left:50%;right:auto;top:auto;bottom:0;transform:translateX(-50%);width:max-content;max-width:100%;height:34px;max-height:34px;flex-flow:row nowrap;overflow-x:auto;overflow-y:hidden;justify-content:flex-start}
+.battle-shell .battle-center .board{row-gap:1px;column-gap:2px;padding:2px}
+.battle-shell .battle-center .board-surround{padding:2px}
+.battle-active-effects{margin:14px 0}.battle-active-effects>h3{font-size:21px;margin:0 0 10px}
+.battle-active-effects .codex-icon,.effect-codex .codex-icon{min-width:42px;min-height:42px}
+.battle-active-effects .effect-art,.effect-codex .effect-art{width:38px;height:38px}
+@media(max-width:360px){.battle-shell .battle-center .hero-unit .statuses{width:30px}.battle-shell .battle-center :is(.hero-unit,.enemy-unit) .status{width:28px;height:28px;min-width:28px;min-height:28px;flex-basis:28px}.battle-shell .battle-center .status .effect-icon{width:24px;height:24px}}
+@media(orientation:landscape) and (max-height:600px){.battle-shell .battle-center .hero-unit .statuses{left:60px;right:2px;top:auto;bottom:24px;width:auto;max-width:none;max-height:28px;flex-flow:row nowrap;overflow-x:auto;overflow-y:hidden}.battle-shell .battle-center :is(.hero-unit,.enemy-unit) .status{width:24px;height:24px;min-width:24px;min-height:24px;flex-basis:24px}.battle-shell .battle-center .status .effect-icon{width:20px;height:20px}.battle-shell .battle-center .enemy-unit:has(.statuses:not(:empty)){padding-bottom:26px}.battle-shell .battle-center .enemy-unit .statuses{height:26px;max-height:26px}.battle-shell .battle-center .enemy-target>img{height:clamp(24px,calc(20svh - 38px),70px)}}
+/* Damage cues use the actual event type, never the victim's element. */
+.typed-impact,.defeat-burst,.defeat-echo{position:fixed;pointer-events:none;z-index:43;--impact:#fff0bb}
+.typed-impact{width:66px;height:66px;margin:-33px;border:2px solid var(--impact);border-radius:50%;box-shadow:0 0 18px var(--impact),inset 0 0 18px var(--impact);animation:typed-impact .65s ease-out both}
+.damage-poison{--impact:#a7ff5e}.damage-burn,.damage-red{--impact:#ff9a43}.damage-frostbite,.damage-blue{--impact:#8ee9ff}.damage-bleed{--impact:#ff647d}.damage-green{--impact:#94e994}.damage-yellow{--impact:#ffe69a}.damage-purple{--impact:#d0a2ff}
+.typed-impact.damage-poison{border-style:dotted;background:radial-gradient(circle at 30% 35%,#bfff9255 0 13%,transparent 15%),radial-gradient(circle at 65% 70%,#a7ff5e66 0 17%,transparent 19%)}
+.typed-impact.damage-burn{border-radius:70% 20% 60% 30%;background:radial-gradient(ellipse at 50% 80%,#ffe6a799,transparent 70%)}
+.typed-impact.damage-frostbite{border-radius:8px;clip-path:polygon(50% 0,62% 32%,88% 12%,68% 42%,100% 50%,68% 58%,88% 88%,58% 68%,50% 100%,42% 68%,12% 88%,32% 58%,0 50%,32% 42%,12% 12%,38% 32%);background:#c4f3ff99}
+.typed-impact.damage-bleed{border:0;border-radius:0;box-shadow:none;background:repeating-linear-gradient(125deg,transparent 0 12px,#ff647daa 13px 16px,transparent 18px 26px)}
+.combat-number.typed-number{display:flex;align-items:center;gap:4px;font:800 clamp(19px,3.6vw,30px)/1.1 var(--font-sub);color:var(--impact,#fff0bb);text-shadow:0 2px 2px #000,-1px 0 #000,1px 0 #000;white-space:nowrap}
+.combat-number.typed-number .effect-art{width:21px;height:21px}.combat-number.typed-number>small{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.04em;color:inherit}
+.defeat-echo{background-position:center;background-size:cover;border-radius:12px;filter:brightness(2.4) saturate(.2);animation:defeat-dissolve .85s ease-out both;box-shadow:0 0 20px #ddf2ff88}
+.defeat-burst{width:80px;height:80px;margin:-40px;border:2px solid #e2f3ff;border-radius:50%;box-shadow:0 0 22px #cae9ff88;animation:defeat-release .8s ease-out both}
+.defeat-burst>i{position:absolute;left:50%;top:50%;width:3px;height:18px;border-radius:50%;background:linear-gradient(#fff,#a4d7ff00);transform:rotate(var(--angle)) translateY(-34px);transform-origin:0 0}
+@keyframes typed-impact{0%{opacity:0;transform:scale(.35)}25%{opacity:.8}100%{opacity:0;transform:scale(1.35)}}
+@keyframes defeat-dissolve{0%{opacity:.75;transform:translateY(0) scale(1)}40%{opacity:.6;filter:brightness(3) saturate(0)}100%{opacity:0;transform:translateY(-24px) scale(.92);clip-path:inset(0 0 100% 0)}}
+@keyframes defeat-release{0%{opacity:0;transform:scale(.3)}25%{opacity:.9}100%{opacity:0;transform:scale(1.6)}}
+@media(prefers-reduced-motion:reduce){.typed-impact,.defeat-burst,.defeat-echo{display:none!important}}
+#modal[data-view=page-guide] .effect-key{margin:8px 0 12px}#modal[data-view=page-guide] .effect-key p{font-size:12px;line-height:1.5;margin:5px 0}
+@media(prefers-reduced-motion:reduce){.combat-number.typed-number{animation:none}}
+
+.damage-heal{--impact:#9cf4b2}
+
+@media(min-height:601px){.battle-shell .hero-unit:has(.statuses:not(:empty)) .hero-main>.hero-rank-track{left:3px;right:auto;top:46px}}
+.damage-tint{position:fixed;pointer-events:none;z-index:42;background:var(--impact,#ff7185);border-radius:8px;mix-blend-mode:screen;animation:damage-tint .48s ease-out both}.damage-tint.damage-direct{--impact:#ff7185}
+@keyframes damage-tint{0%{opacity:0}20%{opacity:.32}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.damage-tint{display:none!important}}
+.battle-shell .battle-center .statuses:empty{display:none}
+body.menu-theme #modal .effect-codex .codex-icon{width:46px;height:46px;min-width:46px;min-height:46px;flex:0 0 46px;padding:3px;border-radius:9px}
+body.menu-theme #modal .effect-codex .codex-icon .effect-art{width:38px;height:38px;max-width:none}
+/* Reclaim the tall gaps inside phone tile rows for the champion portraits. */
+@media(min-height:601px){body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.25)) minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.47 + 4px)) minmax(0,1fr) auto}}

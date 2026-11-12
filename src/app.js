@@ -1,55 +1,55 @@
-import {campaignArc} from './campaign-story.js?v=0.43.0';
-import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.43.0';
-import {scenarioStatus} from './chapter.js?v=0.43.0';
-import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey,sceneViewed} from './campaign-journal.js?v=0.43.0';
-import {claimWeekly,weeklyWindow} from './weekly.js?v=0.43.0';
-import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.43.0';
-import {swipeTarget} from './board-gestures.js?v=0.43.0';
-import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.43.0';
-import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.43.0';
-import {specialSummary} from './special-summary.js?v=0.43.0';
-import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.43.0';
-import {useExperienceTome} from './experience-tomes.js?v=0.43.0';
-import {premiumItem,activateBooster} from './premium-items.js?v=0.43.0';
-import {premiumItemConfirmation} from './premium-items-ui.js?v=0.43.0';
-import {ascensionTier} from './ascension.js?v=0.43.0';
-import {battleTiming} from './battle-pacing.js?v=0.43.0';
-import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.43.0';
-import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.43.0';
-import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.43.0';
-import {courtyardHTML} from './courtyard-ui.js?v=0.43.0';
-import {mountCourtyard} from './courtyard-view.js?v=0.43.0';
-import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.43.0';
-import {saveTeam} from './teams.js?v=0.43.0';
-import {mountArenaScene} from './arena-scene.js?v=0.43.0';
-import './menu-atmosphere.js?v=0.43.0';
-import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.43.0';
-import {refreshEnergy,energyStatus} from './keeper.js?v=0.43.0';
-import {applyAutoAction} from './auto-battle.js?v=0.43.0';
-import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.43.0';
-import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.43.0';
-import {guideHTML,guideTopics,effectCard} from './guide-ui.js?v=0.43.0';
-import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.43.0';
-import {dailyPage} from './keeper-ui.js?v=0.43.0';
-import {buyWithGems} from './economy.js?v=0.43.0';
-import {gemConfirmation} from './gem-ui.js?v=0.43.0';
-import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.43.0';
-import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.43.0';
-import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.43.0';
-import {reserveEntry,exchange} from './mode-progression.js?v=0.43.0';
-import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.43.0';
-import {getEncounter,entryError} from './encounters.js?v=0.43.0';
-import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.43.0';
-import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.43.0';
-import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.43.0';
-import {animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.43.0';
-import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.43.0';
-import * as Shell from './shell.js?v=0.43.0';
-import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.43.0';
-import {EFFECTS} from './effects.js?v=0.43.0';
-import {effectIcon} from './icons.js?v=0.43.0';
-import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.43.0';
-import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.43.0';
+import {campaignArc} from './campaign-story.js?v=0.44.0';
+import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.44.0';
+import {scenarioStatus} from './chapter.js?v=0.44.0';
+import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey,sceneViewed} from './campaign-journal.js?v=0.44.0';
+import {claimWeekly,weeklyWindow} from './weekly.js?v=0.44.0';
+import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.44.0';
+import {swipeTarget} from './board-gestures.js?v=0.44.0';
+import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.44.0';
+import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.44.0';
+import {specialSummary} from './special-summary.js?v=0.44.0';
+import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.44.0';
+import {useExperienceTome} from './experience-tomes.js?v=0.44.0';
+import {premiumItem,activateBooster} from './premium-items.js?v=0.44.0';
+import {premiumItemConfirmation} from './premium-items-ui.js?v=0.44.0';
+import {ascensionTier} from './ascension.js?v=0.44.0';
+import {battleTiming} from './battle-pacing.js?v=0.44.0';
+import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.44.0';
+import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.44.0';
+import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.44.0';
+import {courtyardHTML} from './courtyard-ui.js?v=0.44.0';
+import {mountCourtyard} from './courtyard-view.js?v=0.44.0';
+import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.44.0';
+import {saveTeam} from './teams.js?v=0.44.0';
+import {mountArenaScene} from './arena-scene.js?v=0.44.0';
+import './menu-atmosphere.js?v=0.44.0';
+import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.44.0';
+import {refreshEnergy,energyStatus} from './keeper.js?v=0.44.0';
+import {applyAutoAction} from './auto-battle.js?v=0.44.0';
+import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.44.0';
+import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.44.0';
+import {guideHTML,guideTopics,effectCard} from './guide-ui.js?v=0.44.0';
+import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.44.0';
+import {dailyPage} from './keeper-ui.js?v=0.44.0';
+import {buyWithGems} from './economy.js?v=0.44.0';
+import {gemConfirmation} from './gem-ui.js?v=0.44.0';
+import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.44.0';
+import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.44.0';
+import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.44.0';
+import {reserveEntry,exchange} from './mode-progression.js?v=0.44.0';
+import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.44.0';
+import {getEncounter,entryError} from './encounters.js?v=0.44.0';
+import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.44.0';
+import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.44.0';
+import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.44.0';
+import {animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.44.0';
+import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.44.0';
+import * as Shell from './shell.js?v=0.44.0';
+import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.44.0';
+import {EFFECTS} from './effects.js?v=0.44.0';
+import {effectIcon} from './icons.js?v=0.44.0';
+import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.44.0';
+import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.44.0';
 const app=document.querySelector('#app'),modal=document.querySelector('#modal'),modalContent=document.querySelector('#modal-content'),notice=document.querySelector('#notice');
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={red:'<path d="M32 8c4 13 16 15 16 29a16 16 0 0 1-32 0c0-9 6-16 12-22-1 10 2 12 5 13 4-7 2-13-1-20Z"/>',green:'<path d="M50 12c1 27-10 40-28 32C5 27 25 12 50 12Z"/><path d="M17 51 42 22M28 39l-2-10m8 4 8 1" fill="none" stroke="var(--rune-dark)" stroke-width="3"/>',blue:'<path d="M32 9v46M12 20l40 24M12 44l40-24M24 14l8 7 8-7M24 50l8-7 8 7M13 29l10-2-1-10M51 35l-10 2 1 10M13 35l10 2-1 10M51 29l-10-2 1-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',yellow:'<path d="m32 5 7 18 20 9-20 9-7 18-7-18L5 32l20-9Z"/><circle cx="32" cy="32" r="8" fill="var(--rune-dark)"/>',purple:'<path d="M43 9a24 24 0 1 0 11 35A22 22 0 0 1 43 9Z"/><path d="m44 22 3-6 3 6 6 3-6 3-3 6-3-6-6-3Z"/>'};
@@ -67,7 +67,7 @@ function scheduleAuto(){
  autoTimer=setTimeout(()=>{autoTimer=null;if(!autoEnabled||busy||modal.open||document.hidden||screen!=='battle'||battle?.phase!=='playing')return;
   autoThinking=true;const id=++autoJob;
   try{
-   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.43.0',import.meta.url),{type:'module'});
+   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.44.0',import.meta.url),{type:'module'});
    autoWorker.onerror=()=>{stopAuto();if(screen==='battle')renderBattle();toast('Auto paused. You can continue manually.');};
    autoWorker.onmessage=({data})=>{
     if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;
@@ -106,8 +106,10 @@ function renderHome(){
 }
 function warbandPanel(){return `<section class="warband-section"><div class="section-heading"><div><h2>Team ${profile.activeTeamSlot+1} <span class="active-team-mark">Active Warband</span></h2></div><div class="warband-actions"><button class="text-button" data-action="roster">Change Champions ${Shell.uiIcon('arrow')}</button></div></div><div class="warband-grid library-grid">${profile.team.map(id=>Shell.championCard(developedChampion(byId.get(id),profile),profile,{ownedTab:true})).join('')}</div><div class="team-footnote">${teamComposition(profile.team)}</div>${factionTeamHTML(profile.team.map(id=>byId.get(id)))}</section>`;}
 function teamComposition(ids){const counts=Object.fromEntries(COLORS.map(c=>[c,0]));ids.forEach(id=>counts[byId.get(id).color]++);return `<span class="composition">${COLORS.map(c=>`<span class="color-pip ${c}" title="${ELEMENTS[c].name}: ${counts[c]} champions">${counts[c]}</span>`).join('')}<b>${Object.values(counts).every(n=>n===1)?'Rainbow warband':Object.values(counts).filter(Boolean).sort((a,b)=>b-a).join(' / ')+' formation'}</b></span>`;}
-function statusIcons(unit){return Object.entries(unit.effects).map(([id,e])=>`<button class="status ${EFFECTS[id]?.cat==='debuff'?'negative':'positive'} ${id.startsWith('vulnerable_')?id.replace('vulnerable_',''):''}" data-action="status" data-uid="${unit.uid}" aria-label="${esc(effectName(id))} on ${esc(unit.name)}, ${e.turns} board move${e.turns===1?'':'s'} remaining" title="${esc(effectName(id))} · ${e.turns} moves">${effectIcon(id)}<small>${e.turns}</small></button>`).join('');}
-function showStatuses(uid){const unit=[...(displayedBattle||battle).heroes,...(displayedBattle||battle).enemies].find(u=>u.uid===uid);if(!unit)return;openModal(esc(unit.name)+' · Active effects',`<p>Timers count completed board moves for both sides. Tap any badge during battle to inspect its effect.</p><div class="effect-codex">${Object.entries(unit.effects).map(([id,e])=>effectCard(id,`${e.turns} board move${e.turns===1?'':'s'} remaining`)).join('')||'<p>No active timed effects.</p>'}</div>`,'statuses');}
+function statusIcons(unit){if(unit.hp<=0)return '';return Object.keys(unit.effects).map(id=>`<button class="status ${EFFECTS[id]?.cat==='debuff'?'negative':'positive'}" data-action="status" data-effect="${id}" data-uid="${unit.uid}" aria-label="${esc(effectName(id))} on ${esc(unit.name)}" title="${esc(effectName(id))}">${effectIcon(id)}</button>`).join('');}
+function activeEffectsHTML(unit){return Object.keys(unit.effects||{}).length?`<section class="battle-active-effects"><h3>Active Effects</h3><div class="effect-codex">${Object.entries(unit.effects).map(([id,e])=>effectCard(id,`${e.turns} board move${e.turns===1?'':'s'} remaining`,false)).join('')}</div></section>`:'';}
+
+function showStatuses(uid){const unit=[...(displayedBattle||battle).heroes,...(displayedBattle||battle).enemies].find(u=>u.uid===uid);if(!unit)return;openModal(esc(unit.name)+' · Active effects',`<div class="effect-codex">${Object.entries(unit.effects).map(([id,e])=>effectCard(id,`${e.turns} board move${e.turns===1?'':'s'} remaining`)).join('')||'<p>No active timed effects.</p>'}</div>`,'statuses');}
 function renderBattle(state=battle,frame={}){
   if(screen!=='battle')return;
   const focusedIndex=document.activeElement?.dataset.index,previous=displayedBattle;displayedBattle=state;
@@ -166,7 +168,7 @@ function manaBar(unit){return `<span class="mana-bar" aria-hidden="true"><i styl
 function effectList(description){return `<ol class="special-sequence" aria-label="Special resolution order">${description.steps.map(e=>`<li data-step-kind="${e.kind}"><span class="sequence-icon" aria-hidden="true">${e.id?effectIcon(e.id):glyph(e.kind==='heal'?'health':'attack')}</span><div><b>${esc(e.name)}</b><small>${esc(e.scope)} · ${e.duration?e.duration+' board move'+(e.duration===1?'':'s'):'Instant'}</small><p>${esc(e.description)}</p>${e.periodic?'<em>First tick: start of the next valid board move.</em>':''}</div></li>`).join('')}</ol>`;}
 
 function specialLevelsHTML(unit,canCast=false,dossier=false){return `<div class="special-levels ${unit.special.charging?'multi-charge':''}">${manaLevels(unit).map(l=>{const d=skillDescription(unit,effects,l.level),available=Number.isFinite(unit.mana)&&unit.mana>=l.tiles&&unit.hp>0;return `<section class="special-level ${available?'available':''}" data-charge-level="${l.level}">${dossier&&!unit.special.charging?'':`<header><b>${unit.special.charging?'Charge '+l.level:manaLabel(unit)}</b><span>${l.tiles} tiles</span></header>`}<p class="special-at-a-glance"><span>Special Ability Quick Summary</span>${esc(specialSummary(l))}</p>${chargeComparisonHTML(unit,l.level)}${canCast?`<p class="special-targeting">${esc(d.targeting)}</p>`:''}${effectList(d)}${canCast?`<button class="button ${available?'gold':'outline'}" data-action="choose-charge" data-uid="${unit.uid}" data-level="${l.level}" ${!available?'disabled':''}>${available?'Cast '+(unit.special.charging?'Charge '+l.level:'Special'):'Need '+chargeText(l.tiles-unit.mana)+' more tiles'}</button>`:''}</section>`;}).join('')}</div>`;}
-function inspect(unit){if(!unit.uid)unit=developedChampion(unit,profile,{preview:profile.openRoster,sandbox:profile.openRoster});openModal(esc(unit.name),`<div class="champion-detail ${unit.color}"><img src="${unit.portrait}" alt="${esc(unit.name)}"><div><span class="eyebrow">${faction(unit.faction)} · ${unit.rarity} ${role(unit.role)}</span><h3>${esc(unit.special.name)}</h3><p class="detail-element ${unit.color}">${rune(unit.color)} ${ELEMENTS[unit.color].name} · ${unit.color}</p><p class="ability-cost">${manaLabel(unit)} · ${manaLevels(unit).map(l=>l.tiles).join(' / ')} tiles · ${unit.side==='enemy'?'Casts when full at an attack opportunity':'No board move to cast'}</p>${unit.side==='enemy'?`<p class="enemy-charge-detail">${chargeText(unit.mana)} / ${unit.manaMax} tile charge · attacks in ${unit.countdown} board move${unit.countdown===1?'':'s'}</p>`:''}<dl><div><dt>HP</dt><dd>${unit.maxHp||unit.hp}</dd></div><div><dt>ATK</dt><dd>${unit.atk}</dd></div><div><dt>DEF</dt><dd>${unit.def}</dd></div></dl></div></div>${specialLevelsHTML(unit)}${factionUnitHTML(unit)}${unit.passive?`<div class="passive-info"><b>Passive · ${esc(unit.passive.name)}</b><p>${esc(unit.passive.desc)}</p></div>`:''}<details class="champion-story"><summary>${esc(unit.title)}</summary><p>${esc(unit.lore)}</p></details>${inspectingFromRoster?'<button class="text-button" data-action="back-roster">← Back to your warband</button>':''}`,'ability');}
+function inspect(unit){if(!unit.uid)unit=developedChampion(unit,profile,{preview:profile.openRoster,sandbox:profile.openRoster});openModal(esc(unit.name),`<div class="champion-detail ${unit.color}"><img src="${unit.portrait}" alt="${esc(unit.name)}"><div><span class="eyebrow">${faction(unit.faction)} · ${unit.rarity} ${role(unit.role)}</span><h3>${esc(unit.special.name)}</h3><p class="detail-element ${unit.color}">${rune(unit.color)} ${ELEMENTS[unit.color].name} · ${unit.color}</p><p class="ability-cost">${manaLabel(unit)} · ${manaLevels(unit).map(l=>l.tiles).join(' / ')} tiles · ${unit.side==='enemy'?'Casts when full at an attack opportunity':'No board move to cast'}</p>${unit.side==='enemy'?`<p class="enemy-charge-detail">${chargeText(unit.mana)} / ${unit.manaMax} tile charge · attacks in ${unit.countdown} board move${unit.countdown===1?'':'s'}</p>`:''}<dl><div><dt>HP</dt><dd>${unit.maxHp||unit.hp}</dd></div><div><dt>ATK</dt><dd>${unit.atk}</dd></div><div><dt>DEF</dt><dd>${unit.def}</dd></div></dl></div></div>${activeEffectsHTML(unit)}${specialLevelsHTML(unit)}${factionUnitHTML(unit)}${unit.passive?`<div class="passive-info"><b>Passive · ${esc(unit.passive.name)}</b><p>${esc(unit.passive.desc)}</p></div>`:''}<details class="champion-story"><summary>${esc(unit.title)}</summary><p>${esc(unit.lore)}</p></details>${inspectingFromRoster?'<button class="text-button" data-action="back-roster">← Back to your warband</button>':''}`,'ability');}
 let inspectingFromRoster=false;
 function chooseSpecial(hero){
   pendingCaster=null;selectedRune=null;renderBattle();
@@ -367,7 +369,7 @@ document.addEventListener('change',async event=>{
 
 });
 async function boot(){try{
-  const responses=await Promise.all([fetch('./data/champions.json?v=0.43.0'),fetch('./data/effects.json?v=0.43.0')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
+  const responses=await Promise.all([fetch('./data/champions.json?v=0.44.0'),fetch('./data/effects.json?v=0.44.0')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
 

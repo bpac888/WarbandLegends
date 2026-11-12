@@ -1,3 +1,4 @@
+import {EFFECTS} from '../src/effects.js';
 import {campaignMilestone} from '../src/campaign-milestones.js';
 import {CAMPAIGN_ARCS} from '../src/campaign-story.js';
 import {WEEKLY_STAGES} from '../src/weekly.js';
@@ -80,6 +81,7 @@ for(const id of AVATARS)if((await stat('assets/portraits/'+id+'.svg')).size<1000
 await rm('dist',{recursive:true,force:true});await mkdir('dist');
 for(const path of ['index.html','manifest.webmanifest','src','data','assets'])await cp(path,`dist/${path}`,{recursive:true,filter:source=>!['source-champions.json','source-effects.json','roster-design.json','status-design.json'].some(name=>source.endsWith('/'+name))});
 for(const d of ['normal','hard','nightmare'])for(const stage of [5,10,15,20,25])if((await stat(campaignMilestone(d,stage).art)).size<50000)throw Error('Missing milestone illustration');
+const effectArt=JSON.parse(await readFile('data/effect-art-manifest.json','utf8'));if(effectArt.items.length!==Object.keys(EFFECTS).length)throw Error('Effect artwork coverage mismatch');for(const art of effectArt.items){const bytes=await readFile(art.path);if(!EFFECTS[art.id]||bytes.length!==art.bytes||createHash('sha256').update(bytes).digest('hex')!==art.sha256)throw Error('Effect artwork missing or changed: '+art.id);}
 const cinematicManifest=JSON.parse(await readFile('data/cinematic-manifest.json','utf8'));
 for(const clip of cinematicManifest.clips){const bytes=await readFile(clip.path);if(bytes.length<1000||bytes.length>2000000||bytes.length!==clip.bytes||createHash('sha256').update(bytes).digest('hex')!==clip.sha256)throw Error('Cinematic missing, changed or exceeds mobile budget: '+clip.id);if(clip.characterId&&!roster.some(c=>c.id===clip.characterId))throw Error('Unknown cinematic character: '+clip.characterId);}
 for(const arc of Object.values(CAMPAIGN_ARCS))for(const scene of arc.chapters)if(scene.media)throw Error('Campaign scenes must remain static: '+scene.title);

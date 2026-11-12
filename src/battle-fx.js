@@ -1,5 +1,6 @@
-import {battleTiming} from './battle-pacing.js?v=0.43.0';
-import {manaLevels} from './engine.js?v=0.43.0';
+import {effectIcon} from './icons.js?v=0.44.0';
+import {battleTiming} from './battle-pacing.js?v=0.44.0';
+import {manaLevels} from './engine.js?v=0.44.0';
 // Presentation only. Neither the effect planner nor its renderer changes battle state.
 export function planSpecialEffects(previous,current,frame){
  const units=[...current.heroes,...current.enemies],oldUnits=[...previous.heroes,...previous.enemies],actor=units.find(u=>u.uid===frame.actor),beforeActor=oldUnits.find(u=>u.uid===frame.actor);
@@ -31,6 +32,15 @@ export function planImpactFeedback(previous,current,frame={}){
   return [{uid:unit.uid,side:unit.side,color:unit.color,damage,absorbed,fraction:damage/Math.max(1,unit.maxHp),knockout:unit.hp<=0}];
  });
 }
+// Read combat messages so a Poison tick cannot be presented as elemental damage.
+export function planDamageFeedback(previous,current){
+ const packets=[];
+ for(const event of current.log||[]){if(event.id<=previous.eventId||event.tone!=='damage'||!event.unitId)continue;const match=event.text.match(/−(\d+) · (.+)/u);if(!match)continue;
+ const label=match[2],dot=[['Poison','poison'],['Burn','burn'],['Frostbite','frostbite'],['Bleed','bleed']].find(([name])=>label===name),rune=[['Ember','red'],['Verdant','green'],['Frost','blue'],['Radiant','yellow'],['Umbral','purple']].find(([name])=>label.startsWith(name+' rune'));
+ packets.push({uid:event.unitId,amount:Number(match[1]),type:dot?.[1]||rune?.[1]||'direct',critical:label.includes('CRITICAL'),strong:label.includes('STRONG'),weak:label.includes('WEAK')});
+ }
+ return packets;
+}
 let generation=0;const timers=new Set(),animations=new Set();
 function motion(node,keyframes,options){
  if(!node?.isConnected)return;
@@ -43,7 +53,7 @@ const center=(node,y=.5)=>{const r=node?.getBoundingClientRect();return r?{x:r.l
 export function animateLaneShots(frame,state,root,{speed=1,reduced=false}={}){
  const duration=720/speed;
  for(const [i,shot]of(frame.shots||[]).entries()){
-  if(!state.heroes.some(u=>u.color===shot.color&&u.hp>0))continue;
+  if(!state.heroes.some(u=>u.color===shot.color))continue;
   const tile=root.querySelector(`[data-index="${shot.index}"]`),start=center(tile),enemy=root.querySelector(`[data-unit="${shot.target}"]`),end=shot.target?center(enemy,.6):center(root.querySelector('.battle-sky'),.07);if(!start||!end)continue;
   const lane=root.querySelector(`[data-lane="${shot.index%7}"]`);lane?.classList.add('lane-firing',shot.color);
   if(reduced)continue;
@@ -73,7 +83,7 @@ function mythicCinematic(plan,speed){
  stage.append(seal,art,copy);node.append(stage);document.querySelector('#effects-layer')?.append(node);later(()=>node.remove(),1750/speed);
 }
 export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduced=false,calm=false}={}){
- const impacts=planImpactFeedback(previous,current,frame);
+ const impacts=planImpactFeedback(previous,current,frame),packets=planDamageFeedback(previous,current);
  const special=planSpecialEffects(previous,current,frame),timing=battleTiming(frame.kind,{speed,reduced,special:!!special?.special}),delay=timing.impact;speed=timing.rate;
  if(frame.kind==='match'&&frame.combo>1&&!reduced){
   const board=root.querySelector('.board');motion(board,[{filter:'brightness(1)'},{filter:`brightness(${Math.min(1.35,1+frame.combo*.07)})`,offset:.4},{filter:'brightness(1)'}],{duration:380/speed});
@@ -94,20 +104,26 @@ export function animateBattleFeedback(previous,current,frame,root,{speed=1,reduc
    const type=hit.damage?'hurt':'guard',ring=spawn(`combat-contact ${hit.color} contact-${type} ${reduced?'contact-still':''}`,pos.x,pos.y,(reduced?150:420)/speed);ring.setAttribute('aria-hidden','true');
    if(!reduced){
     if(!calm)motion(portrait,[{transform:'translateY(0)',filter:'brightness(1)'},{transform:`translateY(${hit.side==='hero'?4:-4}px) scale(.97)`,filter:'brightness(1.35)',offset:.25},{transform:'translateY(0)',filter:'brightness(1)'}],{duration:240/speed});
-    if(hit.knockout){const flare=spawn(`combat-knockout ${hit.color}`,pos.x,pos.y,600/speed,'✦');flare.setAttribute('aria-hidden','true');}
+    const packet=packets.find(p=>p.uid===hit.uid);if(packet){const typed=spawn(`typed-impact damage-${packet.type}`,pos.x,pos.y,650/speed);typed.setAttribute('aria-hidden','true');typed.style.animationDuration=650/speed+'ms';if(!hit.knockout){const art=unit.querySelector('.hero-main>img,.enemy-target>img'),rect=art?.getBoundingClientRect();if(rect){const tint=spawn(`damage-tint damage-${packet.type}`,rect.left,rect.top,480/speed);tint.style.width=rect.width+'px';tint.style.height=rect.height+'px';tint.style.animationDuration=480/speed+'ms';tint.setAttribute('aria-hidden','true');}}}
+    if(hit.knockout){const image=unit.querySelector('.hero-main>img,.enemy-target>img'),rect=image?.getBoundingClientRect();if(rect){const echo=spawn('defeat-echo',rect.left,rect.top,850/speed);echo.style.width=rect.width+'px';echo.style.height=rect.height+'px';echo.style.backgroundImage=`url("${image.src}")`;echo.style.animationDuration=850/speed+'ms';echo.setAttribute('aria-hidden','true');}const burst=spawn('defeat-burst',pos.x,pos.y,800/speed,Array.from({length:8},(_,i)=>`<i style="--angle:${i*45}deg"></i>`).join(''));burst.style.animationDuration=800/speed+'ms';burst.setAttribute('aria-hidden','true');}
    }
   }
  },delay);
 }
 
 export function animateNumbers(previous,current,frame,root,{speed=1,reduced=false}={}){
- const timing=battleTiming(frame.kind,{speed,reduced,special:!!planSpecialEffects(previous,current,frame)?.special});
+ const timing=battleTiming(frame.kind,{speed,reduced,special:!!planSpecialEffects(previous,current,frame)?.special}),packets=planDamageFeedback(previous,current);
  for(const unit of [...current.heroes,...current.enemies]){
-  const old=[...previous.heroes,...previous.enemies].find(u=>u.uid===unit.uid);if(!old||old.hp===unit.hp)continue;
-  const target=root.querySelector(`[data-unit="${unit.uid}"]`),delta=Math.round(unit.hp-old.hp);
-  later(()=>{const pos=center(target,.42);if(!pos||!target.isConnected)return;const label=spawn(`combat-number ${delta>0?'restored':'wounded'}`,pos.x,pos.y,1000/timing.rate);label.textContent=(delta>0?'+':'−')+Math.abs(delta);label.style.animationDuration=1000/timing.rate+'ms';},timing.impact);
+  const old=[...previous.heroes,...previous.enemies].find(u=>u.uid===unit.uid);if(!old)continue;
+  const events=packets.filter(p=>p.uid===unit.uid),heals=(current.log||[]).filter(e=>e.id>previous.eventId&&e.unitId===unit.uid&&e.tone==='heal').flatMap(e=>{const m=e.text.match(/\+(\d+) HP/u);return m?[{amount:Number(m[1]),type:'heal',healing:true}]:[];}),delta=Math.round(unit.hp-old.hp),rows=events.length||heals.length?[...events,...heals]:delta?[{amount:Math.abs(delta),type:delta>0?'heal':'direct',healing:delta>0}]:[];
+  rows.slice(0,5).forEach((event,i)=>later(()=>{const target=root.querySelector(`[data-unit="${unit.uid}"]`),pos=center(target,.4);if(!pos||!target.isConnected)return;
+   const label=spawn(`combat-number typed-number damage-${event.type} ${event.healing?'restored':'wounded'}`,pos.x+(i%2?8:-4),pos.y-i*14,1000/timing.rate);label.setAttribute('aria-hidden','true');
+   if(['poison','burn','frostbite','bleed'].includes(event.type))label.innerHTML=effectIcon(event.type);const amount=document.createElement('b');amount.textContent=(event.healing?'+':'−')+event.amount;label.append(amount);
+   const flag=event.critical?'CRITICAL':event.strong?'STRONG':event.weak?'WEAK':'';if(flag){const caption=document.createElement('small');caption.textContent=flag;label.append(caption);}label.style.animationDuration=1000/timing.rate+'ms';
+  },timing.impact+i*(reduced?0:100)/timing.rate));
  }
 }
+
 export function animateMatchGlow(frame,state,root,{speed=1,reduced=false}={}){
  if(reduced)return;
  for(const index of new Set(frame.cleared||[])){

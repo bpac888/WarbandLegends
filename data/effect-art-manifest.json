@@ -1,0 +1,253 @@
+{
+  "description": "Original generated status illustrations, one unique icon for every timed effect and instant action.",
+  "items": [
+    {
+      "id": "inc_atk",
+      "path": "assets/effects/inc_atk.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17572,
+      "sha256": "6b1773fbe05480de18920be4f61adbd9ba49e45d01512f36e70e113f524e61f5"
+    },
+    {
+      "id": "dec_atk",
+      "path": "assets/effects/dec_atk.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16348,
+      "sha256": "c7f8d72ccdd3c88c8d96fd6416c2c0c89a6dd058b812da85de5f7727dd1ddf5c"
+    },
+    {
+      "id": "tile_boost",
+      "path": "assets/effects/tile_boost.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20548,
+      "sha256": "9aed068d39d974b27279e6150e353511abdf99d609c6e4f32104055372acdaed"
+    },
+    {
+      "id": "inc_def",
+      "path": "assets/effects/inc_def.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17156,
+      "sha256": "e8dd2a3731de31a4e0c2ab1a9c2e1c2337d854f74a65ae87629b673493c6fb64"
+    },
+    {
+      "id": "dec_def",
+      "path": "assets/effects/dec_def.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16830,
+      "sha256": "b3915189f7860d31809787a3cd75b699274a1e93db53660bdede5eb5ae3effff"
+    },
+    {
+      "id": "shield",
+      "path": "assets/effects/shield.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16404,
+      "sha256": "914e590607c3d9fd5fe75c9fac6256dcfd9320a23a7e9abb9abf4145dbf3a33f"
+    },
+    {
+      "id": "strengthen",
+      "path": "assets/effects/strengthen.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16480,
+      "sha256": "76825b3f7811ed383a449db3f9ad59b4a5a1e141682dfad5ab6546302aff14bd"
+    },
+    {
+      "id": "weaken",
+      "path": "assets/effects/weaken.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17376,
+      "sha256": "269ffa9bd468385fb475bd622dd3b20dd008775b7f134edfd83af195d9c21860"
+    },
+    {
+      "id": "heal",
+      "path": "assets/effects/heal.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17840,
+      "sha256": "eb775c9770eb25fc182f2e3c2f781d23317333f7ce5669fd1345fa0387cbac3a"
+    },
+    {
+      "id": "mana_surge",
+      "path": "assets/effects/mana_surge.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17054,
+      "sha256": "6696a536e920284f5432b6beeb09629b05e43b380c787bb60261e3bb9e729d3a"
+    },
+    {
+      "id": "mana_slow",
+      "path": "assets/effects/mana_slow.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14876,
+      "sha256": "3aab56137e7e02854b4296601e7c1265535fd8f7b748e43cb6456a56950076fe"
+    },
+    {
+      "id": "mana_block",
+      "path": "assets/effects/mana_block.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21540,
+      "sha256": "b80a39bd7f09ba2ae46ebffb9ec72b545cdace660dc21e9401b28577a33233c8"
+    },
+    {
+      "id": "block_buffs",
+      "path": "assets/effects/block_buffs.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18254,
+      "sha256": "19ecba76689941dc9d8011a122a60c15fbf36c2a5a7dea8b1bbfb8d4caa02ef1"
+    },
+    {
+      "id": "block_debuffs",
+      "path": "assets/effects/block_debuffs.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19096,
+      "sha256": "d28e8760a1e91d205e906072dca10b49867c3c37b76664426c2f93329537a744"
+    },
+    {
+      "id": "guard",
+      "path": "assets/effects/guard.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21396,
+      "sha256": "8dc32831a5e12f6b3ae8dbabbb20d37da9b1d5b33b473457eccade730fc3e25a"
+    },
+    {
+      "id": "counterattack",
+      "path": "assets/effects/counterattack.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18120,
+      "sha256": "6eaa38aae18b40126605a307ecd128ea8ba33ae6953a0a9e8b3dd781b88405e7"
+    },
+    {
+      "id": "revive_on_death",
+      "path": "assets/effects/revive_on_death.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 24194,
+      "sha256": "8eec4b97a6cbe8128f1c5683cd6068296e002d6d5678d9bbce529f0c42a725ab"
+    },
+    {
+      "id": "poison",
+      "path": "assets/effects/poison.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20942,
+      "sha256": "4d7f3c983884015313bd8b3de08e2ed2b7e3fbc4797d56942855615b3ea71c6a"
+    },
+    {
+      "id": "burn",
+      "path": "assets/effects/burn.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20748,
+      "sha256": "a8893859f9a3edd917b69c2482be831044ef9de75bfc1b2f3fa3365e65189420"
+    },
+    {
+      "id": "frostbite",
+      "path": "assets/effects/frostbite.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 23940,
+      "sha256": "66e28f02e42dacccec3d376fe1e5761f08fd6c424a05d28148d58fa5e6faa0af"
+    },
+    {
+      "id": "bleed",
+      "path": "assets/effects/bleed.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18606,
+      "sha256": "3c911417f0023627dc333fda03e945e3bc4dacaefc0f193d42bb83d26544d421"
+    },
+    {
+      "id": "remove_debuffs",
+      "path": "assets/effects/remove_debuffs.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19180,
+      "sha256": "6f2bc364a33b911f2b6606f05dd487440399fd5555242a87712d383772af112f"
+    },
+    {
+      "id": "dispel",
+      "path": "assets/effects/dispel.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 23922,
+      "sha256": "35665fb0921358666ef8e770fec74f3d5489b82985a10d86757349b026d7cc3b"
+    },
+    {
+      "id": "mana_raise",
+      "path": "assets/effects/mana_raise.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21044,
+      "sha256": "453e08a41c8def29941318a94a4e7768781486f9c23724a6ceb128e3940178c3"
+    },
+    {
+      "id": "aoe",
+      "path": "assets/effects/aoe.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16390,
+      "sha256": "6d3c487927e1018a7f3738c24380360e3fca5626174c80a626648ebfe484b380"
+    },
+    {
+      "id": "ignore_def",
+      "path": "assets/effects/ignore_def.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19768,
+      "sha256": "6ebd477b31a59a8a43ede94cdbf8ac52de7678e033af52960562e5af764274c4"
+    },
+    {
+      "id": "vulnerable_red",
+      "path": "assets/effects/vulnerable_red.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16924,
+      "sha256": "ebf101c7c5d1d8ae9871653f759f45a91564fcedb8eaa86a5f1344a13c228cad"
+    },
+    {
+      "id": "vulnerable_blue",
+      "path": "assets/effects/vulnerable_blue.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17700,
+      "sha256": "b92e2b634406974d9f297e4c0b6940f6c3d09424d19aef824d5357a6b1c5cccc"
+    },
+    {
+      "id": "vulnerable_green",
+      "path": "assets/effects/vulnerable_green.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17006,
+      "sha256": "ceed34809e4854ee6b4992de0226cb0b2d06632da80374cec489e9eedf212943"
+    },
+    {
+      "id": "vulnerable_yellow",
+      "path": "assets/effects/vulnerable_yellow.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17482,
+      "sha256": "770c2e1579444cde8806d7dd851d924d5175135ba5909b1089ae5bc2b660e302"
+    },
+    {
+      "id": "vulnerable_purple",
+      "path": "assets/effects/vulnerable_purple.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16196,
+      "sha256": "22020401c8d6c35489589136eb29e8955d9ac6206df7585dadaadaba0f5f2ace"
+    }
+  ]
+}
