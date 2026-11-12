@@ -1,3 +1,3 @@
-import {energyCost} from './keeper.js?v=0.44.0';
-import {ENERGY_ART} from './currency-art.js?v=0.44.0';
-export function energyCostMark(profile,encounter){const cost=energyCost(encounter);return cost?`<span class="energy-cost"><img src="${ENERGY_ART}" alt="" width="18" height="18">${cost} Energy</span>`:'';}
+import {energyCost} from './keeper.js?v=0.44.1';
+import {ENERGY_ART} from './currency-art.js?v=0.44.1';
+export function energyCostMark(profile,encounter,{compact=false}={}){const cost=energyCost(encounter);return cost?`<span class="energy-cost"${compact?' id="entry-energy-cost"':''} aria-label="${cost} Energy"><img src="${ENERGY_ART}" alt="" width="18" height="18">${cost}${compact?'':' Energy'}</span>`:'';}

@@ -43,7 +43,7 @@ try{
   }
   for(const d of DUNGEONS){
    await page.locator(`[data-dungeon="${d.id}"]`).click();assert.equal(await page.locator('#modal-title').innerText(),d.boss+' · Normal');
-   assert.equal(await page.locator('#modal .modal-body').innerText(),'Confirm');assert.equal(await page.locator('#modal .modal-body img,#modal .energy-cost').count(),0);
+   assert.ok(await page.getByRole('button',{name:'Confirm',exact:true}).isVisible());assert.equal(await page.locator('#modal .entry-confirm .energy-cost').count(),1);
    assert.ok(await page.locator('#modal').evaluate(m=>m.scrollWidth<=m.clientWidth+1));await page.getByRole('button',{name:'Close dialog',exact:true}).click();
   }
   for(const diff of ['hard','nightmare']){await page.locator(`[data-difficulty="${diff}"]`).click();assert.equal(await page.locator('.dungeon-guardian:disabled').count(),7);assert.equal(await page.locator('.guardian-seal').count(),7);}

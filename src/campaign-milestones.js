@@ -4,6 +4,7 @@ const places={gate:'river gate',obsidian:'Obsidian Gate marsh fortress',moonward
 export function campaignMilestone(difficulty,number){
  if(!states[difficulty]||!Number.isInteger(number)||number<5||number>25||number%5)return null;
  const place={5:'gate',10:'obsidian',15:'moonward',20:'gardens',25:'crown'}[number];
- return {art:`assets/scenes/milestones/${difficulty}-${place}.webp`,alt:`The ${places[place]} in the ${states[difficulty]}`};
+ const focus=place==='obsidian'?(difficulty==='hard'?60:72):place==='crown'?70:place==='moonward'&&difficulty==='normal'?35:50;
+ return {focus,art:`assets/scenes/milestones/${difficulty}-${place}.webp`,alt:`The ${places[place]} in the ${states[difficulty]}`};
 }
-export function milestoneIllustration(difficulty,number){const m=campaignMilestone(difficulty,number);return m?`<figure class="campaign-milestone-art"><img src="./${m.art}" alt="${m.alt}" width="1536" height="1024"></figure>`:'';}
+export function milestoneIllustration(difficulty,number){const m=campaignMilestone(difficulty,number);return m?`<figure class="campaign-milestone-art"><img src="./${m.art}" alt="${m.alt}" width="1536" height="1024" style="object-position:${m.focus}% center"></figure>`:'';}
