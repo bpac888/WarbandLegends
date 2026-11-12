@@ -1,22 +1,22 @@
-import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.41.0';
-import {factionGuideHTML} from './faction-ui.js?v=0.41.0';
-import {EFFECTS} from './effects.js?v=0.41.0';
-import {effectIcon} from './icons.js?v=0.41.0';
-import {SUMMON_ODDS} from './progression.js?v=0.41.0';
-import {heroInsight} from './tactics-ui.js?v=0.41.0';
+import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.41.1';
+import {factionGuideHTML} from './faction-ui.js?v=0.41.1';
+import {EFFECTS} from './effects.js?v=0.41.1';
+import {effectIcon} from './icons.js?v=0.41.1';
+import {SUMMON_ODDS} from './progression.js?v=0.41.1';
+import {heroInsight} from './tactics-ui.js?v=0.41.1';
 export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
 const battleRules=[
  ['Elements','<img class="element-advantages" src="./assets/guide/element-advantages.webp" alt="Red beats Green; Green beats Blue; Blue beats Red. Yellow and Purple are strong against each other.">'],
  ['Mana','Empty lanes give double mana. Specials spend all charge without using a move. Enemies gain 4 charge per attack opportunity.'],
 ];
 const topics=[
- ['battles','Battles',[...battleRules,['Weekly Challenges','Daily Gift includes a Weekly Trial and Weekly Encounter. Both reset Monday at midnight Pacific time. No Energy cost; claim each gift once. Unclaimed completed gifts stay available.'],['Chapter Journal','Tap the journal icon at the bottom left of any Campaign map to replay unlocked story scenes. Normal is green, Hard burns, and Nightmare lies in ruins. Each chapter has a one-time gift per difficulty. Replays grant no rewards.'],['Energy','Campaign / Dungeons: 1/2/3 Energy (Normal/Hard/Nightmare). Arena: 1. Capacity: 50 + profile level. Full refill at midnight PST and on level-up. Entry costs are not refunded. Events use attempts.'],['Loot Tickets','Use one Loot Ticket on a campaign stage already cleared on that difficulty for instant replay rewards. Normal Energy still applies: 1 on Normal, 2 on Hard, or 3 on Nightmare. Buy tickets in Token Exchange. Not available in playtesting.']]],
+ ['battles','Battles',[...battleRules,['Weekly Challenges','Two challenges on Daily Gift; reset Monday at midnight Pacific. No Energy cost. Each gift is claimable once; completed unclaimed gifts carry over.'],['Chapter Journal','Journal icon: bottom left of each Campaign map. Chapter gifts are once per difficulty; story replays give no rewards.'],['Energy','Campaign / Dungeons: 1 / 2 / 3 Energy by difficulty. Arena: 1. Capacity: 50 + profile level. Refills at midnight PST and profile level-up. Entry costs are not refunded. Events use attempts.'],['Loot Tickets','One ticket instantly replays a stage cleared on that difficulty. Normal Energy costs apply. Available in Token Exchange; disabled in playtesting.']]],
  ['growth','Heroes',[
-  ['Favorites & Locks','Favorite champions in their detail page, then choose Favorites First in Collection or team filters. Lock individual copies to protect them from feeding. Saved teams remain protected too. Rename any of your four teams in Teams.'],
-  ['Boosters & Tomes','Activate boosters in Inventory: +25% feeding XP or +25% battle Gold for 24 real hours. Each type can be active once at a time. Ascension and Limit Break Tomes grant one step without materials or Gold; normal level and rarity requirements still apply. Premium purchases are previews for now.'],
-  ['Feeding','Common / Rare copies cost 25 Gold to feed. Rare: 3× Common XP; matching Rare hero: another 5×. Same element: +25%. Saved teams are protected.'],
-  ['Today’s Path','Gain three levels with the same character during the day. Feeding and battle XP both count; different characters and copies track separately. Daily objectives reset at midnight Pacific time.'],
-  ['Ascension','Each tier adds 2% stats and restarts at level 1 without losing power. Copies develop separately.'],
+  ['Favorites & Locks','Locks protect individual copies from feeding; saved teams are protected automatically. Favorites First sorts marked champions to the top.'],
+  ['Boosters & Tomes','Boosters: +25% feeding XP or battle Gold for 24 hours; one active per type. Activate in Inventory. Ascension / Limit Break Tomes cover materials and Gold for one step; level and rarity requirements still apply.'],
+  ['Feeding','25 Gold per Common / Rare copy. Rare gives 3× Common XP; a matching Rare hero gives another 5×. Matching element: +25% XP.'],
+  ['Today’s Path','The three-level objective tracks one copy at a time; feeding and battle XP count. Objectives reset at midnight Pacific.'],
+  ['Ascension','Each tier adds 2% stats and restarts at level 1 without losing power. Copies progress separately.'],
   ['Limit Break',`Rare or higher: two breaks after full ascension, each adding 5 levels and 3% stats. The second adds a ${LIMIT_BREAK_BUFF_TURNS}-turn role buff at battle start.`],
  ]],
  ['factions','Factions',[['Faction Bonuses',factionGuideHTML()]]],
@@ -41,5 +41,5 @@ function effectsGuideHTML(kind){
 export function guideHTML(id='overview',champion=null,effectKind='buff',profile={}){
  const key=id==='heroes'?'growth':id==='overview'?'battles':id;
  const selected=topics.find(t=>t[0]===key)||topics[0];
- return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='tools'?`<div class="guide-tools"><button class="button outline" data-action="nav" data-page="splash">Title Screen</button><label class="guide-playtesting" for="cinematic-preference"><span><b>Character cinematics</b><small>Short reveals and Special animations. Reduced Motion always uses still artwork.</small></span><input type="checkbox" id="cinematic-preference" ${profile.cinematicsEnabled!==false?'checked':''}></label><label class="guide-playtesting" for="open-roster"><span><b>Playtesting</b><small>All heroes at maximum level. No battle rewards or progress.</small></span><input type="checkbox" id="open-roster" ${profile.openRoster?'checked':''}></label><button class="button outline guide-restart" data-action="restart-preview">Restart Journey</button></div>`:selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}${champion&&selected[0]==='growth'?heroInsight(champion):''}</section></div>`;
+ return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='tools'?`<div class="guide-tools"><button class="button outline" data-action="nav" data-page="splash">Title Screen</button><label class="guide-playtesting" for="cinematic-preference"><span><b>Character cinematics</b><small>Animated portraits, reveals and Specials. Reduced Motion keeps artwork still.</small></span><input type="checkbox" id="cinematic-preference" ${profile.cinematicsEnabled!==false?'checked':''}></label><label class="guide-playtesting" for="open-roster"><span><b>Playtesting</b><small>Maximum-level heroes; no rewards or progress.</small></span><input type="checkbox" id="open-roster" ${profile.openRoster?'checked':''}></label><button class="button outline guide-restart" data-action="restart-preview">Restart Journey</button></div>`:selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}${champion&&selected[0]==='growth'?heroInsight(champion):''}</section></div>`;
 }
