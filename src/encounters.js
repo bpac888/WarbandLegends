@@ -1,6 +1,6 @@
-import {WEEKLY_STAGES,weeklyWindow} from './weekly.js?v=0.46.1';
-import {authoredStage} from './chapter.js?v=0.46.1';
-import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js?v=0.46.1';
+import {WEEKLY_STAGES,weeklyWindow} from './weekly.js?v=0.47.0';
+import {authoredStage} from './chapter.js?v=0.47.0';
+import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js?v=0.47.0';
 // Independent Legends encounters. Structure/names/art adapted from the owner's source game.
 export const DIFFICULTIES=[
  {id:'normal',label:'Normal',realm:'The First Crossing',description:'A living realm. The first shadows gather.',art:'assets/scenes/world-map.svg',mult:1,color:'#92c99c'},
@@ -18,12 +18,14 @@ const formations=[
  ['ghoul_scavenger','necropolis_titan','cinder_mender_vessa'],['pit_grunt','archangel_lucifer','demon_witchblade'],
  ['dragon_samurai_kenshin','dragon_empress','jade_mender_lian'],['shadow_thrall','yshmir_worldwound','umbral_hierarch'],
 ];
+// The final Nightmare encounters resolve the campaign story. Other formations stay unchanged.
+const nightmareFinale={20:['spore_engineer','plague_doctor','cursed_acolyte'],25:['shellback_brukk','yshmir_worldwound','rimebow_tessa']};
 const route=[[15,77],[20,70],[25,63],[30,57],[34,50],[29,44],[23,39],[22,32],[28,27],[35,24],[43,28],[49,34],[56,37],[61,32],[63,25],[60,18],[53,15],[46,19],[40,14],[42,7],[54,7],[68,12],[77,18],[83,25],[90,14]];
 export const CAMPAIGN_STAGES=DIFFICULTIES.flatMap((diff,d)=>STAGE_NAMES.map((name,i)=>{
  const n=i+1,t=Math.max(0,(n-3)/22),early=[[600,240,210],[800,315,280],[1050,400,350]][i];
  const base=early||[1075+525*t,402+118*t,354+176*t],boss=n%5===0;
  const stats=base.map((v,k)=>Math.round(v*diff.mult*(boss?(k===0?1.08:1.03):1)));
- const authored=authoredStage(n),formation=authored?.enemyIds||(i<3?formations[i]:formations[(i+(d*3))%formations.length]);
+ const authored=authoredStage(n),formation=(diff.id==='nightmare'&&nightmareFinale[n])||authored?.enemyIds||(i<3?formations[i]:formations[(i+(d*3))%formations.length]);
  const legacyReward=[{gold:50,xp:80},{gold:75,xp:120},{gold:100,xp:180}][i];
  return {id:d===0&&i<3?legacyIds[i]:`campaign-${diff.id}-${String(n).padStart(2,'0')}`,mode:'campaign',difficulty:diff.id,number:n,name,region:['Emberfall','Frostwake','Umbra'][i]||['The Golden March','Thornwild Reach','The Broken Crown','The Eclipse Road','Worldwound'][Math.floor(i/5)],description:authored?.story||(boss?'Defeat the guardian who holds this crossing.':'Break the warband guarding the road.'),...(authored?{chapter:authored.chapter,tactic:authored.tactic,tacticLabel:authored.label,objective:'Defeat the enemy warband.',opening:authored.opening,scenario:authored.scenario,...(authored.bossHp?{bossHp:authored.bossHp}:{})}:{}),enemyIds:formation,hp:i===0?.7:i===1?1:1.2,atk:i===0?.65:.9,countdown:d===2?2:3,stats,boss,map:route[i],art:diff.art,portrait:`assets/champions/${formation[1]}.webp`,recommendedLevel:Math.min(80,Math.round(1+i*1.7+d*17)),rewards:d===0&&legacyReward?legacyReward:{gold:Math.round((80+n*9)*diff.mult),xp:Math.round((120+n*15)*diff.mult)}};
 }));
@@ -44,7 +46,7 @@ const byId=new Map(ALL_ENCOUNTERS.map(e=>[e.id,e]));
 export const getEncounter=id=>byId.get(id);
 export const campaignStages=(difficulty='normal')=>CAMPAIGN_STAGES.filter(e=>e.difficulty===difficulty);
 export function entryError(profile,id,now=new Date()){const e=getEncounter(id);if(!e)return 'Unknown encounter.';
- if(e.mode==='weekly'){if(!weeklyWindow(now).stages.some(s=>s.id===id))return 'This challenge has rotated. Open Weekly Challenges for the current week.';return null;}
+ if(e.mode==='weekly'){if(!weeklyWindow(now).stages.some(s=>s.challengeId===e.challengeId))return 'This challenge has rotated. Open Weekly Challenges for the current week.';return null;}
  if(e.mode==='arena')return null;
  if(e.mode==='event'){if(!eventWindow(e.eventId,now)?.active)return 'This event is outside its monthly window.';return eventAttemptsLeft(profile,e.eventId,now)>0?null:'No attempts remain in this event window.';}
  if(profile.openRoster)return null;

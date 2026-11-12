@@ -120,7 +120,7 @@
 | Ulbrecht, the Veil Bastion | legendary | purple | defense | 654 | 831 | 1547 | Slow 12 |
 | Kesh Duststep | rare | yellow | attack | 674 | 556 | 946 | Very Fast 6.5 |
 | Phaedra Dusktrail | rare | purple | attack | 670 | 554 | 1001 | Average 10 |
-| Nima Dewthread | rare | blue | support | 562 | 579 | 1040 | Average 10 |
+| Liora Dewthread | rare | blue | support | 562 | 579 | 1040 | Average 10 |
 | Sahri Sunspoke | rare | yellow | attack | 716 | 560 | 988 | Average 10 |
 | Iridessa Snowglass | rare | blue | attack | 709 | 558 | 1012 | Fast 8 |
 | Gromund Basalt-Mane | rare | green | defense | 540 | 701 | 1239 | Average 10 |
@@ -778,7 +778,7 @@ Passive: **Unbroken Advance** — Hadrian is immune to Weaken. This permanent pr
 
 - 10 tiles: Deal 263% ATK damage to selected enemy. Attack Down (Selected enemy, 1 turns).
 
-### Nima Dewthread — Rain on the Wounded Road
+### Liora Dewthread — Rain on the Wounded Road
 
 - 10 tiles: Restore 32% max HP to all living allies. Regeneration (All living allies, 1 turns).
 

@@ -1,3 +1,4 @@
+import {beforeCharacterNameRevision} from './character-name-revision.js?v=0.47.0';
 // Owner-approved 2026-11-11 balance batch. Full snapshots make historical checks strict.
 export const UPGRADE_BALANCE_REVISION=[
   {
@@ -2999,4 +3000,4 @@ export const UPGRADE_BALANCE_REVISION=[
     }
   }
 ];
-export function beforeUpgradeBalance(records){return records.map(c=>{if(!c?.id||!c.special&&!c.kit)return c;const x=UPGRADE_BALANCE_REVISION.find(x=>x.id===c.id);if(!x)return c;const source=!!c.kit,before=source?x.sourceBefore:x.before,after=source?x.sourceAfter:x.after;if(JSON.stringify(c)===JSON.stringify(before))return structuredClone(c);if(JSON.stringify(c)!==JSON.stringify(after))throw Error('Unexpected approved balance revision: '+c.id);return structuredClone(before);});}
+export function beforeUpgradeBalance(records){return beforeCharacterNameRevision(records).map(c=>{if(!c?.id||!c.special&&!c.kit)return c;const x=UPGRADE_BALANCE_REVISION.find(x=>x.id===c.id);if(!x)return c;const source=!!c.kit,before=source?x.sourceBefore:x.before,after=source?x.sourceAfter:x.after;if(JSON.stringify(c)===JSON.stringify(before))return structuredClone(c);if(JSON.stringify(c)!==JSON.stringify(after))throw Error('Unexpected approved balance revision: '+c.id);return structuredClone(before);});}

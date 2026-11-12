@@ -4176,7 +4176,7 @@
   },
   {
     "template_id": "nima_dewthread",
-    "name": "Nima Dewthread",
+    "name": "Liora Dewthread",
     "title": "Tender of the Rain-Sewn Camps",
     "rarity": "rare",
     "faction": "veldtborn",
@@ -4187,7 +4187,7 @@
     "spd": 104,
     "ability_name": "Rain on the Wounded Road",
     "ability_desc": "Mends one living ally and grants every living ally recovery of 10% of its maximum HP at the start of its next turn, with a light strike against one foe.",
-    "lore": "Nima sews names into the hems of the tents she repairs, so no lost traveler is ever only a stranger. Her clouded-leopard fur carries pale green whorls that brighten before rain. She learned her craft patching refugees rather than soldiers, and still insists that a healer's first duty is to leave someone a road home.",
+    "lore": "Liora sews names into the hems of the tents she repairs, so no lost traveler is ever only a stranger. Her clouded-leopard fur carries pale green whorls that brighten before rain. She learned her craft patching refugees rather than soldiers, and still insists that a healer's first duty is to leave someone a road home.",
     "image_url": "/api/static/champions/nima_dewthread.png",
     "id": "nima_dewthread",
     "color": "green",

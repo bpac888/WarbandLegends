@@ -1,24 +1,24 @@
-import {validTeamPreferences} from './team-preferences.js?v=0.46.1';
-import {normalizeJournal} from './campaign-journal.js?v=0.46.1';
-import {normalizeWeekly,completeWeekly,validWeeklyProfile} from './weekly.js?v=0.46.1';
-import {tutorialState} from './tutorial.js?v=0.46.1';
-import {normalizePremiumItems,validPremiumItems,boostedGold} from './premium-items.js?v=0.46.1';
-import {normalizeTeams} from './teams.js?v=0.46.1';
-import {baseHeroId,validCopyId,heroForId,battleRoster,nextCopyId,splitLegacyCopies} from './hero-copies.js?v=0.46.1';
-import {defaultKeeper,normalizeKeeper,validKeeper,addAccountXp,accountBattleXp,bumpPath} from './keeper.js?v=0.46.1';
-import {GEM_LIMIT,INITIAL_GEMS,SUMMON_COST,TEN_SUMMON_COST,GEM_INTERVAL} from './economy.js?v=0.46.1';
-import {QUESTS,questProgress,claimQuest} from './quests.js?v=0.46.1';
+import {validTeamPreferences} from './team-preferences.js?v=0.47.0';
+import {normalizeJournal} from './campaign-journal.js?v=0.47.0';
+import {normalizeWeekly,completeWeekly,validWeeklyProfile} from './weekly.js?v=0.47.0';
+import {tutorialState} from './tutorial.js?v=0.47.0';
+import {normalizePremiumItems,validPremiumItems,boostedGold} from './premium-items.js?v=0.47.0';
+import {normalizeTeams} from './teams.js?v=0.47.0';
+import {baseHeroId,validCopyId,heroForId,battleRoster,nextCopyId,splitLegacyCopies} from './hero-copies.js?v=0.47.0';
+import {defaultKeeper,normalizeKeeper,validKeeper,addAccountXp,accountBattleXp,bumpPath} from './keeper.js?v=0.47.0';
+import {GEM_LIMIT,INITIAL_GEMS,SUMMON_COST,TEN_SUMMON_COST,GEM_INTERVAL} from './economy.js?v=0.47.0';
+import {QUESTS,questProgress,claimQuest} from './quests.js?v=0.47.0';
 export {QUESTS,questProgress,claimQuest,GEM_INTERVAL};
-import {ASCENSION_CAPS,MATERIALS,MATERIAL_LIMIT,currentLevelCap,materialDrops,addMaterials,validateAscension} from './ascension.js?v=0.46.1';
-import {defaultModes,normalizeModes,validateModes,modeReward,settleMode} from './mode-progression.js?v=0.46.1';
-import {ENCOUNTERS,DIFFICULTIES,getEncounter,entryError} from './encounters.js?v=0.46.1';
+import {ASCENSION_CAPS,MATERIALS,MATERIAL_LIMIT,currentLevelCap,materialDrops,addMaterials,validateAscension} from './ascension.js?v=0.47.0';
+import {defaultModes,normalizeModes,validateModes,modeReward,settleMode} from './mode-progression.js?v=0.47.0';
+import {ENCOUNTERS,DIFFICULTIES,getEncounter,entryError} from './encounters.js?v=0.47.0';
 // Local game-loop foundation. No purchases, original-game accounts or shared economy.
-import {addHeroXp,xpForLevel,levelCap} from './development.js?v=0.46.1';
+import {addHeroXp,xpForLevel,levelCap} from './development.js?v=0.47.0';
 export const PROFILE_VERSION=13;
 export const CAMPAIGN_REWARDS=Object.freeze(Object.fromEntries(ENCOUNTERS.map(e=>[e.id,e.rewards])));
 export const STARTER_TEAM=['nima_dewthread','ravel','plague_doctor_mors','gallows_marksman_oren','cult_zealot'];
 export const SUMMON_ODDS=[{rarity:'common',chance:50},{rarity:'rare',chance:30},{rarity:'legendary',chance:7.5},{rarity:'mythical',chance:1.5},{rarity:'double_common',chance:11}];
-export function defaultProfile(){return {cinematicsEnabled:true,...normalizeJournal({}),...normalizeWeekly({}),...normalizePremiumItems({}),...defaultModes(),...defaultKeeper(STARTER_TEAM),profileVersion:PROFILE_VERSION,copySequence:0,name:'Rune Keeper',team:[...STARTER_TEAM],unlocked:0,wins:0,cleared:[],recorded:[],speed:1,helpSeen:false,onboardingDismissed:false,onboardingComplete:false,tutorial:tutorialState({}),gold:500,gems:INITIAL_GEMS,collection:Object.fromEntries(STARTER_TEAM.map(id=>[id,1])),summons:0,history:[],claimed:[],heroXp:{},ascensions:{},awakenings:{},materials:{},campaignProgress:{normal:0,hard:0,nightmare:0},dungeonClears:{},dungeonWins:0,openRoster:false,reducedMotion:false};}
+export function defaultProfile(){return {cinematicsEnabled:true,...normalizeJournal({}),...normalizeWeekly({}),...normalizePremiumItems({}),...defaultModes(),...defaultKeeper(STARTER_TEAM),profileVersion:PROFILE_VERSION,copySequence:0,name:'Commander',team:[...STARTER_TEAM],unlocked:0,wins:0,cleared:[],recorded:[],speed:1,helpSeen:false,onboardingDismissed:false,onboardingComplete:false,tutorial:tutorialState({}),gold:500,gems:INITIAL_GEMS,collection:Object.fromEntries(STARTER_TEAM.map(id=>[id,1])),summons:0,history:[],claimed:[],heroXp:{},ascensions:{},awakenings:{},materials:{},campaignProgress:{normal:0,hard:0,nightmare:0},dungeonClears:{},dungeonWins:0,openRoster:false,reducedMotion:false};}
 const safeInt=(v,fallback,max=999999999)=>Number.isSafeInteger(v)&&v>=0&&v<=max?v:fallback;
 export function normalizeProfile(raw,roster){
  const base=defaultProfile();if(raw?.profileVersion===9)raw=splitLegacyCopies(raw,roster);if(![10,11,12,PROFILE_VERSION].includes(raw?.profileVersion))return base;const catalogue=roster;roster=battleRoster(raw,roster);const ids=new Set(roster.map(c=>c.id)),p=raw&&typeof raw==='object'&&!Array.isArray(raw)?raw:{};
@@ -45,7 +45,7 @@ export function normalizeProfile(raw,roster){
  const dungeonClears={};for(const [id,n]of Object.entries(p.dungeonClears&&typeof p.dungeonClears==='object'&&!Array.isArray(p.dungeonClears)?p.dungeonClears:{}))if(getEncounter(id)?.mode==='dungeon'&&Number.isSafeInteger(n)&&n>0&&n<=999999999)dungeonClears[id]=n;
  const openRoster=p.openRoster===true;
  let selected=team;if(!openRoster&&selected.some(id=>!collection[id]))selected=[...selected.filter(id=>collection[id]),...Object.keys(collection).filter(id=>!selected.includes(id))].slice(0,5);
- return {...base,cinematicsEnabled:p.cinematicsEnabled!==false,...normalizeJournal(p),...normalizeWeekly(p),...normalizePremiumItems(p),...normalizeModes(p),...normalizeKeeper({...p,team:selected,openRoster},collection,catalogue),copySequence:Math.max(safeInt(p.copySequence,0),...Object.keys(collection).map(id=>Number(id.split('~')[1])||0)),name:typeof p.name==='string'&&p.name.trim()?p.name.trim().slice(0,24):base.name,team:selected,unlocked:safeInt(p.unlocked,0,2),wins:safeInt(p.wins,0),cleared,recorded:Array.isArray(p.recorded)?p.recorded.filter(id=>typeof id==='string'&&id.length<150).slice(-200):[],speed:1,helpSeen:p.helpSeen===true,onboardingDismissed:p.onboardingDismissed===true,onboardingComplete:p.onboardingComplete===true,tutorial:tutorialState(p),gold:safeInt(p.gold,500),gems:safeInt(p.gems,INITIAL_GEMS,GEM_LIMIT),collection,campaignProgress,dungeonClears,dungeonWins:safeInt(p.dungeonWins,0),summons:safeInt(p.summons,0),history:Array.isArray(p.history)?p.history.filter(h=>h&&ids.has(h.championId)&&Number.isSafeInteger(h.sequence)&&h.sequence>0&&typeof h.at==='string'&&Number.isFinite(Date.parse(h.at))).slice(-20):[],heroXp,ascensions,awakenings,materials,claimed:Array.isArray(p.claimed)?[...new Set(p.claimed.filter(id=>QUESTS.some(q=>q.id===id)))]:[],openRoster,reducedMotion:p.reducedMotion===true};
+ return {...base,cinematicsEnabled:p.cinematicsEnabled!==false,...normalizeJournal(p),...normalizeWeekly(p),...normalizePremiumItems(p),...normalizeModes(p),...normalizeKeeper({...p,team:selected,openRoster},collection,catalogue),copySequence:Math.max(safeInt(p.copySequence,0),...Object.keys(collection).map(id=>Number(id.split('~')[1])||0)),name:typeof p.name==='string'&&p.name.trim()?(p.name.trim()==='Rune Keeper'?'Commander':p.name.trim().slice(0,24)):base.name,team:selected,unlocked:safeInt(p.unlocked,0,2),wins:safeInt(p.wins,0),cleared,recorded:Array.isArray(p.recorded)?p.recorded.filter(id=>typeof id==='string'&&id.length<150).slice(-200):[],speed:1,helpSeen:p.helpSeen===true,onboardingDismissed:p.onboardingDismissed===true,onboardingComplete:p.onboardingComplete===true,tutorial:tutorialState(p),gold:safeInt(p.gold,500),gems:safeInt(p.gems,INITIAL_GEMS,GEM_LIMIT),collection,campaignProgress,dungeonClears,dungeonWins:safeInt(p.dungeonWins,0),summons:safeInt(p.summons,0),history:Array.isArray(p.history)?p.history.filter(h=>h&&ids.has(h.championId)&&Number.isSafeInteger(h.sequence)&&h.sequence>0&&typeof h.at==='string'&&Number.isFinite(Date.parse(h.at))).slice(-20):[],heroXp,ascensions,awakenings,materials,claimed:Array.isArray(p.claimed)?[...new Set(p.claimed.filter(id=>QUESTS.some(q=>q.id===id)))]:[],openRoster,reducedMotion:p.reducedMotion===true};
 }
 export function canUse(profile,id){return profile.openRoster||!!profile.collection[id];}
 export function setOpenRoster(profile,enabled){if(enabled&&profile.openRoster)return profile;const next={...profile,openRoster:enabled};if(!enabled&&next.team.some(id=>!profile.collection[id]))next.team=[...next.team.filter(id=>profile.collection[id]),...Object.keys(profile.collection).filter(id=>!next.team.includes(id))].slice(0,5);return {...next,...normalizeTeams(next,next.collection,[])};}

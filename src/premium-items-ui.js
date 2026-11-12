@@ -1,8 +1,8 @@
-import {PREMIUM_INVENTORY_ITEMS,premiumItem,premiumItemArt,premiumItemCount,boosterActive} from './premium-items.js?v=0.46.1';
-import {tomeArt} from './tomes.js?v=0.46.1';
-import {experienceTomeQuote} from './experience-tomes.js?v=0.46.1';
-import {ownedHeroes} from './hero-copies.js?v=0.46.1';
-import {ascensionQuote,awakeningQuote} from './development.js?v=0.46.1';
+import {PREMIUM_INVENTORY_ITEMS,premiumItem,premiumItemArt,premiumItemCount,boosterActive} from './premium-items.js?v=0.47.0';
+import {tomeArt} from './tomes.js?v=0.47.0';
+import {experienceTomeQuote} from './experience-tomes.js?v=0.47.0';
+import {ownedHeroes} from './hero-copies.js?v=0.47.0';
+import {ascensionQuote,awakeningQuote} from './development.js?v=0.47.0';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const itemArt=item=>item.maxLevels?tomeArt(item):`<img src="${premiumItemArt(item.id)}" alt="">`;
 const until=(profile,item)=>new Date(profile.boosters[item.kind]).toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'});
@@ -14,5 +14,5 @@ export function premiumInventory(profile,now=Date.now()){
 export function premiumItemConfirmation(profile,id,roster,championId){
  const item=premiumItem(id);if(!item)return '';
  const active=item.kind&&boosterActive(profile,item.kind),heroes=item.kind?[]:eligibleTomeHeroes(profile,id,roster).filter(c=>!championId||c.id===championId),unavailable=!premiumItemCount(profile,id)||active||!item.kind&&!heroes.length;
- return `<div class="premium-item-confirm">${itemArt(item)}<h3>${item.name}</h3><p>${item.description}</p>${item.kind?`<p>${active?'Already active until '+until(profile,item)+'.':'The 24-hour timer begins when you confirm and continues while the game is closed. Using another of the same booster is blocked while it is active.'}</p>`:heroes.length?`<label>Champion<select id="premium-item-champion">${heroes.map(c=>`<option value="${esc(c.id)}" ${c.id===championId?'selected':''}>${esc(c.name)}${item.maxLevels?' → Level '+experienceTomeQuote(profile,id,c).level:''}${c.id.includes('~')?' · Copy '+c.id.split('~')[1]:''}</option>`).join('')}</select></label>`:'<p>No owned champion meets the level and advancement requirements. The tome will not be spent.</p>'}<p>Uses one item. No Gold or materials will be spent.</p></div><div class="modal-actions"><button class="button outline" data-action="close">Cancel</button><button class="button gold" data-action="premium-item-confirm" data-id="${id}" ${unavailable?'disabled':''}>${item.kind?'Activate Booster':'Use Tome'}</button></div>`;
+ return `<div class="premium-item-confirm">${itemArt(item)}<h3>${item.name}</h3><p>${item.description}</p>${item.kind?`<p>${active?'Already active until '+until(profile,item)+'.':'24h, including offline. One active per type.'}</p>`:heroes.length?`<label>Champion<select id="premium-item-champion">${heroes.map(c=>`<option value="${esc(c.id)}" ${c.id===championId?'selected':''}>${esc(c.name)}${item.maxLevels?' → Level '+experienceTomeQuote(profile,id,c).level:''}${c.id.includes('~')?' · Copy '+c.id.split('~')[1]:''}</option>`).join('')}</select></label>`:'<p>No eligible champion.</p>'}<p>Consumes 1 item · no Gold/material cost.</p></div><div class="modal-actions"><button class="button outline" data-action="close">Cancel</button><button class="button gold" data-action="premium-item-confirm" data-id="${id}" ${unavailable?'disabled':''}>${item.kind?'Activate Booster':'Use Tome'}</button></div>`;
 }
