@@ -266,7 +266,8 @@ body:has(.battle-shell) .tile>.rune-art{transform:scale(1.13);transform-origin:c
  body:has(.battle-shell) .battle-center .hero-line{height:calc(100% - 8px);align-self:end}
 }
 .daily-profile-progress{display:flex;align-items:center;gap:9px;margin:0 0 10px;height:22px;color:var(--paper-ink)}
-.daily-profile-progress>b{font-size:18px;line-height:1;font-variant-numeric:tabular-nums}
+.daily-profile-progress>b{font-size:18px;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.daily-profile-progress>b>small{font-size:10px;font-weight:600;letter-spacing:.04em;vertical-align:middle}
 .daily-profile-progress>span{height:4px;flex:1;background:#b8a9b5;border-radius:4px;overflow:hidden}
 .daily-profile-progress>span>i{display:block;height:100%;background:#9e2a2b;border-radius:4px}
 .daily-nav>img{width:32px;height:32px;object-fit:contain}
@@ -274,3 +275,32 @@ body.menu-theme .game-page.page-shop .shop-inventory .inventory-grid{margin-top:
 body.menu-theme .game-page.page-shop .shop-inventory .inventory-card{min-height:80px;padding:10px 14px}
 body.menu-theme .game-page.page-shop .shop-tabs{flex-wrap:nowrap}
 body.menu-theme .game-page.page-shop .shop-tabs>button{flex:1;min-width:0;padding-inline:6px}
+
+/* Keep shop departments on one compact row and premium offers closely packed. */
+body.menu-theme .game-page.page-shop .shop-tabs{display:grid;grid-template-columns:.7fr 1.45fr 1fr 1fr;gap:3px;padding:4px}
+body.menu-theme .game-page.page-shop .shop-tabs>button{min-width:0;white-space:nowrap;padding:9px 3px;font-size:11px;letter-spacing:0}
+body.menu-theme .game-page.page-shop .premium-shop :is(.premium-offers,.tome-offers){grid-auto-rows:auto;gap:8px}
+body.menu-theme .game-page.page-shop .premium-shop :is(.premium-offers>article,.tome-offer){padding:9px;gap:5px}
+body.menu-theme .game-page.page-shop .premium-shop .premium-offers>article>h3{min-height:0}
+body.menu-theme .game-page.page-shop .premium-shop .tomes-preview{padding-top:0;margin-top:8px;border-top:0}
+
+/* Fine, irregular gold foil catches the edges without crowding the artwork. */
+body.menu-theme .game-page.page-shop .premium-shop :is(.premium-offers>article,.tome-offer){position:relative;isolation:isolate}
+body.menu-theme .game-page.page-shop .premium-shop :is(.premium-offers>article,.tome-offer)::after,
+body.menu-theme .game-page.page-shop .shop-tabs>button[data-tab=premium]::after{content:'';display:block;position:absolute;inset:0;width:auto;height:auto;margin:0;transform:none;border:0;box-shadow:none;border-radius:inherit;padding:2px;pointer-events:none;background:linear-gradient(128deg,#805322 0%,#b98b38 8%,#fff0b0 13%,#c49a47 19%,#9c6b29 32%,#edd18a 37%,#b58a40 41%,#f8e6a0 57%,#a57128 63%,#d9b967 78%,#fff2b9 84%,#956629 94%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude}
+body.menu-theme .game-page.page-shop .premium-shop :is(.premium-offers>article,.tome-offer)::before{content:'';position:absolute;inset:4px;border:1px solid #d3b36b70;border-radius:inherit;pointer-events:none;z-index:-1}
+body.menu-theme .game-page.page-shop .shop-tabs>button[data-tab=premium]{position:relative;box-shadow:inset 0 0 0 1px #e7ca83,0 1px 4px #86602c25}
+body.menu-theme .game-page.page-shop .shop-tabs>button[data-tab=premium]::after{padding:1.5px}
+
+body.menu-theme .page-roster .saved-warbands .team-slots{gap:8px}
+body.menu-theme .page-roster .saved-warbands .team-slot{padding:10px;gap:8px}
+body.menu-theme .page-roster .saved-warbands .team-slot>header{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0;padding:0}
+body.menu-theme .page-roster .saved-warbands .team-slot h3{font-size:18px;margin:0;line-height:1.2}
+body.menu-theme .page-roster .saved-warbands .team-power{margin:0 0 0 auto;font-size:12px;line-height:1.2;white-space:nowrap;order:2}
+body.menu-theme .page-roster .saved-warbands .team-slot-actions{margin:0;gap:6px}
+body.menu-theme .page-roster .saved-warbands .team-slot-actions .button{min-height:34px;padding:7px 9px}
+body.menu-theme .page-roster .saved-warbands .slot-portraits{margin:0;min-height:0}
+body.menu-theme .page-roster .saved-warbands .team-slot{display:flex;flex-direction:column;align-items:stretch;min-height:0;height:auto}
+body.menu-theme .page-roster .saved-warbands .team-slot>header{width:100%;max-width:none;grid-column:1/-1;flex-wrap:nowrap}
+body.menu-theme .page-roster .saved-warbands .team-slot-actions{width:100%;max-width:none;grid-column:1/-1}
+body.menu-theme .page-roster .saved-warbands .slot-portraits:has(>span){height:28px;min-height:0}
