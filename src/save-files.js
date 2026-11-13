@@ -1,6 +1,6 @@
-import {battleRoster} from './hero-copies.js?v=0.48.1';
-import {validateProfile,normalizeProfile} from './progression.js?v=0.48.1';
-import {validateSave} from './engine.js?v=0.48.1';
+import {battleRoster} from './hero-copies.js?v=0.48.3';
+import {validateProfile,normalizeProfile} from './progression.js?v=0.48.3';
+import {validateSave} from './engine.js?v=0.48.3';
 export function makeBackup(profile,battle){return {game:'legends-runes',version:1,profile:structuredClone(profile),battle:battle?structuredClone(battle):null};}
 export function parseBackup(text,roster){
  if(typeof text!=='string'||text.length>1000000)throw Error('Choose a Warband Legends save file smaller than 1 MB.');

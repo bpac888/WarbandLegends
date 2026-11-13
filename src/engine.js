@@ -1,14 +1,14 @@
-import {initializeWeekly,weeklyRunes,weeklyDamage,weeklyCopy,weeklyMirror,weeklyBeforeEnemies,weeklyFinish,weeklyAfterAction,weeklyUnitSpecial} from './weekly-combat.js?v=0.48.1';
-import {weeklyWindow,weeklyDetails,validWeeklyBattle} from './weekly.js?v=0.48.1';
-import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.48.1';
-import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.48.1';
-import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.48.1';
-import {SCENARIOS,validScenario} from './chapter.js?v=0.48.1';
+import {initializeWeekly,weeklyRunes,weeklyDamage,weeklyCopy,weeklyMirror,weeklyBeforeEnemies,weeklyFinish,weeklyAfterAction,weeklyUnitSpecial} from './weekly-combat.js?v=0.48.3';
+import {weeklyWindow,weeklyDetails,validWeeklyBattle} from './weekly.js?v=0.48.3';
+import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.48.3';
+import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.48.3';
+import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.48.3';
+import {SCENARIOS,validScenario} from './chapter.js?v=0.48.3';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
-import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.48.1';
-import {statsAtLevel,levelCap} from './development.js?v=0.48.1';
-import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.48.1';
-export {effectName} from './effects.js?v=0.48.1';
+import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.48.3';
+import {statsAtLevel,levelCap} from './development.js?v=0.48.3';
+import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.48.3';
+export {effectName} from './effects.js?v=0.48.3';
 export const VERSION = 3;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
 export const COLORS = ['red', 'green', 'blue', 'yellow', 'purple'];

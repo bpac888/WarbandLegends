@@ -217,3 +217,18 @@ body:has(.battle-shell) .battle-center .battle-sky{box-sizing:border-box;padding
 @supports (-webkit-touch-callout:none){
  @media(display-mode:standalone){body:has(.battle-shell) #app{padding-top:max(44px,env(safe-area-inset-top,0px))}}
 }
+/* Arena overlays use one clean surface instead of nested paper rectangles. */
+body.menu-theme .page-arena .arena-scene-heading h1{display:block;background:var(--paper-surface);color:var(--paper-ink);border:1px solid var(--paper-edge);border-radius:10px;padding:6px 10px;margin:0;font-size:24px;text-shadow:none}
+body.menu-theme .page-arena .arena-player-record{background:var(--paper-surface);border:1px solid var(--paper-edge);border-radius:10px;padding:6px 9px;gap:10px}
+body.menu-theme .page-arena .arena-player-record>span{background:none;border:0;box-shadow:none;padding:0;color:var(--paper-ink)}
+body.menu-theme .page-arena .arena-player-record small{color:var(--paper-copy)}
+body.menu-theme .page-arena .arena-rival-identity{background:none;border:0;box-shadow:none;padding:0}
+body.menu-theme .page-arena .arena-rival-identity :is(h2,p,span){background:none;border:0;box-shadow:none;color:var(--paper-ink)}
+body.menu-theme .page-arena .arena-rival-identity h2{margin:0 0 3px;font-size:clamp(23px,3vw,32px);line-height:1.1}
+body.menu-theme .page-arena .arena-rival-identity p{margin:0;gap:9px;font-size:12px}
+body.menu-theme .page-arena .arena-challenge-dock{padding:10px 12px;gap:10px}
+body:has(.battle-shell) .battle-center .battle-sky{padding-top:6px}
+@supports (-webkit-touch-callout:none){
+ @media(display-mode:standalone){body:has(.battle-shell) #app{padding-top:env(safe-area-inset-top,0px)}}
+}
+body.menu-theme .page-arena .arena-player-record{margin-left:auto}
