@@ -1,4 +1,4 @@
-import {FACTION_BONUSES,factionGroups,factionRule} from './faction-bonuses.js?v=0.48.3';
+import {FACTION_BONUSES,factionGroups,factionRule} from './faction-bonuses.js?v=0.48.4';
 const tierLabel=(f,t)=>f==='goblins'?'1+':f==='magic'?t:f==='djedi'?'2+':t===3?'3+':2;
 export function factionTeamHTML(team){
  const groups=factionGroups(team);

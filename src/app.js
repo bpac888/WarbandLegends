@@ -1,58 +1,58 @@
-import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.48.3';
-import {mountBattleLoading} from './loading-art.js?v=0.48.3';
-import {weeklyStatus} from './weekly-combat.js?v=0.48.3';
-import {campaignArc} from './campaign-story.js?v=0.48.3';
-import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.48.3';
-import {scenarioStatus} from './chapter.js?v=0.48.3';
-import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.48.3';
-import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.48.3';
-import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.48.3';
-import {swipeTarget} from './board-gestures.js?v=0.48.3';
-import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.48.3';
-import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.48.3';
-import {specialSummary} from './special-summary.js?v=0.48.3';
-import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.48.3';
-import {useExperienceTome} from './experience-tomes.js?v=0.48.3';
-import {premiumItem,activateBooster} from './premium-items.js?v=0.48.3';
-import {premiumItemConfirmation} from './premium-items-ui.js?v=0.48.3';
-import {ascensionTier} from './ascension.js?v=0.48.3';
-import {battleTiming} from './battle-pacing.js?v=0.48.3';
-import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.48.3';
-import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.48.3';
-import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.48.3';
-import {courtyardHTML} from './courtyard-ui.js?v=0.48.3';
-import {mountCourtyard} from './courtyard-view.js?v=0.48.3';
-import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.48.3';
-import {saveTeam} from './teams.js?v=0.48.3';
-import {mountArenaScene} from './arena-scene.js?v=0.48.3';
-import './menu-atmosphere.js?v=0.48.3';
-import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.48.3';
-import {refreshEnergy,energyStatus} from './keeper.js?v=0.48.3';
-import {applyAutoAction} from './auto-battle.js?v=0.48.3';
-import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.48.3';
-import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.48.3';
-import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.48.3';
-import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.48.3';
-import {dailyPage} from './keeper-ui.js?v=0.48.3';
-import {buyWithGems} from './economy.js?v=0.48.3';
-import {gemConfirmation} from './gem-ui.js?v=0.48.3';
-import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.48.3';
-import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.48.3';
-import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.48.3';
-import {reserveEntry,exchange} from './mode-progression.js?v=0.48.3';
-import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.48.3';
-import {getEncounter,entryError} from './encounters.js?v=0.48.3';
-import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.48.3';
-import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.48.3';
-import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.48.3';
-import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.48.3';
-import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.48.3';
-import * as Shell from './shell.js?v=0.48.3';
-import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.48.3';
-import {EFFECTS} from './effects.js?v=0.48.3';
-import {effectIcon} from './icons.js?v=0.48.3';
-import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.48.3';
-import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.48.3';
+import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.48.4';
+import {mountBattleLoading} from './loading-art.js?v=0.48.4';
+import {weeklyStatus} from './weekly-combat.js?v=0.48.4';
+import {campaignArc} from './campaign-story.js?v=0.48.4';
+import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.48.4';
+import {scenarioStatus} from './chapter.js?v=0.48.4';
+import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.48.4';
+import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.48.4';
+import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.48.4';
+import {swipeTarget} from './board-gestures.js?v=0.48.4';
+import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.48.4';
+import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.48.4';
+import {specialSummary} from './special-summary.js?v=0.48.4';
+import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.48.4';
+import {useExperienceTome} from './experience-tomes.js?v=0.48.4';
+import {premiumItem,activateBooster} from './premium-items.js?v=0.48.4';
+import {premiumItemConfirmation} from './premium-items-ui.js?v=0.48.4';
+import {ascensionTier} from './ascension.js?v=0.48.4';
+import {battleTiming} from './battle-pacing.js?v=0.48.4';
+import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.48.4';
+import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.48.4';
+import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.48.4';
+import {courtyardHTML} from './courtyard-ui.js?v=0.48.4';
+import {mountCourtyard} from './courtyard-view.js?v=0.48.4';
+import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.48.4';
+import {saveTeam} from './teams.js?v=0.48.4';
+import {mountArenaScene} from './arena-scene.js?v=0.48.4';
+import './menu-atmosphere.js?v=0.48.4';
+import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.48.4';
+import {refreshEnergy,energyStatus} from './keeper.js?v=0.48.4';
+import {applyAutoAction} from './auto-battle.js?v=0.48.4';
+import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.48.4';
+import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.48.4';
+import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.48.4';
+import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.48.4';
+import {dailyPage} from './keeper-ui.js?v=0.48.4';
+import {buyWithGems} from './economy.js?v=0.48.4';
+import {gemConfirmation} from './gem-ui.js?v=0.48.4';
+import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.48.4';
+import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.48.4';
+import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.48.4';
+import {reserveEntry,exchange} from './mode-progression.js?v=0.48.4';
+import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.48.4';
+import {getEncounter,entryError} from './encounters.js?v=0.48.4';
+import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.48.4';
+import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.48.4';
+import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.48.4';
+import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.48.4';
+import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.48.4';
+import * as Shell from './shell.js?v=0.48.4';
+import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.48.4';
+import {EFFECTS} from './effects.js?v=0.48.4';
+import {effectIcon} from './icons.js?v=0.48.4';
+import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.48.4';
+import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.48.4';
 const app=document.querySelector('#app'),modal=document.querySelector('#modal'),modalContent=document.querySelector('#modal-content'),notice=document.querySelector('#notice');
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={red:'<path d="M32 8c4 13 16 15 16 29a16 16 0 0 1-32 0c0-9 6-16 12-22-1 10 2 12 5 13 4-7 2-13-1-20Z"/>',green:'<path d="M50 12c1 27-10 40-28 32C5 27 25 12 50 12Z"/><path d="M17 51 42 22M28 39l-2-10m8 4 8 1" fill="none" stroke="var(--rune-dark)" stroke-width="3"/>',blue:'<path d="M32 9v46M12 20l40 24M12 44l40-24M24 14l8 7 8-7M24 50l8-7 8 7M13 29l10-2-1-10M51 35l-10 2 1 10M13 35l10 2-1 10M51 29l-10-2 1-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',yellow:'<path d="m32 5 7 18 20 9-20 9-7 18-7-18L5 32l20-9Z"/><circle cx="32" cy="32" r="8" fill="var(--rune-dark)"/>',purple:'<path d="M43 9a24 24 0 1 0 11 35A22 22 0 0 1 43 9Z"/><path d="m44 22 3-6 3 6 6 3-6 3-3 6-3-6-6-3Z"/>'};
@@ -70,7 +70,7 @@ function scheduleAuto(){
  autoTimer=setTimeout(()=>{autoTimer=null;if(!autoEnabled||busy||modal.open||document.hidden||screen!=='battle'||battle?.phase!=='playing')return;
   autoThinking=true;const id=++autoJob;
   try{
-   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.48.3',import.meta.url),{type:'module'});
+   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.48.4',import.meta.url),{type:'module'});
    autoWorker.onerror=()=>{stopAuto();if(screen==='battle')renderBattle();toast('Auto paused. You can continue manually.');};
    autoWorker.onmessage=({data})=>{
     if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;
@@ -120,10 +120,10 @@ function renderBattle(state=battle,frame={}){
   const pressure=battlePressure(state),timing=battleTiming(frame.kind,{speed:battleSpeed,reduced:reducedAnimation(),special:!!(previous&&planSpecialEffects(previous,state,frame)?.special)});
   document.querySelector('#effects-layer').style.setProperty('--fx-rate',timing.rate);
   if(previous)animateDefeats(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation()});
-  app.innerHTML=`<main style="--fx-rate:${timing.rate}" class="battle-shell ${combatPractice?'practice-battle':''} ${autoEnabled?'auto-running':''}"><div class="battle-pressure-vignette ${pressure.critical?'pressure-critical':''}" style="--battle-pressure:${pressure.intensity}" aria-hidden="true"></div><section class="battle-center encounter-battle" data-mode="${stage.mode}" data-difficulty="${stage.difficulty}" style="--encounter-art:url('${new URL(stage.art,document.baseURI).href}')" data-scene="${stage.id}" aria-label="Puzzle battle"><div class="battle-sky"><div class="battle-sky-shade"></div><div class="enemy-line" data-scenario-phase="${state.scenario?.triggered?'triggered':state.scenario?'waiting':'none'}">${state.enemies.map((u,i)=>`<article class="enemy-unit ${u.color} ${u.hp<=0?'fallen':''} ${frame.actor===u.uid?'attacking':''} ${i===1&&state.scenario?.triggered&&u.hp>0?'guardian-phase-active '+(state.scenario.id==='iron-overpressure'?'overpressure-active':'last-light-active'):''} ${selectedEnemy===u.uid?'targeted':''}" style="grid-column:${stage.mode==='arena'?'auto':`${u.lanes[0]+1} / span ${u.lanes.length}`}" data-unit="${u.uid}"><button class="enemy-target" data-action="enemy" data-uid="${u.uid}" aria-label="Target ${esc(u.name)}, ${u.hp} health, attacks in ${u.countdown} move${u.countdown===1?'':'s'}" ${u.hp<=0?'disabled':''}><span class="enemy-countdown">⚔ <b>${combatPractice?'—':u.countdown}</b></span><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640" ${u.portraitFocus?`style="object-position:${u.portraitFocus}"`:""}><span class="enemy-ground"></span><span class="enemy-name">${esc(u.name)}</span><span class="enemy-hp hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i><span class="enemy-hp-label">${combatPractice?'Practice target':Math.ceil(u.hp)+' / '+u.maxHp}${u.shield?' + '+u.shield+' ◈':''}</span></span><span class="enemy-mana" aria-label="Special charge ${chargeText(u.mana)} of ${u.manaMax}"><i style="width:${percent(u.mana,u.manaMax)}%"></i></span><span class="enemy-element">${rune(u.color)}</span></button><button class="enemy-info" data-action="inspect-unit" data-uid="${u.uid}" aria-label="Enemy ability details for ${esc(u.name)}">i</button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div><div class="attack-lanes" aria-label="Seven attack lanes">${Array.from({length:7},(_,column)=>{const target=state.enemies.find(e=>e.hp>0&&e.lanes.includes(column));return `<span class="lane-track ${target?'':'lane-empty'} ${frame.shots?.some(s=>s.index%7===column)?'lane-active':''}" data-lane="${column}" data-lane-target="${target?.uid||''}" role="img" aria-label="Lane ${column+1}: ${target?esc(target.name):'empty, double mana'}" title="${target?esc(target.name):'Empty lane · double mana'}"><i></i><b>${target?'⌃':'◇'}</b></span>`;}).join('')}</div></div>
+  app.innerHTML=`<main style="--fx-rate:${timing.rate}" class="battle-shell ${combatPractice?'practice-battle':''} ${autoEnabled?'auto-running':''}"><div class="battle-pressure-vignette ${pressure.critical?'pressure-critical':''}" style="--battle-pressure:${pressure.intensity}" aria-hidden="true"></div><section class="battle-center encounter-battle" data-mode="${stage.mode}" data-difficulty="${stage.difficulty}" style="--encounter-art:url('${new URL(stage.art,document.baseURI).href}')" data-scene="${stage.id}" aria-label="Puzzle battle"><div class="battle-sky"><div class="battle-sky-shade"></div><div class="enemy-line" data-scenario-phase="${state.scenario?.triggered?'triggered':state.scenario?'waiting':'none'}">${state.enemies.map((u,i)=>`<article class="enemy-unit ${u.color} ${u.hp<=0?'fallen':''} ${frame.actor===u.uid?'attacking':''} ${i===1&&state.scenario?.triggered&&u.hp>0?'guardian-phase-active '+(state.scenario.id==='iron-overpressure'?'overpressure-active':'last-light-active'):''} ${selectedEnemy===u.uid?'targeted':''}" style="grid-column:${stage.mode==='arena'?'auto':`${u.lanes[0]+1} / span ${u.lanes.length}`}" data-unit="${u.uid}"><button class="enemy-target" data-action="enemy" data-uid="${u.uid}" aria-label="Target ${esc(u.name)}, ${u.hp} health, attacks in ${u.countdown} move${u.countdown===1?'':'s'}" ${u.hp<=0?'disabled':''}><span class="enemy-countdown">⚔ <b>${combatPractice?'—':u.countdown}</b></span><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640" ${u.portraitFocus?`style="object-position:${u.portraitFocus}"`:""}><span class="enemy-ground"></span><span class="enemy-name">${esc(u.name)}</span><span class="enemy-hp hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i><span class="enemy-hp-label">${combatPractice?'Practice target':Math.ceil(u.hp)+' / '+u.maxHp}${u.shield?' + '+u.shield+' ◈':''}</span></span><span class="enemy-mana" aria-label="Special charge ${chargeText(u.mana)} of ${u.manaMax}"><i style="width:${percent(u.mana,u.manaMax)}%"></i></span><span class="enemy-element">${rune(u.color)}</span></button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div><div class="attack-lanes" aria-label="Seven attack lanes">${Array.from({length:7},(_,column)=>{const target=state.enemies.find(e=>e.hp>0&&e.lanes.includes(column));return `<span class="lane-track ${target?'':'lane-empty'} ${frame.shots?.some(s=>s.index%7===column)?'lane-active':''}" data-lane="${column}" data-lane-target="${target?.uid||''}" role="img" aria-label="Lane ${column+1}: ${target?esc(target.name):'empty, double mana'}" title="${target?esc(target.name):'Empty lane · double mana'}"><i></i><b>${target?'⌃':'◇'}</b></span>`;}).join('')}</div></div>
   <div class="board-surround"><div class="board ${busy?'resolving':''}" role="grid" aria-label="Seven column, five row runeboard" aria-rowcount="5" aria-colcount="7" data-testid="board">${state.board.map((t,i)=>`<button class="tile ${t.color} ${t.special?'special '+t.special:''} ${selectedRune===i?'selected':''} ${combatPractice&&practiceHints(PRACTICE_PHASES[combatPractice.phase],state).includes(i)?'practice-hint':''} ${cleared.has(i)?'matched':''} ${frame.kind==='fall'?'falling':''}" role="gridcell" aria-rowindex="${Math.floor(i/7)+1}" aria-colindex="${i%7+1}" data-action="tile" data-index="${i}" data-tile-id="${t.id}" aria-selected="${selectedRune===i}" aria-label="${ELEMENTS[t.color].name}${t.special?' '+(t.special==='prism'?'Prismatic Rune':'Blast Rune'):' rune'}, row ${Math.floor(i/7)+1}, column ${i%7+1}" ${busy?'disabled':''} style="--tile-order:${Math.floor(i/7)}"><img class="rune-art" src="./assets/runes/${t.color}${t.special?'-'+t.special:''}.svg" alt="" width="256" height="256" draggable="false"></button>`).join('')}</div></div>
   ${(weeklyStatus(state)||scenarioStatus(state))?`<div class="battle-mechanic-notice" role="status"><b>${esc((weeklyStatus(state)||scenarioStatus(state)).name)}</b> ${esc((weeklyStatus(state)||scenarioStatus(state)).text)}</div>`:''}<div class="battle-feedback" role="status" aria-live="polite">${!autoEnabled&&actor?`Choose ${castingSpec.target==='ally'?'an ally':'an enemy'} <button data-action="cancel-cast">Cancel</button>`:combatPractice?combatPractice.phase===PRACTICE_PHASES.length?`Practice complete <button data-action="practice-reward">Collect Quest Reward</button>`:esc(practicePrompt(PRACTICE_PHASES[combatPractice.phase],state.heroes.find(h=>h.uid===combatPractice.actor)?.name||'the ready champion')):''}</div>
-  <div class="hero-line">${state.heroes.map(u=>`<article class="hero-unit ${u.color} ${u.hp<=0?'fallen':''} ${readyLevel(u)?'charged':''} ${pendingCaster===u.uid?'casting':''} ${frame.actor===u.uid?'attacking':''}" data-unit="${u.uid}"><button class="hero-main" data-action="hero" data-uid="${u.uid}" aria-label="${esc(u.name)}, ${u.hp} health, ${chargeText(u.mana)} of ${u.manaMax} tile charge, ${manaLabel(u)}${readyLevel(u)?', Special ready'+(u.special.charging?', charge '+readyLevel(u):''):''}" ${u.hp<=0?'disabled':''}><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640" ${u.portraitFocus?`style="object-position:${u.portraitFocus}"`:""}><div class="hero-shade"></div>${rankTrack(u,profile)}${readyLevel(u)?`<span class="special-state">${glyph('speed')}${u.special.charging?'READY · '+readyLevel(u):'READY'}</span>`:''}<span class="hero-name">${esc(u.name)}</span><span class="hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i><span class="hero-health">${Math.ceil(u.hp)}${u.shield?' + '+u.shield+' ◈':''}</span></span>${manaBar(u)}<span class="hero-mana-speed">${speedMark(u)}</span><span class="hero-element">${rune(u.color)}</span></button><button class="hero-info" data-action="inspect-unit" data-uid="${u.uid}" aria-label="Ability details for ${esc(u.name)}">i</button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div>
+  <div class="hero-line">${state.heroes.map(u=>`<article class="hero-unit ${u.color} ${u.hp<=0?'fallen':''} ${readyLevel(u)?'charged':''} ${pendingCaster===u.uid?'casting':''} ${frame.actor===u.uid?'attacking':''}" data-unit="${u.uid}"><button class="hero-main" data-action="hero" data-uid="${u.uid}" aria-label="${esc(u.name)}, ${u.hp} health, ${chargeText(u.mana)} of ${u.manaMax} tile charge, ${manaLabel(u)}${readyLevel(u)?', Special ready'+(u.special.charging?', charge '+readyLevel(u):''):''}" ${u.hp<=0?'disabled':''}><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640" ${u.portraitFocus?`style="object-position:${u.portraitFocus}"`:""}><div class="hero-shade"></div>${rankTrack(u,profile)}${readyLevel(u)?`<span class="special-state">${glyph('speed')}${u.special.charging?'READY · '+readyLevel(u):'READY'}</span>`:''}<span class="hero-name">${esc(u.name)}</span><span class="hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i><span class="hero-health">${Math.ceil(u.hp)}${u.shield?' + '+u.shield+' ◈':''}</span></span>${manaBar(u)}<span class="hero-mana-speed">${speedMark(u)}</span><span class="hero-element">${rune(u.color)}</span></button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div>
   </section>
 </main>${battleControls()}`;
   if(focusedIndex!==undefined&&!busy)app.querySelector(`[data-index="${focusedIndex}"]`)?.focus({preventScroll:true});
@@ -298,7 +298,7 @@ document.addEventListener('click',event=>{
   if(action==='hint'&&!busy){const move=validMoves(battle.board)[0];if(move){renderBattle();for(const i of move)app.querySelector(`[data-index="${i}"]`)?.classList.add('hint');toast('The glowing runes can be swapped.');}return;}
   if(action==='tile'){if(combatPractice?.phase===PRACTICE_PHASES.length)return;tapTile(Number(index));return;}
   if(action==='hero'&&!busy){if(combatPractice?.phase===PRACTICE_PHASES.length)return;const hero=battle.heroes.find(h=>h.uid===uid);if(!hero||hero.hp<=0)return;const caster=battle.heroes.find(h=>h.uid===pendingCaster),spec=caster&&manaLevels(caster).find(l=>l.level===pendingLevel);if(spec?.target==='ally'){play(cast(battle,pendingCaster,uid,pendingLevel));return;}chooseSpecial(hero);return;}
-  if(action==='enemy'&&!busy){if(pendingCaster){const hero=battle.heroes.find(h=>h.uid===pendingCaster),spec=manaLevels(hero).find(l=>l.level===pendingLevel);if(spec.target==='enemy')play(cast(battle,pendingCaster,uid,pendingLevel));else toast('Choose one of your living champions to heal.');}else{selectedEnemy=uid;renderBattle();}return;}
+  if(action==='enemy'&&!busy){if(pendingCaster){const hero=battle.heroes.find(h=>h.uid===pendingCaster),spec=manaLevels(hero).find(l=>l.level===pendingLevel);if(spec.target==='enemy')play(cast(battle,pendingCaster,uid,pendingLevel));else toast('Choose one of your living champions to heal.');}else{selectedEnemy=uid;renderBattle();const enemy=battle.enemies.find(u=>u.uid===uid);if(enemy)inspect(enemy);}return;}
 
 });
 document.addEventListener('change',event=>{if(event.target.id==='cinematic-preference'){profile={...profile,cinematicsEnabled:event.target.checked};persist(PROFILE_KEY,profile);if(!event.target.checked)stopCinematic();return;}if(event.target.name==='feed-copy'){const confirm=modalContent.querySelector('[data-action="feed-confirm"]');if(!confirm)return;const ids=[...modalContent.querySelectorAll('[name="feed-copy"]:checked')].map(n=>n.value),q=feedingQuote(profile,byId.get(confirm.dataset.id),ids,roster,{battle});modalContent.querySelector('.feeding-summary').textContent=q.error||`+${q.gained} XP${q.boosted?' (+25% booster)':''} · Level ${q.displayBefore} → ${q.displayAfter} · ${q.gold} gold · ${ids.length} consumed`;confirm.disabled=!!q.error;}});
@@ -405,7 +405,7 @@ document.addEventListener('change',async event=>{
 
 });
 async function boot(){try{
-  const responses=await Promise.all([fetch('./data/champions.json?v=0.48.3'),fetch('./data/effects.json?v=0.48.3')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
+  const responses=await Promise.all([fetch('./data/champions.json?v=0.48.4'),fetch('./data/effects.json?v=0.48.4')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
 

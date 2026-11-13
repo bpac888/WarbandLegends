@@ -1,5 +1,5 @@
-import {accountDevelopment,playerDate} from './keeper.js?v=0.48.3';
-import {COURTYARD_PLACES} from './courtyard.js?v=0.48.3';
+import {accountDevelopment,playerDate} from './keeper.js?v=0.48.4';
+import {COURTYARD_PLACES} from './courtyard.js?v=0.48.4';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const arrow=(path)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${path}"/></svg>`;
 export function wantedPoster(p){const d=accountDevelopment(p.accountXp);return `<span class="poster-nail" aria-hidden="true"></span><strong class="wanted-heading">WANTED</strong><img src="./assets/portraits/${p.avatar}.svg" alt="Your profile portrait" width="96" height="96"><b class="keeper-name">${esc(p.name)}</b><span class="poster-level">Level ${d.level}</span><span class="poster-xp" role="progressbar" aria-label="Profile experience" aria-valuemin="0" aria-valuemax="${d.needed||1}" aria-valuenow="${d.needed?d.earned:1}"><i style="width:${d.ratio*100}%"></i></span><small>${d.needed?d.earned.toLocaleString()+' / '+d.needed.toLocaleString()+' XP':'Maximum Level'}</small>`;}

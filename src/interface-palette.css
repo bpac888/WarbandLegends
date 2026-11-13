@@ -232,3 +232,21 @@ body:has(.battle-shell) .battle-center .battle-sky{padding-top:6px}
  @media(display-mode:standalone){body:has(.battle-shell) #app{padding-top:env(safe-area-inset-top,0px)}}
 }
 body.menu-theme .page-arena .arena-player-record{margin-left:auto}
+/* Keep portrait borders just below the safe-area edge without a tall empty strip. */
+body:has(.battle-shell) #app{padding-top:calc(env(safe-area-inset-top,0px) + 5px)}
+@supports (-webkit-touch-callout:none){
+ @media(display-mode:standalone){body:has(.battle-shell) #app{padding-top:calc(env(safe-area-inset-top,0px) + 5px)}}
+}
+/* Continuous tile grid and compact shop/advancement sections. */
+body:has(.battle-shell) .battle-center .board{gap:0;row-gap:0;column-gap:0;padding:0}
+body:has(.battle-shell) .battle-center .board-surround{padding:0}
+body:has(.battle-shell) .battle-center .tile{margin:0;border-radius:3px}
+body.menu-theme .game-page.page-shop :is(.tomes-preview,.gem-shop){margin-block:8px;padding-block:0;border-top:0}
+body.menu-theme .game-page.page-shop :is(.tomes-preview,.gem-shop) .section-heading{padding:0;margin:6px 0}
+body.menu-theme .game-page.page-shop :is(.tomes-preview,.gem-shop) .section-heading h2{margin:0}
+body.menu-theme .page-champion .advancement-content .ascension-road{margin:4px 0 8px;gap:5px}
+body.menu-theme .page-champion .advancement-content .ascension-road li{flex:0 1 auto;min-width:56px;padding:6px 8px;border-radius:7px}
+body.menu-theme .page-champion .advancement-content .ascension-road span{font-size:9px;letter-spacing:0;margin-bottom:3px}
+body.menu-theme .page-champion .advancement-content .ascension-road b{font-size:13px}
+body.menu-theme .page-champion .ascension-panel .advancement-content{padding-top:6px}
+body:has(.battle-shell) .battle-center .tile::before{inset:0;border-radius:2px}

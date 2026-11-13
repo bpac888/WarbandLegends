@@ -1,4 +1,4 @@
-import {beforeCharacterNameRevision} from './character-name-revision.js?v=0.48.3';
+import {beforeCharacterNameRevision} from './character-name-revision.js?v=0.48.4';
 // Owner-approved 2026-11-11 balance batch. Full snapshots make historical checks strict.
 export const UPGRADE_BALANCE_REVISION=[
   {
