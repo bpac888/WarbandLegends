@@ -255,3 +255,15 @@ body:has(.battle-shell) .battle-center .battle-feedback:has([data-action="cancel
 /* Practice uses parchment rather than the normal targeting overlay. */
 body:has(.battle-shell) .battle-shell.practice-battle .battle-center .battle-feedback:has([data-action="cancel-cast"]){color:#25242c}
 body:has(.battle-shell) .battle-shell.practice-battle .battle-center .battle-feedback>[data-action="cancel-cast"]{color:#802126}
+/* Give a little ally portrait height to the board, keeping its cells contiguous. */
+@media(orientation:portrait),(min-height:601px){
+ body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.31)) minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.48 + 4px)) minmax(0,1fr) auto}
+}
+@media(min-width:701px) and (min-height:601px){
+ body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.29)) minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.50 + 4px)) minmax(0,1fr) auto}
+}
+body:has(.battle-shell) .battle-shell{padding-inline:4px}
+body:has(.battle-shell) .battle-center .board{gap:0;padding:0}
+/* Battle-only framing for these three unusually wide/off-center portraits. */
+.battle-shell :is(.hero-main,.enemy-target)>img[src$="/gavrox_void_foundry.webp"]{object-position:28% 12%!important}
+.battle-shell :is(.hero-main,.enemy-target)>img:is([src$="/aerie_twin.webp"],[src$="/aerie_hybrid.webp"]){object-fit:contain;object-position:center top;background:#39313f}
