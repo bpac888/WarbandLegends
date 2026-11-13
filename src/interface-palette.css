@@ -255,15 +255,21 @@ body:has(.battle-shell) .battle-center .battle-feedback:has([data-action="cancel
 /* Practice uses parchment rather than the normal targeting overlay. */
 body:has(.battle-shell) .battle-shell.practice-battle .battle-center .battle-feedback:has([data-action="cancel-cast"]){color:#25242c}
 body:has(.battle-shell) .battle-shell.practice-battle .battle-center .battle-feedback>[data-action="cancel-cast"]{color:#802126}
-/* Give a little ally portrait height to the board, keeping its cells contiguous. */
-@media(orientation:portrait),(min-height:601px){
- body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.31)) minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.48 + 4px)) minmax(0,1fr) auto}
-}
-@media(min-width:701px) and (min-height:601px){
- body:has(.battle-shell) .battle-center{grid-template-rows:minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.29)) minmax(0,calc((100svh - env(safe-area-inset-top,0px) - max(2px,env(safe-area-inset-bottom,0px)) - 68px)*.50 + 4px)) minmax(0,1fr) auto}
-}
-body:has(.battle-shell) .battle-shell{padding-inline:4px}
 body:has(.battle-shell) .battle-center .board{gap:0;padding:0}
+body:has(.battle-shell) .tile>.rune-art{transform:scale(1.13);transform-origin:center}
 /* Battle-only framing for these three unusually wide/off-center portraits. */
 .battle-shell :is(.hero-main,.enemy-target)>img[src$="/gavrox_void_foundry.webp"]{object-position:28% 12%!important}
 .battle-shell :is(.hero-main,.enemy-target)>img:is([src$="/aerie_twin.webp"],[src$="/aerie_hybrid.webp"]){object-fit:contain;object-position:center top;background:#39313f}
+@media(orientation:portrait),(min-height:601px){
+ body:has(.battle-shell) .battle-center .board-surround{height:calc(100% + 8px)}
+ body:has(.battle-shell) .battle-center .hero-line{height:calc(100% - 8px);align-self:end}
+}
+.daily-profile-progress{display:flex;align-items:center;gap:9px;margin:0 0 10px;height:22px;color:var(--paper-ink)}
+.daily-profile-progress>b{font-size:18px;line-height:1;font-variant-numeric:tabular-nums}
+.daily-profile-progress>span{height:4px;flex:1;background:#b8a9b5;border-radius:4px;overflow:hidden}
+.daily-profile-progress>span>i{display:block;height:100%;background:#9e2a2b;border-radius:4px}
+.daily-nav>img{width:32px;height:32px;object-fit:contain}
+body.menu-theme .game-page.page-shop .shop-inventory .inventory-grid{margin-top:8px}
+body.menu-theme .game-page.page-shop .shop-inventory .inventory-card{min-height:80px;padding:10px 14px}
+body.menu-theme .game-page.page-shop .shop-tabs{flex-wrap:nowrap}
+body.menu-theme .game-page.page-shop .shop-tabs>button{flex:1;min-width:0;padding-inline:6px}

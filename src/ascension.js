@@ -6,12 +6,12 @@ export const LIMIT_BREAK_BUFF_TURNS=3;
 export const normalLevelCap=champion=>ASCENSION_CAPS[champion.rarity].at(-1);
 export const MATERIAL_LIMIT=999999;
 export const MATERIALS=Object.freeze([
- {id:'star-thread',name:'Star Thread',color:'#edc58a',price:120,description:'Used in every ascension.',source:'Every campaign or dungeon victory.'},
- {id:'aether-crystal',name:'Aether Crystal',color:'#6de2e5',price:450,description:'For Rare+ ascensions.',source:'Every dungeon victory.'},
- {id:'awakened-ember',name:'Awakened Ember',color:'#ffad6b',price:3000,description:'For Limit Breaks after full ascension.',source:'Every Nightmare dungeon victory.'},
- {id:'astral-heart',name:'Astral Heart',color:'#eeaaff',price:6000,description:'For the second Limit Break.',source:'Every Nightmare dungeon victory.'},
- {id:'sovereign-crown',name:'Sovereign Crown',color:'#ffc65a',price:2250,description:'Final Legendary/Mythical ascension.',source:'Hard and Nightmare dungeon victories.'},
- ...[['red','Ember','#ff7662'],['blue','Glacier','#75cfff'],['green','Verdant','#88e5a1'],['yellow','Dawn','#ffe182'],['purple','Twilight','#cc9dff']].map(([id,label,color])=>({id:id+'-sigil',name:label+' Sigil',color,price:300,description:`For ${id} champions.`,source:'Shop · earned gold.'}))
+ {id:'star-thread',name:'Star Thread',color:'#edc58a',price:150,description:'Used in every ascension.',source:'Every campaign or dungeon victory.'},
+ {id:'aether-crystal',name:'Aether Crystal',color:'#6de2e5',price:600,description:'For Rare+ ascensions.',source:'Every dungeon victory.'},
+ {id:'awakened-ember',name:'Awakened Ember',color:'#ffad6b',price:4000,description:'For Limit Breaks after full ascension.',source:'Every Nightmare dungeon victory.'},
+ {id:'astral-heart',name:'Astral Heart',color:'#eeaaff',price:7500,description:'For the second Limit Break.',source:'Every Nightmare dungeon victory.'},
+ {id:'sovereign-crown',name:'Sovereign Crown',color:'#ffc65a',price:3000,description:'Final Legendary/Mythical ascension.',source:'Hard and Nightmare dungeon victories.'},
+ ...[['red','Ember','#ff7662'],['blue','Glacier','#75cfff'],['green','Verdant','#88e5a1'],['yellow','Dawn','#ffe182'],['purple','Twilight','#cc9dff']].map(([id,label,color])=>({id:id+'-sigil',name:label+' Sigil',color,price:400,description:`For ${id} champions.`,source:'Shop · earned gold.'}))
 ]);
 export const materialById=id=>MATERIALS.find(m=>m.id===id);
 export const materialArt=id=>'./assets/items/'+id+'.webp';

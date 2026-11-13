@@ -1,12 +1,12 @@
 // Preview USD prices, in cents. No payment or fulfillment is enabled.
 export const PREMIUM_USD_CENTS=Object.freeze({
- 'energy-refill':99,'gold-chest':199,'gem-cache':499,'gem-treasury':1499,
- 'experience-booster':299,'gold-booster':199,
- 'tome-of-ascension':999,'tome-of-limit-break':1499,
- 'ascension-kit':499,'awakening-kit':999,'vip-week':499,'vip-month':1999,
- 'epic-tome-experience':299,'legendary-tome-experience':799,
+ 'energy-refill':199,'gold-chest':299,'gem-cache':599,'gem-treasury':1899,
+ 'experience-booster':399,'gold-booster':299,
+ 'tome-of-ascension':1299,'tome-of-limit-break':1899,
+ 'ascension-kit':599,'awakening-kit':1299,'vip-week':599,'vip-month':2499,
+ 'epic-tome-experience':399,'legendary-tome-experience':999,
  ...Object.fromEntries(['red','blue','green','yellow','purple'].flatMap(color=>[
-  ['lesser-'+color+'-tome',199],['greater-'+color+'-tome',399],
+  ['lesser-'+color+'-tome',299],['greater-'+color+'-tome',499],
  ])),
 });
 export function premiumPrice(id){

@@ -14,8 +14,8 @@
  .topbar.with-nav .game-wallet b{font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap}
  .topbar.with-nav .game-wallet small{display:none}
  .topbar.with-nav .game-wallet .ui-icon,.topbar.with-nav .game-wallet .card-glyph{width:14px;height:14px;flex-shrink:0}
- .topbar.with-nav .topbar-right>.inventory-button{grid-column:3;grid-row:2;display:flex;justify-content:center;gap:5px;min-width:0;width:100%;height:38px;min-height:38px;padding:6px 5px;font-size:11px;border-radius:8px}
- .topbar.with-nav .inventory-button>.ui-icon{width:15px;height:15px}
+ .topbar.with-nav .topbar-right>.daily-nav{grid-column:3;grid-row:2;display:flex;justify-content:center;gap:5px;min-width:0;width:100%;height:38px;min-height:38px;padding:6px 5px;font-size:11px;border-radius:8px}
+ .topbar.with-nav .daily-nav>.ui-icon{width:15px;height:15px}
  .topbar.with-nav .game-nav{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:0;padding:0;width:100%}
  .topbar.with-nav .game-nav>button{width:100%;min-width:0;min-height:44px;height:44px;display:flex;flex-direction:row;align-items:center;justify-content:center;padding:6px 2px;font-size:10px;letter-spacing:0;border-radius:8px}
 }

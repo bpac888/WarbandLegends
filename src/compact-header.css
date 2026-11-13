@@ -35,7 +35,7 @@
  .topbar.with-nav .game-wallet>span{padding:3px;gap:2px}
  .topbar.with-nav .game-wallet>span>.wallet-art{width:18px;height:18px}
  .topbar.with-nav .game-wallet b{font-size:10px}
- .topbar.with-nav .topbar-right>.inventory-button{grid-column:2;grid-row:2}
+ .topbar.with-nav .topbar-right>.daily-nav{grid-column:2;grid-row:2}
  .topbar.with-nav .topbar-right>[data-page="settings"]{grid-column:3;grid-row:2}
  .topbar.with-nav .topbar-right>.header-guide{grid-column:4;grid-row:2}
  .topbar.with-nav .game-nav{grid-column:1/-1;grid-row:3;display:flex;justify-content:space-between;gap:5px;margin:0;padding:0;width:100%}
@@ -56,7 +56,7 @@
  .topbar.with-nav .game-nav>.nav-shortcut:nth-child(3){grid-column:3}
  .topbar.with-nav .game-nav>.nav-shortcut:nth-child(4){grid-column:4}
  .topbar.with-nav .game-nav>.nav-shortcut:nth-child(5){grid-column:5}
- .topbar.with-nav .topbar-right>.inventory-button{grid-column:6;grid-row:2}
+ .topbar.with-nav .topbar-right>.daily-nav{grid-column:6;grid-row:2}
  .topbar.with-nav .topbar-right>[data-page="settings"]{grid-column:7;grid-row:2}
  .topbar.with-nav .topbar-right>.header-guide{grid-column:8;grid-row:2}
 }

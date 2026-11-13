@@ -1,5 +1,5 @@
-import {normalizeTeamPreferences} from './team-preferences.js?v=0.48.4';
-import {recordTutorial} from './tutorial.js?v=0.48.4';
+import {normalizeTeamPreferences} from './team-preferences.js?v=0.49.0';
+import {recordTutorial} from './tutorial.js?v=0.49.0';
 export const TEAM_SLOT_COUNT=4;
 export const sameTeam=(a,b)=>Array.isArray(a)&&Array.isArray(b)&&a.length===b.length&&a.every((id,i)=>id===b[i]);
 const teamShape=t=>Array.isArray(t)&&t.length===5&&new Set(t).size===5&&t.every(id=>typeof id==='string');

@@ -1,21 +1,21 @@
-import {RELEASE_VERSION} from './release-version.js?v=0.48.4';
-import {premiumInventory} from './premium-items-ui.js?v=0.48.4';
-import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.48.4';
-import {LOOT_TICKET_ART} from './loot-ticket-item.js?v=0.48.4';
-import {realmMap} from './realm-map.js?v=0.48.4';
-import {energyStatus} from './keeper.js?v=0.48.4';
-import {GEM_ART,GOLD_ART,ENERGY_ART,DAILY_PATH_ART} from './currency-art.js?v=0.48.4';
-import {ownedHeroes,uniqueHeroCount} from './hero-copies.js?v=0.48.4';
-import {factionEmblem,savedWarbands} from './keeper-ui.js?v=0.48.4';
-import {questsPage} from './quest-ui.js?v=0.48.4';
-import {materialInventory} from './ascension-ui.js?v=0.48.4';
-import {getEncounter} from './encounters.js?v=0.48.4';
-import {developedChampion} from './development.js?v=0.48.4';
-import {levelMark,rankTrack} from './development-ui.js?v=0.48.4';
-import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.48.4';
-import {filterChampions,factionLabel} from './collection.js?v=0.48.4';
-import {MANA_SPEEDS,manaLabel,manaLevels,STAGES} from './engine.js?v=0.48.4';
-import {QUESTS,questProgress,SUMMON_ODDS,CAMPAIGN_REWARDS,GEM_INTERVAL} from './progression.js?v=0.48.4';
+import {RELEASE_VERSION} from './release-version.js?v=0.49.0';
+import {premiumInventory} from './premium-items-ui.js?v=0.49.0';
+import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.49.0';
+import {LOOT_TICKET_ART} from './loot-ticket-item.js?v=0.49.0';
+import {realmMap} from './realm-map.js?v=0.49.0';
+import {energyStatus} from './keeper.js?v=0.49.0';
+import {GEM_ART,GOLD_ART,ENERGY_ART,DAILY_PATH_ART} from './currency-art.js?v=0.49.0';
+import {ownedHeroes,uniqueHeroCount} from './hero-copies.js?v=0.49.0';
+import {factionEmblem,savedWarbands} from './keeper-ui.js?v=0.49.0';
+import {questsPage} from './quest-ui.js?v=0.49.0';
+import {materialInventory} from './ascension-ui.js?v=0.49.0';
+import {getEncounter} from './encounters.js?v=0.49.0';
+import {developedChampion} from './development.js?v=0.49.0';
+import {levelMark,rankTrack} from './development-ui.js?v=0.49.0';
+import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.49.0';
+import {filterChampions,factionLabel} from './collection.js?v=0.49.0';
+import {MANA_SPEEDS,manaLabel,manaLevels,STAGES} from './engine.js?v=0.49.0';
+import {QUESTS,questProgress,SUMMON_ODDS,CAMPAIGN_REWARDS,GEM_INTERVAL} from './progression.js?v=0.49.0';
 export const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const esc=escapeHTML;
 const iconPaths={home:'M3 10 12 3l9 7v11h-6v-7H9v7H3Z',world:'M3 4 9 2l6 3 6-2v17l-6 2-6-3-6 2Zm6-2v17m6-14v17',roster:'M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-6 10v-4c0-5 12-5 12 0v4m3-17a4 4 0 0 1 0 8m0 2c4 0 5 2 5 5v2',summon:'M12 2c-6 0-9 5-9 10s3 10 9 10 9-5 9-10-3-10-9-10Zm0 5 3 5-3 5-3-5Z',quests:'M6 3h12v19H3V3Zm0 0V1h9v5H6m0 6 2 2 3-4m2 2h3m-10 6h10',settings:'m9 3 1-2h4l1 2 3 1 2 2-1 3 2 1v4l-2 1 1 3-2 2-3-1-1 2h-4l-1-2-3 1-2-2 1-3-2-1v-4l2-1-1-3 2-2Zm3 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z',inventory:'M3 7h18v14H3Zm-1-4h20v4H2Zm7 8h6',gold:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4v12m4-10c-6-4-10 3-4 4s2 7-4 4',arrow:'M4 12h16m-6-6 6 6-6 6',sword:'M4 20 18 6l3-4-5 2L2 18m0-6 10 10m-9 0 5-5',chest:'M3 10V6c0-5 18-5 18 0v4M2 10h20v12H2Zm8 0v7h4v-7'};
@@ -23,7 +23,7 @@ export const uiIcon=id=>id==='settings'?'<img class="ui-icon settings-gear" src=
 const navItems=[['home','Tavern'],['summon','Summon'],['world','Adventure'],['roster','Codex'],['quests','Quests']];
 export function navigation(page){const icons={home:'tavern-house',summon:'summon-portal',world:'adventure-swords',roster:'codex-roster',quests:'quest-scrolls'};return `<nav class="game-nav topbar-nav" aria-label="Game navigation">${navItems.map(([id,label])=>`<button data-action="nav" data-page="${id}" class="nav-shortcut ${page===id||page==='champion'&&id==='roster'?'active':''}" aria-label="${label}" title="${label}" ${page===id?'aria-current="page"':''}><img class="navigation-art" src="./assets/items/${icons[id]}.webp" alt="" aria-hidden="true" width="32" height="32"></button>`).join('')}</nav>`;}
 const compactCurrency=n=>{const [divisor,suffix]=n>=1e12?[1e12,'T']:n>=1e9?[1e9,'B']:n>=1e6?[1e6,'M']:n>=1e3?[1e3,'K']:[1,''];return suffix?`${Math.floor(n/divisor*10)/10}${suffix}`:n.toLocaleString();};
-export function wallet(profile,{page}={}){const energy=energyStatus(profile);return `<div class="game-wallet">${[['Gold',profile.gold,GOLD_ART],['Gems',profile.gems,GEM_ART]].map(([name,amount,art])=>`<span title="${amount.toLocaleString()} ${name}"><img class="wallet-art" src="${art}" alt=""><b aria-label="${amount.toLocaleString()} ${name}">${compactCurrency(amount)}</b><small>${name}</small></span>`).join('')}<button class="daily-path-shortcut" data-action="nav" data-page="daily" aria-label="Daily Gift and Today’s Path" title="Daily Gift and Today’s Path" ${page==='daily'?'aria-current="page"':''}><img src="${DAILY_PATH_ART}" alt="" width="28" height="28"></button><span class="game-energy" title="Energy refills fully at midnight PST and on profile level-up."><img class="wallet-art" src="${ENERGY_ART}" alt=""><b class="energy-amount" aria-label="${energy.current} of ${energy.max} Energy">${energy.current}/${energy.max}</b></span></div>`;}
+export function wallet(profile,{page}={}){const energy=energyStatus(profile);return `<div class="game-wallet">${[['Gold',profile.gold,GOLD_ART],['Gems',profile.gems,GEM_ART]].map(([name,amount,art])=>`<span title="${amount.toLocaleString()} ${name}"><img class="wallet-art" src="${art}" alt=""><b aria-label="${amount.toLocaleString()} ${name}">${compactCurrency(amount)}</b><small>${name}</small></span>`).join('')}<span class="game-energy" title="Energy refills fully at midnight PST and on profile level-up."><img class="wallet-art" src="${ENERGY_ART}" alt=""><b class="energy-amount" aria-label="${energy.current} of ${energy.max} Energy">${energy.current}/${energy.max}</b></span></div>`;}
 export function pageHeading(eyebrow,title,text,action=''){return `<div class="page-heading"><div><span class="eyebrow">${eyebrow}</span><h1>${title}</h1><p>${text}</p></div>${action}</div>`;}
 export function splash({cinematics=true}={}){return `<main class="splash-screen"><div class="splash-landscape" role="img" aria-label="The Dragon Empress with golden and blue spirit dragons in an imperial citadel"></div><div class="splash-content"><button class="button gold splash-enter" data-action="nav" data-page="home">Enter The Courtyard ${uiIcon('arrow')}</button><button class="splash-play-intro" data-action="play-intro" ${cinematics?'':'disabled title="Cinematics are turned off or Reduced Motion is enabled."'}>▷ Play Intro</button><div class="splash-brand"><span class="splash-emblem"><img src="./assets/brand/warband-crest.webp" alt=""></span><h1><img class="title-wordmark" src="./assets/brand/warband-wordmark.png" alt="Warband Legends" width="2000" height="429"></h1></div></div><div class="splash-caption"><small>Your progress is saved on this browser. · v${RELEASE_VERSION}</small></div></main>`;}
 export const stageArt=id=>({
@@ -41,10 +41,10 @@ export const MODES={
  shop:{title:'Shop',kicker:'PREPARE FOR THE JOURNEY',text:'A reserved home for earned-resource exchanges and future supplies.',items:['Earned gold and material exchanges','Clear prices and item descriptions','No purchases or paid offers in this foundation'],icon:'inventory'},
 };
 export function world(){return realmMap();}
-export {campaign,dungeons,encounterPreview} from './adventure-ui.js?v=0.48.4';
-export {arena,events,exchangePage,exchangeOffers,exchangeConfirmation,tavernDestinations} from './arena-events-ui.js?v=0.48.4';
+export {campaign,dungeons,encounterPreview} from './adventure-ui.js?v=0.49.0';
+export {arena,events,exchangePage,exchangeOffers,exchangeConfirmation,tavernDestinations} from './arena-events-ui.js?v=0.49.0';
 export function foundation(id){const m=MODES[id];const features={dungeons:['Boss encounters','Distinct realms','Rare treasures'],arena:['Your defense team','Rival warbands','Climb the ranks'],events:['Changing challenges','Seasonal bosses','Event treasures'],alliance:['Find your allies','Cooperative battles','Shared adventures'],shop:['Supplies','Materials','Earned exchanges']};return `${pageHeading(m.kicker,m.title,'A new destination on the horizon.')}<section class="destination-preview destination-${id}"><div class="destination-landscape"></div><img class="destination-champion" src="./assets/champions/${modeArt[id]}.webp" alt=""><div class="destination-copy"><span class="mode-label">NOT PLAYABLE YET</span><h2>${m.title}</h2><div class="destination-features">${features[id].map((label,i)=>`<span>${uiIcon([m.icon,'world','chest'][i])}<b>${label}</b></span>`).join('')}</div><button class="button gold" data-action="nav" data-page="campaign">Play the campaign ${uiIcon('arrow')}</button></div></section>`;}
-export {altarPage as portal} from './summoning-ui.js?v=0.48.4';
+export {altarPage as portal} from './summoning-ui.js?v=0.49.0';
 function collectionTabs(profile,roster,filters){const owned=Object.keys(profile.collection).length;return `<div class="collection-tabs"><button data-action="collection-tab" data-tab="owned" class="${filters.tab==='owned'?'active':''}">Collection <b>${owned}</b></button><button data-action="collection-tab" data-tab="all" class="${filters.tab==='all'?'active':''}">Codex <b>${roster.length}</b></button><button data-action="collection-tab" data-tab="teams" class="${filters.tab==='teams'?'active':''}">Teams</button></div>`;}
 export function collection(profile,roster,filters,teamsHeader=''){if(filters.tab==='teams')return `<div class="collection-toolbar">${collectionTabs(profile,roster,filters)}</div>${teamsHeader}${savedWarbands(profile,roster)}`;return `${profile.openRoster?'<div class="roster-mode-note">Playtesting Active · No Battle Rewards</div>':''}<div class="collection-toolbar">${collectionTabs(profile,roster,filters)}</div>${collectionFiltersHTML(roster,filters)}<div class="library-summary"><p id="library-count" class="library-count" role="status" aria-live="polite"></p></div><div id="library-grid" class="library-grid"></div>`;}
 
