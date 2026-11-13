@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.47.0",
+  "version": "0.48.0",
   "private": true,
   "type": "module",
   "description": "Independent single-player match-3 RPG, using the owner's draft1 roster.",
@@ -87,7 +87,11 @@
     "test:battle-edge": "node tests/battle-edge-browser.mjs",
     "test:weekly-variety": "node tests/weekly-variety-browser.mjs",
     "test:page-polish": "node tests/page-polish-browser.mjs",
-    "test:battle-spacing": "node tests/battle-spacing-browser.mjs"
+    "test:battle-spacing": "node tests/battle-spacing-browser.mjs",
+    "test:dialogue": "node tests/dialogue-animation-browser.mjs",
+    "test:tutorial-refinements": "node tests/tutorial-refinement-browser.mjs",
+    "test:palette": "node tests/interface-palette-browser.mjs && node tests/battle-palette-browser.mjs",
+    "test:training-layout": "node tests/training-layout-browser.mjs"
   },
   "engines": {
     "node": ">=22"

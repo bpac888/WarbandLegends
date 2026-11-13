@@ -1,9 +1,9 @@
-import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.47.0';
-import {factionGuideHTML} from './faction-ui.js?v=0.47.0';
-import {EFFECTS} from './effects.js?v=0.47.0';
-import {effectIcon} from './icons.js?v=0.47.0';
-import {SUMMON_ODDS} from './progression.js?v=0.47.0';
-import {heroInsight} from './tactics-ui.js?v=0.47.0';
+import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.48.0';
+import {factionGuideHTML} from './faction-ui.js?v=0.48.0';
+import {EFFECTS} from './effects.js?v=0.48.0';
+import {effectIcon} from './icons.js?v=0.48.0';
+import {SUMMON_ODDS} from './progression.js?v=0.48.0';
+import {heroInsight} from './tactics-ui.js?v=0.48.0';
 export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
 const battleRules=[
  ['Elements','<img class="element-advantages" src="./assets/guide/element-advantages.webp" alt="Red beats Green; Green beats Blue; Blue beats Red. Yellow and Purple are strong against each other.">'],
@@ -47,5 +47,5 @@ function effectsGuideHTML(kind){
 export function guideHTML(id='overview',champion=null,effectKind='buff',profile={}){
  const key=id==='heroes'?'growth':id==='overview'?'battles':id;
  const selected=topics.find(t=>t[0]===key)||topics[0];
- return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='tools'?`<div class="guide-tools"><button class="button outline" data-action="nav" data-page="splash">Title Screen</button><label class="guide-playtesting" for="cinematic-preference"><span><b>Character cinematics</b><small>Animated portraits, reveals and Specials. Reduced Motion keeps artwork still.</small></span><input type="checkbox" id="cinematic-preference" ${profile.cinematicsEnabled!==false?'checked':''}></label><label class="guide-playtesting" for="open-roster"><span><b>Playtesting</b><small>Maximum-level heroes; no rewards or progress.</small></span><input type="checkbox" id="open-roster" ${profile.openRoster?'checked':''}></label><button class="button outline guide-restart" data-action="restart-preview">Restart Journey</button></div>`:selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}${champion&&selected[0]==='growth'?heroInsight(champion):''}</section></div>`;
+ return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='tools'?`<div class="guide-tools"><button class="button outline" data-action="nav" data-page="splash">Title Screen</button><label class="guide-playtesting" for="cinematic-preference"><span><b>Character cinematics</b><small>Portrait animations and summon reveals.</small></span><input type="checkbox" id="cinematic-preference" ${profile.cinematicsEnabled!==false?'checked':''}></label><label class="guide-playtesting" for="open-roster"><span><b>Playtesting</b><small>Maximum-level heroes; no rewards or progress.</small></span><input type="checkbox" id="open-roster" ${profile.openRoster?'checked':''}></label><button class="button outline guide-restart" data-action="restart-preview">Restart Journey</button></div>`:selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}${champion&&selected[0]==='growth'?heroInsight(champion):''}</section></div>`;
 }

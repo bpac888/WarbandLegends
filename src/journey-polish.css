@@ -29,7 +29,7 @@
 .special-at-a-glance{font-size:14px;line-height:1.55;color:#e0e8db;margin:12px 0 16px;padding:10px 12px;border-inline-start:2px solid #d9bb7c;background:#d6bf8620;border-radius:0 8px 8px 0;overflow-wrap:anywhere}
 .special-at-a-glance>span{display:block;font-size:10px;font-weight:600;letter-spacing:.04em;color:#e6cb95;margin-bottom:4px}
 /* Tutorial guidance stays legible on the lighter utility pages. */
-body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .first-steps p{color:#c6d6d0}
+body.menu-theme .game-page:is(.page-quests,.page-inventory,.page-shop) .first-steps p{color:#41404a}
 
 /* Compact character information without repeating its section titles. */
 .page-champion .special-ability-label{display:block;font-size:10px;line-height:1.4;letter-spacing:.06em;color:#d9c696;margin-bottom:4px}

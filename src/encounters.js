@@ -1,6 +1,6 @@
-import {WEEKLY_STAGES,weeklyWindow} from './weekly.js?v=0.47.0';
-import {authoredStage} from './chapter.js?v=0.47.0';
-import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js?v=0.47.0';
+import {WEEKLY_STAGES,weeklyWindow} from './weekly.js?v=0.48.0';
+import {authoredStage} from './chapter.js?v=0.48.0';
+import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js?v=0.48.0';
 // Independent Legends encounters. Structure/names/art adapted from the owner's source game.
 export const DIFFICULTIES=[
  {id:'normal',label:'Normal',realm:'The First Crossing',description:'A living realm. The first shadows gather.',art:'assets/scenes/world-map.svg',mult:1,color:'#92c99c'},
@@ -10,7 +10,7 @@ export const DIFFICULTIES=[
 export const STAGE_NAMES=['The Ashen Gate','The Frozen Pass','The Veil Sanctum','Howling Ford','Iron Crossroads',"Widow’s Watch",'Broken Banner','Salt Marsh','Gallows Rise','Obsidian Gate','Thorn Labyrinth','Echo Crypts','Blood Orchard','Silent Bastion','Ruin Spire','Ember Cathedral','Night Market','Shattered Keep','Pale Moat',"Dragon’s Tooth",'Veil Crossing','Crown of Crows','Abyss Stair','Final Bell','Worldwound Edge'];
 const legacyIds=['ashen-gate','frozen-pass','veil-sanctum'];
 const formations=[
- ['redknife_tavin','shellback_brukk','rimebow_tessa'],['berserker_ulf','shieldmaiden_runa','ice_shaman_sigrid'],['demon_witchblade','shade_prince','umbral_hierarch'],
+ ['redknife_tavin','shellback_brukk','rimebow_tessa'],['berserker_ulf','fjordwatch_hald','ice_shaman_sigrid'],['demon_witchblade','shade_prince','umbral_hierarch'],
  ['camel_rider_rashid','caravan_warden_samira','dune_mage_sorra'],['ironwall_sniper','bronze_juggernaut','rivet_mender_orsa'],
  ['shadow_stalker','pale_matriarch','cursed_acolyte'],['neon_laser_blade','executor_model_z','neon_hacker_empress'],
  ['barkskin_bruiser','the_verdant_king','grove_druid'],['blood_paladin','vlad_the_soul_eater','carmine_veinreader'],
@@ -19,7 +19,7 @@ const formations=[
  ['dragon_samurai_kenshin','dragon_empress','jade_mender_lian'],['shadow_thrall','yshmir_worldwound','umbral_hierarch'],
 ];
 // The final Nightmare encounters resolve the campaign story. Other formations stay unchanged.
-const nightmareFinale={20:['spore_engineer','plague_doctor','cursed_acolyte'],25:['shellback_brukk','yshmir_worldwound','rimebow_tessa']};
+const nightmareFinale={20:['spore_engineer','plague_doctor','cursed_acolyte'],25:['fjordwatch_hald','yshmir_worldwound','rimebow_tessa']};
 const route=[[15,77],[20,70],[25,63],[30,57],[34,50],[29,44],[23,39],[22,32],[28,27],[35,24],[43,28],[49,34],[56,37],[61,32],[63,25],[60,18],[53,15],[46,19],[40,14],[42,7],[54,7],[68,12],[77,18],[83,25],[90,14]];
 export const CAMPAIGN_STAGES=DIFFICULTIES.flatMap((diff,d)=>STAGE_NAMES.map((name,i)=>{
  const n=i+1,t=Math.max(0,(n-3)/22),early=[[600,240,210],[800,315,280],[1050,400,350]][i];

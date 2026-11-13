@@ -1,10 +1,10 @@
-import {TUTORIAL_QUESTS,tutorialProgress,tutorialQuestAvailable} from './tutorial.js?v=0.47.0';
-import {nextCopyId} from './hero-copies.js?v=0.47.0';
-import {heroForId,uniqueHeroCount} from './hero-copies.js?v=0.47.0';
-import {addAccountXp,accountDevelopment,bumpPath} from './keeper.js?v=0.47.0';
-import {addHeroXp} from './development.js?v=0.47.0';
-import {addMaterials} from './ascension.js?v=0.47.0';
-import {GEM_LIMIT} from './economy.js?v=0.47.0';
+import {TUTORIAL_QUESTS,tutorialProgress,tutorialQuestAvailable} from './tutorial.js?v=0.48.0';
+import {nextCopyId} from './hero-copies.js?v=0.48.0';
+import {heroForId,uniqueHeroCount} from './hero-copies.js?v=0.48.0';
+import {addAccountXp,accountDevelopment,bumpPath} from './keeper.js?v=0.48.0';
+import {addHeroXp} from './development.js?v=0.48.0';
+import {addMaterials} from './ascension.js?v=0.48.0';
+import {GEM_LIMIT} from './economy.js?v=0.48.0';
 export const QUEST_CATEGORIES=[['all','All quests'],['campaign','Campaign'],['dungeons','Dungeons'],['arena','Arena'],['events','Events'],['collection','Collection'],['growth','Growth']];
 const q=(id,name,category,metric,goal,text,rewards)=>({id,name,category,metric,goal,text,gold:0,gems:0,xp:0,items:{},...rewards,accountXp:rewards.accountXp??50});
 export const QUESTS=[
@@ -39,7 +39,7 @@ export const QUESTS=[
  ...[[15,200,3500],[30,250,5000]].map(([goal,gems,gold])=>q('ascensions-'+goal,'Beyond Every Horizon · '+goal,'growth','ascensions',goal,`Complete ${goal} ascensions across your roster.`,{gems,gold,xp:350,items:{'sovereign-crown':2},accountXp:100})),
  q('awakenings-5','Five Brilliant Sparks','growth','awakenings',5,'Complete five Limit Breaks across your roster.',{gems:250,gold:5000,xp:500,items:{'astral-heart':2},accountXp:125}),
 
- ...TUTORIAL_QUESTS.map(t=>q(t.id,t.name,'growth','tutorial',['resources','combat'].includes(t.metric)?3:1,t.text,{gold:t.gold,gems:t.gems,requires:t.requires,tutorialPage:t.page,accountXp:25})),
+ ...TUTORIAL_QUESTS.map(t=>q(t.id,t.name,'growth','tutorial',t.metric==='market'?4:t.metric==='combat'?3:1,t.text,{gold:t.gold,gems:t.gems,requires:t.requires,tutorialPage:t.page,accountXp:25})),
 ];
 export function questProgress(profile,quest){if(quest.metric==='tutorial')return tutorialProgress(profile,quest.id);const sum=o=>Object.values(o||{}).reduce((n,v)=>n+v,0);switch(quest.metric){case 'accountLevel':return accountDevelopment(profile.accountXp).level;case 'collection':return uniqueHeroCount(profile);case 'normal':case 'hard':case 'nightmare':return profile.campaignProgress[quest.metric]||0;case 'dungeonTypes':return new Set(Object.keys(profile.dungeonClears).map(id=>id.replace(/-(normal|hard|nightmare)$/,''))).size;case 'totalXp':return sum(profile.heroXp);case 'ascensions':return sum(profile.ascensions);case 'awakenings':return sum(profile.awakenings);default:return profile[quest.metric]||0;}}
 export function claimQuest(profile,id,roster=[]){const quest=QUESTS.find(q=>q.id===id);if(!quest||!tutorialQuestAvailable(profile,id)||profile.claimed.includes(id)||questProgress(profile,quest)<quest.goal)return {profile,error:'This quest is not ready to claim.'};let next=addMaterials({...profile,gold:Math.min(999999999,profile.gold+quest.gold),gems:Math.min(GEM_LIMIT,profile.gems+quest.gems),claimed:[...profile.claimed,id]},quest.items);const growth=[];for(const id of new Set(profile.team)){const c=heroForId(roster,id);if(c&&profile.collection[id]&&quest.xp){const before=next.heroXp[id]||0;next=addHeroXp(next,c,quest.xp);growth.push({id,xp:(next.heroXp[id]||0)-before});}}if(quest.championReward&&roster.some(c=>c.id===quest.championReward)){const copy=nextCopyId(next,quest.championReward);next={...next,copySequence:copy.sequence,collection:{...next.collection,[copy.id]:1}};}return {profile:bumpPath(addAccountXp(next,quest.accountXp),{gems:quest.gems}),quest,growth};}

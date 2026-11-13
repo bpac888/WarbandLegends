@@ -1,11 +1,11 @@
-import {TOMES} from './tomes.js?v=0.47.0';
+import {TOMES} from './tomes.js?v=0.48.0';
 export const BOOSTER_DURATION=24*60*60*1000;
 export const PREMIUM_ITEM_LIMIT=999999;
 export const PREMIUM_ITEMS=Object.freeze([
- {id:'experience-booster',name:'Experience Booster',kind:'experience',amount:'+25% Feeding XP',description:'For 24 hours after activation, feeding characters grants 25% extra XP.'},
- {id:'gold-booster',name:'Gold Booster',kind:'gold',amount:'+25% Battle Gold',description:'For 24 hours after activation, battle rewards grant 25% extra Gold.'},
- {id:'tome-of-ascension',name:'Tome of Ascension',amount:'One Ascension',description:'Ascends one character by one tier without materials or Gold. The current level cap must be reached.'},
- {id:'tome-of-limit-break',name:'Tome of Limit Break',amount:'One Limit Break',description:'Grants one Limit Break without materials or Gold. Requires full ascension and the current level cap.'},
+ {id:'experience-booster',name:'Experience Booster',kind:'experience',amount:'+25% Feeding XP',description:'+25% feeding XP for 24h.'},
+ {id:'gold-booster',name:'Gold Booster',kind:'gold',amount:'+25% Battle Gold',description:'+25% battle Gold for 24h.'},
+ {id:'tome-of-ascension',name:'Tome of Ascension',amount:'One Ascension',description:'One ascension without materials or Gold. Requires Lv. cap.'},
+ {id:'tome-of-limit-break',name:'Tome of Limit Break',amount:'One Limit Break',description:'One Limit Break without materials or Gold. Requires full ascension and Lv. cap.'},
 ]);
 export const PREMIUM_INVENTORY_ITEMS=Object.freeze([...PREMIUM_ITEMS,...TOMES]);
 export const premiumItem=id=>PREMIUM_INVENTORY_ITEMS.find(item=>item.id===id);

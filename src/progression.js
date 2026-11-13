@@ -1,22 +1,23 @@
-import {validTeamPreferences} from './team-preferences.js?v=0.47.0';
-import {normalizeJournal} from './campaign-journal.js?v=0.47.0';
-import {normalizeWeekly,completeWeekly,validWeeklyProfile} from './weekly.js?v=0.47.0';
-import {tutorialState} from './tutorial.js?v=0.47.0';
-import {normalizePremiumItems,validPremiumItems,boostedGold} from './premium-items.js?v=0.47.0';
-import {normalizeTeams} from './teams.js?v=0.47.0';
-import {baseHeroId,validCopyId,heroForId,battleRoster,nextCopyId,splitLegacyCopies} from './hero-copies.js?v=0.47.0';
-import {defaultKeeper,normalizeKeeper,validKeeper,addAccountXp,accountBattleXp,bumpPath} from './keeper.js?v=0.47.0';
-import {GEM_LIMIT,INITIAL_GEMS,SUMMON_COST,TEN_SUMMON_COST,GEM_INTERVAL} from './economy.js?v=0.47.0';
-import {QUESTS,questProgress,claimQuest} from './quests.js?v=0.47.0';
+import {validTeamPreferences} from './team-preferences.js?v=0.48.0';
+import {normalizeJournal} from './campaign-journal.js?v=0.48.0';
+import {normalizeWeekly,completeWeekly,validWeeklyProfile} from './weekly.js?v=0.48.0';
+import {tutorialState} from './tutorial.js?v=0.48.0';
+import {normalizePremiumItems,validPremiumItems,boostedGold} from './premium-items.js?v=0.48.0';
+import {normalizeTeams} from './teams.js?v=0.48.0';
+import {baseHeroId,validCopyId,heroForId,battleRoster,nextCopyId,splitLegacyCopies} from './hero-copies.js?v=0.48.0';
+import {defaultKeeper,normalizeKeeper,validKeeper,addAccountXp,accountBattleXp,bumpPath} from './keeper.js?v=0.48.0';
+import {GEM_LIMIT,INITIAL_GEMS,SUMMON_COST,TEN_SUMMON_COST,GEM_INTERVAL} from './economy.js?v=0.48.0';
+import {QUESTS,questProgress,claimQuest} from './quests.js?v=0.48.0';
 export {QUESTS,questProgress,claimQuest,GEM_INTERVAL};
-import {ASCENSION_CAPS,MATERIALS,MATERIAL_LIMIT,currentLevelCap,materialDrops,addMaterials,validateAscension} from './ascension.js?v=0.47.0';
-import {defaultModes,normalizeModes,validateModes,modeReward,settleMode} from './mode-progression.js?v=0.47.0';
-import {ENCOUNTERS,DIFFICULTIES,getEncounter,entryError} from './encounters.js?v=0.47.0';
+import {ASCENSION_CAPS,MATERIALS,MATERIAL_LIMIT,currentLevelCap,materialDrops,addMaterials,validateAscension} from './ascension.js?v=0.48.0';
+import {defaultModes,normalizeModes,validateModes,modeReward,settleMode} from './mode-progression.js?v=0.48.0';
+import {ENCOUNTERS,DIFFICULTIES,getEncounter,entryError} from './encounters.js?v=0.48.0';
 // Local game-loop foundation. No purchases, original-game accounts or shared economy.
-import {addHeroXp,xpForLevel,levelCap} from './development.js?v=0.47.0';
+import {addHeroXp,xpForLevel,levelCap} from './development.js?v=0.48.0';
 export const PROFILE_VERSION=13;
 export const CAMPAIGN_REWARDS=Object.freeze(Object.fromEntries(ENCOUNTERS.map(e=>[e.id,e.rewards])));
-export const STARTER_TEAM=['nima_dewthread','ravel','plague_doctor_mors','gallows_marksman_oren','cult_zealot'];
+// Runa joins a rescue party: one element each, with Commons for early training.
+export const STARTER_TEAM=['shieldmaiden_runa','satyr_archer_kell','jade_archer_linh','sister_seraphel','mavra_dusktrail'];
 export const SUMMON_ODDS=[{rarity:'common',chance:50},{rarity:'rare',chance:30},{rarity:'legendary',chance:7.5},{rarity:'mythical',chance:1.5},{rarity:'double_common',chance:11}];
 export function defaultProfile(){return {cinematicsEnabled:true,...normalizeJournal({}),...normalizeWeekly({}),...normalizePremiumItems({}),...defaultModes(),...defaultKeeper(STARTER_TEAM),profileVersion:PROFILE_VERSION,copySequence:0,name:'Commander',team:[...STARTER_TEAM],unlocked:0,wins:0,cleared:[],recorded:[],speed:1,helpSeen:false,onboardingDismissed:false,onboardingComplete:false,tutorial:tutorialState({}),gold:500,gems:INITIAL_GEMS,collection:Object.fromEntries(STARTER_TEAM.map(id=>[id,1])),summons:0,history:[],claimed:[],heroXp:{},ascensions:{},awakenings:{},materials:{},campaignProgress:{normal:0,hard:0,nightmare:0},dungeonClears:{},dungeonWins:0,openRoster:false,reducedMotion:false};}
 const safeInt=(v,fallback,max=999999999)=>Number.isSafeInteger(v)&&v>=0&&v<=max?v:fallback;

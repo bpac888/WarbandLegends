@@ -1,0 +1,55 @@
+/* Dialogue portraits sit beside the exchange, without adding a separate art panel. */
+#modal[data-view=chapter-story] .dialogue-turn.illustrated-turn{display:grid;grid-template-columns:64px minmax(0,1fr);grid-template-rows:auto auto;column-gap:8px;row-gap:7px;width:100%;align-items:start}
+#modal[data-view=chapter-story] .illustrated-turn.dialogue-right{grid-template-columns:minmax(0,1fr) 64px}
+#modal[data-view=chapter-story] .dialogue-speaker-art{grid-column:1;grid-row:1/3;align-self:end;width:64px;height:96px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 2px 2px #483d3526)}
+#modal[data-view=chapter-story] .illustrated-turn .dialogue-speaker,#modal[data-view=chapter-story] .illustrated-turn .dialogue-bubble{grid-column:2;min-width:0}
+#modal[data-view=chapter-story] .illustrated-turn .dialogue-speaker{grid-row:1}
+#modal[data-view=chapter-story] .illustrated-turn .dialogue-bubble{grid-row:2}
+#modal[data-view=chapter-story] .dialogue-right .dialogue-speaker-art{grid-column:2}
+#modal[data-view=chapter-story] .illustrated-turn.dialogue-right .dialogue-speaker,#modal[data-view=chapter-story] .illustrated-turn.dialogue-right .dialogue-bubble{grid-column:1}
+#modal[data-view=chapter-story] .dialogue-speaker-art.player-art{height:64px;align-self:center}
+#modal[data-view=chapter-story] .dialogue-speaker{font-size:13px;color:#302c35;background:none;border:0;padding:0}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story .dialogue-bubble{background:linear-gradient(125deg,#eee0c4,#dfceaa);color:#302f36;border-color:#b29a76;box-shadow:inset 0 1px #fff5d4aa,0 2px 4px #4533320a}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story .dialogue-right .dialogue-bubble{background:linear-gradient(125deg,#e0dfe3,#ced4df);border-color:#9ba7b4}
+.story-key{font-weight:650;text-decoration:none}
+.story-key.key-person{color:#384b7a}.story-key.key-place{color:#75471c}.story-key.key-goal{color:#225441}.story-key.key-danger{color:#872832}.story-key.key-magic{color:#673276}
+.dialogue-typing .story-letter{opacity:0}.dialogue-typing .story-letter.letter-visible{opacity:1}
+.story-word[data-tone]{display:inline-block}
+.tone-anger.is-spoken{animation:story-anger .24s ease-in-out 2}.tone-magic.is-spoken{animation:story-magic .9s ease-in-out 2}.tone-whisper.is-spoken{animation:story-whisper 1s ease-out both}
+@keyframes story-anger{25%{transform:translateX(-1px)}75%{transform:translateX(1px)}}
+@keyframes story-magic{50%{text-shadow:0 0 7px #a568d3aa,0 0 2px #fff}}
+@keyframes story-whisper{to{transform:scale(.96);font-weight:500}}
+@media(max-width:360px){#modal[data-view=chapter-story] .dialogue-turn.illustrated-turn{grid-template-columns:44px minmax(0,1fr);column-gap:6px}#modal[data-view=chapter-story] .illustrated-turn.dialogue-right{grid-template-columns:minmax(0,1fr) 44px}#modal[data-view=chapter-story] .dialogue-speaker-art{width:44px;height:74px}}
+@media(prefers-reduced-motion:reduce){.story-word[data-tone]{animation:none!important;transform:none!important}.dialogue-typing .story-letter{opacity:1}}
+body.reduce-animation .story-word[data-tone]{animation:none;transform:none}body.reduce-animation .story-letter{opacity:1}
+/* Tutorial prompts use the same readable parchment palette in every location. */
+body.menu-theme .first-steps,body.menu-theme .page-roster .first-steps{background:linear-gradient(120deg,#e5d6b7,#d5d1db);border:1px solid #af9d84;color:#29282e;padding:11px 36px 11px 13px;gap:9px}
+body.menu-theme .first-steps span{color:#6d3b3d;font-size:11px;letter-spacing:.04em}
+body.menu-theme .first-steps b{color:#29282e;font-size:16px;line-height:1.25}
+body.menu-theme .first-steps p{color:#41404a;font-size:13px;line-height:1.4;margin:5px 0 0}
+body.menu-theme .first-steps-dismiss{color:#6f3036}
+body.menu-theme .tutorial-champion{outline:3px solid #9e2a2b;outline-offset:3px}
+body.menu-theme .tutorial-champion .library-label::before{content:'Train this champion';display:block;font:600 12px/1.3 'Citadel UI',sans-serif;color:#8b252c;margin-bottom:4px}
+/* A prominent slot number and selection edge, without dimming the illustration. */
+body.menu-theme #modal[data-view=roster] .roster-card.picked{outline:3px solid #9e2a2b;outline-offset:1px}
+body.menu-theme #modal[data-view=roster] .roster-card>.pick-number{display:grid;place-items:center;top:35px;width:32px;height:32px;border:2px solid #fff1d4;border-radius:50%;background:#9e2a2b;color:#fff;font:700 18px/1 'Citadel UI',sans-serif;box-shadow:0 2px 5px #20111e80;z-index:4}
+
+body.menu-theme .page-roster .first-steps p{color:#41404a}body.menu-theme .page-roster .first-steps span{color:#6d3b3d}
+body.menu-theme .game-page .first-steps p{color:#41404a}body.menu-theme .game-page .first-steps span{color:#6d3b3d}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story .story-key.key-person{color:#384b7a}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story .story-key.key-place{color:#75471c}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story .story-key.key-goal{color:#225441}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story .story-key.key-danger{color:#872832}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story .story-key.key-magic{color:#673276}
+body.menu-theme #modal[data-view=chapter-story] .chapter-story .story-letter{color:inherit}
+/* Faction summary shares the close row; power shares the action row. */
+body.menu-theme #modal[data-view=roster] .modal-header{display:grid;grid-template-columns:minmax(0,1fr) 32px;align-items:start;gap:5px;padding:7px 8px 2px;border:0;background:none}
+body.menu-theme #modal[data-view=roster] .modal-header h2.sr-only{width:1px;height:1px;margin:-1px;padding:0}
+body.menu-theme #modal[data-view=roster] .modal-header #draft-team{min-width:0;margin:0}
+body.menu-theme #modal[data-view=roster] #draft-team :is(.faction-team-bonuses,.faction-team-empty){margin:0;padding:7px 8px;font-size:12px}
+body.menu-theme #modal[data-view=roster] #draft-team summary{gap:6px;flex-wrap:wrap}
+body.menu-theme #modal[data-view=roster] .modal-header .icon-button{width:32px;height:32px;min-width:32px;min-height:32px;padding:0;align-self:start}
+body.menu-theme #modal[data-view=roster] .roster-save{flex-wrap:nowrap;gap:7px;border:0;margin-top:4px;padding:7px 0}
+body.menu-theme #modal[data-view=roster] #draft-power{font-size:12px;color:#414650;margin:0;line-height:1.3}
+body.menu-theme #modal[data-view=roster] .team-editor-actions{margin-left:auto;gap:6px}
+@media(max-width:360px){body.menu-theme #modal[data-view=roster] .team-editor-actions .button{padding:8px;font-size:11px}body.menu-theme #modal[data-view=roster] #draft-power{font-size:11px}}

@@ -1,0 +1,7 @@
+// UI copy only: painted scenery has its own lighting and is reviewed in screenshots.
+export function paletteContrastIssues(){
+ const rgb=s=>{const m=s?.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([.\d]+))?\)/);return m?[+m[1],+m[2],+m[3],m[4]===undefined?1:+m[4]]:null;};
+ const luminance=c=>c.slice(0,3).map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4;}).reduce((a,x,i)=>a+x*[.2126,.7152,.0722][i],0);
+ const background=e=>{for(let n=e;n;n=n.parentElement){const s=getComputedStyle(n),gradient=rgb(s.backgroundImage),color=gradient&&gradient[3]>.9?gradient:rgb(s.backgroundColor);if(color?.[3]>.9)return color;}return [201,196,206];};
+ return [...document.querySelectorAll('#app *,#modal[open] *')].filter(e=>e.getBoundingClientRect().width&&e.getBoundingClientRect().height&&getComputedStyle(e).visibility==='visible'&&[...e.childNodes].some(n=>n.nodeType===3&&/[\p{L}\d]/u.test(n.textContent))&&!e.closest('.sr-only,svg,.battle-shell,.realm-map,.arena-scene,.event-map,.campaign-map,.courtyard-scene,.summon-ritual,.altar-portal')).flatMap(e=>{const s=getComputedStyle(e),fg=rgb(s.color);if(!fg)return [];const bg=background(e),a=luminance(fg),b=luminance(bg),ratio=(Math.max(a,b)+.05)/(Math.min(a,b)+.05),minimum=parseFloat(s.fontSize)>=24||parseFloat(s.fontSize)>=18.66&&+s.fontWeight>=700?3:4.5;return ratio<minimum-.05?[{text:e.textContent.trim().slice(0,85),tag:e.tagName,cls:e.className,color:s.color,bg:bg.slice(0,3),ratio:+ratio.toFixed(2)}]:[];});
+}

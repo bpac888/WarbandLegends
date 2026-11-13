@@ -1,0 +1,183 @@
+/* Shared interface palette. Artwork, elemental colors and rarity edges stay independent. */
+:root{--paper-ink:#25242c;--paper-copy:#41404a;--paper-muted:#55515e;--paper-edge:#b5a185;--paper:#e5d5b6;--paper-soft:#eee3ce;--paper-deep:#d4c19e;--paper-cool:#d5d1dc;--paper-crimson:#9e2a2b;--paper-crimson-dark:#802126;--paper-surface:linear-gradient(135deg,#eadbbb,#dfcba7);--stone-surface:linear-gradient(135deg,#dcd8e1,#cbc6d2);--paper-shadow:0 3px 12px #49362b16}
+body.menu-theme[data-menu-scene]{background:radial-gradient(ellipse at 5% 0,#c0c7d3,transparent 65%),linear-gradient(135deg,#cbcdd3,#c9c4ce 60%,#cecdc6);background-color:#c9c4ce;background-attachment:fixed}
+body.menu-theme .game-page{--ui-ivory:var(--paper-ink);--ui-copy:var(--paper-copy);--ui-muted:var(--paper-muted);--ui-accent:var(--paper-crimson);--ui-edge:var(--paper-edge);--ui-panel:var(--paper-surface);--legend-surface:var(--paper-surface);--legend-edge:var(--paper-edge);--ui-shadow:var(--paper-shadow);--page-ink:var(--paper-ink);--page-copy:var(--paper-copy);color:var(--paper-copy);color-scheme:light}
+body.menu-theme .realm-atmosphere{opacity:.16}
+body .safe-area-cap{background:#393340}
+body .topbar.with-nav{background:linear-gradient(120deg,#3e3744,#302c38);border-color:#a5907b;box-shadow:0 2px 8px #30232f24}
+body .topbar.with-nav .game-wallet>span,body .topbar.with-nav .game-wallet>.daily-path-shortcut{background:var(--paper-surface);border-color:#ab9375;color:var(--paper-ink)}
+body .topbar.with-nav .game-wallet :is(b,small){color:var(--paper-ink)}
+body .topbar.with-nav :is(.nav-shortcut,.shop-nav,.header-guide){background:linear-gradient(135deg,#e5d7bd,#cbb999);border-color:#aa9478;color:var(--paper-crimson-dark)}
+body .topbar.with-nav :is(.nav-shortcut,.shop-nav,.header-guide).active,body .topbar.with-nav [aria-current=page]{background:linear-gradient(135deg,#f0dfbb,#d5b780);border-color:#a94746;box-shadow:inset 0 -2px #9e2a2b55}
+body.menu-theme .game-page :is(h1,h2,h3,h4){color:var(--paper-ink);text-shadow:none}
+body.menu-theme .game-page :is(p,label,.eyebrow){color:var(--paper-copy);text-shadow:none}
+body.menu-theme .game-page .text-button{color:var(--paper-crimson-dark)}
+body.menu-theme .game-page .button.gold{background:var(--paper-crimson);border-color:var(--paper-crimson-dark);color:#fff7eb;text-shadow:none;box-shadow:0 2px 6px #7f252523}
+body.menu-theme .game-page .button.outline{background:var(--paper-soft);border-color:var(--paper-edge);color:var(--paper-crimson-dark);text-shadow:none}
+body.menu-theme .game-page .button:disabled{background:#d1c8c4;border-color:#afa299;color:#615562;opacity:1;box-shadow:none;text-shadow:none}
+body.menu-theme .game-page :is(select,input:not([type=checkbox])){background:#f2e9d9!important;border-color:var(--paper-edge)!important;color:var(--paper-ink)!important;color-scheme:light}
+body.menu-theme .game-page option{background:#f2e9d9;color:var(--paper-ink)}
+body :is(button,select,input):focus-visible{outline-color:var(--paper-crimson)}
+/* Shop, Token Exchange and Premium share one paper surface, including owned items. */
+body.menu-theme .game-page:is(.page-shop,.page-inventory) :is(.material-offer,.material-tile,.gem-offer,.premium-offers>article,.exchange-offers>article,.tome-offer,.inventory-card):nth-child(n){background:var(--paper-surface);border-color:var(--paper-edge);box-shadow:var(--paper-shadow)}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) :is(h2,h3,b,strong,small,.eyebrow,.exchange-cost,.premium-amount,.premium-total){color:var(--paper-ink);text-shadow:none}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) :is(p,label){color:var(--paper-copy)}
+body.menu-theme .game-page.page-shop .shop-tabs{background:var(--stone-surface);border-color:var(--paper-edge)}
+body.menu-theme .game-page.page-shop .shop-tabs>button{background:none;color:var(--paper-copy)}
+body.menu-theme .game-page.page-shop .shop-tabs>button.active{background:var(--paper-crimson);color:#fff7eb;border-color:var(--paper-crimson-dark)}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) :is(.exchange-balances>span,.inventory-currencies>span,.premium-banner,.tome-element){background:var(--stone-surface);color:var(--paper-copy);border-color:var(--paper-edge)}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) :is(.premium-bonus,.booster-status){background:#d7dfcb;color:#345137;border-color:#98aa85}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) .button.gold{background:var(--paper-crimson);border-color:var(--paper-crimson-dark);color:#fff7eb}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) .button.outline{background:#f3e4da;border-color:var(--paper-edge);color:var(--paper-crimson-dark)}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) .button:disabled{background:#d8c9c5;border-color:#b7a4a1;color:#66515a;opacity:1}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) .button :is(.gem-amount,small,.card-glyph){color:inherit}
+body.menu-theme .game-page.page-shop :is(.gem-amount,.tome-offer>strong){color:#3f5278}
+/* Daily Gift, expanded upcoming gifts and weekly challenges. */
+body.menu-theme .game-page.page-daily :is(.daily-vista,.daily-objectives,.daily-road,.daily-weekly,.weekly-card,.daily-gift,.daily-rewards>article){background:var(--paper-surface);border-color:var(--paper-edge);color:var(--paper-copy);box-shadow:var(--paper-shadow)}
+body.menu-theme .game-page.page-daily .daily-vista>div{background:var(--stone-surface)}
+body.menu-theme .game-page.page-daily :is(.daily-vista h2,.daily-vista .eyebrow,.path-heading,.daily-road summary,.weekly-header p,.weekly-prize){color:var(--paper-ink)}
+body.menu-theme .game-page.page-daily .path-objectives>article{--objective-accent:#8a5b23;background:var(--paper-soft);border-color:#b7a78e}
+body.menu-theme .game-page.page-daily .path-objectives>article:nth-child(2){--objective-accent:#6b477e}
+body.menu-theme .game-page.page-daily .path-objectives>article:nth-child(3){--objective-accent:#3e6656}
+body.menu-theme .game-page.page-daily .path-objectives>article:nth-child(4){--objective-accent:#8c424b}
+body.menu-theme .game-page.page-daily .path-objectives>article>b{color:var(--paper-ink)}
+body.menu-theme .game-page.page-daily .path-objectives>article.complete{background:#d8dfcc;border-color:#859969}
+body.menu-theme .game-page.page-daily :is(.path-heading>span:nth-child(2),.weekly-restriction){color:var(--paper-crimson-dark)}
+body.menu-theme .game-page.page-daily :is(.weekly-battle-progress>span,.daily-gift-row,.gift-preview,.daily-road li){background:var(--paper-soft);border-color:var(--paper-edge);color:var(--paper-copy)}
+body.menu-theme .game-page.page-daily .weekly-battle-progress>span.done{background:#d2ddc8;color:#315039;border-color:#8eaa7c}
+/* Quests retain category accents, with the same readable paper as the library. */
+body.menu-theme .game-page.page-quests :is(.quest-banner,.chronicle-card):nth-child(n){background:var(--paper-surface);border-color:var(--paper-edge)}
+body.menu-theme .game-page.page-quests .chronicle-card.ready{background:linear-gradient(135deg,#eddfbd,#ded2b5)}
+body.menu-theme .game-page.page-quests :is(.quest-status,.campaign-victory-bonus,.quest-reward-marks>span){background:var(--stone-surface);border-color:var(--paper-edge);color:var(--paper-copy)}
+body.menu-theme .game-page.page-quests .quest-status>button{color:var(--paper-copy)}
+body.menu-theme .game-page.page-quests .quest-status>button.active{background:var(--paper-crimson);color:#fff7eb;border-color:var(--paper-crimson-dark)}
+body.menu-theme .game-page.page-quests .empty-state{background:var(--paper-surface);border-color:var(--paper-edge);color:var(--paper-copy)}
+body.menu-theme .game-page.page-quests .empty-state :is(h3,p){color:var(--paper-ink)}
+/* Controls over world artwork use parchment; the artwork itself is untouched. */
+body.menu-theme .game-page :is(.realm-tabs,.difficulty-tabs){background:var(--stone-surface);border-color:var(--paper-edge)}
+body.menu-theme .game-page .realm-tabs>button{background:var(--paper-soft);border-color:var(--paper-edge);color:var(--paper-copy)}
+body.menu-theme .game-page .realm-tabs>button.active{background:var(--paper-crimson);border-color:var(--paper-crimson-dark);color:#fff7eb}
+body.menu-theme .game-page .realm-tabs>button :is(span,small){color:inherit}
+body.menu-theme .game-page :is(.realm-label,.event-landmark strong,.event-landmark small,.arena-rival-identity,.arena-player-record>span,.arena-step,.campaign-journal-button){background:var(--paper-surface);color:var(--paper-ink);border-color:var(--paper-edge);text-shadow:none}
+body.menu-theme .game-page .arena-challenge-dock{background:linear-gradient(135deg,#e5d5b6f5,#d5d1dcf5);border-color:var(--paper-edge)}
+body.menu-theme .game-page :is(.arena-scene-heading h1,.arena-rival-identity h2,.arena-rival-identity p,.arena-rival-rating,.arena-rival-position){color:var(--paper-ink);text-shadow:none}
+body.menu-theme .page-summon .altar-actions>button{background:var(--paper-surface);border-color:var(--paper-edge);color:var(--paper-ink);text-shadow:none}
+body.menu-theme .page-summon .altar-actions>button :is(span,strong){color:var(--paper-ink)}
+body.menu-theme .page-summon .altar-actions>button:disabled{background:#d2c9c4;color:#655961;opacity:1}
+/* Every dialog uses this palette, including dialogs opened during battle. */
+body #modal[data-view]:not([data-view=ritual]){--ui-ivory:var(--paper-ink);--ui-copy:var(--paper-copy);--ui-muted:var(--paper-muted);--ui-edge:var(--paper-edge);background:#d0cbd6;border-color:var(--paper-edge);color:var(--paper-copy);color-scheme:light;box-shadow:0 16px 60px #22192550}
+body #modal[data-view]:not([data-view=ritual]) .modal-header{background:var(--paper-surface);border-color:var(--paper-edge);color:var(--paper-ink)}
+body #modal[data-view]:not([data-view=ritual]) .modal-header :is(h2,.eyebrow){color:var(--paper-ink);text-shadow:none}
+body #modal[data-view]:not([data-view=ritual]) .modal-body :is(h2,h3,h4){color:var(--paper-ink);text-shadow:none}
+body #modal[data-view]:not([data-view=ritual]) .modal-body :is(p,label,small,dt,dd){color:var(--paper-copy);text-shadow:none}
+body #modal[data-view]:not([data-view=ritual]) :is(input:not([type=checkbox]),select){background:#f2e9d9!important;color:var(--paper-ink)!important;border-color:var(--paper-edge)!important;color-scheme:light}
+body #modal[data-view]:not([data-view=ritual]) option{background:#f2e9d9;color:var(--paper-ink)}
+body #modal[data-view]:not([data-view=ritual]) .button.gold{background:var(--paper-crimson);border-color:var(--paper-crimson-dark);color:#fff7eb;text-shadow:none}
+body #modal[data-view]:not([data-view=ritual]) .button.outline{background:var(--paper-soft);border-color:var(--paper-edge);color:var(--paper-crimson-dark);text-shadow:none}
+body #modal[data-view]:not([data-view=ritual]) .button:disabled{background:#d1c8c4;border-color:#afa299;color:#615562;opacity:1;box-shadow:none;text-shadow:none}
+body #modal[data-view]:not([data-view=ritual]) .button :is(span,small,b,strong,.card-glyph){color:inherit}
+body #modal[data-view]:not([data-view=ritual]) .icon-button{color:var(--paper-crimson-dark)}
+body #modal[data-view]:not([data-view=ritual]) :is(.codex-card,.special-level,.passive-info,.active-effects,.faction-unit-bonus,.faction-team-bonuses,.faction-team-empty,.material-tile,.feeding-list>label,.feeding-summary,.advancement-content,.ascension-road>li,.awakening-ranks>li,.battle-team-preview,.encounter-tactics,.tactics-mechanic,.weekly-entry-rule,.log-entry,.victory-growth-details,.victory-hero,.victory-reward,.guide-playtesting,.guide-layout article,.faction-guide-list>details,.profile-portrait-picker>button){background:var(--paper-surface);border-color:var(--paper-edge);color:var(--paper-copy)}
+body #modal[data-view]:not([data-view=ritual]) :is(.codex-card.ailment,.material-tile.missing){background:#dfc5bd;border-color:#b48c82}
+body #modal[data-view]:not([data-view=ritual]) :is(.codex-icon,.quest-reward-marks>span,.victory-rewards>span,.hero-xp-bar,.growth-stats>div){background:var(--paper-soft);border-color:var(--paper-edge);color:var(--paper-copy)}
+body #modal[data-view]:not([data-view=ritual]) :is(.special-at-a-glance,.special-targeting,.ability-cost,.feeding-list small,.feeding-summary,.booster-note,.faction-unit-bonus,.faction-team-bonuses summary>span,.faction-team-empty>span,.profile-name-status,.profile-name-form label,.guide-playtesting b,.guide-playtesting small){color:var(--paper-copy)}
+body #modal[data-view]:not([data-view=ritual]) :is(.guide-layout>nav,.codex-tabs){background:var(--stone-surface);border-color:var(--paper-edge)}
+body #modal[data-view]:not([data-view=ritual]) :is(.guide-layout>nav,.codex-tabs)>button{background:var(--paper-soft);color:var(--paper-crimson-dark);border-color:var(--paper-edge)}
+body #modal[data-view]:not([data-view=ritual]) :is(.guide-layout>nav,.codex-tabs)>button.active{background:var(--paper-crimson);color:#fff7eb;border-color:var(--paper-crimson-dark)}
+body #modal[data-view]:not([data-view=ritual]) :is(.profile-name-check,.portrait-selected){background:var(--paper-crimson);color:#fff7eb;border-color:var(--paper-crimson-dark)}
+body #modal[data-view]:not([data-view=ritual]) :is(.modal-actions,.roster-save){background:#d0cbd6}
+body #modal[data-view=roster] .modal-header{background:none}
+body #modal[data-view=roster] :is(.roster-mana,.hero-level-mark){background:var(--paper-soft);color:var(--paper-copy);border-color:var(--paper-edge)}
+body #modal[data-view=result] :is(.victory-summary,.victory-growth-details summary,.victory-growth-details small,.victory-growth-details b,.victory-hero strong){color:var(--paper-copy)}
+body #modal[data-view=result] .modal-actions{background:#d0cbd6}
+body #modal[data-view=summon-results] .summon-result-card>span:not(.hero-rank-track){background:var(--paper-surface);color:var(--paper-ink)}
+body #modal[data-view=summon-results] .summon-result-card :is(strong,small,.card-speed){color:var(--paper-ink)}
+/* Small inherited badges were easy to miss in deeper screens. */
+body .hero-rank-track{background:#38313eea;border-color:#c6ab84}
+body .hero-rank-track .rank-track-label{color:#f1dfbd}
+body .hero-rank-track .rank-chevron.empty{background:linear-gradient(#918592,#62576b)}
+body #notice{background:#e7d8bc;color:var(--paper-ink);border-color:var(--paper-edge)}
+/* Navigation has a darker plum frame so the white wordmark stays readable. */
+body.menu-theme[data-menu-scene] .topbar.with-nav{background:linear-gradient(120deg,#3e3744,#302c38);border-color:#a5907b}
+body.menu-theme[data-menu-scene] .topbar.with-nav .game-wallet>span{background:var(--paper-surface);border-color:var(--paper-edge);color:var(--paper-ink)}
+body.menu-theme[data-menu-scene] .topbar.with-nav :is(.nav-shortcut,.icon-button,.daily-path-shortcut){background:var(--paper-surface);border-color:var(--paper-edge);color:var(--paper-crimson-dark)}
+body.menu-theme[data-menu-scene] .topbar.with-nav :is(.nav-shortcut.active,.icon-button[aria-current=page],.daily-path-shortcut[aria-current=page]){background:linear-gradient(135deg,#f0dfbb,#d5b780);border-color:#a94746;box-shadow:inset 0 -2px #9e2a2b55}
+body.menu-theme[data-menu-scene] .topbar.with-nav :is(.nav-shortcut,.icon-button):hover{background:#ead2b3;border-color:#9e2a2b}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.exchange-offers>article,.premium-offers>article,.tome-offer)>.button.gold{background:var(--paper-crimson);border-color:var(--paper-crimson-dark);color:#fff7eb}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.exchange-offers>article,.premium-offers>article,.tome-offer)>.button.outline{background:#f3e4da;color:var(--paper-crimson-dark);border-color:var(--paper-edge)}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.exchange-offers>article,.premium-offers>article,.tome-offer)>.button:disabled{background:#d8c9c5;color:#66515a;border-color:#b7a4a1;box-shadow:none}
+body.menu-theme .game-page.page-shop :is(.material-offer,.gem-offer,.exchange-offers>article,.premium-offers>article,.tome-offer)>.button:enabled:hover{background:#87242b;color:#fff7eb;border-color:#722126}
+body.menu-theme .game-page.page-shop .premium-banner :is(h2,p,.eyebrow){color:var(--paper-ink)}
+body.menu-theme .game-page.page-daily .daily-preview>article{background:var(--paper-soft);border-color:var(--paper-edge)}
+body.menu-theme .game-page.page-daily .daily-preview>article>b{color:var(--paper-ink)}
+body.menu-theme .game-page.page-daily .quest-reward-marks>span{background:var(--paper-cool);border-color:#b6a9be;color:var(--paper-copy)}
+body.menu-theme .game-page.page-daily .quest-reward-marks>span :is(small,b,strong){color:var(--paper-copy)}
+body.menu-theme .game-page.page-daily :is(.weekly-card h2,.weekly-card .eyebrow,.weekly-card-status,.weekly-featured-elements){color:var(--paper-ink)}
+body #modal::backdrop{background:#231e2db8}
+body.menu-theme .game-page .account-xp-reward{color:#3f5278!important}
+body #modal[data-view]:not([data-view=ritual]) .account-xp-reward{color:#3f5278!important}
+body #modal[data-view]:not([data-view=ritual]) :is(.champion-detail .eyebrow,.inspect-special-label,.special-level>header,.special-level>header>span,.special-at-a-glance>span,.special-sequence b,.charge-comparison,.active-effect-summary,.log-skill,.log-damage,.log-heal){color:var(--paper-copy)}
+/* Combat keeps darker stone behind the bright runes, with the same warm controls. */
+body:has(.battle-shell){background:radial-gradient(ellipse at 50% 30%,#b2a6ba,#5b5062);--legend-gradient:var(--stone-surface)}
+body:has(.battle-shell) .battle-dock{background:var(--stone-surface)}
+body:has(.battle-shell) .battle-dock :is(.icon-button,.auto-battle-toggle){background:var(--paper-soft);border-color:var(--paper-edge);color:var(--paper-crimson-dark);text-shadow:none}
+body:has(.battle-shell) .battle-dock .auto-battle-toggle.active{background:var(--paper-crimson);color:#fff7eb;border-color:var(--paper-crimson-dark)}
+body:has(.battle-shell) .board-surround{background:linear-gradient(135deg,#736677,#403745);border-color:#bca78b}
+body:has(.battle-shell) .tile::before{background:radial-gradient(ellipse,#6c607378,#342d3b);border-color:#a995a46b}
+body:has(.battle-shell) :is(.hero-unit,.enemy-unit){background:#39313f;border-color:#ac9787}
+body:has(.battle-shell) :is(.hero-info,.enemy-info){background:var(--paper-soft);color:var(--paper-crimson-dark);border-color:var(--paper-edge)}
+body:has(.battle-shell) :is(.hero-name,.enemy-name){color:#fff0d8;text-shadow:0 1px 2px #241e2b}
+body:has(.battle-shell) .battle-feedback{background:#e0d4c4;color:var(--paper-ink)}
+body:has(.battle-shell) .practice-battle .battle-center .battle-feedback{background:var(--paper-soft);color:var(--paper-ink)}
+body:has(.battle-shell) .battle-center :is(.hero-unit,.enemy-unit) .statuses{background:#3c3346bd}
+body:has(.battle-shell) .battle-center :is(.hero-unit,.enemy-unit) .status{background:#37303e;border-color:#b7a08b}
+body #modal[data-view=result] :is(.result-copy,.result-sigil,.sandbox-result,.milestone-reward){color:var(--paper-copy)}
+body #modal[data-view=result] .result-rewards>span{background:var(--paper-soft);border-color:var(--paper-edge);color:var(--paper-ink)}
+body #modal[data-view=result] .victory-hero :is(b,strong,small){color:var(--paper-copy)}
+body:has(.battle-shell) .enemy-countdown{background:#413747;color:#fff0d8;border-color:var(--paper-edge)}
+/* Explicit contrast fixes for labels that used to inherit pale display colors. */
+body.menu-theme[data-menu-scene] .topbar.with-nav .game-wallet :is(b,small){color:var(--paper-ink)}
+body.menu-theme[data-menu-scene] .game-page .button.gold{background:var(--paper-crimson);border-color:var(--paper-crimson-dark);color:#fff7eb;text-shadow:none}
+body.menu-theme[data-menu-scene] .game-page .button:disabled{color:#50434f;background:#d1c8c4;border-color:#afa299;opacity:1}
+body.menu-theme .page-roster .composition>b{color:var(--paper-copy)}
+body #modal[data-view]:not([data-view=ritual]) .gem-amount{color:#3f5278}
+body #modal[data-view]:not([data-view=ritual]) .material-tile :is(b,strong){color:var(--paper-ink)}
+body #modal[data-view]:not([data-view=ritual]) .event-attempts strong{color:var(--paper-crimson-dark)}
+body #modal[data-view]:not([data-view=ritual]) .button:disabled{color:#50434f}
+body.menu-theme .game-page.page-quests .quest-reward-marks>.gem-amount{background:var(--paper-cool);color:#344b6b;border-color:#b6a9be}
+body.menu-theme .game-page.page-quests .ready .quest-meta>b{background:#d7dfcb;color:#344d32;border-color:#98aa85}
+
+body #modal[data-view=result] .result-copy{color:var(--paper-copy)!important}
+body.menu-theme .page-champion :is(.ritual-complete,.codex-development p){color:var(--paper-copy)}
+body #modal[data-view]:not([data-view=ritual]) :is(.special-tips summary,.tactics-tips summary,.tactics-counter,.hero-tips summary){color:var(--paper-copy)}
+
+body.menu-theme .page-champion .ritual-complete{color:var(--paper-copy)!important}
+body #modal[data-view]:not([data-view=ritual]) .hero-tactics :is(summary,p,b){color:var(--paper-copy)}
+body #modal[data-view]:not([data-view=ritual]) .tactics-counter{color:var(--paper-copy)!important}
+/* Compact shared spacing; short metadata stays grouped instead of spreading apart. */
+body.menu-theme .game-page:is(.page-shop,.page-inventory,.page-quests,.page-roster,.page-daily){padding-top:14px;padding-bottom:28px}
+body.menu-theme .game-page.page-shop .shop-tabs{margin-bottom:10px}
+body.menu-theme .game-page.page-shop .premium-preview-note{margin:0 0 10px;font-size:12px;color:var(--paper-copy)}
+body.menu-theme .game-page.page-shop :is(.premium-offers>article,.tome-offer,.material-offer,.gem-offer){padding:10px;gap:6px}
+body.menu-theme .game-page.page-shop :is(.premium-offers,.tome-offers,.material-grid,.gem-offers){gap:10px}
+body.menu-theme .game-page:is(.page-shop,.page-inventory) :is(h2,.section-heading h2){margin-block:8px 10px}
+body.menu-theme .game-page.page-inventory .inventory-card{padding:10px 14px;min-height:80px}
+body.menu-theme .game-page.page-inventory .premium-offers>article{padding:12px;gap:6px}
+body.menu-theme .game-page.page-inventory .premium-offers>article :is(p,h3){margin:0}
+body.menu-theme .game-page.page-quests .quest-banner{padding:10px 12px;margin-bottom:10px}
+body.menu-theme .game-page.page-quests .quest-banner h2{font-size:26px;margin:0;line-height:1.2}
+body.menu-theme .game-page.page-quests .quest-banner p{margin:4px 0 0;font-size:12px}
+body.menu-theme .game-page.page-quests .chronicle-copy{padding:11px;gap:7px}
+body.menu-theme .game-page.page-quests .chronicle-actions{padding:0;margin-top:2px}
+body.menu-theme .game-page.page-quests .empty-state{min-height:80px;padding:14px}
+body.menu-theme .game-page.page-quests .empty-state h3{margin:0;font-size:23px}
+body.menu-theme .game-page.page-daily :is(.daily-objectives,.daily-weekly){margin-top:12px;padding:10px}
+body.menu-theme .game-page.page-daily .weekly-card{padding:10px;gap:6px}
+body.menu-theme .game-page.page-roster .team-slot{padding:12px}
+body.menu-theme .game-page.page-roster .team-slot:has(.slot-portraits>span) .slot-portraits{min-height:44px;margin-bottom:8px}
+body #modal[data-view]:not([data-view=ritual]) .modal-header h2{margin:0;line-height:1.2}
+body #modal[data-view]:not([data-view=ritual]) .modal-header .icon-button{background:none;border:0;box-shadow:none;color:var(--paper-crimson-dark)}
+body #modal[data-view]:not([data-view=ritual]) .modal-header .icon-button::before{display:none}
+body #modal[data-view=premium-item] .premium-item-confirm{gap:8px}
+body #modal[data-view=premium-item] .premium-item-confirm>p{margin:6px 0}
+body #modal[data-view]:not([data-view=ritual]) .modal-actions{gap:8px;margin-top:10px}
