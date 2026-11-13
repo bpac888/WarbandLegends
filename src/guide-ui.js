@@ -7,17 +7,17 @@ import {heroInsight} from './tactics-ui.js?v=0.48.0';
 export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
 const battleRules=[
  ['Elements','<img class="element-advantages" src="./assets/guide/element-advantages.webp" alt="Red beats Green; Green beats Blue; Blue beats Red. Yellow and Purple are strong against each other.">'],
- ['Tile Damage','Starting colors retain tile damage after champions fall. Absent colors deal none; only living champions gain mana.'],
+
  ['Mana','Empty lanes: 2× mana. Specials spend all charge, no move. Enemies: +4 charge per attack opportunity.'],
 ];
 const topics=[
- ['battles','Battles',[...battleRules,['Weekly Challenges','Daily Gift: 3 wins per gift; free retries. Mon 00:00 Pacific reset; 5-week cycle. Loan teams / element pairs change each return. Earned unclaimed gifts carry over.'],['Chapter Journal','Chapter gifts: once per difficulty. Journal: bottom left of Campaign maps.'],['Energy','Campaign / Dungeons: 1 / 2 / 3 Energy (Normal / Hard / Nightmare). Arena: 1. Cap: 50 + profile Lv. Refill: 00:00 PST or profile Lv. up. No entry refunds. Events use attempts.'],['Loot Tickets','Instant rewards from a stage cleared on that difficulty; normal Energy required. Token Exchange item. Disabled in playtesting.']]],
+ ['battles','Battles',[...battleRules,]],
  ['growth','Heroes',[
-  ['Feeding Protection','Locked copies and saved teams cannot be fed.'],
+
   ['Boosters & Tomes','Boosters: +25% feeding XP or battle Gold for 24h; 1 active per type. Activate in Inventory. Ascension / Limit Break Tomes cover materials and Gold for 1 step; Lv. and rarity requirements remain.'],
   ['Feeding','25 Gold per Common / Rare copy. Rare: 3× Common XP; identical Rare: another 5×. Same element: +25% XP.'],
-  ['Today’s Path','Gain 3 Lv. on one copy; feeding and battle XP count. Daily reset: 00:00 Pacific.'],
-  ['Ascension','+2% stats per tier; resets to Lv. 1 without losing power.'],
+
+
   ['Limit Break',`Rare+: 2 breaks after full ascension. Each: +5 Lv., +3% stats. Second: ${LIMIT_BREAK_BUFF_TURNS}-move role buff at battle start.`],
  ]],
  ['factions','Factions',[['Faction Bonuses',factionGuideHTML()]]],

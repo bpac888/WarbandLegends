@@ -181,3 +181,31 @@ body #modal[data-view]:not([data-view=ritual]) .modal-header .icon-button::befor
 body #modal[data-view=premium-item] .premium-item-confirm{gap:8px}
 body #modal[data-view=premium-item] .premium-item-confirm>p{margin:6px 0}
 body #modal[data-view]:not([data-view=ritual]) .modal-actions{gap:8px;margin-top:10px}
+/* Screenshot review: compact dossiers, section gaps and readable map labels. */
+body .safe-area-cap{background:#393340!important}
+body:has(.battle-shell) #app{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);height:100svh}
+body.menu-theme .page-champion .detail-element{margin:6px 0}
+body.menu-theme .page-champion .champion-story{margin-block:6px}
+body.menu-theme .page-champion .champion-special .special-name-row{margin-bottom:6px;gap:6px}
+body.menu-theme .page-champion .special-at-a-glance{margin-block:6px}
+body.menu-theme .page-champion .advancement-pair{gap:6px;margin-block:6px}
+body.menu-theme .page-champion .advancement-menu>summary{padding:10px 14px}
+body.menu-theme .page-champion .passive-info{padding:12px;margin-block:6px}
+body.menu-theme .page-champion .passive-info h2{margin:3px 0 6px}
+body.menu-theme .page-champion #development-title{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+body.menu-theme .game-page.page-shop :is(.gem-shop,.tomes-preview){margin-top:10px}
+body.menu-theme .game-page.page-shop :is(.gem-shop,.tomes-preview) .section-heading{padding:0;margin:8px 0;border:0}
+body.menu-theme .game-page.page-shop .tomes-preview .section-heading::after{display:none}
+body.menu-theme .game-page.page-shop .tomes-preview h2{font-size:24px}
+body.menu-theme .game-page.page-inventory .material-grid{gap:6px}
+body.menu-theme .game-page.page-inventory .material-tile{padding:10px;gap:5px}
+body.menu-theme .game-page.page-inventory .loot-inventory>div{flex-direction:row;align-items:center;gap:10px}
+body.menu-theme .game-page.page-inventory .materials-section{margin-top:10px}
+body #modal[data-view] .loot-ticket-entry{background:var(--paper-surface);color:var(--paper-copy);border-color:var(--paper-edge);margin-top:8px;padding:10px}
+body #modal[data-view] .loot-ticket-entry :is(p,b){color:var(--paper-copy)}
+body.menu-theme .realm-destination .realm-label{background:var(--paper-surface);border-color:var(--paper-edge);text-shadow:none}
+body.menu-theme .realm-destination .realm-destination-name{color:var(--paper-ink);text-shadow:none}
+body #modal[data-view=page-guide] .guide-layout>nav{margin-bottom:6px}
+body #modal[data-view=page-guide] .modal-header{padding-block:6px}
+body #modal[data-view=campaign-stage] .battle-team-preview{padding:7px;margin-bottom:6px}
+body #modal[data-view=campaign-stage] .campaign-milestone-art{margin-block:6px}
