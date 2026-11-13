@@ -209,3 +209,11 @@ body #modal[data-view=page-guide] .guide-layout>nav{margin-bottom:6px}
 body #modal[data-view=page-guide] .modal-header{padding-block:6px}
 body #modal[data-view=campaign-stage] .battle-team-preview{padding:7px;margin-bottom:6px}
 body #modal[data-view=campaign-stage] .campaign-milestone-art{margin-block:6px}
+/* Adventure names sit directly on the illustration, without paper plaques. */
+body.menu-theme .page-world .realm-destination :is(.realm-label,.realm-destination-name){background:none;border:0;box-shadow:none}
+body.menu-theme .page-world .realm-destination .realm-destination-name{color:#fff3d6;text-shadow:0 2px 3px #211b29,0 0 7px #211b29}
+/* Leave room for portrait badges and for standalone iOS status bars. */
+body:has(.battle-shell) .battle-center .battle-sky{box-sizing:border-box;padding-top:8px}
+@supports (-webkit-touch-callout:none){
+ @media(display-mode:standalone){body:has(.battle-shell) #app{padding-top:max(44px,env(safe-area-inset-top,0px))}}
+}

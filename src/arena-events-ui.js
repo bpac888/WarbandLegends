@@ -1,14 +1,14 @@
-import {LOOT_TICKET_ART} from './loot-ticket-item.js?v=0.48.0';
-import {energyStatus} from './keeper.js?v=0.48.0';
-import {TOKEN_ART,ENERGY_ART} from './currency-art.js?v=0.48.0';
-import {premiumShop} from './premium-ui.js?v=0.48.0';
-import {gemShop} from './gem-ui.js?v=0.48.0';
-import {materialShop} from './ascension-ui.js?v=0.48.0';
-import {SPECIAL_EVENTS,eventWindow} from './modes.js?v=0.48.0';
-import {EXCHANGE_OFFERS} from './mode-progression.js?v=0.48.0';import {glyph} from './card-ui.js?v=0.48.0';
+import {LOOT_TICKET_ART} from './loot-ticket-item.js?v=0.48.1';
+import {energyStatus} from './keeper.js?v=0.48.1';
+import {TOKEN_ART,ENERGY_ART} from './currency-art.js?v=0.48.1';
+import {premiumShop} from './premium-ui.js?v=0.48.1';
+import {gemShop} from './gem-ui.js?v=0.48.1';
+import {materialShop} from './ascension-ui.js?v=0.48.1';
+import {SPECIAL_EVENTS,eventWindow} from './modes.js?v=0.48.1';
+import {EXCHANGE_OFFERS} from './mode-progression.js?v=0.48.1';import {glyph} from './card-ui.js?v=0.48.1';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const heading=(label,title,description,team=true)=>`<div class="page-heading"><div><span class="eyebrow">${label}</span><h1>${title}</h1>${description?`<p>${description}</p>`:''}</div>${team?'<button class="button outline" data-action="roster">Edit Warband</button>':''}</div>`;
-export {arenaScene as arena} from './arena-scene.js?v=0.48.0';
+export {arenaScene as arena} from './arena-scene.js?v=0.48.1';
 export function events(profile,{now=new Date()}={}){return `<section class="event-realms"><div class="event-map"><picture><source media="(max-width:700px)" srcset="./assets/events/realms-phone.webp"><img src="./assets/events/realms-wide.webp" alt="Crimson Eclipse’s gothic citadel, Frostwake’s frozen fortress and the violet observatory of Umbra, linked by rivers and bridges" width="1536" height="1024" fetchpriority="high"></picture><div class="event-eclipse-sky" aria-hidden="true"></div><div class="event-map-magic" aria-hidden="true"><i class="event-eclipse-glow"></i><i class="event-aurora"></i><i class="event-portal-aura"></i><i class="event-portal-swirl"></i></div><div class="event-map-sparks" aria-hidden="true"><i></i><i></i><i></i></div><nav aria-label="Explore event areas">${SPECIAL_EVENTS.map(ev=>`<button class="event-landmark landmark-${ev.id}" data-action="event-select" data-event="${ev.id}" aria-label="Explore ${ev.name}"><span class="event-map-pin" aria-hidden="true"></span><strong>${ev.name}</strong>${eventWindow(ev.id,now).active?'<small>Open Now</small>':''}</button>`).join('')}</nav></div></section>`;}
 const exchangeBalance=(profile,offer)=>offer.currency==='arenaTokens'?profile.arenaTokens:(profile.eventTokens[offer.currency]||0);
 export function exchangeOffers(profile,choices={}){

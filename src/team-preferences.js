@@ -1,4 +1,4 @@
-import {developedChampion} from './development.js?v=0.48.0';
+import {developedChampion} from './development.js?v=0.48.1';
 export const teamName=(p,i)=>p.teamNames?.[i]||'Team '+(i+1);
 export function normalizeTeamPreferences(p,collection){
  const list=k=>[...new Set((Array.isArray(p[k])?p[k]:[]).filter(id=>typeof id==='string'&&collection[id]))];

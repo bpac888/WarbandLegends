@@ -1,4 +1,4 @@
-import {createCourtyardBird,animateCourtyardBird} from './courtyard-birds.js?v=0.48.0';
+import {createCourtyardBird,animateCourtyardBird} from './courtyard-birds.js?v=0.48.1';
 // Billboards face the viewer's position, while the art faces its projected travel.
 // Turning the camera alone must never reverse a pedestrian's apparent stride.
 export function walkerFacing(position,viewer,direction,previous=1){
