@@ -250,3 +250,5 @@ body.menu-theme .page-champion .advancement-content .ascension-road span{font-si
 body.menu-theme .page-champion .advancement-content .ascension-road b{font-size:13px}
 body.menu-theme .page-champion .ascension-panel .advancement-content{padding-top:6px}
 body:has(.battle-shell) .battle-center .tile::before{inset:0;border-radius:2px}
+/* Special targeting uses a dark overlay; keep its prompt readable. */
+body:has(.battle-shell) .battle-center .battle-feedback:has([data-action="cancel-cast"]){color:#fff0d0}
