@@ -1,5 +1,5 @@
-import {premiumItem,premiumItemCount,takePremiumItem} from './premium-items.js?v=0.49.2';
-import {heroDevelopment,xpForLevel,addHeroXp} from './development.js?v=0.49.2';
+import {premiumItem,premiumItemCount,takePremiumItem} from './premium-items.js?v=0.49.3';
+import {heroDevelopment,xpForLevel,addHeroXp} from './development.js?v=0.49.3';
 
 export function experienceTomeQuote(profile,id,champion){
  const item=premiumItem(id);

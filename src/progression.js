@@ -1,19 +1,19 @@
-import {validTeamPreferences} from './team-preferences.js?v=0.49.2';
-import {normalizeJournal} from './campaign-journal.js?v=0.49.2';
-import {normalizeWeekly,completeWeekly,validWeeklyProfile} from './weekly.js?v=0.49.2';
-import {tutorialState} from './tutorial.js?v=0.49.2';
-import {normalizePremiumItems,validPremiumItems,boostedGold} from './premium-items.js?v=0.49.2';
-import {normalizeTeams} from './teams.js?v=0.49.2';
-import {baseHeroId,validCopyId,heroForId,battleRoster,nextCopyId,splitLegacyCopies} from './hero-copies.js?v=0.49.2';
-import {defaultKeeper,normalizeKeeper,validKeeper,addAccountXp,accountBattleXp,bumpPath} from './keeper.js?v=0.49.2';
-import {GEM_LIMIT,INITIAL_GEMS,SUMMON_COST,TEN_SUMMON_COST,GEM_INTERVAL} from './economy.js?v=0.49.2';
-import {QUESTS,questProgress,claimQuest} from './quests.js?v=0.49.2';
+import {validTeamPreferences} from './team-preferences.js?v=0.49.3';
+import {normalizeJournal} from './campaign-journal.js?v=0.49.3';
+import {normalizeWeekly,completeWeekly,validWeeklyProfile} from './weekly.js?v=0.49.3';
+import {tutorialState} from './tutorial.js?v=0.49.3';
+import {normalizePremiumItems,validPremiumItems,boostedGold} from './premium-items.js?v=0.49.3';
+import {normalizeTeams} from './teams.js?v=0.49.3';
+import {baseHeroId,validCopyId,heroForId,battleRoster,nextCopyId,splitLegacyCopies} from './hero-copies.js?v=0.49.3';
+import {defaultKeeper,normalizeKeeper,validKeeper,addAccountXp,accountBattleXp,bumpPath} from './keeper.js?v=0.49.3';
+import {GEM_LIMIT,INITIAL_GEMS,SUMMON_COST,TEN_SUMMON_COST,GEM_INTERVAL} from './economy.js?v=0.49.3';
+import {QUESTS,questProgress,claimQuest} from './quests.js?v=0.49.3';
 export {QUESTS,questProgress,claimQuest,GEM_INTERVAL};
-import {ASCENSION_CAPS,MATERIALS,MATERIAL_LIMIT,currentLevelCap,materialDrops,addMaterials,validateAscension} from './ascension.js?v=0.49.2';
-import {defaultModes,normalizeModes,validateModes,modeReward,settleMode} from './mode-progression.js?v=0.49.2';
-import {ENCOUNTERS,DIFFICULTIES,getEncounter,entryError} from './encounters.js?v=0.49.2';
+import {ASCENSION_CAPS,MATERIALS,MATERIAL_LIMIT,currentLevelCap,materialDrops,addMaterials,validateAscension} from './ascension.js?v=0.49.3';
+import {defaultModes,normalizeModes,validateModes,modeReward,settleMode} from './mode-progression.js?v=0.49.3';
+import {ENCOUNTERS,DIFFICULTIES,getEncounter,entryError} from './encounters.js?v=0.49.3';
 // Local game-loop foundation. No purchases, original-game accounts or shared economy.
-import {addHeroXp,xpForLevel,levelCap} from './development.js?v=0.49.2';
+import {addHeroXp,xpForLevel,levelCap} from './development.js?v=0.49.3';
 export const PROFILE_VERSION=13;
 export const CAMPAIGN_REWARDS=Object.freeze(Object.fromEntries(ENCOUNTERS.map(e=>[e.id,e.rewards])));
 // Runa joins a rescue party: one element each, with Commons for early training.

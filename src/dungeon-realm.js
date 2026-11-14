@@ -1,5 +1,5 @@
-import {DUNGEONS,getEncounter,entryError} from './encounters.js?v=0.49.2';
-import {glyph} from './card-ui.js?v=0.49.2';
+import {DUNGEONS,getEncounter,entryError} from './encounters.js?v=0.49.3';
+import {glyph} from './card-ui.js?v=0.49.3';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Art positions identify existing encounters; gameplay, progression and boss portraits stay unchanged.
 export function dungeonRealm(profile,difficulty){

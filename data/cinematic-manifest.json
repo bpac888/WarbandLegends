@@ -491,10 +491,10 @@
       "startSeconds": 5.625,
       "cutSeconds": 2.8333333333333335,
       "sourceSeconds": 2.8333333333333335,
-      "holdSeconds": 0,
+      "holdSeconds": 0.5,
       "path": "assets/cinematics/alkyron-starbreaker.mp4",
-      "bytes": 1206906,
-      "sha256": "6dd2fe17031f462beb5bce7e80e94281a11063ca3a0322919a904d8fe64fdc8f",
+      "bytes": 1251023,
+      "sha256": "64207bfa2710a017b20fdf3d418f8194e6c31a1d301cf64c846eb7aff8a5ccad",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -508,7 +508,7 @@
           }
         ],
         "format": {
-          "duration": "2.833333"
+          "duration": "3.333333"
         }
       }
     },

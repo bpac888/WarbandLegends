@@ -1,10 +1,10 @@
-import {TUTORIAL_QUESTS,tutorialProgress,tutorialQuestAvailable} from './tutorial.js?v=0.49.2';
-import {nextCopyId} from './hero-copies.js?v=0.49.2';
-import {heroForId,uniqueHeroCount} from './hero-copies.js?v=0.49.2';
-import {addAccountXp,accountDevelopment,bumpPath} from './keeper.js?v=0.49.2';
-import {addHeroXp} from './development.js?v=0.49.2';
-import {addMaterials} from './ascension.js?v=0.49.2';
-import {GEM_LIMIT} from './economy.js?v=0.49.2';
+import {TUTORIAL_QUESTS,tutorialProgress,tutorialQuestAvailable} from './tutorial.js?v=0.49.3';
+import {nextCopyId} from './hero-copies.js?v=0.49.3';
+import {heroForId,uniqueHeroCount} from './hero-copies.js?v=0.49.3';
+import {addAccountXp,accountDevelopment,bumpPath} from './keeper.js?v=0.49.3';
+import {addHeroXp} from './development.js?v=0.49.3';
+import {addMaterials} from './ascension.js?v=0.49.3';
+import {GEM_LIMIT} from './economy.js?v=0.49.3';
 export const QUEST_CATEGORIES=[['all','All quests'],['campaign','Campaign'],['dungeons','Dungeons'],['arena','Arena'],['events','Events'],['collection','Collection'],['growth','Growth']];
 const q=(id,name,category,metric,goal,text,rewards)=>({id,name,category,metric,goal,text,gold:0,gems:0,xp:0,items:{},...rewards,accountXp:rewards.accountXp??50});
 export const QUESTS=[

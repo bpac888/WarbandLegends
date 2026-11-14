@@ -1,5 +1,5 @@
-import {ARENA_RIVALS} from './modes.js?v=0.49.2';
-import {TOKEN_ART} from './currency-art.js?v=0.49.2';
+import {ARENA_RIVALS} from './modes.js?v=0.49.3';
+import {TOKEN_ART} from './currency-art.js?v=0.49.3';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const arenaIndex=n=>((Math.trunc(n)||0)%ARENA_RIVALS.length+ARENA_RIVALS.length)%ARENA_RIVALS.length;
 export const rivalArt=r=>`./assets/arena/${r.preset_id}.webp`;

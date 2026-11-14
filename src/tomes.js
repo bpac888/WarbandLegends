@@ -1,4 +1,4 @@
-import {premiumPrice} from './premium-prices.js?v=0.49.2';
+import {premiumPrice} from './premium-prices.js?v=0.49.3';
 // Purchases remain previews; owned tomes can be used from Inventory.
 const elements=['red','blue','green','yellow','purple'];
 const title=s=>s[0].toUpperCase()+s.slice(1);

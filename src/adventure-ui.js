@@ -1,16 +1,16 @@
-import {weeklyDetails,weeklyWindow} from './weekly.js?v=0.49.2';
-import {milestoneIllustration} from './campaign-milestones.js?v=0.49.2';
-import {campaignArc} from './campaign-story.js?v=0.49.2';
-import {EVENT_ATTEMPTS,eventWindow} from './modes.js?v=0.49.2';
-import {campaignAtmosphere} from './campaign-atmosphere.js?v=0.49.2';
-import {lootTicketEntry} from './loot-ticket-ui.js?v=0.49.2';
-import {dungeonRealm} from './dungeon-realm.js?v=0.49.2';
-import {energyCostMark} from './energy-ui.js?v=0.49.2';
-import {materialDrops,materialArt,materialById} from './ascension.js?v=0.49.2';
-import {encounterTactics} from './tactics-ui.js?v=0.49.2';
-import {DIFFICULTIES,DUNGEONS,campaignStages,getEncounter,entryError} from './encounters.js?v=0.49.2';
-import {glyph} from './card-ui.js?v=0.49.2';
-import {victoryRewards} from './progression.js?v=0.49.2';
+import {weeklyDetails,weeklyWindow} from './weekly.js?v=0.49.3';
+import {milestoneIllustration} from './campaign-milestones.js?v=0.49.3';
+import {campaignArc} from './campaign-story.js?v=0.49.3';
+import {EVENT_ATTEMPTS,eventWindow} from './modes.js?v=0.49.3';
+import {campaignAtmosphere} from './campaign-atmosphere.js?v=0.49.3';
+import {lootTicketEntry} from './loot-ticket-ui.js?v=0.49.3';
+import {dungeonRealm} from './dungeon-realm.js?v=0.49.3';
+import {energyCostMark} from './energy-ui.js?v=0.49.3';
+import {materialDrops,materialArt,materialById} from './ascension.js?v=0.49.3';
+import {encounterTactics} from './tactics-ui.js?v=0.49.3';
+import {DIFFICULTIES,DUNGEONS,campaignStages,getEncounter,entryError} from './encounters.js?v=0.49.3';
+import {glyph} from './card-ui.js?v=0.49.3';
+import {victoryRewards} from './progression.js?v=0.49.3';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function tabs(mode,current,profile){return `<div class="realm-tabs" role="group" aria-label="${mode} difficulty">${DIFFICULTIES.map(d=>`<button data-action="${mode}-difficulty" data-difficulty="${d.id}" class="${current===d.id?'active':''}" aria-pressed="${current===d.id}" style="--realm-color:${d.color}"><span>${d.label}</span><small>${mode==='campaign'?`${profile.campaignProgress?.[d.id]||0} / 25`:DUNGEONS.filter(x=>profile.dungeonClears?.[`dungeon-${x.id}-${d.id}`]).length+' / 7'}</small></button>`).join('')}</div>`;}
