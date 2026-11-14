@@ -6,7 +6,7 @@
       "path": "assets/champions/valcera_briar_magistrate.webp",
       "baselineSha256": "5ce25cff48fc8ba211c839bafe49f859ab8a4865d0a8c062e88358cf29f2b315",
       "approvedSha256": "0b455d9b3cef53e4ef0eb901863e107a8cd121bf63cda2579349536542b1a79f",
-      "reason": "User requested center-split blonde and black hair; preserve the rest of Valcera’s design."
+      "reason": "User requested center-split blonde and black hair; preserve the rest of Valcera\u2019s design."
     },
     {
       "id": "zamrukh_thornstorm_rider",
@@ -187,50 +187,50 @@
       "id": "djedi_kobe_kenobi",
       "path": "assets/champions/djedi_kobe_kenobi.webp",
       "baselineSha256": "c0b5878b859c4dec342fbf0ebc022406607fbf02eed636cf3136f051e9826abe",
-      "approvedSha256": "6908cdd547cb28db5cb9b59eed285eda8a5c0b7bf4db34d084090f882591ec01",
-      "reason": "Renamed Kobe Jacoby; long white beard under the existing brown hood."
+      "approvedSha256": "ff6a5bb7697b95d482b2fdd7a8dd90f71fce4107501ca36d9032561a42f54c84",
+      "reason": "Owner-approved Winded Guild appearance update."
     },
     {
       "id": "djedi_jace_hindu",
       "path": "assets/champions/djedi_jace_hindu.webp",
       "baselineSha256": "37420e79ce0a731fdd38a7b1b7b0e3c440e10401cc552c0672b27d9cc156983a",
-      "approvedSha256": "a0607422c4d2ed7960bc41fbe69df87ea9c8089a2f35b241fcbfc1d8f03f4458",
-      "reason": "User-requested second Djedi appearance refinement: jace_hindu"
+      "approvedSha256": "c72233927625c3dec742f9a0311da927347db7b2e0e80cdfe833ea4d5869f3b1",
+      "reason": "Owner-approved Winded Guild appearance update."
     },
     {
       "id": "djedi_ani_windwalker",
       "path": "assets/champions/djedi_ani_windwalker.webp",
       "baselineSha256": "dc211ee7413871fee2ee96a2548c29a1f90359d410feaf2449089fdbcc1032f7",
-      "approvedSha256": "c3dd7544c6a88d837fa5a6542d3e0874de96205cfa610842ca9b41f6b5b9b0b0",
-      "reason": "User-requested second Djedi appearance refinement: ani_windwalker"
+      "approvedSha256": "651ed50c2fd92dfa93d82332bf3bbbce0173aee03cf10c3f924686f36db99ff9",
+      "reason": "Owner-approved Winded Guild appearance update."
     },
     {
       "id": "djedi_dark_lord",
       "path": "assets/champions/djedi_dark_lord.webp",
       "baselineSha256": "ba5d346fe73a903474de7889249e2842c7a9f2475eb5c8833c8875266a2411c5",
-      "approvedSha256": "6a1fe54cc4fbfe082e4e4b95e96ef60062d674d38db3e24f25b0ad118e089cbe",
-      "reason": "User-requested second Djedi appearance refinement: dark_lord"
+      "approvedSha256": "410233729f8041cbce3058d02e92aca7b04fd1798a5b02ed0d601db230507458",
+      "reason": "Owner-approved Winded Guild appearance update."
     },
     {
       "id": "djedi_chewy",
       "path": "assets/champions/djedi_chewy.webp",
       "baselineSha256": "e77bb03c4f77bb5104da1e2a5ad37ad1040cfbf738b09c31369fba748cec4c92",
-      "approvedSha256": "82a47d8fecff90ebcc945767270af7c13c1c57c5fb248d31ce76489f9967cfc9",
-      "reason": "User-requested second Djedi appearance refinement: chewy"
+      "approvedSha256": "3e8b34f246e5af34334f05b1f77f700ccef69ddd813288b53f2e30ce6f9d886e",
+      "reason": "Owner-approved Winded Guild appearance update."
     },
     {
       "id": "djedi_dark_mauler",
       "path": "assets/champions/djedi_dark_mauler.webp",
       "baselineSha256": "3571595a79d1cef4a6d6a7a030569dd68bc42db5d9a7ff9c81a56cc725af5921",
-      "approvedSha256": "d59c882f1ad63917a2b2c4f4d14c67c206552f693b8b2d3bafe886e0b214463b",
-      "reason": "User-requested second Djedi appearance refinement: dark_mauler"
+      "approvedSha256": "983ce6d981fd9eac248e73185f725dd95c7fba1b87a5b0784d0b41587227db1e",
+      "reason": "Owner-approved Winded Guild appearance update."
     },
     {
       "id": "djedi_commander_pain",
       "path": "assets/champions/djedi_commander_pain.webp",
       "baselineSha256": "f40ee32cf395042be3c247a24645fa13e355f28bf8880dfc138f68005e5c46e4",
-      "approvedSha256": "be22ca85a45f22644ca17bff1b46d14e8cd15074643a6ec48f6dea8aa2de1e51",
-      "reason": "User-requested second Djedi appearance refinement: commander_pain"
+      "approvedSha256": "06dc3bfc9136259069a7a95f625ea51a537f905f5fb0945e78132b16a6a1708e",
+      "reason": "Owner-approved Winded Guild appearance update."
     }
   ]
 }

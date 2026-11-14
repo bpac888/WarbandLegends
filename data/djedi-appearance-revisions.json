@@ -14,7 +14,7 @@
         "def": 735,
         "hp": 1405,
         "ability_name": "Stillness Before the Blade",
-        "lore": "Beneath an oversized brown hood, Kobe carries the calm of a thousand silent vigils. His green energy blade moves only when words have failed. Stones lift around him as he turns an enemy’s momentum aside with a thought.",
+        "lore": "Beneath an oversized brown hood, Kobe carries the calm of a thousand silent vigils. His green energy blade moves only when words have failed. Stones lift around him as he turns an enemy\u2019s momentum aside with a thought.",
         "image_url": "/assets/champions/djedi_kobe_kenobi.webp",
         "id": "djedi_kobe_kenobi",
         "color": "green",
@@ -64,7 +64,7 @@
         "def": 735,
         "hp": 1405,
         "ability_name": "Stillness Before the Blade",
-        "lore": "Beneath an oversized brown hood, Kobe carries the calm of a thousand silent vigils. His green energy blade moves only when words have failed. Stones lift around him as he turns an enemy’s momentum aside with a thought.",
+        "lore": "Beneath an oversized brown hood, Kobe carries the calm of a thousand silent vigils. His green energy blade moves only when words have failed. Stones lift around him as he turns an enemy\u2019s momentum aside with a thought.",
         "image_url": "/assets/champions/djedi_kobe_kenobi.webp",
         "id": "djedi_kobe_kenobi",
         "color": "green",
@@ -256,7 +256,7 @@
           ]
         }
       },
-      "name": "Windwalker",
+      "name": "Skip Windy",
       "reason": "Renamed Windwalker; dark black goatee while retaining the single braid in front of the shoulder."
     },
     {
@@ -365,7 +365,7 @@
         "def": 815,
         "hp": 1580,
         "ability_name": "Stand Behind the Roar",
-        "lore": "Chewy’s guttural roar can carry across a battlefield long after the guns fall silent. Beneath his long brown fur is a loyal heart and a strength few dare test. His crossbow and loaded utility bandolier stand between his companions and anyone foolish enough to pursue them.",
+        "lore": "Chewy\u2019s guttural roar can carry across a battlefield long after the guns fall silent. Beneath his long brown fur is a loyal heart and a strength few dare test. His crossbow and loaded utility bandolier stand between his companions and anyone foolish enough to pursue them.",
         "image_url": "/assets/champions/djedi_chewy.webp",
         "id": "djedi_chewy",
         "color": "green",
@@ -415,7 +415,7 @@
         "def": 815,
         "hp": 1580,
         "ability_name": "Stand Behind the Roar",
-        "lore": "Chewy’s guttural roar can carry across a battlefield long after the guns fall silent. Beneath his long brown fur is a loyal heart and a strength few dare test. His crossbow and loaded utility bandolier stand between his companions and anyone foolish enough to pursue them.",
+        "lore": "Chewy\u2019s guttural roar can carry across a battlefield long after the guns fall silent. Beneath his long brown fur is a loyal heart and a strength few dare test. His crossbow and loaded utility bandolier stand between his companions and anyone foolish enough to pursue them.",
         "image_url": "/assets/champions/djedi_chewy.webp",
         "id": "djedi_chewy",
         "color": "green",
@@ -454,7 +454,7 @@
         "def": 670,
         "hp": 1320,
         "ability_name": "Crimson Vault",
-        "lore": "Four short horns rise above the Mauler’s red face and black-ringed eyes. His double-ended crimson weapon whirls as he vaults impossibly high, descending with predatory precision. He delights in leaving no safe angle from which to face him.",
+        "lore": "Four short horns rise above the Mauler\u2019s red face and black-ringed eyes. His double-ended crimson weapon whirls as he vaults impossibly high, descending with predatory precision. He delights in leaving no safe angle from which to face him.",
         "image_url": "/assets/champions/djedi_dark_mauler.webp",
         "id": "djedi_dark_mauler",
         "color": "red",
@@ -499,7 +499,7 @@
         "def": 670,
         "hp": 1320,
         "ability_name": "Crimson Vault",
-        "lore": "Four short horns rise above the Mauler’s red face and black-ringed eyes. His double-ended crimson weapon whirls as he vaults impossibly high, descending with predatory precision. He delights in leaving no safe angle from which to face him.",
+        "lore": "Four short horns rise above the Mauler\u2019s red face and black-ringed eyes. His double-ended crimson weapon whirls as he vaults impossibly high, descending with predatory precision. He delights in leaving no safe angle from which to face him.",
         "image_url": "/assets/champions/djedi_dark_mauler.webp",
         "id": "djedi_dark_mauler",
         "color": "red",
@@ -522,7 +522,7 @@
           ]
         }
       },
-      "name": "Lord of Darkness",
+      "name": "Master Winded",
       "reason": "Renamed Lord of Darkness; oversized black robe and deep hood partially concealing the face."
     }
   ]

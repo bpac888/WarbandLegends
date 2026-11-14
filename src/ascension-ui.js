@@ -1,9 +1,9 @@
-import {premiumItemCount} from './premium-items.js?v=0.49.3';
-import {GEM_OFFERS} from './economy.js?v=0.49.3';
-import {gemMark} from './gem-ui.js?v=0.49.3';
-import {MATERIALS,materialArt,materialById,ASCENSION_CAPS,ascensionTier,awakeningRank,tierLevel,LIMIT_BREAK_LEVELS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.49.3';
-import {ascensionQuote,awakeningQuote} from './development.js?v=0.49.3';
-import {statMarks,glyph} from './card-ui.js?v=0.49.3';
+import {premiumItemCount} from './premium-items.js?v=0.50.0';
+import {GEM_OFFERS} from './economy.js?v=0.50.0';
+import {gemMark} from './gem-ui.js?v=0.50.0';
+import {MATERIALS,materialArt,materialById,ASCENSION_CAPS,ascensionTier,awakeningRank,tierLevel,LIMIT_BREAK_LEVELS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.50.0';
+import {ascensionQuote,awakeningQuote} from './development.js?v=0.50.0';
+import {statMarks,glyph} from './card-ui.js?v=0.50.0';
 export function materialTile(item,count,required){return `<article class="material-tile ${required!==undefined&&count<required?'missing':''}"><img src="${materialArt(item.id)}" alt="${item.name}" loading="lazy"><div><b>${item.name}</b><strong>${required===undefined?count.toLocaleString():`${count} / ${required}`}</strong></div></article>`;}
 export function materialInventory(profile){return `<section class="materials-section"><h2>Ascension &amp; Limit Break</h2><div class="material-grid">${MATERIALS.map(m=>materialTile(m,profile.materials?.[m.id]||0)).join('')}</div></section>`;}
 export function materialShop(profile){return `<section class="materials-section"><h2>Ascension & Limit Break</h2><div class="material-grid">${MATERIALS.map(m=>`<article class="material-offer"><img src="${materialArt(m.id)}" alt="${m.name}" loading="lazy"><h3>${m.name}</h3><p>${m.description}</p><small>Owned: ${profile.materials?.[m.id]||0}</small><button class="button ${profile.gold<m.price?'outline':'gold'}" data-action="material-preview" data-id="${m.id}" ${profile.gold<m.price||(profile.materials?.[m.id]||0)>=999999?'disabled':''}>${glyph('gold')} ${m.price.toLocaleString()} Gold · Buy 1</button><button class="button outline" data-action="gem-preview" data-id="${m.id}" ${profile.gems<GEM_OFFERS.find(o=>o.id===m.id).cost?'disabled':''}>${gemMark(GEM_OFFERS.find(o=>o.id===m.id).cost)} · Buy 1</button></article>`).join('')}</div></section>`;}

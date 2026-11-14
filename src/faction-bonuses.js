@@ -2,7 +2,7 @@
 // Counts are locked from the five starting slots; fallen members do not remove a tier.
 export const FACTION_BONUSES={
  goblins:{name:'Goblins',tiers:{1:{manaResist:.7,text:'Each Goblin has a 70% chance to block an incoming Mana Slow or Mana Block application. Personal protection; active from one member and does not stack.'}}},
- djedi:{name:'Djedi',tiers:{2:{atk:.10,text:'+10% ATK for Djedi members. Requires 2+ members; the bonus stays at 10% with additional members.'}}},
+ djedi:{name:'Winded Guild',tiers:{2:{atk:.10,text:'+10% ATK for Winded Guild members. Requires 2+ members; the bonus stays at 10% with additional members.'}}},
  magic:{name:'Magic',tiers:Object.fromEntries([1,2,3,4,5].map(n=>[n,{alliedMana:n/20,text:`Arcane Resonance: +${n*5}% mana generation for all allies, including Magic champions. Stacks by 5% per Magic champion.`}]))},
  aerie_court:{name:'Aerie Court',tiers:{2:{def:.04,tileMana:.05,text:'Tailwind Guard: +4% DEF and +5% mana from matching runes.'},3:{def:.06,tileMana:.10,text:'Tailwind Guard: +6% DEF and +10% mana from matching runes.'}}},
  astral_concord:{name:'Astral Concord',tiers:{2:{tileMana:.15,text:'+15% mana from matching runes.'},3:{tileMana:.25,text:'+25% mana from matching runes.'}}},
