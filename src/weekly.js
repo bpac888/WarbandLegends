@@ -1,4 +1,4 @@
-import {validWeeklyState} from './weekly-combat.js?v=0.49.0';
+import {validWeeklyState} from './weekly-combat.js?v=0.49.1';
 // Pure calendar and catalogs. Five Trial/boss pairs repeat on a five-week cycle.
 export const WEEKLY_REWARDS={trial:{gold:500,gems:100},encounter:{gold:750,gems:150}};
 export const WEEKLY_TRIALS=[

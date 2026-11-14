@@ -1,5 +1,5 @@
 // The background, paving and sky share world-space projection and lighting.
-import {COURTYARD_REPAIRS} from './courtyard-repairs.js?v=0.49.0';
+import {COURTYARD_REPAIRS} from './courtyard-repairs.js?v=0.49.1';
 export const SCENERY_RADIUS=17.55;
 export const SCENERY_BOTTOM=-1.5335,SCENERY_HEIGHT=16.667;
 export const COURTYARD_SCENERY=Object.freeze([
