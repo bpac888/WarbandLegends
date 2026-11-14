@@ -1,6 +1,11 @@
+import {execFileSync} from 'node:child_process';
 import {createRequire} from 'node:module';import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';
 import {defaultProfile} from '../src/progression.js';import {PROFILE_KEY} from '../src/storage.js';import {ASCENSION_CAPS} from '../src/ascension.js';
 const root=new URL('../',import.meta.url).pathname,{chromium}=createRequire(import.meta.url)('playwright'),roster=JSON.parse(await fs.readFile(root+'data/champions.json'));
+for(const clip of ['zero-singularity','the-king','alkyron-starbreaker','malzhur-abyss']){
+ const info=JSON.parse(execFileSync('ffprobe',['-v','error','-show_entries','stream=codec_name,level,pix_fmt','-of','json',root+'assets/cinematics/'+clip+'.mp4']));
+ assert.equal(info.streams.length,1);assert.equal(info.streams[0].codec_name,'h264');assert.ok(info.streams[0].level<=31,clip+' must support mobile H.264 Level 3.1');assert.equal(info.streams[0].pix_fmt,'yuv420p');
+}
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
 try{
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'}),errors=[],videos=[];

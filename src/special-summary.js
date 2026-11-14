@@ -1,4 +1,4 @@
-import {EFFECTS} from './effects.js?v=0.49.1';
+import {EFFECTS} from './effects.js?v=0.49.2';
 const join=parts=>parts.length<2?parts[0]||'':parts.slice(0,-1).join(', ')+' and '+parts.at(-1);
 const scope=(id,spec)=>({self:'the caster',ally:'one ally',allies:'all allies',other_allies:'other allies',enemies:'all enemies',enemy:spec.target==='enemy'?'one enemy':'the lowest-HP enemy'}[id]||'the target');
 const capitalize=s=>s?s[0].toUpperCase()+s.slice(1):s;

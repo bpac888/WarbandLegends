@@ -1,7 +1,7 @@
-import {defaultProfile,normalizeProfile,awardVictory} from './progression.js?v=0.49.1';
-export {defaultProfile,STARTER_TEAM} from './progression.js?v=0.49.1';
-import {validateSave,STAGES,createBattle} from './engine.js?v=0.49.1';
-import {encounterAppearance} from './encounters.js?v=0.49.1';
+import {defaultProfile,normalizeProfile,awardVictory} from './progression.js?v=0.49.2';
+export {defaultProfile,STARTER_TEAM} from './progression.js?v=0.49.2';
+import {validateSave,STAGES,createBattle} from './engine.js?v=0.49.2';
+import {encounterAppearance} from './encounters.js?v=0.49.2';
 export const PROFILE_KEY='legends.runes.profile.v3', BATTLE_KEY='legends.runes.battle.v5';
 export const PREVIOUS_BATTLE_KEY='legends.runes.battle.v2';
 export const LEGACY_BATTLE_KEY='legends.runes.battle.v1';

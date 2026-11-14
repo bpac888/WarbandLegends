@@ -1,8 +1,8 @@
-import {weeklyPage} from './weekly-ui.js?v=0.49.1';
+import {weeklyPage} from './weekly-ui.js?v=0.49.2';
 const safeTeamText=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-import {teamName,teamPower,estimateNote} from './team-preferences.js?v=0.49.1';
-import {heroForId} from './hero-copies.js?v=0.49.1';
-import {accountDevelopment,ACCOUNT_MAX,playerDate,pathStatus,dailyReward} from './keeper.js?v=0.49.1';import {questRewardMarks} from './gem-ui.js?v=0.49.1';import {glyph} from './card-ui.js?v=0.49.1';
+import {teamName,teamPower,estimateNote} from './team-preferences.js?v=0.49.2';
+import {heroForId} from './hero-copies.js?v=0.49.2';
+import {accountDevelopment,ACCOUNT_MAX,playerDate,pathStatus,dailyReward} from './keeper.js?v=0.49.2';import {questRewardMarks} from './gem-ui.js?v=0.49.2';import {glyph} from './card-ui.js?v=0.49.2';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const avatar=p=>'./assets/portraits/'+p.avatar+'.svg';
 export function keeperPanel(p){const d=accountDevelopment(p.accountXp),ready=!p.dailyLastDate||p.dailyLastDate<playerDate();return `<section class="keeper-panel"><button class="keeper-portrait" data-action="edit-profile" aria-label="Edit player profile"><img src="${avatar(p)}" alt="Your profile portrait" width="48" height="48"></button><div><button class="keeper-name" data-action="edit-profile">${esc(p.name)}</button><h2>Level ${d.level} <small>/ ${ACCOUNT_MAX}</small></h2><div class="keeper-xp" role="progressbar" aria-label="Account experience" aria-valuemin="0" aria-valuemax="${d.needed||1}" aria-valuenow="${d.needed?d.earned:1}"><i style="width:${d.ratio*100}%"></i></div><small>${d.needed?d.earned.toLocaleString()+' / '+d.needed.toLocaleString()+' XP':'Maximum level'}</small></div><button class="button ${ready?'gold':'outline'}" data-action="nav" data-page="daily">${ready?'Daily Gift':'Today’s Path'} →</button></section>`;}

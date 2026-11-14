@@ -435,8 +435,8 @@
       "sourceSeconds": 2.7916666666666665,
       "holdSeconds": 0,
       "path": "assets/cinematics/zero-singularity.mp4",
-      "bytes": 1362251,
-      "sha256": "0cfd4de822a230d4c21e3762b947140aca410dfa32de9110ff5561a0e0960fcc",
+      "bytes": 1361834,
+      "sha256": "05670f60385d6fe089d2696220cb5dfcd3e786242bbe78929be6594fd79790c1",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -450,7 +450,7 @@
           }
         ],
         "format": {
-          "duration": "2.750000"
+          "duration": "2.791667"
         }
       }
     },
@@ -464,8 +464,8 @@
       "sourceSeconds": 2.8333333333333335,
       "holdSeconds": 0,
       "path": "assets/cinematics/the-king.mp4",
-      "bytes": 1446373,
-      "sha256": "7771319db3ffe14692d72439577851071c9c5ada07738be798902f5f6b633ac9",
+      "bytes": 1446981,
+      "sha256": "b86eadf30200c433ef9c72eb86d818155f9ecdeb6d786932764098c235b751a5",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -479,7 +479,7 @@
           }
         ],
         "format": {
-          "duration": "2.791667"
+          "duration": "2.833333"
         }
       }
     },
@@ -493,8 +493,8 @@
       "sourceSeconds": 2.8333333333333335,
       "holdSeconds": 0,
       "path": "assets/cinematics/alkyron-starbreaker.mp4",
-      "bytes": 1206850,
-      "sha256": "50d4e81edecb9ebc291bcac2ec9c5fa815332301a6a81582ae28062103a387d4",
+      "bytes": 1206906,
+      "sha256": "6dd2fe17031f462beb5bce7e80e94281a11063ca3a0322919a904d8fe64fdc8f",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -508,7 +508,7 @@
           }
         ],
         "format": {
-          "duration": "2.791667"
+          "duration": "2.833333"
         }
       }
     },
@@ -522,8 +522,8 @@
       "sourceSeconds": 2.5833333333333335,
       "holdSeconds": 0,
       "path": "assets/cinematics/malzhur-abyss.mp4",
-      "bytes": 1172307,
-      "sha256": "8a2fba7d37c67b522d58c24b1ee215d3bdb4ff5c0800bc5ce88493a71e36b145",
+      "bytes": 1172598,
+      "sha256": "539bd8958961a7d0361e899e3c365eecccfd42d672a3acb27a441ce8197db114",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -537,7 +537,7 @@
           }
         ],
         "format": {
-          "duration": "2.541667"
+          "duration": "2.583333"
         }
       }
     }
