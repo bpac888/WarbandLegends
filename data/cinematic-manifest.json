@@ -424,6 +424,122 @@
           "duration": "2.000000"
         }
       }
+    },
+    {
+      "id": "zero-singularity",
+      "characterId": "neon_singularity_reaper",
+      "sourceFile": "vid33.zip / kling_20261114_VIDEO_ultra_cine_1994_0.mp4",
+      "sourceSha256": "4cfb097960ee9d48f1ebcda656e9bc47fda770c28c5d288401a611b9f2b56e77",
+      "startSeconds": 0.0,
+      "cutSeconds": 2.7916666666666665,
+      "sourceSeconds": 2.7916666666666665,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/zero-singularity.mp4",
+      "bytes": 1362251,
+      "sha256": "0cfd4de822a230d4c21e3762b947140aca410dfa32de9110ff5561a0e0960fcc",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.750000"
+        }
+      }
+    },
+    {
+      "id": "the-king",
+      "characterId": "the_king",
+      "sourceFile": "vid33.zip / kling_20261114_VIDEO_ultra_cine_1994_0.mp4",
+      "sourceSha256": "4cfb097960ee9d48f1ebcda656e9bc47fda770c28c5d288401a611b9f2b56e77",
+      "startSeconds": 2.7916666666666665,
+      "cutSeconds": 2.8333333333333335,
+      "sourceSeconds": 2.8333333333333335,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/the-king.mp4",
+      "bytes": 1446373,
+      "sha256": "7771319db3ffe14692d72439577851071c9c5ada07738be798902f5f6b633ac9",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.791667"
+        }
+      }
+    },
+    {
+      "id": "alkyron-starbreaker",
+      "characterId": "alkyron_starbreaker",
+      "sourceFile": "vid33.zip / kling_20261114_VIDEO_ultra_cine_1994_0.mp4",
+      "sourceSha256": "4cfb097960ee9d48f1ebcda656e9bc47fda770c28c5d288401a611b9f2b56e77",
+      "startSeconds": 5.625,
+      "cutSeconds": 2.8333333333333335,
+      "sourceSeconds": 2.8333333333333335,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/alkyron-starbreaker.mp4",
+      "bytes": 1206850,
+      "sha256": "50d4e81edecb9ebc291bcac2ec9c5fa815332301a6a81582ae28062103a387d4",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.791667"
+        }
+      }
+    },
+    {
+      "id": "malzhur-abyss",
+      "characterId": "abyss_lord",
+      "sourceFile": "vid33.zip / kling_20261114_VIDEO_ultra_cine_1994_0.mp4",
+      "sourceSha256": "4cfb097960ee9d48f1ebcda656e9bc47fda770c28c5d288401a611b9f2b56e77",
+      "startSeconds": 8.458333333333334,
+      "cutSeconds": 2.5833333333333335,
+      "sourceSeconds": 2.5833333333333335,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/malzhur-abyss.mp4",
+      "bytes": 1172307,
+      "sha256": "8a2fba7d37c67b522d58c24b1ee215d3bdb4ff5c0800bc5ce88493a71e36b145",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "2.541667"
+        }
+      }
     }
   ],
   "notes": [
