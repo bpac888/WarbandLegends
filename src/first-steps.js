@@ -1,5 +1,5 @@
-import {SUMMON_COST} from './economy.js?v=0.50.0';
-import {tutorialState,tutorialFinished,TUTORIAL_QUESTS,tutorialProgress} from './tutorial.js?v=0.50.0';
+import {SUMMON_COST} from './economy.js?v=0.50.1';
+import {tutorialState,tutorialFinished,TUTORIAL_QUESTS,tutorialProgress} from './tutorial.js?v=0.50.1';
 const reward=(quest,title)=>({id:'quest',quest,title:'Quest reward ready',text:title,label:'Collect Quest Reward',page:'quests'});
 export function nextFirstStep(p){
  if(p.onboardingDismissed||p.openRoster||tutorialFinished(p))return null;

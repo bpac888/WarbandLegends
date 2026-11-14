@@ -1,7 +1,7 @@
-import {portalArtworkHTML} from './portal-art.js?v=0.50.0';
-import {SUMMON_COST,TEN_SUMMON_COST} from './economy.js?v=0.50.0';
-import {glyph,rarityMark,speedMark} from './card-ui.js?v=0.50.0';
-import {rankTrack} from './development-ui.js?v=0.50.0';
+import {portalArtworkHTML} from './portal-art.js?v=0.50.1';
+import {SUMMON_COST,TEN_SUMMON_COST} from './economy.js?v=0.50.1';
+import {glyph,rarityMark,speedMark} from './card-ui.js?v=0.50.1';
+import {rankTrack} from './development-ui.js?v=0.50.1';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const gemShortage=(profile,cost)=>`${cost-profile.gems} more ${cost-profile.gems===1?'Gem':'Gems'} needed`;
 export const RITUAL_TIMING=Object.freeze({activating:1800,arriving:2800});

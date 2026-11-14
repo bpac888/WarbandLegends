@@ -194,8 +194,8 @@
       "id": "djedi_jace_hindu",
       "path": "assets/champions/djedi_jace_hindu.webp",
       "baselineSha256": "37420e79ce0a731fdd38a7b1b7b0e3c440e10401cc552c0672b27d9cc156983a",
-      "approvedSha256": "c72233927625c3dec742f9a0311da927347db7b2e0e80cdfe833ea4d5869f3b1",
-      "reason": "Owner-approved Winded Guild appearance update."
+      "approvedSha256": "1162b5e53915d886acd0c080d3a8aa951fa22af1e32721f5183b4865c436c0da",
+      "reason": "Owner requested green wind guild emblem; Jace has continuous burgundy sword in front of chest emblem."
     },
     {
       "id": "djedi_ani_windwalker",
@@ -208,8 +208,8 @@
       "id": "djedi_dark_lord",
       "path": "assets/champions/djedi_dark_lord.webp",
       "baselineSha256": "ba5d346fe73a903474de7889249e2842c7a9f2475eb5c8833c8875266a2411c5",
-      "approvedSha256": "410233729f8041cbce3058d02e92aca7b04fd1798a5b02ed0d601db230507458",
-      "reason": "Owner-approved Winded Guild appearance update."
+      "approvedSha256": "bd678ca2ed288e7a90f8a23a989b035a94166a8d526cae49e3a09a80f35eea38",
+      "reason": "Owner requested green wind guild emblem; Jace has continuous burgundy sword in front of chest emblem."
     },
     {
       "id": "djedi_chewy",
@@ -229,8 +229,15 @@
       "id": "djedi_commander_pain",
       "path": "assets/champions/djedi_commander_pain.webp",
       "baselineSha256": "f40ee32cf395042be3c247a24645fa13e355f28bf8880dfc138f68005e5c46e4",
-      "approvedSha256": "06dc3bfc9136259069a7a95f625ea51a537f905f5fb0945e78132b16a6a1708e",
-      "reason": "Owner-approved Winded Guild appearance update."
+      "approvedSha256": "e51dfb58fcee8c44a7fda2e07821c3dba73979a8afed5b9783247c696d364227",
+      "reason": "Owner requested masculine happy robotic face and exactly three pink swords."
+    },
+    {
+      "id": "djedi_ar2",
+      "path": "assets/champions/djedi_ar2.webp",
+      "baselineSha256": "0cb62b78619375eb4daa6848003932e73b12ea56ae4fe344fc800d63a99b9088",
+      "approvedSha256": "907c04c0c42a4a536252e200c779350f5941af8058db71df9687405b838c02b6",
+      "reason": "Owner requested green wind guild emblem; Jace has continuous burgundy sword in front of chest emblem."
     }
   ]
 }
