@@ -1,8 +1,8 @@
-import {createCourtyardScenery,createCourtyardGround,createCourtyardSky,COURTYARD_SCENERY} from './courtyard-scenery.js?v=0.50.1';
-import {courtyardLife} from './courtyard-life.js?v=0.50.1';
-import {COURTYARD_START,COURTYARD_PLACES,EYE_HEIGHT,pointOnPath,wrapAngle,stepCourtyard,approachPlace,distanceTo,projectCourtyardPoint,projectDoorPoster} from './courtyard.js?v=0.50.1';
-import {wantedPoster} from './courtyard-ui.js?v=0.50.1';
-import {playerDate} from './keeper.js?v=0.50.1';
+import {createCourtyardScenery,createCourtyardGround,createCourtyardSky,COURTYARD_SCENERY} from './courtyard-scenery.js?v=0.50.2';
+import {courtyardLife} from './courtyard-life.js?v=0.50.2';
+import {COURTYARD_START,COURTYARD_PLACES,EYE_HEIGHT,pointOnPath,wrapAngle,stepCourtyard,approachPlace,distanceTo,projectCourtyardPoint,projectDoorPoster} from './courtyard.js?v=0.50.2';
+import {wantedPoster} from './courtyard-ui.js?v=0.50.2';
+import {playerDate} from './keeper.js?v=0.50.2';
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const artUrl=name=>new URL('../assets/courtyard/'+name,import.meta.url).href;
 
@@ -60,7 +60,7 @@ export function mountCourtyard(root,{profile,onNavigate,onProfile,isPaused=()=>f
 }
 
 async function buildGraphics(canvas){
- const THREE=await import('./vendor/three.module.js?v=0.50.1');
+ const THREE=await import('./vendor/three.module.js?v=0.50.2');
  let renderer;try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'low-power'});}catch{return null;}
  renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.65));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0x729bbb);
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(70,1,.1,90),textures=[],loader=new THREE.TextureLoader();camera.rotation.order='YXZ';

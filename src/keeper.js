@@ -1,7 +1,7 @@
-import {validCopyId} from './hero-copies.js?v=0.50.1';
-import {normalizeTeams,validTeams,saveTeam,activateTeam,TEAM_SLOT_COUNT} from './teams.js?v=0.50.1';
+import {validCopyId} from './hero-copies.js?v=0.50.2';
+import {normalizeTeams,validTeams,saveTeam,activateTeam,TEAM_SLOT_COUNT} from './teams.js?v=0.50.2';
 // Adapted from Warband Legends backend/progression.py and its profile/team catalog.
-import {addMaterials} from './ascension.js?v=0.50.1';
+import {addMaterials} from './ascension.js?v=0.50.2';
 export const AVATARS=['frost-viking','masked-heavy-warrior','desert-warrior','dark-celestial','celestial-demon-prince','blood-priestess'];
 export const ACCOUNT_MAX=100;
 export const xpToNext=level=>level>=100?0:Math.floor(100*Math.max(1,level)**1.22);
