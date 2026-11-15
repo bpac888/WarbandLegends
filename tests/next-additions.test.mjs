@@ -1,3 +1,4 @@
+import {beforeInkoLegendary} from '../src/inko-legendary-revision.js';
 import test from 'node:test';
 import {historicalRecords} from '../src/roster-identity.js';
 import assert from 'node:assert/strict';
@@ -18,8 +19,8 @@ test('all 162 previous records and source identities are preserved exactly',asyn
  assert.equal(hash(roster.slice(0,162)),manifest.originalRecordsSha256);assert.equal(hash((await read('data/source-champions.json')).slice(0,162)),manifest.originalSourceRecordsSha256);assert.deepEqual(added.map(c=>c.id),manifest.addedChampionIds);assert.equal(new Set(roster.map(c=>c.id)).size,roster.length);
 });
 test('the 12 additions match the approved rarity, role, color and speed mix',()=>{
- assert.deepEqual(count('rarity'),{legendary:9,rare:3});assert.deepEqual(count('role'),{attack:8,defense:2,support:2});assert.deepEqual(count('color'),{blue:3,green:3,purple:1,red:2,yellow:3});assert.deepEqual(count('manaSpeed'),{average:3,charging:3,fast:5,slow:1});
- for(const x of manifest.implementedRecommendations){const c=added.find(c=>c.id===x.championId);for(const k of ['faction','color','rarity','role','manaSpeed'])assert.equal(c[k],x[k]);assert.ok(!roster.slice(0,162).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role&&c.rarity===x.rarity));}
+ assert.deepEqual(count('rarity'),{legendary:10,rare:2});assert.deepEqual(count('role'),{attack:8,defense:2,support:2});assert.deepEqual(count('color'),{blue:3,green:3,purple:1,red:2,yellow:3});assert.deepEqual(count('manaSpeed'),{average:3,charging:3,fast:5,slow:1});
+ for(const x of manifest.implementedRecommendations){const c=beforeInkoLegendary(added).find(c=>c.id===x.championId);for(const k of ['faction','color','rarity','role','manaSpeed'])assert.equal(c[k],x[k]);assert.ok(!roster.slice(0,162).some(c=>c.faction===x.faction&&c.color===x.color&&c.role===x.role&&c.rarity===x.rarity));}
  for(const c of added)for(const l of c.special.levels)for(const e of l.effects){assert.ok(EFFECTS[e.id]);assert.ok(Number.isInteger(e.turns)&&e.turns>=0&&e.turns<=3);}
 });
 test('every new charge tier damages, heals, cleanses, dispels and applies effects to the declared recipients without spending a board turn',()=>{

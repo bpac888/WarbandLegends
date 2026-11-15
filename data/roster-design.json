@@ -2501,25 +2501,25 @@
           "level": 1,
           "speed": "fast",
           "tiles": 8,
-          "damage": 2.15,
+          "damage": 2.5,
           "healing": 0,
           "target": "enemy",
           "healScope": "allies",
-          "aoe": false,
+          "aoe": true,
           "pierce": false,
           "effects": [
             {
               "id": "dec_atk",
-              "turns": 1,
-              "scope": "enemy"
+              "turns": 2,
+              "scope": "enemies"
             }
           ]
         }
       ],
       "statsOverride": {
-        "hp": 1040,
-        "atk": 650,
-        "def": 580
+        "hp": 1340,
+        "atk": 825,
+        "def": 690
       }
     },
     "hester_emberthorn_hunter": {

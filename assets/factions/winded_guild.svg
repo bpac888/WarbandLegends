@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Winded Guild green wind emblem">
+<defs><linearGradient id="wind" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#96ed8b"/><stop offset=".45" stop-color="#39ad53"/><stop offset="1" stop-color="#16713a"/></linearGradient></defs>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g stroke="#103d28" stroke-width="23"><path d="M27 111C75 58 112 122 173 88C207 69 190 28 164 41C144 51 155 71 170 63"/><path d="M26 144C88 90 124 160 190 124C222 107 224 72 205 66"/><path d="M30 178C88 130 123 199 179 185C214 176 212 210 192 215C174 220 163 205 173 197"/></g>
+<g stroke="url(#wind)" stroke-width="15"><path d="M27 111C75 58 112 122 173 88C207 69 190 28 164 41C144 51 155 71 170 63"/><path d="M26 144C88 90 124 160 190 124C222 107 224 72 205 66"/><path d="M30 178C88 130 123 199 179 185C214 176 212 210 192 215C174 220 163 205 173 197"/></g>
+</g></svg>

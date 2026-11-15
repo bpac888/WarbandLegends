@@ -25,7 +25,7 @@ test('eleven additions fill audit gaps without adding Commons or Mythicals',()=>
  for(const x of manifest.implementedRecommendations){const c=added.find(c=>c.id===x.championId);for(const k of ['faction','color','rarity','role','manaSpeed'])assert.equal(c[k],x[k]);}
  for(const c of added)for(const l of c.special.levels)for(const e of l.effects)assert.ok(EFFECTS[e.id]);
  const totals=k=>Object.fromEntries([...new Set(roster.map(c=>c[k]))].map(v=>[v,roster.filter(c=>c[k]===v).length]));
- assert.deepEqual(totals('rarity'),{common:27,rare:68,legendary:88,mythical:17});
+ assert.deepEqual(totals('rarity'),{common:27,rare:67,legendary:89,mythical:17});
  assert.deepEqual(totals('color'),{red:41,green:40,blue:41,yellow:40,purple:38});
 });
 test('every new charge tier damages, heals, cleanses, dispels and applies effects to the declared recipients without spending a board turn',()=>{

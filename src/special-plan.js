@@ -1,4 +1,4 @@
-import {BUFFS,DEBUFFS,EFFECTS,effectName} from './effects.js?v=0.50.5';
+import {BUFFS,DEBUFFS,EFFECTS,effectName} from './effects.js?v=0.51.0';
 
 // The resolver and ability views consume the same order. Never sort only the UI.
 export function specialPlan(spec){

@@ -54,7 +54,7 @@ if(sha(roster.slice(0,264))!==king.originalRecordsSha256||sha(sourceRoster.slice
 const kingPortraits=[];for(const c of roster.slice(0,264))kingPortraits.push({id:c.id,sha256:createHash('sha256').update(await readFile(c.portrait)).digest('hex')});
 if(sha(kingPortraits)!==king.originalPortraitsSha256)throw Error('A previous portrait changed since The King was added');
 if((await stat('assets/factions/goblins.svg')).size<500)throw Error('Missing Goblins emblem');
-if((await stat('assets/factions/djedi.svg')).size<500)throw Error('Missing Djedi emblem');
+if((await stat('assets/factions/winded_guild.svg')).size<500)throw Error('Missing Winded Guild emblem');
 if((await stat('assets/factions/magic.svg')).size<500)throw Error('Missing Magic emblem');
 for(const art of ['legends-splash','legends-splash-phone'])if((await stat('assets/scenes/'+art+'.webp')).size<100000)throw Error('Missing splash artwork: '+art);
 for(const item of PREMIUM_ITEMS)if((await stat('assets/items/'+item.id+'.webp')).size<10000)throw Error('Missing premium item artwork: '+item.id);

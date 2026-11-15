@@ -1,4 +1,4 @@
-import {AVATARS} from './keeper.js?v=0.50.5';
+import {AVATARS} from './keeper.js?v=0.51.0';
 const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const escapePattern=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 export const SPEAKER_ART={Runa:'runa',Auroline:'auroline',Hald:'hald',Lucifer:'lucifer',Yshmir:'yshmir'};
