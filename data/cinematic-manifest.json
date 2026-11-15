@@ -600,6 +600,36 @@
           "duration": "2.291667"
         }
       }
+    },
+    {
+      "id": "frost-king",
+      "characterId": "frost_king",
+      "sourceFile": "202611151344.mp4",
+      "sourceSha256": "b29ad1676464ae4d23e340b69bb931cec4a1fe5bc10a6b24dd9afe29b68b0720",
+      "startSeconds": 0,
+      "cutSeconds": 5.041667,
+      "sourceSeconds": 5.041667,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/frost-king.mp4",
+      "bytes": 1684890,
+      "sha256": "cee55aad0ded782b8f30dbe3fd79799a3905b3d6621b21a02cf6fa1c300cd30d",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1280,
+            "pix_fmt": "yuv420p",
+            "level": 31
+          }
+        ],
+        "format": {
+          "duration": "5.041667"
+        }
+      }
     }
   ],
   "notes": [

@@ -1,0 +1,6 @@
+"""Prepare the owner's full Frost King scene. Usage: python tools/prepare-frost-king.py source.mp4"""
+import hashlib,json,pathlib,subprocess,sys
+source=pathlib.Path(sys.argv[1]);root=pathlib.Path(__file__).resolve().parents[1];target=root/'assets/cinematics/frost-king.mp4'
+subprocess.run(['ffmpeg','-v','error','-i',str(source),'-an','-vf','scale=720:-2,fps=24,setsar=1','-c:v','libx264','-profile:v','high','-level:v','3.1','-preset','slow','-crf','27','-pix_fmt','yuv420p','-movflags','+faststart','-y',str(target)],check=True)
+probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration:stream=codec_name,codec_type,width,height,pix_fmt,level','-of','json',str(target)]));duration=float(probe['format']['duration']);data=target.read_bytes();assert len(data)<=2000000,'Clip exceeds mobile budget'
+p=root/'data/cinematic-manifest.json';m=json.loads(p.read_text());entry={'id':'frost-king','characterId':'frost_king','sourceFile':source.name,'sourceSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'startSeconds':0,'cutSeconds':duration,'sourceSeconds':duration,'holdSeconds':0,'path':str(target.relative_to(root)),'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'probe':probe};m['clips']=[c for c in m['clips'] if c['id']!='frost-king']+[entry];p.write_text(json.dumps(m,indent=2)+'\n')
