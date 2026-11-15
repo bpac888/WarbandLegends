@@ -540,6 +540,66 @@
           "duration": "2.583333"
         }
       }
+    },
+    {
+      "id": "ashwind-warden",
+      "characterId": "Ashwind Warden",
+      "sourceFile": "202611151305.mp4",
+      "sourceSha256": "68684d2c2fcb3cf9b5ec507a5aa87ca6afa869d9cc3b968c80389ffc281e3173",
+      "startSeconds": 0,
+      "cutSeconds": 2.912774,
+      "sourceSeconds": 2.912774,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/ashwind-warden.mp4",
+      "bytes": 1197478,
+      "sha256": "6e4c9b307c9ddea0f299ab6a4fdf860834c23e4fa60dbb7b4ea058b73b35e350",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1090,
+            "pix_fmt": "yuv420p",
+            "level": 31
+          }
+        ],
+        "format": {
+          "duration": "2.875000"
+        }
+      }
+    },
+    {
+      "id": "ossir-necropolis",
+      "characterId": "necropolis_titan",
+      "sourceFile": "202611151305.mp4",
+      "sourceSha256": "68684d2c2fcb3cf9b5ec507a5aa87ca6afa869d9cc3b968c80389ffc281e3173",
+      "startSeconds": 3.112774,
+      "cutSeconds": 2.266999,
+      "sourceSeconds": 2.266999,
+      "holdSeconds": 0,
+      "path": "assets/cinematics/ossir-necropolis.mp4",
+      "bytes": 906908,
+      "sha256": "4e4452d75d75b4139951591764a3f2d5eb28b991155faf808d6b6f2ef03ed884",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 720,
+            "height": 1090,
+            "pix_fmt": "yuv420p",
+            "level": 31
+          }
+        ],
+        "format": {
+          "duration": "2.291667"
+        }
+      }
     }
   ],
   "notes": [

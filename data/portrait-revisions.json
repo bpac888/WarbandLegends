@@ -194,8 +194,8 @@
       "id": "djedi_jace_hindu",
       "path": "assets/champions/djedi_jace_hindu.webp",
       "baselineSha256": "37420e79ce0a731fdd38a7b1b7b0e3c440e10401cc552c0672b27d9cc156983a",
-      "approvedSha256": "62f5abb73c500afbd8b0053b024cb679b3c953b05d5d467745a8de9ccb84b602",
-      "reason": "Owner requested capeless three-arm Octavius; Jace and Dark Lord small embroidered green crests; Jace uniform-diameter upright red energy sword."
+      "approvedSha256": "b83db82649506a3ee80d34e3c758209705907f0a5eefb21241af9edb3777848f",
+      "reason": "Owner supplied replacement Jace Gold artwork; original JPEG pixels preserved in lossless WebP."
     },
     {
       "id": "djedi_ani_windwalker",
