@@ -1,3 +1,4 @@
+import {accountFixtureResponse} from './account-fixture.mjs';
 import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -8,7 +9,7 @@ const root=new URL('../',import.meta.url).pathname,{chromium}=createRequire(impo
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox','--enable-unsafe-swiftshader']});
 try{
  const context=await browser.newContext({reducedMotion:'reduce'}),errors=[];
- await context.route('**/*',async route=>{try{const u=new URL(route.request().url());assert.equal(u.hostname,'splash.local');const file=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:await fs.readFile(file),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(file)]});}catch{errors.push(route.request().url());await route.abort();}});
+ await context.route('**/*',async route=>{try{const u=new URL(route.request().url());assert.equal(u.hostname,'splash.local');const file=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:accountFixtureResponse(file,await fs.readFile(file)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(file)]});}catch{errors.push(route.request().url());await route.abort();}});
  await context.addInitScript(({key,p})=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(p));},{key:PROFILE_KEY,p:{...defaultProfile(),helpSeen:true}});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
  for(const [width,height]of [[320,568],[390,844],[430,932],[760,1024],[844,390],[1440,900]]){

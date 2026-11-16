@@ -1,3 +1,4 @@
+import {accountFixtureResponse} from './account-fixture.mjs';
 import {createRequire} from 'node:module';import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';
 import {createBattle,validMoves,COLORS} from '../src/engine.js';import {defaultProfile} from '../src/progression.js';import {PROFILE_KEY,BATTLE_KEY,PREVIOUS_BATTLE_KEY,LEGACY_BATTLE_KEY} from '../src/storage.js';
 const root=new URL('../',import.meta.url).pathname,roster=JSON.parse(await fs.readFile(root+'data/champions.json','utf8'));
@@ -5,7 +6,7 @@ const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'
 try{
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'}),errors=[];
  // Serve the actual production source with no battle fixture instrumentation.
- await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='legends.local')return route.abort();try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:await fs.readFile(p),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}catch{errors.push('Missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}});
+ await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='legends.local')return route.abort();try{const p=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:accountFixtureResponse(p,await fs.readFile(p)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml'})[path.extname(p)]});}catch{errors.push('Missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}});
  const p={...defaultProfile(),helpSeen:true,speed:2,name:'Session Keeper'},old=createBattle(roster,p.team,'ashen-gate',5);
  await context.addInitScript(({p,old,pk,keys})=>{if(!localStorage.getItem('test.initialized')){localStorage.setItem('test.initialized','yes');localStorage.setItem(pk,JSON.stringify(p));for(const key of keys)localStorage.setItem(key,JSON.stringify(old));}},{p,old,pk:PROFILE_KEY,keys:[BATTLE_KEY,PREVIOUS_BATTLE_KEY,LEGACY_BATTLE_KEY]});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.clock.setFixedTime(new Date('2026-10-23T12:00:00Z'));

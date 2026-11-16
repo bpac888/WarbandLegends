@@ -1,3 +1,4 @@
+import {AccountClient,accountForm} from './accounts.js?v=0.52.1';
 import {campaignEndingHTML,mountCampaignEnding} from './campaign-ending.js?v=0.52.1';
 import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.52.1';
 import {mountBattleLoading} from './loading-art.js?v=0.52.1';
@@ -49,7 +50,7 @@ import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.52
 import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.52.1';
 import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.52.1';
 import * as Shell from './shell.js?v=0.52.1';
-import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.52.1';
+import {defaultProfile,normalizeProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.52.1';
 import {EFFECTS} from './effects.js?v=0.52.1';
 import {effectIcon} from './icons.js?v=0.52.1';
 import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.52.1';
@@ -96,8 +97,39 @@ modal.addEventListener('close',scheduleAuto);
 let campaignDifficulty='normal',dungeonDifficulty='normal',selectedEvent=null,selectedArena=0;
 let courtyardView=null;
 let roster=[],effects={},byId=new Map(),profile,battle=null,screen='splash',busy=false,selectedRune=null,pendingCaster=null,pendingLevel=1,selectedEnemy=null,animationToken=0,noticeTimer,storage,storageWarned=false;
-try{storage=window.localStorage;}catch{storage={getItem:()=>null,setItem:()=>{throw Error('unavailable');}};}
-const persist=(key,value)=>{if(key===PROFILE_KEY&&roster.length)byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));if(!save(storage,key,value)&&!storageWarned){storageWarned=true;toast('Browser storage is unavailable. You can play, but this session cannot be saved.');}};
+let browserStorage;
+try{browserStorage=window.localStorage;}catch{browserStorage={getItem:()=>null,setItem:()=>{},removeItem:()=>{}};}
+const account=new AccountClient({storage:browserStorage,onStatus:(message,status)=>{if(status===401){accountReady=false;showAccount('login');}const label=document.querySelector('.account-save-status');if(label)label.textContent=message;if(message.includes('pending')||message.includes('elsewhere'))toast(message);}});
+storage={getItem:key=>account.user?browserStorage.getItem(account.key(key)):null,setItem:(key,value)=>{if(account.user)browserStorage.setItem(account.key(key),value);},removeItem:key=>{if(account.user)browserStorage.removeItem(account.key(key));}};
+const persist=(key,value)=>{if(key===PROFILE_KEY&&roster.length)byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));if(!save(storage,key,value)&&!storageWarned){storageWarned=true;toast('Browser storage is unavailable. Keep this page open until cloud progress is saved.');}if(key===PROFILE_KEY)try{account.queue(value);}catch{toast('Unable to keep a local backup. Keep this page open until progress is saved.');}};
+let accountReady=false,accountOpening=false,accountSubmitting=false;
+function showAccount(mode='choose'){openModal(mode==='choose'?'Register or Login':mode==='register'?'Register':'Login',accountForm(mode),'account');modalContent.querySelector('input')?.focus();}
+function installAccountProfile(saved){
+ profile={...setOpenRoster(normalizeProfile(saved||defaultProfile(),roster),false),cinematicsEnabled:true};battle=null;displayedBattle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);accountReady=true;
+}
+async function enterAccount(){
+ if(accountOpening)return;accountOpening=true;
+ try{const saved=await account.restore();if(account.user){installAccountProfile(saved);go('home');}else showAccount();}
+ catch(error){showAccount();const p=document.createElement('p');p.className='account-message';p.setAttribute('role','status');p.textContent=error.message;modalContent.querySelector('.account-choice').append(p);if(error.status===409){const button=document.createElement('button');button.className='button outline';button.dataset.action='account-latest';button.textContent='Load latest cloud save';p.after(button);}}
+ finally{accountOpening=false;}
+}
+async function logOut(){
+ if(accountSubmitting)return;accountSubmitting=true;
+ try{await account.logout();accountReady=false;stopAuto();battle=null;displayedBattle=null;profile=defaultProfile();closeModal();go('splash');toast('Logged out. Your progress is saved to your account.');}
+ catch(error){toast(error.message);}
+ finally{accountSubmitting=false;}
+}
+document.addEventListener('submit',async event=>{
+ if(event.target.id!=='account-form')return;event.preventDefault();if(accountSubmitting)return;accountSubmitting=true;
+ const form=event.target,data=new FormData(form),button=form.querySelector('[type="submit"]'),message=form.querySelector('.account-message');button.disabled=true;message.textContent='Connecting…';
+ try{const result=await account.authenticate(form.dataset.mode,{email:data.get('email'),password:data.get('password'),remember:data.get('remember')==='on'});form.querySelector('[name="password"]').value='';if(result.confirmationRequired){message.textContent=result.message;return;}const saved=await account.restore();installAccountProfile(saved);closeModal();go('home');}
+ catch(error){message.textContent=error.message;if(error.status===409){const latest=document.createElement('button');latest.type='button';latest.className='button outline';latest.dataset.action='account-latest';latest.textContent='Load latest cloud save';message.after(latest);}}
+ finally{button.disabled=false;accountSubmitting=false;}
+});
+window.addEventListener('online',()=>account.flush().catch(()=>{}));
+document.addEventListener('visibilitychange',()=>{if(document.hidden)account.flush().catch(()=>{});});
+setInterval(()=>{if(account.pending&&!account.conflict)account.flush().catch(()=>{});},15000);
+
 function toast(text){notice.textContent=text;notice.classList.add('show');clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>notice.classList.remove('show'),4400);}
 function brand(){return `<a class="brand" href="./" data-action="home" aria-label="Warband Legends home"><span class="brand-sigil"><img src="./assets/brand/warband-crest.webp" alt=""></span><span class="brand-name"><img class="title-wordmark" src="./assets/brand/warband-wordmark.png" alt="Warband Legends" width="2000" height="429"></span></a>`;}
 let combatPractice=null;
@@ -211,9 +243,12 @@ function tapTile(index){if(busy||screen!=='battle'||pendingCaster)return;if(sele
 function openPlayerProfile(){openModal('Your Profile',profileEditorHTML(profile),'profile-editor');mountProfileEditor(modalContent,{avatar:profile.avatar,onAvatar:avatar=>{profile={...profile,avatar};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);},onName:name=>{profile={...profile,name};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);}});}
 function closeModal(){stopEndingMontage();stopStoryDialogue();if(modal.dataset.view==='battle-exit'){drag=null;edgeTap=null;suppressClickUntil=0;clearBattleEffects();displayedBattle=null;if(screen==='battle'&&battle)renderBattle();}if(modal.dataset.view==='chapter-story')stopCinematic();if(modal.open)modal.close();modal.dataset.view='';scheduleAuto();}
 document.addEventListener('click',event=>{
-  const button=event.target.closest('[data-action]');if(!button||button.disabled)return;const {action,id,uid,stage,color,index}=button.dataset;
+  const button=event.target.closest('[data-action]');if(!button||button.disabled||accountSubmitting)return;const {action,id,uid,stage,color,index}=button.dataset;
   if(button.tagName==='A')event.preventDefault();
   if(['tile','hero','enemy'].includes(action)&&autoEnabled){stopAuto();if(screen==='battle'&&!busy)renderBattle();}
+  if(action==='account-mode'){if(!accountSubmitting)showAccount(button.dataset.mode);return;}
+  if(action==='account-logout'){logOut();return;}
+  if(action==='account-latest'){account.restore(true).then(saved=>{installAccountProfile(saved);closeModal();go('home');}).catch(error=>toast(error.message));return;}
   if(action==='play-intro'){playIntro(profile,reducedAnimation());return;}
   if(action==='practice-reward'){questState='ready';go('quests');return;}
   if(action==='auto-battle'){if(combatPractice)return;if(!battle||battle.phase!=='playing')return;if(autoEnabled)stopAuto();else{manualBattleSpeed=battleSpeed;autoEnabled=true;battleSpeed=2;pendingCaster=null;selectedRune=null;}if(!busy)renderBattle();else{button.textContent=autoEnabled?'Auto On':'Auto Off';button.setAttribute('aria-pressed',String(autoEnabled));button.classList.toggle('active',autoEnabled);}return;}
@@ -263,7 +298,7 @@ document.addEventListener('click',event=>{
   if(action==='gem-confirm'){const r=buyWithGems(profile,id);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);closeModal();renderShell('shop');toast(r.offer.name+' purchased.');return;}
   if(action==='claim-quest'){const result=claimQuest(profile,id,roster);if(result.error)toast(result.error);else{profile=result.profile;persist(PROFILE_KEY,profile);renderShell('quests');toast('Quest rewards added to your inventory.');announceTutorialCompletion();}return;}
 
-  if(action==='restart-preview'){openModal('Restart your journey?',`<p>This will erase this browser's Warband Legends progress, champions, resources, quests and current battle. You will begin again with the starter team.</p><div class="modal-actions"><button class="button outline" data-action="close">Keep progress</button><button class="button gold" data-action="restart-confirm">Erase progress and restart</button></div>`,'restart');return;}
+  if(action==='restart-preview'){openModal('Restart your journey?',`<p>This will erase your account’s Warband Legends progress, champions, resources, quests and current battle. You will begin again with the starter team.</p><div class="modal-actions"><button class="button outline" data-action="close">Keep progress</button><button class="button gold" data-action="restart-confirm">Erase progress and restart</button></div>`,'restart');return;}
   if(action==='restart-confirm'&&modal.dataset.view==='restart'){restartJourney();return;}
 
   if(action==='close'){if(modal.dataset.view==='ritual')finishRitual(true);else closeModal();return;}
@@ -345,9 +380,9 @@ function abandonBattle(){
   if(profile?.weeklyEntry){profile={...profile,weeklyEntry:null};persist(PROFILE_KEY,profile);}
   if(profile?.eventEntry){profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);}
 }
-window.addEventListener('pagehide',()=>{abandonBattle();courtyardView?.destroy();courtyardView=null;});
+window.addEventListener('pagehide',()=>{abandonBattle();account.flush().catch(()=>{});courtyardView?.destroy();courtyardView=null;});
 window.addEventListener('pageshow',event=>{if(event.persisted)renderRoute();});
-function go(path){const hash='#/'+path;if(location.hash!==hash)history.pushState(null,'',hash);renderRoute();}
+function go(path){if(path!=='splash'&&!accountReady){enterAccount();return;}const hash='#/'+path;if(location.hash!==hash)history.pushState(null,'',hash);renderRoute();}
 function requestBattleExit(destination){battlePresentationEpoch++;clearBattleEffects();displayedBattle=null;drag=null;edgeTap=null;pendingCaster=null;selectedRune=null;if(screen==='battle'&&battle)renderBattle();openModal('Exit battle?','<p>This battle will be abandoned.</p><div class="modal-actions"><button class="button outline" data-action="close">Stay in battle</button><button class="button gold" data-action="home" data-leave-battle="true" data-page="'+esc(destination)+'">Exit battle</button></div>','battle-exit');}
 function handleHashNavigation(){
  const destination=location.hash.replace(/^#\/?/,'')||'splash';
@@ -361,6 +396,7 @@ let weeklyRefreshTimer=null;
 
 function renderRoute(){
   if(!profile)return;
+  if(!accountReady&&location.hash&&location.hash!=='#/splash'){history.replaceState(null,'','#/splash');renderRoute();enterAccount();return;}
   stopCinematic();clearTimeout(weeklyRefreshTimer);
   syncEnergy();
   document.body.classList.toggle('reduce-animation',reducedAnimation());
@@ -382,7 +418,7 @@ function renderRoute(){
   window.scrollTo({top:0,behavior:'instant'});if(page!=='battle'&&page!=='splash')announceTutorialCompletion();
 }
 function announceTutorialCompletion(){if(!tutorialFinished(profile)||tutorialState(profile).celebrated||modal.open)return;profile={...profile,onboardingComplete:true,tutorial:{...tutorialState(profile),celebrated:true}};persist(PROFILE_KEY,profile);openModal('You’re ready to start your adventure!',`<img class="tutorial-complete-trophy" src="./assets/items/tutorial-complete-trophy.webp" alt="Tutorial complete trophy" width="180" height="180"><p>Your warband is ready.</p><p>Your adventure begins in the campaign.</p><div class="modal-actions"><button class="button outline" data-action="close">Keep Exploring</button><button class="button gold" data-action="nav" data-page="campaign">Start My Adventure</button></div>`,'tutorial-complete');}
-function openGuide(topic,effectKind='buff'){const next=recordTutorial(profile,'guide');if(next!==profile){profile=next;persist(PROFILE_KEY,profile);const card=app.querySelector('.first-steps');if(card)card.outerHTML=firstStepsHTML(profile,screen);}openModal('The Guide',guideHTML(topic,byId.get(app.querySelector('.champion-page')?.dataset.championId),effectKind,profile),'page-guide');}
+function openGuide(topic,effectKind='buff'){const next=recordTutorial(profile,'guide');if(next!==profile){profile=next;persist(PROFILE_KEY,profile);const card=app.querySelector('.first-steps');if(card)card.outerHTML=firstStepsHTML(profile,screen);}openModal('The Guide',guideHTML(topic,byId.get(app.querySelector('.champion-page')?.dataset.championId),effectKind,profile,account.user),'page-guide');}
 function shellFrame(page,body){clearTimeout(boosterExpiryTimer);const active=page==='daily'?'home':page!=='shop'&&(page==='campaign'||page==='dungeons'||page==='weekly'||Shell.MODES[page])?'world':page==='champion'?'roster':page;app.innerHTML=`${header(active,page)}<main class="game-page page-${page}">${firstStepsHTML(profile,page)}${body}</main>`;}
 function renderShell(page,center=true){screen=page;const next=recordTutorial(profile,page==='shop'?shopTab==='supplies'?'shop':shopTab:page==='inventory'?'inventory':'');if(next!==profile){profile=next;persist(PROFILE_KEY,profile);}const body=page==='world'?Shell.world():page==='campaign'?Shell.campaign(profile,{difficulty:campaignDifficulty}):page==='dungeons'?Shell.dungeons(profile,{difficulty:dungeonDifficulty}):page==='arena'?Shell.arena(profile,roster,{selected:selectedArena}):page==='events'?Shell.events(profile,{selected:selectedEvent}):page==='shop'?Shell.exchangePage(profile,{tab:shopTab,choices:exchangeChoices,inventoryHtml:Shell.inventory(profile)}):page==='summon'?Shell.portal(profile,roster,{charging:summoning,reveal:portalReveal}):page==='quests'?Shell.quests(profile,{limit:questLimit||(innerWidth<600?6:12),state:questState}):page==='inventory'?Shell.inventory(profile):page==='daily'?dailyPage(profile,roster):Shell.foundation(page);shellFrame(page,body);if(page==='daily')weeklyRefreshTimer=setTimeout(()=>{if(screen==='daily')renderShell('daily');},Math.max(100,+weeklyWindow().reset-Date.now()+100));if(page==='inventory'||page==='shop'&&shopTab==='inventory'){const now=Date.now(),expiry=Object.values(profile.boosters||{}).filter(t=>t>now).sort((a,b)=>a-b)[0];if(expiry)boosterExpiryTimer=setTimeout(()=>{if(screen==='inventory'||screen==='shop'&&shopTab==='inventory')renderShell('shop');},Math.min(2147483647,expiry-now+10));}if(page==='arena')mountArenaScene(app.querySelector('.arena-scene'),{selected:selectedArena,onSelect:index=>{selectedArena=index;}});if(page==='campaign'&&center){const viewport=document.querySelector('.campaign-map-viewport'),node=viewport?.querySelector('[data-current="true"]');if(node){viewport.scrollLeft=node.offsetLeft-viewport.clientWidth/2;viewport.scrollTop=node.offsetTop-viewport.clientHeight/2;}}}
 function feedingTarget(){return filterChampions(ownedHeroes(profile,roster),profile,{...DEFAULT_FILTERS}).find(c=>!heroDevelopment(profile,c).atCap);}
@@ -399,9 +435,9 @@ async function openPortal(count=1){
  if(reduced){finishRitual();return;}openModal('A soul crosses the threshold',ritualHTML(result,'arriving'),'ritual');await new Promise(resolve=>setTimeout(resolve,RITUAL_TIMING.arriving));if(token!==summonToken||screen!=='summon')return;finishRitual();
 }
 modal.addEventListener('cancel',event=>{if(modal.dataset.view==='result'){event.preventDefault();return;}if(modal.dataset.view==='ritual'){event.preventDefault();finishRitual(true);}});
-function restartJourney(){const oldProfile=storage.getItem(PROFILE_KEY),oldBattle=storage.getItem(BATTLE_KEY),fresh=defaultProfile();try{storage.setItem(PROFILE_KEY,JSON.stringify(fresh));storage.removeItem(BATTLE_KEY);}catch{try{if(oldProfile===null)storage.removeItem(PROFILE_KEY);else storage.setItem(PROFILE_KEY,oldProfile);if(oldBattle!==null)storage.setItem(BATTLE_KEY,oldBattle);}catch{}toast('Restart failed. Your saved progress is still available.');return;}profile=fresh;battle=null;displayedBattle=null;byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));go('splash');toast('A new journey begins.');}
+function restartJourney(){const oldProfile=storage.getItem(PROFILE_KEY),oldBattle=storage.getItem(BATTLE_KEY),fresh=defaultProfile();try{storage.setItem(PROFILE_KEY,JSON.stringify(fresh));storage.removeItem(BATTLE_KEY);}catch{try{if(oldProfile===null)storage.removeItem(PROFILE_KEY);else storage.setItem(PROFILE_KEY,oldProfile);if(oldBattle!==null)storage.setItem(BATTLE_KEY,oldBattle);}catch{}toast('Restart failed. Your saved progress is still available.');return;}profile=fresh;persist(PROFILE_KEY,profile);battle=null;displayedBattle=null;byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));go('splash');toast('A new journey begins.');}
 window.addEventListener('hashchange',handleHashNavigation);
-document.addEventListener('keydown',event=>{if(screen==='splash'&&event.key==='Enter'&&!event.repeat){event.preventDefault();go('home');}});
+document.addEventListener('keydown',event=>{if(screen==='splash'&&!modal.open&&event.key==='Enter'&&!event.repeat){event.preventDefault();go('home');}});
 document.addEventListener('change',async event=>{
  if(event.target.matches('[data-exchange-currency]')){const key=event.target.dataset.exchangeCurrency;exchangeChoices[key]=event.target.value;const offers=event.target.closest('.exchange-offers');offers.innerHTML=Shell.exchangeOffers(profile,exchangeChoices);offers.querySelector(`[data-exchange-currency="${key}"]`).focus();return;}
 
@@ -411,12 +447,12 @@ document.addEventListener('change',async event=>{
 
 });
 async function boot(){try{
-  const responses=await Promise.all([fetch('./data/champions.json?v=0.52.1'),fetch('./data/effects.json?v=0.52.1')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile={...setOpenRoster(loadProfile(storage,roster),false),cinematicsEnabled:true};byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
+  const responses=await Promise.all([fetch('./data/champions.json?v=0.52.1'),fetch('./data/effects.json?v=0.52.1')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=defaultProfile();renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
 
 function syncEnergy(){
- if(!profile)return;const updated=refreshEnergy(profile);if(updated!==profile){profile=updated;persist(PROFILE_KEY,profile);}
+ if(!profile||accountSubmitting)return;const updated=refreshEnergy(profile);if(updated!==profile){profile=updated;persist(PROFILE_KEY,profile);}
  const e=energyStatus(profile),label=app.querySelector('.energy-amount');if(label){label.textContent=`${e.current}/${e.max}`;label.setAttribute('aria-label',`${e.current} of ${e.max} Energy`);}
 }
 setInterval(syncEnergy,15000);

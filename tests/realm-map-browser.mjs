@@ -1,3 +1,4 @@
+import {accountFixtureResponse} from './account-fixture.mjs';
 import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -11,7 +12,7 @@ async function makeContext({width=390,height=844,withoutMapCSS=false}={}){
  const c=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});
  await c.route('**/*',async route=>{
   const u=new URL(route.request().url());if(u.hostname!=='legends.local'){errors.push('External '+u.hostname);return route.abort();}
-  try{const file=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));let body=await fs.readFile(file);if(withoutMapCSS&&file.endsWith('/realm-map.css'))body=Buffer.from('');await route.fulfill({body,contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.woff':'font/woff'})[path.extname(file)]});}
+  try{const file=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));let body=accountFixtureResponse(file,await fs.readFile(file));if(withoutMapCSS&&file.endsWith('/realm-map.css'))body=Buffer.from('');await route.fulfill({body,contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.woff':'font/woff'})[path.extname(file)]});}
   catch(e){errors.push('Missing '+u.pathname);await route.fulfill({status:404,body:'missing'});}
  });
  await c.addInitScript(({p,key})=>localStorage.setItem(key,JSON.stringify(p)),{p:defaultProfile(),key:PROFILE_KEY});return c;

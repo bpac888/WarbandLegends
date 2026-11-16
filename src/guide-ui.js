@@ -1,3 +1,4 @@
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 import {factionGuideHTML} from './faction-ui.js?v=0.52.1';
 import {EFFECTS} from './effects.js?v=0.52.1';
 import {effectIcon} from './icons.js?v=0.52.1';
@@ -34,8 +35,8 @@ function effectsGuideHTML(kind){
  const cards=Object.keys(EFFECTS).filter(id=>selected==='action'?!EFFECTS[id].timed:EFFECTS[id].timed&&EFFECTS[id].cat===selected);
  return `<div class="codex-tabs" role="group" aria-label="Effect categories">${effectKinds.map(([key,label])=>`<button class="${key===selected?'active':''}" aria-pressed="${key===selected}" data-action="guide-effects" data-kind="${key}">${label}</button>`).join('')}</div><div class="effect-key">${selected==='debuff'?'<p><b>DoT:</b> Poison, Burn, Frostbite, Bleed each deal 4% max HP per move, bypassing DEF and barriers. Different types stack; repeats refresh.</p><p><b>Elemental DEF Down:</b> −25% effective DEF against that color. Stacks with DEF Down and Pierce.</p>':''}</div><div class="effect-codex">${cards.map(id=>effectCard(id,'',false,true)).join('')}</div>`;
 }
-export function guideHTML(id='overview',champion=null,effectKind='buff',profile={}){
+export function guideHTML(id='overview',champion=null,effectKind='buff',profile={},account=null){
  const key=['heroes','growth','overview'].includes(id)?'battles':id;
  const selected=topics.find(t=>t[0]===key)||topics[0];
- return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='tools'?`<div class="guide-tools"><button class="button outline" data-action="nav" data-page="splash">Title Screen</button><button class="button outline guide-restart" data-action="restart-preview">Restart Journey</button></div>`:selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}</section></div>`;
+ return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='tools'?`<div class="guide-tools">${account?`<p class="account-save-status">Signed in as ${esc(account.email)}. Progress saves automatically.</p><button class="button outline" data-action="account-logout">Log out</button>`:''}<button class="button outline" data-action="nav" data-page="splash">Title Screen</button><button class="button outline guide-restart" data-action="restart-preview">Restart Journey</button></div>`:selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}</section></div>`;
 }

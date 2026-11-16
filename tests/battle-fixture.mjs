@@ -1,10 +1,11 @@
+import {accountFixtureResponse} from './account-fixture.mjs';
 // Instrument only test-served app.js responses. Production builds never include this
 // fixture adapter: battles there stay solely in memory and cannot be restored.
 // Existing combat suites can stage engine fixtures and inspect the live battle
 // through their original Storage calls without making the game persist encounters.
 export function battleFixtureResponse(file,body){
  if(!file.endsWith('/src/app.js'))return body;
- let source=body.toString();
+ let source=accountFixtureResponse(file,body).toString();
  const marker="  if(page!=='battle'&&battle)abandonBattle();";
  if(!source.includes(marker))throw new Error('Battle fixture route marker not found');
  source=source.replace(marker,`  if(page==='battle'){

@@ -91,7 +91,8 @@
     "test:dialogue": "node tests/dialogue-animation-browser.mjs",
     "test:tutorial-refinements": "node tests/tutorial-refinement-browser.mjs",
     "test:palette": "node tests/interface-palette-browser.mjs && node tests/battle-palette-browser.mjs",
-    "test:training-layout": "node tests/training-layout-browser.mjs"
+    "test:training-layout": "node tests/training-layout-browser.mjs",
+    "test:accounts": "node tests/accounts-browser.mjs"
   },
   "engines": {
     "node": ">=22"

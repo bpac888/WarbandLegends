@@ -1,3 +1,4 @@
+import {accountFixtureResponse} from './account-fixture.mjs';
 import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -13,7 +14,7 @@ try{
   const u=new URL(route.request().url());
   if(u.hostname!=='legends.local'){errors.push('external '+u.hostname);return route.abort();}
   if(u.pathname==='/capture')return route.fulfill({contentType:'text/html',body:'<style>html,body{margin:0}canvas{display:block}</style>'});
-  try{const file=path.join(root,u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:await fs.readFile(file),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(file)]});}
+  try{const file=path.join(root,u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:accountFixtureResponse(file,await fs.readFile(file)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(file)]});}
   catch{errors.push('missing '+u.pathname);await route.abort();}
  });
  await context.addInitScript(({key,p})=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(p));},{key:PROFILE_KEY,p:{...defaultProfile(),helpSeen:true}});
