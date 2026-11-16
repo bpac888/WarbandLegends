@@ -1,25 +1,15 @@
-import {LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.52.0';
-import {factionGuideHTML} from './faction-ui.js?v=0.52.0';
-import {EFFECTS} from './effects.js?v=0.52.0';
-import {effectIcon} from './icons.js?v=0.52.0';
-import {SUMMON_ODDS} from './progression.js?v=0.52.0';
-import {heroInsight} from './tactics-ui.js?v=0.52.0';
-export const guideTopics={roster:'growth',champion:'growth',summon:'summon'};
+import {factionGuideHTML} from './faction-ui.js?v=0.52.1';
+import {EFFECTS} from './effects.js?v=0.52.1';
+import {effectIcon} from './icons.js?v=0.52.1';
+import {SUMMON_ODDS} from './progression.js?v=0.52.1';
+export const guideTopics={roster:'battles',champion:'battles',summon:'summon'};
 const battleRules=[
  ['Elements','<img class="element-advantages" src="./assets/guide/element-advantages.webp" alt="Red beats Green; Green beats Blue; Blue beats Red. Yellow and Purple are strong against each other.">'],
 
- ['Mana','Empty lanes: 2× mana. Specials spend all charge, no move. Enemies: +4 charge per attack opportunity.'],
+ ['Mana','Empty lanes: 2× mana. Specials use the highest ready charge and spend all mana, no move. Enemies: +4 charge per attack opportunity.'],
 ];
 const topics=[
  ['battles','Battles',[...battleRules,]],
- ['growth','Heroes',[
-
-  ['Boosters & Tomes','Boosters: +25% feeding XP or battle Gold for 24h; 1 active per type. Activate in Inventory. Ascension / Limit Break Tomes cover materials and Gold for 1 step; Lv. and rarity requirements remain.'],
-  ['Feeding','25 Gold per Common / Rare copy. Rare: 3× Common XP; identical Rare: another 5×. Same element: +25% XP.'],
-
-
-  ['Limit Break',`Rare+: 2 breaks after full ascension. Each: +5 Lv., +3% stats. Second: ${LIMIT_BREAK_BUFF_TURNS}-move role buff at battle start.`],
- ]],
  ['factions','Factions',[['Faction Bonuses',factionGuideHTML()]]],
  ['effects','Effects',[]],
  ['tools','Tools',[]],
@@ -45,7 +35,7 @@ function effectsGuideHTML(kind){
  return `<div class="codex-tabs" role="group" aria-label="Effect categories">${effectKinds.map(([key,label])=>`<button class="${key===selected?'active':''}" aria-pressed="${key===selected}" data-action="guide-effects" data-kind="${key}">${label}</button>`).join('')}</div><div class="effect-key">${selected==='debuff'?'<p><b>DoT:</b> Poison, Burn, Frostbite, Bleed each deal 4% max HP per move, bypassing DEF and barriers. Different types stack; repeats refresh.</p><p><b>Elemental DEF Down:</b> −25% effective DEF against that color. Stacks with DEF Down and Pierce.</p>':''}</div><div class="effect-codex">${cards.map(id=>effectCard(id,'',false,true)).join('')}</div>`;
 }
 export function guideHTML(id='overview',champion=null,effectKind='buff',profile={}){
- const key=id==='heroes'?'growth':id==='overview'?'battles':id;
+ const key=['heroes','growth','overview'].includes(id)?'battles':id;
  const selected=topics.find(t=>t[0]===key)||topics[0];
- return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='tools'?`<div class="guide-tools"><button class="button outline" data-action="nav" data-page="splash">Title Screen</button><label class="guide-playtesting" for="cinematic-preference"><span><b>Character cinematics</b><small>Portrait animations and summon reveals.</small></span><input type="checkbox" id="cinematic-preference" ${profile.cinematicsEnabled!==false?'checked':''}></label><label class="guide-playtesting" for="open-roster"><span><b>Playtesting</b><small>Maximum-level heroes; no rewards or progress.</small></span><input type="checkbox" id="open-roster" ${profile.openRoster?'checked':''}></label><button class="button outline guide-restart" data-action="restart-preview">Restart Journey</button></div>`:selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}${champion&&selected[0]==='growth'?heroInsight(champion):''}</section></div>`;
+ return `<div class="guide-layout"><nav aria-label="Guide topics">${topics.map(([key,label])=>`<button class="${key===selected[0]?'active':''}" aria-pressed="${key===selected[0]}" data-action="guide-topic" data-topic="${key}">${label}</button>`).join('')}</nav><section aria-label="${selected[1]}">${selected[0]==='tools'?`<div class="guide-tools"><button class="button outline" data-action="nav" data-page="splash">Title Screen</button><button class="button outline guide-restart" data-action="restart-preview">Restart Journey</button></div>`:selected[0]==='effects'?effectsGuideHTML(effectKind):selected[2].map(([title,body])=>`<article><h3>${title}</h3>${content(body)}</article>`).join('')}</section></div>`;
 }

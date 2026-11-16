@@ -7,7 +7,7 @@ const ROOT=new URL('../',import.meta.url).pathname;
 const PREVIEW=ROOT+'artifacts';
 const fs=require('node:fs/promises'),path=require('node:path'),assert=require('node:assert/strict');
 (async()=>{
- const {createBattle,validMoves}=await import(new URL('../src/engine.js',import.meta.url));
+ const {createBattle,validMoves,cast}=await import(new URL('../src/engine.js',import.meta.url));
  const {STARTER_TEAM,defaultProfile}=await import(new URL('../src/storage.js',import.meta.url));
  const roster=JSON.parse(await fs.readFile(ROOT+'data/champions.json','utf8'));
  await fs.mkdir(PREVIEW,{recursive:true});
@@ -46,19 +46,19 @@ const fs=require('node:fs/promises'),path=require('node:path'),assert=require('n
  const from=await page.locator(`[data-index="${dragMove[0]}"]`).boundingBox(),to=await page.locator(`[data-index="${dragMove[1]}"]`).boundingBox();
  await page.mouse.move(from.x+from.width/2,from.y+from.height/2);await page.mouse.down();await page.mouse.move(to.x+to.width/2,to.y+to.height/2,{steps:5});await page.mouse.up();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).moves),1);
  for(const width of [390,320]){await page.setViewportSize({width,height:844});await page.screenshot({path:`${PREVIEW}/mobile-${width}-battle.png`,fullPage:true});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`overflow at ${width}`);const tile=await page.locator('.tile').first().boundingBox();assert.ok(tile.width>=30);}
- // Three-charge UI: exact gates, holding charge, choosing a lower unlocked level.
+ // Three-charge UI: automatically use the highest ready tier, with normal enemy targeting.
  const three=roster.find(c=>c.id==='azure_sovereign'),threeTeam=[three.id,...STARTER_TEAM.slice(0,4)];
  for(const [amount,available] of [[5,1],[10,2],[15,3]]){
   const state=createBattle(roster,threeTeam,'ashen-gate',444);state.heroes[0].mana=amount;
   await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v5',JSON.stringify(s)),state);await reloadBattle();
   assert.equal(await page.locator('.hero-unit').first().locator('.charge-notch').count(),2);
-  await page.locator('[data-action="hero"][data-uid="hero-0"]').click();assert.equal(await page.locator('[data-action="choose-charge"]:enabled').count(),available);
-  assert.equal(await page.locator('.special-level').count(),3);assert.ok(await page.evaluate(()=>document.querySelector('#modal').scrollWidth<=document.querySelector('#modal').clientWidth));
-  if(amount===10)await page.screenshot({path:PREVIEW+'/mobile-charge-levels.png',fullPage:true});
-  await page.getByRole('button',{name:'Close dialog'}).click();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).heroes[0].mana),amount);
-  await page.locator('[data-action="hero"][data-uid="hero-0"]').click();await page.getByRole('button',{name:'Cast Charge '+available,exact:true}).click();await page.locator('[data-action="enemy"][data-uid="enemy-0"]').click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));
-  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')));assert.equal(saved.heroes[0].mana,0);assert.equal(saved.moves,0);assert.ok(saved.log.some(l=>l.text.includes('Charge '+available)));
+  await page.locator('[data-action="hero"][data-uid="hero-0"]').click();assert.equal(await page.locator('[data-action="choose-charge"]').count(),0);assert.equal(await page.locator('#modal[open]').count(),0);
+  if(amount===10)await page.screenshot({path:PREVIEW+'/mobile-charge-targeting.png',fullPage:true});
+  await page.locator('[data-action="cancel-cast"]').click();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')).heroes[0].mana),amount);
+  await page.locator('[data-action="hero"][data-uid="hero-0"]').click();await page.locator('[data-action="enemy"][data-uid="enemy-0"]').click();await page.waitForFunction(()=>!document.querySelector('.board.resolving'));
+  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('legends.runes.battle.v5')));assert.deepEqual(saved,cast(state,'hero-0','enemy-0',available).state);
  }
+
  const affected=createBattle(roster,STARTER_TEAM,'ashen-gate',555);affected.heroes[1].effects={shield:{turns:2,source:'hero-1',appliedMove:0},guard:{turns:2,source:'hero-1',appliedMove:0}};affected.heroes[1].shield=200;
  await page.evaluate(s=>localStorage.setItem('legends.runes.battle.v5',JSON.stringify(s)),affected);await reloadBattle();
  await page.locator('.hero-unit').nth(1).getByRole('button',{name:/Barrier on/}).click();assert.ok(await page.getByRole('heading',{name:'Barrier',exact:true}).isVisible());assert.ok(await page.getByRole('heading',{name:'Taunt',exact:true}).isVisible());await page.screenshot({path:PREVIEW+'/mobile-active-effects.png',fullPage:true});await page.getByRole('button',{name:'Close dialog'}).click();

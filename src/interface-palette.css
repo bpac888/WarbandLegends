@@ -333,3 +333,15 @@ body.menu-theme .warband-section>.entry-team-bonuses b,body #modal[data-view=ros
 body.menu-theme .warband-section>.entry-team-bonuses p,body #modal[data-view=roster] #draft-team .entry-team-bonuses p{margin:2px 0 0;font-size:12px;line-height:1.35;color:var(--paper-copy)}
 body #modal[data-view=roster] #draft-team .entry-team-bonuses{display:flex;flex-wrap:wrap;gap:4px 14px;padding:2px 0}
 body #modal[data-view=roster] #draft-team .entry-team-bonuses article{padding:0;margin:0}
+
+/* Compact two-column faction reference, including phone-sized guide dialogs. */
+body #modal[data-view=page-guide] .faction-guide-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:6px}
+body #modal[data-view=page-guide] .faction-guide-list>details{min-width:0;margin:0;border-radius:8px}
+body #modal[data-view=page-guide] .faction-guide-list summary{display:flex;align-items:center;justify-content:space-between;gap:5px;list-style:none;cursor:pointer;padding:9px 8px;font-size:13px;line-height:1.25;color:var(--paper-ink)}
+body #modal[data-view=page-guide] .faction-guide-list summary::-webkit-details-marker{display:none}
+body #modal[data-view=page-guide] .faction-guide-list summary::after{content:'⌄';flex:none;font-size:14px;color:var(--paper-crimson-dark)}
+body #modal[data-view=page-guide] .faction-guide-list details[open]>summary::after{content:'⌃'}
+body #modal[data-view=page-guide] .faction-guide-list dl{padding:0 8px 8px;margin:0}
+body #modal[data-view=page-guide] .faction-guide-list dl>div{padding:5px 0;margin:0}
+body #modal[data-view=page-guide] .faction-guide-list dt{font-size:11px;font-weight:600;margin:0 0 2px;color:var(--paper-crimson-dark)}
+body #modal[data-view=page-guide] .faction-guide-list dd{font-size:12px;line-height:1.35;margin:0;color:var(--paper-copy)}

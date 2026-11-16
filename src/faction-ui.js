@@ -1,4 +1,4 @@
-import {FACTION_BONUSES,factionGroups,factionRule} from './faction-bonuses.js?v=0.52.0';
+import {FACTION_BONUSES,factionGroups,factionRule} from './faction-bonuses.js?v=0.52.1';
 const tierLabel=(f,t)=>f==='goblins'?'1+':f==='magic'?t:f==='djedi'?'2+':t===3?'3+':2;
 export function factionTeamHTML(team,{flat=false}={}){
  const groups=factionGroups(team);
@@ -11,4 +11,14 @@ export function factionUnitHTML(unit){
  const own=Object.keys(factionRule(unit)).length;
  return `<p class="faction-unit-bonus">${own?`<b>${FACTION_BONUSES[unit.faction].name} · ${tierLabel(unit.faction,unit.factionTier)} Faction Bonus</b>`:''}${unit.faction==='goblins'&&own?'<span>70% chance to resist new Mana Slow or Mana Block applications</span>':''}${unit.factionManaBonus?`<span>Magic Aura · +${Math.round(unit.factionManaBonus*100)}% mana generation</span>`:''}${unit.factionStacks?`<span>Umbral Growth ×${unit.factionStacks} · +${unit.factionStacks*2}% ATK / DEF / HP</span>`:''}</p>`;
 }
-export function factionGuideHTML(){return `<div class="faction-guide"><div class="faction-guide-list">${Object.values(FACTION_BONUSES).map(f=>`<details><summary>${f.name}</summary><dl>${Object.entries(f.tiers).map(([tier,rule])=>`<div><dt>${f.name==='Goblins'?'1+':f.name==='Magic'?tier:f.name==='Winded Guild'?'2+':Number(tier)===3?'3+':tier} ${tier==='1'&&f.name!=='Goblins'?'Member':'Members'}</dt><dd>${rule.text}</dd></div>`).join('')}</dl></details>`).join('')}</div></div>`;}
+const factionGuideRules=(id,f)=>{
+ if(id==='magic')return [['1+',{text:'Each Magic champion gives all allies +5% mana generation. Stacks up to +25%.'}]];
+ return Object.entries(f.tiers).map(([tier,rule])=>{let text=rule.text;
+ if(id==='goblins')text='70% chance to block Mana Slow or Mana Block. Goblins only; non-stacking.';
+ if(id==='djedi')text='+10% ATK to Winded Guild members. Non-stacking.';
+ if(id==='nether')text=`Battle start: ${rule.openingChance===1?'each member gains':Math.round(rule.openingChance*100)+'% chance per member for'} ${Math.round(rule.openingMana*100)}% max mana.`;
+ if(id==='umbra')text=`Each member: ${Math.round(rule.growthChance*100)}% chance per turn for +2% ATK, DEF and HP. Stacks.`;
+ if(id==='chymera')text=rule.extendChance===1?'Special ailments last 1 extra turn.':'50% chance to extend Special ailments by 1 turn.';
+ text=text.replace('Tailwind Guard: ','');return [tier,{text}];});
+};
+export function factionGuideHTML(){return `<div class="faction-guide"><div class="faction-guide-list">${Object.entries(FACTION_BONUSES).map(([id,f])=>`<details><summary>${f.name}</summary><dl>${factionGuideRules(id,f).map(([tier,rule])=>`<div><dt>${id==='goblins'||id==='magic'?'1+':id==='djedi'?'2+':Number(tier)===3?'3+':tier} Members</dt><dd>${rule.text}</dd></div>`).join('')}</dl></details>`).join('')}</div></div>`;}

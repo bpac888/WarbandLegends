@@ -1,5 +1,5 @@
-import {swap,activate,cast,validMoves,living,manaLevels,readyLevel} from './engine.js?v=0.52.0';
-import {EFFECTS} from './effects.js?v=0.52.0';
+import {swap,activate,cast,validMoves,living,manaLevels,readyLevel} from './engine.js?v=0.52.1';
+import {EFFECTS} from './effects.js?v=0.52.1';
 
 const quiet={frames:false};
 export function applyAutoAction(state,action,options=quiet){
@@ -8,7 +8,7 @@ export function applyAutoAction(state,action,options=quiet){
  return swap(state,action.a,action.b,options);
 }
 function boardActions(state){return [...validMoves(state.board).map(([a,b])=>({kind:'swap',a,b})),...state.board.flatMap((t,index)=>t.special?[{kind:'activate',index}]:[])];}
-function specials(state){return living(state.heroes).flatMap(h=>manaLevels(h).filter(l=>h.mana>=l.tiles).flatMap(l=>(l.target==='self'?[h]:living(l.target==='ally'?state.heroes:state.enemies)).map(t=>({kind:'cast',actor:h.uid,target:t.uid,level:l.level}))));}
+function specials(state){return living(state.heroes).flatMap(h=>manaLevels(h).filter(l=>l.level===readyLevel(h)).flatMap(l=>(l.target==='self'?[h]:living(l.target==='ally'?state.heroes:state.enemies)).map(t=>({kind:'cast',actor:h.uid,target:t.uid,level:l.level}))));}
 // Value survival, finishing threats, usable mana and counters. Simulations resolve
 // actual defense, elements, wards, Taunt, healing, passives and guardian phases.
 export function autoPositionValue(state){

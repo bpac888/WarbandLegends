@@ -50,7 +50,7 @@ test('aura multiplies Mana Flow and other matching-faction bonuses, respects Man
  const mixed=fixture(1);for(const h of mixed.b.heroes.slice(1,4))mixed.roster.find(c=>c.id===h.id).faction='veldtborn';
  const team=createBattle(mixed.roster,mixed.b.heroes.map(h=>h.id),'ashen-gate',42);
  assert.ok(team.heroes.every(h=>h.factionManaBonus===.05));assert.equal(team.heroes[1].factionTier,3);team.board=structuredClone(mixed.b.board);team.enemies.forEach(e=>{e.hp=e.maxHp=10000000;});assert.equal(firstMatch(team).heroes[1].mana,4.095);
- assert.match(factionGuideHTML(),/Magic/);assert.match(factionGuideHTML(),/1 Member/);assert.match(factionGuideHTML(),/25%/);
+ assert.match(factionGuideHTML(),/Magic/);assert.match(factionGuideHTML(),/1\+ Members/);assert.match(factionGuideHTML(),/25%/);
 });
 
 test('all six Specials resolve, work with Auto, join the correct summon pools and preserve saves',()=>{
