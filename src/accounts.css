@@ -1,0 +1,10 @@
+#modal[data-view="account"]{width:min(360px,calc(100vw - 32px));max-height:calc(100dvh - 32px);border:1px solid #a18756;border-radius:14px;background:#18232b;color:#f4eddf;box-shadow:0 24px 80px #0009}
+#modal[data-view="account"]::backdrop{background:#081119ad;backdrop-filter:blur(5px)}
+#modal[data-view="account"] .modal-header{padding:20px 22px 8px}#modal[data-view="account"] .modal-body{padding:10px 22px 22px}
+#account-form,.account-choice{display:flex;flex-direction:column;gap:12px}#account-form>label:not(.account-remember){font-size:13px;margin-bottom:-6px}#account-form>input{box-sizing:border-box;min-width:0;width:100%;padding:11px 12px;border:1px solid #75828b;border-radius:6px;background:#0e1821;color:#fff;font-size:16px}#account-form input:focus-visible{outline:2px solid #dfc084;outline-offset:2px}#account-form .account-remember{display:flex;align-items:center;gap:9px;font-size:14px}#account-form .account-remember input{width:17px;height:17px;accent-color:#b89658}#account-form small,.account-choice p{color:#d4d4cf}#account-form .account-message{font-size:13px;margin:0;line-height:1.5;color:#f4d9ad}#account-form .account-message:empty{display:none}.account-save-status{font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+/* Keep the compact account dialog readable within the game's parchment palette. */
+body #modal[data-view="account"],body #modal[data-view="account"] .modal-body{background:#f3ebdc;color:#362d2a}
+body #modal[data-view="account"] .modal-header{padding:18px 22px 10px;background:#e8d6ad}
+body #modal[data-view="account"] #account-form .text-button{color:#754329}
+body #modal[data-view="account"] :is(.account-choice p,#account-form small,#account-form .account-message){color:#684a37}
+body #modal[data-view="account"] #account-form>input{background:#fffaf0;color:#362d2a}

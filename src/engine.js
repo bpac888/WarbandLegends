@@ -1,14 +1,15 @@
-import {initializeWeekly,weeklyRunes,weeklyDamage,weeklyCopy,weeklyMirror,weeklyBeforeEnemies,weeklyFinish,weeklyAfterAction,weeklyUnitSpecial} from './weekly-combat.js?v=0.52.1';
-import {weeklyWindow,weeklyDetails,validWeeklyBattle} from './weekly.js?v=0.52.1';
-import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.52.1';
-import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.52.1';
-import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.52.1';
-import {SCENARIOS,validScenario} from './chapter.js?v=0.52.1';
+import {CHAMPIONSHIP_RULES} from './championship-catalog.js?v=0.53.1';
+import {initializeWeekly,weeklyRunes,weeklyDamage,weeklyCopy,weeklyMirror,weeklyBeforeEnemies,weeklyFinish,weeklyAfterAction,weeklyUnitSpecial} from './weekly-combat.js?v=0.53.1';
+import {weeklyWindow,weeklyDetails,validWeeklyBattle} from './weekly.js?v=0.53.1';
+import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.53.1';
+import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.53.1';
+import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.53.1';
+import {SCENARIOS,validScenario} from './chapter.js?v=0.53.1';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
-import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.52.1';
-import {statsAtLevel,levelCap} from './development.js?v=0.52.1';
-import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.52.1';
-export {effectName} from './effects.js?v=0.52.1';
+import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.53.1';
+import {statsAtLevel,levelCap} from './development.js?v=0.53.1';
+import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.53.1';
+export {effectName} from './effects.js?v=0.53.1';
 export const VERSION = 3;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
 export const COLORS = ['red', 'green', 'blue', 'yellow', 'purple'];
@@ -88,12 +89,18 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
   if(stage.mode==='weekly')state.weeklyKey=weeklyKey;
   if(stage.loanTeam){state.progression=true;state.sandbox=options.sandbox===true;for(const h of state.heroes){delete h.awakening;h.level=Math.min(stage.loanLevel,levelCap(byId.get(h.id)));Object.assign(h,statsAtLevel(byId.get(h.id),h.level));h.maxHp=h.hp;}}
   const meanHp=state.heroes.reduce((n,u)=>n+u.hp,0)/5,meanAtk=state.heroes.reduce((n,u)=>n+u.atk,0)/5;
-  state.enemies=stage.enemyIds.map((id,i)=>{
+  const defenseIds=stage.mode==='championships'?options.defense?.ids:stage.enemyIds;
+  if(!Array.isArray(defenseIds)||stage.mode==='championships'&&(defenseIds.length!==5||new Set(defenseIds).size!==5))throw Error('A saved five-champion defense is required.');
+  state.enemies=defenseIds.map((id,i)=>{
     if(!byId.has(id))throw new Error(`Missing enemy ${id}`);
-    const enemy=makeUnit(byId.get(id),'enemy',i);enemy.hp=enemy.maxHp=Math.round(meanHp*stage.hp*(i===1?1.15:1));enemy.atk=Math.round(meanAtk*stage.atk);enemy.def=Math.round(state.heroes.reduce((n,u)=>n+u.def,0)/5*.75);enemy.lanes=enemyLanes(i,stage.enemyIds.length);enemy.countdown=stage.countdown+(i%2);enemy.baseCountdown=stage.countdown+(i%2);return enemy;
+    const enemy=makeUnit(byId.get(id),'enemy',i);enemy.hp=enemy.maxHp=Math.round(meanHp*stage.hp*(i===1?1.15:1));enemy.atk=Math.round(meanAtk*stage.atk);enemy.def=Math.round(state.heroes.reduce((n,u)=>n+u.def,0)/5*.75);enemy.lanes=enemyLanes(i,defenseIds.length);enemy.countdown=stage.countdown+(i%2);enemy.baseCountdown=stage.countdown+(i%2);return enemy;
   });
   // Authored campaign strength does not grow when the player's heroes level up.
   if(options.progression||!['ashen-gate','frozen-pass','veil-sanctum'].includes(stage.id)){const stats=stage.stats;for(const [i,enemy]of state.enemies.entries()){enemy.hp=enemy.maxHp=Math.round(stats[0]*(i===1?(stage.bossHp||1.15):['dungeon','event'].includes(stage.mode)?.65:1));enemy.atk=Math.round(stats[1]*(['dungeon','event'].includes(stage.mode)&&i!==1?.75:1));enemy.def=stats[2];}}
+  if(stage.mode==='championships'){
+    state.championship={id:options.matchId,practice:options.practice===true};
+    for(const enemy of state.enemies){enemy.championshipDefender=true;const source=byId.get(enemy.id),d=options.defense;enemy.level=Math.max(1,Math.min(levelCap(source),Math.trunc(d.levels?.[enemy.id])||1));const tier=Math.max(0,Math.min(ASCENSION_CAPS[source.rarity].length-1,Math.trunc(d.ascensions?.[enemy.id])||0)),rank=source.rarity!=='common'&&tier===ASCENSION_CAPS[source.rarity].length-1?Math.max(0,Math.min(2,Math.trunc(d.awakenings?.[enemy.id])||0)):0;if(rank)enemy.awakening=rank;Object.assign(enemy,awakenedStats(statsAtLevel(source,enemy.level),rank,tier));enemy.maxHp=enemy.hp;}
+  }
   encounterAppearance(state);
   state.board=freshBoard(state);message(state,`${stage.name} · Match runes to awaken your warband.`);
   if(stage.opening){
@@ -106,11 +113,12 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
   }
   initializeWeekly(state,stage,{log:message,applyEffect});
   if(stage.scenario)state.scenario={id:stage.scenario,triggered:false};
-  if(state.progression&&!state.sandbox)for(const hero of state.heroes)if(hero.awakening===2){
+  if(state.progression&&!state.sandbox)for(const hero of [...state.heroes,...(state.championship?state.enemies:[])])if(hero.awakening===2){
     const power={attack:'inc_atk',defense:'inc_def',support:'mana_surge'}[hero.role];
     if(power)applyEffect(state,hero,hero,power,LIMIT_BREAK_BUFF_TURNS);
   }
   initializeFactionBonuses(state,{roll:()=>roll(state),log:(...args)=>message(state,...args),gainMana});
+  if(state.championship)initializeFactionBonuses({...state,heroes:state.enemies},{roll:()=>roll(state),log:(...args)=>message(state,...args),gainMana});
   return state;
 }
 function effective(unit,stat) {
@@ -181,6 +189,7 @@ function finish(state) {
   weeklyFinish(state,{gainMana,log:message});
   if(!living(state.enemies).length){state.phase='victory';message(state,'VICTORY · The runes fall silent.','victory');}
   else if(!living(state.heroes).length){state.phase='defeat';message(state,'DEFEAT · Your warband will rise again.','damage');}
+  if(state.championship&&state.phase==='playing'&&state.moves>=CHAMPIONSHIP_RULES.maxMoves){state.phase='defeat';message(state,'The defense holds · 150-move limit reached.','damage');}
   return state.phase!=='playing';
 }
 function protectedTarget(foes,selected){return living(foes).filter(u=>has(u,'guard')).sort((a,b)=>b.effects.guard.appliedMove-a.effects.guard.appliedMove)[0]||selected;}

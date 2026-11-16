@@ -1,3 +1,4 @@
+import {accountFixtureResponse} from './account-fixture.mjs';
 import {createRequire} from 'node:module';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -11,7 +12,7 @@ const {chromium}=createRequire(import.meta.url)('playwright');
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
 try{
  const context=await browser.newContext({viewport:{width:390,height:950},reducedMotion:'reduce'}),errors=[];
- await context.route('**/*',async route=>{try{const u=new URL(route.request().url()),file=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:await fs.readFile(file),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(file)]});}catch{errors.push(route.request().url());await route.abort();}});
+ await context.route('**/*',async route=>{try{const u=new URL(route.request().url()),file=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await route.fulfill({body:accountFixtureResponse(file,await fs.readFile(file)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(file)]});}catch{errors.push(route.request().url());await route.abort();}});
  const p={...defaultProfile(),helpSeen:true,premiumItems:Object.fromEntries(PREMIUM_ITEMS.map(i=>[i.id,2]))},[asc,limit]=roster.filter(c=>c.rarity==='legendary');
  p.collection[asc.id]=1;p.heroXp[asc.id]=xpForLevel(asc,40);
  p.collection[limit.id]=1;p.ascensions[limit.id]=3;p.heroXp[limit.id]=xpForLevel(limit,70);p.gold=0;p.materials={};

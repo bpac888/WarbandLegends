@@ -1,9 +1,11 @@
+import accounts from '../server/accounts.js';
 import http from 'node:http';
 import {readFile,stat} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
 const root=resolve(process.argv.includes('--dist')?'dist':'.'),port=Number(process.env.PORT||4173);
 const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.webp':'image/webp','.svg':'image/svg+xml'};
 http.createServer(async(req,res)=>{try{
+  if(new URL(req.url,'http://localhost').pathname==='/api/account'){await accounts(req,res);return;}
   const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
   const path=resolve(root,'.'+pathname+(pathname.endsWith('/')?'index.html':''));
   if(!path.startsWith(root+sep)||pathname.split('/').some(p=>p.startsWith('.'))||!['GET','HEAD'].includes(req.method)){res.writeHead(403);res.end('Forbidden');return;}

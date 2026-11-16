@@ -6,7 +6,7 @@ A standalone match-3 RPG with 265 collectible champions across 16 factions plus 
 
 ## Develop locally
 
-Requires **Node.js 22 or newer**. No package dependencies, database or environment variables are needed.
+Requires **Node.js 22 or newer**. No package dependencies are needed. Player accounts and ranked Championships run on a Supabase Edge Function while the game stays on GitHub Pages; see [setup](docs/SUPABASE_GITHUB_PAGES.md).
 
 ```sh
 npm start        # open http://localhost:4173
@@ -32,3 +32,7 @@ Serve the game over HTTP; opening `index.html` directly cannot load the roster.
 See the [documentation index](docs/README.md) for the full feature list, development details. Artwork provenance is recorded in [RIGHTS.md](RIGHTS.md).
 
 Aerie Court adds eighteen bird-people champions with native 1024 × 1536 portraits and the Tailwind Guard faction bonus. See [the faction roster and balance notes](docs/AERIE_COURT.md).
+
+Email/password accounts and cloud saves: [GitHub Pages + Supabase setup](docs/SUPABASE_GITHUB_PAGES.md).
+
+The Championships adds asynchronous PvP, saved attack/defense warbands, weekly tiers and prizes. [Play and connect the mode](docs/THE_CHAMPIONSHIPS.md); its practice grounds work before Supabase setup.

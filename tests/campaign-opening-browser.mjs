@@ -1,3 +1,4 @@
+import {accountFixtureResponse} from './account-fixture.mjs';
 import {createRequire} from 'node:module';import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';
 import {defaultProfile} from '../src/progression.js';import {PROFILE_KEY} from '../src/storage.js';import {ASCENSION_CAPS} from '../src/ascension.js';
 const root=new URL('../',import.meta.url).pathname,{chromium}=createRequire(import.meta.url)('playwright'),roster=JSON.parse(await fs.readFile(root+'data/champions.json'));
@@ -5,7 +6,7 @@ const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'
 try{
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'}),errors=[],videos=[];
  await fs.mkdir(root+'artifacts',{recursive:true});
- await context.route('**/*',async r=>{const u=new URL(r.request().url());if(u.pathname.endsWith('.mp4'))videos.push(u.pathname);try{const f=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await r.fulfill({body:await fs.readFile(f),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml','.png':'image/png','.mp4':'video/mp4','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(f)]});}catch{errors.push('Missing '+u.pathname);await r.abort();}});
+ await context.route('**/*',async r=>{const u=new URL(r.request().url());if(u.pathname.endsWith('.mp4'))videos.push(u.pathname);try{const f=path.join(root,'dist',u.pathname==='/'?'index.html':decodeURIComponent(u.pathname));await r.fulfill({body:accountFixtureResponse(f,await fs.readFile(f)),contentType:({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.svg':'image/svg+xml','.png':'image/png','.mp4':'video/mp4','.ttf':'font/ttf','.otf':'font/otf'})[path.extname(f)]});}catch{errors.push('Missing '+u.pathname);await r.abort();}});
 
  const p={...defaultProfile(),onboardingDismissed:true,helpSeen:true};
  await context.addInitScript(({p,key})=>{if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(p));},{p,key:PROFILE_KEY});

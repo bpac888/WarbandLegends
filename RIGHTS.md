@@ -83,3 +83,7 @@ Twelve original Tome of Power illustrations were created using OpenAI image gene
 ## Loot Tickets
 
 The original Loot Ticket illustration was generated using OpenAI image generation in November 2026 and encoded as quality-94 WebP at native resolution. The small item artwork is used in Token Exchange, inventory and campaign instant-clear dialogs.
+
+## The Championships citadel
+
+The original tournament citadel environment in `assets/championships/citadel.webp` was generated with OpenAI image generation in November 2026 and encoded as quality-88 WebP at its native 1536 × 1024 resolution. The shield-and-crown tier crests are original SVG interface artwork. Existing champion portraits are reused unchanged in team and opponent displays.

@@ -1,0 +1,7 @@
+project_id = "ksknmdmnqilgkekfdurz"
+
+[functions.warband]
+# The handler validates access tokens through Supabase Auth. Register/login and
+# CORS preflights must also work without a signed-in user's JWT.
+verify_jwt = false
+entrypoint = "./functions/warband/bundle.js"

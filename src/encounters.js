@@ -1,6 +1,7 @@
-import {WEEKLY_STAGES,weeklyWindow} from './weekly.js?v=0.52.1';
-import {authoredStage} from './chapter.js?v=0.52.1';
-import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js?v=0.52.1';
+import {CHAMPIONSHIP_STAGE} from './championship-catalog.js?v=0.53.1';
+import {WEEKLY_STAGES,weeklyWindow} from './weekly.js?v=0.53.1';
+import {authoredStage} from './chapter.js?v=0.53.1';
+import {ARENA_STAGES,EVENT_STAGES,SPECIAL_EVENTS,eventWindow,eventAttemptsLeft} from './modes.js?v=0.53.1';
 // Independent Legends encounters. Structure/names/art adapted from the owner's source game.
 export const DIFFICULTIES=[
  {id:'normal',label:'Normal',realm:'The First Crossing',description:'A living realm. The first shadows gather.',art:'assets/scenes/world-map.svg',mult:1,color:'#92c99c'},
@@ -43,7 +44,7 @@ export const ENCOUNTERS=[...CAMPAIGN_STAGES,...DUNGEON_STAGES,...ARENA_STAGES,..
 // Keep the permanent encounter catalog stable; rotating challenges are additional entries.
 export const ALL_ENCOUNTERS=[...ENCOUNTERS,...WEEKLY_STAGES];
 const byId=new Map(ALL_ENCOUNTERS.map(e=>[e.id,e]));
-export const getEncounter=id=>byId.get(id);
+export const getEncounter=id=>id===CHAMPIONSHIP_STAGE.id?CHAMPIONSHIP_STAGE:byId.get(id);
 export const campaignStages=(difficulty='normal')=>CAMPAIGN_STAGES.filter(e=>e.difficulty===difficulty);
 export function entryError(profile,id,now=new Date()){const e=getEncounter(id);if(!e)return 'Unknown encounter.';
  if(e.mode==='weekly'){if(!weeklyWindow(now).stages.some(s=>s.challengeId===e.challengeId))return 'This challenge has rotated. Open Weekly Challenges for the current week.';return null;}
@@ -55,4 +56,4 @@ export function entryError(profile,id,now=new Date()){const e=getEncounter(id);i
 }
 export function encounterAppearance(state){const e=getEncounter(state.stageId);if(['dungeon','event'].includes(e?.mode)&&state.enemies?.[1]){state.enemies[1].name=e.bossName;if(e.bossPortrait)state.enemies[1].portrait=e.bossPortrait;}return state;}
 
-export function enemyLanes(index,count){return count===4?[[0,1],[2,3],[4],[5,6]][index]:[[0,1],[2,3,4],[5,6]][index];}
+export function enemyLanes(index,count){return count===5?[[0],[1,2],[3],[4,5],[6]][index]:count===4?[[0,1],[2,3],[4],[5,6]][index]:[[0,1],[2,3,4],[5,6]][index];}

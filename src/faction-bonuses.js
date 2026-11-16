@@ -23,7 +23,7 @@ export function factionGroups(team){
  const counts=new Map();for(const unit of team)if(unit&&FACTION_BONUSES[unit.faction])counts.set(unit.faction,(counts.get(unit.faction)||0)+1);
  return [...counts].flatMap(([faction,count])=>{const tiers=Object.keys(FACTION_BONUSES[faction].tiers).map(Number).filter(t=>t<=count);return tiers.length?[{faction,count,tier:Math.max(...tiers),...FACTION_BONUSES[faction]}]:[];});
 }
-export const factionRule=unit=>unit.side==='hero'?FACTION_BONUSES[unit.faction]?.tiers[unit.factionTier]||empty:empty;
+export const factionRule=unit=>unit.side==='hero'||unit.championshipDefender===true?FACTION_BONUSES[unit.faction]?.tiers[unit.factionTier]||empty:empty;
 export function initializeFactionBonuses(state,{roll,log,gainMana}){
  state.factionRules=1;
  const groups=factionGroups(state.heroes),manaBonus=groups.find(g=>g.faction==='magic')?.tiers[state.heroes.filter(h=>h.faction==='magic').length]?.alliedMana||0,tiers=new Map(groups.map(g=>[g.faction,g.tier]));
@@ -43,7 +43,7 @@ export function initializeFactionBonuses(state,{roll,log,gainMana}){
  }
 }
 export function factionUpkeep(state,unit,{roll,heal,log}){
- if(unit.side!=='hero'||unit.hp<=0||!unit.factionTier||state.moves<1||unit.factionLastTurn>=state.moves)return;
+ if(unit.side!=='hero'&&!unit.championshipDefender||unit.hp<=0||!unit.factionTier||state.moves<1||unit.factionLastTurn>=state.moves)return;
  unit.factionLastTurn=state.moves;const rule=factionRule(unit);
  if(rule.growthChance&&roll()<rule.growthChance){
   unit.factionStacks++;const ratio=1+unit.factionStacks*.02,base=unit.factionBase,oldMax=unit.maxHp;
