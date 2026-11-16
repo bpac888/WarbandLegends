@@ -1,8 +1,8 @@
-import {createBattle} from './engine.js?v=0.53.3';
-import {heroForId} from './hero-copies.js?v=0.53.3';
-import {heroDevelopment} from './development.js?v=0.53.3';
-import {applyAutoAction} from './auto-battle.js?v=0.53.3';
-import {CHAMPIONSHIP_STAGE,CHAMPIONSHIP_RULES} from './championship-catalog.js?v=0.53.3';
+import {createBattle} from './engine.js?v=0.53.4';
+import {heroForId} from './hero-copies.js?v=0.53.4';
+import {heroDevelopment} from './development.js?v=0.53.4';
+import {applyAutoAction} from './auto-battle.js?v=0.53.4';
+import {CHAMPIONSHIP_STAGE,CHAMPIONSHIP_RULES} from './championship-catalog.js?v=0.53.4';
 export function championshipTeamError(ids,profile,roster){
  if(!Array.isArray(ids)||ids.length!==5||new Set(ids).size!==5)return 'Choose five different champions.';
  if(ids.some(id=>typeof id!=='string'||!profile.collection?.[id]||!heroForId(roster,id)))return 'Choose champions from your collection.';

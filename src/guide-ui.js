@@ -1,8 +1,8 @@
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-import {factionGuideHTML} from './faction-ui.js?v=0.53.3';
-import {EFFECTS} from './effects.js?v=0.53.3';
-import {effectIcon} from './icons.js?v=0.53.3';
-import {SUMMON_ODDS} from './progression.js?v=0.53.3';
+import {factionGuideHTML} from './faction-ui.js?v=0.53.4';
+import {EFFECTS} from './effects.js?v=0.53.4';
+import {effectIcon} from './icons.js?v=0.53.4';
+import {SUMMON_ODDS} from './progression.js?v=0.53.4';
 export const guideTopics={roster:'battles',champion:'battles',summon:'summon'};
 const battleRules=[
  ['Elements','<img class="element-advantages" src="./assets/guide/element-advantages.webp" alt="Red beats Green; Green beats Blue; Blue beats Red. Yellow and Purple are strong against each other.">'],

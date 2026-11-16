@@ -1,5 +1,5 @@
-import {BACKEND_CONFIG} from './backend-config.js?v=0.53.3';
-import {SupabaseSession} from './supabase-session.js?v=0.53.3';
+import {BACKEND_CONFIG} from './backend-config.js?v=0.53.4';
+import {SupabaseSession} from './supabase-session.js?v=0.53.4';
 export class AccountClient {
  constructor({request=(...args)=>fetch(...args),storage=window.localStorage,onStatus=()=>{},backend=globalThis.location?BACKEND_CONFIG:null,sessionStorage}={}){let tabStorage=sessionStorage;try{tabStorage??=globalThis.sessionStorage;}catch{}this.transport=backend?.supabaseUrl&&backend?.publishableKey?new SupabaseSession({config:backend,request,storage,sessionStorage:tabStorage}):null;this.request=request;this.storage=storage;this.onStatus=onStatus;this.user=null;this.revision=0;this.pending=null;this.running=null;this.timer=null;this.conflict=false;this.needsLogin=false;this.lastSaved=null;}
  async api(action,body){
