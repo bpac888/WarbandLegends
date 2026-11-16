@@ -308,3 +308,28 @@ body.menu-theme .page-roster .saved-warbands .slot-portraits:has(>span){height:2
 body #modal[data-view=encounter] .weekly-entry-rule{background:transparent;border:0;box-shadow:none;color:var(--paper-copy);padding:0}
 
 body.menu-theme .first-steps,body.menu-theme .page-roster .first-steps{padding-right:13px}
+
+/* Current-team portraits expand in place without leaving the battle entry. */
+body #modal .entry-current-team{width:100%;margin:0;border:0;padding:0;background:none;box-shadow:none}
+body #modal .entry-current-team>summary{cursor:pointer;list-style:none;padding:3px 0;min-height:32px;align-items:center}
+body #modal .entry-current-team>summary::-webkit-details-marker{display:none}
+body #modal .entry-current-team>summary strong{color:#7f2530;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+body #modal .entry-current-team>summary:focus-visible{outline:2px solid #7f2530;outline-offset:3px;border-radius:4px}
+.entry-team-chevron{display:inline-block;margin-left:6px;text-decoration:none;transition:transform .15s}
+.entry-current-team[open] .entry-team-chevron{transform:rotate(180deg)}
+body #modal .entry-team-portraits{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:6px 0 8px}
+body #modal .entry-team-portraits>img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:center top;border:2px solid rgb(var(--rarity-rgb,160 140 110));border-radius:6px;box-sizing:border-box}
+body #modal .entry-current-team>summary>span{color:var(--paper-copy)}
+
+body #modal .entry-current-team .entry-team-bonuses{margin:0;padding:0;background:none;border:0}
+body #modal .entry-current-team .entry-team-bonuses article{margin:5px 0 0;padding:0;background:none;border:0}
+body #modal .entry-current-team .entry-team-bonuses b{font-size:12px;color:var(--paper-crimson-dark)}
+body #modal .entry-current-team .entry-team-bonuses p{margin:2px 0 0;font-size:12px;line-height:1.4;color:var(--paper-copy)}
+body #modal .entry-current-team .faction-team-empty{padding:0;margin:0;border:0;background:none;font-size:12px}
+
+body.menu-theme .warband-section>.entry-team-bonuses{display:flex;flex-wrap:wrap;gap:6px 18px;margin:8px 0;color:var(--paper-copy)}
+body.menu-theme .warband-section>.entry-team-bonuses article{margin:0;padding:0}
+body.menu-theme .warband-section>.entry-team-bonuses b,body #modal[data-view=roster] #draft-team .entry-team-bonuses b{font-size:12px;color:var(--paper-crimson-dark)}
+body.menu-theme .warband-section>.entry-team-bonuses p,body #modal[data-view=roster] #draft-team .entry-team-bonuses p{margin:2px 0 0;font-size:12px;line-height:1.35;color:var(--paper-copy)}
+body #modal[data-view=roster] #draft-team .entry-team-bonuses{display:flex;flex-wrap:wrap;gap:4px 14px;padding:2px 0}
+body #modal[data-view=roster] #draft-team .entry-team-bonuses article{padding:0;margin:0}

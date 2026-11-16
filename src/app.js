@@ -1,58 +1,59 @@
-import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.51.1';
-import {mountBattleLoading} from './loading-art.js?v=0.51.1';
-import {weeklyStatus} from './weekly-combat.js?v=0.51.1';
-import {campaignArc} from './campaign-story.js?v=0.51.1';
-import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.51.1';
-import {scenarioStatus} from './chapter.js?v=0.51.1';
-import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.51.1';
-import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.51.1';
-import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.51.1';
-import {swipeTarget} from './board-gestures.js?v=0.51.1';
-import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.51.1';
-import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.51.1';
-import {specialSummary} from './special-summary.js?v=0.51.1';
-import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.51.1';
-import {useExperienceTome} from './experience-tomes.js?v=0.51.1';
-import {premiumItem,activateBooster} from './premium-items.js?v=0.51.1';
-import {premiumItemConfirmation} from './premium-items-ui.js?v=0.51.1';
-import {ascensionTier} from './ascension.js?v=0.51.1';
-import {battleTiming} from './battle-pacing.js?v=0.51.1';
-import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.51.1';
-import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.51.1';
-import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.51.1';
-import {courtyardHTML} from './courtyard-ui.js?v=0.51.1';
-import {mountCourtyard} from './courtyard-view.js?v=0.51.1';
-import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.51.1';
-import {saveTeam} from './teams.js?v=0.51.1';
-import {mountArenaScene} from './arena-scene.js?v=0.51.1';
-import './menu-atmosphere.js?v=0.51.1';
-import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.51.1';
-import {refreshEnergy,energyStatus} from './keeper.js?v=0.51.1';
-import {applyAutoAction} from './auto-battle.js?v=0.51.1';
-import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.51.1';
-import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.51.1';
-import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.51.1';
-import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.51.1';
-import {dailyPage} from './keeper-ui.js?v=0.51.1';
-import {buyWithGems} from './economy.js?v=0.51.1';
-import {gemConfirmation} from './gem-ui.js?v=0.51.1';
-import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.51.1';
-import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.51.1';
-import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.51.1';
-import {reserveEntry,exchange} from './mode-progression.js?v=0.51.1';
-import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.51.1';
-import {getEncounter,entryError} from './encounters.js?v=0.51.1';
-import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.51.1';
-import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.51.1';
-import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.51.1';
-import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.51.1';
-import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.51.1';
-import * as Shell from './shell.js?v=0.51.1';
-import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.51.1';
-import {EFFECTS} from './effects.js?v=0.51.1';
-import {effectIcon} from './icons.js?v=0.51.1';
-import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.51.1';
-import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.51.1';
+import {campaignEndingHTML,mountCampaignEnding} from './campaign-ending.js?v=0.52.0';
+import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.52.0';
+import {mountBattleLoading} from './loading-art.js?v=0.52.0';
+import {weeklyStatus} from './weekly-combat.js?v=0.52.0';
+import {campaignArc} from './campaign-story.js?v=0.52.0';
+import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.52.0';
+import {scenarioStatus} from './chapter.js?v=0.52.0';
+import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.52.0';
+import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.52.0';
+import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.52.0';
+import {swipeTarget} from './board-gestures.js?v=0.52.0';
+import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.52.0';
+import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.52.0';
+import {specialSummary} from './special-summary.js?v=0.52.0';
+import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.52.0';
+import {useExperienceTome} from './experience-tomes.js?v=0.52.0';
+import {premiumItem,activateBooster} from './premium-items.js?v=0.52.0';
+import {premiumItemConfirmation} from './premium-items-ui.js?v=0.52.0';
+import {ascensionTier} from './ascension.js?v=0.52.0';
+import {battleTiming} from './battle-pacing.js?v=0.52.0';
+import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.52.0';
+import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.52.0';
+import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.52.0';
+import {courtyardHTML} from './courtyard-ui.js?v=0.52.0';
+import {mountCourtyard} from './courtyard-view.js?v=0.52.0';
+import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.52.0';
+import {saveTeam} from './teams.js?v=0.52.0';
+import {mountArenaScene} from './arena-scene.js?v=0.52.0';
+import './menu-atmosphere.js?v=0.52.0';
+import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.52.0';
+import {refreshEnergy,energyStatus} from './keeper.js?v=0.52.0';
+import {applyAutoAction} from './auto-battle.js?v=0.52.0';
+import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.52.0';
+import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.52.0';
+import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.52.0';
+import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.52.0';
+import {dailyPage} from './keeper-ui.js?v=0.52.0';
+import {buyWithGems} from './economy.js?v=0.52.0';
+import {gemConfirmation} from './gem-ui.js?v=0.52.0';
+import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.52.0';
+import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.52.0';
+import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.52.0';
+import {reserveEntry,exchange} from './mode-progression.js?v=0.52.0';
+import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.52.0';
+import {getEncounter,entryError} from './encounters.js?v=0.52.0';
+import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.52.0';
+import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.52.0';
+import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.52.0';
+import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.52.0';
+import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.52.0';
+import * as Shell from './shell.js?v=0.52.0';
+import {defaultProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.52.0';
+import {EFFECTS} from './effects.js?v=0.52.0';
+import {effectIcon} from './icons.js?v=0.52.0';
+import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap,activate,cast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.52.0';
+import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.52.0';
 const app=document.querySelector('#app'),modal=document.querySelector('#modal'),modalContent=document.querySelector('#modal-content'),notice=document.querySelector('#notice');
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={red:'<path d="M32 8c4 13 16 15 16 29a16 16 0 0 1-32 0c0-9 6-16 12-22-1 10 2 12 5 13 4-7 2-13-1-20Z"/>',green:'<path d="M50 12c1 27-10 40-28 32C5 27 25 12 50 12Z"/><path d="M17 51 42 22M28 39l-2-10m8 4 8 1" fill="none" stroke="var(--rune-dark)" stroke-width="3"/>',blue:'<path d="M32 9v46M12 20l40 24M12 44l40-24M24 14l8 7 8-7M24 50l8-7 8 7M13 29l10-2-1-10M51 35l-10 2 1 10M13 35l10 2-1 10M51 29l-10-2 1-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',yellow:'<path d="m32 5 7 18 20 9-20 9-7 18-7-18L5 32l20-9Z"/><circle cx="32" cy="32" r="8" fill="var(--rune-dark)"/>',purple:'<path d="M43 9a24 24 0 1 0 11 35A22 22 0 0 1 43 9Z"/><path d="m44 22 3-6 3 6 6 3-6 3-3 6-3-6-6-3Z"/>'};
@@ -63,6 +64,7 @@ const percent=(a,b)=>Math.max(0,Math.min(100,a/b*100));
 let displayedBattle=null;
 // Exit prompts skip transient frames, but still finish move/tutorial bookkeeping.
 let battlePresentationEpoch=0;
+let stopEndingMontage=()=>{},endingMontageBattle=null;
 let battleSpeed=1;
 let autoEnabled=false,autoWorker=null,autoTimer=null,autoJob=0,autoThinking=false,manualBattleSpeed=1;
 function pauseAuto(){autoJob++;clearTimeout(autoTimer);autoTimer=null;autoWorker?.terminate();autoWorker=null;autoThinking=false;}
@@ -72,7 +74,7 @@ function scheduleAuto(){
  autoTimer=setTimeout(()=>{autoTimer=null;if(!autoEnabled||busy||modal.open||document.hidden||screen!=='battle'||battle?.phase!=='playing')return;
   autoThinking=true;const id=++autoJob;
   try{
-   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.51.1',import.meta.url),{type:'module'});
+   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.52.0',import.meta.url),{type:'module'});
    autoWorker.onerror=()=>{stopAuto();if(screen==='battle')renderBattle();toast('Auto paused. You can continue manually.');};
    autoWorker.onmessage=({data})=>{
     if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;
@@ -109,7 +111,7 @@ function renderHome(){
   const guidance=firstStepsHTML(profile,'home');if(guidance)app.querySelector('.courtyard-home').insertAdjacentHTML('afterbegin',guidance);
   courtyardView=mountCourtyard(app.querySelector('.courtyard-scene'),{profile,onNavigate:id=>{if(id==='roster')collectionFilters.tab='all';go(id);},onProfile:()=>openPlayerProfile(),isPaused:()=>modal.open});
 }
-function warbandPanel(){return `<section class="warband-section"><div class="section-heading"><div><h2>Team ${profile.activeTeamSlot+1} <span class="active-team-mark">Active Warband</span></h2></div><div class="warband-actions"><button class="text-button" data-action="roster">Change Champions ${Shell.uiIcon('arrow')}</button></div></div><div class="warband-grid library-grid">${profile.team.map(id=>Shell.championCard(developedChampion(byId.get(id),profile),profile,{ownedTab:true})).join('')}</div><div class="team-footnote">${teamComposition(profile.team)}</div>${factionTeamHTML(profile.team.map(id=>byId.get(id)))}</section>`;}
+function warbandPanel(){return `<section class="warband-section"><div class="section-heading"><div><h2>Team ${profile.activeTeamSlot+1} <span class="active-team-mark">Active Warband</span></h2></div><div class="warband-actions"><button class="text-button" data-action="roster">Change Champions ${Shell.uiIcon('arrow')}</button></div></div><div class="warband-grid library-grid">${profile.team.map(id=>Shell.championCard(developedChampion(byId.get(id),profile),profile,{ownedTab:true})).join('')}</div><div class="team-footnote">${teamComposition(profile.team)}</div>${factionTeamHTML(profile.team.map(id=>byId.get(id)),{flat:true})}</section>`;}
 function teamComposition(ids){const counts=Object.fromEntries(COLORS.map(c=>[c,0]));ids.forEach(id=>counts[byId.get(id).color]++);return `<span class="composition">${COLORS.map(c=>`<span class="color-pip ${c}" title="${ELEMENTS[c].name}: ${counts[c]} champions">${counts[c]}</span>`).join('')}<b>${Object.values(counts).every(n=>n===1)?'Rainbow warband':Object.values(counts).filter(Boolean).sort((a,b)=>b-a).join(' / ')+' formation'}</b></span>`;}
 function statusIcons(unit){if(unit.hp<=0)return '';return Object.keys(unit.effects).map(id=>`<button class="status ${EFFECTS[id]?.cat==='debuff'?'negative':'positive'}" data-action="status" data-effect="${id}" data-uid="${unit.uid}" aria-label="${esc(effectName(id))} on ${esc(unit.name)}" title="${esc(effectName(id))}">${effectIcon(id)}</button>`).join('');}
 function activeEffectsHTML(unit){return Object.keys(unit.effects||{}).length?`<section class="battle-active-effects"><h3>Active Effects</h3><div class="effect-codex">${Object.entries(unit.effects).map(([id,e])=>effectCard(id,`${e.turns} turn${e.turns===1?'':'s'}`,false,true)).join('')}</div></section>`:'';}
@@ -161,7 +163,7 @@ function previewEncounter(stageId,{story=true}={}){
  if(story&&campaign&&(e.number===1||isChapterBoss(e))){openModal(e.number===1?arc.subtitle:arc.chapters[chapterId(e)-1].title,e.number===1?openingStoryHTML(e.id,{difficulty:e.difficulty,playerName:profile.name,playerAvatar:profile.avatar}):storyHTML(chapterId(e),{stageId:e.id,difficulty:e.difficulty,playerName:profile.name,playerAvatar:profile.avatar}),'chapter-story');return;}
  const difficulty={normal:'Normal',hard:'Hard',nightmare:'Nightmare'}[e.difficulty],title=campaign?`${difficulty} · Stage ${e.number} · ${esc(e.name)}`:dungeon?`${esc(e.bossName)} · ${difficulty}`:esc(e.name);
  const loan=e.mode==='weekly'?weeklyDetails(e,weeklyWindow().key).loanTeam:null;
- openModal(title,`<div class="battle-team-preview"><div class="entry-team-heading"><strong>${loan?'Loaned Warband · Lv. 40':esc(teamName(profile,profile.activeTeamSlot))}</strong>${loan?'':`<span title="${estimateNote}" aria-label="Estimated team power ${teamPower(profile,profile.team,roster).toLocaleString()}">Power ${teamPower(profile,profile.team,roster).toLocaleString()}</span>`}</div>${loan?'<div class="weekly-loan-team">'+loan.map(id=>'<img src="'+byId.get(id).portrait+'" alt="'+esc(byId.get(id).name)+'" title="'+esc(byId.get(id).name)+'">').join('')+'</div>':factionTeamHTML(profile.team.map(id=>byId.get(id)))}</div>`+Shell.encounterPreview(profile,e.id),campaign?'campaign-stage':dungeon?'dungeon-stage':e.mode==='arena'?'arena-stage':e.mode==='event'?'event-stage':'encounter');
+ openModal(title,`<div class="battle-team-preview">${loan?'<div class="entry-team-heading"><strong>Loaned Warband · Lv. 40</strong></div>':`<details class="entry-current-team"><summary class="entry-team-heading"><strong>${esc(teamName(profile,profile.activeTeamSlot))}<span class="entry-team-chevron" aria-hidden="true">⌄</span></strong><span title="${estimateNote}" aria-label="Estimated team power ${teamPower(profile,profile.team,roster).toLocaleString()}">Power ${teamPower(profile,profile.team,roster).toLocaleString()}</span></summary><div class="entry-team-portraits">${profile.team.map(id=>{const c=byId.get(id);return `<img class="tier-${c.rarity}" src="${c.portrait}" alt="${esc(c.name)}" title="${esc(c.name)}" width="96" height="144">`;}).join('')}</div>${factionTeamHTML(profile.team.map(id=>byId.get(id)),{flat:true})}</details>`}${loan?'<div class="weekly-loan-team">'+loan.map(id=>'<img src="'+byId.get(id).portrait+'" alt="'+esc(byId.get(id).name)+'" title="'+esc(byId.get(id).name)+'">').join('')+'</div>':''}</div>`+Shell.encounterPreview(profile,e.id),campaign?'campaign-stage':dungeon?'dungeon-stage':e.mode==='arena'?'arena-stage':e.mode==='event'?'event-stage':'encounter');
 }
 function start(stageId){
   syncEnergy();
@@ -172,12 +174,12 @@ function start(stageId){
   begin();
 }
 let stopStoryDialogue=()=>{};
-function openModal(title,body,view='info'){stopStoryDialogue();pauseAuto();modal.dataset.view=view;modalContent.innerHTML=`<header class="modal-header">${view==='roster'?'<h2 id="modal-title" class="sr-only">Change champions</h2><div id="draft-team"></div>':`<div><h2 id="modal-title">${title}</h2></div>`}${view==='result'?'':'<button class="icon-button" data-action="close" aria-label="Close dialog">×</button>'}</header><div class="modal-body">${body}</div>`;if(!modal.open)modal.showModal();if(view==='chapter-story'){modal.scrollTop=0;modalContent.querySelector('.modal-body').scrollTop=0;mountDetailMotion(modalContent,profile,reducedAnimation());}if(view==='chapter-journal')modal.scrollTop=0;if(!['result','ritual'].includes(view)){const title=modalContent.querySelector('#modal-title');title.tabIndex=-1;title.focus({preventScroll:true});}if(view==='result'){modal.scrollTop=0;modalContent.querySelector('[data-action="home"]')?.focus({preventScroll:true});}if(view==='ritual')modalContent.querySelector('[data-action="skip-ritual"]')?.focus({preventScroll:true});if(modalContent.querySelector('.story-dialogue'))stopStoryDialogue=mountCampaignDialogue(modalContent,{reduced:reducedAnimation()});}
+function openModal(title,body,view='info'){stopEndingMontage();stopStoryDialogue();pauseAuto();modal.dataset.view=view;modalContent.innerHTML=`<header class="modal-header">${view==='roster'?'<h2 id="modal-title" class="sr-only">Change champions</h2><div id="draft-team"></div>':`<div><h2 id="modal-title">${title}</h2></div>`}${view==='result'?'':'<button class="icon-button" data-action="close" aria-label="Close dialog">×</button>'}</header><div class="modal-body">${body}</div>`;if(!modal.open)modal.showModal();if(view==='chapter-story'){modal.scrollTop=0;modalContent.querySelector('.modal-body').scrollTop=0;mountDetailMotion(modalContent,profile,reducedAnimation());}if(view==='chapter-journal')modal.scrollTop=0;if(!['result','ritual'].includes(view)){const title=modalContent.querySelector('#modal-title');title.tabIndex=-1;title.focus({preventScroll:true});}if(view==='result'){stopEndingMontage=mountCampaignEnding(modalContent,{reduced:reducedAnimation()||endingMontageBattle===battle});endingMontageBattle=battle;modal.scrollTop=0;modalContent.querySelector('[data-action="home"]')?.focus({preventScroll:true});}if(view==='ritual')modalContent.querySelector('[data-action="skip-ritual"]')?.focus({preventScroll:true});if(modalContent.querySelector('.story-dialogue'))stopStoryDialogue=mountCampaignDialogue(modalContent,{reduced:reducedAnimation()});}
 function settleVictory(){if(['victory','defeat'].includes(battle?.phase)&&(['arena','event'].includes(getEncounter(battle.stageId)?.mode)||battle.phase==='victory')&&!battle.sandbox&&!profile.recorded.includes(battle.id)){
  const rewardAt=Date.now(),reward=victoryRewards(profile,battle,rewardAt),before=profile;profile=recordVictory(profile,battle,roster,rewardAt);
  battle.rewardSummary={...reward,growth:reward.xp?battle.heroes.filter(h=>before.collection[h.id]).map(h=>{const c=byId.get(h.id),old=heroDevelopment(before,c),next=heroDevelopment(profile,c);return {id:h.id,name:h.name,portrait:h.portrait,before:tierLevel(before,c,old.level).level,after:tierLevel(profile,c,next.level).level,gained:(profile.heroXp[h.id]||0)-(before.heroXp[h.id]||0),cap:tierLevel(profile,c,next.cap).level,ratio:next.ratio};}):[]};
 }}
-function showResult(){const victory=battle.phase==='victory',reward=battle.rewardSummary,isDungeon=getEncounter(battle.stageId)?.mode==='dungeon';openModal(victory?(isDungeon?'The dungeon is conquered.':getEncounter(battle.stageId)?.mode==='arena'?'The Arena is yours.':getEncounter(battle.stageId)?.mode==='event'?'The event is conquered.':'The crossing is yours.'):'The runes will rise again.',`<div class="result-sigil ${victory?'won':''}">${victory?'✦':'◇'}</div><p class="result-copy">${victory?'Victory':'Defeat'} in ${battle.moves} move${battle.moves===1?'':'s'} · ${battle.cascades} cascade${battle.cascades===1?'':'s'}</p>${victory&&getEncounter(battle.stageId)?.mode==='weekly'?'<p>'+((profile.weeklyRecords?.[battle.weeklyKey]?.completed)?'Weekly challenge complete. Your gift is ready.':'Battle '+getEncounter(battle.stageId).round+'/3 complete. Continue on the Daily Gift page.')+'</p><button class="button gold" data-action="nav" data-page="daily">Weekly Challenges</button>':''}${battle.sandbox?'<p class="sandbox-result">Playtesting · maximum-level heroes. No rewards or campaign progress.</p>':reward?`<div class="result-rewards">${reward.gold?`<span>+${esc(reward.gold)} Gold</span>`:''}${reward.rating?`<span>${reward.rating>0?'+':''}${reward.rating} rating</span>`:''}${reward.arenaTokens?`<span>+${reward.arenaTokens} Arena Tokens</span>`:''}${reward.eventTokens?`<span>+${reward.eventTokens} Event Tokens</span>`:''}${Object.entries(reward.materials||{}).map(([id,n])=>`<span class="material-reward"><img src="${materialArt(id)}" alt="">+${n} ${materialById(id).name}</span>`).join('')}${reward.accountXp?`<span>+${reward.accountXp} profile XP</span>`:''}${reward.gems?`<span>+${esc(reward.gems)} Gems</span>`:''}</div>${reward.milestone?'<p class="milestone-reward">Five victories · 50 bonus Gems earned</p>':''}<details class="victory-growth-details"><summary>Champion gains · ${(reward.growth||[]).filter(g=>g.after>g.before).length} leveled up</summary><div class="victory-growth">${(reward.growth||[]).map(g=>`<div class="victory-hero ${g.after>g.before?'leveled-up':''}" aria-label="View ${esc(g.name)}, level ${g.after}"><span class="victory-portrait"><img src="${g.portrait}" alt="">${rankTrack(byId.get(g.id),profile)}</span><span><b>${esc(g.name)}</b><strong>${g.after>g.before?'LEVEL UP · ':''}Lv. ${g.before}${g.after>g.before?' → '+g.after:''}</strong><small>${g.gained?'+'+g.gained+' XP':g.after===g.cap?'Level Cap Reached':'No XP gained'}</small><span class="hero-xp-bar"><i style="width:${g.ratio*100}%"></i></span></span></div>`).join('')}</div></details>`:''}${victory&&!battle.sandbox?chapterGiftHTML(profile,getEncounter(battle.stageId)):''}<div class="modal-actions"><button class="button gold" data-action="home">Return to Courtyard</button></div>`,'result');}
+function showResult(){const victory=battle.phase==='victory',reward=battle.rewardSummary,isDungeon=getEncounter(battle.stageId)?.mode==='dungeon';openModal(victory?(isDungeon?'The dungeon is conquered.':getEncounter(battle.stageId)?.mode==='arena'?'The Arena is yours.':getEncounter(battle.stageId)?.mode==='event'?'The event is conquered.':'The crossing is yours.'):'The runes will rise again.',` ${victory&&!battle.sandbox?campaignEndingHTML(getEncounter(battle.stageId)):''}<div class="result-sigil ${victory?'won':''}">${victory?'✦':'◇'}</div><p class="result-copy">${victory?'Victory':'Defeat'} in ${battle.moves} move${battle.moves===1?'':'s'} · ${battle.cascades} cascade${battle.cascades===1?'':'s'}</p>${victory&&getEncounter(battle.stageId)?.mode==='weekly'?'<p>'+((profile.weeklyRecords?.[battle.weeklyKey]?.completed)?'Weekly challenge complete. Your gift is ready.':'Battle '+getEncounter(battle.stageId).round+'/3 complete. Continue on the Daily Gift page.')+'</p><button class="button gold" data-action="nav" data-page="daily">Weekly Challenges</button>':''}${battle.sandbox?'<p class="sandbox-result">Playtesting · maximum-level heroes. No rewards or campaign progress.</p>':reward?`<div class="result-rewards">${reward.gold?`<span>+${esc(reward.gold)} Gold</span>`:''}${reward.rating?`<span>${reward.rating>0?'+':''}${reward.rating} rating</span>`:''}${reward.arenaTokens?`<span>+${reward.arenaTokens} Arena Tokens</span>`:''}${reward.eventTokens?`<span>+${reward.eventTokens} Event Tokens</span>`:''}${Object.entries(reward.materials||{}).map(([id,n])=>`<span class="material-reward"><img src="${materialArt(id)}" alt="">+${n} ${materialById(id).name}</span>`).join('')}${reward.accountXp?`<span>+${reward.accountXp} profile XP</span>`:''}${reward.gems?`<span>+${esc(reward.gems)} Gems</span>`:''}</div>${reward.milestone?'<p class="milestone-reward">Five victories · 50 bonus Gems earned</p>':''}<details class="victory-growth-details"><summary>Champion gains · ${(reward.growth||[]).filter(g=>g.after>g.before).length} leveled up</summary><div class="victory-growth">${(reward.growth||[]).map(g=>`<div class="victory-hero ${g.after>g.before?'leveled-up':''}" aria-label="View ${esc(g.name)}, level ${g.after}"><span class="victory-portrait"><img src="${g.portrait}" alt="">${rankTrack(byId.get(g.id),profile)}</span><span><b>${esc(g.name)}</b><strong>${g.after>g.before?'LEVEL UP · ':''}Lv. ${g.before}${g.after>g.before?' → '+g.after:''}</strong><small>${g.gained?'+'+g.gained+' XP':g.after===g.cap?'Level Cap Reached':'No XP gained'}</small><span class="hero-xp-bar"><i style="width:${g.ratio*100}%"></i></span></span></div>`).join('')}</div></details>`:''}${victory&&!battle.sandbox?chapterGiftHTML(profile,getEncounter(battle.stageId)):''}<div class="modal-actions"><button class="button gold" data-action="home">Return to Courtyard</button></div>`,'result');}
 function manaBar(unit){return `<span class="mana-bar" aria-hidden="true"><i style="width:${percent(unit.mana,unit.manaMax)}%"></i>${manaLevels(unit).slice(0,-1).map(l=>`<b class="charge-notch ${unit.mana>=l.tiles?'filled':''}" style="left:${percent(l.tiles,unit.manaMax)}%"></b>`).join('')}</span>`;}
 function effectList(description,compact=false){return `<ol class="special-sequence" aria-label="Special resolution order">${description.steps.map(e=>`<li data-step-kind="${e.kind}"><span class="sequence-icon" aria-hidden="true">${e.id?effectIcon(e.id):glyph(e.kind==='heal'?'health':'attack')}</span><div><b>${esc(e.name)}</b><small>${esc(e.scope)} · ${e.duration?e.duration+(compact?' turn':' board move')+(e.duration===1?'':'s'):'Instant'}</small><p>${esc(compact&&e.id?effectSummary(e.id):e.description)}</p>${e.periodic&&!compact?'<em>First tick: start of the next valid board move.</em>':''}</div></li>`).join('')}</ol>`;}
 
@@ -201,12 +203,12 @@ function renderRoster(selectionOnly=false){
   const list=filterChampions(profile.openRoster?battleRoster(profile,roster):ownedHeroes(profile,roster),profile,{...teamFilters,tab:profile.openRoster?'all':'owned'});
   if(!selectionOnly)document.querySelector('#roster-grid').innerHTML=list.map(c=>`<article class="roster-entry ${c.color}"><button class="roster-card ${c.color} tier-${c.rarity} ${draftTeam.includes(c.id)?'picked':''}" data-action="pick" data-id="${c.id}" aria-pressed="${draftTeam.includes(c.id)}"><img src="${c.portrait}" alt="" loading="lazy" width="480" height="640"><span class="roster-shade"></span>${rankTrack(c,profile)}${roleMark(c.role)}<span class="roster-color">${rune(c.color)}</span><span class="roster-label">${rarityMark(c.rarity)}<strong>${esc(c.name)}</strong></span>${draftTeam.includes(c.id)?'<span class="pick-number">'+(draftTeam.indexOf(c.id)+1)+'</span>':''}</button><span class="roster-mana">${levelMark(c,profile)} ${manaLabel(c)}</span></article>`).join('')||'<p>No champions match these filters.</p>';
   if(selectionOnly)for(const card of modalContent.querySelectorAll('.roster-card')){const index=draftTeam.indexOf(card.dataset.id),selected=index>=0;card.classList.toggle('picked',selected);card.setAttribute('aria-pressed',String(selected));let badge=card.querySelector('.pick-number');if(selected){if(!badge){badge=document.createElement('span');badge.className='pick-number';card.append(badge);}badge.textContent=String(index+1);badge.setAttribute('aria-label','Team position '+(index+1));}else badge?.remove();}
-  document.querySelector('#draft-power').textContent='Power '+teamPower(profile,draftTeam,roster).toLocaleString();document.querySelector('#draft-power').title=estimateNote;const bonusOpen=!!document.querySelector('#draft-team details[open]');document.querySelector('#draft-team').innerHTML=factionTeamHTML(draftTeam.map(id=>byId.get(id)));if(bonusOpen&&document.querySelector('#draft-team details'))document.querySelector('#draft-team details').open=true;document.querySelector('#draft-count').textContent=`${draftTeam.length} / 5 selected · ${list.length} champions shown`;document.querySelector('#save-team').disabled=draftTeam.length!==5;
+  document.querySelector('#draft-power').textContent='Power '+teamPower(profile,draftTeam,roster).toLocaleString();document.querySelector('#draft-power').title=estimateNote;document.querySelector('#draft-team').innerHTML=factionTeamHTML(draftTeam.map(id=>byId.get(id)),{flat:true});document.querySelector('#draft-count').textContent=`${draftTeam.length} / 5 selected · ${list.length} champions shown`;document.querySelector('#save-team').disabled=draftTeam.length!==5;
 
 }
 function tapTile(index){if(busy||screen!=='battle'||pendingCaster)return;if(selectedRune===index){if(battle.board[index].special)play(activate(battle,index));else{selectedRune=null;renderBattle();}return;}if(selectedRune!==null){const a=selectedRune;selectedRune=null;play(swap(battle,a,index));if(!busy)renderBattle();}else{selectedRune=index;renderBattle();}}
 function openPlayerProfile(){openModal('Your Profile',profileEditorHTML(profile),'profile-editor');mountProfileEditor(modalContent,{avatar:profile.avatar,onAvatar:avatar=>{profile={...profile,avatar};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);},onName:name=>{profile={...profile,name};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);}});}
-function closeModal(){stopStoryDialogue();if(modal.dataset.view==='battle-exit'){drag=null;edgeTap=null;suppressClickUntil=0;clearBattleEffects();displayedBattle=null;if(screen==='battle'&&battle)renderBattle();}if(modal.dataset.view==='chapter-story')stopCinematic();if(modal.open)modal.close();modal.dataset.view='';scheduleAuto();}
+function closeModal(){stopEndingMontage();stopStoryDialogue();if(modal.dataset.view==='battle-exit'){drag=null;edgeTap=null;suppressClickUntil=0;clearBattleEffects();displayedBattle=null;if(screen==='battle'&&battle)renderBattle();}if(modal.dataset.view==='chapter-story')stopCinematic();if(modal.open)modal.close();modal.dataset.view='';scheduleAuto();}
 document.addEventListener('click',event=>{
   const button=event.target.closest('[data-action]');if(!button||button.disabled)return;const {action,id,uid,stage,color,index}=button.dataset;
   if(button.tagName==='A')event.preventDefault();
@@ -409,7 +411,7 @@ document.addEventListener('change',async event=>{
 
 });
 async function boot(){try{
-  const responses=await Promise.all([fetch('./data/champions.json?v=0.51.1'),fetch('./data/effects.json?v=0.51.1')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
+  const responses=await Promise.all([fetch('./data/champions.json?v=0.52.0'),fetch('./data/effects.json?v=0.52.0')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=loadProfile(storage,roster);byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));battle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
 

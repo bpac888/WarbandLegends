@@ -1,8 +1,9 @@
-import {FACTION_BONUSES,factionGroups,factionRule} from './faction-bonuses.js?v=0.51.1';
+import {FACTION_BONUSES,factionGroups,factionRule} from './faction-bonuses.js?v=0.52.0';
 const tierLabel=(f,t)=>f==='goblins'?'1+':f==='magic'?t:f==='djedi'?'2+':t===3?'3+':2;
-export function factionTeamHTML(team){
+export function factionTeamHTML(team,{flat=false}={}){
  const groups=factionGroups(team);
  if(!groups.length)return '<div class="faction-team-empty">Faction Bonuses <span>None Active</span></div>';
+ if(flat)return `<div class="entry-team-bonuses" aria-label="Faction Bonuses">${groups.map(g=>`<article><b>${g.name} · ${tierLabel(g.faction,g.tier)}</b><p>${g.tiers[g.tier].text}</p></article>`).join('')}</div>`;
  return `<details class="faction-team-bonuses"><summary>Faction Bonuses <span>${groups.map(g=>`${g.name} · ${tierLabel(g.faction,g.tier)}`).join(' / ')}</span></summary><div>${groups.map(g=>`<article><b>${g.name} · ${tierLabel(g.faction,g.tier)}</b><p>${g.tiers[g.tier].text}</p></article>`).join('')}</div></details>`;
 }
 export function factionUnitHTML(unit){
