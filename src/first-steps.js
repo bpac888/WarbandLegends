@@ -1,8 +1,8 @@
-import {SUMMON_COST} from './economy.js?v=0.51.0';
-import {tutorialState,tutorialFinished,TUTORIAL_QUESTS,tutorialProgress} from './tutorial.js?v=0.51.0';
+import {SUMMON_COST} from './economy.js?v=0.51.1';
+import {tutorialState,tutorialFinished,TUTORIAL_QUESTS,tutorialProgress} from './tutorial.js?v=0.51.1';
 const reward=(quest,title)=>({id:'quest',quest,title:'Quest reward ready',text:title,label:'Collect Quest Reward',page:'quests'});
 export function nextFirstStep(p){
- if(p.onboardingDismissed||p.openRoster||tutorialFinished(p))return null;
+ if(p.openRoster||tutorialFinished(p))return null;
  if(!p.claimed.includes('tutorial-combat'))return tutorialProgress(p,'tutorial-combat')===3?reward('tutorial-combat','Collect your practice reward.'):{id:'practice',title:'Learn the basics of battle',text:'Match tiles, cast a Special and activate special runes.',label:'Start Practice Battle',page:'battle'};
  if(!p.wins)return {id:'battle',title:'Begin your journey',text:'Win your first Normal campaign battle.',label:'Open Campaign',page:'campaign'};
  if(!p.claimed.includes('first-victory'))return reward('first-victory','Collect the reward for your first campaign victory.');
@@ -15,4 +15,4 @@ export function nextFirstStep(p){
  return {id:q.metric,title:q.name,text:q.text,label:{shop:'Visit Shop',team:'Change Your Team',guide:'Open the Guide'}[q.metric],page:q.page,tab:'supplies'};}
  return null;
 }
-export function firstStepsHTML(p,page){const s=nextFirstStep(p);if(!s||!['home','campaign','quests','summon','roster','champion','daily','shop','inventory'].includes(page))return '';return `<aside class="first-steps" aria-label="Suggested next step"><div><span>Tutorial</span><b>${s.title}</b><p>${s.text}</p></div><button class="button outline" data-action="first-step">${s.label}</button><button class="first-steps-dismiss" data-action="dismiss-first-steps" aria-label="Dismiss next-step suggestions">×</button></aside>`;}
+export function firstStepsHTML(p,page){const s=nextFirstStep(p);if(!s||['battle','splash','ritual'].includes(page))return '';return `<aside class="first-steps" aria-label="Suggested next step"><div><span>Tutorial</span><b>${s.title}</b><p>${s.text}</p></div><button class="button outline" data-action="first-step">${s.label}</button></aside>`;}

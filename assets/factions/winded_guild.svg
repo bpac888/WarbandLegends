@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Winded Guild green wind emblem">
-<defs><linearGradient id="wind" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#96ed8b"/><stop offset=".45" stop-color="#39ad53"/><stop offset="1" stop-color="#16713a"/></linearGradient></defs>
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<g stroke="#103d28" stroke-width="23"><path d="M27 111C75 58 112 122 173 88C207 69 190 28 164 41C144 51 155 71 170 63"/><path d="M26 144C88 90 124 160 190 124C222 107 224 72 205 66"/><path d="M30 178C88 130 123 199 179 185C214 176 212 210 192 215C174 220 163 205 173 197"/></g>
-<g stroke="url(#wind)" stroke-width="15"><path d="M27 111C75 58 112 122 173 88C207 69 190 28 164 41C144 51 155 71 170 63"/><path d="M26 144C88 90 124 160 190 124C222 107 224 72 205 66"/><path d="M30 178C88 130 123 199 179 185C214 176 212 210 192 215C174 220 163 205 173 197"/></g>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Winded Guild: three separate curled green gusts">
+<defs><linearGradient id="wind-thread" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#83d56a"/><stop offset=".5" stop-color="#39a64b"/><stop offset="1" stop-color="#1b7435"/></linearGradient>
+<path id="gust-top" d="M28 150C61 95 114 123 158 109C202 94 210 54 183 45C163 38 151 52 156 64C162 77 180 73 177 61"/>
+<path id="gust-middle" d="M28 181C70 125 128 155 176 154C214 153 235 125 223 107C212 89 192 99 196 112C200 125 214 119 210 112"/>
+<path id="gust-bottom" d="M28 211C73 157 115 181 157 198C194 214 222 197 216 174C212 158 189 154 186 170C183 183 201 188 202 177"/></defs>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round"><g stroke="#164421" stroke-width="16"><use href="#gust-top"/><use href="#gust-middle"/><use href="#gust-bottom"/></g><g stroke="url(#wind-thread)" stroke-width="11"><use href="#gust-top"/><use href="#gust-middle"/><use href="#gust-bottom"/></g></g></svg>

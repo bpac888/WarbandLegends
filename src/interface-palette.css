@@ -306,3 +306,5 @@ body.menu-theme .page-roster .saved-warbands .team-slot-actions{width:100%;max-w
 body.menu-theme .page-roster .saved-warbands .slot-portraits:has(>span){height:28px;min-height:0}
 /* Weekly entry rules read directly on the dialog, without a mismatched panel. */
 body #modal[data-view=encounter] .weekly-entry-rule{background:transparent;border:0;box-shadow:none;color:var(--paper-copy);padding:0}
+
+body.menu-theme .first-steps,body.menu-theme .page-roster .first-steps{padding-right:13px}
