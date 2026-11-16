@@ -34,3 +34,5 @@ See the [documentation index](docs/README.md) for the full feature list, develop
 Aerie Court adds eighteen bird-people champions with native 1024 × 1536 portraits and the Tailwind Guard faction bonus. See [the faction roster and balance notes](docs/AERIE_COURT.md).
 
 Email/password accounts and cloud saves: [setup and deployment](docs/PLAYER_ACCOUNTS.md).
+
+The Championships adds asynchronous PvP, saved attack/defense warbands, weekly tiers and prizes. [Play and connect the mode](docs/THE_CHAMPIONSHIPS.md); its practice grounds work before Supabase setup.

@@ -1,4 +1,4 @@
--- Run once in your Supabase SQL editor. Never use a service-role key in the game.
+-- Run once in your Supabase SQL editor. Never expose a service-role key to browser code.
 create table public.player_saves (
  user_id uuid primary key references auth.users(id) on delete cascade,
  profile jsonb not null check (jsonb_typeof(profile) = 'object' and octet_length(profile::text) <= 1000000),

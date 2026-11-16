@@ -16,15 +16,15 @@ export function createAccountHandler({env=process.env,fetcher=fetch}={}){
    }
    if(!env.SUPABASE_URL||!env.SUPABASE_ANON_KEY)throw new AccountError(503,'Player accounts are not available yet. Please try again later.');
    const url=new URL(req.url,'http://localhost'),action=url.searchParams.get('action')||'session';
-   if(req.method==='GET'&&action!=='session')throw new AccountError(405,'Method not allowed.');
+   if(req.method==='GET'&&action!=='session'&&action!=='championship-dashboard')throw new AccountError(405,'Method not allowed.');
    let input={};
    if(req.method==='POST'){
     if(req.body!==undefined){input=typeof req.body==='string'?JSON.parse(req.body):req.body;if(Buffer.byteLength(JSON.stringify(input))>MAX_BODY)throw new AccountError(413,'Save is too large.');}
     else{let raw='';for await(const chunk of req){raw+=chunk;if(Buffer.byteLength(raw)>MAX_BODY)throw new AccountError(413,'Save is too large.');}input=JSON.parse(raw||'{}');}
     if(!input||typeof input!=='object'||Array.isArray(input))throw new AccountError(400,'Invalid request.');
    }
-   const upstream=async(path,{token,method='GET',body}={})=>{
-    const response=await fetcher(env.SUPABASE_URL.replace(/\/$/,'')+path,{method,headers:{apikey:env.SUPABASE_ANON_KEY,'Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{})},body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(15000)});
+   const upstream=async(path,{token,method='GET',body,admin=false}={})=>{
+    const response=await fetcher(env.SUPABASE_URL.replace(/\/$/,'')+path,{method,headers:{apikey:admin?env.SUPABASE_SERVICE_ROLE_KEY:env.SUPABASE_ANON_KEY,'Content-Type':'application/json',...((token||admin)?{Authorization:`Bearer ${admin?env.SUPABASE_SERVICE_ROLE_KEY:token}`}:{})},body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(15000)});
     const data=await response.json().catch(()=>null);return {ok:response.ok,status:response.status,data};
    };
    let session=null;
@@ -53,6 +53,10 @@ export function createAccountHandler({env=process.env,fetcher=fetch}={}){
    }
    if(!identity.ok)throw new AccountError(identity.status>=500?503:401,'Could not verify your session. Please try again.');
    const user={id:identity.data.id,email:identity.data.email};
+   if(action.startsWith('championship-')){
+    const {handleChampionshipRequest}=await import('./championships.js');
+    const result=await handleChampionshipRequest({action,input,user,upstream,configured:!!env.SUPABASE_SERVICE_ROLE_KEY});send(200,result);return;
+   }
    if(action==='session'){
     const result=await upstream(`/rest/v1/player_saves?user_id=eq.${encodeURIComponent(user.id)}&select=profile,revision`,{token:session.access});
     if(!result.ok)throw new AccountError(503,'Could not load your saved progress. Please try again.');
