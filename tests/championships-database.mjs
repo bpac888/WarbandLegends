@@ -21,10 +21,10 @@ try{
  const win=await rpc('select championship_complete($1,$2,true,false) as value',[a,matchId]);assert.equal(win.dashboard.standing.score,30);assert.equal(win.dashboard.standing.attack_wins,1);
  const again=await rpc('select championship_complete($1,$2,true,false) as value',[a,matchId]);assert.equal(again.dashboard.standing.score,30);assert.equal(again.dashboard.standing.attack_wins,1);
  await assert.rejects(rpc('select championship_complete($1,$2,true,false) as value',[c,matchId]),/no rows/);
- await db.query('update championship_standings set score=120,tier=1,strikes=0 where week=$1 and user_id=$2',[week,b]);
- for(let i=0;i<3;i++){
+ await db.query('update championship_standings set score=123,tier=1,strikes=2 where week=$1 and user_id=$2',[week,b]);
+ for(let i=0;i<4;i++){
   await db.query('select championship_event($1,$2,$3)',[week,b,'defense-loss']);
-  const s=(await db.query('select tier,strikes from championship_standings where week=$1 and user_id=$2',[week,b])).rows[0];assert.equal(s.tier,i===2?0:1);
+  const s=(await db.query('select score,tier,strikes from championship_standings where week=$1 and user_id=$2',[week,b])).rows[0];assert.equal(s.score,122-i);assert.equal(s.tier,i===3?0:1);assert.equal(s.strikes,0);
  }
  const expiring='cccccccc-cccc-4ccc-8ccc-cccccccccccc';await start(expiring,c,a);await db.query("update championship_matches set expires_at=now()-interval '1 minute' where id=$1",[expiring]);
  await rpc('select championship_dashboard($1) as value',[c]);const before=(await db.query('select score from championship_standings where week=$1 and user_id=$2',[week,a])).rows[0].score;
@@ -40,6 +40,11 @@ try{
  const awards=(await db.query('select rank,rewards from championship_awards order by rank')).rows;assert.equal(awards.length,50);assert.equal(awards[3].rewards.gems,250);assert.equal(awards[24].rewards.gems,250);assert.equal(awards[25].rewards.gems,100);assert.equal(awards[49].rank,50);
  const frozen=(await db.query('select snapshot from championship_awards order by rank')).rows;
  await rpc('select championship_complete($1,$2,false,false) as value',[a,matchId]);await rpc('select championship_dashboard($1) as value',[a]);assert.deepEqual((await db.query('select snapshot from championship_awards order by rank')).rows,frozen);
+ const migration=await fs.readFile(new URL('../supabase/migrations/202611160001_simple_championship_points.sql',import.meta.url),'utf8');
+ await db.query('update championship_standings set score=119,tier=1,strikes=2 where week=$1 and user_id=$2',[next,a]);
+ await db.exec(migration);await db.exec(migration);
+ assert.deepEqual((await db.query('select score,tier,strikes from championship_standings where week=$1 and user_id=$2',[next,a])).rows[0],{score:119,tier:0,strikes:0});
+ assert.deepEqual((await db.query('select snapshot from championship_awards order by rank')).rows,frozen);
  const reward=await rpc('select championship_claim($1,$2,$3) as value',[a,week,1]);assert.equal(reward.profile.gems,profile.gems+1000);assert.equal(reward.profile.gold,profile.gold+10000);assert.equal(reward.profile.lootTickets,25);assert.equal(reward.revision,2);
  const twice=await rpc('select championship_claim($1,$2,$3) as value',[a,week,1]);assert.equal(twice.revision,2);assert.equal(twice.profile.gems,reward.profile.gems);
  await assert.rejects(rpc('select championship_claim($1,$2,$3) as value',[b,week,1]),/no rows/);
@@ -50,5 +55,5 @@ try{
   await assert.rejects(db.query('select championship_event($1,$2,$3)',[next,a,'attack-win']),/permission denied/);
   await db.exec('reset role');
  }
- console.log('Database checks passed: schema, real transactions, one active match, idempotent settlement, ownership, tier protection, expiry, immutable weekly top-50 snapshots, resets, all reward boundaries, one-time resource delivery, and denied direct player writes.');
+ console.log('Database checks passed: schema, real transactions, one active match, idempotent settlement, ownership, one-point defense defeats, point-based tiers, repeatable migration, expiry, immutable weekly top-50 snapshots, resets, all reward boundaries, one-time resource delivery, and denied direct player writes.');
 }finally{await db.close();}

@@ -35,4 +35,4 @@ Aerie Court adds eighteen bird-people champions with native 1024 × 1536 portrai
 
 Email/password accounts and cloud saves: [GitHub Pages + Supabase setup](docs/SUPABASE_GITHUB_PAGES.md).
 
-The Championships adds asynchronous PvP, saved attack/defense warbands, weekly tiers and prizes. [Play and connect the mode](docs/THE_CHAMPIONSHIPS.md); its practice grounds work before Supabase setup.
+The Championships adds asynchronous PvP, saved attack/defense warbands, weekly tiers and prizes. [Play and connect the mode](docs/THE_CHAMPIONSHIPS.md). Player accounts are required.

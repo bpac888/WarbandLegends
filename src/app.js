@@ -1,63 +1,62 @@
-import {championshipPage,championshipPicker,championshipCrest} from './championship-ui.js?v=0.53.1';
-import {previewChampionships,PRACTICE_RIVALS} from './championships.js?v=0.53.1';
-import {championshipSnapshot,createChampionshipBattle} from './championship-battle.js?v=0.53.1';
-import {AccountClient,accountForm} from './accounts.js?v=0.53.1';
-import {campaignEndingHTML,mountCampaignEnding} from './campaign-ending.js?v=0.53.1';
-import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.53.1';
-import {mountBattleLoading} from './loading-art.js?v=0.53.1';
-import {weeklyStatus} from './weekly-combat.js?v=0.53.1';
-import {campaignArc} from './campaign-story.js?v=0.53.1';
-import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.53.1';
-import {scenarioStatus} from './chapter.js?v=0.53.1';
-import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.53.1';
-import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.53.1';
-import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.53.1';
-import {swipeTarget} from './board-gestures.js?v=0.53.1';
-import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.53.1';
-import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.53.1';
-import {specialSummary} from './special-summary.js?v=0.53.1';
-import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.53.1';
-import {useExperienceTome} from './experience-tomes.js?v=0.53.1';
-import {premiumItem,activateBooster} from './premium-items.js?v=0.53.1';
-import {premiumItemConfirmation} from './premium-items-ui.js?v=0.53.1';
-import {ascensionTier} from './ascension.js?v=0.53.1';
-import {battleTiming} from './battle-pacing.js?v=0.53.1';
-import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.53.1';
-import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.53.1';
-import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.53.1';
-import {courtyardHTML} from './courtyard-ui.js?v=0.53.1';
-import {mountCourtyard} from './courtyard-view.js?v=0.53.1';
-import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.53.1';
-import {saveTeam} from './teams.js?v=0.53.1';
-import {mountArenaScene} from './arena-scene.js?v=0.53.1';
-import './menu-atmosphere.js?v=0.53.1';
-import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.53.1';
-import {refreshEnergy,energyStatus} from './keeper.js?v=0.53.1';
-import {applyAutoAction} from './auto-battle.js?v=0.53.1';
-import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.53.1';
-import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.53.1';
-import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.53.1';
-import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.53.1';
-import {dailyPage} from './keeper-ui.js?v=0.53.1';
-import {buyWithGems} from './economy.js?v=0.53.1';
-import {gemConfirmation} from './gem-ui.js?v=0.53.1';
-import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.53.1';
-import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.53.1';
-import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.53.1';
-import {reserveEntry,exchange} from './mode-progression.js?v=0.53.1';
-import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.53.1';
-import {getEncounter,entryError} from './encounters.js?v=0.53.1';
-import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.53.1';
-import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.53.1';
-import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.53.1';
-import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.53.1';
-import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.53.1';
-import * as Shell from './shell.js?v=0.53.1';
-import {defaultProfile,normalizeProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.53.1';
-import {EFFECTS} from './effects.js?v=0.53.1';
-import {effectIcon} from './icons.js?v=0.53.1';
-import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap as engineSwap,activate as engineActivate,cast as engineCast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.53.1';
-import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.53.1';
+import {championshipPage,championshipPicker,championshipCrest} from './championship-ui.js?v=0.53.2';
+import {emptyChampionships} from './championships.js?v=0.53.2';
+import {AccountClient,accountForm} from './accounts.js?v=0.53.2';
+import {campaignEndingHTML,mountCampaignEnding} from './campaign-ending.js?v=0.53.2';
+import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.53.2';
+import {mountBattleLoading} from './loading-art.js?v=0.53.2';
+import {weeklyStatus} from './weekly-combat.js?v=0.53.2';
+import {campaignArc} from './campaign-story.js?v=0.53.2';
+import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.53.2';
+import {scenarioStatus} from './chapter.js?v=0.53.2';
+import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.53.2';
+import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.53.2';
+import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.53.2';
+import {swipeTarget} from './board-gestures.js?v=0.53.2';
+import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.53.2';
+import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.53.2';
+import {specialSummary} from './special-summary.js?v=0.53.2';
+import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.53.2';
+import {useExperienceTome} from './experience-tomes.js?v=0.53.2';
+import {premiumItem,activateBooster} from './premium-items.js?v=0.53.2';
+import {premiumItemConfirmation} from './premium-items-ui.js?v=0.53.2';
+import {ascensionTier} from './ascension.js?v=0.53.2';
+import {battleTiming} from './battle-pacing.js?v=0.53.2';
+import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.53.2';
+import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.53.2';
+import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.53.2';
+import {courtyardHTML} from './courtyard-ui.js?v=0.53.2';
+import {mountCourtyard} from './courtyard-view.js?v=0.53.2';
+import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.53.2';
+import {saveTeam} from './teams.js?v=0.53.2';
+import {mountArenaScene} from './arena-scene.js?v=0.53.2';
+import './menu-atmosphere.js?v=0.53.2';
+import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.53.2';
+import {refreshEnergy,energyStatus} from './keeper.js?v=0.53.2';
+import {applyAutoAction} from './auto-battle.js?v=0.53.2';
+import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.53.2';
+import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.53.2';
+import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.53.2';
+import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.53.2';
+import {dailyPage} from './keeper-ui.js?v=0.53.2';
+import {buyWithGems} from './economy.js?v=0.53.2';
+import {gemConfirmation} from './gem-ui.js?v=0.53.2';
+import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.53.2';
+import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.53.2';
+import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.53.2';
+import {reserveEntry,exchange} from './mode-progression.js?v=0.53.2';
+import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.53.2';
+import {getEncounter,entryError} from './encounters.js?v=0.53.2';
+import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.53.2';
+import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.53.2';
+import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.53.2';
+import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.53.2';
+import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.53.2';
+import * as Shell from './shell.js?v=0.53.2';
+import {defaultProfile,normalizeProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.53.2';
+import {EFFECTS} from './effects.js?v=0.53.2';
+import {effectIcon} from './icons.js?v=0.53.2';
+import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap as engineSwap,activate as engineActivate,cast as engineCast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.53.2';
+import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.53.2';
 const app=document.querySelector('#app'),modal=document.querySelector('#modal'),modalContent=document.querySelector('#modal-content'),notice=document.querySelector('#notice');
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={red:'<path d="M32 8c4 13 16 15 16 29a16 16 0 0 1-32 0c0-9 6-16 12-22-1 10 2 12 5 13 4-7 2-13-1-20Z"/>',green:'<path d="M50 12c1 27-10 40-28 32C5 27 25 12 50 12Z"/><path d="M17 51 42 22M28 39l-2-10m8 4 8 1" fill="none" stroke="var(--rune-dark)" stroke-width="3"/>',blue:'<path d="M32 9v46M12 20l40 24M12 44l40-24M24 14l8 7 8-7M24 50l8-7 8 7M13 29l10-2-1-10M51 35l-10 2 1 10M13 35l10 2-1 10M51 29l-10-2 1-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',yellow:'<path d="m32 5 7 18 20 9-20 9-7 18-7-18L5 32l20-9Z"/><circle cx="32" cy="32" r="8" fill="var(--rune-dark)"/>',purple:'<path d="M43 9a24 24 0 1 0 11 35A22 22 0 0 1 43 9Z"/><path d="m44 22 3-6 3 6 6 3-6 3-3 6-3-6-6-3Z"/>'};
@@ -78,7 +77,7 @@ function scheduleAuto(){
  autoTimer=setTimeout(()=>{autoTimer=null;if(!autoEnabled||busy||modal.open||document.hidden||screen!=='battle'||battle?.phase!=='playing')return;
   autoThinking=true;const id=++autoJob;
   try{
-   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.53.1',import.meta.url),{type:'module'});
+   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.53.2',import.meta.url),{type:'module'});
    autoWorker.onerror=()=>{stopAuto();if(screen==='battle')renderBattle();toast('Auto paused. You can continue manually.');};
    autoWorker.onmessage=({data})=>{
     if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;
@@ -137,8 +136,8 @@ setInterval(()=>{if(account.pending&&!account.conflict)account.flush().catch(()=
 let championshipData=null,championshipTab='battle',championshipLoading=false,championshipError='',championshipLoadId=0,championshipBusy=false,championshipDraft=[],championshipEditing='attack',championshipMatch=null;
 const pendingChampionshipKey=()=>`warband.championships.pending.${account.user?.id||'guest'}`;
 function renderChampionships(){
- screen='championships';championshipData??=previewChampionships(browserStorage,profile,roster);
- shellFrame('championships',championshipPage(profile,roster,championshipData,{tab:championshipTab,loading:championshipLoading,error:championshipError,signedIn:accountReady}));
+ screen='championships';championshipData??=emptyChampionships();
+ shellFrame('championships',championshipPage(profile,roster,championshipData,{tab:championshipTab,loading:championshipLoading,error:championshipError}));
  try{if(accountReady&&browserStorage.getItem(pendingChampionshipKey()))app.querySelector('.championship-tabs').insertAdjacentHTML('beforebegin','<div class="championship-error" role="status">A battle result is waiting to sync. <button class="text-button" data-action="championship-retry">Retry saved result</button></div>');}catch{}
  updateChampionshipClock();
 }
@@ -146,41 +145,40 @@ function updateChampionshipClock(){const label=app.querySelector('[data-champion
 setInterval(updateChampionshipClock,30000);
 async function loadChampionships(){
  const load=++championshipLoadId;
- if(!accountReady||!account.user){championshipData=previewChampionships(browserStorage,profile,roster);championshipLoading=false;championshipError='';if(screen==='championships')renderChampionships();return;}
+ if(!accountReady||!account.user){enterAccount('championships');return;}
  championshipLoading=true;championshipError='';if(screen==='championships')renderChampionships();
- try{const data=await account.api('championship-dashboard');if(load!==championshipLoadId)return;championshipData={...data,published:!!data.teams,teams:data.teams||{attack_ids:[...profile.team],defense_ids:[...profile.team]}};}
- catch(error){if(load!==championshipLoadId)return;championshipError=error.message;if(!championshipData||championshipData.preview)championshipData=previewChampionships(browserStorage,profile,roster);}
+ try{await account.flush();const data=await account.api('championship-dashboard');if(load!==championshipLoadId)return;championshipData={...data,available:true,published:!!data.teams,teams:data.teams||{attack_ids:[...profile.team],defense_ids:[...profile.team]}};}
+ catch(error){if(load!==championshipLoadId)return;championshipError=error.message;championshipData=emptyChampionships();}
  finally{if(load===championshipLoadId){championshipLoading=false;if(screen==='championships')renderChampionships();}}
 }
 function editChampionshipTeam(kind){
+ if(!championshipData?.available)return;
  championshipEditing=kind;championshipDraft=[...championshipData.teams[kind+'_ids']];
- const eligible=championshipData.preview?roster:ownedHeroes(profile,roster);
- openModal(kind==='attack'?'Set attack warband':'Set defense warband',championshipPicker(championshipDraft,eligible,{preview:championshipData.preview}),'championship-team');
+ const eligible=ownedHeroes(profile,roster);
+ openModal(kind==='attack'?'Set attack warband':'Set defense warband',championshipPicker(championshipDraft,eligible),'championship-team');
 }
 function updateChampionshipPicks(){for(const button of modalContent.querySelectorAll('.championship-pick')){const index=championshipDraft.indexOf(button.dataset.id);button.classList.toggle('selected',index>=0);button.setAttribute('aria-pressed',String(index>=0));button.querySelector('b').textContent=index>=0?index+1:'';}modalContent.querySelector('#championship-picked').textContent=`${championshipDraft.length} / 5 selected`;modalContent.querySelector('[data-action="championship-save-team"]').disabled=championshipDraft.length!==5;}
 async function saveChampionshipTeam(){
  if(championshipBusy)return;championshipBusy=true;
- try{if(championshipData.preview){championshipData.teams={...championshipData.teams,[championshipEditing+'_ids']:[...championshipDraft]};browserStorage.setItem('warband.championships.preview',JSON.stringify(championshipData.teams));}
- else{await account.flush();championshipData=await account.api('championship-team',{userId:account.user.id,kind:championshipEditing,ids:championshipDraft});championshipData.published=true;}
+ try{await account.flush();championshipData={...await account.api('championship-team',{userId:account.user.id,kind:championshipEditing,ids:championshipDraft}),available:true,published:true};
  closeModal();renderChampionships();toast(championshipEditing==='defense'?'Defense warband saved.':'Attack warband saved.');}
  catch(error){toast(error.message);}finally{championshipBusy=false;}
 }
 async function fightChampionship(opponent){
- if(championshipBusy)return;if(!championshipData.preview&&!championshipData.published){toast('Save your defense warband to join the field.');editChampionshipTeam('defense');return;}championshipBusy=true;
- try{let match;if(championshipData.preview){const rival=PRACTICE_RIVALS.find(r=>r.id===opponent);if(!rival)throw Error('Choose a practice warband.');const attack=championshipSnapshot(profile,championshipData.teams.attack_ids,roster,{loan:true}),defense=championshipSnapshot(profile,rival.ids,roster,{loan:true}),id='practice-'+crypto.randomUUID();match={id,state:createChampionshipBattle(roster,attack,defense,crypto.getRandomValues(new Uint32Array(1))[0],id,{practice:true}),opponent:rival.name,practice:true};}
- else{await account.flush();match=await account.api('championship-start',{userId:account.user.id,opponent});}
- championshipMatch={id:match.id,practice:match.practice===true,opponent:match.opponent,actions:[],submitted:false};battle=match.state;stopAuto();battleSpeed=1;selectedEnemy=battle.enemies[2]?.uid;go('battle');mountBattleLoading(app.querySelector('.battle-shell'));}
+ if(championshipBusy||!championshipData?.available)return;if(!championshipData.published){toast('Save your defense warband to join the field.');editChampionshipTeam('defense');return;}championshipBusy=true;
+ try{await account.flush();const match=await account.api('championship-start',{userId:account.user.id,opponent});
+ championshipMatch={id:match.id,opponent:match.opponent,actions:[],submitted:false};battle=match.state;stopAuto();battleSpeed=1;selectedEnemy=battle.enemies[2]?.uid;go('battle');mountBattleLoading(app.querySelector('.battle-shell'));}
  catch(error){toast(error.message);}finally{championshipBusy=false;}
 }
 function storeChampionshipResult(payload){try{browserStorage.setItem(pendingChampionshipKey(),JSON.stringify(payload));}catch{}}
 async function submitChampionshipResult(payload){
- const result=await account.api('championship-finish',payload);try{browserStorage.removeItem(pendingChampionshipKey());}catch{}championshipData={...result.dashboard,published:!!result.dashboard.teams};return result;
+ const result=await account.api('championship-finish',payload);try{browserStorage.removeItem(pendingChampionshipKey());}catch{}championshipData={...result.dashboard,available:true,published:!!result.dashboard.teams};return result;
 }
 function showChampionshipResult(){
  const match=championshipMatch;if(!match)return;const victory=battle.phase==='victory';
  const content=message=>`<div class="championship-result-summary">${championshipCrest(championshipData?.standing?.tier||0)}<p>${esc(match.opponent)}</p><p>${esc(message)}</p><div class="modal-actions"><button class="button gold" data-action="nav" data-page="championships">Return to The Championships</button></div></div>`;
- openModal(match.practice?(victory?'Practice victory':'The practice defense holds'):(victory?'Victory':'The defense holds'),content(match.practice?'Practice complete. No points or rewards were changed.':'Verifying your battle result…'),'championship-result');
- if(match.practice||match.submitted)return;match.submitted=true;
+ openModal(victory?'Victory':'The defense holds',content('Verifying your battle result…'),'championship-result');
+ if(match.submitted)return;match.submitted=true;
  const payload={userId:account.user.id,id:match.id,actions:match.actions};storeChampionshipResult(payload);
  submitChampionshipResult(payload).then(result=>{if(modal.open&&modal.dataset.view==='championship-result')openModal(result.outcome==='victory'?'Victory':result.outcome==='expired'?'Attack expired':'The defense holds',content(result.outcome==='victory'?'+30 Championship points. Your weekly standing has been updated.':result.outcome==='expired'?'The battle timer or weekly cutoff passed. This attack counts as a defeat.':'−10 Championship points. Regroup and challenge another defense.'),'championship-result');}).catch(error=>{if(modal.open&&modal.dataset.view==='championship-result')openModal('Your result is waiting',content(error.message+' Your replay is saved on this device; retry it from The Championships.'),'championship-result');});
 }
@@ -195,7 +193,7 @@ function toast(text){notice.textContent=text;notice.classList.add('show');clearT
 function brand(){return `<a class="brand" href="./" data-action="home" aria-label="Warband Legends home"><span class="brand-sigil"><img src="./assets/brand/warband-crest.webp" alt=""></span><span class="brand-name"><img class="title-wordmark" src="./assets/brand/warband-wordmark.png" alt="Warband Legends" width="2000" height="429"></span></a>`;}
 let combatPractice=null;
 function battleControls(){return `<footer class="topbar battle-topbar battle-dock" aria-label="Battle controls"><button class="icon-button battle-exit" data-action="battle-exit" aria-label="Abandon battle and return home" title="Exit battle">←</button><div class="topbar-right"><button class="icon-button" data-action="speed" aria-label="Animation speed ${battleSpeed} times" ${autoEnabled?'disabled title="Auto uses ×2 speed"':''}>${battleSpeed}×</button><button class="auto-battle-toggle ${autoEnabled?'active':''}" data-action="auto-battle" aria-label="Auto battle" aria-pressed="${autoEnabled}" ${battle?.phase!=='playing'||combatPractice||['runesmith','volley'].includes(battle?.weekly?.rule)?'disabled':''}>Auto ${autoEnabled?'On':'Off'}</button></div></footer>`;}
-function header(page='home',guidePage=page){return `<header class="topbar with-nav">${brand()}${Shell.navigation(page)}<div class="topbar-right"><button class="championship-nav ${page==='championships'?'active':''}" data-action="nav" data-page="championships" aria-label="The Championships" ${page==='championships'?'aria-current="page"':''}>${championshipCrest(2)}<span>Championships</span></button>${Shell.wallet(profile,{page:guidePage})}<button class="icon-button daily-nav ${guidePage==='daily'?'active':''}" ${guidePage==='daily'?'aria-current="page"':''} data-action="nav" data-page="daily" aria-label="Daily Gift and Today’s Path" title="Daily Gift and Today’s Path"><img src="./assets/items/daily-path-medal.webp" alt="" width="32" height="32"></button><button class="icon-button shop-nav ${guidePage==='shop'?'active':''}" ${guidePage==='shop'?'aria-current="page"':''} data-action="nav" data-page="shop" aria-label="Shop" title="Shop"><img class="shop-nav-art" src="./assets/items/shop-stall.webp" alt="" width="34" height="34"></button><button class="icon-button header-guide" data-action="help" data-topic="${guideTopics[guidePage]||'overview'}" aria-label="Guide" title="Guide"><img class="guide-nav-art" src="./assets/items/guide-question.webp" alt="" width="30" height="30"></button></div></header>`;}
+function header(page='home',guidePage=page){return `<header class="topbar with-nav">${brand()}${Shell.navigation(page)}<div class="topbar-right"><button class="icon-button championship-nav ${page==='championships'?'active':''}" data-action="nav" data-page="championships" aria-label="The Championships" title="The Championships" ${page==='championships'?'aria-current="page"':''}>PvP</button>${Shell.wallet(profile,{page:guidePage})}<button class="icon-button daily-nav ${guidePage==='daily'?'active':''}" ${guidePage==='daily'?'aria-current="page"':''} data-action="nav" data-page="daily" aria-label="Daily Gift and Today’s Path" title="Daily Gift and Today’s Path"><img src="./assets/items/daily-path-medal.webp" alt="" width="32" height="32"></button><button class="icon-button shop-nav ${guidePage==='shop'?'active':''}" ${guidePage==='shop'?'aria-current="page"':''} data-action="nav" data-page="shop" aria-label="Shop" title="Shop"><img class="shop-nav-art" src="./assets/items/shop-stall.webp" alt="" width="34" height="34"></button><button class="icon-button header-guide" data-action="help" data-topic="${guideTopics[guidePage]||'overview'}" aria-label="Guide" title="Guide"><img class="guide-nav-art" src="./assets/items/guide-question.webp" alt="" width="30" height="30"></button></div></header>`;}
 function elementLegend(){return `<div class="element-guide"><span class="element red">${rune('red')} Ember</span><b>›</b><span class="element green">${rune('green')} Verdant</span><b>›</b><span class="element blue">${rune('blue')} Frost</span><b>›</b><span class="element red small">${rune('red')}</span><span class="guide-divider"></span><span class="element yellow">${rune('yellow')}</span><b>⇄</b><span class="element purple">${rune('purple')}</span></div>`;}
 function renderHome(){
   clearBattleEffects();screen='home';busy=false;pendingCaster=null;selectedRune=null;animationToken++;
@@ -245,7 +243,7 @@ async function play(result){
   if(battle?.championship&&result.championshipAction)championshipMatch?.actions.push(result.championshipAction);
   if(combatPractice&&combatPractice.phase<PRACTICE_PHASES.length&&!practicePhaseDone(result,PRACTICE_PHASES[combatPractice.phase],previousBattle)){toast(practicePrompt(PRACTICE_PHASES[combatPractice.phase],battle.heroes.find(h=>h.uid===combatPractice.actor)?.name||'the ready champion'));return;}
   const focusAfter=document.activeElement?.dataset.index;
-  battle=result.state;if(battle.championship&&championshipMatch&&!championshipMatch.practice&&battle.phase!=='playing')storeChampionshipResult({userId:account.user.id,id:championshipMatch.id,actions:championshipMatch.actions});settleVictory();persist(PROFILE_KEY,profile);
+  battle=result.state;if(battle.championship&&championshipMatch&&battle.phase!=='playing')storeChampionshipResult({userId:account.user.id,id:championshipMatch.id,actions:championshipMatch.actions});settleVictory();persist(PROFILE_KEY,profile);
   busy=true;pendingCaster=null;selectedRune=null;const token=++animationToken,presentationEpoch=battlePresentationEpoch;
   for(const frame of result.frames){if(token!==animationToken)return;if(presentationEpoch!==battlePresentationEpoch)break;const timing=battleTiming(frame.kind,{speed:battleSpeed,reduced:reducedAnimation(),special:!!(displayedBattle&&planSpecialEffects(displayedBattle,frame.state,frame)?.special)});renderBattle(frame.state,frame);await new Promise(resolve=>setTimeout(resolve,timing.duration));}
   if(token!==animationToken)return;busy=false;renderBattle();if(focusAfter!==undefined)app.querySelector(`[data-index="${focusAfter}"]`)?.focus({preventScroll:true});if(combatPractice&&combatPractice.phase<PRACTICE_PHASES.length&&practicePhaseDone(result,PRACTICE_PHASES[combatPractice.phase],previousBattle)){combatPractice.phase++;if(combatPractice.phase===PRACTICE_PHASES.length){for(const event of ['special','match4','match5'])profile=recordTutorial(profile,event);persist(PROFILE_KEY,profile);combatPractice={phase:PRACTICE_PHASES.length,actor:combatPractice.actor};renderBattle();openModal('Practice complete!',`<p>Your first quest reward is ready.</p><div class="modal-actions"><button class="button gold" data-action="practice-reward">Collect Practice Reward</button></div>`,'practice-complete');return;}const nextPhase=PRACTICE_PHASES[combatPractice.phase];if(nextPhase==='special'){const hero=battle.heroes.find(h=>h.uid===combatPractice.actor);hero.mana=hero.manaMax;}else if(nextPhase==='match4'||nextPhase==='match5')battle=practiceBoard(battle,nextPhase==='match4'?4:5);renderBattle();}else if(battle.phase!=='playing'){stopAuto();renderBattle();showResult();}
@@ -310,7 +308,6 @@ document.addEventListener('click',event=>{
   if(['tile','hero','enemy'].includes(action)&&autoEnabled){stopAuto();if(screen==='battle'&&!busy)renderBattle();}
   if(action==='championship-tab'){championshipTab=button.dataset.tab;renderChampionships();return;}
   if(action==='championship-refresh'){loadChampionships();return;}
-  if(action==='championship-signin'){enterAccount('championships');return;}
   if(action==='championship-edit'){editChampionshipTeam(button.dataset.kind);return;}
   if(action==='championship-pick'){if(championshipBusy)return;if(championshipDraft.includes(id))championshipDraft=championshipDraft.filter(v=>v!==id);else if(championshipDraft.length<5)championshipDraft.push(id);else{toast('Remove a champion before adding another.');return;}updateChampionshipPicks();return;}
   if(action==='championship-save-team'){saveChampionshipTeam();return;}
@@ -442,7 +439,7 @@ app.addEventListener('click',event=>{if(Date.now()<suppressClickUntil&&event.tar
 app.addEventListener('keydown',event=>{const tile=event.target.closest('[data-index]');if(!tile)return;const i=Number(tile.dataset.index),delta={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[event.key];if(delta){event.preventDefault();const n=i+delta;if(n>=0&&n<35&&(!(Math.abs(delta)===1)||Math.floor(i/7)===Math.floor(n/7)))app.querySelector(`[data-index="${n}"]`)?.focus();}});
 let collectionFilters={...DEFAULT_FILTERS},summoning=false,summonToken=0,portalReveal=null;
 function abandonBattle(){
-  if(battle?.championship&&championshipMatch&&!championshipMatch.practice&&!championshipMatch.submitted&&battle.phase==='playing'){
+  if(battle?.championship&&championshipMatch&&!championshipMatch.submitted&&battle.phase==='playing'){
    const payload={userId:account.user.id,id:championshipMatch.id,surrender:true};storeChampionshipResult(payload);submitChampionshipResult(payload).catch(()=>{});
   }
   championshipMatch=null;
@@ -457,7 +454,7 @@ function abandonBattle(){
 }
 window.addEventListener('pagehide',()=>{abandonBattle();account.flush().catch(()=>{});courtyardView?.destroy();courtyardView=null;});
 window.addEventListener('pageshow',event=>{if(event.persisted)renderRoute();});
-function go(path){if(!['splash','championships'].includes(path)&&!(path==='battle'&&battle?.championship?.practice)&&!accountReady){enterAccount(path);return;}const hash='#/'+path;if(location.hash!==hash)history.pushState(null,'',hash);renderRoute();}
+function go(path){if(path!=='splash'&&!accountReady){enterAccount(path);return;}const hash='#/'+path;if(location.hash!==hash)history.pushState(null,'',hash);renderRoute();}
 function requestBattleExit(destination){if(battle?.championship)destination='championships';battlePresentationEpoch++;clearBattleEffects();displayedBattle=null;drag=null;edgeTap=null;pendingCaster=null;selectedRune=null;if(screen==='battle'&&battle)renderBattle();openModal('Exit battle?','<p>This battle will be abandoned.</p><div class="modal-actions"><button class="button outline" data-action="close">Stay in battle</button><button class="button gold" data-action="home" data-leave-battle="true" data-page="'+esc(destination)+'">Exit battle</button></div>','battle-exit');}
 function handleHashNavigation(){
  const destination=location.hash.replace(/^#\/?/,'')||'splash';
@@ -471,7 +468,7 @@ let weeklyRefreshTimer=null;
 
 function renderRoute(){
   if(!profile)return;
-  if(!accountReady&&location.hash&&!['#/splash','#/championships'].includes(location.hash)&&!(location.hash==='#/battle'&&battle?.championship?.practice)){history.replaceState(null,'','#/splash');renderRoute();enterAccount();return;}
+  if(!accountReady&&location.hash&&location.hash!=='#/splash'){const destination=location.hash.replace(/^#\/?/,'');history.replaceState(null,'','#/splash');renderRoute();enterAccount(destination);return;}
   stopCinematic();clearTimeout(weeklyRefreshTimer);
   syncEnergy();
   document.body.classList.toggle('reduce-animation',reducedAnimation());
@@ -524,7 +521,7 @@ document.addEventListener('change',async event=>{
 
 });
 async function boot(){try{
-  const responses=await Promise.all([fetch('./data/champions.json?v=0.53.1'),fetch('./data/effects.json?v=0.53.1')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=defaultProfile();renderRoute();
+  const responses=await Promise.all([fetch('./data/champions.json?v=0.53.2'),fetch('./data/effects.json?v=0.53.2')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=defaultProfile();renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
 

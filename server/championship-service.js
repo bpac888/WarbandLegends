@@ -1,19 +1,18 @@
 import {championshipSnapshot,championshipTeamError,createChampionshipBattle,replayChampionship} from '../src/championship-battle.js';
 const fail=(status,message)=>{const error=Error(message);error.status=status;throw error;};
 export async function runChampionshipRequest({action,input,user,upstream,configured,roster,randomUUID,randomInt}){
- if(!configured)fail(503,'Ranked Championships are not connected yet. You can explore the practice grounds.');
+ if(!configured)fail(503,'The Championships are not connected yet. Please try again later.');
  if(action!=='championship-dashboard'&&input.userId!==user.id)fail(409,'The signed-in account changed. Reload before continuing.');
  const query=async path=>{const r=await upstream(path,{admin:true});if(!r.ok)fail(503,'The Championships are not ready yet. Please check the database setup.');return r.data;};
  const rpc=async(name,body)=>{const r=await upstream('/rest/v1/rpc/'+name,{admin:true,method:'POST',body});if(!r.ok)fail(r.data?.code==='P0001'?409:503,r.data?.code==='P0001'?r.data.message:'The Championships are not ready yet. Please check the database setup.');return r.data;};
- const getProfile=async()=>{const rows=await query(`/rest/v1/player_saves?user_id=eq.${user.id}&select=profile,revision`);if(!rows[0])fail(409,'Save your game progress before entering.');return rows[0];};
+ const getProfile=async(player=user.id)=>{const rows=await query(`/rest/v1/player_saves?user_id=eq.${player}&select=profile,revision`);if(!rows[0])fail(409,'Save your game progress before entering.');return rows[0];};
  if(action==='championship-dashboard')return rpc('championship_dashboard',{player:user.id});
  if(action==='championship-team'){
   const {profile}=await getProfile(),kind=input.kind;if(!['attack','defense'].includes(kind))fail(400,'Choose an attack or defense team.');
   const error=championshipTeamError(input.ids,profile,roster);if(error)fail(400,error);
   const rows=await query(`/rest/v1/championship_teams?user_id=eq.${user.id}&select=*`),old=rows[0];
   const attack=kind==='attack'?input.ids:old?.attack_ids||profile.team,defense=kind==='defense'?input.ids:old?.defense_ids||profile.team;
-  // An attack edit never silently republishes a changed defense snapshot.
-  const snapshot=kind==='defense'||!old?championshipSnapshot(profile,defense,roster):old.defense_snapshot;
+  const snapshot=championshipSnapshot(profile,defense,roster);
   return rpc('championship_publish',{player:user.id,player_name:profile.name,attack,defense,snapshot});
  }
  if(action==='championship-start'){
@@ -21,7 +20,9 @@ export async function runChampionshipRequest({action,input,user,upstream,configu
   const {profile}=await getProfile(),rows=await query(`/rest/v1/championship_teams?user_id=in.(${user.id},${input.opponent})&select=*`),own=rows.find(t=>t.user_id===user.id),rival=rows.find(t=>t.user_id===input.opponent);
   if(!own||!rival)fail(409,'Save your attack and defense teams, then refresh the field.');
   const error=championshipTeamError(own.attack_ids,profile,roster);if(error)fail(409,error);
-  const attack=championshipSnapshot(profile,own.attack_ids,roster),id=randomUUID(),state=createChampionshipBattle(roster,attack,rival.defense_snapshot,randomInt(1,0x100000000),id);
+  const {profile:defenderProfile}=await getProfile(input.opponent);
+  const defenseError=championshipTeamError(rival.defense_ids,defenderProfile,roster);if(defenseError)fail(409,'This defense needs an updated team. Choose another opponent.');
+  const attack=championshipSnapshot(profile,own.attack_ids,roster),defense=championshipSnapshot(defenderProfile,rival.defense_ids,roster),id=randomUUID(),state=createChampionshipBattle(roster,attack,defense,randomInt(1,0x100000000),id);
   return rpc('championship_start',{player:user.id,rival:input.opponent,battle_id:id,state,defense_updated:rival.updated_at});
  }
  if(action==='championship-finish'){

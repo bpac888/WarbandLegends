@@ -15,7 +15,7 @@ The repository includes a single-file, generated function containing all its req
 1. In the Supabase project, open **Edge Functions**.
 2. Choose **Deploy a new function → Via Editor** (the label may be **Create a new function**).
 3. Set the function name to **`warband`**.
-4. Open the [complete function bundle](https://raw.githubusercontent.com/bpac888/WarbandLegends/codex/supabase-github-pages/supabase/functions/warband/bundle.js), select all, and copy it into the editor, replacing the example code. Use **bundle.js**, not `index.ts`; the bundle contains everything and needs no extra files.
+4. Open the [complete function bundle](https://raw.githubusercontent.com/bpac888/WarbandLegends/main/supabase/functions/warband/bundle.js), select all, and copy it into the editor, replacing the example code. Use **bundle.js**, not `index.ts`; the bundle contains everything and needs no extra files.
 5. Disable **Verify JWT / Enforce JWT verification** for this function. The function itself validates signed-in players through Supabase Auth. Login, registration and CORS requests must also be allowed before a player has a token. This does not make saves or Championships anonymous.
 6. Click **Deploy**. If the JWT setting is under the deployed function's **Details** tab, turn it off there after deploying.
 
@@ -90,3 +90,17 @@ npm run test:supabase
 Browser tests require Playwright/Chromium as with the existing game suites. `test:supabase` serves the game at its real GitHub Pages subdirectory and exercises the actual cross-origin Edge handler with a deterministic Supabase provider fixture. It does not contact or modify production player data. The function bundle is committed so deployment through the dashboard needs no build tools.
 
 For local development against the deployed function, add the exact local origin, such as `http://localhost:4173`, to `ALLOWED_ORIGINS` alongside the GitHub Pages origin. Do not use a wildcard. Live Supabase deployment is a separate step from local tests.
+
+
+## Updating an existing project to 0.53.2
+
+The GitHub Pages update publishes the interface automatically. Existing Supabase deployments also need these two updates:
+
+1. Run `supabase/migrations/202611160001_simple_championship_points.sql` in the SQL Editor. Do not rerun the original schema scripts. The migration changes defense defeats to −1 point and removes tier protection; it preserves players, teams and past rewards.
+2. Edit the existing `warband` Edge Function, replace its code with the import below and deploy it. Keep gateway JWT verification off; the function validates the player session itself.
+
+```ts
+import "https://raw.githubusercontent.com/bpac888/WarbandLegends/main/supabase/functions/warband/bundle.js?v=0.53.2";
+```
+
+The updated function loads both teams’ latest saved hero upgrades automatically when a battle starts. Games already in progress retain their starting stats for replay verification.
