@@ -43,10 +43,10 @@ A transaction lock serializes tournament writes and finalization. Every database
 
 ## Connect when Supabase is ready
 
-1. Complete [player account setup](PLAYER_ACCOUNTS.md), including `supabase/accounts.sql` and Vercel settings.
-2. Run `supabase/championships.sql` once in the same project's SQL editor.
-3. Add **`SUPABASE_SERVICE_ROLE_KEY`** to Vercel's **server-only** environment variables. Use the project's legacy service-role key. Never put it in source control, browser code or any `VITE_`/`NEXT_PUBLIC_` variable. The public/anon account key is not sufficient for verified tournament writes.
-4. Redeploy. Ranked mode automatically connects for signed-in players; guests can still use practice. Register at least two accounts, save each defense and challenge the other.
+1. Follow [GitHub Pages + Supabase setup](SUPABASE_GITHUB_PAGES.md). Vercel is not required.
+2. The account and Championships SQL scripts must have succeeded once in the same project. Do not rerun completed scripts.
+3. Deploy the bundled `warband` Edge Function. Supabase supplies its server credentials; no secret/service-role key belongs in browser code.
+4. Publish the prepared game code to GitHub Pages. Ranked mode connects for signed-in players; guests can still use practice. Register at least two accounts, save each defense and challenge the other.
 
 The server authenticates the account through the existing HttpOnly session, loads champion data and the cloud profile itself, and generates a seeded initial battle. It saves that state and the opponent's frozen defense. The client submits only its action replay. The server replays legal swaps, activations and Specials before accepting a victory; it never trusts a submitted victory flag, arbitrary stats or a submitted score. Match ownership, expiry, one-time settlement, season changes, rewards and revisions are enforced in the database. Tournament tables/functions cannot be read or called directly with the public key or a player's JWT. Only the server's service-role credential can access them.
 

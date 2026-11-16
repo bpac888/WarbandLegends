@@ -1,5 +1,7 @@
 # Player accounts
 
+**Current deployment: GitHub Pages + Supabase Edge Functions. Follow [this setup guide](SUPABASE_GITHUB_PAGES.md); Vercel is not required.** The cookie-based Node/Vercel adapter described below remains available as an alternative.
+
 Accounts use Supabase email/password authentication and Postgres cloud saves, accessed through a same-origin `/api/account` function on Vercel. This requires a server; GitHub Pages alone cannot run accounts. The game starts fresh for every new account and does not import old browser saves.
 
 ## Activate on Vercel

@@ -1,5 +1,5 @@
-import {championshipEsc as esc,CHAMPIONSHIP_TIERS,CHAMPIONSHIP_REWARDS,PRACTICE_RIVALS} from './championships.js?v=0.53.0';
-import {heroForId} from './hero-copies.js?v=0.53.0';
+import {championshipEsc as esc,CHAMPIONSHIP_TIERS,CHAMPIONSHIP_REWARDS,PRACTICE_RIVALS} from './championships.js?v=0.53.1';
+import {heroForId} from './hero-copies.js?v=0.53.1';
 export const championshipCrest=(tier=0)=>`<svg class="championship-crest crest-${CHAMPIONSHIP_TIERS[tier]?.id||'bronze'}" viewBox="0 0 80 88" aria-hidden="true"><path class="crest-shield" d="M9 12 40 3l31 9v35c0 17-15 29-31 37C24 76 9 64 9 47Z"/><path class="crest-edge" d="m16 17 24-7 24 7v30c0 13-11 23-24 30-13-7-24-17-24-30Z"/><path class="crest-crown" d="m23 33 5 19h24l5-19-11 8-6-16-6 16Z"/><path d="M29 58h22" fill="none" stroke="currentColor" stroke-width="3"/></svg>`;
 const portraits=(ids,roster)=>`<div class="championship-team-portraits">${(ids||[]).map(id=>{const c=heroForId(roster,id);return c?`<img src="./${c.portrait}" alt="${esc(c.name)}" title="${esc(c.name)}" width="72" height="96">`:'';}).join('')||'<span>No team saved</span>'}</div>`;
 const stat=(value,label)=>`<span><b>${value||0}</b><small>${label}</small></span>`;

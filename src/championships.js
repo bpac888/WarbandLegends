@@ -1,6 +1,6 @@
-import {weeklyWindow} from './weekly.js?v=0.53.0';
-import {CHAMPIONSHIP_TIERS,CHAMPIONSHIP_REWARDS,championshipReward} from './championship-catalog.js?v=0.53.0';
-import {heroForId} from './hero-copies.js?v=0.53.0';
+import {weeklyWindow} from './weekly.js?v=0.53.1';
+import {CHAMPIONSHIP_TIERS,CHAMPIONSHIP_REWARDS,championshipReward} from './championship-catalog.js?v=0.53.1';
+import {heroForId} from './hero-copies.js?v=0.53.1';
 export {CHAMPIONSHIP_TIERS,CHAMPIONSHIP_REWARDS,championshipReward};
 export const championshipWeek=now=>weeklyWindow(now);
 export const championshipEsc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

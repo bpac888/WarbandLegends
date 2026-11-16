@@ -10,6 +10,7 @@ async function setup(options={}){
  await context.route('**/*',async route=>{
   const request=route.request(),u=new URL(request.url());
   if(u.hostname!=='legends.local'){errors.push('external '+u.hostname);return route.abort();}
+  if(u.pathname.endsWith('/src/backend-config.js'))return route.fulfill({contentType:'text/javascript',body:'export const BACKEND_CONFIG={};'});
   if(u.pathname==='/api/account'){
    const action=u.searchParams.get('action'),input=request.method()==='POST'?request.postDataJSON():{},cookie=(request.headers().cookie||'').match(/test_player=([^;]+)/)?.[1],player=players.get(cookie);
    const reply=(body,status=200,headers={})=>route.fulfill({status,contentType:'application/json',headers:{'Cache-Control':'no-store',...headers},body:JSON.stringify(body)});

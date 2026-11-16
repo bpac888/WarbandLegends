@@ -1,7 +1,9 @@
+import {BACKEND_CONFIG} from './backend-config.js?v=0.53.1';
+import {SupabaseSession} from './supabase-session.js?v=0.53.1';
 export class AccountClient {
- constructor({request=(...args)=>fetch(...args),storage=window.localStorage,onStatus=()=>{}}={}){this.request=request;this.storage=storage;this.onStatus=onStatus;this.user=null;this.revision=0;this.pending=null;this.running=null;this.timer=null;this.conflict=false;this.needsLogin=false;this.lastSaved=null;}
+ constructor({request=(...args)=>fetch(...args),storage=window.localStorage,onStatus=()=>{},backend=globalThis.location?BACKEND_CONFIG:null,sessionStorage}={}){let tabStorage=sessionStorage;try{tabStorage??=globalThis.sessionStorage;}catch{}this.transport=backend?.supabaseUrl&&backend?.publishableKey?new SupabaseSession({config:backend,request,storage,sessionStorage:tabStorage}):null;this.request=request;this.storage=storage;this.onStatus=onStatus;this.user=null;this.revision=0;this.pending=null;this.running=null;this.timer=null;this.conflict=false;this.needsLogin=false;this.lastSaved=null;}
  async api(action,body){
-  let response;try{response=await this.request(`/api/account?action=${action}`,{method:body===undefined?'GET':'POST',credentials:'same-origin',cache:'no-store',headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(20000)});}catch{throw Error('Unable to connect. Check your connection and try again.');}
+  let response;try{response=this.transport?await this.transport.apiResponse(action,body):await this.request(`/api/account?action=${action}`,{method:body===undefined?'GET':'POST',credentials:'same-origin',cache:'no-store',headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(20000)});}catch{throw Error('Unable to connect. Check your connection and try again.');}
   const result=await response.json().catch(()=>({error:'Player accounts are not available yet. Please try again later.'}));
   if(!response.ok){const error=Error(result.error||'Account request failed.');error.status=response.status;throw error;}return result;
  }
@@ -38,7 +40,7 @@ export class AccountClient {
   }})();
   try{await this.running;}finally{this.running=null;}
  }
- async logout(){await this.flush();await this.api('logout',{});this.user=null;this.pending=null;this.lastSaved=null;this.conflict=false;}
+ async logout(){await this.flush();await this.api('logout',{userId:this.user?.id});this.user=null;this.pending=null;this.lastSaved=null;this.conflict=false;}
 }
 export function accountForm(mode='choose'){
  if(mode==='choose')return `<div class="account-choice"><p>Keep your warband’s progress with you.</p><button class="button gold" data-action="account-mode" data-mode="register">Register</button><button class="button outline" data-action="account-mode" data-mode="login">Login</button></div>`;
