@@ -182,3 +182,12 @@ body #modal[data-view="championship-team"] .button{font-size:16px;min-height:44p
  @keyframes championship-embers{0%{transform:translate3d(0,35px,0);opacity:0}20%{opacity:.9}75%{opacity:.7}100%{transform:translate3d(var(--drift),-100px,0);opacity:0}}
 }
 @media(prefers-reduced-motion:reduce){.championship-atmosphere{display:none}}
+
+/* Keep the detailed trophy as large as the neighboring navigation artwork. */
+body .topbar.with-nav .championship-nav>img.championship-nav-art{display:block;width:34px;height:34px;max-width:none;flex-shrink:0;object-fit:contain;filter:drop-shadow(0 1px 1px #58341e55)}
+@media(max-width:374px){body .topbar.with-nav .championship-nav>img.championship-nav-art{width:28px;height:28px}}
+
+@media(max-width:760px){body .topbar.with-nav .championship-nav{padding:0}}
+
+.championship-rewards .championship-winner-trophy{display:block;width:64px;height:64px;object-fit:contain;margin:0 auto 4px;filter:drop-shadow(0 2px 2px #79512144)}
+@media(max-width:700px){.championship-rewards .championship-winner-trophy{width:46px;height:46px;margin-bottom:2px}}

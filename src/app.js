@@ -1,62 +1,62 @@
-import {championshipPage,championshipPicker,championshipCrest} from './championship-ui.js?v=0.53.2';
-import {emptyChampionships} from './championships.js?v=0.53.2';
-import {AccountClient,accountForm} from './accounts.js?v=0.53.2';
-import {campaignEndingHTML,mountCampaignEnding} from './campaign-ending.js?v=0.53.2';
-import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.53.2';
-import {mountBattleLoading} from './loading-art.js?v=0.53.2';
-import {weeklyStatus} from './weekly-combat.js?v=0.53.2';
-import {campaignArc} from './campaign-story.js?v=0.53.2';
-import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.53.2';
-import {scenarioStatus} from './chapter.js?v=0.53.2';
-import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.53.2';
-import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.53.2';
-import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.53.2';
-import {swipeTarget} from './board-gestures.js?v=0.53.2';
-import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.53.2';
-import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.53.2';
-import {specialSummary} from './special-summary.js?v=0.53.2';
-import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.53.2';
-import {useExperienceTome} from './experience-tomes.js?v=0.53.2';
-import {premiumItem,activateBooster} from './premium-items.js?v=0.53.2';
-import {premiumItemConfirmation} from './premium-items-ui.js?v=0.53.2';
-import {ascensionTier} from './ascension.js?v=0.53.2';
-import {battleTiming} from './battle-pacing.js?v=0.53.2';
-import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.53.2';
-import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.53.2';
-import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.53.2';
-import {courtyardHTML} from './courtyard-ui.js?v=0.53.2';
-import {mountCourtyard} from './courtyard-view.js?v=0.53.2';
-import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.53.2';
-import {saveTeam} from './teams.js?v=0.53.2';
-import {mountArenaScene} from './arena-scene.js?v=0.53.2';
-import './menu-atmosphere.js?v=0.53.2';
-import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.53.2';
-import {refreshEnergy,energyStatus} from './keeper.js?v=0.53.2';
-import {applyAutoAction} from './auto-battle.js?v=0.53.2';
-import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.53.2';
-import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.53.2';
-import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.53.2';
-import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.53.2';
-import {dailyPage} from './keeper-ui.js?v=0.53.2';
-import {buyWithGems} from './economy.js?v=0.53.2';
-import {gemConfirmation} from './gem-ui.js?v=0.53.2';
-import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.53.2';
-import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.53.2';
-import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.53.2';
-import {reserveEntry,exchange} from './mode-progression.js?v=0.53.2';
-import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.53.2';
-import {getEncounter,entryError} from './encounters.js?v=0.53.2';
-import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.53.2';
-import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.53.2';
-import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.53.2';
-import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.53.2';
-import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.53.2';
-import * as Shell from './shell.js?v=0.53.2';
-import {defaultProfile,normalizeProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.53.2';
-import {EFFECTS} from './effects.js?v=0.53.2';
-import {effectIcon} from './icons.js?v=0.53.2';
-import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap as engineSwap,activate as engineActivate,cast as engineCast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.53.2';
-import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.53.2';
+import {championshipPage,championshipPicker,championshipCrest} from './championship-ui.js?v=0.53.3';
+import {emptyChampionships} from './championships.js?v=0.53.3';
+import {AccountClient,accountForm} from './accounts.js?v=0.53.3';
+import {campaignEndingHTML,mountCampaignEnding} from './campaign-ending.js?v=0.53.3';
+import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.53.3';
+import {mountBattleLoading} from './loading-art.js?v=0.53.3';
+import {weeklyStatus} from './weekly-combat.js?v=0.53.3';
+import {campaignArc} from './campaign-story.js?v=0.53.3';
+import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.53.3';
+import {scenarioStatus} from './chapter.js?v=0.53.3';
+import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.53.3';
+import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.53.3';
+import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.53.3';
+import {swipeTarget} from './board-gestures.js?v=0.53.3';
+import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.53.3';
+import {recordTutorial,tutorialState,tutorialFinished} from './tutorial.js?v=0.53.3';
+import {specialSummary} from './special-summary.js?v=0.53.3';
+import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.53.3';
+import {useExperienceTome} from './experience-tomes.js?v=0.53.3';
+import {premiumItem,activateBooster} from './premium-items.js?v=0.53.3';
+import {premiumItemConfirmation} from './premium-items-ui.js?v=0.53.3';
+import {ascensionTier} from './ascension.js?v=0.53.3';
+import {battleTiming} from './battle-pacing.js?v=0.53.3';
+import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.53.3';
+import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.53.3';
+import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.53.3';
+import {courtyardHTML} from './courtyard-ui.js?v=0.53.3';
+import {mountCourtyard} from './courtyard-view.js?v=0.53.3';
+import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.53.3';
+import {saveTeam} from './teams.js?v=0.53.3';
+import {mountArenaScene} from './arena-scene.js?v=0.53.3';
+import './menu-atmosphere.js?v=0.53.3';
+import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.53.3';
+import {refreshEnergy,energyStatus} from './keeper.js?v=0.53.3';
+import {applyAutoAction} from './auto-battle.js?v=0.53.3';
+import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.53.3';
+import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.53.3';
+import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.53.3';
+import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.53.3';
+import {dailyPage} from './keeper-ui.js?v=0.53.3';
+import {buyWithGems} from './economy.js?v=0.53.3';
+import {gemConfirmation} from './gem-ui.js?v=0.53.3';
+import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.53.3';
+import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.53.3';
+import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.53.3';
+import {reserveEntry,exchange} from './mode-progression.js?v=0.53.3';
+import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.53.3';
+import {getEncounter,entryError} from './encounters.js?v=0.53.3';
+import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.53.3';
+import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.53.3';
+import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.53.3';
+import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.53.3';
+import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.53.3';
+import * as Shell from './shell.js?v=0.53.3';
+import {defaultProfile,normalizeProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.53.3';
+import {EFFECTS} from './effects.js?v=0.53.3';
+import {effectIcon} from './icons.js?v=0.53.3';
+import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap as engineSwap,activate as engineActivate,cast as engineCast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.53.3';
+import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.53.3';
 const app=document.querySelector('#app'),modal=document.querySelector('#modal'),modalContent=document.querySelector('#modal-content'),notice=document.querySelector('#notice');
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={red:'<path d="M32 8c4 13 16 15 16 29a16 16 0 0 1-32 0c0-9 6-16 12-22-1 10 2 12 5 13 4-7 2-13-1-20Z"/>',green:'<path d="M50 12c1 27-10 40-28 32C5 27 25 12 50 12Z"/><path d="M17 51 42 22M28 39l-2-10m8 4 8 1" fill="none" stroke="var(--rune-dark)" stroke-width="3"/>',blue:'<path d="M32 9v46M12 20l40 24M12 44l40-24M24 14l8 7 8-7M24 50l8-7 8 7M13 29l10-2-1-10M51 35l-10 2 1 10M13 35l10 2-1 10M51 29l-10-2 1-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',yellow:'<path d="m32 5 7 18 20 9-20 9-7 18-7-18L5 32l20-9Z"/><circle cx="32" cy="32" r="8" fill="var(--rune-dark)"/>',purple:'<path d="M43 9a24 24 0 1 0 11 35A22 22 0 0 1 43 9Z"/><path d="m44 22 3-6 3 6 6 3-6 3-3 6-3-6-6-3Z"/>'};
@@ -77,7 +77,7 @@ function scheduleAuto(){
  autoTimer=setTimeout(()=>{autoTimer=null;if(!autoEnabled||busy||modal.open||document.hidden||screen!=='battle'||battle?.phase!=='playing')return;
   autoThinking=true;const id=++autoJob;
   try{
-   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.53.2',import.meta.url),{type:'module'});
+   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.53.3',import.meta.url),{type:'module'});
    autoWorker.onerror=()=>{stopAuto();if(screen==='battle')renderBattle();toast('Auto paused. You can continue manually.');};
    autoWorker.onmessage=({data})=>{
     if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;
@@ -193,7 +193,7 @@ function toast(text){notice.textContent=text;notice.classList.add('show');clearT
 function brand(){return `<a class="brand" href="./" data-action="home" aria-label="Warband Legends home"><span class="brand-sigil"><img src="./assets/brand/warband-crest.webp" alt=""></span><span class="brand-name"><img class="title-wordmark" src="./assets/brand/warband-wordmark.png" alt="Warband Legends" width="2000" height="429"></span></a>`;}
 let combatPractice=null;
 function battleControls(){return `<footer class="topbar battle-topbar battle-dock" aria-label="Battle controls"><button class="icon-button battle-exit" data-action="battle-exit" aria-label="Abandon battle and return home" title="Exit battle">←</button><div class="topbar-right"><button class="icon-button" data-action="speed" aria-label="Animation speed ${battleSpeed} times" ${autoEnabled?'disabled title="Auto uses ×2 speed"':''}>${battleSpeed}×</button><button class="auto-battle-toggle ${autoEnabled?'active':''}" data-action="auto-battle" aria-label="Auto battle" aria-pressed="${autoEnabled}" ${battle?.phase!=='playing'||combatPractice||['runesmith','volley'].includes(battle?.weekly?.rule)?'disabled':''}>Auto ${autoEnabled?'On':'Off'}</button></div></footer>`;}
-function header(page='home',guidePage=page){return `<header class="topbar with-nav">${brand()}${Shell.navigation(page)}<div class="topbar-right"><button class="icon-button championship-nav ${page==='championships'?'active':''}" data-action="nav" data-page="championships" aria-label="The Championships" title="The Championships" ${page==='championships'?'aria-current="page"':''}>PvP</button>${Shell.wallet(profile,{page:guidePage})}<button class="icon-button daily-nav ${guidePage==='daily'?'active':''}" ${guidePage==='daily'?'aria-current="page"':''} data-action="nav" data-page="daily" aria-label="Daily Gift and Today’s Path" title="Daily Gift and Today’s Path"><img src="./assets/items/daily-path-medal.webp" alt="" width="32" height="32"></button><button class="icon-button shop-nav ${guidePage==='shop'?'active':''}" ${guidePage==='shop'?'aria-current="page"':''} data-action="nav" data-page="shop" aria-label="Shop" title="Shop"><img class="shop-nav-art" src="./assets/items/shop-stall.webp" alt="" width="34" height="34"></button><button class="icon-button header-guide" data-action="help" data-topic="${guideTopics[guidePage]||'overview'}" aria-label="Guide" title="Guide"><img class="guide-nav-art" src="./assets/items/guide-question.webp" alt="" width="30" height="30"></button></div></header>`;}
+function header(page='home',guidePage=page){return `<header class="topbar with-nav">${brand()}${Shell.navigation(page)}<div class="topbar-right"><button class="icon-button championship-nav ${page==='championships'?'active':''}" data-action="nav" data-page="championships" aria-label="The Championships" title="The Championships" ${page==='championships'?'aria-current="page"':''}><img class="championship-nav-art" src="./assets/items/championship-trophy.webp" alt="" width="34" height="34"></button>${Shell.wallet(profile,{page:guidePage})}<button class="icon-button daily-nav ${guidePage==='daily'?'active':''}" ${guidePage==='daily'?'aria-current="page"':''} data-action="nav" data-page="daily" aria-label="Daily Gift and Today’s Path" title="Daily Gift and Today’s Path"><img src="./assets/items/daily-path-medal.webp" alt="" width="32" height="32"></button><button class="icon-button shop-nav ${guidePage==='shop'?'active':''}" ${guidePage==='shop'?'aria-current="page"':''} data-action="nav" data-page="shop" aria-label="Shop" title="Shop"><img class="shop-nav-art" src="./assets/items/shop-stall.webp" alt="" width="34" height="34"></button><button class="icon-button header-guide" data-action="help" data-topic="${guideTopics[guidePage]||'overview'}" aria-label="Guide" title="Guide"><img class="guide-nav-art" src="./assets/items/guide-question.webp" alt="" width="30" height="30"></button></div></header>`;}
 function elementLegend(){return `<div class="element-guide"><span class="element red">${rune('red')} Ember</span><b>›</b><span class="element green">${rune('green')} Verdant</span><b>›</b><span class="element blue">${rune('blue')} Frost</span><b>›</b><span class="element red small">${rune('red')}</span><span class="guide-divider"></span><span class="element yellow">${rune('yellow')}</span><b>⇄</b><span class="element purple">${rune('purple')}</span></div>`;}
 function renderHome(){
   clearBattleEffects();screen='home';busy=false;pendingCaster=null;selectedRune=null;animationToken++;
@@ -521,7 +521,7 @@ document.addEventListener('change',async event=>{
 
 });
 async function boot(){try{
-  const responses=await Promise.all([fetch('./data/champions.json?v=0.53.2'),fetch('./data/effects.json?v=0.53.2')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=defaultProfile();renderRoute();
+  const responses=await Promise.all([fetch('./data/champions.json?v=0.53.3'),fetch('./data/effects.json?v=0.53.3')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=defaultProfile();renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
 
