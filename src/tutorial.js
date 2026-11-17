@@ -1,10 +1,11 @@
-export const TUTORIAL_FLAGS=['special','match4','match5','fed','feedingCollection','feedingChampion','shop','tokens','premium','inventory','team','guide','celebrated'];
+export const TUTORIAL_FLAGS=['special','match4','match5','fed','feedingCollection','feedingChampion','shop','tokens','premium','inventory','championships','team','guide','celebrated'];
 export const tutorialState=p=>Object.fromEntries(TUTORIAL_FLAGS.map(k=>[k,p?.tutorial?.[k]===true]));
 export const TUTORIAL_QUESTS=[
  {id:'tutorial-combat',name:'Your First Battle Lesson',requires:null,metric:'combat',text:'Make a match, cast a Special, then create and activate Blast and Prismatic Runes.',page:'battle',gold:100,gems:50},
  {id:'tutorial-feeding',name:'A Stronger Champion',requires:'first-summon',metric:'fed',text:'Raise a champion by at least one level using feeding.',page:'champion',gold:150,gems:25},
  {id:'tutorial-shop',name:'Know Your Supplies',requires:'tutorial-feeding',metric:'market',text:'Visit Shop, Token Exchange, Premium and Inventory.',page:'shop',gold:100,gems:25},
- {id:'tutorial-team',name:'Shape Your Warband',requires:'tutorial-shop',metric:'team',text:'Save a change to your team: replace or reorder a champion.',page:'roster',gold:100,gems:25},
+ {id:'tutorial-championships',name:'Enter The Championships',requires:'tutorial-shop',metric:'championships',text:'Open The Championships page.',page:'championships',gold:100,gems:25},
+ {id:'tutorial-team',name:'Shape Your Warband',requires:'tutorial-championships',metric:'team',text:'Save a change to your team: replace or reorder a champion.',page:'roster',gold:100,gems:25},
  {id:'tutorial-guide',name:'Knowledge for the Road',requires:'tutorial-team',metric:'guide',text:'Open the Guide.',page:'guide',gold:100,gems:25},
 ];
 export function tutorialQuestAvailable(p,id){const q=TUTORIAL_QUESTS.find(q=>q.id===id);return !q||!q.requires||p.claimed.includes(q.requires);}
@@ -12,3 +13,5 @@ export function tutorialProgress(p,id){const q=TUTORIAL_QUESTS.find(q=>q.id===id
 // Remember actions even when their tutorial quest is not yet unlocked; claims stay ordered.
 export function recordTutorial(p,event){if(p.openRoster||!TUTORIAL_FLAGS.includes(event)||p.tutorial?.[event])return p;return {...p,tutorial:{...tutorialState(p),[event]:true}};}
 export const tutorialFinished=p=>p.claimed.includes('tutorial-guide');
+
+export const championshipLessonPending=p=>!p.openRoster&&p.claimed.includes('tutorial-shop')&&!p.claimed.includes('tutorial-championships')&&!tutorialState(p).championships;

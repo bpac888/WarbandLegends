@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.53.4",
+  "version": "0.53.5",
   "private": true,
   "type": "module",
   "description": "Match-3 RPG with collectible champions, cloud progress and asynchronous Championships.",

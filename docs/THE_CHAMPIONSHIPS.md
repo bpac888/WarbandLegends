@@ -1,10 +1,12 @@
 # The Championships
 
-A separate asynchronous player-versus-player tournament: attack another player's published five-champion defense while that player is offline. The new painted citadel page has Battle, Warbands, Rankings and Rewards sections. A compact PvP button sits in the navigation row. The original Arena remains available.
+A separate asynchronous player-versus-player tournament: attack another player's published five-champion defense while that player is offline. The painted welcome scene uses a larger phone composition with open sky for the title, flowing waterfalls, torchlight and a pulsing portal. The page has Battle, Warbands, Rankings and Rewards sections. A compact trophy button sits in the navigation row. The original Arena remains available.
 
 ## Access
 
 Enter the game with a player account and use the Championships navigation button. The Championships has no practice preview or title-screen shortcut. It lists real published defenses and rankings. If the backend is unavailable, the page shows an unavailable message and a Retry button.
+
+After the Shop tutorial, opening the main Championships page completes a short visit quest and introduces PvP. No battle or team setup is required for that quest.
 
 Attack and defense warbands are independent of each other and of the campaign team. Only champions owned by the signed-in account can be selected.
 
@@ -57,4 +59,4 @@ This is a baseline asynchronous competition system, not a complete competitive a
 
 `npm run check` runs unit checks and the production build. `npm run test:championships` checks login requirements, the page, owned-only team editor, ranked battles, backend failure/retry and responsive layouts and absence of client errors in Chromium. The database integration test (`npm run test:championships:database`) requires the development-only tool `@electric-sql/pglite@0.3.14` (installed by CI) and uses a temporary local Postgres-compatible engine to exercise season finalization, access restrictions, reward delivery and repeat settlement.
 
-Artwork: original generated citadel concept art in `assets/championships/citadel.webp`; the tier crests are original SVG interface artwork.
+Artwork: original generated citadel concept art in `assets/championships/citadel.webp`, with expanded welcome paintings in `citadel-welcome.webp` and `citadel-welcome-phone.webp`; the tier crests are original SVG interface artwork.

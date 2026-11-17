@@ -123,7 +123,6 @@ body #modal[data-view="championship-team"] .button{font-size:16px;min-height:44p
 .championship-tier-track>div:nth-child(4){background:linear-gradient(125deg,#ecffff,#c3d1ef)}
 .championship-rewards .championship-tier-track span{font-size:16px;color:#5b4637}
 :is(.championship-view-rewards,.championship-view-rankings) .championship-hero{height:180px}
-:is(.championship-view-rewards,.championship-view-rankings) .championship-heading h1,:is(.championship-view-rewards,.championship-view-rankings) .championship-season>span:first-child,:is(.championship-view-rewards,.championship-view-rankings) .championship-banner{display:none}
 :is(.championship-view-rewards,.championship-view-rankings) .championship-content{padding-top:10px}
 :is(.championship-view-rewards,.championship-view-rankings) .championship-heading{margin-bottom:4px}
 :is(.championship-view-rewards,.championship-view-rankings) .championship-tabs{margin-bottom:10px}
@@ -223,3 +222,97 @@ body .topbar.with-nav .championship-nav>img.championship-nav-art{display:block;w
 
 .championship-view-teams .championship-banner{display:none}
 @media(max-width:700px){.championship-rewards .reward-place-3,.championship-rewards .reward-place-4{grid-template-columns:60px minmax(0,1fr)}}
+
+/* A welcoming title over a larger painting, followed by compact team controls. */
+.championship-hero{height:clamp(480px,43vw,600px)}
+.championship-art{background-position:50% 50%}
+.championship-page .championship-hero .championship-heading{display:block;position:absolute;z-index:2;inset:0 0 auto;margin:0;padding:14px 8px 22px;text-align:center;background:linear-gradient(#231a21e8,#332334a3 65%,transparent);pointer-events:none}
+body.menu-theme .game-page.page-championships .championship-hero .championship-heading h1{display:block;margin:0;color:#fff0c3;font-family:'Citadel Display',Georgia,serif;font-size:clamp(40px,5vw,70px);font-weight:700;line-height:1.03;letter-spacing:-.015em;text-shadow:0 2px 2px #2b1521,0 4px 16px #130b13,0 0 22px #bb703866}
+.championship-hero .championship-heading h1>span{display:block;font:700 18px/1.25 'Citadel UI',sans-serif;text-transform:uppercase;letter-spacing:.24em;color:#f4d08c;margin-bottom:2px}
+.championship-heading::after{content:'';display:block;margin:10px auto 0;width:min(180px,40%);height:2px;background:linear-gradient(90deg,transparent,#e7b95c,transparent)}
+.championship-page .championship-content{padding-top:8px}
+.championship-page .championship-season{display:flex;justify-content:center;margin:0 0 4px;font-size:16px}
+.championship-page .championship-season>span{display:inline}
+.championship-page .championship-banner{display:flex;align-items:center;gap:8px;margin:0 0 6px;padding:7px 9px;border-radius:5px}
+.championship-banner>.championship-crest{width:44px;height:50px}
+.championship-standing-lines{min-width:0}
+.championship-page .championship-standing-lines p{margin:0;font-size:16px;line-height:1.4;color:#5d4633}
+.championship-standing-lines strong{font-size:22px;color:#67442c}
+.championship-standing-lines p+p{margin-top:1px!important}
+.championship-page .championship-tabs{margin-bottom:10px}
+.championship-page .championship-team-card{padding:8px;margin-bottom:8px}
+.championship-page .championship-team-card h2{margin:0 0 5px;font-size:25px}
+.championship-page .championship-team-card .championship-team-portraits{gap:4px;margin:4px 0 7px}
+.championship-page .championship-team-portraits figcaption{margin-top:2px;font-size:14px}
+.championship-page .championship-team-card .championship-team-portraits img{max-height:none}
+.championship-page .championship-warband-grid{gap:10px}
+.championship-page .championship-side{gap:2px;margin-bottom:6px}
+.championship-page .championship-rival{padding:9px;margin-bottom:8px}
+.championship-page .championship-rival .championship-team-portraits>img{max-height:none}
+.championship-page .championship-rival-heading{margin-bottom:6px}
+.championship-page .championship-battle-layout{gap:16px}
+:is(.championship-view-rewards,.championship-view-rankings) .championship-hero{height:180px}
+@media(max-width:700px){
+ :is(.championship-view-battle,.championship-view-teams) .championship-hero{height:clamp(410px,53svh,500px)}
+ body.menu-theme .game-page.page-championships .championship-hero .championship-heading h1{font-size:clamp(36px,9.7vw,58px)}
+ .championship-page .championship-hero .championship-heading{padding-top:12px;padding-bottom:18px}
+ .championship-page .championship-content{padding-top:6px}
+ .championship-page .championship-banner{padding:5px 6px;gap:6px;margin-bottom:4px}
+ .championship-banner>.championship-crest{width:36px;height:42px}
+ .championship-page .championship-standing-lines p{font-size:16px}
+ .championship-standing-lines strong{font-size:21px}
+ .championship-page .championship-team-card{padding:7px;margin-bottom:5px}
+ body.menu-theme .game-page.page-championships .championship-team-card h2{font-size:25px}
+ .championship-page .championship-tabs{margin-bottom:8px}
+ .championship-page .championship-battle-layout{gap:8px}
+ .championship-view-teams .championship-warband-grid{gap:6px}
+ :is(.championship-view-rewards,.championship-view-rankings) .championship-hero{height:150px}
+}
+
+/* Water, torch flames and the portal move in the painting's own coordinates. */
+.championship-scene-life{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;mix-blend-mode:screen;opacity:.9}
+.championship-waterfalls{opacity:.75}
+.championship-torch-flame{transform-box:fill-box;transform-origin:50% 100%}
+@media(prefers-reduced-motion:no-preference){
+ .championship-waterfalls{animation:championship-water-flow 2.2s linear infinite}
+ .championship-torch-flame{animation:championship-fire-flicker 1.3s ease-in-out var(--flicker-delay) infinite alternate}
+ .championship-torch-halo{animation:championship-firelight 2.1s ease-in-out infinite alternate}
+ .championship-portal-light{animation:championship-portal-current 5s linear infinite}
+ @keyframes championship-water-flow{to{stroke-dashoffset:-64}}
+ @keyframes championship-fire-flicker{0%{transform:scale(.8,.85);opacity:.6}35%{transform:scale(1.05,1.25);opacity:1}70%{transform:scale(.9,1.1);opacity:.75}100%{transform:scale(1.15,1.4);opacity:1}}
+ @keyframes championship-firelight{from{opacity:.1}to{opacity:.35}}
+ @keyframes championship-portal-current{0%{stroke-dashoffset:0;opacity:.45}50%{opacity:1}100%{stroke-dashoffset:-88;opacity:.45}}
+}
+body:has(#modal[open]) .championship-atmosphere *,.menu-motion-paused .championship-atmosphere *{animation-play-state:paused!important}
+body.menu-theme .game-page.page-championships .championship-side .championship-team-card h2{font-size:25px;line-height:1.2;font-weight:600}
+
+/* Decorative warrior lettering gives the welcome banner its warrior character. */
+body.menu-theme .game-page.page-championships .championship-hero .championship-heading h1{font-family:'Championship Warrior','Citadel Display',serif;font-size:clamp(48px,7vw,90px);font-weight:400;line-height:1.12;letter-spacing:.015em;color:#f9df9a;text-shadow:0 1px #fff1c2,0 3px #75451d,0 5px 8px #160b10,0 0 18px #18101c;-webkit-text-stroke:.25px #f6d28a}
+.championship-page .championship-hero .championship-heading{padding:16px 8px 20px}
+.championship-heading::after{width:min(280px,65%);height:8px;margin-top:5px;background:linear-gradient(90deg,transparent,#b78947 18%,#f4d797 50%,#b78947 82%,transparent);clip-path:polygon(0 45%,38% 35%,43% 0,50% 36%,57% 0,62% 35%,100% 45%,100% 55%,62% 65%,57% 100%,50% 64%,43% 100%,38% 65%,0 55%)}
+@media(max-width:700px){body.menu-theme .game-page.page-championships .championship-hero .championship-heading h1{font-size:clamp(35px,10vw,62px);letter-spacing:0}}
+#modal[data-view="tutorial-championships"] .modal-body p{font-size:18px;line-height:1.5}
+
+/* The welcome scene has newly painted sky and larger architecture, with room to scroll. */
+:is(.championship-view-battle,.championship-view-teams) .championship-hero{height:clamp(800px,94svh,1280px)}
+:is(.championship-view-battle,.championship-view-teams) .championship-art{background-image:url('../assets/championships/citadel-welcome.webp');background-position:50% 100%}
+.championship-scene-life{display:none}
+:is(.championship-view-battle,.championship-view-teams) .scene-life-wide{display:block}
+:is(.championship-view-rewards,.championship-view-rankings) .scene-life-compact{display:block}
+:is(.championship-view-rewards,.championship-view-rankings) .championship-art{background-position:50% 100%}
+body.menu-theme .game-page.page-championships .championship-hero .championship-heading h1{font-size:clamp(56px,8vw,110px);font-weight:400;-webkit-text-stroke:.8px #f4d18b;paint-order:stroke fill}
+.championship-page .championship-hero .championship-heading{padding-top:clamp(30px,5vh,65px);background:linear-gradient(#221128b0,transparent)}
+@media(max-width:700px){
+ :is(.championship-view-battle,.championship-view-teams) .championship-hero{height:clamp(700px,calc(100svh - 100px),1000px)}
+ :is(.championship-view-battle,.championship-view-teams) .championship-art{background-image:url('../assets/championships/citadel-welcome-phone.webp')}
+ :is(.championship-view-battle,.championship-view-teams) .scene-life-wide{display:none}
+ :is(.championship-view-battle,.championship-view-teams) .scene-life-phone{display:block}
+ body.menu-theme .game-page.page-championships .championship-hero .championship-heading h1{font-size:clamp(42px,11.5vw,72px);letter-spacing:-.025em;-webkit-text-stroke:.65px #f6d28a}
+ :is(.championship-view-rewards,.championship-view-rankings) .championship-heading{padding-top:16px!important}
+}
+
+@font-face{font-family:'Championship Warrior';src:url('../assets/fonts/cinzel-decorative-black.woff2') format('woff2');font-style:normal;font-weight:900;font-display:swap}
+body.menu-theme .game-page.page-championships .championship-hero .championship-heading h1{font-family:'Championship Warrior',Georgia,serif!important;font-weight:900;text-align:center;-webkit-text-stroke:.3px #ffe9ad;line-height:1.2;color:#f4cf7c;text-shadow:0 2px #825029,0 4px 4px #170c16,0 0 20px #1b0c1c}
+@media(max-width:700px){body.menu-theme .game-page.page-championships .championship-hero .championship-heading h1{font-size:clamp(42px,12.3vw,72px);position:relative;left:50%;width:max-content;max-width:none;transform:translateX(-50%) scaleX(.74);transform-origin:50% 50%;white-space:nowrap;letter-spacing:0}}
+
+#modal[data-view="tutorial-championships"] .button{font-size:16px;min-height:44px}

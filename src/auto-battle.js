@@ -1,5 +1,5 @@
-import {swap,activate,cast,validMoves,living,manaLevels,readyLevel} from './engine.js?v=0.53.4';
-import {EFFECTS} from './effects.js?v=0.53.4';
+import {swap,activate,cast,validMoves,living,manaLevels,readyLevel} from './engine.js?v=0.53.5';
+import {EFFECTS} from './effects.js?v=0.53.5';
 
 const quiet={frames:false};
 export function applyAutoAction(state,action,options=quiet){
