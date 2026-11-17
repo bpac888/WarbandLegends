@@ -1,6 +1,6 @@
 {
   "name": "legends-runes",
-  "version": "0.53.5",
+  "version": "0.53.6",
   "private": true,
   "type": "module",
   "description": "Match-3 RPG with collectible champions, cloud progress and asynchronous Championships.",
@@ -96,7 +96,12 @@
     "test:championships": "node tests/championships-browser.mjs",
     "test:championships:database": "node tests/championships-database.mjs",
     "build:supabase": "node tools/build-supabase.mjs",
-    "test:supabase": "node tests/supabase-browser.mjs"
+    "test:supabase": "node tests/supabase-browser.mjs",
+    "test:tournaments": "node tests/tournaments-browser.mjs",
+    "test:tournaments:database": "node tests/tournaments-database.mjs",
+    "test:titans": "node tests/titans-browser.mjs",
+    "test:titans:database": "node tests/titans-database.mjs",
+    "build:monthly-sql": "node tools/build-monthly-sql.mjs"
   },
   "engines": {
     "node": ">=22"

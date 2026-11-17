@@ -1,8 +1,8 @@
-import {recordTutorial} from './tutorial.js?v=0.53.5';
-import {boosterActive} from './premium-items.js?v=0.53.5';
-import {heroForId,ownedHeroes,baseHeroId} from './hero-copies.js?v=0.53.5';
-import {development,heroDevelopment,addHeroXp} from './development.js?v=0.53.5';
-import {currentLevelCap,tierLevel} from './ascension.js?v=0.53.5';
+import {recordTutorial} from './tutorial.js?v=0.53.6';
+import {boosterActive} from './premium-items.js?v=0.53.6';
+import {heroForId,ownedHeroes,baseHeroId} from './hero-copies.js?v=0.53.6';
+import {development,heroDevelopment,addHeroXp} from './development.js?v=0.53.6';
+import {currentLevelCap,tierLevel} from './ascension.js?v=0.53.6';
 const donorRarities=new Set(['common','rare']);
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function protectedCopies(profile,battle){return new Set([...(profile.lockedHeroes||[]),...profile.team,...(profile.teamSlots||[]).flatMap(t=>t||[]),...(battle?.phase==='playing'?battle.heroes.map(h=>h.id):[])]);}

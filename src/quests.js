@@ -1,11 +1,12 @@
-import {TUTORIAL_QUESTS,tutorialProgress,tutorialQuestAvailable} from './tutorial.js?v=0.53.5';
-import {nextCopyId} from './hero-copies.js?v=0.53.5';
-import {heroForId,uniqueHeroCount} from './hero-copies.js?v=0.53.5';
-import {addAccountXp,accountDevelopment,bumpPath} from './keeper.js?v=0.53.5';
-import {addHeroXp} from './development.js?v=0.53.5';
-import {addMaterials} from './ascension.js?v=0.53.5';
-import {GEM_LIMIT} from './economy.js?v=0.53.5';
-export const QUEST_CATEGORIES=[['all','All quests'],['campaign','Campaign'],['dungeons','Dungeons'],['arena','Arena'],['events','Events'],['collection','Collection'],['growth','Growth']];
+import {championshipWins} from './championship-progress.js?v=0.53.6';
+import {TUTORIAL_QUESTS,tutorialProgress,tutorialQuestAvailable} from './tutorial.js?v=0.53.6';
+import {nextCopyId} from './hero-copies.js?v=0.53.6';
+import {heroForId,uniqueHeroCount} from './hero-copies.js?v=0.53.6';
+import {addAccountXp,accountDevelopment,bumpPath} from './keeper.js?v=0.53.6';
+import {addHeroXp} from './development.js?v=0.53.6';
+import {addMaterials} from './ascension.js?v=0.53.6';
+import {GEM_LIMIT} from './economy.js?v=0.53.6';
+export const QUEST_CATEGORIES=[['all','All quests'],['campaign','Campaign'],['dungeons','Dungeons'],['arena','Arena'],['championships','Championships'],['events','Events'],['collection','Collection'],['growth','Growth']];
 const q=(id,name,category,metric,goal,text,rewards)=>({id,name,category,metric,goal,text,gold:0,gems:0,xp:0,items:{},...rewards,accountXp:rewards.accountXp??50});
 export const QUESTS=[
  q('first-summon','An Answer from Beyond','collection','summons',1,'Summon your first champion.',{gems:150,gold:100,xp:50,championReward:'cult_zealot',championRewardName:'Cult Zealot · Common training copy'}),
@@ -18,6 +19,10 @@ export const QUESTS=[
  ...[[1,75,250],[5,125,750],[15,200,1500],[30,300,3000]].map(([goal,gems,gold])=>q('dungeon-wins-'+goal,'Into the Depths · '+goal,'dungeons','dungeonWins',goal,`Win ${goal} dungeon battle${goal===1?'':'s'}.`,{gems,gold,xp:goal*10,items:{'aether-crystal':Math.ceil(goal/5)}})),
  q('seven-vaults','Keeper of the Vaults','dungeons','dungeonTypes',7,'Clear all seven dungeons on any difficulty.',{gems:350,gold:2000,items:{'sovereign-crown':2},xp:400}),
  ...[[1,50,300],[5,100,1000],[20,250,3000]].map(([goal,gems,gold])=>q('arena-wins-'+goal,'Arena Contender · '+goal,'arena','arenaWins',goal,`Win ${goal} Arena battle${goal===1?'':'s'}.`,{gems,gold,xp:goal*10})),
+ ...[[1,75,500],[5,125,1000],[10,175,2000],[25,250,4000],[50,350,6000],[100,500,10000],[500,1000,25000],[1000,1500,50000]].map(([goal,gems,gold])=>q('championship-wins-'+goal,'Championship Victories · '+goal,'championships','championshipWins',goal,`Win ${goal} Championships attack battle${goal===1?'':'s'} in total.`,{gems,gold,accountXp:goal>=25?100:50})),
+ ...[[1,'Silver',150,1500],[2,'Gold',250,3000],[3,'Platinum',400,6000]].map(([goal,tier,gems,gold])=>q('championship-tier-'+tier.toLowerCase(),tier+' Contender','championships','championshipTier',goal,`Reach ${tier} in The Championships.`,{gems,gold,items:{'aether-crystal':goal*2},accountXp:75})),
+ ...[[2,'Silver on the Podium',400,7500],[3,'Bronze on the Podium',300,5000]].map(([place,name,gems,gold])=>q('championship-podium-'+place,name,'championships','championshipPodium',1,`Finish a Championships week in ${place===2?'second':'third'} place.`,{gems,gold,placement:place,accountXp:100})),
+ ...[[50,'Top 50',100,1500],[10,'Top 10',250,4000],[1,'Weekly Champion',500,10000]].map(([rank,title,gems,gold])=>q('championship-finish-'+rank,title,'championships','championshipFinish',1,rank===1?'Finish a Championships week in first place.':`Finish a Championships week in the top ${rank}.`,{gems,gold,placement:rank,accountXp:100})),
  ...[[1,100,500],[3,150,1200],[10,300,3000]].map(([goal,gems,gold])=>q('event-wins-'+goal,'When Legends Gather · '+goal,'events','eventWins',goal,`Win ${goal} Special Event battle${goal===1?'':'s'}.`,{gems,gold,items:{'awakened-ember':goal===10?3:1},xp:goal*25})),
  ...[[10,150,500],[30,250,1500],[100,500,4000]].map(([goal,gems,gold])=>q('summons-'+goal,'Voices through the Gate · '+goal,'collection','summons',goal,`Summon ${goal} champions in total.`,{gems,gold,xp:100})),
  ...[[20,200,1000],[40,350,2500],[80,500,5000]].map(([goal,gems,gold])=>q('collection-'+goal,'Hall of Legends · '+goal,'collection','collection',goal,`Collect ${goal} different champions.`,{gems,gold,items:{'star-thread':4},xp:200})),
@@ -41,5 +46,5 @@ export const QUESTS=[
 
  ...TUTORIAL_QUESTS.map(t=>q(t.id,t.name,'growth','tutorial',t.metric==='market'?4:t.metric==='combat'?3:1,t.text,{gold:t.gold,gems:t.gems,requires:t.requires,tutorialPage:t.page,accountXp:25})),
 ];
-export function questProgress(profile,quest){if(quest.metric==='tutorial')return tutorialProgress(profile,quest.id);const sum=o=>Object.values(o||{}).reduce((n,v)=>n+v,0);switch(quest.metric){case 'accountLevel':return accountDevelopment(profile.accountXp).level;case 'collection':return uniqueHeroCount(profile);case 'normal':case 'hard':case 'nightmare':return profile.campaignProgress[quest.metric]||0;case 'dungeonTypes':return new Set(Object.keys(profile.dungeonClears).map(id=>id.replace(/-(normal|hard|nightmare)$/,''))).size;case 'totalXp':return sum(profile.heroXp);case 'ascensions':return sum(profile.ascensions);case 'awakenings':return sum(profile.awakenings);default:return profile[quest.metric]||0;}}
+export function questProgress(profile,quest){if(quest.metric==='tutorial')return tutorialProgress(profile,quest.id);const sum=o=>Object.values(o||{}).reduce((n,v)=>n+v,0);switch(quest.metric){case 'championshipWins':return championshipWins(profile);case 'championshipTier':return profile.championshipProgress?.highestTier||0;case 'championshipPodium':return Number(profile.championshipProgress?.podiumPlaces?.includes(quest.placement)===true);case 'championshipFinish':{const rank=profile.championshipProgress?.bestWeeklyRank||0;return Number(rank>0&&rank<=quest.placement);}case 'accountLevel':return accountDevelopment(profile.accountXp).level;case 'collection':return uniqueHeroCount(profile);case 'normal':case 'hard':case 'nightmare':return profile.campaignProgress[quest.metric]||0;case 'dungeonTypes':return new Set(Object.keys(profile.dungeonClears).map(id=>id.replace(/-(normal|hard|nightmare)$/,''))).size;case 'totalXp':return sum(profile.heroXp);case 'ascensions':return sum(profile.ascensions);case 'awakenings':return sum(profile.awakenings);default:return profile[quest.metric]||0;}}
 export function claimQuest(profile,id,roster=[]){const quest=QUESTS.find(q=>q.id===id);if(!quest||!tutorialQuestAvailable(profile,id)||profile.claimed.includes(id)||questProgress(profile,quest)<quest.goal)return {profile,error:'This quest is not ready to claim.'};let next=addMaterials({...profile,gold:Math.min(999999999,profile.gold+quest.gold),gems:Math.min(GEM_LIMIT,profile.gems+quest.gems),claimed:[...profile.claimed,id]},quest.items);const growth=[];for(const id of new Set(profile.team)){const c=heroForId(roster,id);if(c&&profile.collection[id]&&quest.xp){const before=next.heroXp[id]||0;next=addHeroXp(next,c,quest.xp);growth.push({id,xp:(next.heroXp[id]||0)-before});}}if(quest.championReward&&roster.some(c=>c.id===quest.championReward)){const copy=nextCopyId(next,quest.championReward);next={...next,copySequence:copy.sequence,collection:{...next.collection,[copy.id]:1}};}return {profile:bumpPath(addAccountXp(next,quest.accountXp),{gems:quest.gems}),quest,growth};}

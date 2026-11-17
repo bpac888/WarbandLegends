@@ -16,7 +16,7 @@ export function createAccountHandler({env=process.env,fetcher=fetch}={}){
    }
    if(!env.SUPABASE_URL||!env.SUPABASE_ANON_KEY)throw new AccountError(503,'Player accounts are not available yet. Please try again later.');
    const url=new URL(req.url,'http://localhost'),action=url.searchParams.get('action')||'session';
-   if(req.method==='GET'&&action!=='session'&&action!=='championship-dashboard')throw new AccountError(405,'Method not allowed.');
+   if(req.method==='GET'&&action!=='session'&&action!=='championship-dashboard'&&action!=='tournament-dashboard'&&action!=='titan-dashboard')throw new AccountError(405,'Method not allowed.');
    let input={};
    if(req.method==='POST'){
     if(req.body!==undefined){input=typeof req.body==='string'?JSON.parse(req.body):req.body;if(Buffer.byteLength(JSON.stringify(input))>MAX_BODY)throw new AccountError(413,'Save is too large.');}
@@ -53,7 +53,7 @@ export function createAccountHandler({env=process.env,fetcher=fetch}={}){
    }
    if(!identity.ok)throw new AccountError(identity.status>=500?503:401,'Could not verify your session. Please try again.');
    const user={id:identity.data.id,email:identity.data.email};
-   if(action.startsWith('championship-')){
+   if(action.startsWith('championship-')||action.startsWith('tournament-')||action.startsWith('titan-')){
     const {handleChampionshipRequest}=await import('./championships.js');
     const result=await handleChampionshipRequest({action,input,user,upstream,configured:!!env.SUPABASE_SERVICE_ROLE_KEY});send(200,result);return;
    }

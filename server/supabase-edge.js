@@ -1,3 +1,5 @@
+import {runTitanRequest} from './titan-service.js';
+import {runTournamentRequest} from './tournament-service.js';
 import {runChampionshipRequest} from './championship-service.js';
 const MAX_BODY=1000000;
 const fail=(status,message)=>{const error=Error(message);error.status=status;throw error;};
@@ -20,7 +22,7 @@ export function createSupabaseEdgeHandler({env,roster,fetcher=(...args)=>fetch(.
    if(!origin||!allowed.has(origin))fail(403,'Please open the game at its official address.');
    if(request.method==='OPTIONS')return new Response(null,{status:204,headers});
    if(!['GET','POST'].includes(request.method))fail(405,'Method not allowed.');
-   if(request.method==='GET'&&!['session','championship-dashboard'].includes(action))fail(405,'Method not allowed.');
+   if(request.method==='GET'&&!['session','championship-dashboard','tournament-dashboard','titan-dashboard'].includes(action))fail(405,'Method not allowed.');
    if(!env.SUPABASE_URL||!env.SUPABASE_ANON_KEY)fail(503,'Player accounts are not available yet. Please try again later.');
    const input=request.method==='POST'?await readBody(request):{};
    const upstream=async(path,{token,admin=false,method='GET',body}={})=>{
@@ -62,6 +64,8 @@ export function createSupabaseEdgeHandler({env,roster,fetcher=(...args)=>fetch(.
     const result=await upstream('/rest/v1/rpc/save_player_progress',{token,method:'POST',body:{new_profile:input.profile,expected_revision:input.revision}});
     if(!result.ok)fail(result.data?.code==='P0001'?409:503,result.data?.code==='P0001'?'Progress changed in another tab or device. Reload before continuing.':'Could not save progress. Please try again.');return send({revision:result.data});
    }
+   if(action.startsWith('titan-'))return send(await runTitanRequest({action,input,user,upstream,configured:!!env.SUPABASE_SERVICE_ROLE_KEY,roster,randomUUID:()=>crypto.randomUUID(),randomInt:secureRandomInt}));
+   if(action.startsWith('tournament-'))return send(await runTournamentRequest({action,input,user,upstream,configured:!!env.SUPABASE_SERVICE_ROLE_KEY,roster,randomUUID:()=>crypto.randomUUID(),randomInt:secureRandomInt}));
    if(action.startsWith('championship-'))return send(await runChampionshipRequest({action,input,user,upstream,configured:!!env.SUPABASE_SERVICE_ROLE_KEY,roster,randomUUID:()=>crypto.randomUUID(),randomInt:secureRandomInt}));
    fail(404,'Unknown account action.');
   }catch(error){return send({error:error.status?error.message:error instanceof SyntaxError?'Invalid request.':'Accounts are temporarily unavailable. Please try again.'},error.status||(error instanceof SyntaxError?400:503));}

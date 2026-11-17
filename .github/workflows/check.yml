@@ -15,11 +15,17 @@ jobs:
       - name: Install browser test tooling
         run: npm install --no-save --package-lock=false playwright@1.56.1 @electric-sql/pglite@0.3.14 esbuild@0.28.2
       - run: npx playwright install --with-deps chromium
+      - run: npm run build:monthly-sql
+      - run: git diff --exit-code -- supabase/monthly-competitions.sql
       - run: npm run build:supabase
       - run: git diff --exit-code -- supabase/functions/warband/bundle.js
       - run: npm run test:supabase
       - run: npm run test:championships:database
+      - run: npm run test:tournaments:database
+      - run: npm run test:titans:database
       - run: npm run test:championships
+      - run: npm run test:tournaments
+      - run: npm run test:titans
       - run: npm run test:accounts
       - run: npm run test:campaign-atmosphere
       - run: npm run test:aerie-court

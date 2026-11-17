@@ -1,5 +1,5 @@
-import {beforeInkoLegendary} from './inko-legendary-revision.js?v=0.53.5';
-import {beforeCharacterNameRevision} from './character-name-revision.js?v=0.53.5';
+import {beforeInkoLegendary} from './inko-legendary-revision.js?v=0.53.6';
+import {beforeCharacterNameRevision} from './character-name-revision.js?v=0.53.6';
 // Owner-approved 2026-11-11 balance batch. Full snapshots make historical checks strict.
 export const UPGRADE_BALANCE_REVISION=[
   {

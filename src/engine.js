@@ -1,15 +1,16 @@
-import {CHAMPIONSHIP_RULES} from './championship-catalog.js?v=0.53.5';
-import {initializeWeekly,weeklyRunes,weeklyDamage,weeklyCopy,weeklyMirror,weeklyBeforeEnemies,weeklyFinish,weeklyAfterAction,weeklyUnitSpecial} from './weekly-combat.js?v=0.53.5';
-import {weeklyWindow,weeklyDetails,validWeeklyBattle} from './weekly.js?v=0.53.5';
-import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.53.5';
-import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.53.5';
-import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.53.5';
-import {SCENARIOS,validScenario} from './chapter.js?v=0.53.5';
+import {TITANS,TITAN_RULES} from './titan-catalog.js?v=0.53.6';
+import {CHAMPIONSHIP_RULES} from './championship-catalog.js?v=0.53.6';
+import {initializeWeekly,weeklyRunes,weeklyDamage,weeklyCopy,weeklyMirror,weeklyBeforeEnemies,weeklyFinish,weeklyAfterAction,weeklyUnitSpecial} from './weekly-combat.js?v=0.53.6';
+import {weeklyWindow,weeklyDetails,validWeeklyBattle} from './weekly.js?v=0.53.6';
+import {factionRule,initializeFactionBonuses,factionUpkeep,validFactionState} from './faction-bonuses.js?v=0.53.6';
+import {awakenedStats,normalLevelCap,ASCENSION_CAPS,LIMIT_BREAK_BUFF_TURNS} from './ascension.js?v=0.53.6';
+import {specialPlan,describeSpecial,specialTargeting,enemyTargetLabel} from './special-plan.js?v=0.53.6';
+import {SCENARIOS,validScenario} from './chapter.js?v=0.53.6';
 // Pure, deterministic combat. No network, UI, original-game API, or shared saves.
-import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.53.5';
-import {statsAtLevel,levelCap} from './development.js?v=0.53.5';
-import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.53.5';
-export {effectName} from './effects.js?v=0.53.5';
+import {EFFECTS,BUFFS,DEBUFFS,DOTS,OPPOSITES,effectName} from './effects.js?v=0.53.6';
+import {statsAtLevel,levelCap} from './development.js?v=0.53.6';
+import {CAMPAIGN_STAGES,getEncounter,encounterAppearance,enemyLanes} from './encounters.js?v=0.53.6';
+export {effectName} from './effects.js?v=0.53.6';
 export const VERSION = 3;
 export const COLS = 7, ROWS = 5, SIZE = COLS * ROWS;
 export const COLORS = ['red', 'green', 'blue', 'yellow', 'purple'];
@@ -35,6 +36,7 @@ const has = (u,id) => !!u.effects[id];
 function roll(state) { let x=state.rng|0; x^=x<<13;x^=x>>>17;x^=x<<5;state.rng=x>>>0;return state.rng/4294967296; }
 function tile(state, color) {return {id:state.nextTile++,color:color || COLORS[Math.floor(roll(state)*5)],special:null};}
 export function advantage(color,target) {
+  if(target&&typeof target==='object'){if(target.neutralAffinity)return 1;target=target.color;}
   if (ELEMENTS[color]?.beats===target) return 2;
   if (['red','green','blue'].includes(color) && ELEMENTS[target]?.beats===color) return .5;
   return 1;
@@ -101,6 +103,9 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
     state.championship={id:options.matchId,practice:options.practice===true};
     for(const enemy of state.enemies){enemy.championshipDefender=true;const source=byId.get(enemy.id),d=options.defense;enemy.level=Math.max(1,Math.min(levelCap(source),Math.trunc(d.levels?.[enemy.id])||1));const tier=Math.max(0,Math.min(ASCENSION_CAPS[source.rarity].length-1,Math.trunc(d.ascensions?.[enemy.id])||0)),rank=source.rarity!=='common'&&tier===ASCENSION_CAPS[source.rarity].length-1?Math.max(0,Math.min(2,Math.trunc(d.awakenings?.[enemy.id])||0)):0;if(rank)enemy.awakening=rank;Object.assign(enemy,awakenedStats(statsAtLevel(source,enemy.level),rank,tier));enemy.maxHp=enemy.hp;}
   }
+  if(stage.mode==='titans'){
+    const titan=TITANS[stage.titanIndex],enemy=state.enemies[0];state.titan={month:options.titanMonth,index:stage.titanIndex,initialHp:options.titanHp||titan.health};state.championship={id:options.matchId,practice:false};enemy.titanBoss=true;enemy.name=titan.name;enemy.portrait=titan.art;enemy.color=titan.color;enemy.dualColors=titan.dualColors;enemy.neutralAffinity=!!titan.dualColors;enemy.passive=null;enemy.faction='titan';enemy.role='attack';enemy.special=clone(titan.special);enemy.manaSpeed='slow';enemy.manaMax=12;enemy.maxHp=options.titanMaxHp||titan.health;enemy.hp=options.titanHp||titan.health;
+  }
   encounterAppearance(state);
   state.board=freshBoard(state);message(state,`${stage.name} · Match runes to awaken your warband.`);
   if(stage.opening){
@@ -118,7 +123,7 @@ export function createBattle(roster,teamIds,stageId=STAGES[0].id,seed=Date.now()
     if(power)applyEffect(state,hero,hero,power,LIMIT_BREAK_BUFF_TURNS);
   }
   initializeFactionBonuses(state,{roll:()=>roll(state),log:(...args)=>message(state,...args),gainMana});
-  if(state.championship)initializeFactionBonuses({...state,heroes:state.enemies},{roll:()=>roll(state),log:(...args)=>message(state,...args),gainMana});
+  if(state.championship&&!state.titan)initializeFactionBonuses({...state,heroes:state.enemies},{roll:()=>roll(state),log:(...args)=>message(state,...args),gainMana});
   return state;
 }
 function effective(unit,stat) {
@@ -135,16 +140,16 @@ function revive(state,target) {
 function heal(state,target,amount,label='Healing') {
   if(target.hp<=0)return;const actual=Math.min(target.maxHp-target.hp,Math.max(0,Math.round(amount)));target.hp+=actual;if(actual)message(state,`${target.name}: +${actual} HP · ${label}`,'heal',target.uid);
 }
-function hit(state,attacker,target,power,{color=attacker?.color,pierce=false,counter=true,label='Rune strike',crit=false,fixed=false,kind='other'}={}) {
+function hit(state,attacker,target,power,{color=attacker?.dualColors?null:attacker?.color,pierce=false,counter=true,label='Rune strike',crit=false,fixed=false,kind='other'}={}) {
   if(target.hp<=0)return;
-  let amount=fixed?power:power*advantage(color,target.color)*500/(500+effective(target,'def')*(has(target,`vulnerable_${color}`)?.75:1)*(pierce?.75:1));
+  let amount=fixed?power:power*advantage(color,target)*500/(500+effective(target,'def')*(has(target,`vulnerable_${color}`)?.75:1)*(pierce?.75:1));
   if(!fixed){if(has(target,'strengthen'))amount*=.85;if(has(target,'weaken'))amount*=1.15;}
   amount=Math.max(1,Math.round(amount*(crit?1.5:1)));
   amount=weeklyDamage(state,target,amount,kind);
   const absorbed=Math.min(target.shield,amount);target.shield-=absorbed;amount-=absorbed;
   if(absorbed)message(state,`${target.name}: shield absorbs ${absorbed}.`,'shield',target.uid);
   if(!target.shield)delete target.effects.shield;
-  if(amount){target.hp=Math.max(0,target.hp-amount);message(state,`${target.name}: −${amount} · ${label}${crit?' · CRITICAL':''}${advantage(color,target.color)>1?' · STRONG':advantage(color,target.color)<1?' · WEAK':''}`,'damage',target.uid);revive(state,target);}
+  if(amount){target.hp=Math.max(0,target.hp-amount);message(state,`${target.name}: −${amount} · ${label}${crit?' · CRITICAL':''}${advantage(color,target)>1?' · STRONG':advantage(color,target)<1?' · WEAK':''}`,'damage',target.uid);revive(state,target);}
   if(counter&&attacker?.hp>0&&target.hp>0&&has(target,'counterattack'))hit(state,target,attacker,effective(target,'atk')*.5,{counter:false,label:'Counterattack'});
 }
 function removeEffect(unit,id){delete unit.effects[id];if(id==='shield')unit.shield=0;}
@@ -166,7 +171,7 @@ function startTurn(state,unit) {
   factionUpkeep(state,unit,{roll:()=>roll(state),heal:(...args)=>heal(state,...args),log:(...args)=>message(state,...args)});
   if(has(unit,'heal'))heal(state,unit,unit.maxHp*.1,'Regeneration');
   if(unit.passive?.kind==='regen')heal(state,unit,unit.maxHp*(unit.passive.value||.05),unit.passive.name);
-  for(const id of DOTS)if(unit.hp>0&&has(unit,id)){const amount=weeklyDamage(state,unit,Math.max(1,Math.round(unit.maxHp*EFFECTS[id].value)),'periodic');unit.hp=Math.max(0,unit.hp-amount);message(state,`${unit.name}: −${amount} · ${effectName(id)}`,'damage',unit.uid);revive(state,unit);}
+  for(const id of DOTS)if(unit.hp>0&&has(unit,id)){const amount=weeklyDamage(state,unit,Math.max(1,Math.round((unit.titanBoss?Math.min(unit.maxHp,TITAN_RULES.percentHealthBase):unit.maxHp)*EFFECTS[id].value)),'periodic');unit.hp=Math.max(0,unit.hp-amount);message(state,`${unit.name}: −${amount} · ${effectName(id)}`,'damage',unit.uid);revive(state,unit);}
 }
 function periodicPassives(state,frames){
  for(const actor of [...state.heroes,...state.enemies]){
@@ -177,7 +182,7 @@ function periodicPassives(state,frames){
   if(!targets.length)break;
   const target=targets[Math.floor(roll(state)*targets.length)];
   message(state,`${actor.name}: ${passive.name} · turn ${state.moves}`,'skill',actor.uid);
-  hit(state,actor,target,target.maxHp*passive.value,{fixed:true,color:null,label:passive.name});
+  hit(state,actor,target,(target.titanBoss?Math.min(target.maxHp,TITAN_RULES.percentHealthBase):target.maxHp)*passive.value,{fixed:true,color:null,label:passive.name});
   finish(state);frame(state,frames,'passive',{actor:actor.uid,target:target.uid,name:passive.name});
  }
 }
@@ -189,6 +194,7 @@ function finish(state) {
   weeklyFinish(state,{gainMana,log:message});
   if(!living(state.enemies).length){state.phase='victory';message(state,'VICTORY · The runes fall silent.','victory');}
   else if(!living(state.heroes).length){state.phase='defeat';message(state,'DEFEAT · Your warband will rise again.','damage');}
+  if(state.titan&&state.phase==='playing'&&state.moves>=TITAN_RULES.moves){state.phase='defeat';message(state,'Titan attack complete · 30 moves reached.','neutral');}
   if(state.championship&&state.phase==='playing'&&state.moves>=CHAMPIONSHIP_RULES.maxMoves){state.phase='defeat';message(state,'The defense holds · 150-move limit reached.','damage');}
   return state.phase!=='playing';
 }
@@ -364,17 +370,18 @@ export function validateSave(value,roster) {
   if(!['playing','victory','defeat'].includes(value.phase)||!Array.isArray(value.board)||value.board.length!==SIZE||value.board.some(t=>!t||!COLORS.includes(t.color)||!integer(t.id,1)||t.id>=value.nextTile||!([null,'blast','prism'].includes(t.special))))return false;
   if(value.eventWindow!==undefined&&(getEncounter(value.stageId)?.mode!=='event'||typeof value.eventWindow!=='string'||!value.eventWindow.startsWith(getEncounter(value.stageId).eventId+':')||!/^\w+:\d{4}-(0[1-9]|1[0-2])$/.test(value.eventWindow)))return false;
   if(!validScenario(value,getEncounter(value.stageId))||!validWeeklyBattle(value,getEncounter(value.stageId)))return false;
+  if(Boolean(value.titan)!==(getEncounter(value.stageId).mode==='titans')||value.titan&&(!TITANS[value.titan.index]||getEncounter(value.stageId).titanIndex!==value.titan.index))return false;
   const ids=new Set(roster.map(c=>c.id));
   if(!Array.isArray(value.heroes)||value.heroes.length!==5||!Array.isArray(value.enemies)||value.enemies.length!==getEncounter(value.stageId).enemyIds.length)return false;
   if(value.heroes?.some(u=>!u||u.awakening!==undefined&&(!integer(u.awakening,1)||u.awakening>2||u.level<normalLevelCap(roster.find(c=>c.id===u.id)||{rarity:'common'})+(u.awakening-1)*5)))return false;
   if(value.progression!==undefined&&(value.progression!==true||typeof value.sandbox!=='boolean'||value.heroes.some(u=>!u||!ids.has(u.id)||!integer(u.level,1)||u.level>levelCap(roster.find(c=>c.id===u.id)))))return false;
   if(new Set(value.board.map(t=>t.id)).size!==SIZE||new Set(value.heroes.map(u=>u.id)).size!==5)return false;
   const units=[...value.heroes,...value.enemies];
-  if(units.some(u=>!u||!ids.has(u.id)||!COLORS.includes(u.color)||!u.effects||Array.isArray(u.effects)||typeof u.effects!=='object'||!['attack','defense','support'].includes(u.role)||!Number.isFinite(u.hp)||!Number.isFinite(u.maxHp)||u.maxHp<=0||u.hp<0||u.hp>u.maxHp||!Number.isFinite(u.atk)||u.atk<0||!Number.isFinite(u.def)||u.def<0||!Number.isFinite(u.mana)||u.mana<0||u.mana>u.manaMax||u.manaMax!==weeklyUnitSpecial(value,u,roster.find(c=>c.id===u.id)).levels.at(-1)?.tiles||!Number.isFinite(u.shield)||u.shield<0||!integer(u.actions)))return false;
-  if(units.some(u=>JSON.stringify(u.special)!==JSON.stringify(weeklyUnitSpecial(value,u,roster.find(c=>c.id===u.id)))))return false;
+  if(units.some(u=>!u||!ids.has(u.id)||!COLORS.includes(u.color)||!u.effects||Array.isArray(u.effects)||typeof u.effects!=='object'||!['attack','defense','support'].includes(u.role)||!Number.isFinite(u.hp)||!Number.isFinite(u.maxHp)||u.maxHp<=0||u.hp<0||u.hp>u.maxHp||!Number.isFinite(u.atk)||u.atk<0||!Number.isFinite(u.def)||u.def<0||!Number.isFinite(u.mana)||u.mana<0||u.mana>u.manaMax||u.manaMax!==(value.titan&&u.side==='enemy'?TITANS[value.titan.index]?.special:weeklyUnitSpecial(value,u,roster.find(c=>c.id===u.id))).levels.at(-1)?.tiles||!Number.isFinite(u.shield)||u.shield<0||!integer(u.actions)))return false;
+  if(units.some(u=>JSON.stringify(u.special)!==JSON.stringify((value.titan&&u.side==='enemy'?TITANS[value.titan.index]?.special:weeklyUnitSpecial(value,u,roster.find(c=>c.id===u.id))))))return false;
   if(units.some(u=>Object.entries(u.effects).some(([id,e])=>!BUFFS.has(id)&&!DEBUFFS.has(id)||!e||!integer(e.turns,1)||e.turns>4||e.turns>3&&!e.factionExtended||e.factionExtended!==undefined&&(e.factionExtended!==true||!DEBUFFS.has(id)||u.side!=='enemy'||!units.some(t=>t.uid===e.source&&t.side==='hero'&&factionRule(t).extendChance))||!integer(e.appliedMove)||e.appliedMove>value.moves||!units.some(t=>t.uid===e.source))))return false;
   if(value.heroes.some((u,i)=>u.uid!==`hero-${i}`||u.side!=='hero')||value.enemies.some((u,i)=>u.uid!==`enemy-${i}`||u.side!=='enemy'||!integer(u.countdown)||!integer(u.baseCountdown,1)||!Array.isArray(u.lanes)||JSON.stringify(u.lanes)!==JSON.stringify(enemyLanes(i,value.enemies.length))))return false;
   if(!validFactionState(value,roster))return false;
   const heroesAlive=living(value.heroes).length>0,enemiesAlive=living(value.enemies).length>0;
-  return value.phase==='victory'?!enemiesAlive:value.phase==='defeat'?(!heroesAlive||value.weekly?.failed===true)&&enemiesAlive:heroesAlive&&enemiesAlive;
+  return value.phase==='victory'?!enemiesAlive:value.phase==='defeat'?(!heroesAlive||value.weekly?.failed===true||value.titan&&value.moves>=TITAN_RULES.moves)&&enemiesAlive:heroesAlive&&enemiesAlive;
 }

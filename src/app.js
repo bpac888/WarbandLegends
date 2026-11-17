@@ -1,62 +1,65 @@
-import {championshipPage,championshipPicker,championshipCrest} from './championship-ui.js?v=0.53.5';
-import {emptyChampionships} from './championships.js?v=0.53.5';
-import {AccountClient,accountForm} from './accounts.js?v=0.53.5';
-import {campaignEndingHTML,mountCampaignEnding} from './campaign-ending.js?v=0.53.5';
-import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.53.5';
-import {mountBattleLoading} from './loading-art.js?v=0.53.5';
-import {weeklyStatus} from './weekly-combat.js?v=0.53.5';
-import {campaignArc} from './campaign-story.js?v=0.53.5';
-import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.53.5';
-import {scenarioStatus} from './chapter.js?v=0.53.5';
-import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.53.5';
-import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.53.5';
-import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.53.5';
-import {swipeTarget} from './board-gestures.js?v=0.53.5';
-import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.53.5';
-import {recordTutorial,tutorialState,tutorialFinished,championshipLessonPending} from './tutorial.js?v=0.53.5';
-import {specialSummary} from './special-summary.js?v=0.53.5';
-import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.53.5';
-import {useExperienceTome} from './experience-tomes.js?v=0.53.5';
-import {premiumItem,activateBooster} from './premium-items.js?v=0.53.5';
-import {premiumItemConfirmation} from './premium-items-ui.js?v=0.53.5';
-import {ascensionTier} from './ascension.js?v=0.53.5';
-import {battleTiming} from './battle-pacing.js?v=0.53.5';
-import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.53.5';
-import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.53.5';
-import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.53.5';
-import {courtyardHTML} from './courtyard-ui.js?v=0.53.5';
-import {mountCourtyard} from './courtyard-view.js?v=0.53.5';
-import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.53.5';
-import {saveTeam} from './teams.js?v=0.53.5';
-import {mountArenaScene} from './arena-scene.js?v=0.53.5';
-import './menu-atmosphere.js?v=0.53.5';
-import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.53.5';
-import {refreshEnergy,energyStatus} from './keeper.js?v=0.53.5';
-import {applyAutoAction} from './auto-battle.js?v=0.53.5';
-import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.53.5';
-import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.53.5';
-import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.53.5';
-import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.53.5';
-import {dailyPage} from './keeper-ui.js?v=0.53.5';
-import {buyWithGems} from './economy.js?v=0.53.5';
-import {gemConfirmation} from './gem-ui.js?v=0.53.5';
-import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.53.5';
-import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.53.5';
-import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.53.5';
-import {reserveEntry,exchange} from './mode-progression.js?v=0.53.5';
-import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.53.5';
-import {getEncounter,entryError} from './encounters.js?v=0.53.5';
-import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.53.5';
-import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.53.5';
-import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.53.5';
-import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.53.5';
-import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.53.5';
-import * as Shell from './shell.js?v=0.53.5';
-import {defaultProfile,normalizeProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.53.5';
-import {EFFECTS} from './effects.js?v=0.53.5';
-import {effectIcon} from './icons.js?v=0.53.5';
-import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap as engineSwap,activate as engineActivate,cast as engineCast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.53.5';
-import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.53.5';
+import {tournamentCalendar,tournamentTeamError,validTournamentMonth} from './tournaments.js?v=0.53.6';
+import {tournamentDefensePicker} from './tournament-ui.js?v=0.53.6';
+import {recordChampionshipProgress} from './championship-progress.js?v=0.53.6';
+import {championshipPage,championshipTeamPreview,championshipCrest} from './championship-ui.js?v=0.53.6';
+import {emptyChampionships} from './championships.js?v=0.53.6';
+import {AccountClient,accountForm} from './accounts.js?v=0.53.6';
+import {campaignEndingHTML,mountCampaignEnding} from './campaign-ending.js?v=0.53.6';
+import {mountCampaignDialogue} from './campaign-dialogue.js?v=0.53.6';
+import {mountBattleLoading} from './loading-art.js?v=0.53.6';
+import {weeklyStatus} from './weekly-combat.js?v=0.53.6';
+import {campaignArc} from './campaign-story.js?v=0.53.6';
+import {detailMotionHTML,mountDetailMotion,playCinematic,stopCinematic,introOnce,playIntro,CHARACTER_CLIPS,motionAllowed} from './cinematics.js?v=0.53.6';
+import {scenarioStatus} from './chapter.js?v=0.53.6';
+import {chapterId,chapterKey,isChapterBoss,claimChapter,storyHTML,chapterGiftHTML,journalHTML,openingStoryHTML,aftermathHTML,narrativeKey} from './campaign-journal.js?v=0.53.6';
+import {claimWeekly,weeklyWindow,weeklyDetails} from './weekly.js?v=0.53.6';
+import {teamName,teamPower,estimateNote,renameTeam,toggleHeroPreference} from './team-preferences.js?v=0.53.6';
+import {swipeTarget} from './board-gestures.js?v=0.53.6';
+import {createCombatPractice,practiceBoard,practicePhaseDone,practicePrompt,practiceHints,PRACTICE_PHASES} from './combat-practice.js?v=0.53.6';
+import {recordTutorial,tutorialState,tutorialFinished,championshipLessonPending} from './tutorial.js?v=0.53.6';
+import {specialSummary} from './special-summary.js?v=0.53.6';
+import {nextFirstStep,firstStepsHTML} from './first-steps.js?v=0.53.6';
+import {useExperienceTome} from './experience-tomes.js?v=0.53.6';
+import {premiumItem,activateBooster} from './premium-items.js?v=0.53.6';
+import {premiumItemConfirmation} from './premium-items-ui.js?v=0.53.6';
+import {ascensionTier} from './ascension.js?v=0.53.6';
+import {battleTiming} from './battle-pacing.js?v=0.53.6';
+import {collectionFiltersHTML} from './collection-filter-ui.js?v=0.53.6';
+import {lootTicketQuote,useLootTicket} from './loot-tickets.js?v=0.53.6';
+import {lootTicketConfirmation,lootTicketResult} from './loot-ticket-ui.js?v=0.53.6';
+import {courtyardHTML} from './courtyard-ui.js?v=0.53.6';
+import {mountCourtyard} from './courtyard-view.js?v=0.53.6';
+import {profileEditorHTML,mountProfileEditor} from './profile-editor.js?v=0.53.6';
+import {saveTeam,sameTeam} from './teams.js?v=0.53.6';
+import {mountArenaScene} from './arena-scene.js?v=0.53.6';
+import './menu-atmosphere.js?v=0.53.6';
+import {factionTeamHTML,factionUnitHTML} from './faction-ui.js?v=0.53.6';
+import {refreshEnergy,energyStatus} from './keeper.js?v=0.53.6';
+import {applyAutoAction} from './auto-battle.js?v=0.53.6';
+import {ownedHeroes,battleRoster,heroForId,baseHeroId} from './hero-copies.js?v=0.53.6';
+import {feedingQuote,consumeHeroes,availableDonors,feedingConfirmation} from './feeding.js?v=0.53.6';
+import {guideHTML,guideTopics,effectCard,effectSummary} from './guide-ui.js?v=0.53.6';
+import {claimDaily,claimPath,teamSlot} from './keeper.js?v=0.53.6';
+import {dailyPage} from './keeper-ui.js?v=0.53.6';
+import {buyWithGems} from './economy.js?v=0.53.6';
+import {gemConfirmation} from './gem-ui.js?v=0.53.6';
+import {tierLevel,awakeningRank,materialPurchase,materialById,materialArt} from './ascension.js?v=0.53.6';
+import {advancementConfirmation,materialConfirmation} from './ascension-ui.js?v=0.53.6';
+import {encounterTactics,chargeComparisonHTML} from './tactics-ui.js?v=0.53.6';
+import {reserveEntry,exchange} from './mode-progression.js?v=0.53.6';
+import {ritualHTML,summonResults,RITUAL_TIMING} from './summoning-ui.js?v=0.53.6';
+import {getEncounter,entryError} from './encounters.js?v=0.53.6';
+import {heroDevelopment,developedChampion,ascendChampion,awakenChampion} from './development.js?v=0.53.6';
+import {developmentPanel,levelMark,rankTrack} from './development-ui.js?v=0.53.6';
+import {glyph,rarityMark,roleMark,speedMark,statMarks} from './card-ui.js?v=0.53.6';
+import {animateDefeats,animateLaneShots,animateSpecial,animateBattleFeedback,battlePressure,clearBattleEffects,planSpecialEffects,animateMatchGlow,animateRunePower,animateNumbers,animateBoardMotion} from './battle-fx.js?v=0.53.6';
+import {DEFAULT_FILTERS,filterChampions,factionLabel} from './collection.js?v=0.53.6';
+import * as Shell from './shell.js?v=0.53.6';
+import {defaultProfile,normalizeProfile,summon,claimQuest,canUse,setOpenRoster,victoryRewards,summonBatch} from './progression.js?v=0.53.6';
+import {EFFECTS} from './effects.js?v=0.53.6';
+import {effectIcon} from './icons.js?v=0.53.6';
+import {COLS,ROWS,COLORS,ELEMENTS,STAGES,createBattle,swap as engineSwap,activate as engineActivate,cast as engineCast,validMoves,skillDescription,effectName,living,readyLevel,manaLevels,manaLabel,chargeText} from './engine.js?v=0.53.6';
+import {PROFILE_KEY,BATTLE_KEY,loadProfile,clearBattleSave,save,recordVictory} from './storage.js?v=0.53.6';
 const app=document.querySelector('#app'),modal=document.querySelector('#modal'),modalContent=document.querySelector('#modal-content'),notice=document.querySelector('#notice');
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons={red:'<path d="M32 8c4 13 16 15 16 29a16 16 0 0 1-32 0c0-9 6-16 12-22-1 10 2 12 5 13 4-7 2-13-1-20Z"/>',green:'<path d="M50 12c1 27-10 40-28 32C5 27 25 12 50 12Z"/><path d="M17 51 42 22M28 39l-2-10m8 4 8 1" fill="none" stroke="var(--rune-dark)" stroke-width="3"/>',blue:'<path d="M32 9v46M12 20l40 24M12 44l40-24M24 14l8 7 8-7M24 50l8-7 8 7M13 29l10-2-1-10M51 35l-10 2 1 10M13 35l10 2-1 10M51 29l-10-2 1-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',yellow:'<path d="m32 5 7 18 20 9-20 9-7 18-7-18L5 32l20-9Z"/><circle cx="32" cy="32" r="8" fill="var(--rune-dark)"/>',purple:'<path d="M43 9a24 24 0 1 0 11 35A22 22 0 0 1 43 9Z"/><path d="m44 22 3-6 3 6 6 3-6 3-3 6-3-6-6-3Z"/>'};
@@ -77,7 +80,7 @@ function scheduleAuto(){
  autoTimer=setTimeout(()=>{autoTimer=null;if(!autoEnabled||busy||modal.open||document.hidden||screen!=='battle'||battle?.phase!=='playing')return;
   autoThinking=true;const id=++autoJob;
   try{
-   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.53.5',import.meta.url),{type:'module'});
+   autoWorker??=new Worker(new URL('./auto-worker.js?v=0.53.6',import.meta.url),{type:'module'});
    autoWorker.onerror=()=>{stopAuto();if(screen==='battle')renderBattle();toast('Auto paused. You can continue manually.');};
    autoWorker.onmessage=({data})=>{
     if(data.id!==autoJob||!autoEnabled||busy||modal.open||screen!=='battle'||battle?.phase!=='playing')return;
@@ -107,6 +110,7 @@ const persist=(key,value)=>{if(key===PROFILE_KEY&&roster.length)byId=new Map(bat
 let accountReady=false,accountOpening=false,accountSubmitting=false,accountDestination='home';
 function showAccount(mode='choose'){openModal(mode==='choose'?'Register or Login':mode==='register'?'Register':'Login',accountForm(mode),'account');modalContent.querySelector('input')?.focus();}
 function installAccountProfile(saved){
+ resetCompetitionState();
  profile={...setOpenRoster(normalizeProfile(saved||defaultProfile(),roster),false),cinematicsEnabled:true};battle=null;displayedBattle=null;clearBattleSave(storage);if(profile.eventEntry)profile={...profile,eventEntry:null};persist(PROFILE_KEY,profile);accountReady=true;
 }
 async function enterAccount(destination='home'){
@@ -118,7 +122,7 @@ async function enterAccount(destination='home'){
 }
 async function logOut(){
  if(accountSubmitting)return;accountSubmitting=true;
- try{await account.logout();accountReady=false;stopAuto();battle=null;displayedBattle=null;profile=defaultProfile();championshipData=null;closeModal();go('splash');toast('Logged out. Your progress is saved to your account.');}
+ try{await account.logout();accountReady=false;stopAuto();battle=null;displayedBattle=null;profile=defaultProfile();resetCompetitionState();closeModal();go('splash');toast('Logged out. Your progress is saved to your account.');}
  catch(error){toast(error.message);}
  finally{accountSubmitting=false;}
 }
@@ -133,56 +137,98 @@ window.addEventListener('online',()=>account.flush().catch(()=>{}));
 document.addEventListener('visibilitychange',()=>{if(document.hidden)account.flush().catch(()=>{});});
 setInterval(()=>{if(account.pending&&!account.conflict)account.flush().catch(()=>{});},15000);
 
-let championshipData=null,championshipTab='battle',championshipLoading=false,championshipError='',championshipLoadId=0,championshipBusy=false,championshipDraft=[],championshipEditing='attack',championshipMatch=null;
+let championshipData=null,championshipTab='battle',championshipLoading=false,championshipError='',championshipLoadId=0,championshipBusy=false,championshipDefenseChoice=null,championshipMatch=null;
+let championshipRewardsOpen=false,tournamentRewardsOpen=false,titanRewardsOpen=false;
+let titanData=null,titanLoading=false,titanError='',titanLoadId=0;
+let tournamentData=null,tournamentLoading=false,tournamentError='',tournamentLoadId=0,tournamentPhaseSeen=null;
+function resetCompetitionState(){championshipLoadId++;tournamentLoadId++;titanLoadId++;titanData=null;titanLoading=false;titanError='';championshipData=null;tournamentData=null;championshipLoading=false;tournamentLoading=false;tournamentError='';championshipError='';championshipDefenseChoice=null;}
+function syncChampionshipMilestones(data){const next=recordChampionshipProgress(profile,data,account.user?.id);if(next!==profile){profile=next;persist(PROFILE_KEY,profile);}}
 const pendingChampionshipKey=()=>`warband.championships.pending.${account.user?.id||'guest'}`;
 function renderChampionships(){
  const introduce=championshipLessonPending(profile);if(introduce){championshipTab='battle';profile=recordTutorial(profile,'championships');persist(PROFILE_KEY,profile);}
  screen='championships';championshipData??=emptyChampionships();
- shellFrame('championships',championshipPage(profile,roster,championshipData,{tab:championshipTab,loading:championshipLoading,error:championshipError}));
+ shellFrame('championships',championshipPage(profile,roster,championshipData,{tab:championshipTab,loading:championshipLoading,error:championshipError,tournamentData,tournamentLoading,tournamentError,titanData,titanLoading,titanError}));
+ const rewards=app.querySelector('.championship-ranking-rewards');if(rewards)rewards.open=championshipTab==='titans'?titanRewardsOpen:championshipTab==='tournaments'?tournamentRewardsOpen:championshipRewardsOpen;
  try{if(accountReady&&browserStorage.getItem(pendingChampionshipKey()))app.querySelector('.championship-tabs').insertAdjacentHTML('beforebegin','<div class="championship-error" role="status">A battle result is waiting to sync. <button class="text-button" data-action="championship-retry">Retry saved result</button></div>');}catch{}
  updateChampionshipClock();
- if(introduce)openModal('PvP Battles — The Championships','<p>Battle other players’ teams and climb the rankings.</p><div class="modal-actions"><button class="button gold" data-action="championship-lesson-continue">Collect Quest Reward</button></div>','tutorial-championships');
+ if(introduce)openModal('PvP Battles','<div class="championship-lesson-intro"><img src="./assets/items/championship-trophy.webp" alt="" width="88" height="88"><p class="championship-lesson-title">The Championships</p><p>Battle other players’ teams.<br><strong>Climb the rankings.</strong></p><button class="button gold" data-action="championship-lesson-continue">Explore Championships</button></div>','tutorial-championships');
 }
 function updateChampionshipClock(){const label=app.querySelector('[data-championship-countdown]');if(!label)return;const remaining=Math.max(0,new Date(label.dataset.championshipCountdown)-Date.now()),hours=Math.floor(remaining/3600000),minutes=Math.floor(remaining%3600000/60000);label.textContent=`${Math.floor(hours/24)}d ${hours%24}h ${minutes}m remaining · resets Monday`;}
 setInterval(updateChampionshipClock,30000);
 async function loadChampionships(){
  const load=++championshipLoadId;
  if(!accountReady||!account.user){enterAccount('championships');return;}
- championshipLoading=true;championshipError='';if(screen==='championships')renderChampionships();
- try{await account.flush();const data=await account.api('championship-dashboard');if(load!==championshipLoadId)return;championshipData={...data,available:true,published:!!data.teams,teams:data.teams||{attack_ids:[...profile.team],defense_ids:[...profile.team]}};}
+ championshipLoading=true;championshipError='';if(screen==='championships')renderChampionships();refreshDefenseButtons();
+ try{await account.flush();const data=await account.api('championship-dashboard');if(load!==championshipLoadId)return;syncChampionshipMilestones(data);championshipData={...data,available:true,published:data.teams?.defense_ids?.length===5,teams:data.teams||null};}
  catch(error){if(load!==championshipLoadId)return;championshipError=error.message;championshipData=emptyChampionships();}
- finally{if(load===championshipLoadId){championshipLoading=false;if(screen==='championships')renderChampionships();}}
+ finally{if(load===championshipLoadId){championshipLoading=false;if(screen==='championships')renderChampionships();refreshDefenseButtons();}}
 }
-function editChampionshipTeam(kind){
- if(!championshipData?.available)return;
- championshipEditing=kind;championshipDraft=[...championshipData.teams[kind+'_ids']];
- const eligible=ownedHeroes(profile,roster);
- openModal(kind==='attack'?'Set attack warband':'Set defense warband',championshipPicker(championshipDraft,eligible),'championship-team');
+async function loadTitan(){
+ const load=++titanLoadId;titanLoading=true;titanError='';if(screen==='championships'&&championshipTab==='titans')renderChampionships();
+ try{await account.flush();const data=await account.api('titan-dashboard');if(load!==titanLoadId)return;titanData={...data,available:true};}catch(error){if(load!==titanLoadId)return;titanError=error.message;if(!titanData)titanData={available:false};}finally{if(load===titanLoadId){titanLoading=false;if(screen==='championships'&&championshipTab==='titans')renderChampionships();}}
 }
-function updateChampionshipPicks(){for(const button of modalContent.querySelectorAll('.championship-pick')){const index=championshipDraft.indexOf(button.dataset.id);button.classList.toggle('selected',index>=0);button.setAttribute('aria-pressed',String(index>=0));button.querySelector('b').textContent=index>=0?index+1:'';}modalContent.querySelector('#championship-picked').textContent=`${championshipDraft.length} / 5 selected`;modalContent.querySelector('[data-action="championship-save-team"]').disabled=championshipDraft.length!==5;}
-async function saveChampionshipTeam(){
- if(championshipBusy)return;championshipBusy=true;
- try{await account.flush();championshipData={...await account.api('championship-team',{userId:account.user.id,kind:championshipEditing,ids:championshipDraft}),available:true,published:true};
- closeModal();renderChampionships();toast(championshipEditing==='defense'?'Defense warband saved.':'Attack warband saved.');}
- catch(error){toast(error.message);}finally{championshipBusy=false;}
+setInterval(()=>{if(screen==='championships'&&championshipTab==='titans'&&!document.hidden&&!modal.open&&!titanLoading)loadTitan();},30000);
+async function fightTitan(){
+ if(championshipBusy||!titanData?.available||titanData.phase!=='active')return;championshipBusy=true;
+ try{await account.flush();const match=await account.api('titan-start',{userId:account.user.id});championshipMatch={id:match.id,opponent:'Titan',kind:'titan',month:match.state.titan.month,actions:[],submitted:false};battle=match.state;championshipTab='titans';stopAuto();battleSpeed=1;selectedEnemy=battle.enemies[0].uid;go('battle');mountBattleLoading(app.querySelector('.battle-shell'));}catch(error){toast(error.message);}finally{championshipBusy=false;}
+}
+async function claimTitanReward(month){if(championshipBusy)return;championshipBusy=true;accountSubmitting=true;try{await account.flush();await account.api('titan-claim',{userId:account.user.id,month,revision:account.revision});installAccountProfile(await account.restore());await loadTitan();toast('Titan reward collected.');}catch(error){toast(error.message);}finally{championshipBusy=false;accountSubmitting=false;}}
+function showTitanResult(){
+ const match=championshipMatch;if(!match)return;const content=message=>`<div class="titan-attack-result"><p>${esc(message)}</p><button class="button gold" data-action="nav" data-page="championships">Return to Titans</button></div>`;openModal('Titan Attack Complete',content('Verifying your damage…'),'titan-result');if(match.submitted)return;match.submitted=true;
+ const payload={userId:account.user.id,id:match.id,kind:'titan',month:match.month,actions:match.actions};storeChampionshipResult(payload);submitChampionshipResult(payload).then(result=>{if(modal.open&&modal.dataset.view==='titan-result')openModal('Titan Attack Complete',content(result.outcome==='expired'?'This attack expired. No damage was recorded.':Number(result.damage).toLocaleString()+' damage contributed.'),'titan-result');}).catch(error=>{if(modal.open&&modal.dataset.view==='titan-result')openModal('Damage Waiting to Sync',content(error.message+' Retry from Titans.'),'titan-result');});
+}
+async function loadTournament(month=tournamentData?.month){
+ const load=++tournamentLoadId;tournamentLoading=true;tournamentError='';if(month)tournamentData={...tournamentCalendar(new Date(),month),...(tournamentData?.month===month?tournamentData:{})};if(screen==='championships'&&championshipTab==='tournaments')renderChampionships();
+ try{await account.flush();const data=await account.api('tournament-dashboard',month?{month}:{});if(load!==tournamentLoadId)return;tournamentData={...data,available:true};}
+ catch(error){if(load!==tournamentLoadId)return;tournamentError=error.message;tournamentData={...tournamentCalendar(new Date(),month),available:false};}
+ finally{if(load===tournamentLoadId){tournamentLoading=false;tournamentPhaseSeen=tournamentCalendar(new Date(),tournamentData?.month).phase;if(screen==='championships'&&championshipTab==='tournaments')renderChampionships();}}
+}
+setInterval(()=>{if(screen!=='championships'||championshipTab!=='tournaments'||tournamentLoading)return;const phase=tournamentCalendar(new Date(),tournamentData?.month).phase;if(phase!==tournamentPhaseSeen)loadTournament();},30000);
+function chooseTournamentDefense(){if(!tournamentData?.available||tournamentData.phase!=='signup'){toast('Tournament signups are closed.');return;}openModal('Choose Tournament Defense',tournamentDefensePicker(profile,roster,tournamentData.month),'tournament-defense');}
+async function registerTournament(slot){
+ if(championshipBusy||!tournamentData?.available)return;const month=tournamentData.month,error=tournamentTeamError(profile.teamSlots[slot],profile,roster,month);if(error){toast(error);return;}championshipBusy=true;
+ try{await account.flush();const data=await account.api('tournament-signup',{userId:account.user.id,month,slot});tournamentData={...data,available:true};closeModal();renderChampionships();toast('Tournament defense registered. You can change it until signups close.');}catch(error){toast(error.message);}finally{championshipBusy=false;}
+}
+async function fightTournament(opponent){
+ if(championshipBusy||!tournamentData?.available||tournamentData.phase!=='active')return;const month=tournamentData.month,error=tournamentTeamError(profile.team,profile,roster,month);if(error){toast(error);return;}championshipBusy=true;
+ try{await account.flush();const match=await account.api('tournament-start',{userId:account.user.id,month,opponent});championshipMatch={id:match.id,opponent:match.opponent,month,actions:[],submitted:false};battle=match.state;championshipTab='tournaments';stopAuto();battleSpeed=1;selectedEnemy=battle.enemies[2]?.uid;go('battle');mountBattleLoading(app.querySelector('.battle-shell'));}catch(error){toast(error.message);}finally{championshipBusy=false;}
+}
+async function claimTournamentReward(month){const viewMonth=tournamentData?.month;if(championshipBusy)return;championshipBusy=true;accountSubmitting=true;try{await account.flush();await account.api('tournament-claim',{userId:account.user.id,month,revision:account.revision});installAccountProfile(await account.restore());await loadTournament(viewMonth);toast('Tournament reward collected.');}catch(error){toast(error.message);}finally{championshipBusy=false;accountSubmitting=false;}}
+function manageChampionshipTeams(){closeModal();collectionFilters.tab='teams';go('roster');}
+function refreshDefenseButtons(){
+ for(const button of app.querySelectorAll('[data-action="team-defense"]')){const team=profile.teamSlots[Number(button.dataset.slot)],active=sameTeam(team,championshipData?.teams?.defense_ids),ready=championshipData?.available&&!championshipLoading&&!championshipBusy&&!profile.openRoster;button.disabled=!ready||active;button.textContent=active?'Active Defense Team':'Set Active Defense Team';button.setAttribute('aria-pressed',String(active));button.title=championshipError||'';}
+}
+function confirmChampionshipDefense(slot){
+ if(championshipBusy||!championshipData?.available)return;const ids=profile.teamSlots[slot];if(!ids||ids.length!==5){toast('Create this team first.');return;}
+ championshipDefenseChoice={slot,ids:[...ids],userId:account.user.id};
+ openModal('Set Active Defense Team?',`<p>Use <strong>${esc(teamName(profile,slot))}</strong> as your active defense team?</p>${championshipTeamPreview(ids,roster,profile)}<div class="modal-actions"><button class="button outline" data-action="close">Cancel</button><button class="button gold" data-action="championship-confirm-defense">Confirm Defense Team</button></div>`,'championship-defense');
+}
+async function saveChampionshipDefense(){
+ const choice=championshipDefenseChoice;if(championshipBusy||!choice)return;if(choice.userId!==account.user?.id||!sameTeam(choice.ids,profile.teamSlots[choice.slot])){closeModal();toast('This team changed. Select it again.');return;}championshipBusy=true;refreshDefenseButtons();
+ try{await account.flush();const data=await account.api('championship-team',{userId:choice.userId,kind:'defense',slot:choice.slot,ids:choice.ids});championshipData={...data,available:true,published:data.teams?.defense_ids?.length===5};syncChampionshipMilestones(data);championshipDefenseChoice=null;closeModal();if(screen==='roster')renderCollectionPage();toast('Active defense team updated.');}
+ catch(error){toast(error.message);}finally{championshipBusy=false;refreshDefenseButtons();}
 }
 async function fightChampionship(opponent){
- if(championshipBusy||!championshipData?.available)return;if(!championshipData.published){toast('Save your defense warband to join the field.');editChampionshipTeam('defense');return;}championshipBusy=true;
- try{await account.flush();const match=await account.api('championship-start',{userId:account.user.id,opponent});
+ if(championshipBusy||!championshipData?.available)return;if(!championshipData.teams?.defense_ids?.length){toast('Select your active defense team from Teams first.');manageChampionshipTeams();return;}championshipBusy=true;
+ try{await account.flush();
+ // Keep older deployed handlers aligned with the active team; no attack selector is exposed.
+ if(!sameTeam(championshipData.teams.attack_ids,profile.team)){const data=await account.api('championship-team',{userId:account.user.id,kind:'attack',ids:[...profile.team]});championshipData={...data,available:true,published:true};syncChampionshipMilestones(data);}
+ const match=await account.api('championship-start',{userId:account.user.id,opponent});
  championshipMatch={id:match.id,opponent:match.opponent,actions:[],submitted:false};battle=match.state;stopAuto();battleSpeed=1;selectedEnemy=battle.enemies[2]?.uid;go('battle');mountBattleLoading(app.querySelector('.battle-shell'));}
  catch(error){toast(error.message);}finally{championshipBusy=false;}
 }
 function storeChampionshipResult(payload){try{browserStorage.setItem(pendingChampionshipKey(),JSON.stringify(payload));}catch{}}
 async function submitChampionshipResult(payload){
- const result=await account.api('championship-finish',payload);try{browserStorage.removeItem(pendingChampionshipKey());}catch{}championshipData={...result.dashboard,available:true,published:!!result.dashboard.teams};return result;
+ const result=await account.api(payload.kind==='titan'?'titan-finish':payload.month?'tournament-finish':'championship-finish',payload);try{browserStorage.removeItem(pendingChampionshipKey());}catch{}if(payload.kind==='titan'){titanData={...result.dashboard,available:true};championshipTab='titans';}else if(payload.month){tournamentData={...result.dashboard,available:true};championshipTab='tournaments';}else{championshipData={...result.dashboard,available:true,published:!!result.dashboard.teams};syncChampionshipMilestones(result.dashboard);}return result;
 }
 function showChampionshipResult(){
+ if(championshipMatch?.kind==='titan'){showTitanResult();return;}
  const match=championshipMatch;if(!match)return;const victory=battle.phase==='victory';
- const content=message=>`<div class="championship-result-summary">${championshipCrest(championshipData?.standing?.tier||0)}<p>${esc(match.opponent)}</p><p>${esc(message)}</p><div class="modal-actions"><button class="button gold" data-action="nav" data-page="championships">Return to The Championships</button></div></div>`;
+ const content=message=>`<div class="championship-result-summary">${championshipCrest((match.month?tournamentData:championshipData)?.standing?.tier||0)}<p>${esc(match.opponent)}</p><p>${esc(message)}</p><div class="modal-actions"><button class="button gold" data-action="nav" data-page="championships">${match.month?'Return to Tournaments':'Return to The Championships'}</button></div></div>`;
  openModal(victory?'Victory':'The defense holds',content('Verifying your battle result…'),'championship-result');
  if(match.submitted)return;match.submitted=true;
- const payload={userId:account.user.id,id:match.id,actions:match.actions};storeChampionshipResult(payload);
- submitChampionshipResult(payload).then(result=>{if(modal.open&&modal.dataset.view==='championship-result')openModal(result.outcome==='victory'?'Victory':result.outcome==='expired'?'Attack expired':'The defense holds',content(result.outcome==='victory'?'+30 Championship points. Your weekly standing has been updated.':result.outcome==='expired'?'The battle timer or weekly cutoff passed. This attack counts as a defeat.':'−10 Championship points. Regroup and challenge another defense.'),'championship-result');}).catch(error=>{if(modal.open&&modal.dataset.view==='championship-result')openModal('Your result is waiting',content(error.message+' Your replay is saved on this device; retry it from The Championships.'),'championship-result');});
+ const payload={userId:account.user.id,id:match.id,actions:match.actions,...(match.month?{month:match.month}:{})};storeChampionshipResult(payload);
+ submitChampionshipResult(payload).then(result=>{if(modal.open&&modal.dataset.view==='championship-result')openModal(result.outcome==='victory'?'Victory':result.outcome==='expired'?'Attack expired':'The defense holds',content(result.outcome==='victory'?match.month?'+30 Tournament points.':'+30 Championship points. Your weekly standing has been updated.':result.outcome==='expired'?'The battle timer or event cutoff passed. This attack counts as a defeat.':match.month?'−10 Tournament points.':'−10 Championship points. Regroup and challenge another defense.'),'championship-result');}).catch(error=>{if(modal.open&&modal.dataset.view==='championship-result')openModal('Your result is waiting',content(error.message+' Your replay is saved on this device; retry it from The Championships.'),'championship-result');});
 }
 async function retryChampionshipResult(){if(championshipBusy)return;championshipBusy=true;try{const payload=JSON.parse(browserStorage.getItem(pendingChampionshipKey()));if(!payload)throw Error('No pending battle result.');await submitChampionshipResult(payload);renderChampionships();toast('Battle result synced.');}catch(error){toast(error.message);}finally{championshipBusy=false;}}
 async function claimChampionshipReward(week){if(championshipBusy)return;championshipBusy=true;accountSubmitting=true;try{await account.flush();await account.api('championship-claim',{userId:account.user.id,week,revision:account.revision});const saved=await account.restore();installAccountProfile(saved);await loadChampionships();toast('Championship rewards collected.');}catch(error){toast(error.message);}finally{championshipBusy=false;accountSubmitting=false;}}
@@ -217,8 +263,8 @@ function renderBattle(state=battle,frame={}){
   const pressure=battlePressure(state),timing=battleTiming(frame.kind,{speed:battleSpeed,reduced:reducedAnimation(),special:!!(previous&&planSpecialEffects(previous,state,frame)?.special)});
   document.querySelector('#effects-layer').style.setProperty('--fx-rate',timing.rate);
   if(previous)animateDefeats(previous,state,frame,app,{speed:battleSpeed,reduced:reducedAnimation()});
-  app.innerHTML=`<main style="--fx-rate:${timing.rate}" class="battle-shell ${combatPractice?'practice-battle':''} ${autoEnabled?'auto-running':''}"><div class="battle-pressure-vignette ${pressure.critical?'pressure-critical':''}" style="--battle-pressure:${pressure.intensity}" aria-hidden="true"></div><section class="battle-center encounter-battle" data-mode="${stage.mode}" data-difficulty="${stage.difficulty}" style="--encounter-art:url('${new URL(stage.art,document.baseURI).href}')" data-scene="${stage.id}" aria-label="Puzzle battle"><div class="battle-sky"><div class="battle-sky-shade"></div><div class="enemy-line" data-scenario-phase="${state.scenario?.triggered?'triggered':state.scenario?'waiting':'none'}">${state.enemies.map((u,i)=>`<article class="enemy-unit ${u.color} ${u.hp<=0?'fallen':''} ${frame.actor===u.uid?'attacking':''} ${i===1&&state.scenario?.triggered&&u.hp>0?'guardian-phase-active '+(state.scenario.id==='iron-overpressure'?'overpressure-active':'last-light-active'):''} ${selectedEnemy===u.uid?'targeted':''}" style="grid-column:${['arena','championships'].includes(stage.mode)?'auto':`${u.lanes[0]+1} / span ${u.lanes.length}`}" data-unit="${u.uid}"><button class="enemy-target" data-action="enemy" data-uid="${u.uid}" aria-label="Target ${esc(u.name)}, ${u.hp} health, attacks in ${u.countdown} move${u.countdown===1?'':'s'}" ${u.hp<=0?'disabled':''}><span class="enemy-countdown">⚔ <b>${combatPractice?'—':u.countdown}</b></span><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640" ${u.portraitFocus?`style="object-position:${u.portraitFocus}"`:""}><span class="enemy-ground"></span><span class="enemy-name">${esc(u.name)}</span><span class="enemy-hp hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i><span class="enemy-hp-label">${combatPractice?'Practice target':Math.ceil(u.hp)+' / '+u.maxHp}${u.shield?' + '+u.shield+' ◈':''}</span></span><span class="enemy-mana" aria-label="Special charge ${chargeText(u.mana)} of ${u.manaMax}"><i style="width:${percent(u.mana,u.manaMax)}%"></i></span><span class="enemy-element">${rune(u.color)}</span></button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div><div class="attack-lanes" aria-label="Seven attack lanes">${Array.from({length:7},(_,column)=>{const target=state.enemies.find(e=>e.hp>0&&e.lanes.includes(column));return `<span class="lane-track ${target?'':'lane-empty'} ${frame.shots?.some(s=>s.index%7===column)?'lane-active':''}" data-lane="${column}" data-lane-target="${target?.uid||''}" role="img" aria-label="Lane ${column+1}: ${target?esc(target.name):'empty, double mana'}" title="${target?esc(target.name):'Empty lane · double mana'}"><i></i><b>${target?'⌃':'◇'}</b></span>`;}).join('')}</div></div>
-  <div class="board-surround"><div class="board ${busy?'resolving':''}" role="grid" aria-label="Seven column, five row runeboard" aria-rowcount="5" aria-colcount="7" data-testid="board">${state.board.map((t,i)=>`<button class="tile ${t.color} ${t.special?'special '+t.special:''} ${selectedRune===i?'selected':''} ${combatPractice&&practiceHints(PRACTICE_PHASES[combatPractice.phase],state).includes(i)?'practice-hint':''} ${cleared.has(i)?'matched':''} ${frame.kind==='fall'?'falling':''}" role="gridcell" aria-rowindex="${Math.floor(i/7)+1}" aria-colindex="${i%7+1}" data-action="tile" data-index="${i}" data-tile-id="${t.id}" aria-selected="${selectedRune===i}" aria-label="${ELEMENTS[t.color].name}${t.special?' '+(t.special==='prism'?'Prismatic Rune':'Blast Rune'):' rune'}, row ${Math.floor(i/7)+1}, column ${i%7+1}" ${busy?'disabled':''} style="--tile-order:${Math.floor(i/7)}"><img class="rune-art" src="./assets/runes/${t.color}${t.special?'-'+t.special:''}.svg" alt="" width="256" height="256" draggable="false"></button>`).join('')}</div></div>
+  app.innerHTML=`<main style="--fx-rate:${timing.rate}" class="battle-shell ${combatPractice?'practice-battle':''} ${autoEnabled?'auto-running':''}"><div class="battle-pressure-vignette ${pressure.critical?'pressure-critical':''}" style="--battle-pressure:${pressure.intensity}" aria-hidden="true"></div><section class="battle-center encounter-battle" data-mode="${stage.mode}" data-difficulty="${stage.difficulty}" style="--encounter-art:url('${new URL(stage.art,document.baseURI).href}')" data-scene="${stage.id}" aria-label="Puzzle battle"><div class="battle-sky"><div class="battle-sky-shade"></div><div class="enemy-line" data-scenario-phase="${state.scenario?.triggered?'triggered':state.scenario?'waiting':'none'}">${state.enemies.map((u,i)=>`<article class="enemy-unit ${u.color} ${u.hp<=0?'fallen':''} ${frame.actor===u.uid?'attacking':''} ${i===1&&state.scenario?.triggered&&u.hp>0?'guardian-phase-active '+(state.scenario.id==='iron-overpressure'?'overpressure-active':'last-light-active'):''} ${selectedEnemy===u.uid?'targeted':''}" style="grid-column:${['arena','championships'].includes(stage.mode)?'auto':`${u.lanes[0]+1} / span ${u.lanes.length}`}" data-unit="${u.uid}"><button class="enemy-target" data-action="enemy" data-uid="${u.uid}" aria-label="Target ${esc(u.name)}, ${u.hp} health, attacks in ${u.countdown} move${u.countdown===1?'':'s'}" ${u.hp<=0?'disabled':''}><span class="enemy-countdown">⚔ <b>${combatPractice?'—':u.countdown}</b></span><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640" ${u.portraitFocus?`style="object-position:${u.portraitFocus}"`:""}><span class="enemy-ground"></span><span class="enemy-name">${esc(u.name)}</span><span class="enemy-hp hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i><span class="enemy-hp-label">${combatPractice?'Practice target':Math.ceil(u.hp)+' / '+u.maxHp}${u.shield?' + '+u.shield+' ◈':''}</span></span><span class="enemy-mana" aria-label="Special charge ${chargeText(u.mana)} of ${u.manaMax}"><i style="width:${percent(u.mana,u.manaMax)}%"></i></span><span class="enemy-element ${u.dualColors?'dual-element':''}">${u.dualColors?u.dualColors.map(color=>rune(color)).join(''):rune(u.color)}</span></button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div><div class="attack-lanes" aria-label="Seven attack lanes">${Array.from({length:7},(_,column)=>{const target=state.enemies.find(e=>e.hp>0&&e.lanes.includes(column));return `<span class="lane-track ${target?'':'lane-empty'} ${frame.shots?.some(s=>s.index%7===column)?'lane-active':''}" data-lane="${column}" data-lane-target="${target?.uid||''}" role="img" aria-label="Lane ${column+1}: ${target?esc(target.name):'empty, double mana'}" title="${target?esc(target.name):'Empty lane · double mana'}"><i></i><b>${target?'⌃':'◇'}</b></span>`;}).join('')}</div></div>
+  ${state.titan?`<div class="titan-battle-score">Damage <b>${Math.max(0,state.titan.initialHp-state.enemies[0].hp).toLocaleString()}</b> • ${state.moves} / 30 moves</div>`:''}<div class="board-surround"><div class="board ${busy?'resolving':''}" role="grid" aria-label="Seven column, five row runeboard" aria-rowcount="5" aria-colcount="7" data-testid="board">${state.board.map((t,i)=>`<button class="tile ${t.color} ${t.special?'special '+t.special:''} ${selectedRune===i?'selected':''} ${combatPractice&&practiceHints(PRACTICE_PHASES[combatPractice.phase],state).includes(i)?'practice-hint':''} ${cleared.has(i)?'matched':''} ${frame.kind==='fall'?'falling':''}" role="gridcell" aria-rowindex="${Math.floor(i/7)+1}" aria-colindex="${i%7+1}" data-action="tile" data-index="${i}" data-tile-id="${t.id}" aria-selected="${selectedRune===i}" aria-label="${ELEMENTS[t.color].name}${t.special?' '+(t.special==='prism'?'Prismatic Rune':'Blast Rune'):' rune'}, row ${Math.floor(i/7)+1}, column ${i%7+1}" ${busy?'disabled':''} style="--tile-order:${Math.floor(i/7)}"><img class="rune-art" src="./assets/runes/${t.color}${t.special?'-'+t.special:''}.svg" alt="" width="256" height="256" draggable="false"></button>`).join('')}</div></div>
   ${(weeklyStatus(state)||scenarioStatus(state))?`<div class="battle-mechanic-notice" role="status"><b>${esc((weeklyStatus(state)||scenarioStatus(state)).name)}</b> ${esc((weeklyStatus(state)||scenarioStatus(state)).text)}</div>`:''}<div class="battle-feedback" role="status" aria-live="polite">${!autoEnabled&&actor?`${castingSpec.target==='self'?'Tap '+esc(actor.name)+' again':castingSpec.target==='ally'?'Choose an ally':'Choose an enemy'} <button data-action="cancel-cast">Cancel</button>`:combatPractice?combatPractice.phase===PRACTICE_PHASES.length?`Practice complete <button data-action="practice-reward">Collect Quest Reward</button>`:esc(practicePrompt(PRACTICE_PHASES[combatPractice.phase],state.heroes.find(h=>h.uid===combatPractice.actor)?.name||'the ready champion')):''}</div>
   <div class="hero-line">${state.heroes.map(u=>`<article class="hero-unit ${u.color} ${u.hp<=0?'fallen':''} ${readyLevel(u)?'charged':''} ${pendingCaster===u.uid?'casting':''} ${frame.actor===u.uid?'attacking':''}" data-unit="${u.uid}"><button class="hero-main" data-action="hero" data-uid="${u.uid}" aria-label="${esc(u.name)}, ${u.hp} health, ${chargeText(u.mana)} of ${u.manaMax} tile charge, ${manaLabel(u)}${readyLevel(u)?', Special ready'+(u.special.charging?', charge '+readyLevel(u):''):''}" ${u.hp<=0?'disabled':''}><img src="${u.portrait}" alt="${esc(u.name)}" width="480" height="640" ${u.portraitFocus?`style="object-position:${u.portraitFocus}"`:""}><div class="hero-shade"></div>${rankTrack(u,profile)}${readyLevel(u)?`<span class="special-state">${glyph('speed')}${u.special.charging?'READY · '+readyLevel(u):'READY'}</span>`:''}<span class="hero-name">${esc(u.name)}</span><span class="hp-bar"><i style="width:${percent(u.hp,u.maxHp)}%"></i><span class="hero-health">${Math.ceil(u.hp)}${u.shield?' + '+u.shield+' ◈':''}</span></span>${manaBar(u)}<span class="hero-mana-speed">${speedMark(u)}</span><span class="hero-element">${rune(u.color)}</span></button><div class="statuses">${statusIcons(u)}</div></article>`).join('')}</div>
   </section>
@@ -245,7 +291,7 @@ async function play(result){
   if(battle?.championship&&result.championshipAction)championshipMatch?.actions.push(result.championshipAction);
   if(combatPractice&&combatPractice.phase<PRACTICE_PHASES.length&&!practicePhaseDone(result,PRACTICE_PHASES[combatPractice.phase],previousBattle)){toast(practicePrompt(PRACTICE_PHASES[combatPractice.phase],battle.heroes.find(h=>h.uid===combatPractice.actor)?.name||'the ready champion'));return;}
   const focusAfter=document.activeElement?.dataset.index;
-  battle=result.state;if(battle.championship&&championshipMatch&&battle.phase!=='playing')storeChampionshipResult({userId:account.user.id,id:championshipMatch.id,actions:championshipMatch.actions});settleVictory();persist(PROFILE_KEY,profile);
+  battle=result.state;if(battle.championship&&championshipMatch&&battle.phase!=='playing')storeChampionshipResult({userId:account.user.id,id:championshipMatch.id,actions:championshipMatch.actions,...(championshipMatch.month?{month:championshipMatch.month}:{}),...(championshipMatch.kind?{kind:championshipMatch.kind}:{})});settleVictory();persist(PROFILE_KEY,profile);
   busy=true;pendingCaster=null;selectedRune=null;const token=++animationToken,presentationEpoch=battlePresentationEpoch;
   for(const frame of result.frames){if(token!==animationToken)return;if(presentationEpoch!==battlePresentationEpoch)break;const timing=battleTiming(frame.kind,{speed:battleSpeed,reduced:reducedAnimation(),special:!!(displayedBattle&&planSpecialEffects(displayedBattle,frame.state,frame)?.special)});renderBattle(frame.state,frame);await new Promise(resolve=>setTimeout(resolve,timing.duration));}
   if(token!==animationToken)return;busy=false;renderBattle();if(focusAfter!==undefined)app.querySelector(`[data-index="${focusAfter}"]`)?.focus({preventScroll:true});if(combatPractice&&combatPractice.phase<PRACTICE_PHASES.length&&practicePhaseDone(result,PRACTICE_PHASES[combatPractice.phase],previousBattle)){combatPractice.phase++;if(combatPractice.phase===PRACTICE_PHASES.length){for(const event of ['special','match4','match5'])profile=recordTutorial(profile,event);persist(PROFILE_KEY,profile);combatPractice={phase:PRACTICE_PHASES.length,actor:combatPractice.actor};renderBattle();openModal('Practice complete!',`<p>Your first quest reward is ready.</p><div class="modal-actions"><button class="button gold" data-action="practice-reward">Collect Practice Reward</button></div>`,'practice-complete');return;}const nextPhase=PRACTICE_PHASES[combatPractice.phase];if(nextPhase==='special'){const hero=battle.heroes.find(h=>h.uid===combatPractice.actor);hero.mana=hero.manaMax;}else if(nextPhase==='match4'||nextPhase==='match5')battle=practiceBoard(battle,nextPhase==='match4'?4:5);renderBattle();}else if(battle.phase!=='playing'){stopAuto();renderBattle();showResult();}
@@ -304,15 +350,25 @@ function renderRoster(selectionOnly=false){
 function tapTile(index){if(busy||screen!=='battle'||pendingCaster)return;if(selectedRune===index){if(battle.board[index].special)play(activate(battle,index));else{selectedRune=null;renderBattle();}return;}if(selectedRune!==null){const a=selectedRune;selectedRune=null;play(swap(battle,a,index));if(!busy)renderBattle();}else{selectedRune=index;renderBattle();}}
 function openPlayerProfile(){openModal('Your Profile',profileEditorHTML(profile),'profile-editor');mountProfileEditor(modalContent,{avatar:profile.avatar,onAvatar:avatar=>{profile={...profile,avatar};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);},onName:name=>{profile={...profile,name};persist(PROFILE_KEY,profile);courtyardView?.updateProfile(profile);}});}
 function closeModal(){stopEndingMontage();stopStoryDialogue();if(modal.dataset.view==='battle-exit'){drag=null;edgeTap=null;suppressClickUntil=0;clearBattleEffects();displayedBattle=null;if(screen==='battle'&&battle)renderBattle();}if(modal.dataset.view==='chapter-story')stopCinematic();if(modal.open)modal.close();modal.dataset.view='';scheduleAuto();}
+document.addEventListener('toggle',event=>{const details=event.target;if(!details.matches?.('.championship-ranking-rewards'))return;if(details.closest('.titan-page'))titanRewardsOpen=details.open;else if(details.closest('.tournament-page'))tournamentRewardsOpen=details.open;else championshipRewardsOpen=details.open;},true);
 document.addEventListener('click',event=>{
   const button=event.target.closest('[data-action]');if(!button||button.disabled||accountSubmitting)return;const {action,id,uid,stage,color,index}=button.dataset;
   if(button.tagName==='A')event.preventDefault();
   if(['tile','hero','enemy'].includes(action)&&autoEnabled){stopAuto();if(screen==='battle'&&!busy)renderBattle();}
-  if(action==='championship-tab'){championshipTab=button.dataset.tab;renderChampionships();return;}
+  if(action==='championship-tab'){championshipTab=button.dataset.tab;renderChampionships();if(championshipTab==='tournaments')loadTournament();if(championshipTab==='titans')loadTitan();return;}
+  if(action==='titan-refresh'){loadTitan();return;}
+  if(action==='titan-fight'){fightTitan();return;}
+  if(action==='titan-claim'){claimTitanReward(button.dataset.month);return;}
+  if(action==='tournament-month'){if(validTournamentMonth(button.dataset.month))loadTournament(button.dataset.month);return;}
+  if(action==='tournament-refresh'){loadTournament();return;}
+  if(action==='tournament-signup'){chooseTournamentDefense();return;}
+  if(action==='tournament-register'){registerTournament(Number(button.dataset.slot));return;}
+  if(action==='tournament-fight'){fightTournament(button.dataset.opponent);return;}
+  if(action==='tournament-claim'){claimTournamentReward(button.dataset.month);return;}
   if(action==='championship-refresh'){loadChampionships();return;}
-  if(action==='championship-edit'){editChampionshipTeam(button.dataset.kind);return;}
-  if(action==='championship-pick'){if(championshipBusy)return;if(championshipDraft.includes(id))championshipDraft=championshipDraft.filter(v=>v!==id);else if(championshipDraft.length<5)championshipDraft.push(id);else{toast('Remove a champion before adding another.');return;}updateChampionshipPicks();return;}
-  if(action==='championship-save-team'){saveChampionshipTeam();return;}
+  if(action==='championship-manage-teams'){manageChampionshipTeams();return;}
+  if(action==='team-defense'){confirmChampionshipDefense(Number(button.dataset.slot));return;}
+  if(action==='championship-confirm-defense'){saveChampionshipDefense();return;}
   if(action==='championship-fight'){fightChampionship(button.dataset.opponent);return;}
   if(action==='championship-claim'){claimChampionshipReward(button.dataset.week);return;}
   if(action==='championship-retry'){retryChampionshipResult();return;}
@@ -341,12 +397,13 @@ document.addEventListener('click',event=>{
   if(action==='dungeon-difficulty'){dungeonDifficulty=button.dataset.difficulty;renderShell('dungeons');return;}
   if(action==='preview-encounter'){previewEncounter(stage);return;}
 
-  if(action==='championship-lesson-continue'){closeModal();questState='ready';go('quests');return;}
+  if(action==='championship-lesson-continue'){closeModal();window.scrollTo({top:0,behavior:'instant'});return;}
+  if(action==='championship-lesson-reward'){closeModal();questState='ready';go('quests');return;}
   if(action==='first-step'){const step=nextFirstStep({...profile,onboardingDismissed:false});if(!step)return;if(step.id==='quest'){questState='ready';go('quests');const card=app.querySelector('[data-quest="'+step.quest+'"]');card?.scrollIntoView({block:'center',behavior:'instant'});card?.querySelector('[data-action="claim-quest"]')?.focus({preventScroll:true});return;}if(step.id==='practice'){startCombatPractice();return;}if(step.page==='campaign')campaignDifficulty='normal';if(['feed-collection','feed-select'].includes(step.id)){collectionFilters={...DEFAULT_FILTERS};go('roster');app.querySelector('.tutorial-champion')?.scrollIntoView({block:'center',behavior:'instant'});return;}if(step.id==='feed'){const target=feedingTarget();if(screen!=='champion'||!profile.collection[app.querySelector('.champion-page')?.dataset.championId]){if(target)go('champion/'+encodeURIComponent(target.id));else{collectionFilters={...DEFAULT_FILTERS};go('roster');return;}}app.querySelector('#hero-development')?.scrollIntoView({block:'start',behavior:'instant'});return;}if(step.id==='team'){collectionFilters.tab='teams';go('roster');openRoster();return;}if(step.id==='guide'){openGuide('overview');return;}if(step.page==='shop')shopTab=step.tab||'supplies';go(step.page);return;}
   if(action==='nav'){go(button.dataset.page);return;}
   if(action==='champion'){go('champion/'+encodeURIComponent(id)+(button.dataset.preview==='true'?'/codex':''));return;}
   if(action==='reset-collection'){collectionFilters={...DEFAULT_FILTERS,tab:collectionFilters.tab};renderCollectionPage();return;}
-  if(action==='collection-tab'){collectionFilters.tab=button.dataset.tab;renderCollectionPage();return;}
+  if(action==='collection-tab'){collectionFilters.tab=button.dataset.tab;renderCollectionPage();if(collectionFilters.tab==='teams')loadChampionships();return;}
   if(action==='summon'){openPortal();return;}
   if(action==='daily-claim'||action==='path-claim'){const r=(action==='daily-claim'?claimDaily:claimPath)(profile);if(r.error){toast(r.error);return;}profile=r.profile;persist(PROFILE_KEY,profile);renderShell('daily');toast('Daily rewards saved.');return;}
   if(action==='edit-profile'){openPlayerProfile();return;}
@@ -443,7 +500,7 @@ app.addEventListener('keydown',event=>{const tile=event.target.closest('[data-in
 let collectionFilters={...DEFAULT_FILTERS},summoning=false,summonToken=0,portalReveal=null;
 function abandonBattle(){
   if(battle?.championship&&championshipMatch&&!championshipMatch.submitted&&battle.phase==='playing'){
-   const payload={userId:account.user.id,id:championshipMatch.id,surrender:true};storeChampionshipResult(payload);submitChampionshipResult(payload).catch(()=>{});
+   const payload={userId:account.user.id,id:championshipMatch.id,surrender:true,actions:championshipMatch.actions,...(championshipMatch.month?{month:championshipMatch.month}:{}),...(championshipMatch.kind?{kind:championshipMatch.kind}:{})};storeChampionshipResult(payload);submitChampionshipResult(payload).catch(()=>{});
   }
   championshipMatch=null;
   drag=null;edgeTap=null;suppressClickUntil=0;
@@ -481,12 +538,12 @@ function renderRoute(){
   pauseAuto();animationToken++;busy=false;pendingCaster=null;selectedRune=null;closeModal();clearBattleEffects();
   if(page!=='summon'){summonToken++;summoning=false;portalReveal=null;}
   if(page==='splash'){screen='splash';app.innerHTML=Shell.splash({cinematics:motionAllowed(profile,reducedAnimation())});introOnce(profile,reducedAnimation());}
-  else if(page==='championships'){renderChampionships();loadChampionships();}
+  else if(page==='championships'){renderChampionships();loadChampionships();if(championshipTab==='tournaments')loadTournament();if(championshipTab==='titans')loadTitan();}
   else if(page==='home')renderHome();
   else if(page==='battle'){if(!battle){go('campaign');return;}screen='battle';renderBattle();if(battle.phase!=='playing')showResult();}
   else if(page==='weekly'){go('daily');return;}
   else if(page==='inventory'){shopTab='inventory';go('shop');return;}
-  else if(page==='roster')renderCollectionPage();
+  else if(page==='roster'){renderCollectionPage();if(collectionFilters.tab==='teams')loadChampionships();}
   else if(page==='settings'){go('home');openGuide('tools');return;}
   else if(page==='champion'){let id;try{id=decodeURIComponent(parts[1]||'');}catch{id='';}renderChampionPage(id,parts[2]==='codex');}
   else if(['world','campaign','summon','quests','inventory','daily',...Object.keys(Shell.MODES)].includes(page))renderShell(page);
@@ -498,7 +555,7 @@ function openGuide(topic,effectKind='buff'){const next=recordTutorial(profile,'g
 function shellFrame(page,body){clearTimeout(boosterExpiryTimer);const active=page==='daily'?'home':page!=='shop'&&(page==='campaign'||page==='dungeons'||page==='weekly'||Shell.MODES[page])?'world':page==='champion'?'roster':page;app.innerHTML=`${header(active,page)}<main class="game-page page-${page}">${page==='championships'?'':firstStepsHTML(profile,page)}${body}</main>`;}
 function renderShell(page,center=true){screen=page;const next=recordTutorial(profile,page==='shop'?shopTab==='supplies'?'shop':shopTab:page==='inventory'?'inventory':'');if(next!==profile){profile=next;persist(PROFILE_KEY,profile);}const body=page==='world'?Shell.world():page==='campaign'?Shell.campaign(profile,{difficulty:campaignDifficulty}):page==='dungeons'?Shell.dungeons(profile,{difficulty:dungeonDifficulty}):page==='arena'?Shell.arena(profile,roster,{selected:selectedArena}):page==='events'?Shell.events(profile,{selected:selectedEvent}):page==='shop'?Shell.exchangePage(profile,{tab:shopTab,choices:exchangeChoices,inventoryHtml:Shell.inventory(profile)}):page==='summon'?Shell.portal(profile,roster,{charging:summoning,reveal:portalReveal}):page==='quests'?Shell.quests(profile,{limit:questLimit||(innerWidth<600?6:12),state:questState}):page==='inventory'?Shell.inventory(profile):page==='daily'?dailyPage(profile,roster):Shell.foundation(page);shellFrame(page,body);if(page==='daily')weeklyRefreshTimer=setTimeout(()=>{if(screen==='daily')renderShell('daily');},Math.max(100,+weeklyWindow().reset-Date.now()+100));if(page==='inventory'||page==='shop'&&shopTab==='inventory'){const now=Date.now(),expiry=Object.values(profile.boosters||{}).filter(t=>t>now).sort((a,b)=>a-b)[0];if(expiry)boosterExpiryTimer=setTimeout(()=>{if(screen==='inventory'||screen==='shop'&&shopTab==='inventory')renderShell('shop');},Math.min(2147483647,expiry-now+10));}if(page==='arena')mountArenaScene(app.querySelector('.arena-scene'),{selected:selectedArena,onSelect:index=>{selectedArena=index;}});if(page==='campaign'&&center){const viewport=document.querySelector('.campaign-map-viewport'),node=viewport?.querySelector('[data-current="true"]');if(node){viewport.scrollLeft=node.offsetLeft-viewport.clientWidth/2;viewport.scrollTop=node.offsetTop-viewport.clientHeight/2;}}}
 function feedingTarget(){return filterChampions(ownedHeroes(profile,roster),profile,{...DEFAULT_FILTERS}).find(c=>!heroDevelopment(profile,c).atCap);}
-function renderCollectionPage(){if(collectionFilters.tab==='owned'&&nextFirstStep(profile)?.id==='feed-collection'){profile=recordTutorial(profile,'feedingCollection');persist(PROFILE_KEY,profile);collectionFilters={...DEFAULT_FILTERS};}const filtersOpen=!!app.querySelector('.collection-filters[open]');screen='roster';shellFrame('roster',Shell.collection(profile,roster,collectionFilters,collectionFilters.tab==='teams'?warbandPanel():''));if(collectionFilters.tab!=='teams'){renderLibrary();if(filtersOpen)app.querySelector('.collection-filters').open=true;}}
+function renderCollectionPage(){if(collectionFilters.tab==='owned'&&nextFirstStep(profile)?.id==='feed-collection'){profile=recordTutorial(profile,'feedingCollection');persist(PROFILE_KEY,profile);collectionFilters={...DEFAULT_FILTERS};}const filtersOpen=!!app.querySelector('.collection-filters[open]');screen='roster';shellFrame('roster',Shell.collection(profile,roster,collectionFilters,collectionFilters.tab==='teams'?warbandPanel():'',{defenseIds:championshipData?.teams?.defense_ids,defenseReady:!!championshipData?.available&&!championshipLoading&&!championshipBusy&&!profile.openRoster}));if(collectionFilters.tab!=='teams'){renderLibrary();if(filtersOpen)app.querySelector('.collection-filters').open=true;}}
 function renderLibrary(){const results=Shell.collectionResults(profile,roster,collectionFilters);document.querySelector('#library-grid').innerHTML=results.html;if(collectionFilters.tab==='owned'&&nextFirstStep(profile)?.id==='feed-select'){const target=feedingTarget(),card=[...app.querySelectorAll('.library-card')].find(c=>c.dataset.id===target?.id);if(card){card.classList.add('tutorial-champion');card.setAttribute('aria-description','Choose this champion for training');}}document.querySelector('#library-count').textContent=`${results.count} of ${collectionFilters.tab==='all'?roster.length:Object.keys(profile.collection).length} Champions · ${collectionFilters.tab==='all'?'Codex':'Collection'}`;}
 function renderChampionPage(id,preview=false){if(!preview&&profile.collection[id]&&['feed-collection','feed-select'].includes(nextFirstStep(profile)?.id)){profile=recordTutorial(recordTutorial(profile,'feedingCollection'),'feedingChampion');persist(PROFILE_KEY,profile);}const expanded=app.querySelector('.champion-page')?.dataset.championId===id?[...app.querySelectorAll('.advancement-menu[open]')].map(n=>n.id):[];const source=byId.get(id);if(!source){go('roster');toast('This champion could not be found.');return;}const unit=developedChampion(source,profile,{preview}),owned=!preview&&!!profile.collection[id];screen='champion';shellFrame('champion',`<button class="text-button" data-action="nav" data-page="roster">← Back to Collection</button><section class="champion-page ${unit.color} tier-${unit.rarity}" data-champion-id="${esc(id)}"><div class="champion-showcase"><img src="${unit.portrait}" alt="${esc(unit.name)}">${detailMotionHTML(id)}${levelMark(source,profile,{preview,showTier:false})}${rankTrack(source,profile,{preview})}</div><div class="champion-biography"><span class="eyebrow">${unit.rarity} · ${faction(unit.faction)} · ${role(unit.role)}</span><h1>${esc(unit.name)}</h1>${owned?`<div class="hero-preferences"><button class="button outline" data-action="hero-preference" data-preference="favorites" data-id="${esc(id)}" aria-pressed="${(profile.favorites||[]).includes(id)}">${(profile.favorites||[]).includes(id)?'★ Favorite':'☆ Favorite'}</button><button class="button outline" data-action="hero-preference" data-preference="lockedHeroes" data-id="${esc(id)}" aria-pressed="${(profile.lockedHeroes||[]).includes(id)}">${(profile.lockedHeroes||[]).includes(id)?'Locked from feeding':'Lock from feeding'}</button></div>`:''}<div class="detail-element ${unit.color}"><img class="detail-affinity" src="./assets/runes/${unit.color}.svg" alt=""><span>${unit.color} <span class="detail-separator" aria-hidden="true">·</span> ${manaLabel(unit)}</span></div><details class="champion-story"><summary>Read Their Story</summary><p class="champion-lore">${esc(unit.lore)}</p></details><section class="champion-special" id="hero-special"><div class="section-heading special-name-row"><h2>${esc(unit.special.name)}</h2>${!unit.special.charging?`<span class="special-tile-cost">${manaLevels(unit)[0].tiles} tiles</span>`:''}</div>${specialLevelsHTML(unit,false,true)}</section></div></section>${developmentPanel(source,preview?{...profile,collection:{}}:profile)}${unit.passive?`<section class="passive-info" id="hero-passive"><span class="eyebrow">PASSIVE ABILITY</span><h2>${esc(unit.passive.name)}</h2><p>${esc(unit.passive.desc)}</p></section>`:''}`);mountDetailMotion(app,profile,reducedAnimation());for(const section of expanded){const menu=document.getElementById(section);if(menu)menu.open=true;}}
 function randomUnit(){return crypto.getRandomValues(new Uint32Array(1))[0]/4294967296;}
@@ -514,7 +571,6 @@ modal.addEventListener('cancel',event=>{if(modal.dataset.view==='result'){event.
 function restartJourney(){const oldProfile=storage.getItem(PROFILE_KEY),oldBattle=storage.getItem(BATTLE_KEY),fresh=defaultProfile();try{storage.setItem(PROFILE_KEY,JSON.stringify(fresh));storage.removeItem(BATTLE_KEY);}catch{try{if(oldProfile===null)storage.removeItem(PROFILE_KEY);else storage.setItem(PROFILE_KEY,oldProfile);if(oldBattle!==null)storage.setItem(BATTLE_KEY,oldBattle);}catch{}toast('Restart failed. Your saved progress is still available.');return;}profile=fresh;persist(PROFILE_KEY,profile);battle=null;displayedBattle=null;byId=new Map(battleRoster(profile,roster).map(c=>[c.id,c]));go('splash');toast('A new journey begins.');}
 window.addEventListener('hashchange',handleHashNavigation);
 document.addEventListener('keydown',event=>{if(screen==='splash'&&!modal.open&&event.key==='Enter'&&!event.repeat&&!event.target.closest('button,a,input,textarea,select')){event.preventDefault();go('home');}});
-document.addEventListener('input',event=>{if(event.target.id==='championship-search'){const query=event.target.value.trim().toLowerCase();for(const button of modalContent.querySelectorAll('.championship-pick'))button.hidden=!button.dataset.search.includes(query);}});
 document.addEventListener('change',async event=>{
  if(event.target.matches('[data-exchange-currency]')){const key=event.target.dataset.exchangeCurrency;exchangeChoices[key]=event.target.value;const offers=event.target.closest('.exchange-offers');offers.innerHTML=Shell.exchangeOffers(profile,exchangeChoices);offers.querySelector(`[data-exchange-currency="${key}"]`).focus();return;}
 
@@ -524,7 +580,7 @@ document.addEventListener('change',async event=>{
 
 });
 async function boot(){try{
-  const responses=await Promise.all([fetch('./data/champions.json?v=0.53.5'),fetch('./data/effects.json?v=0.53.5')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=defaultProfile();renderRoute();
+  const responses=await Promise.all([fetch('./data/champions.json?v=0.53.6'),fetch('./data/effects.json?v=0.53.6')]);if(responses.some(r=>!r.ok))throw Error('Roster files could not be loaded.');[roster,effects]=await Promise.all(responses.map(r=>r.json()));byId=new Map(roster.map(c=>[c.id,c]));profile=defaultProfile();renderRoute();
 }catch(error){app.innerHTML=`<main class="loading"><h1>The Runes Could Not Awaken.</h1><p>${esc(error.message)}</p><p>Run this game through its local server or static hosting, rather than opening index.html as a file.</p><button class="button gold" onclick="location.reload()">Try again</button></main>`;}}
 boot();
 

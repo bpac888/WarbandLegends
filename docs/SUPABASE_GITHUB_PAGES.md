@@ -6,7 +6,7 @@ Public configuration is already set in `src/backend-config.js` for project **ksk
 
 ## 1. Database — already completed for this project
 
-If starting a different project, run `supabase/accounts.sql` and then `supabase/championships.sql` in Supabase SQL Editor. **Do not run them again if they already succeeded.** This hosting change requires no new tables or SQL changes.
+If starting a different project, run `supabase/accounts.sql` and then `supabase/championships.sql` in Supabase SQL Editor. **Do not run them again if they already succeeded.** For release 0.53.6, also apply the [monthly competition update](MONTHLY_COMPETITIONS.md) to enable Tournaments and Titans.
 
 ## 2. Deploy one Supabase function
 

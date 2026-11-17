@@ -1,11 +1,12 @@
-import {nextFirstStep} from './first-steps.js?v=0.53.5';
-import {tutorialQuestAvailable} from './tutorial.js?v=0.53.5';
-import {GEM_INTERVAL} from './economy.js?v=0.53.5';
-import {GEM_ART} from './currency-art.js?v=0.53.5';
-import {QUESTS,questProgress} from './quests.js?v=0.53.5';
-import {questRewardMarks} from './gem-ui.js?v=0.53.5';
+import {nextFirstStep} from './first-steps.js?v=0.53.6';
+import {tutorialQuestAvailable} from './tutorial.js?v=0.53.6';
+import {GEM_INTERVAL} from './economy.js?v=0.53.6';
+import {GEM_ART} from './currency-art.js?v=0.53.6';
+import {QUESTS,questProgress} from './quests.js?v=0.53.6';
+import {questRewardMarks} from './gem-ui.js?v=0.53.6';
 export const QUEST_ART='./assets/quests/categories.webp';
 export function questArtIndex(quest){return quest.metric==='summons'?5:quest.metric==='ascensions'?7:quest.metric==='awakenings'?8:({campaign:0,dungeons:1,arena:2,events:3,collection:4,growth:6}[quest.category]??6);}
+const trophy=()=>'<span class="quest-thumbnail quest-championship-thumbnail" aria-hidden="true"><img src="./assets/items/championship-trophy.webp" alt="" width="68" height="68"></span>';
 const art=index=>`<span class="quest-thumbnail" aria-hidden="true"><img src="${QUEST_ART}" alt="" width="1254" height="1254" style="--quest-x:${index%3};--quest-y:${Math.floor(index/3)}"></span>`;
 function campaignVictoryBonus(profile){
  if(profile.openRoster)return '';
@@ -22,7 +23,7 @@ export function questsPage(profile,{limit=12,state='active'}={}){
  <div class="quest-status" role="group" aria-label="Quest status">${[['active','Active',catalogue.length-completed.length],['ready','Ready',ready.length],['completed','Completed',completed.length]].map(([id,name,n])=>`<button data-action="quest-status" data-state="${id}" aria-pressed="${state===id}" class="${state===id?'active':''}">${name} <b>${n}</b></button>`).join('')}</div>
  <section class="chronicle-grid">${rows.length?'':'<div class="empty-state"><h3>No quests in this view</h3></div>'}${rows.slice(0,limit).map(q=>{
  const progress=Math.min(q.goal,questProgress(profile,q)),claimed=isClaimed(q),complete=progress>=q.goal;
- const page=q.tutorialPage||{campaign:'campaign',dungeons:'dungeons',arena:'arena',events:'events',collection:q.metric==='collection'?'roster':'summon',growth:'roster'}[q.category];
- return `<article class="chronicle-card quest-category-${q.category} ${claimed?'claimed':complete?'ready':''}" data-quest="${q.id}"><div class="chronicle-copy"><div class="quest-card-heading">${art(questArtIndex(q))}<div class="quest-heading-copy"><div class="quest-meta"><span>${q.category[0].toUpperCase()+q.category.slice(1)}</span><b>${claimed?'Claimed':complete?'Ready':progress.toLocaleString()+' / '+q.goal.toLocaleString()}</b></div><h2>${q.name}</h2></div></div><p>${q.text}</p><div class="quest-progress" role="progressbar" aria-label="${q.name}" aria-valuenow="${progress}" aria-valuemin="0" aria-valuemax="${q.goal}"><i style="width:${progress/q.goal*100}%"></i></div><div class="quest-reward-marks">${questRewardMarks(q)}${q.championReward?`<span>+1 ${q.championRewardName}</span>`:''}</div>${!claimed?`<div class="chronicle-actions">${complete?`<button class="button gold" data-action="claim-quest" data-id="${q.id}">Claim rewards</button>`:`<button class="button outline" data-action="${q.metric==='tutorial'?'first-step':'nav'}" data-page="${page}">Continue →</button>`}</div>`:''}</div></article>`;
+ const page=q.tutorialPage||{campaign:'campaign',dungeons:'dungeons',arena:'arena',championships:'championships',events:'events',collection:q.metric==='collection'?'roster':'summon',growth:'roster'}[q.category];
+ return `<article class="chronicle-card quest-category-${q.category} ${claimed?'claimed':complete?'ready':''}" data-quest="${q.id}"><div class="chronicle-copy"><div class="quest-card-heading">${q.category==='championships'?trophy():art(questArtIndex(q))}<div class="quest-heading-copy"><div class="quest-meta"><span>${q.category[0].toUpperCase()+q.category.slice(1)}</span><b>${claimed?'Claimed':complete?'Ready':q.metric==='championshipTier'?['Bronze','Silver','Gold','Platinum'][progress]+' / '+['Bronze','Silver','Gold','Platinum'][q.goal]:progress.toLocaleString()+' / '+q.goal.toLocaleString()}</b></div><h2>${q.name}</h2></div></div><p>${q.text}</p><div class="quest-progress" role="progressbar" aria-label="${q.name}" aria-valuenow="${progress}" aria-valuemin="0" aria-valuemax="${q.goal}"><i style="width:${progress/q.goal*100}%"></i></div><div class="quest-reward-marks">${questRewardMarks(q)}${q.championReward?`<span>+1 ${q.championRewardName}</span>`:''}</div>${!claimed?`<div class="chronicle-actions">${complete?`<button class="button gold" data-action="claim-quest" data-id="${q.id}">Claim rewards</button>`:`<button class="button outline" data-action="${q.metric==='tutorial'?'first-step':'nav'}" data-page="${page}">Continue →</button>`}</div>`:''}</div></article>`;
  }).join('')}</section>${rows.length>limit?`<div class="quest-more"><button class="button outline" data-action="quest-more">Show more quests · ${Math.min(limit,rows.length)} / ${rows.length}</button></div>`:''}`;
 }

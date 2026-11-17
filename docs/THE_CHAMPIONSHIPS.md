@@ -1,6 +1,6 @@
 # The Championships
 
-A separate asynchronous player-versus-player tournament: attack another player's published five-champion defense while that player is offline. The painted welcome scene uses a larger phone composition with open sky for the title, flowing waterfalls, torchlight and a pulsing portal. The page has Battle, Warbands, Rankings and Rewards sections. A compact trophy button sits in the navigation row. The original Arena remains available.
+A separate asynchronous player-versus-player tournament: attack another player's published five-champion defense while that player is offline. The painted welcome scene uses a larger phone composition with open sky for the title, flowing waterfalls, torchlight and a pulsing portal. The page has Battle, Rankings, Tournaments and Titans tabs. Rewards open as a collapsible section above Rankings. A compact trophy button sits in the navigation row. The original Arena remains available.
 
 ## Access
 
@@ -8,7 +8,7 @@ Enter the game with a player account and use the Championships navigation button
 
 After the Shop tutorial, opening the main Championships page completes a short visit quest and introduces PvP. No battle or team setup is required for that quest.
 
-Attack and defense warbands are independent of each other and of the campaign team. Only champions owned by the signed-in account can be selected.
+Attacks always use the regular active team. Set a defense explicitly on Collection → Teams with **Set Active Defense Team**, then confirm. There is no default defense. Switching the active attack team does not change defense. Only owned champions can be selected.
 
 ## Ranked rules
 
@@ -25,6 +25,20 @@ Each player can begin 20 attacks per Pacific calendar day, with a maximum of thr
 
 Both sides use their current champion levels, Specials, passives, ascensions, Limit Breaks and faction bonuses. Upgrades apply automatically to saved teams. At battle start, the server loads both players’ latest cloud profiles and checks ownership. A battle keeps the stats it started with so its replay remains verifiable. Players save their lineup again only when changing its members.
 
+## Quest milestones
+
+Championships has 16 one-time quests in the normal Quests page:
+
+- Attack victories: 1, 5, 10, 25, 50, 100, 500 and 1,000.
+- Highest tier reached: Silver, Gold and Platinum.
+- Final weekly placements: top 50, top 10, first, second and third. Second and third require those exact finishes.
+
+Quests award Gems, Gold and profile XP; tier quests also award ascension materials. Continue buttons open The Championships. These are separate from recurring weekly tournament rewards.
+
+Authenticated dashboards and settled battle responses update a per-week maximum attack-win count in the player's cloud-saved profile. Refreshes and retried results never double-count, and weekly resets do not erase progress. Highest observed tier and finalized podium places persist after demotions or new seasons. Current-week wins and historical award snapshots count when the page loads; other older weeks without recorded progress cannot be reconstructed from the existing dashboard.
+
+The tutorial introduction now closes onto Championships with **Explore Championships**. A separate **Collect tutorial reward** button lets the player leave for Quests when ready.
+
 ## Weekly standings and rewards
 
 Weeks end Monday at 12:00 AM in `America/Los_Angeles`, including daylight-saving changes. Rankings require at least one attack victory. Placement orders by points, attack wins, earlier last attack victory, then player ID. Previous-week snapshots stay frozen and the most recent final top 50 is visible in Rankings. Points, tiers and weekly records start over; saved teams and unclaimed rewards remain.
@@ -39,7 +53,7 @@ The requested ranges omitted fourth place and overlapped at 25. The implemented,
 | 4–25 | 250 | 2,500 | 10 |
 | 26–50 | 100 | 1,000 | 5 |
 
-Finalization allocates each reward automatically. Players collect it from Rewards; collection writes directly to their cloud save and increments its revision in the same transaction. Repeated collection never pays twice. Rewards stay available if resource storage is full.
+Finalization allocates each reward automatically. Players collect it from the Rewards section above Rankings; collection writes directly to their cloud save and increments its revision in the same transaction. Repeated collection never pays twice. Rewards stay available if resource storage is full.
 
 A transaction lock serializes tournament writes and finalization. Every database entry point checks the current server week. Expired unfinished attacks are charged before the final snapshot; later battle submissions cannot alter a closed week. The snapshot is materialized on the first request after the cutoff (or by an optional scheduled `select public.championship_maintain();`). This preserves the exact cutoff standings even when nobody is online at midnight. No always-running task is required for correctness.
 
@@ -57,6 +71,10 @@ This is a baseline asynchronous competition system, not a complete competitive a
 
 ## Development and verification
 
-`npm run check` runs unit checks and the production build. `npm run test:championships` checks login requirements, the page, owned-only team editor, ranked battles, backend failure/retry and responsive layouts and absence of client errors in Chromium. The database integration test (`npm run test:championships:database`) requires the development-only tool `@electric-sql/pglite@0.3.14` (installed by CI) and uses a temporary local Postgres-compatible engine to exercise season finalization, access restrictions, reward delivery and repeat settlement.
+`npm run check` runs unit checks and the production build. `npm run test:championships` checks login requirements, the page, explicit defense confirmation and active attack teams, ranked battles, backend failure/retry and responsive layouts and absence of client errors in Chromium. The database integration test (`npm run test:championships:database`) requires the development-only tool `@electric-sql/pglite@0.3.14` (installed by CI) and uses a temporary local Postgres-compatible engine to exercise season finalization, access restrictions, reward delivery and repeat settlement.
 
 Artwork: original generated citadel concept art in `assets/championships/citadel.webp`, with expanded welcome paintings in `citadel-welcome.webp` and `citadel-welcome-phone.webp`; the tier crests are original SVG interface artwork.
+
+## Monthly modes
+
+See [Monthly Tournaments and Titans](MONTHLY_COMPETITIONS.md) for schedules, rules, rewards and the combined Supabase update required for release 0.53.6.

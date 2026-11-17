@@ -35,4 +35,4 @@ Aerie Court adds eighteen bird-people champions with native 1024 × 1536 portrai
 
 Email/password accounts and cloud saves: [GitHub Pages + Supabase setup](docs/SUPABASE_GITHUB_PAGES.md).
 
-The Championships adds asynchronous PvP, saved attack/defense warbands, weekly tiers and prizes. [Play and connect the mode](docs/THE_CHAMPIONSHIPS.md). Player accounts are required.
+The Championships adds asynchronous PvP with the active attack team, an explicitly selected defense, weekly tiers, milestone quests and prizes. Monthly Tournaments and shared Titan hunts have separate rankings and rewards; see [monthly mode setup](docs/MONTHLY_COMPETITIONS.md). [Play and connect the mode](docs/THE_CHAMPIONSHIPS.md). Player accounts are required.
